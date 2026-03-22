@@ -1,4 +1,5 @@
 import AdminShell from "@/components/admin/AdminShell";
+import ChangePassword from "@/components/admin/ChangePassword";
 import { createClient } from "@/lib/supabase/server";
 
 export default async function AdminDashboard() {
@@ -34,6 +35,10 @@ export default async function AdminDashboard() {
             <p className="text-sm text-dark-200 mt-1">{stat.label}</p>
           </a>
         ))}
+      </div>
+
+      <div className="mt-8">
+        <ChangePassword />
       </div>
     </AdminShell>
   );
