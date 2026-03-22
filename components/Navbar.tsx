@@ -25,6 +25,7 @@ export default function Navbar() {
   }, []);
 
   return (
+    <>
     <nav
       className="fixed top-0 left-0 right-0 z-50 bg-dark-900/95 backdrop-blur-md border-b border-dark-500/50"
     >
@@ -82,43 +83,45 @@ export default function Navbar() {
 
       </div>
 
-      {/* Mobile menu — full screen overlay */}
-      {mobileOpen && (
-        <div className="md:hidden fixed left-0 right-0 top-20 bottom-0 bg-dark-900 z-40 overflow-y-auto">
-          <div className="border-t border-gold/10" />
-          <div className="flex flex-col gap-6 px-8 py-10">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className={`text-lg font-medium uppercase tracking-widest transition-colors ${
-                  pathname === link.href
-                    ? "text-gold"
-                    : "text-dark-100 hover:text-gold"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+    </nav>
+
+    {/* Mobile menu — full screen overlay, rendered outside nav */}
+    {mobileOpen && (
+      <div className="md:hidden fixed inset-0 top-[80px] bg-dark-900/95 backdrop-blur-md z-[60] overflow-y-auto">
+        <div className="border-t border-gold/10" />
+        <div className="flex flex-col gap-6 px-8 py-10">
+          {navLinks.map((link) => (
             <Link
-              href="/contact"
+              key={link.href}
+              href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="inline-block mt-4 border-gradient rounded-full bg-gold/10 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-gold text-center"
+              className={`text-lg font-medium uppercase tracking-widest transition-colors ${
+                pathname === link.href
+                  ? "text-gold"
+                  : "text-dark-100 hover:text-gold"
+              }`}
             >
-              Book Now
+              {link.label}
             </Link>
-            <div className="mt-auto pt-8 border-t border-dark-500/30">
-              <a
-                href="tel:+12703070173"
-                className="text-gold font-mono tracking-wider text-sm"
-              >
-                (270) 307-0173
-              </a>
-            </div>
+          ))}
+          <Link
+            href="/contact"
+            onClick={() => setMobileOpen(false)}
+            className="inline-block mt-4 border-gradient rounded-full bg-gold/10 px-6 py-3 text-sm font-semibold uppercase tracking-wider text-gold text-center"
+          >
+            Book Now
+          </Link>
+          <div className="mt-auto pt-8 border-t border-dark-500/30">
+            <a
+              href="tel:+12703070173"
+              className="text-gold font-mono tracking-wider text-sm"
+            >
+              (270) 307-0173
+            </a>
           </div>
         </div>
-      )}
-    </nav>
+      </div>
+    )}
+    </>
   );
 }
