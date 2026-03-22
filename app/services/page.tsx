@@ -87,7 +87,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* Header */}
-      <section className="relative bg-dark-900 py-28 overflow-hidden">
+      <section className="relative bg-dark-900 py-16 sm:py-28 overflow-hidden">
         <Image
           src="/images/home3.jpg"
           alt="Aerial view of property"
@@ -101,10 +101,10 @@ export default function ServicesPage() {
             <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
               What We Do
             </span>
-            <h1 className="mt-4 text-4xl md:text-6xl font-bold text-white tracking-tight">
+            <h1 className="mt-3 text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
               Our Services
             </h1>
-            <p className="mt-5 text-lg text-dark-200 max-w-2xl mx-auto">
+            <p className="mt-4 text-base sm:text-lg text-dark-200 max-w-2xl mx-auto">
               Quality edits. Quick turnaround. The best prices for professional
               real estate media. Starting at just $100.
             </p>
@@ -222,7 +222,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Virtual Staging Section */}
-      <section className="py-28 bg-dark-900">
+      <section className="py-16 sm:py-28 bg-dark-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeIn>

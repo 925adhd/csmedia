@@ -127,8 +127,8 @@ export default function Home() {
           </FadeIn>
           <FadeIn delay={0.4}>
             <p className="mt-12 text-dark-300 text-sm font-mono tracking-wider">
-              <a href="tel:+12703070173" className="hover:text-gold transition-colors">
-                (270) 307-0173
+              <a href="tel:+12703070173" className="hover:text-gold transition-colors whitespace-nowrap">
+                (270)&nbsp;307-0173
               </a>
             </p>
           </FadeIn>
@@ -139,7 +139,7 @@ export default function Home() {
       </section>
 
       {/* Services Preview */}
-      <section className="py-28 bg-dark-800 relative overflow-hidden">
+      <section className="py-16 sm:py-28 bg-dark-800 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -226,7 +226,7 @@ export default function Home() {
       </section>
 
       {/* Virtual Staging Before/After */}
-      <section className="py-28 bg-dark-800 relative overflow-hidden">
+      <section className="py-16 sm:py-28 bg-dark-800 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -290,7 +290,7 @@ export default function Home() {
       </section>
 
       {/* Featured Portfolio */}
-      <section className="py-28 bg-dark-900">
+      <section className="py-16 sm:py-28 bg-dark-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="flex items-end justify-between mb-14">
@@ -332,7 +332,7 @@ export default function Home() {
       </section>
 
       {/* Video Reel */}
-      <section className="py-28 bg-dark-800 relative overflow-hidden">
+      <section className="py-16 sm:py-28 bg-dark-800 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -403,7 +403,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-28 bg-dark-900 relative overflow-hidden">
+      <section className="py-16 sm:py-28 bg-dark-900 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

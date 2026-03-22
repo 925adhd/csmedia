@@ -40,7 +40,7 @@ export default async function ProjectPage({
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-dark-900 py-36 overflow-hidden">
+      <section className="relative bg-dark-900 py-20 sm:py-36 overflow-hidden">
         <Image
           src={project.heroImage}
           alt={project.title}
@@ -64,7 +64,7 @@ export default async function ProjectPage({
               <span className="inline-block rounded-full bg-gold/20 border border-gold/30 px-4 py-1 text-[11px] font-bold uppercase tracking-widest text-gold mb-5">
                 {project.propertyType}
               </span>
-              <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
                 {project.title}
               </h1>
               <p className="mt-3 text-lg text-dark-200 font-mono">{project.location}</p>

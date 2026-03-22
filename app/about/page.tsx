@@ -13,14 +13,14 @@ export default function AboutPage() {
   return (
     <>
       {/* Header */}
-      <section className="relative bg-dark-900 pt-14 pb-12 overflow-hidden">
+      <section className="relative bg-dark-900 pt-12 sm:pt-14 pb-10 sm:pb-12 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,169,110,0.06),transparent_60%)]" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <FadeIn>
             <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
               About
             </span>
-            <h1 className="mt-2 text-4xl md:text-6xl font-bold text-white tracking-tight">
+            <h1 className="mt-2 text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
               The Person Behind
               <br />
               <span className="text-gold">the Lens</span>
@@ -30,7 +30,7 @@ export default function AboutPage() {
       </section>
 
       {/* Story */}
-      <section className="py-20 lg:py-24 bg-dark-800 relative">
+      <section className="py-14 sm:py-20 lg:py-24 bg-dark-800 relative">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
         <div className="mx-auto max-w-[1200px] px-6 lg:px-12">
@@ -96,10 +96,10 @@ export default function AboutPage() {
                     href="tel:+12703070173"
                     className="inline-flex items-center gap-3 text-gold font-mono tracking-wider hover:text-gold-light transition-colors"
                   >
-                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <svg className="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                     </svg>
-                    (270) 307-0173
+                    <span className="whitespace-nowrap">(270)&nbsp;307-0173</span>
                   </a>
                 </div>
               </div>
@@ -109,7 +109,7 @@ export default function AboutPage() {
       </section>
 
       {/* Trust Points */}
-      <section className="py-28 bg-dark-900">
+      <section className="py-16 sm:py-28 bg-dark-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">

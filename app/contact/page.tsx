@@ -23,20 +23,20 @@ export default function ContactPage() {
   return (
     <>
       {/* Header */}
-      <section className="relative bg-dark-900 py-28 overflow-hidden">
+      <section className="relative bg-dark-900 py-16 sm:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,169,110,0.06),transparent_60%)]" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <FadeIn>
             <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
               Get in Touch
             </span>
-            <h1 className="mt-4 text-4xl md:text-6xl font-bold text-white tracking-tight">
+            <h1 className="mt-3 text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
               Book a Shoot
             </h1>
-            <p className="mt-5 text-lg text-dark-200 max-w-2xl mx-auto">
+            <p className="mt-5 text-base sm:text-lg text-dark-200 max-w-2xl mx-auto">
               Fill out the form or text{" "}
-              <a href="tel:+12703070173" className="text-gold hover:text-gold-light transition-colors font-mono">
-                (270) 307-0173
+              <a href="tel:+12703070173" className="text-gold hover:text-gold-light transition-colors font-mono whitespace-nowrap">
+                (270)&nbsp;307-0173
               </a>{" "}
               and I&apos;ll get back to you within 24 hours.
             </p>
@@ -44,7 +44,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-dark-800 relative">
+      <section className="py-14 sm:py-24 bg-dark-800 relative">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">

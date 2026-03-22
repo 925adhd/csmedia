@@ -17,7 +17,7 @@ export default function CTASection({
   backgroundImage = "/images/nighthome.jpg",
 }: CTASectionProps) {
   return (
-    <section className="relative bg-dark-800 py-28 overflow-hidden">
+    <section className="relative bg-dark-800 py-16 sm:py-28 overflow-hidden">
       {/* Background image */}
       {backgroundImage && (
         <>
@@ -42,7 +42,7 @@ export default function CTASection({
           <span className="mx-4 text-gold text-xs font-mono uppercase tracking-[0.3em]">Let&apos;s Work</span>
           <span className="h-px w-16 bg-gold/60 inline-block align-middle" />
         </div>
-        <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight">
           {heading}
         </h2>
         <p className="mt-5 text-lg text-dark-200 max-w-2xl mx-auto">
