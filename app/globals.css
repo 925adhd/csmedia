@@ -30,9 +30,6 @@ body {
   color: var(--foreground);
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
 /* Subtle gold glow effect for hover states */
 .glow-gold {
