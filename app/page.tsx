@@ -291,6 +291,9 @@ export default function Home() {
                 <PortfolioCard project={project} />
               </FadeIn>
             ))}
+            <FadeIn delay={0.2}>
+              <PortfolioCard project={portfolioProjects.find((p) => p.slug === "twilight-showcase")!} />
+            </FadeIn>
             <FadeIn delay={0.3}>
               <PortfolioCard project={portfolioProjects.find((p) => p.slug === "drone-property-tour")!} />
             </FadeIn>
