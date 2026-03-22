@@ -3,6 +3,8 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import BeforeAfter from "@/components/BeforeAfter";
 import CTASection from "@/components/CTASection";
+import { EditableText, EditableList } from "@/components/inline-edit";
+import { getPageContent } from "@/lib/supabase/queries";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -10,7 +12,147 @@ export const metadata: Metadata = {
     "Real estate media packages starting at $150. Photography, drone, videography, and video editing services. Quick turnaround, best prices.",
 };
 
-export default function ServicesPage() {
+interface PricingPackage {
+  name: string;
+  price: string;
+  popular: boolean;
+  features: string[];
+}
+
+export default async function ServicesPage() {
+  const [headerContent, pricingContent, videographyContent, editingContent, stagingContent, ctaContent] =
+    await Promise.all([
+      getPageContent("services", "header"),
+      getPageContent("services", "pricing"),
+      getPageContent("services", "videography"),
+      getPageContent("services", "editing"),
+      getPageContent("services", "staging"),
+      getPageContent("services", "cta"),
+    ]);
+
+  // Header fallbacks
+  const headerTagline = (headerContent?.tagline as string) || "What We Do";
+  const headerHeading = (headerContent?.heading as string) || "Our Services";
+  const headerSubtext =
+    (headerContent?.subtext as string) ||
+    "Professional real estate media packages. Quality work, quick turnaround, and the best prices you'll find.";
+
+  // Pricing fallbacks
+  const pricingTagline = (pricingContent?.tagline as string) || "Pricing";
+  const pricingHeading = (pricingContent?.heading as string) || "Real Estate Media Packages";
+  const packages = (pricingContent?.packages as PricingPackage[]) || [
+    {
+      name: "Interior Only",
+      price: "$150",
+      popular: false,
+      features: [
+        "All interior living spaces",
+        "Professional lighting & HDR",
+        "Edited & color corrected",
+        "MLS-ready formatting",
+        "24-48 hour turnaround",
+      ],
+    },
+    {
+      name: "Interior + Exterior",
+      price: "$200",
+      popular: true,
+      features: [
+        "All interior living spaces",
+        "6 exterior shots",
+        "Professional lighting & HDR",
+        "Edited & color corrected",
+        "MLS-ready formatting",
+        "24-48 hour turnaround",
+      ],
+    },
+    {
+      name: "The Holy-Moley",
+      price: "$300",
+      popular: false,
+      features: [
+        "Full interior & exterior package",
+        "Drone photos",
+        "Hyperlapse video for social media",
+        "Professional lighting & HDR",
+        "Edited & color corrected",
+        "MLS-ready formatting",
+        "24-48 hour turnaround",
+      ],
+    },
+  ];
+  const finePrint = (pricingContent?.fine_print as string[]) || [
+    "Taxes and mileage fee will be applied to final price.",
+    "Mileage is determined by Google Maps distance for round trip.",
+  ];
+
+  // Videography fallbacks
+  const videoHeading = (videographyContent?.heading as string) || "Videography";
+  const videoDescription =
+    (videographyContent?.description as string) ||
+    "Cinematic property walkthroughs, promo videos, and social content. From listing tours to branded business videos, we capture footage that drives engagement and gets results.";
+  const videoPriceText = (videographyContent?.price_text as string) || "Contact for pricing";
+  const videoIncluded = (videographyContent?.included as string[]) || [
+    "60-90 second edited video",
+    "4K resolution",
+    "Licensed background music",
+    "Color grading & transitions",
+    "Social media formats",
+  ];
+  const videoIdealFor = (videographyContent?.ideal_for as string[]) || [
+    "Property tours",
+    "Business promo videos",
+    "Social media reels",
+    "Agent marketing",
+  ];
+
+  // Editing fallbacks
+  const editHeading = (editingContent?.heading as string) || "Video Editing";
+  const editDescription =
+    (editingContent?.description as string) ||
+    "Already have footage? We'll transform your raw clips into polished, branded content. From simple cuts to full productions with graphics, music, and effects.";
+  const editPriceText = (editingContent?.price_text as string) || "Contact for pricing";
+  const editIncluded = (editingContent?.included as string[]) || [
+    "Full edit from raw footage",
+    "Music & sound design",
+    "Text overlays & branding",
+    "Logo/watermark design",
+    "Multiple export formats",
+  ];
+  const editIdealFor = (editingContent?.ideal_for as string[]) || [
+    "Agent walkthrough footage",
+    "Social media content",
+    "Compilation videos",
+    "Brand & marketing videos",
+  ];
+
+  // Staging fallbacks
+  const stagingHeading = (stagingContent?.heading as string) || "Virtual Staging";
+  const stagingDescription =
+    (stagingContent?.description as string) ||
+    "Empty rooms don't sell. Our edited virtual staging digitally furnishes vacant spaces with realistic furniture and decor, helping buyers visualize the potential of every room.";
+  const stagingPriceText = (stagingContent?.price_text as string) || "Starting at $25/room";
+  const stagingIncluded = (stagingContent?.included as string[]) || [
+    "Realistic furniture placement",
+    "Multiple style options",
+    "High-res MLS-ready files",
+    "Fast 24-48hr turnaround",
+    "Revision rounds included",
+  ];
+  const stagingIdealFor = (stagingContent?.ideal_for as string[]) || [
+    "Vacant listings",
+    "New construction",
+    "Flips & renovations",
+    "Rental properties",
+  ];
+
+  // CTA fallbacks
+  const ctaHeading = (ctaContent?.heading as string) || "Not Sure Which Package You Need?";
+  const ctaSubheading =
+    (ctaContent?.subheading as string) ||
+    "Text or call and we'll recommend the perfect option for your project.";
+  const ctaButtonText = (ctaContent?.button_text as string) || "Request a Quote";
+
   return (
     <>
       {/* Header */}
@@ -25,16 +167,21 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900/40 via-dark-900/70 to-dark-900" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-              What We Do
-            </span>
+            <EditableText page="services" section="header" field="tagline" value={headerTagline}>
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                {headerTagline}
+              </span>
+            </EditableText>
             <h1 className="mt-3 text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
-              Our Services
+              <EditableText page="services" section="header" field="heading" value={headerHeading}>
+                {headerHeading}
+              </EditableText>
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-dark-200 max-w-2xl mx-auto">
-              Professional real estate media packages. Quality work, quick
-              turnaround, and the best prices you&apos;ll find.
-            </p>
+            <EditableText page="services" section="header" field="subtext" value={headerSubtext} multiline>
+              <p className="mt-4 text-base sm:text-lg text-dark-200 max-w-2xl mx-auto">
+                {headerSubtext}
+              </p>
+            </EditableText>
           </FadeIn>
         </div>
       </section>
@@ -46,128 +193,77 @@ export default function ServicesPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-14">
-              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                Pricing
-              </span>
+              <EditableText page="services" section="pricing" field="tagline" value={pricingTagline}>
+                <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                  {pricingTagline}
+                </span>
+              </EditableText>
               <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white tracking-tight">
-                Real Estate Media Packages
+                <EditableText page="services" section="pricing" field="heading" value={pricingHeading}>
+                  {pricingHeading}
+                </EditableText>
               </h2>
             </div>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
-            {/* Interior Only */}
-            <FadeIn>
-              <div className="relative rounded-2xl bg-dark-700 border border-dark-500/30 p-8 h-full flex flex-col overflow-hidden group hover:border-gold/20 transition-colors">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(201,169,110,0.05),transparent_70%)]" />
-                <div className="relative z-10 flex flex-col h-full">
-                  <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em]">
-                    Interior Only
-                  </h3>
-                  <div className="mt-4 flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-white">$150</span>
-                  </div>
-                  <div className="mt-6 space-y-3 flex-1">
-                    {[
-                      "All interior living spaces",
-                      "Professional lighting & HDR",
-                      "Edited & color corrected",
-                      "MLS-ready formatting",
-                      "24-48 hour turnaround",
-                    ].map((item) => (
-                      <div key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
-                        <svg className="h-4 w-4 mt-0.5 text-gold/70 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
-
-            {/* Interior + Exterior */}
-            <FadeIn delay={0.1}>
-              <div className="relative rounded-2xl bg-dark-700 border border-gold/30 p-8 h-full flex flex-col overflow-hidden group">
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold/60 via-gold to-gold/60" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(201,169,110,0.08),transparent_70%)]" />
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em]">
-                      Interior + Exterior
-                    </h3>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-dark-900 bg-gold rounded-full px-2.5 py-0.5">
-                      Popular
-                    </span>
-                  </div>
-                  <div className="mt-4 flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-white">$200</span>
-                  </div>
-                  <div className="mt-6 space-y-3 flex-1">
-                    {[
-                      "All interior living spaces",
-                      "6 exterior shots",
-                      "Professional lighting & HDR",
-                      "Edited & color corrected",
-                      "MLS-ready formatting",
-                      "24-48 hour turnaround",
-                    ].map((item) => (
-                      <div key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
-                        <svg className="h-4 w-4 mt-0.5 text-gold/70 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                        {item}
-                      </div>
-                    ))}
+            {packages.map((pkg, index) => (
+              <FadeIn key={pkg.name} delay={index * 0.1}>
+                <div
+                  className={`relative rounded-2xl bg-dark-700 border ${
+                    pkg.popular ? "border-gold/30" : "border-dark-500/30"
+                  } p-8 h-full flex flex-col overflow-hidden group ${
+                    !pkg.popular ? "hover:border-gold/20 transition-colors" : ""
+                  }`}
+                >
+                  {pkg.popular && (
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold/60 via-gold to-gold/60" />
+                  )}
+                  <div
+                    className={`absolute inset-0 ${
+                      pkg.popular
+                        ? "bg-[radial-gradient(circle_at_50%_0%,rgba(201,169,110,0.08),transparent_70%)]"
+                        : "opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(201,169,110,0.05),transparent_70%)]"
+                    }`}
+                  />
+                  <div className="relative z-10 flex flex-col h-full">
+                    <div className={pkg.popular ? "flex items-center justify-between" : ""}>
+                      <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em]">
+                        {pkg.name}
+                      </h3>
+                      {pkg.popular && (
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-dark-900 bg-gold rounded-full px-2.5 py-0.5">
+                          Popular
+                        </span>
+                      )}
+                    </div>
+                    <div className="mt-4 flex items-baseline gap-1">
+                      <span className="text-4xl font-bold text-white">{pkg.price}</span>
+                    </div>
+                    <div className="mt-6 space-y-3 flex-1">
+                      {pkg.features.map((item) => (
+                        <div key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
+                          <svg className="h-4 w-4 mt-0.5 text-gold/70 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                          {item}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </FadeIn>
-
-            {/* The Holy-Moley */}
-            <FadeIn delay={0.2}>
-              <div className="relative rounded-2xl bg-dark-700 border border-dark-500/30 p-8 h-full flex flex-col overflow-hidden group hover:border-gold/20 transition-colors">
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(201,169,110,0.05),transparent_70%)]" />
-                <div className="relative z-10 flex flex-col h-full">
-                  <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em]">
-                    The Holy-Moley
-                  </h3>
-                  <div className="mt-4 flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-white">$300</span>
-                  </div>
-                  <div className="mt-6 space-y-3 flex-1">
-                    {[
-                      "Full interior & exterior package",
-                      "Drone photos",
-                      "Hyperlapse video for social media",
-                      "Professional lighting & HDR",
-                      "Edited & color corrected",
-                      "MLS-ready formatting",
-                      "24-48 hour turnaround",
-                    ].map((item) => (
-                      <div key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
-                        <svg className="h-4 w-4 mt-0.5 text-gold/70 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            ))}
           </div>
 
           {/* Fine print */}
           <FadeIn>
             <div className="mt-10 text-center space-y-1">
-              <p className="text-xs text-dark-300">
-                Taxes and mileage fee will be applied to final price.
-              </p>
-              <p className="text-xs text-dark-300">
-                Mileage is determined by Google Maps distance for round trip.
-              </p>
+              {finePrint.map((line) => (
+                <p key={line} className="text-xs text-dark-300">
+                  {line}
+                </p>
+              ))}
             </div>
           </FadeIn>
         </div>
@@ -186,16 +282,20 @@ export default function ServicesPage() {
                 </div>
                 <div className="lg:col-span-6">
                   <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-                    Videography
+                    <EditableText page="services" section="videography" field="heading" value={videoHeading}>
+                      {videoHeading}
+                    </EditableText>
                   </h2>
-                  <p className="mt-4 text-dark-200 leading-relaxed">
-                    Cinematic property walkthroughs, promo videos, and social content.
-                    From listing tours to branded business videos, we capture footage
-                    that drives engagement and gets results.
-                  </p>
+                  <EditableText page="services" section="videography" field="description" value={videoDescription} multiline>
+                    <p className="mt-4 text-dark-200 leading-relaxed">
+                      {videoDescription}
+                    </p>
+                  </EditableText>
                   <p className="mt-4 inline-flex items-center gap-2 text-gold font-semibold">
                     <span className="h-px w-4 bg-gold/40" />
-                    Contact for pricing
+                    <EditableText page="services" section="videography" field="price_text" value={videoPriceText}>
+                      {videoPriceText}
+                    </EditableText>
                   </p>
                 </div>
                 <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -204,13 +304,7 @@ export default function ServicesPage() {
                       What&apos;s Included
                     </h3>
                     <ul className="space-y-2.5">
-                      {[
-                        "60-90 second edited video",
-                        "4K resolution",
-                        "Licensed background music",
-                        "Color grading & transitions",
-                        "Social media formats",
-                      ].map((item) => (
+                      {videoIncluded.map((item) => (
                         <li key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
                           <svg className="h-4 w-4 mt-0.5 text-gold/70 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -225,12 +319,7 @@ export default function ServicesPage() {
                       Ideal For
                     </h3>
                     <ul className="space-y-2.5">
-                      {[
-                        "Property tours",
-                        "Business promo videos",
-                        "Social media reels",
-                        "Agent marketing",
-                      ].map((item) => (
+                      {videoIdealFor.map((item) => (
                         <li key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
                           <span className="text-gold/50 mt-0.5 flex-shrink-0 text-xs">&#9670;</span>
                           {item}
@@ -251,16 +340,20 @@ export default function ServicesPage() {
                 </div>
                 <div className="lg:col-span-6">
                   <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-                    Video Editing
+                    <EditableText page="services" section="editing" field="heading" value={editHeading}>
+                      {editHeading}
+                    </EditableText>
                   </h2>
-                  <p className="mt-4 text-dark-200 leading-relaxed">
-                    Already have footage? We&apos;ll transform your raw clips into polished,
-                    branded content. From simple cuts to full productions with graphics,
-                    music, and effects.
-                  </p>
+                  <EditableText page="services" section="editing" field="description" value={editDescription} multiline>
+                    <p className="mt-4 text-dark-200 leading-relaxed">
+                      {editDescription}
+                    </p>
+                  </EditableText>
                   <p className="mt-4 inline-flex items-center gap-2 text-gold font-semibold">
                     <span className="h-px w-4 bg-gold/40" />
-                    Contact for pricing
+                    <EditableText page="services" section="editing" field="price_text" value={editPriceText}>
+                      {editPriceText}
+                    </EditableText>
                   </p>
                 </div>
                 <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -269,13 +362,7 @@ export default function ServicesPage() {
                       What&apos;s Included
                     </h3>
                     <ul className="space-y-2.5">
-                      {[
-                        "Full edit from raw footage",
-                        "Music & sound design",
-                        "Text overlays & branding",
-                        "Logo/watermark design",
-                        "Multiple export formats",
-                      ].map((item) => (
+                      {editIncluded.map((item) => (
                         <li key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
                           <svg className="h-4 w-4 mt-0.5 text-gold/70 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -290,12 +377,7 @@ export default function ServicesPage() {
                       Ideal For
                     </h3>
                     <ul className="space-y-2.5">
-                      {[
-                        "Agent walkthrough footage",
-                        "Social media content",
-                        "Compilation videos",
-                        "Brand & marketing videos",
-                      ].map((item) => (
+                      {editIdealFor.map((item) => (
                         <li key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
                           <span className="text-gold/50 mt-0.5 flex-shrink-0 text-xs">&#9670;</span>
                           {item}
@@ -320,16 +402,20 @@ export default function ServicesPage() {
               <div>
                 <span className="text-5xl font-bold text-gold/20 font-mono">+</span>
                 <h2 className="mt-4 text-2xl md:text-3xl font-bold text-white tracking-tight">
-                  Virtual Staging
+                  <EditableText page="services" section="staging" field="heading" value={stagingHeading}>
+                    {stagingHeading}
+                  </EditableText>
                 </h2>
-                <p className="mt-4 text-dark-200 leading-relaxed">
-                  Empty rooms don&apos;t sell. Our edited virtual staging digitally
-                  furnishes vacant spaces with realistic furniture and decor,
-                  helping buyers visualize the potential of every room.
-                </p>
+                <EditableText page="services" section="staging" field="description" value={stagingDescription} multiline>
+                  <p className="mt-4 text-dark-200 leading-relaxed">
+                    {stagingDescription}
+                  </p>
+                </EditableText>
                 <p className="mt-4 inline-flex items-center gap-2 text-gold font-semibold">
                   <span className="h-px w-4 bg-gold/40" />
-                  Starting at $25/room
+                  <EditableText page="services" section="staging" field="price_text" value={stagingPriceText}>
+                    {stagingPriceText}
+                  </EditableText>
                 </p>
 
                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -338,13 +424,7 @@ export default function ServicesPage() {
                       What&apos;s Included
                     </h3>
                     <ul className="space-y-2.5">
-                      {[
-                        "Realistic furniture placement",
-                        "Multiple style options",
-                        "High-res MLS-ready files",
-                        "Fast 24-48hr turnaround",
-                        "Revision rounds included",
-                      ].map((item) => (
+                      {stagingIncluded.map((item) => (
                         <li key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
                           <svg className="h-4 w-4 mt-0.5 text-gold/70 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -359,12 +439,7 @@ export default function ServicesPage() {
                       Ideal For
                     </h3>
                     <ul className="space-y-2.5">
-                      {[
-                        "Vacant listings",
-                        "New construction",
-                        "Flips & renovations",
-                        "Rental properties",
-                      ].map((item) => (
+                      {stagingIdealFor.map((item) => (
                         <li key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
                           <span className="text-gold/50 mt-0.5 flex-shrink-0 text-xs">&#9670;</span>
                           {item}
@@ -393,9 +468,9 @@ export default function ServicesPage() {
       </section>
 
       <CTASection
-        heading="Not Sure Which Package You Need?"
-        subheading="Text or call and we'll recommend the perfect option for your project."
-        buttonText="Request a Quote"
+        heading={ctaHeading}
+        subheading={ctaSubheading}
+        buttonText={ctaButtonText}
       />
     </>
   );

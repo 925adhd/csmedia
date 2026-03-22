@@ -61,13 +61,24 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-dark-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-8 border-t border-dark-500/30 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
           <p className="text-xs text-dark-300">
             &copy; {new Date().getFullYear()} CS Media. All rights reserved.
           </p>
-          <p className="text-xs text-dark-300 font-mono tracking-wider">
-            FAA Part 107 Certified
-          </p>
+          <div className="flex items-center justify-center gap-4 flex-wrap">
+            <Link href="/privacy" className="text-xs text-dark-300 hover:text-gold transition-colors whitespace-nowrap">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="text-xs text-dark-300 hover:text-gold transition-colors whitespace-nowrap">
+              Terms of Service
+            </Link>
+            <p className="text-xs text-dark-300 font-mono tracking-wider whitespace-nowrap">
+              FAA Part 107 Certified
+            </p>
+            <Link href="/admin/login" className="text-xs text-dark-500/40 hover:text-dark-300 transition-colors whitespace-nowrap">
+              Admin
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import CookieNotice from "@/components/CookieNotice";
+import { EditModeProvider, EditToggle } from "@/components/inline-edit";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -28,6 +31,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+  },
 };
 
 export default function RootLayout({
@@ -41,9 +47,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-dark-900 text-white">
-        <Navbar />
-        <main className="flex-1 pt-16">{children}</main>
-        <Footer />
+        <EditModeProvider>
+          <GoogleAnalytics />
+          <Navbar />
+          <main className="flex-1 pt-16">{children}</main>
+          <Footer />
+          <CookieNotice />
+          <EditToggle />
+        </EditModeProvider>
       </body>
     </html>
   );

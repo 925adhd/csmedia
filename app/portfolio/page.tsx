@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PortfolioCard from "@/components/PortfolioCard";
 import FadeIn from "@/components/FadeIn";
 import CTASection from "@/components/CTASection";
-import { portfolioProjects } from "@/lib/portfolio";
+import { getPortfolioProjects } from "@/lib/portfolio";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -10,9 +10,10 @@ export const metadata: Metadata = {
     "Browse our real estate drone photography, video, and editing portfolio. Residential, commercial, and promotional projects.",
 };
 
-export default function PortfolioPage() {
-  const photoProjects = portfolioProjects.filter((p) => !p.videoSrc);
-  const videoProjects = portfolioProjects.filter((p) => !!p.videoSrc);
+export default async function PortfolioPage() {
+  const projects = await getPortfolioProjects();
+  const photoProjects = projects.filter((p) => !p.videoSrc);
+  const videoProjects = projects.filter((p) => !!p.videoSrc);
 
   return (
     <>

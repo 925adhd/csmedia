@@ -1,51 +1,47 @@
-"use client";
-
-import { useState } from "react";
 import FadeIn from "@/components/FadeIn";
+import ContactForm from "@/components/ContactForm";
+import { EditableText } from "@/components/inline-edit";
+import { getPageContent } from "@/lib/supabase/queries";
 
-// TODO: Replace with your real Web3Forms access key
-const WEB3FORMS_KEY = "YOUR_ACCESS_KEY_HERE";
+export default async function ContactPage() {
+  const [headerContent, sidebarContent, formContent] = await Promise.all([
+    getPageContent("contact", "header"),
+    getPageContent("contact", "sidebar"),
+    getPageContent("contact", "form"),
+  ]);
 
-const services = [
-  "Photography",
-  "Videography",
-  "Drone (Part 107)",
-  "Video Editing",
-  "Logo / Watermark Design",
-  "Full Package",
-];
+  // Header fields
+  const tagline = (headerContent?.tagline as string) || "Get in Touch";
+  const heading = (headerContent?.heading as string) || "Book a Shoot";
+  const subtext = (headerContent?.subtext as string) || "Fill out the form or text";
+  const headerPhone = (headerContent?.phone as string) || "(270)\u00a0307-0173";
 
-export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState(false);
+  // Sidebar fields
+  const sidebarPhone = (sidebarContent?.phone as string) || "(270) 307-0173";
+  const sidebarEmail = (sidebarContent?.email as string) || "cscreatesmediallc@gmail.com";
+  const sidebarServices = (sidebarContent?.services as string[]) || [
+    "Photography",
+    "Videography",
+    "Drone Pilot (Part 107)",
+    "Video Editing Services",
+    "Logo & Watermark Design",
+  ];
+  const responseTime = (sidebarContent?.response_time as string) || "Within 24 hours";
+  const companyName = (sidebarContent?.company_name as string) || "CS MEDIA, LLC";
+  const companyType = (sidebarContent?.company_type as string) || "Advertising / Marketing";
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setSubmitting(true);
-    setError(false);
-
-    const form = e.currentTarget;
-    const data = new FormData(form);
-
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: data,
-      });
-
-      if (res.ok) {
-        setSubmitted(true);
-        window.scrollTo({ top: 0 });
-      } else {
-        setError(true);
-      }
-    } catch {
-      setError(true);
-    } finally {
-      setSubmitting(false);
-    }
-  }
+  // Form fields
+  const successHeading = (formContent?.success_heading as string) || "Message Sent!";
+  const successMessage = (formContent?.success_message as string) || "Thanks for reaching out. I'll get back to you within 24 hours.";
+  const submitText = (formContent?.submit_text as string) || "Send Message";
+  const formServices = (formContent?.services as string[]) || [
+    "Photography",
+    "Videography",
+    "Drone (Part 107)",
+    "Video Editing",
+    "Logo / Watermark Design",
+    "Full Package",
+  ];
 
   return (
     <>
@@ -54,16 +50,22 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,169,110,0.06),transparent_60%)]" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-              Get in Touch
-            </span>
+            <EditableText page="contact" section="header" field="tagline" value={tagline}>
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                {tagline}
+              </span>
+            </EditableText>
             <h1 className="mt-3 text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
-              Book a Shoot
+              <EditableText page="contact" section="header" field="heading" value={heading}>
+                {heading}
+              </EditableText>
             </h1>
             <p className="mt-5 text-base sm:text-lg text-dark-200 max-w-2xl mx-auto">
-              Fill out the form or text{" "}
+              <EditableText page="contact" section="header" field="subtext" value={subtext}>
+                {subtext}
+              </EditableText>{" "}
               <a href="tel:+12703070173" className="text-gold hover:text-gold-light transition-colors font-mono whitespace-nowrap">
-                (270)&nbsp;307-0173
+                {headerPhone}
               </a>{" "}
               and I&apos;ll get back to you within 24 hours.
             </p>
@@ -78,133 +80,12 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
             {/* Form */}
             <div className="lg:col-span-3">
-              <FadeIn>
-                {submitted ? (
-                  <div className="rounded-2xl bg-dark-700 border border-gold/20 p-12 text-center">
-                    <svg className="mx-auto h-14 w-14 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <h2 className="mt-4 text-2xl font-bold text-white">
-                      Message Sent!
-                    </h2>
-                    <p className="mt-2 text-dark-200">
-                      Thanks for reaching out. I&apos;ll get back to you within 24 hours.
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Web3Forms hidden fields */}
-                    <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
-                    <input type="hidden" name="subject" value="New Booking Inquiry — CS Media Website" />
-                    <input type="hidden" name="from_name" value="CS Media Website" />
-                    <input type="hidden" name="replyto" value="" />
-                    {/* Honeypot spam protection */}
-                    <input type="checkbox" name="botcheck" className="hidden" />
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="name" className="block text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-2">
-                          Name *
-                        </label>
-                        <input
-                          id="name"
-                          name="name"
-                          type="text"
-                          required
-                          className="w-full rounded-lg bg-dark-700 border border-dark-500 px-4 py-3.5 text-sm text-white placeholder-dark-300 focus:border-gold/50 focus:ring-1 focus:ring-gold/30 outline-none transition-colors"
-                          placeholder="Your name"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-2">
-                          Email *
-                        </label>
-                        <input
-                          id="email"
-                          name="email"
-                          type="email"
-                          required
-                          className="w-full rounded-lg bg-dark-700 border border-dark-500 px-4 py-3.5 text-sm text-white placeholder-dark-300 focus:border-gold/50 focus:ring-1 focus:ring-gold/30 outline-none transition-colors"
-                          placeholder="you@example.com"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="phone" className="block text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-2">
-                          Phone
-                        </label>
-                        <input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          className="w-full rounded-lg bg-dark-700 border border-dark-500 px-4 py-3.5 text-sm text-white placeholder-dark-300 focus:border-gold/50 focus:ring-1 focus:ring-gold/30 outline-none transition-colors"
-                          placeholder="(555) 123-4567"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="service" className="block text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-2">
-                          Service
-                        </label>
-                        <select
-                          id="service"
-                          name="service"
-                          className="w-full rounded-lg bg-dark-700 border border-dark-500 px-4 py-3.5 text-sm text-white focus:border-gold/50 focus:ring-1 focus:ring-gold/30 outline-none transition-colors"
-                        >
-                          <option value="">Select a service</option>
-                          {services.map((s) => (
-                            <option key={s} value={s}>
-                              {s}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="address" className="block text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-2">
-                        Property / Business Address
-                      </label>
-                      <input
-                        id="address"
-                        name="address"
-                        type="text"
-                        className="w-full rounded-lg bg-dark-700 border border-dark-500 px-4 py-3.5 text-sm text-white placeholder-dark-300 focus:border-gold/50 focus:ring-1 focus:ring-gold/30 outline-none transition-colors"
-                        placeholder="123 Main St, City, State"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-2">
-                        Message *
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows={5}
-                        required
-                        className="w-full rounded-lg bg-dark-700 border border-dark-500 px-4 py-3.5 text-sm text-white placeholder-dark-300 focus:border-gold/50 focus:ring-1 focus:ring-gold/30 outline-none transition-colors resize-none"
-                        placeholder="Tell me about your project, timeline, and any specific requirements..."
-                      />
-                    </div>
-
-                    {error && (
-                      <p className="text-red-400 text-sm">
-                        Something went wrong. Please try again or text us directly.
-                      </p>
-                    )}
-
-                    <button
-                      type="submit"
-                      disabled={submitting}
-                      className="w-full sm:w-auto border-gradient rounded-full bg-gold/10 px-10 py-4 text-sm font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20 disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {submitting ? "Sending..." : "Send Message"}
-                    </button>
-                  </form>
-                )}
-              </FadeIn>
+              <ContactForm
+                services={formServices}
+                successHeading={successHeading}
+                successMessage={successMessage}
+                submitText={submitText}
+              />
             </div>
 
             {/* Sidebar */}
@@ -219,7 +100,9 @@ export default function ContactPage() {
                       href="tel:+12703070173"
                       className="text-xl font-mono text-white hover:text-gold transition-colors tracking-wider"
                     >
-                      (270) 307-0173
+                      <EditableText page="contact" section="sidebar" field="phone" value={sidebarPhone}>
+                        {sidebarPhone}
+                      </EditableText>
                     </a>
                   </div>
                   <div>
@@ -227,10 +110,12 @@ export default function ContactPage() {
                       Email
                     </h3>
                     <a
-                      href="mailto:cscreatesmediallc@gmail.com"
+                      href={`mailto:${sidebarEmail}`}
                       className="text-dark-100 hover:text-gold transition-colors"
                     >
-                      cscreatesmediallc@gmail.com
+                      <EditableText page="contact" section="sidebar" field="email" value={sidebarEmail}>
+                        {sidebarEmail}
+                      </EditableText>
                     </a>
                   </div>
                   <div>
@@ -238,29 +123,29 @@ export default function ContactPage() {
                       Services
                     </h3>
                     <ul className="space-y-1.5 text-sm text-dark-200">
-                      <li>Photography</li>
-                      <li>Videography</li>
-                      <li>Drone Pilot (Part 107)</li>
-                      <li>Video Editing Services</li>
-                      <li>Logo &amp; Watermark Design</li>
+                      {sidebarServices.map((service) => (
+                        <li key={service}>{service}</li>
+                      ))}
                     </ul>
                   </div>
                   <div>
                     <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
                       Response Time
                     </h3>
-                    <p className="text-dark-100">
-                      Within 24 hours
-                    </p>
+                    <EditableText page="contact" section="sidebar" field="response_time" value={responseTime}>
+                      <p className="text-dark-100">
+                        {responseTime}
+                      </p>
+                    </EditableText>
                   </div>
 
                   {/* Decorative */}
                   <div className="pt-6 border-t border-dark-500/30">
                     <p className="text-xs text-dark-300 font-mono tracking-widest uppercase">
-                      CS MEDIA, LLC
+                      {companyName}
                     </p>
                     <p className="text-xs text-dark-300 mt-1 font-mono tracking-wider">
-                      Advertising / Marketing
+                      {companyType}
                     </p>
                   </div>
                 </div>

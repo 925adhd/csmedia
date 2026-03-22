@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 import VideoPlayer from "@/components/VideoPlayer";
 import CTASection from "@/components/CTASection";
+import { EditableText } from "@/components/inline-edit";
+import { getPageContent } from "@/lib/supabase/queries";
 
 export const metadata: Metadata = {
   title: "About",
@@ -9,7 +11,46 @@ export const metadata: Metadata = {
     "Meet the operator behind CS MEDIA, LLC. FAA Part 107 certified drone pilot delivering professional photography, videography, and editing services.",
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const [headerContent, bioContent, trustContent, ctaContent] = await Promise.all([
+    getPageContent("about", "header"),
+    getPageContent("about", "bio"),
+    getPageContent("about", "trust_points"),
+    getPageContent("about", "cta"),
+  ]);
+
+  // Header fallbacks
+  const headerTagline = (headerContent?.tagline as string) || "About";
+  const headerHeading = (headerContent?.heading as string) || "The Person Behind";
+  const headerHeadingGold = (headerContent?.heading_gold as string) || "the Lens";
+
+  // Bio fallbacks
+  const bioTagline = (bioContent?.tagline as string) || "My Story";
+  const bioHeading = (bioContent?.heading as string) || "Hi, I\u2019m Cheris \u2014";
+  const bioHeadingGold = (bioContent?.heading_gold as string) || "CS Media";
+  const bioParagraphs = (bioContent?.paragraphs as string[]) || [
+    "I started CS MEDIA, LLC with a passion for capturing properties and businesses in the best possible light. As a solo operator, I bring a level of personal attention and consistency that larger companies simply can\u2019t match.",
+    "I\u2019m FAA Part 107 certified and specialize in photography, videography, drone work, and video editing. From real estate listings to promo videos and logo design, I handle it all \u2014 start to finish.",
+    "When you work with me, you get the same person every time. Someone who learns your style, understands what you need, and delivers consistent quality project after project. No runaround, no random contractors.",
+    "Quality edits. Quick turnaround. And the best prices you\u2019ll find for professional media services. That\u2019s the CS Media promise.",
+  ];
+  const bioPhone = (bioContent?.phone as string) || "(270)\u00a0307-0173";
+  const bioPhoneHref = bioPhone.replace(/[^\d+]/g, "");
+
+  // Trust points fallbacks
+  const trustTagline = (trustContent?.tagline as string) || "Why CS Media";
+  const trustHeading = (trustContent?.heading as string) || "What Sets Us Apart";
+  const trustPoints = (trustContent?.points as { title: string; description: string }[]) || [
+    { title: "FAA Part 107", description: "Fully licensed and insured. Every drone flight is legal, safe, and professional." },
+    { title: "Quick Turnaround", description: "Most projects delivered within 24-48 hours. Rush delivery available when you need it." },
+    { title: "Lowest Prices", description: "Professional quality at the best rates. No hidden fees, no surprises. Just great work." },
+    { title: "One Operator", description: "Same person every time. I learn your style and deliver consistent results, shoot after shoot." },
+  ];
+
+  // CTA fallbacks
+  const ctaHeading = (ctaContent?.heading as string) || "Let's Work Together";
+  const ctaSubheading = (ctaContent?.subheading as string) || "Text or call for your next project. Quality media, fast turnaround, best prices.";
+
   return (
     <>
       {/* Header */}
@@ -17,13 +58,21 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,169,110,0.06),transparent_60%)]" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-              About
-            </span>
+            <EditableText page="about" section="header" field="tagline" value={headerTagline}>
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                {headerTagline}
+              </span>
+            </EditableText>
             <h1 className="mt-2 text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
-              The Person Behind
+              <EditableText page="about" section="header" field="heading" value={headerHeading}>
+                {headerHeading}
+              </EditableText>
               <br />
-              <span className="text-gold">the Lens</span>
+              <span className="text-gold">
+                <EditableText page="about" section="header" field="heading_gold" value={headerHeadingGold}>
+                  {headerHeadingGold}
+                </EditableText>
+              </span>
             </h1>
           </FadeIn>
         </div>
@@ -58,48 +107,37 @@ export default function AboutPage() {
               <div className="max-w-[560px] mx-auto lg:mx-0">
                 <div className="inline-flex items-center gap-3 mb-6">
                   <span className="h-px w-8 bg-gold/60" />
-                  <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                    My Story
-                  </span>
+                  <EditableText page="about" section="bio" field="tagline" value={bioTagline}>
+                    <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                      {bioTagline}
+                    </span>
+                  </EditableText>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-8">
-                  Hi, I&apos;m Cheris &mdash;
+                  <EditableText page="about" section="bio" field="heading" value={bioHeading}>
+                    {bioHeading}
+                  </EditableText>
                   <br />
-                  the founder of <span className="text-gold">CS Media</span>.
+                  the founder of <span className="text-gold">
+                    <EditableText page="about" section="bio" field="heading_gold" value={bioHeadingGold}>
+                      {bioHeadingGold}
+                    </EditableText>
+                  </span>.
                 </h2>
                 <div className="space-y-5 text-dark-200 leading-[1.8] text-[15px]">
-                  <p>
-                    I started CS MEDIA, LLC with a passion for capturing
-                    properties and businesses in the best possible light. As a
-                    solo operator, I bring a level of personal attention and
-                    consistency that larger companies simply can&apos;t match.
-                  </p>
-                  <p>
-                    I&apos;m FAA Part 107 certified and specialize in
-                    photography, videography, drone work, and video editing.
-                    From real estate listings to promo videos and logo design,
-                    I handle it all &mdash; start to finish.
-                  </p>
-                  <p>
-                    When you work with me, you get the same person every
-                    time. Someone who learns your style, understands what you
-                    need, and delivers consistent quality project after project.
-                    No runaround, no random contractors.
-                  </p>
-                  <p>
-                    Quality edits. Quick turnaround. And the best prices you&apos;ll
-                    find for professional media services. That&apos;s the CS Media promise.
-                  </p>
+                  {bioParagraphs.map((text, i) => (
+                    <p key={i}>{text}</p>
+                  ))}
                 </div>
                 <div className="mt-10">
                   <a
-                    href="tel:+12703070173"
+                    href={`tel:+1${bioPhoneHref}`}
                     className="inline-flex items-center gap-3 text-gold font-mono tracking-wider hover:text-gold-light transition-colors"
                   >
                     <svg className="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                     </svg>
-                    <span className="whitespace-nowrap">(270)&nbsp;307-0173</span>
+                    <span className="whitespace-nowrap">{bioPhone}</span>
                   </a>
                 </div>
               </div>
@@ -113,77 +151,60 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
-              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                Why CS Media
-              </span>
+              <EditableText page="about" section="trust_points" field="tagline" value={trustTagline}>
+                <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                  {trustTagline}
+                </span>
+              </EditableText>
               <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white tracking-tight">
-                What Sets Us Apart
+                <EditableText page="about" section="trust_points" field="heading" value={trustHeading}>
+                  {trustHeading}
+                </EditableText>
               </h2>
             </div>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                title: "FAA Part 107",
-                desc: "Fully licensed and insured. Every drone flight is legal, safe, and professional.",
-                icon: (
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Quick Turnaround",
-                desc: "Most projects delivered within 24-48 hours. Rush delivery available when you need it.",
-                icon: (
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                  </svg>
-                ),
-              },
-              {
-                title: "Lowest Prices",
-                desc: "Professional quality at the best rates. No hidden fees, no surprises. Just great work.",
-                icon: (
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                ),
-              },
-              {
-                title: "One Operator",
-                desc: "Same person every time. I learn your style and deliver consistent results, shoot after shoot.",
-                icon: (
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                  </svg>
-                ),
-              },
-            ].map((point, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="relative rounded-2xl bg-dark-800 p-8 border-gradient h-full">
-                  <div className="absolute inset-0 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(201,169,110,0.05),transparent_70%)]" />
-                  <div className="relative z-10">
-                    <div className="mb-5 inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold/10 text-gold">
-                      {point.icon}
+            {(() => {
+              const icons = [
+                <svg key="icon-0" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                </svg>,
+                <svg key="icon-1" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                </svg>,
+                <svg key="icon-2" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>,
+                <svg key="icon-3" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                </svg>,
+              ];
+              return trustPoints.map((point, i) => (
+                <FadeIn key={i} delay={i * 0.1}>
+                  <div className="relative rounded-2xl bg-dark-800 p-8 border-gradient h-full">
+                    <div className="absolute inset-0 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(201,169,110,0.05),transparent_70%)]" />
+                    <div className="relative z-10">
+                      <div className="mb-5 inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold/10 text-gold">
+                        {icons[i]}
+                      </div>
+                      <h3 className="text-lg font-semibold text-white mb-2">
+                        {point.title}
+                      </h3>
+                      <p className="text-sm text-dark-200 leading-relaxed">
+                        {point.description}
+                      </p>
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
-                      {point.title}
-                    </h3>
-                    <p className="text-sm text-dark-200 leading-relaxed">
-                      {point.desc}
-                    </p>
                   </div>
-                </div>
-              </FadeIn>
-            ))}
+                </FadeIn>
+              ));
+            })()}
           </div>
         </div>
       </section>
 
       <CTASection
-        heading="Let's Work Together"
-        subheading="Text or call for your next project. Quality media, fast turnaround, best prices."
+        heading={ctaHeading}
+        subheading={ctaSubheading}
       />
     </>
   );
