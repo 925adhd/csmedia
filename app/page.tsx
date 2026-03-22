@@ -318,50 +318,75 @@ export default function Home() {
       {/* Testimonials */}
       <section className="py-16 sm:py-28 bg-dark-900 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+        {/* Background glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gold/[0.03] rounded-full blur-3xl" />
 
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
           <FadeIn>
-            <div className="text-center mb-16">
+            <div className="text-center mb-14">
               <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
                 Reviews
               </span>
               <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
                 What Clients Say
               </h2>
+              {/* Star rating */}
+              <div className="mt-4 flex items-center justify-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+                <span className="ml-2 text-sm text-dark-200 font-mono">5.0</span>
+              </div>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {[
               {
                 quote:
                   "We couldn't be happier with a promo video she shot for us! She made it so much fun, can't wait to do another!!!!",
                 name: "Snow Dogs Food Truck",
                 badge: "Recommends CS MEDIA, LLC",
+                service: "Video Production",
               },
               {
                 quote:
                   "OH MY GOSH!!!! I can't even say how amazing she is. She designed my watermark and logo and did absolutely AMAZING!!!!! I 100% recommend her for any design needs you may have.",
                 name: "Jared Clouse - Bary",
                 badge: "Recommends CS MEDIA, LLC",
+                service: "Logo & Design",
               },
             ].map((testimonial, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="relative rounded-2xl bg-dark-700 p-8 border-gradient h-full flex flex-col">
-                  {/* Quote mark */}
-                  <span className="text-gold/20 text-6xl font-serif leading-none absolute top-4 right-6">
+              <FadeIn key={i} delay={i * 0.15}>
+                <div className="group relative rounded-2xl bg-dark-800/80 backdrop-blur-sm p-8 sm:p-10 border border-dark-500/30 hover:border-gold/20 transition-all duration-500 h-full flex flex-col">
+                  {/* Large decorative quote */}
+                  <span className="text-gold/10 text-[120px] font-serif leading-none absolute -top-4 -left-2 select-none">
                     &ldquo;
                   </span>
 
-                  <p className="text-dark-100 leading-relaxed relative z-10 flex-1">
+                  {/* Service tag */}
+                  <span className="inline-block self-start rounded-full bg-gold/10 border border-gold/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-gold mb-5 relative z-10">
+                    {testimonial.service}
+                  </span>
+
+                  <p className="text-dark-100 text-lg leading-relaxed relative z-10 flex-1">
                     &ldquo;{testimonial.quote}&rdquo;
                   </p>
-                  <div className="mt-6 pt-6 border-t border-dark-500/30">
-                    <p className="text-sm font-semibold text-white">
-                      {testimonial.name}
-                    </p>
-                    <p className="text-xs text-gold/70 mt-1 font-mono tracking-wider">
-                      {testimonial.badge}
-                    </p>
+
+                  <div className="mt-8 pt-6 border-t border-dark-500/30 flex items-center gap-4">
+                    {/* Avatar placeholder */}
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold/30 to-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
+                      <span className="text-gold font-bold text-sm">{testimonial.name.charAt(0)}</span>
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-white">
+                        {testimonial.name}
+                      </p>
+                      <p className="text-xs text-gold/60 mt-0.5 font-mono tracking-wider">
+                        {testimonial.badge}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </FadeIn>
