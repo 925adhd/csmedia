@@ -17,6 +17,17 @@ export default function PortfolioCard({ project }: { project: PortfolioProject }
         {/* Gold shimmer overlay on hover */}
         <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-gold/10 via-transparent to-transparent" />
 
+        {/* Play icon for video projects */}
+        {project.videoSrc && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-14 h-14 rounded-full bg-dark-900/60 border border-gold/40 flex items-center justify-center backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-gold/20 group-hover:border-gold/70">
+              <svg className="w-5 h-5 text-gold ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        )}
+
         {/* Bottom info */}
         <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
           <span className="inline-block rounded-full bg-gold/90 px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-dark-900 mb-2">

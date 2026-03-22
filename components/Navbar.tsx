@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
@@ -25,17 +26,19 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-dark-900/95 backdrop-blur-md border-b border-dark-500/50"
-          : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-dark-900/95 backdrop-blur-md border-b border-dark-500/50"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="text-2xl font-bold tracking-tight">
-            <span className="text-white">CS</span>
-            <span className="text-gold">Media</span>
+          <Link href="/" className="relative w-16 h-12">
+            <Image
+              src="/images/logo.png"
+              alt="CS Media"
+              fill
+              className="object-contain"
+              sizes="64px"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -81,7 +84,7 @@ export default function Navbar() {
 
       {/* Mobile menu — full screen overlay */}
       {mobileOpen && (
-        <div className="md:hidden fixed inset-0 top-20 bg-dark-900/98 backdrop-blur-md z-40">
+        <div className="md:hidden fixed left-0 right-0 top-20 bottom-0 bg-dark-900 z-40 overflow-y-auto">
           <div className="border-t border-gold/10" />
           <div className="flex flex-col gap-6 px-8 py-10">
             {navLinks.map((link) => (

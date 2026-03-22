@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,9 +8,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href="/" className="text-2xl font-bold tracking-tight">
-              <span className="text-white">CS</span>
-              <span className="text-gold">Media</span>
+            <Link href="/" className="relative inline-block w-20 h-14">
+              <Image
+                src="/images/logo.png"
+                alt="CS Media"
+                fill
+                className="object-contain"
+                sizes="80px"
+              />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-dark-200">
               Elevated real estate media. Professional drone photography, video,
@@ -42,8 +48,8 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="mailto:hello@csmedia.com" className="text-dark-200 hover:text-gold transition-colors">
-                  hello@csmedia.com
+                <a href="mailto:cscreatesmediallc@gmail.com" className="text-dark-200 hover:text-gold transition-colors">
+                  cscreatesmediallc@gmail.com
                 </a>
               </li>
               <li>

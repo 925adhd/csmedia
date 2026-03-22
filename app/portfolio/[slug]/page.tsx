@@ -37,6 +37,8 @@ export default async function ProjectPage({
   const project = getProjectBySlug(slug);
   if (!project) notFound();
 
+  const isVideo = !!project.videoSrc;
+
   return (
     <>
       {/* Hero */}
@@ -90,10 +92,32 @@ export default async function ProjectPage({
         </div>
       </section>
 
-      {/* Image Gallery */}
+      {/* Featured Video */}
+      {isVideo && (
+        <section className="pb-8 bg-dark-800">
+          <div className="mx-auto max-w-4xl px-6 lg:px-8">
+            <FadeIn>
+              <div className="relative rounded-2xl overflow-hidden border border-dark-500/30 bg-dark-900 shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster={project.heroImage}
+                  className="w-full aspect-[9/16] max-h-[70vh] mx-auto bg-black"
+                >
+                  <source src={project.videoSrc} type="video/mp4" />
+                </video>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+      )}
+
+      {/* Image Gallery — hide for video projects with only 1 image */}
+      {!(isVideo && project.images.length <= 1) && (
       <section className="py-16 bg-dark-800">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className={`grid gap-4 ${isVideo ? "grid-cols-2 md:grid-cols-3" : "grid-cols-1 md:grid-cols-2"}`}>
             {project.images.map((src, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-dark-500/30">
@@ -111,34 +135,12 @@ export default async function ProjectPage({
           </div>
         </div>
       </section>
-
-      {/* Video Embed */}
-      {project.videoUrl && (
-        <section className="pb-24 bg-dark-800">
-          <div className="mx-auto max-w-4xl px-6 lg:px-8">
-            <FadeIn>
-              <h2 className="text-2xl font-bold text-white mb-6">
-                Video Walkthrough
-              </h2>
-              <div className="aspect-video rounded-xl overflow-hidden bg-dark-700 border border-dark-500/30">
-                <iframe
-                  src={project.videoUrl}
-                  title={`${project.title} video walkthrough`}
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </div>
-            </FadeIn>
-          </div>
-        </section>
       )}
 
       <CTASection
-        heading="Want Similar Results?"
-        subheading="Let's capture your property with the same cinematic quality."
-        buttonText="Book Similar Shoot"
+        heading={isVideo ? "Need a Video Like This?" : "Want Similar Results?"}
+        subheading={isVideo ? "Professional video production with cinematic editing, music, and color grading." : "Let's capture your property with the same cinematic quality."}
+        buttonText={isVideo ? "Book a Video Shoot" : "Book Similar Shoot"}
       />
     </>
   );

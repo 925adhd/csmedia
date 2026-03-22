@@ -5,7 +5,7 @@ import ServiceCard from "@/components/ServiceCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import BeforeAfter from "@/components/BeforeAfter";
 import CTASection from "@/components/CTASection";
-import { getFeaturedProjects } from "@/lib/portfolio";
+import { portfolioProjects } from "@/lib/portfolio";
 
 function DroneIcon() {
   return (
@@ -49,7 +49,6 @@ function StagingIcon() {
 }
 
 export default function Home() {
-  const featured = getFeaturedProjects();
 
   return (
     <>
@@ -196,34 +195,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </section>
 
-      {/* Image showcase strip */}
-      <section className="bg-dark-900 py-4">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
-            {[
-              { src: "/images/aerialhome1.jpg", alt: "Aerial estate photography" },
-              { src: "/images/interior1.jpg", alt: "Interior bathroom photography" },
-              { src: "/images/nighthome.jpg", alt: "Twilight real estate photography" },
-              { src: "/images/interior2.jpg", alt: "Interior kitchen photography" },
-              { src: "/images/home2.jpg", alt: "Modern farmhouse photography" },
-              { src: "/images/drone.jpg", alt: "CS Media drone pilot in action" },
-            ].map((img, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="relative aspect-[3/2] rounded-xl overflow-hidden">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-700"
-                    sizes="(max-width: 768px) 33vw, 17vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-900/40 to-transparent" />
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Virtual Staging Before/After */}
       <section className="py-16 sm:py-28 bg-dark-800 relative overflow-hidden">
@@ -289,7 +261,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </section>
 
-      {/* Featured Portfolio */}
+      {/* Recent Work — mixed photo & video teaser */}
       <section className="py-16 sm:py-28 bg-dark-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
@@ -313,93 +285,28 @@ export default function Home() {
               </Link>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featured.map((project, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {portfolioProjects.filter((p) => p.propertyType !== "video").slice(0, 2).map((project, i) => (
               <FadeIn key={project.slug} delay={i * 0.1}>
                 <PortfolioCard project={project} />
               </FadeIn>
             ))}
+            <FadeIn delay={0.3}>
+              <PortfolioCard project={portfolioProjects.find((p) => p.slug === "drone-property-tour")!} />
+            </FadeIn>
           </div>
-          <div className="mt-10 text-center sm:hidden">
+          <div className="mt-10 text-center">
             <Link
               href="/portfolio"
-              className="text-sm font-medium text-dark-200 hover:text-gold transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-medium text-dark-200 hover:text-gold transition-colors group"
             >
-              View All Projects &rarr;
+              View Full Portfolio
+              <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+              </svg>
             </Link>
           </div>
         </div>
-      </section>
-
-      {/* Video Reel */}
-      <section className="py-16 sm:py-28 bg-dark-800 relative overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
-
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center mb-14">
-              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                Video Work
-              </span>
-              <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
-                See It in <span className="text-gold">Motion</span>
-              </h2>
-            </div>
-          </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <FadeIn>
-              <div className="relative rounded-xl overflow-hidden border border-dark-500/30 bg-dark-700">
-                <video
-                  controls
-                  playsInline
-                  preload="metadata"
-                  poster="/images/aerialhome1.jpg"
-                  className="w-full aspect-[9/16]"
-                >
-                  <source src="/videos/dronehousevid.mp4" type="video/mp4" />
-                </video>
-                <div className="p-4">
-                  <h3 className="text-sm font-semibold text-white">Property Tour</h3>
-                  <p className="text-xs text-dark-300 mt-1">Property tours with aerial drone footage</p>
-                </div>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.1}>
-              <div className="relative rounded-xl overflow-hidden border border-dark-500/30 bg-dark-700">
-                <video
-                  controls
-                  playsInline
-                  preload="metadata"
-                  className="w-full aspect-[9/16]"
-                >
-                  <source src="/videos/truckpromo.mp4" type="video/mp4" />
-                </video>
-                <div className="p-4">
-                  <h3 className="text-sm font-semibold text-white">Business Promo Video</h3>
-                  <p className="text-xs text-dark-300 mt-1">Promotional video for Dan Powers</p>
-                </div>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <div className="relative rounded-xl overflow-hidden border border-dark-500/30 bg-dark-700">
-                <video
-                  controls
-                  playsInline
-                  preload="metadata"
-                  className="w-full aspect-[9/16]"
-                >
-                  <source src="/videos/towneventsexample.mp4" type="video/mp4" />
-                </video>
-                <div className="p-4">
-                  <h3 className="text-sm font-semibold text-white">Town Events Coverage</h3>
-                  <p className="text-xs text-dark-300 mt-1">Local event highlights and recap</p>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </section>
 
       {/* Testimonials */}

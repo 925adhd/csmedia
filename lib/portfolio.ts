@@ -1,12 +1,12 @@
 export interface PortfolioProject {
   slug: string;
   title: string;
-  propertyType: "residential" | "commercial" | "land";
+  propertyType: "residential" | "commercial" | "land" | "video";
   location: string;
   description: string;
   heroImage: string;
   images: string[];
-  videoUrl?: string;
+  videoSrc?: string;
   featured: boolean;
 }
 
@@ -21,9 +21,6 @@ export const portfolioProjects: PortfolioProject[] = [
     heroImage: "/images/aerialhome1.jpg",
     images: [
       "/images/aerialhome1.jpg",
-      "/images/interior1.jpg",
-      "/images/interior2.jpg",
-      "/images/nighthome.jpg",
     ],
     featured: true,
   },
@@ -54,7 +51,6 @@ export const portfolioProjects: PortfolioProject[] = [
     images: [
       "/images/home3.jpg",
       "/images/home2.jpg",
-      "/images/aerialhome1.jpg",
     ],
     featured: true,
   },
@@ -68,10 +64,43 @@ export const portfolioProjects: PortfolioProject[] = [
     heroImage: "/images/nighthome.jpg",
     images: [
       "/images/nighthome.jpg",
-      "/images/home2.jpg",
-      "/images/home3.jpg",
-      "/images/aerialhome1.jpg",
     ],
+    featured: false,
+  },
+  {
+    slug: "drone-property-tour",
+    title: "Drone Property Tour",
+    propertyType: "video",
+    location: "Kentucky",
+    description:
+      "A cinematic aerial property tour showcasing a home and its surrounding landscape from above. Smooth drone footage captures the full scope of the property, giving potential buyers an immersive experience before ever stepping foot on site.",
+    heroImage: "/images/drone.jpg",
+    images: ["/images/drone.jpg"],
+    videoSrc: "/videos/dronehousevid.mp4",
+    featured: false,
+  },
+  {
+    slug: "car-dealership-promo",
+    title: "Local Car Dealership Promo",
+    propertyType: "video",
+    location: "Kentucky",
+    description:
+      "A high-energy promotional video for a local car dealership, capturing the brand's personality and inventory. Fast cuts, vibrant color grading, and a custom soundtrack bring the business to life in under 60 seconds.",
+    heroImage: "/images/truck.png",
+    images: ["/images/truck.png"],
+    videoSrc: "/videos/truckpromo.mp4",
+    featured: false,
+  },
+  {
+    slug: "town-events-coverage",
+    title: "Town Events Highlights",
+    propertyType: "video",
+    location: "Kentucky",
+    description:
+      "Dynamic event coverage capturing the energy and atmosphere of local community events. Edited with cinematic transitions, music, and color grading to deliver a polished recap that event organizers can use for marketing and social media.",
+    heroImage: "/images/town.png",
+    images: ["/images/town.png"],
+    videoSrc: "/videos/towneventsexample.mp4",
     featured: false,
   },
 ];

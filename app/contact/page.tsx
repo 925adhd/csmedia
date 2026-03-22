@@ -3,6 +3,9 @@
 import { useState } from "react";
 import FadeIn from "@/components/FadeIn";
 
+// TODO: Replace with your real Web3Forms access key
+const WEB3FORMS_KEY = "YOUR_ACCESS_KEY_HERE";
+
 const services = [
   "Photography",
   "Videography",
@@ -14,10 +17,33 @@ const services = [
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError(false);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data,
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -66,6 +92,14 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Web3Forms hidden fields */}
+                    <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+                    <input type="hidden" name="subject" value="New Booking Inquiry — CS Media Website" />
+                    <input type="hidden" name="from_name" value="CS Media Website" />
+                    <input type="hidden" name="replyto" value="" />
+                    {/* Honeypot spam protection */}
+                    <input type="checkbox" name="botcheck" className="hidden" />
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-2">
@@ -154,11 +188,18 @@ export default function ContactPage() {
                       />
                     </div>
 
+                    {error && (
+                      <p className="text-red-400 text-sm">
+                        Something went wrong. Please try again or text us directly.
+                      </p>
+                    )}
+
                     <button
                       type="submit"
-                      className="w-full sm:w-auto border-gradient rounded-full bg-gold/10 px-10 py-4 text-sm font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20"
+                      disabled={submitting}
+                      className="w-full sm:w-auto border-gradient rounded-full bg-gold/10 px-10 py-4 text-sm font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Send Message
+                      {submitting ? "Sending..." : "Send Message"}
                     </button>
                   </form>
                 )}
@@ -185,10 +226,10 @@ export default function ContactPage() {
                       Email
                     </h3>
                     <a
-                      href="mailto:hello@csmedia.com"
+                      href="mailto:cscreatesmediallc@gmail.com"
                       className="text-dark-100 hover:text-gold transition-colors"
                     >
-                      hello@csmedia.com
+                      cscreatesmediallc@gmail.com
                     </a>
                   </div>
                   <div>

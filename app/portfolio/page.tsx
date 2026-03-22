@@ -7,10 +7,13 @@ import { portfolioProjects } from "@/lib/portfolio";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Browse our real estate drone photography and video portfolio. Residential, commercial, and land properties captured from above.",
+    "Browse our real estate drone photography, video, and editing portfolio. Residential, commercial, and promotional projects.",
 };
 
 export default function PortfolioPage() {
+  const photoProjects = portfolioProjects.filter((p) => p.propertyType !== "video");
+  const videoProjects = portfolioProjects.filter((p) => p.propertyType === "video");
+
   return (
     <>
       {/* Header */}
@@ -32,12 +35,41 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Grid */}
+      {/* Photo Projects */}
       <section className="py-16 sm:py-24 bg-dark-800">
         <div className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <FadeIn>
+            <div className="flex items-center gap-3 mb-10">
+              <span className="h-px w-8 bg-gold/60" />
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                Photography &amp; Drone
+              </span>
+            </div>
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {photoProjects.map((project, i) => (
+              <FadeIn key={project.slug} delay={i * 0.05}>
+                <PortfolioCard project={project} />
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Video Projects */}
+      <section className="py-16 sm:py-24 bg-dark-900">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <FadeIn>
+            <div className="flex items-center gap-3 mb-10">
+              <span className="h-px w-8 bg-gold/60" />
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                Video Production
+              </span>
+            </div>
+          </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {portfolioProjects.map((project, i) => (
+            {videoProjects.map((project, i) => (
               <FadeIn key={project.slug} delay={i * 0.05}>
                 <PortfolioCard project={project} />
               </FadeIn>
