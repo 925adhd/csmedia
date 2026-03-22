@@ -22,13 +22,13 @@ export default function PortfolioPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <FadeIn>
             <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-              Our Work
+              My Work
             </span>
             <h1 className="mt-3 text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
               Portfolio
             </h1>
             <p className="mt-4 text-base sm:text-lg text-dark-200 max-w-2xl mx-auto">
-              Every property tells a story. We capture it from angles that make
+              Every property tells a story. I capture it from angles that make
               buyers take notice.
             </p>
           </FadeIn>
