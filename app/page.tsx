@@ -137,8 +137,9 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent" />
       </section>
 
+      <div className="flex flex-col">
       {/* Services Preview */}
-      <section className="py-16 sm:py-28 bg-dark-800 relative overflow-hidden">
+      <section className="py-16 sm:py-28 bg-dark-800 relative overflow-hidden order-3 md:order-1">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -198,7 +199,7 @@ export default function Home() {
 
 
       {/* Virtual Staging Before/After */}
-      <section className="py-16 sm:py-28 bg-dark-800 relative overflow-hidden">
+      <section className="py-16 sm:py-28 bg-dark-800 relative overflow-hidden order-2 md:order-2">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -262,7 +263,7 @@ export default function Home() {
       </section>
 
       {/* Recent Work — mixed photo & video teaser */}
-      <section className="py-16 sm:py-28 bg-dark-900">
+      <section className="py-16 sm:py-28 bg-dark-900 order-1 md:order-3">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="flex items-end justify-between mb-14">
@@ -311,6 +312,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      </div>
 
       {/* Testimonials */}
       <section className="py-16 sm:py-28 bg-dark-900 relative overflow-hidden">
