@@ -38,6 +38,7 @@ export default async function AdminDashboard() {
       </div>
 
       <div className="mt-8">
+        <h2 className="text-lg font-bold text-white mb-3">Account</h2>
         <ChangePassword />
       </div>
     </AdminShell>
