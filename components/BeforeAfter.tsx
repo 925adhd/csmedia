@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 
 interface BeforeAfterProps {
   beforeSrc: string;
@@ -29,48 +29,87 @@ export default function BeforeAfter({
     setPosition(percent);
   }, []);
 
-  const handlePointerDown = useCallback(
-    (e: React.PointerEvent) => {
+  // Use native touch events for smooth mobile dragging
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    function onTouchStart(e: TouchEvent) {
       dragging.current = true;
-      (e.target as HTMLElement).setPointerCapture(e.pointerId);
+      const touch = e.touches[0];
+      updatePosition(touch.clientX);
+    }
+
+    function onTouchMove(e: TouchEvent) {
+      if (!dragging.current) return;
+      e.preventDefault(); // Prevent scroll while dragging
+      const touch = e.touches[0];
+      updatePosition(touch.clientX);
+    }
+
+    function onTouchEnd() {
+      dragging.current = false;
+    }
+
+    container.addEventListener("touchstart", onTouchStart, { passive: true });
+    container.addEventListener("touchmove", onTouchMove, { passive: false });
+    container.addEventListener("touchend", onTouchEnd);
+
+    return () => {
+      container.removeEventListener("touchstart", onTouchStart);
+      container.removeEventListener("touchmove", onTouchMove);
+      container.removeEventListener("touchend", onTouchEnd);
+    };
+  }, [updatePosition]);
+
+  // Mouse events for desktop
+  const handleMouseDown = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault();
+      dragging.current = true;
       updatePosition(e.clientX);
     },
     [updatePosition]
   );
 
-  const handlePointerMove = useCallback(
-    (e: React.PointerEvent) => {
+  useEffect(() => {
+    function onMouseMove(e: MouseEvent) {
       if (!dragging.current) return;
       updatePosition(e.clientX);
-    },
-    [updatePosition]
-  );
+    }
 
-  const handlePointerUp = useCallback(() => {
-    dragging.current = false;
-  }, []);
+    function onMouseUp() {
+      dragging.current = false;
+    }
+
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mouseup", onMouseUp);
+
+    return () => {
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseup", onMouseUp);
+    };
+  }, [updatePosition]);
 
   return (
     <div
       ref={containerRef}
-      className="relative aspect-[4/3] rounded-xl overflow-hidden cursor-col-resize select-none border border-dark-500/30"
-      onPointerDown={handlePointerDown}
-      onPointerMove={handlePointerMove}
-      onPointerUp={handlePointerUp}
+      className="relative aspect-[4/3] rounded-xl overflow-hidden cursor-col-resize select-none border border-dark-500/30 touch-none"
+      onMouseDown={handleMouseDown}
     >
       {/* After image (full background) */}
       <Image
         src={afterSrc}
         alt={afterAlt}
         fill
-        className="object-cover"
+        className="object-cover pointer-events-none"
         sizes="(max-width: 768px) 100vw, 50vw"
         draggable={false}
       />
 
       {/* Before image (clipped via clip-path) */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
       >
         <Image
@@ -85,22 +124,22 @@ export default function BeforeAfter({
 
       {/* Slider line */}
       <div
-        className="absolute top-0 bottom-0 w-0.5 bg-gold z-10"
+        className="absolute top-0 bottom-0 w-0.5 bg-gold z-10 pointer-events-none"
         style={{ left: `${position}%`, transform: "translateX(-50%)" }}
       >
         {/* Handle */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-dark-900/80 border-2 border-gold flex items-center justify-center backdrop-blur-sm">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-dark-900/80 border-2 border-gold flex items-center justify-center backdrop-blur-sm">
           <svg className="w-5 h-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M8 9l4-4 4 4M16 15l-4 4-4-4" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7M9 19l7-7-7-7" />
           </svg>
         </div>
       </div>
 
       {/* Labels */}
-      <div className="absolute top-4 left-4 z-20 rounded-full bg-dark-900/70 backdrop-blur-sm px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white border border-dark-500/30">
+      <div className="absolute top-4 left-4 z-20 rounded-full bg-dark-900/70 backdrop-blur-sm px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white border border-dark-500/30 pointer-events-none">
         Before
       </div>
-      <div className="absolute top-4 right-4 z-20 rounded-full bg-gold/90 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-dark-900">
+      <div className="absolute top-4 right-4 z-20 rounded-full bg-gold/90 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-dark-900 pointer-events-none">
         After
       </div>
     </div>

@@ -1,33 +1,33 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# csmedia
+
+A modern, high-performance portfolio website for a solo drone media freelancer specializing in real estate photography and video. Built with Next.js (App Router), TypeScript, and Tailwind CSS.
+
+## Features
+- Clean, minimal, luxury real estate aesthetic
+- Mobile-first, SEO-optimized, and Vercel-friendly
+- Dynamic portfolio system
+- Reusable components (Navbar, Footer, PortfolioCard, ServiceCard, CTASection)
+- Animations and smooth hover effects
+- Contact/Booking form
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## File Structure
+- `/app` — App Router pages
+- `/components` — Reusable UI components
+- `/lib` — Data and utilities
+- `/public` — Images and videos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Replace all placeholder images/videos with your own media for best results.
 
 ## Deploy on Vercel
 
