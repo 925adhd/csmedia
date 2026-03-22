@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 };
 
 export default function PortfolioPage() {
-  const photoProjects = portfolioProjects.filter((p) => p.propertyType !== "video");
-  const videoProjects = portfolioProjects.filter((p) => p.propertyType === "video");
+  const photoProjects = portfolioProjects.filter((p) => !p.videoSrc);
+  const videoProjects = portfolioProjects.filter((p) => !!p.videoSrc);
 
   return (
     <>

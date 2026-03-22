@@ -287,7 +287,7 @@ export default function Home() {
             </div>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {portfolioProjects.filter((p) => p.propertyType !== "video").slice(0, 2).map((project, i) => (
+            {portfolioProjects.filter((p) => !p.videoSrc).slice(0, 2).map((project, i) => (
               <FadeIn key={project.slug} delay={i * 0.1}>
                 <PortfolioCard project={project} />
               </FadeIn>

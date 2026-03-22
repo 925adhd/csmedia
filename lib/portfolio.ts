@@ -1,12 +1,13 @@
 export interface PortfolioProject {
   slug: string;
   title: string;
-  propertyType: "residential" | "commercial" | "land" | "video";
+  propertyType: "residential" | "commercial" | "land" | "video" | "aerial" | "promo" | "event";
   location: string;
   description: string;
   heroImage: string;
   images: string[];
   videoSrc?: string;
+  mobileVideoSrc?: string;
   featured: boolean;
 }
 
@@ -21,6 +22,9 @@ export const portfolioProjects: PortfolioProject[] = [
     heroImage: "/images/aerialhome1.jpg",
     images: [
       "/images/aerialhome1.jpg",
+      "/images/stone.jpg",
+      "/images/stoneaireal.jpg",
+      "/images/stoneinterior.jpg",
     ],
     featured: true,
   },
@@ -41,18 +45,20 @@ export const portfolioProjects: PortfolioProject[] = [
     featured: true,
   },
   {
-    slug: "farmhouse-aerial-view",
-    title: "Farmhouse Aerial View",
-    propertyType: "land",
+    slug: "country-home-acreage",
+    title: "Country Home on Acreage",
+    propertyType: "residential",
     location: "Kentucky",
     description:
-      "Aerial drone photography revealing the full layout of this farmhouse property with outbuildings and surrounding acreage. The elevated perspective gives buyers a complete understanding of the land and structures.",
-    heroImage: "/images/home3.jpg",
+      "A charming country home on open acreage featuring a covered pavilion, wraparound porch, and beautifully finished interiors. Aerial drone photography captures the full property layout while interior shots showcase the living spaces and loft.",
+    heroImage: "/images/home5.jpg",
     images: [
-      "/images/home3.jpg",
-      "/images/home2.jpg",
+      "/images/home5.jpg",
+      "/images/porch.jpg",
+      "/images/interior3.jpg",
+      "/images/interior4.jpg",
     ],
-    featured: true,
+    featured: false,
   },
   {
     slug: "twilight-showcase",
@@ -64,28 +70,30 @@ export const portfolioProjects: PortfolioProject[] = [
     heroImage: "/images/nighthome.jpg",
     images: [
       "/images/nighthome.jpg",
+      "/images/twilight1.jpg",
     ],
     featured: false,
   },
   {
     slug: "drone-property-tour",
     title: "Drone Property Tour",
-    propertyType: "video",
+    propertyType: "aerial",
     location: "Kentucky",
     description:
       "A cinematic aerial property tour showcasing a home and its surrounding landscape from above. Smooth drone footage captures the full scope of the property, giving potential buyers an immersive experience before ever stepping foot on site.",
     heroImage: "/images/drone.jpg",
     images: ["/images/drone.jpg"],
-    videoSrc: "/videos/dronehousevid.mp4",
+    videoSrc: "/videos/desktop.mp4",
+    mobileVideoSrc: "/videos/mobilevid.mp4",
     featured: false,
   },
   {
-    slug: "car-dealership-promo",
-    title: "Local Car Dealership Promo",
-    propertyType: "video",
+    slug: "local-business-promo",
+    title: "Local Business Promo",
+    propertyType: "promo",
     location: "Kentucky",
     description:
-      "A high-energy promotional video for a local car dealership, capturing the brand's personality and inventory. Fast cuts, vibrant color grading, and a custom soundtrack bring the business to life in under 60 seconds.",
+      "A high-energy promotional video for a local business, capturing the brand's personality and energy. Fast cuts, vibrant color grading, and a custom soundtrack bring the business to life in under 60 seconds.",
     heroImage: "/images/truck.png",
     images: ["/images/truck.png"],
     videoSrc: "/videos/truckpromo.mp4",
@@ -94,7 +102,7 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     slug: "town-events-coverage",
     title: "Town Events Highlights",
-    propertyType: "video",
+    propertyType: "event",
     location: "Kentucky",
     description:
       "Dynamic event coverage capturing the energy and atmosphere of local community events. Edited with cinematic transitions, music, and color grading to deliver a polished recap that event organizers can use for marketing and social media.",

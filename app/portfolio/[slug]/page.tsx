@@ -83,16 +83,33 @@ export default async function ProjectPage({
         <section className="pt-8 pb-4 bg-dark-800">
           <div className="mx-auto max-w-4xl px-6 lg:px-8">
             <FadeIn>
-              <div className="relative rounded-2xl overflow-hidden border border-dark-500/30 bg-dark-900 shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
-                <video
-                  controls
-                  playsInline
-                  preload="metadata"
-                  poster={project.heroImage}
-                  className="w-full aspect-[9/16] max-h-[70vh] mx-auto bg-black"
-                >
-                  <source src={project.videoSrc} type="video/mp4" />
-                </video>
+              {/* Mobile video */}
+              {project.mobileVideoSrc && (
+                <div className="md:hidden relative rounded-2xl overflow-hidden border border-dark-500/30 bg-dark-900 shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
+                  <video
+                    controls
+                    playsInline
+                    preload="metadata"
+                    poster={project.heroImage}
+                    className="w-full aspect-[9/16] max-h-[70vh] mx-auto bg-black"
+                  >
+                    <source src={project.mobileVideoSrc} type="video/mp4" />
+                  </video>
+                </div>
+              )}
+              {/* Desktop video (also fallback if no mobile version) */}
+              <div className={project.mobileVideoSrc ? "hidden md:block" : ""}>
+                <div className="relative rounded-2xl overflow-hidden border border-dark-500/30 bg-dark-900 shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
+                  <video
+                    controls
+                    playsInline
+                    preload="metadata"
+                    poster={project.heroImage}
+                    className="w-full aspect-[9/16] max-h-[70vh] mx-auto bg-black"
+                  >
+                    <source src={project.videoSrc} type="video/mp4" />
+                  </video>
+                </div>
               </div>
             </FadeIn>
           </div>
