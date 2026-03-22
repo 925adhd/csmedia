@@ -42,7 +42,7 @@ export default async function ProjectPage({
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-dark-900 py-20 sm:py-36 overflow-hidden">
+      <section className="relative bg-dark-900 py-10 sm:py-20 overflow-hidden">
         <Image
           src={project.heroImage}
           alt={project.title}
@@ -62,29 +62,15 @@ export default async function ProjectPage({
               </svg>
               Back to Portfolio
             </Link>
-            <div className="mt-8">
-              <span className="inline-block rounded-full bg-gold/20 border border-gold/30 px-4 py-1 text-[11px] font-bold uppercase tracking-widest text-gold mb-5">
+            <div className="mt-4 sm:mt-8">
+              <span className="inline-block rounded-full bg-gold/20 border border-gold/30 px-4 py-1 text-[11px] font-bold uppercase tracking-widest text-gold mb-3 sm:mb-5">
                 {project.propertyType}
               </span>
               <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
                 {project.title}
               </h1>
-              <p className="mt-3 text-lg text-dark-200 font-mono">{project.location}</p>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Details */}
-      <section className="py-16 bg-dark-800">
-        <div className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <FadeIn>
-            <div className="max-w-3xl">
-              <h2 className="text-2xl font-bold text-white mb-4">
-                About This Project
-              </h2>
-              <p className="text-dark-200 leading-relaxed text-lg">
+              <p className="mt-2 sm:mt-3 text-lg text-dark-200 font-mono">{project.location}</p>
+              <p className="mt-4 text-dark-200 leading-relaxed max-w-3xl">
                 {project.description}
               </p>
             </div>
@@ -94,7 +80,7 @@ export default async function ProjectPage({
 
       {/* Featured Video */}
       {isVideo && (
-        <section className="pb-8 bg-dark-800">
+        <section className="pt-8 pb-4 bg-dark-800">
           <div className="mx-auto max-w-4xl px-6 lg:px-8">
             <FadeIn>
               <div className="relative rounded-2xl overflow-hidden border border-dark-500/30 bg-dark-900 shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
