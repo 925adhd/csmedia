@@ -36,6 +36,7 @@ export default function ContactPage() {
 
       if (res.ok) {
         setSubmitted(true);
+        window.scrollTo({ top: 0 });
       } else {
         setError(true);
       }
