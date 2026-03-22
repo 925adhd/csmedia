@@ -33,7 +33,7 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-dark-900 px-4">
+    <div className="min-h-screen flex items-start justify-center bg-dark-900 px-4 pt-24">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold text-white">CS Media Admin</h1>
