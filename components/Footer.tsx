@@ -1,0 +1,69 @@
+import Link from "next/link";
+
+export default function Footer() {
+  return (
+    <footer className="bg-dark-900 border-t border-dark-500/30">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          {/* Brand */}
+          <div className="md:col-span-2">
+            <Link href="/" className="text-2xl font-bold tracking-tight">
+              <span className="text-white">CS</span>
+              <span className="text-gold">Media</span>
+            </Link>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-dark-200">
+              Elevated real estate media. Professional drone photography, video,
+              and editing services for agents and property owners.
+            </p>
+            <div className="mt-6 flex items-center gap-2 text-gold text-sm font-mono tracking-wider">
+              <span className="inline-block w-8 h-px bg-gold/50" />
+              LICENSED TO DRONE
+            </div>
+          </div>
+
+          {/* Links */}
+          <div>
+            <h3 className="text-xs font-semibold text-gold uppercase tracking-widest mb-4">
+              Navigation
+            </h3>
+            <ul className="space-y-2.5 text-sm">
+              <li><Link href="/" className="text-dark-200 hover:text-gold transition-colors">Home</Link></li>
+              <li><Link href="/portfolio" className="text-dark-200 hover:text-gold transition-colors">Portfolio</Link></li>
+              <li><Link href="/services" className="text-dark-200 hover:text-gold transition-colors">Services</Link></li>
+              <li><Link href="/about" className="text-dark-200 hover:text-gold transition-colors">About</Link></li>
+              <li><Link href="/contact" className="text-dark-200 hover:text-gold transition-colors">Contact</Link></li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="text-xs font-semibold text-gold uppercase tracking-widest mb-4">
+              Contact
+            </h3>
+            <ul className="space-y-2.5 text-sm">
+              <li>
+                <a href="mailto:hello@csmedia.com" className="text-dark-200 hover:text-gold transition-colors">
+                  hello@csmedia.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+12703070173" className="text-dark-200 hover:text-gold transition-colors font-mono">
+                  270.307.0173
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-dark-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-dark-300">
+            &copy; {new Date().getFullYear()} CS Media. All rights reserved.
+          </p>
+          <p className="text-xs text-dark-300 font-mono tracking-wider">
+            FAA Part 107 Certified
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
