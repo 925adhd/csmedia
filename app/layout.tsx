@@ -48,14 +48,9 @@ export default function RootLayout({
     >
       <body className="min-h-screen flex flex-col bg-dark-900 text-white">
         <EditModeProvider>
-          <div className="fixed top-0 left-0 right-0 z-[60] bg-dark-900/95 backdrop-blur-sm border-b border-gold/20 py-1.5 px-4 text-center">
-            <p className="text-[11px] text-dark-200">
-              Demo website created by <a href="https://studio925.design" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-gold-light font-semibold transition-colors">Studio 925</a> — not affiliated with or authorized by CS Media, LLC
-            </p>
-          </div>
           <GoogleAnalytics />
           <Navbar />
-          <main className="flex-1 pt-[calc(4rem+28px)]">{children}</main>
+          <main className="flex-1 pt-16">{children}</main>
           <Footer />
           <CookieNotice />
           <EditToggle />
