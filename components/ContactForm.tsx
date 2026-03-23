@@ -3,8 +3,7 @@
 import { useState } from "react";
 import FadeIn from "@/components/FadeIn";
 
-// TODO: Replace with your real Web3Forms access key
-const WEB3FORMS_KEY = "YOUR_ACCESS_KEY_HERE";
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
 
 interface ContactFormProps {
   services: string[];
