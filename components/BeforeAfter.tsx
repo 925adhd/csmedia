@@ -17,6 +17,7 @@ export default function BeforeAfter({
   afterAlt = "After",
 }: BeforeAfterProps) {
   const [position, setPosition] = useState(50);
+  const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
 
@@ -36,6 +37,7 @@ export default function BeforeAfter({
 
     function onTouchStart(e: TouchEvent) {
       dragging.current = true;
+      setIsDragging(true);
       const touch = e.touches[0];
       updatePosition(touch.clientX);
     }
@@ -49,6 +51,7 @@ export default function BeforeAfter({
 
     function onTouchEnd() {
       dragging.current = false;
+      setIsDragging(false);
     }
 
     container.addEventListener("touchstart", onTouchStart, { passive: true });
@@ -67,6 +70,7 @@ export default function BeforeAfter({
     (e: React.MouseEvent) => {
       e.preventDefault();
       dragging.current = true;
+      setIsDragging(true);
       updatePosition(e.clientX);
     },
     [updatePosition]
@@ -80,6 +84,7 @@ export default function BeforeAfter({
 
     function onMouseUp() {
       dragging.current = false;
+      setIsDragging(false);
     }
 
     window.addEventListener("mousemove", onMouseMove);
@@ -135,11 +140,23 @@ export default function BeforeAfter({
         </div>
       </div>
 
-      {/* Labels */}
-      <div className="absolute top-4 left-4 z-20 rounded-full bg-dark-900/70 backdrop-blur-sm px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white border border-dark-500/30 pointer-events-none">
+      {/* Labels — fade out after 2s */}
+      <div
+        className="absolute top-4 left-4 z-20 rounded-full bg-dark-900/70 backdrop-blur-sm px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white border border-dark-500/30 pointer-events-none"
+        style={{
+          opacity: isDragging && position < 50 ? 0 : 1,
+          transition: isDragging && position < 50 ? "opacity 0.5s" : "opacity 0.05s",
+        }}
+      >
         Before
       </div>
-      <div className="absolute top-4 right-4 z-20 rounded-full bg-gold/90 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-dark-900 pointer-events-none">
+      <div
+        className="absolute top-4 right-4 z-20 rounded-full bg-gold/90 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-dark-900 pointer-events-none"
+        style={{
+          opacity: isDragging && position > 50 ? 0 : 1,
+          transition: isDragging && position > 50 ? "opacity 0.5s" : "opacity 0.05s",
+        }}
+      >
         After
       </div>
     </div>
