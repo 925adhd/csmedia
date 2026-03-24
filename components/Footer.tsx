@@ -32,12 +32,12 @@ export default function Footer() {
             <h3 className="text-xs font-semibold text-gold uppercase tracking-widest mb-4">
               Navigation
             </h3>
-            <ul className="space-y-2.5 text-sm">
-              <li><Link href="/" className="text-dark-200 hover:text-gold transition-colors">Home</Link></li>
-              <li><Link href="/portfolio" className="text-dark-200 hover:text-gold transition-colors">Portfolio</Link></li>
-              <li><Link href="/services" className="text-dark-200 hover:text-gold transition-colors">Services</Link></li>
-              <li><Link href="/about" className="text-dark-200 hover:text-gold transition-colors">About</Link></li>
-              <li><Link href="/contact" className="text-dark-200 hover:text-gold transition-colors">Contact</Link></li>
+            <ul className="space-y-1 text-sm">
+              <li><Link href="/" className="inline-block py-1.5 text-dark-200 hover:text-gold transition-colors">Home</Link></li>
+              <li><Link href="/portfolio" className="inline-block py-1.5 text-dark-200 hover:text-gold transition-colors">Portfolio</Link></li>
+              <li><Link href="/services" className="inline-block py-1.5 text-dark-200 hover:text-gold transition-colors">Services</Link></li>
+              <li><Link href="/about" className="inline-block py-1.5 text-dark-200 hover:text-gold transition-colors">About</Link></li>
+              <li><Link href="/contact" className="inline-block py-1.5 text-dark-200 hover:text-gold transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -46,14 +46,14 @@ export default function Footer() {
             <h3 className="text-xs font-semibold text-gold uppercase tracking-widest mb-4">
               Contact
             </h3>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-1 text-sm">
               <li>
-                <a href="mailto:cscreatesmediallc@gmail.com" className="text-dark-200 hover:text-gold transition-colors">
+                <a href="mailto:cscreatesmediallc@gmail.com" className="inline-block py-1.5 text-dark-200 hover:text-gold transition-colors">
                   cscreatesmediallc@gmail.com
                 </a>
               </li>
               <li>
-                <a href="tel:+12703070173" className="text-dark-200 hover:text-gold transition-colors font-mono">
+                <a href="tel:+12703070173" className="inline-block py-1.5 text-dark-200 hover:text-gold transition-colors font-mono">
                   270.307.0173
                 </a>
               </li>
