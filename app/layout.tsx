@@ -17,7 +17,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "CS Media | Elevated Real Estate Media",
     template: "%s | CS Media",
@@ -30,6 +33,23 @@ export const metadata: Metadata = {
       "Professional drone photography, video, and editing services for real estate.",
     type: "website",
     locale: "en_US",
+    url: BASE_URL,
+    siteName: "CS Media",
+    images: [
+      {
+        url: "/images/aerialhome1.jpg",
+        width: 1200,
+        height: 630,
+        alt: "CS Media - Elevated Real Estate Media",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CS Media | Elevated Real Estate Media",
+    description:
+      "Professional drone photography, video, and editing services for real estate.",
+    images: ["/images/aerialhome1.jpg"],
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",

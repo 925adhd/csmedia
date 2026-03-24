@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 import ContactForm from "@/components/ContactForm";
 import { EditableText } from "@/components/inline-edit";
 import { getPageContent } from "@/lib/supabase/queries";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Book a drone photography or videography shoot with CS Media. Get in touch for real estate media services in Kentucky.",
+};
 
 export default async function ContactPage() {
   const [headerContent, sidebarContent, formContent] = await Promise.all([
