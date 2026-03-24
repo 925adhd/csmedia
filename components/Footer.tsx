@@ -75,7 +75,7 @@ export default function Footer() {
             <p className="text-xs text-dark-200 font-mono tracking-wider whitespace-nowrap">
               FAA Part 107 Certified
             </p>
-            <Link href="/admin/login" className="text-xs text-dark-300 hover:text-dark-200 transition-colors whitespace-nowrap">
+            <Link href="/admin/login" className="text-xs text-dark-200 hover:text-gold transition-colors whitespace-nowrap">
               Admin
             </Link>
           </div>
