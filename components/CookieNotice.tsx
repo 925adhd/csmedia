@@ -23,7 +23,7 @@ export default function CookieNotice() {
         <p className="text-sm text-dark-200 text-center sm:text-left">
           This site uses cookies and analytics to improve your experience. By
           continuing to use this site, you agree to our{" "}
-          <a href="/privacy" className="text-gold hover:underline">
+          <a href="/privacy" className="text-gold underline hover:text-gold/80">
             Privacy Policy
           </a>
           .
