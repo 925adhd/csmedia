@@ -89,7 +89,7 @@ export default async function Home() {
           sizes="100vw"
           className="object-cover opacity-30"
           priority
-          quality={75}
+          quality={60}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900/60 via-dark-900/70 to-dark-900" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,169,110,0.08),transparent_70%)]" />
