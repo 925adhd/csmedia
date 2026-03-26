@@ -68,9 +68,11 @@ export default async function ContactPage() {
               </EditableText>
             </h1>
             <p className="mt-5 text-base sm:text-lg text-dark-200 max-w-2xl mx-auto">
-              <EditableText page="contact" section="header" field="subtext" value={subtext}>
-                {subtext}
-              </EditableText>
+              Fill out the form or text{" "}
+              <a href="tel:+12703070173" className="text-gold hover:text-gold-light transition-colors font-mono whitespace-nowrap">
+                (270) 307-0173
+              </a>
+              . I&apos;ll get back to you within 24 hours.
             </p>
           </FadeIn>
         </div>
