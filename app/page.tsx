@@ -160,13 +160,6 @@ export default async function Home() {
               </Link>
             </div>
           </FadeIn>
-          <FadeIn delay={0.4}>
-            <p className="mt-12 text-dark-300 text-sm font-mono tracking-wider">
-              <a href="tel:+12703070173" className="hover:text-gold transition-colors whitespace-nowrap">
-                {(hero?.phone as string) || "(270) 307-0173"}
-              </a>
-            </p>
-          </FadeIn>
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent" />

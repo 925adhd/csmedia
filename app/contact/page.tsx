@@ -20,7 +20,7 @@ export default async function ContactPage() {
   // Header fields
   const tagline = (headerContent?.tagline as string) || "Get in Touch";
   const heading = (headerContent?.heading as string) || "Book a Shoot";
-  const subtext = (headerContent?.subtext as string) || "Fill out the form or text";
+  const subtext = "Fill out the form or text (270) 307-0173. I'll get back to you within 24 hours.";
   const headerPhone = (headerContent?.phone as string) || "(270)\u00a0307-0173";
 
   // Sidebar fields
@@ -70,11 +70,7 @@ export default async function ContactPage() {
             <p className="mt-5 text-base sm:text-lg text-dark-200 max-w-2xl mx-auto">
               <EditableText page="contact" section="header" field="subtext" value={subtext}>
                 {subtext}
-              </EditableText>{" "}
-              <a href="tel:+12703070173" className="text-gold hover:text-gold-light transition-colors font-mono whitespace-nowrap">
-                {headerPhone}
-              </a>{" "}
-              and I&apos;ll get back to you within 24 hours.
+              </EditableText>
             </p>
           </FadeIn>
         </div>

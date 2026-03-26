@@ -122,7 +122,7 @@ export const defaultContent: Record<string, Record<string, unknown>> = {
     header: {
       tagline: "Get in Touch",
       heading: "Book a Shoot",
-      subtext: "Fill out the form or text and I'll get back to you within 24 hours.",
+      subtext: "Fill out the form, call or text (270) 307-0173. I'll get back to you within 24 hours.",
       phone: "(270) 307-0173",
     },
     sidebar: {
