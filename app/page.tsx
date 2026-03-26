@@ -81,7 +81,7 @@ export default async function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex items-start pt-32 md:items-center md:pt-0 justify-center min-h-screen bg-dark-900 overflow-hidden">
+      <section className="relative flex items-start pt-24 md:items-center md:pt-0 justify-center min-h-screen bg-dark-900 overflow-hidden">
         <Image
           src="/images/aerialhome1.jpg"
           alt="Aerial drone photography of luxury estate"
