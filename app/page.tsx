@@ -147,16 +147,16 @@ export default async function Home() {
           <FadeIn delay={0.3}>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/portfolio"
+                href="/contact"
                 className="border-gradient rounded-full bg-gold/10 px-8 py-3.5 text-sm font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20"
               >
-                View Portfolio
+                Book a Shoot
               </Link>
               <Link
-                href="/contact"
+                href="/portfolio"
                 className="rounded-full border border-dark-400 px-8 py-3.5 text-sm font-semibold uppercase tracking-widest text-dark-100 transition-all hover:border-gold/50 hover:text-gold"
               >
-                Book a Shoot
+                View Portfolio
               </Link>
             </div>
           </FadeIn>
