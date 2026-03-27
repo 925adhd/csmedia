@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     images: ["/images/aerialhome1.jpg"],
   },
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
+    google: "a7YWIetiO1qOTmD59PSXqKf3kfEB7M0OTTeAa7goCBc",
   },
 };
 

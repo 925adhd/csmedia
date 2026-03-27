@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 import ContactForm from "@/components/ContactForm";
+
 import { EditableText } from "@/components/inline-edit";
 import { getPageContent } from "@/lib/supabase/queries";
 
@@ -19,7 +20,7 @@ export default async function ContactPage() {
 
   // Header fields
   const tagline = (headerContent?.tagline as string) || "Get in Touch";
-  const heading = (headerContent?.heading as string) || "Book a Shoot";
+  const heading = "Request a Booking";
   const subtext = "Fill out the form or text (270) 307-0173. I'll get back to you within 24 hours.";
   const headerPhone = (headerContent?.phone as string) || "(270)\u00a0307-0173";
 
@@ -69,7 +70,7 @@ export default async function ContactPage() {
             </h1>
             <p className="mt-5 text-base sm:text-lg text-dark-200 max-w-2xl mx-auto">
               Fill out the form or text{" "}
-              <a href="tel:+12703070173" className="text-gold hover:text-gold-light transition-colors whitespace-nowrap">
+              <a href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F" className="text-gold hover:text-gold-light transition-colors whitespace-nowrap">
                 (270) 307-0173
               </a>
               . I&apos;ll get back to you within 24 hours.
@@ -99,10 +100,10 @@ export default async function ContactPage() {
                 <div className="space-y-10">
                   <div>
                     <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
-                      Call / Text
+                      Text
                     </h3>
                     <a
-                      href="tel:+12703070173"
+                      href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
                       className="text-xl font-mono text-white hover:text-gold transition-colors tracking-wider"
                     >
                       <EditableText page="contact" section="sidebar" field="phone" value={sidebarPhone}>

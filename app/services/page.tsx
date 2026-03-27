@@ -470,7 +470,9 @@ export default async function ServicesPage() {
       <CTASection
         heading={ctaHeading}
         subheading={ctaSubheading}
+        desktopSubheading="Reach out and we'll recommend the perfect option for your project."
         buttonText={ctaButtonText}
+        useTextLink
       />
     </>
   );

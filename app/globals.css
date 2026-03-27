@@ -54,6 +54,11 @@ body {
   pointer-events: none;
 }
 
+/* Hide Calendly's default loading spinner */
+.calendly-spinner-container {
+  display: none !important;
+}
+
 /* Subtle scan line overlay for tech feel */
 .scanlines::after {
   content: "";

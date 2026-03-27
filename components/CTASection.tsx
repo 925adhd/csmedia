@@ -1,21 +1,26 @@
-import Link from "next/link";
 import Image from "next/image";
+import CalendlyButton from "@/components/CalendlyButton";
+import TextLink from "@/components/TextLink";
 
 interface CTASectionProps {
   heading?: string;
   subheading?: string;
+  desktopSubheading?: string;
   buttonText?: string;
-  buttonHref?: string;
+  useTextLink?: boolean;
   backgroundImage?: string;
 }
 
 export default function CTASection({
   heading = "Ready to Elevate Your Listings?",
   subheading = "Professional drone media that helps your properties sell faster and for more.",
+  desktopSubheading,
   buttonText = "Book a Shoot",
-  buttonHref = "/contact",
+  useTextLink = false,
   backgroundImage = "/images/nighthome.jpg",
 }: CTASectionProps) {
+  const buttonClass = "mt-10 inline-block border-gradient rounded-full bg-gold/10 px-10 py-4 text-sm font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20 hover:glow-gold cursor-pointer";
+
   return (
     <section className="relative bg-dark-800 py-16 sm:py-28 overflow-hidden">
       {/* Background image */}
@@ -45,15 +50,29 @@ export default function CTASection({
         <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight">
           {heading}
         </h2>
-        <p className="mt-5 text-lg text-dark-200 max-w-2xl mx-auto">
-          {subheading}
-        </p>
-        <Link
-          href={buttonHref}
-          className="mt-10 inline-block border-gradient rounded-full bg-gold/10 px-10 py-4 text-sm font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20 hover:glow-gold"
-        >
-          {buttonText}
-        </Link>
+        {desktopSubheading ? (
+          <>
+            <p className="mt-5 text-lg text-dark-200 max-w-2xl mx-auto md:hidden">
+              {subheading}
+            </p>
+            <p className="mt-5 text-lg text-dark-200 max-w-2xl mx-auto hidden md:block">
+              {desktopSubheading}
+            </p>
+          </>
+        ) : (
+          <p className="mt-5 text-lg text-dark-200 max-w-2xl mx-auto">
+            {subheading}
+          </p>
+        )}
+        {useTextLink ? (
+          <TextLink className={buttonClass}>
+            {buttonText}
+          </TextLink>
+        ) : (
+          <CalendlyButton className={buttonClass}>
+            {buttonText}
+          </CalendlyButton>
+        )}
       </div>
     </section>
   );

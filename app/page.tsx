@@ -5,6 +5,8 @@ import ServiceCard from "@/components/ServiceCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import BeforeAfter from "@/components/BeforeAfter";
 import CTASection from "@/components/CTASection";
+import CalendlyButton from "@/components/CalendlyButton";
+import TextLink from "@/components/TextLink";
 import { EditableText, EditableList } from "@/components/inline-edit";
 import { getPortfolioProjects } from "@/lib/portfolio";
 import { getPageContent } from "@/lib/supabase/queries";
@@ -146,15 +148,14 @@ export default async function Home() {
           </FadeIn>
           <FadeIn delay={0.3}>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/contact"
-                className="border-gradient rounded-full bg-gold/10 px-8 py-3.5 text-sm font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20"
+              <CalendlyButton
+                className="border-gradient rounded-full bg-gold/10 px-10 py-4 text-base font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20 cursor-pointer"
               >
                 Book a Shoot
-              </Link>
+              </CalendlyButton>
               <Link
                 href="/portfolio"
-                className="rounded-full border border-dark-400 px-8 py-3.5 text-sm font-semibold uppercase tracking-widest text-dark-100 transition-all hover:border-gold/50 hover:text-gold"
+                className="rounded-full border border-dark-400 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-dark-100 transition-all hover:border-gold/50 hover:text-gold"
               >
                 View Portfolio
               </Link>
@@ -259,14 +260,13 @@ export default async function Home() {
                     ))}
                   </ul>
                 </EditableList>
-                <Link
-                  href="/contact"
+                <TextLink
                   className="mt-8 inline-block border-gradient rounded-full bg-gold/10 px-8 py-3 text-sm font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20"
                 >
                   <EditableText page="home" section="staging" field="cta_text" value={(stagingContent?.cta_text as string) || "Get a Quote"}>
                     {(stagingContent?.cta_text as string) || "Get a Quote"}
                   </EditableText>
-                </Link>
+                </TextLink>
               </div>
             </FadeIn>
             <FadeIn delay={0.15}>
