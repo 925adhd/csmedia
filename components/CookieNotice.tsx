@@ -28,12 +28,23 @@ export default function CookieNotice() {
           </a>
           .
         </p>
-        <button
-          onClick={accept}
-          className="shrink-0 rounded-full bg-gold/10 border border-gold/20 px-6 py-2 text-sm font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20"
-        >
-          Accept
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={accept}
+            className="shrink-0 rounded-full bg-gold/10 border border-gold/20 px-6 py-2 text-sm font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20"
+          >
+            Accept
+          </button>
+          <button
+            onClick={accept}
+            aria-label="Close cookie notice"
+            className="shrink-0 flex items-center justify-center h-8 w-8 rounded-full text-dark-300 hover:text-white transition-colors"
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   );
