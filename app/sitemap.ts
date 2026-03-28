@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { portfolioProjects } from "@/lib/portfolio";
+import { locations } from "@/lib/locations";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
 
@@ -58,5 +59,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
-  return [...staticPages, ...portfolioPages];
+  const locationPages: MetadataRoute.Sitemap = locations.map((loc) => ({
+    url: `${BASE_URL}/services/${loc.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...locationPages, ...portfolioPages];
 }

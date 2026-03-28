@@ -90,7 +90,13 @@ export default function RootLayout({
                     "@type": "PostalAddress",
                     addressLocality: "Leitchfield",
                     addressRegion: "KY",
+                    postalCode: "42754",
                     addressCountry: "US",
+                  },
+                  geo: {
+                    "@type": "GeoCoordinates",
+                    latitude: 37.4801,
+                    longitude: -86.2938,
                   },
                   areaServed: [
                     {
@@ -101,6 +107,12 @@ export default function RootLayout({
                         name: "Grayson County, Kentucky",
                       },
                     },
+                    { "@type": "City", name: "Caneyville" },
+                    { "@type": "City", name: "Clarkson" },
+                    { "@type": "City", name: "Elizabethtown" },
+                    { "@type": "City", name: "Bowling Green" },
+                    { "@type": "City", name: "Owensboro" },
+                    { "@type": "City", name: "Bardstown" },
                     {
                       "@type": "State",
                       name: "Kentucky",
@@ -163,6 +175,30 @@ export default function RootLayout({
                     reviewCount: "2",
                     bestRating: "5",
                   },
+                  review: [
+                    {
+                      "@type": "Review",
+                      author: { "@type": "Person", name: "Snow Dogs Food Truck" },
+                      reviewRating: {
+                        "@type": "Rating",
+                        ratingValue: "5",
+                        bestRating: "5",
+                      },
+                      reviewBody:
+                        "We couldn't be happier with a promo video she shot for us! She made it so much fun, can't wait to do another!!!!",
+                    },
+                    {
+                      "@type": "Review",
+                      author: { "@type": "Person", name: "Jared Clouse" },
+                      reviewRating: {
+                        "@type": "Rating",
+                        ratingValue: "5",
+                        bestRating: "5",
+                      },
+                      reviewBody:
+                        "OH MY GOSH!!!! I can't even say how amazing she is. She designed my watermark and logo and did absolutely AMAZING!!!!! I 100% recommend her for any design needs you may have.",
+                    },
+                  ],
                 },
                 {
                   "@type": "WebSite",
@@ -170,72 +206,6 @@ export default function RootLayout({
                   url: BASE_URL,
                   name: "CS Media",
                   publisher: { "@id": `${BASE_URL}/#business` },
-                },
-                {
-                  "@type": "FAQPage",
-                  mainEntity: [
-                    {
-                      "@type": "Question",
-                      name: "How much does real estate drone photography cost?",
-                      acceptedAnswer: {
-                        "@type": "Answer",
-                        text: "CS Media offers real estate photography packages starting at $150. Our most popular Interior + Exterior package is $200, and our full package including drone photos and video is $300. Taxes and mileage fees may apply.",
-                      },
-                    },
-                    {
-                      "@type": "Question",
-                      name: "Do you need a license to fly drones for real estate photos?",
-                      acceptedAnswer: {
-                        "@type": "Answer",
-                        text: "Yes. Commercial drone pilots must hold an FAA Part 107 Remote Pilot Certificate. CS Media is fully FAA Part 107 certified for all aerial photography and videography work.",
-                      },
-                    },
-                    {
-                      "@type": "Question",
-                      name: "What is virtual staging and how does it work?",
-                      acceptedAnswer: {
-                        "@type": "Answer",
-                        text: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor. It helps buyers visualize a property's potential at a fraction of the cost of physical staging. CS Media offers virtual staging starting at $25 per room with 24-48 hour turnaround.",
-                      },
-                    },
-                    {
-                      "@type": "Question",
-                      name: "How fast will I get my real estate photos back?",
-                      acceptedAnswer: {
-                        "@type": "Answer",
-                        text: "CS Media provides a 24-48 hour turnaround on all real estate photography, drone media, and virtual staging deliverables.",
-                      },
-                    },
-                  ],
-                },
-                {
-                  "@type": "BreadcrumbList",
-                  itemListElement: [
-                    {
-                      "@type": "ListItem",
-                      position: 1,
-                      name: "Home",
-                      item: BASE_URL,
-                    },
-                    {
-                      "@type": "ListItem",
-                      position: 2,
-                      name: "Services",
-                      item: `${BASE_URL}/services`,
-                    },
-                    {
-                      "@type": "ListItem",
-                      position: 3,
-                      name: "Portfolio",
-                      item: `${BASE_URL}/portfolio`,
-                    },
-                    {
-                      "@type": "ListItem",
-                      position: 4,
-                      name: "Contact",
-                      item: `${BASE_URL}/contact`,
-                    },
-                  ],
                 },
               ],
             }),
@@ -251,6 +221,7 @@ export default function RootLayout({
           <a
             href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
             aria-label="Text CS Media"
+            suppressHydrationWarning
             className="fixed bottom-6 right-6 z-40 flex md:hidden items-center justify-center rounded-full bg-dark-800 border border-gold/30 h-14 w-14 text-gold shadow-lg shadow-black/40 transition-transform hover:scale-110 hover:bg-dark-700 active:scale-95"
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>

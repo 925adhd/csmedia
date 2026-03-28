@@ -21,6 +21,10 @@ export default function Footer() {
               Professional drone photography, video, and editing services for
               agents and property owners in Leitchfield, Grayson County &amp; across Kentucky.
             </p>
+            <p className="mt-2 max-w-sm text-xs leading-relaxed text-dark-300">
+              Serving Leitchfield, Caneyville, Clarkson, Elizabethtown,
+              Bowling Green, Owensboro, Bardstown &amp; all of Kentucky.
+            </p>
             <div className="mt-6 flex items-center gap-2 text-gold text-sm font-mono tracking-wider">
               <span className="inline-block w-8 h-px bg-gold/50" />
               LICENSED TO DRONE
@@ -43,12 +47,12 @@ export default function Footer() {
             <h3 className="text-xs font-semibold text-gold uppercase tracking-widest mb-4">
               Navigation
             </h3>
-            <ul className="space-y-1 text-sm">
-              <li><Link href="/" className="inline-block py-1.5 text-dark-200 hover:text-gold transition-colors">Home</Link></li>
-              <li><Link href="/portfolio" className="inline-block py-1.5 text-dark-200 hover:text-gold transition-colors">Portfolio</Link></li>
-              <li><Link href="/services" className="inline-block py-1.5 text-dark-200 hover:text-gold transition-colors">Services</Link></li>
-              <li><Link href="/about" className="inline-block py-1.5 text-dark-200 hover:text-gold transition-colors">About</Link></li>
-              <li><Link href="/contact" className="inline-block py-1.5 text-dark-200 hover:text-gold transition-colors">Contact</Link></li>
+            <ul className="flex flex-wrap gap-x-4 gap-y-1 md:flex-col md:gap-x-0 text-sm">
+              <li><Link href="/" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold transition-colors">Home</Link></li>
+              <li><Link href="/portfolio" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold transition-colors">Portfolio</Link></li>
+              <li><Link href="/services" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold transition-colors">Services</Link></li>
+              <li><Link href="/about" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold transition-colors">About</Link></li>
+              <li><Link href="/contact" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -72,7 +76,20 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-dark-500/30 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+        <div className="mt-10 pt-8 border-t border-dark-500/30">
+          <h3 className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">
+            Service Areas
+          </h3>
+          <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-dark-300">
+            <Link href="/services/leitchfield" className="hover:text-gold transition-colors">Leitchfield</Link>
+            <Link href="/services/elizabethtown" className="hover:text-gold transition-colors">Elizabethtown</Link>
+            <Link href="/services/bowling-green" className="hover:text-gold transition-colors">Bowling Green</Link>
+            <Link href="/services/owensboro" className="hover:text-gold transition-colors">Owensboro</Link>
+            <Link href="/services/bardstown" className="hover:text-gold transition-colors">Bardstown</Link>
+          </div>
+        </div>
+
+        <div className="mt-6 pt-6 border-t border-dark-500/30 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
           <p className="text-xs text-dark-200">
             &copy; {new Date().getFullYear()} CS Media. All rights reserved.
           </p>

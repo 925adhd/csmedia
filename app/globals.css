@@ -59,6 +59,15 @@ body {
   display: none !important;
 }
 
+/* Hide scrollbar for horizontal scroll containers */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Subtle scan line overlay for tech feel */
 .scanlines::after {
   content: "";

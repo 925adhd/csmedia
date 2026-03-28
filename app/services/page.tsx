@@ -153,8 +153,51 @@ export default async function ServicesPage() {
     "Text or call and we'll recommend the perfect option for your project.";
   const ctaButtonText = (ctaContent?.button_text as string) || "Request a Quote";
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How much does real estate drone photography cost?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "CS Media offers real estate photography packages starting at $150. Our most popular Interior + Exterior package is $200, and our full package including drone photos and video is $300. Taxes and mileage fees may apply.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you need a license to fly drones for real estate photos?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Commercial drone pilots must hold an FAA Part 107 Remote Pilot Certificate. CS Media is fully FAA Part 107 certified for all aerial photography and videography work.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What is virtual staging and how does it work?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor. It helps buyers visualize a property's potential at a fraction of the cost of physical staging. CS Media offers virtual staging starting at $25 per room with 24-48 hour turnaround.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How fast will I get my real estate photos back?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "CS Media provides a 24-48 hour turnaround on all real estate photography, drone media, and virtual staging deliverables.",
+        },
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Header */}
       <section className="relative bg-dark-900 py-16 sm:py-28 overflow-hidden">
         <Image
