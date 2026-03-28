@@ -12,8 +12,8 @@ interface CTASectionProps {
 }
 
 export default function CTASection({
-  heading = "Ready to Elevate Your Listings?",
-  subheading = "Professional drone media that helps your properties sell faster and for more.",
+  heading = "Book Your Property Shoot Today",
+  subheading = "Professional drone photography & video that helps your properties sell faster and for more.",
   desktopSubheading,
   buttonText = "Book a Shoot",
   useTextLink = false,

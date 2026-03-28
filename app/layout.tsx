@@ -22,15 +22,15 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "CS Media | Elevated Real Estate Media",
+    default: "CS Media | Real Estate Drone Photography & Video Services",
     template: "%s | CS Media",
   },
   description:
-    "Professional drone photography, video, and editing services for real estate agents and property owners. Elevate your listings with cinematic aerial media.",
+    "Real estate drone photography, videography, virtual staging & video editing in Leitchfield & Grayson County, KY. FAA Part 107 certified. Packages from $150. Book today.",
   openGraph: {
-    title: "CS Media | Elevated Real Estate Media",
+    title: "CS Media | Real Estate Drone Photography & Video Services",
     description:
-      "Professional drone photography, video, and editing services for real estate.",
+      "Real estate drone photography, videography, virtual staging & video editing in Leitchfield & Grayson County, KY. FAA Part 107 certified. Packages from $150.",
     type: "website",
     locale: "en_US",
     url: BASE_URL,
@@ -40,15 +40,15 @@ export const metadata: Metadata = {
         url: "/images/aerialhome1.jpg",
         width: 1200,
         height: 630,
-        alt: "CS Media - Elevated Real Estate Media",
+        alt: "CS Media - Real Estate Drone Photography & Video Services",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "CS Media | Elevated Real Estate Media",
+    title: "CS Media | Real Estate Drone Photography & Video Services",
     description:
-      "Professional drone photography, video, and editing services for real estate.",
+      "Real estate drone photography, videography, virtual staging & video editing in Leitchfield & Grayson County, KY. FAA Part 107 certified. Packages from $150.",
     images: ["/images/aerialhome1.jpg"],
   },
   verification: {
@@ -67,6 +67,180 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-dark-900 text-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "LocalBusiness",
+                  "@id": `${BASE_URL}/#business`,
+                  name: "CS MEDIA, LLC",
+                  description:
+                    "Professional real estate drone photography, videography, virtual staging, and video editing services. FAA Part 107 certified.",
+                  url: BASE_URL,
+                  sameAs: [
+                    "https://www.facebook.com/profile.php?id=100090509656389",
+                  ],
+                  telephone: "+1-270-307-0173",
+                  image: `${BASE_URL}/images/aerialhome1.jpg`,
+                  priceRange: "$150-$300",
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Leitchfield",
+                    addressRegion: "KY",
+                    addressCountry: "US",
+                  },
+                  areaServed: [
+                    {
+                      "@type": "City",
+                      name: "Leitchfield",
+                      containedInPlace: {
+                        "@type": "AdministrativeArea",
+                        name: "Grayson County, Kentucky",
+                      },
+                    },
+                    {
+                      "@type": "State",
+                      name: "Kentucky",
+                    },
+                  ],
+                  hasOfferCatalog: {
+                    "@type": "OfferCatalog",
+                    name: "Real Estate Media Services",
+                    itemListElement: [
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Real Estate Photography",
+                          description:
+                            "Interior and exterior real estate photography with professional lighting, composition, and HDR processing.",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Drone Photography & Video",
+                          description:
+                            "FAA Part 107 certified aerial photography and video for real estate listings.",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Real Estate Videography",
+                          description:
+                            "Cinematic property walkthroughs and promotional videos for listings and agents.",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Virtual Staging",
+                          description:
+                            "Digitally furnish empty rooms with realistic furniture and decor for real estate listings.",
+                        },
+                      },
+                      {
+                        "@type": "Offer",
+                        itemOffered: {
+                          "@type": "Service",
+                          name: "Video Editing",
+                          description:
+                            "Professional video editing with music, transitions, color grading, and branded graphics.",
+                        },
+                      },
+                    ],
+                  },
+                  aggregateRating: {
+                    "@type": "AggregateRating",
+                    ratingValue: "5.0",
+                    reviewCount: "2",
+                    bestRating: "5",
+                  },
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": `${BASE_URL}/#website`,
+                  url: BASE_URL,
+                  name: "CS Media",
+                  publisher: { "@id": `${BASE_URL}/#business` },
+                },
+                {
+                  "@type": "FAQPage",
+                  mainEntity: [
+                    {
+                      "@type": "Question",
+                      name: "How much does real estate drone photography cost?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "CS Media offers real estate photography packages starting at $150. Our most popular Interior + Exterior package is $200, and our full package including drone photos and video is $300. Taxes and mileage fees may apply.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "Do you need a license to fly drones for real estate photos?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Yes. Commercial drone pilots must hold an FAA Part 107 Remote Pilot Certificate. CS Media is fully FAA Part 107 certified for all aerial photography and videography work.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "What is virtual staging and how does it work?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor. It helps buyers visualize a property's potential at a fraction of the cost of physical staging. CS Media offers virtual staging starting at $25 per room with 24-48 hour turnaround.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "How fast will I get my real estate photos back?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "CS Media provides a 24-48 hour turnaround on all real estate photography, drone media, and virtual staging deliverables.",
+                      },
+                    },
+                  ],
+                },
+                {
+                  "@type": "BreadcrumbList",
+                  itemListElement: [
+                    {
+                      "@type": "ListItem",
+                      position: 1,
+                      name: "Home",
+                      item: BASE_URL,
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 2,
+                      name: "Services",
+                      item: `${BASE_URL}/services`,
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 3,
+                      name: "Portfolio",
+                      item: `${BASE_URL}/portfolio`,
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 4,
+                      name: "Contact",
+                      item: `${BASE_URL}/contact`,
+                    },
+                  ],
+                },
+              ],
+            }),
+          }}
+        />
         <EditModeProvider>
           <GoogleAnalytics />
           <Navbar />

@@ -9,7 +9,7 @@ import { getPageContent } from "@/lib/supabase/queries";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Real estate media packages starting at $150. Photography, drone, videography, and video editing services. Quick turnaround, best prices.",
+    "Real estate media packages starting at $150 in Leitchfield & Grayson County, KY. Photography, drone, videography, and video editing. Quick turnaround.",
 };
 
 interface PricingPackage {

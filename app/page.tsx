@@ -180,8 +180,8 @@ export default async function Home() {
                 </span>
               </EditableText>
               <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
-                <EditableText page="home" section="services" field="heading" value={(servicesContent?.heading as string) || "Services Built for"}>
-                  {(servicesContent?.heading as string) || "Services Built for"}
+                <EditableText page="home" section="services" field="heading" value={(servicesContent?.heading as string) || "Property Media That Delivers"}>
+                  {(servicesContent?.heading as string) || "Property Media That Delivers"}
                 </EditableText>
                 <span className="text-gold">
                   {" "}<EditableText page="home" section="services" field="heading_gold" value={(servicesContent?.heading_gold as string) || "Results"}>
@@ -233,13 +233,13 @@ export default async function Home() {
                   </span>
                 </EditableText>
                 <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
-                  <EditableText page="home" section="staging" field="heading" value={(stagingContent?.heading as string) || "Empty Rooms?"}>
-                    {(stagingContent?.heading as string) || "Empty Rooms?"}
+                  <EditableText page="home" section="staging" field="heading" value={(stagingContent?.heading as string) || "Virtual Staging That"}>
+                    {(stagingContent?.heading as string) || "Virtual Staging That"}
                   </EditableText>
                   <br />
                   <span className="text-gold">
-                    <EditableText page="home" section="staging" field="heading_gold" value={(stagingContent?.heading_gold as string) || "We'll Fix That."}>
-                      {(stagingContent?.heading_gold as string) || "We'll Fix That."}
+                    <EditableText page="home" section="staging" field="heading_gold" value={(stagingContent?.heading_gold as string) || "Sells Homes Faster"}>
+                      {(stagingContent?.heading_gold as string) || "Sells Homes Faster"}
                     </EditableText>
                   </span>
                 </h2>
@@ -359,8 +359,8 @@ export default async function Home() {
                 </span>
               </EditableText>
               <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
-                <EditableText page="home" section="testimonials" field="heading" value={(testimonialsContent?.heading as string) || "What Clients Say"}>
-                  {(testimonialsContent?.heading as string) || "What Clients Say"}
+                <EditableText page="home" section="testimonials" field="heading" value={(testimonialsContent?.heading as string) || "Trusted by Agents & Property Owners"}>
+                  {(testimonialsContent?.heading as string) || "Trusted by Agents & Property Owners"}
                 </EditableText>
               </h2>
               <div className="mt-4 flex items-center justify-center gap-1">

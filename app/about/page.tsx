@@ -8,7 +8,7 @@ import { getPageContent } from "@/lib/supabase/queries";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet the operator behind CS MEDIA, LLC. FAA Part 107 certified drone pilot delivering professional photography, videography, and editing services.",
+    "Meet the operator behind CS MEDIA, LLC in Leitchfield, KY. FAA Part 107 certified drone pilot delivering professional photography, videography, and editing services.",
 };
 
 export default async function AboutPage() {
