@@ -189,6 +189,14 @@ export default async function ServicesPage() {
           text: "CS Media provides a 24-48 hour turnaround on all real estate photography, drone media, and virtual staging deliverables.",
         },
       },
+      {
+        "@type": "Question",
+        name: "Do you travel outside of Kentucky?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. While CS Media is based in Leitchfield, KY and primarily serves Kentucky, we are available for projects in neighboring states and beyond. Travel fees apply for out-of-state shoots. Contact us with your location and project details for a quote.",
+        },
+      },
     ],
   };
 
@@ -542,6 +550,10 @@ export default async function ServicesPage() {
               {
                 q: "How fast will I get my real estate photos back?",
                 a: "CS Media provides a 24\u201348 hour turnaround on all real estate photography, drone media, and virtual staging deliverables.",
+              },
+              {
+                q: "Do you travel outside of Kentucky?",
+                a: "Yes. While CS Media is based in Leitchfield, KY and primarily serves Kentucky, we\u2019re available for projects in neighboring states and beyond. Travel fees apply for out-of-state shoots. Contact us with your location and project details for a quote.",
               },
             ].map((faq, i) => (
               <FadeIn key={i} delay={i * 0.1}>

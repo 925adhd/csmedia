@@ -32,6 +32,7 @@ export default async function AboutPage() {
     "I started CS MEDIA, LLC with a passion for capturing properties and businesses in the best possible light. As a solo operator, I bring a level of personal attention and consistency that larger companies simply can\u2019t match.",
     "I\u2019m FAA Part 107 certified and specialize in photography, videography, drone work, and video editing. From real estate listings to promo videos and logo design, I handle it all \u2014 start to finish.",
     "When you work with me, you get the same person every time. Someone who learns your style, understands what you need, and delivers consistent quality project after project. No runaround, no random contractors.",
+    "While I\u2019m based in Leitchfield and serve all of Kentucky, I\u2019m also available to travel out of state for the right project. If you need professional media anywhere in the region, reach out \u2014 I\u2019ll make it happen.",
     "Quality edits. Quick turnaround. And the best prices you\u2019ll find for professional media services. That\u2019s the CS Media promise.",
   ];
   const bioPhone = (bioContent?.phone as string) || "(270)\u00a0307-0173";

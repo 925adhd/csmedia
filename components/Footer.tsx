@@ -24,6 +24,7 @@ export default function Footer() {
             <p className="mt-2 max-w-sm text-xs leading-relaxed text-dark-300">
               Serving Leitchfield, Caneyville, Clarkson, Elizabethtown,
               Bowling Green, Owensboro, Bardstown &amp; all of Kentucky.
+              Available for out-of-state projects upon request.
             </p>
             <div className="mt-6 flex items-center gap-2 text-gold text-sm font-mono tracking-wider">
               <span className="inline-block w-8 h-px bg-gold/50" />

@@ -123,6 +123,10 @@ export default function RootLayout({
                       "@type": "State",
                       name: "Kentucky",
                     },
+                    {
+                      "@type": "Country",
+                      name: "US",
+                    },
                   ],
                   hasOfferCatalog: {
                     "@type": "OfferCatalog",
