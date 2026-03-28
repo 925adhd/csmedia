@@ -467,6 +467,53 @@ export default async function ServicesPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-16 sm:py-28 bg-dark-900 relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-14">
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                FAQ
+              </span>
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white tracking-tight">
+                Common Questions
+              </h2>
+            </div>
+          </FadeIn>
+          <div className="space-y-8">
+            {[
+              {
+                q: "How much does real estate drone photography cost?",
+                a: "CS Media offers real estate photography packages starting at $150. Our most popular Interior + Exterior package is $200, and our full package including drone photos and video is $300. Taxes and mileage fees may apply.",
+              },
+              {
+                q: "Do you need a license to fly drones for real estate photos?",
+                a: "Yes. Commercial drone pilots must hold an FAA Part 107 Remote Pilot Certificate. CS Media is fully FAA Part 107 certified for all aerial photography and videography work.",
+              },
+              {
+                q: "What is virtual staging and how does it work?",
+                a: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor. It helps buyers visualize a property\u2019s potential at a fraction of the cost of physical staging. CS Media offers virtual staging starting at $25 per room with 24\u201348 hour turnaround.",
+              },
+              {
+                q: "How fast will I get my real estate photos back?",
+                a: "CS Media provides a 24\u201348 hour turnaround on all real estate photography, drone media, and virtual staging deliverables.",
+              },
+            ].map((faq, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="border-b border-dark-500/30 pb-8">
+                  <h3 className="text-lg font-semibold text-white">{faq.q}</h3>
+                  <p className="mt-3 text-dark-200 leading-relaxed">{faq.a}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      </section>
+
       <CTASection
         heading={ctaHeading}
         subheading={ctaSubheading}
