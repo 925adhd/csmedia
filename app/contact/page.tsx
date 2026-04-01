@@ -5,10 +5,22 @@ import ContactForm from "@/components/ContactForm";
 import { EditableText } from "@/components/inline-edit";
 import { getPageContent } from "@/lib/supabase/queries";
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+
 export const metadata: Metadata = {
   title: "Contact",
   description:
     "Book a drone photography or videography shoot with CS Media in Leitchfield & Grayson County, KY. Serving all of Kentucky.",
+  alternates: { canonical: `${BASE_URL}/contact` },
+  openGraph: {
+    title: "Contact | CS Media",
+    description:
+      "Book a drone photography or videography shoot with CS Media in Leitchfield & Grayson County, KY. Serving all of Kentucky.",
+    type: "website",
+    url: `${BASE_URL}/contact`,
+    siteName: "CS Media",
+    images: [{ url: "/images/aerialhome1.jpg", width: 1200, height: 630 }],
+  },
 };
 
 export default async function ContactPage() {
@@ -99,9 +111,9 @@ export default async function ContactPage() {
               <FadeIn delay={0.15}>
                 <div className="space-y-10">
                   <div>
-                    <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
+                    <h2 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
                       Text
-                    </h3>
+                    </h2>
                     <a
                       href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
                       className="text-xl font-mono text-white hover:text-gold transition-colors tracking-wider"
@@ -112,9 +124,9 @@ export default async function ContactPage() {
                     </a>
                   </div>
                   <div>
-                    <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
+                    <h2 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
                       Email
-                    </h3>
+                    </h2>
                     <a
                       href={`mailto:${sidebarEmail}`}
                       className="text-dark-100 hover:text-gold transition-colors"
@@ -125,9 +137,9 @@ export default async function ContactPage() {
                     </a>
                   </div>
                   <div>
-                    <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
+                    <h2 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
                       Services
-                    </h3>
+                    </h2>
                     <ul className="space-y-1.5 text-sm text-dark-200">
                       {sidebarServices.map((service) => (
                         <li key={service}>{service}</li>
@@ -135,9 +147,9 @@ export default async function ContactPage() {
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
+                    <h2 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
                       Response Time
-                    </h3>
+                    </h2>
                     <EditableText page="contact" section="sidebar" field="response_time" value={responseTime}>
                       <p className="text-dark-100">
                         {responseTime}

@@ -10,6 +10,8 @@ export default function AdminLoginPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [resetSent, setResetSent] = useState(false);
+  const [resetting, setResetting] = useState(false);
   const router = useRouter();
 
   async function handleSubmit(e: React.FormEvent) {
@@ -25,6 +27,7 @@ export default function AdminLoginPage() {
 
     if (error) {
       setError(error.message);
+      setPassword("");
       setLoading(false);
     } else {
       router.push("/admin");
@@ -53,6 +56,7 @@ export default function AdminLoginPage() {
               required
               className="w-full rounded-lg bg-dark-700 border border-dark-500 px-4 py-3 text-sm text-white placeholder-dark-300 focus:border-gold/50 focus:ring-1 focus:ring-gold/30 outline-none transition-colors"
               placeholder="admin@csmedia.com"
+              autoComplete="username"
             />
           </div>
 
@@ -69,6 +73,7 @@ export default function AdminLoginPage() {
                 required
                 className="w-full rounded-lg bg-dark-700 border border-dark-500 px-4 py-3 pr-10 text-sm text-white placeholder-dark-300 focus:border-gold/50 focus:ring-1 focus:ring-gold/30 outline-none transition-colors"
                 placeholder="Your password"
+                autoComplete="current-password"
               />
               <button
                 type="button"
@@ -101,6 +106,32 @@ export default function AdminLoginPage() {
             {loading ? "Signing in..." : "Sign In"}
           </button>
         </form>
+
+        {resetSent ? (
+          <p className="mt-4 text-center text-sm text-green-400">
+            Check your email for a password reset link.
+          </p>
+        ) : (
+          <button
+            type="button"
+            disabled={resetting}
+            onClick={async () => {
+              if (!email) { setError("Enter your email first."); return; }
+              setResetting(true);
+              setError("");
+              const supabase = createClient();
+              const { error } = await supabase.auth.resetPasswordForEmail(email, {
+                redirectTo: `${window.location.origin}/admin/setup`,
+              });
+              if (error) setError(error.message);
+              else setResetSent(true);
+              setResetting(false);
+            }}
+            className="mt-4 w-full text-center text-xs text-dark-300 hover:text-gold transition-colors"
+          >
+            {resetting ? "Sending..." : "Forgot password?"}
+          </button>
+        )}
       </div>
     </div>
   );

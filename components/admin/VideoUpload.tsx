@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 
+const MAX_SIZE_MB = 100;
+
 interface VideoUploadProps {
   value: string;
   onChange: (url: string) => void;
@@ -12,23 +14,33 @@ interface VideoUploadProps {
 export default function VideoUpload({ value, onChange, folder = "videos" }: VideoUploadProps) {
   const [uploading, setUploading] = useState(false);
   const [progress, setProgress] = useState("");
+  const [error, setError] = useState("");
 
   async function handleUpload(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
 
+    setError("");
+
+    if (file.size > MAX_SIZE_MB * 1024 * 1024) {
+      setError(`Video must be under ${MAX_SIZE_MB}MB. This file is ${(file.size / 1024 / 1024).toFixed(0)}MB.`);
+      return;
+    }
+
     setUploading(true);
-    setProgress(`Uploading ${(file.size / 1024 / 1024).toFixed(1)} MB...`);
+    setProgress(`Uploading ${(file.size / 1024 / 1024).toFixed(1)}MB...`);
 
     const supabase = createClient();
     const ext = file.name.split(".").pop();
     const fileName = `${folder}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
 
-    const { error } = await supabase.storage
+    const { error: uploadError } = await supabase.storage
       .from("media")
       .upload(fileName, file);
 
-    if (!error) {
+    if (uploadError) {
+      setError(`Upload failed: ${uploadError.message}`);
+    } else {
       const { data: { publicUrl } } = supabase.storage
         .from("media")
         .getPublicUrl(fileName);
@@ -75,6 +87,8 @@ export default function VideoUpload({ value, onChange, folder = "videos" }: Vide
           className="hidden"
         />
       </label>
+      {error && <p className="text-xs text-red-400">{error}</p>}
+      <p className="text-[10px] text-dark-400">Max {MAX_SIZE_MB}MB</p>
     </div>
   );
 }

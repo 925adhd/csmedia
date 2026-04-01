@@ -83,10 +83,11 @@ export default async function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex items-start pt-24 md:items-center md:pt-0 justify-center min-h-screen bg-dark-900 overflow-hidden">
+      <section id="hero" className="relative flex items-start pt-24 md:items-center md:pt-0 justify-center min-h-screen bg-dark-900 overflow-hidden">
         <Image
-          src="/images/aerialhome1.jpg"
-          alt="Aerial drone photography of luxury estate"
+          src="/images/aerialhome1.webp"
+          alt=""
+          aria-hidden="true"
           fill
           sizes="100vw"
           className="object-cover opacity-30"
@@ -160,6 +161,15 @@ export default async function Home() {
                 View Portfolio
               </Link>
             </div>
+            <p className="mt-5 text-sm text-dark-300">
+              Or text{" "}
+              <a
+                href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
+                className="text-gold/70 hover:text-gold transition-colors"
+              >
+                (270) 307-0173
+              </a>
+            </p>
           </FadeIn>
         </div>
 
@@ -168,7 +178,7 @@ export default async function Home() {
 
       <div className="flex flex-col">
       {/* Services Preview */}
-      <section className="py-16 sm:py-28 bg-dark-800 relative overflow-hidden order-3 md:order-1">
+      <section id="services" className="scroll-mt-20 py-16 sm:py-28 bg-dark-800 relative overflow-hidden order-3 md:order-1">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -220,7 +230,7 @@ export default async function Home() {
       </section>
 
       {/* Virtual Staging Before/After */}
-      <section className="py-16 sm:py-28 bg-dark-800 relative overflow-hidden order-2 md:order-2">
+      <section id="staging" className="scroll-mt-20 py-16 sm:py-28 bg-dark-800 relative overflow-hidden order-2 md:order-2">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -272,8 +282,8 @@ export default async function Home() {
             <FadeIn delay={0.15}>
               <div>
                 <BeforeAfter
-                  beforeSrc="/images/examplestagingbefore.jpg"
-                  afterSrc="/images/examplestagingcomplete.jpg"
+                  beforeSrc="/images/examplestagingbefore.webp"
+                  afterSrc="/images/examplestagingcomplete.webp"
                   beforeAlt="Empty room before virtual staging"
                   afterAlt="Room after virtual staging with furniture"
                 />
@@ -289,7 +299,7 @@ export default async function Home() {
       </section>
 
       {/* Recent Work */}
-      <section className="py-16 sm:py-28 bg-dark-900 order-1 md:order-3">
+      <section id="portfolio" className="scroll-mt-20 py-16 sm:py-28 bg-dark-900 order-1 md:order-3">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="flex items-end justify-between mb-14">
@@ -346,7 +356,7 @@ export default async function Home() {
       </div>
 
       {/* Testimonials */}
-      <section className="py-16 sm:py-28 bg-dark-900 relative overflow-hidden">
+      <section id="testimonials" className="scroll-mt-20 py-16 sm:py-28 bg-dark-900 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gold/[0.03] rounded-full blur-3xl" />
 
@@ -382,8 +392,8 @@ export default async function Home() {
                 ]
             ).map((testimonial, i) => (
               <FadeIn key={i} delay={i * 0.15}>
-                <div className="group relative rounded-2xl bg-dark-800/80 backdrop-blur-sm p-8 sm:p-10 border border-dark-500/30 hover:border-gold/20 transition-all duration-500 h-full flex flex-col">
-                  <span className="text-gold/10 text-[120px] font-serif leading-none absolute -top-4 -left-2 select-none">
+                <article className="group relative rounded-2xl bg-dark-800/80 backdrop-blur-sm p-8 sm:p-10 border border-dark-500/30 hover:border-gold/20 transition-all duration-500 h-full flex flex-col">
+                  <span className="text-gold/10 text-[120px] font-serif leading-none absolute -top-4 -left-2 select-none" aria-hidden="true">
                     &ldquo;
                   </span>
 
@@ -408,7 +418,7 @@ export default async function Home() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </article>
               </FadeIn>
             ))}
           </div>
@@ -433,7 +443,7 @@ export default async function Home() {
       </section>
 
       {/* Stats bar */}
-      <section className="py-16 bg-dark-900">
+      <section id="stats" className="scroll-mt-20 py-16 bg-dark-900">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <FadeIn>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 
@@ -30,6 +32,9 @@ export default function Footer() {
               <span className="inline-block w-8 h-px bg-gold/50" />
               LICENSED TO DRONE
             </div>
+            <p className="mt-2 text-xs text-dark-300 font-mono tracking-wider">
+              FAA Part 107 Certified
+            </p>
             <a
               href="https://www.facebook.com/profile.php?id=100090509656389"
               target="_blank"
@@ -49,11 +54,11 @@ export default function Footer() {
               Navigation
             </h3>
             <ul className="flex flex-wrap gap-x-4 gap-y-1 md:flex-col md:gap-x-0 text-sm">
-              <li><Link href="/" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold transition-colors">Home</Link></li>
-              <li><Link href="/portfolio" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold transition-colors">Portfolio</Link></li>
-              <li><Link href="/services" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold transition-colors">Services</Link></li>
-              <li><Link href="/about" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold transition-colors">About</Link></li>
-              <li><Link href="/contact" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold transition-colors">Contact</Link></li>
+              <li><Link href="/" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Home</Link></li>
+              <li><Link href="/portfolio" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Portfolio</Link></li>
+              <li><Link href="/services" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Services</Link></li>
+              <li><Link href="/about" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">About</Link></li>
+              <li><Link href="/contact" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -69,7 +74,15 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F" className="inline-block py-1.5 text-dark-200 hover:text-gold transition-colors font-mono">
+                <a
+                  href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
+                  className="inline-block py-1.5 text-dark-200 hover:text-gold transition-colors font-mono"
+                  onClick={() => {
+                    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+                      window.gtag("event", "click_to_text", { event_category: "Contact", event_label: "Footer" });
+                    }
+                  }}
+                >
                   270.307.0173
                 </a>
               </li>
@@ -95,15 +108,18 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} CS Media. All rights reserved.
           </p>
           <div className="flex items-center justify-center gap-4 flex-wrap">
-            <Link href="/privacy" className="text-xs text-dark-200 hover:text-gold transition-colors whitespace-nowrap">
+            <Link href="/privacy" className="text-xs text-dark-200 hover:text-gold hover:underline transition-colors whitespace-nowrap">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-xs text-dark-200 hover:text-gold transition-colors whitespace-nowrap">
+            <Link href="/terms" className="text-xs text-dark-200 hover:text-gold hover:underline transition-colors whitespace-nowrap">
               Terms of Service
             </Link>
-            <p className="text-xs text-dark-200 font-mono tracking-wider whitespace-nowrap">
-              FAA Part 107 Certified
-            </p>
+            <Link href="/cookies" className="text-xs text-dark-200 hover:text-gold hover:underline transition-colors whitespace-nowrap">
+              Cookie Policy
+            </Link>
+            <Link href="/disclaimer" className="text-xs text-dark-200 hover:text-gold hover:underline transition-colors whitespace-nowrap">
+              Disclaimer
+            </Link>
             <Link href="/admin/login" className="text-xs text-dark-200 hover:text-gold transition-colors whitespace-nowrap">
               Admin
             </Link>

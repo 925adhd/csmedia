@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "CS Media terms of service — the terms and conditions for using our website and services.",
+  description:
+    "CS Media terms of service — the terms and conditions for using our website and services. Covers bookings, IP, payment, and liability.",
+  alternates: { canonical: `${BASE_URL}/terms` },
+  openGraph: {
+    title: "Terms of Service | CS Media",
+    description:
+      "CS Media terms of service — the terms and conditions for using our website and services. Covers bookings, IP, payment, and liability.",
+    type: "website",
+    url: `${BASE_URL}/terms`,
+    siteName: "CS Media",
+    images: [{ url: "/images/aerialhome1.jpg", width: 1200, height: 630 }],
+  },
 };
 
 export default function TermsPage() {

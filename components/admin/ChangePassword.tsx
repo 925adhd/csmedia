@@ -44,7 +44,7 @@ export default function ChangePassword() {
     return (
       <button
         onClick={() => setOpen(true)}
-        className="rounded-xl bg-dark-800 border border-dark-500/30 p-5 hover:border-gold/20 transition-colors w-full text-left flex items-center gap-4"
+        className="cursor-pointer rounded-xl bg-dark-800 border border-dark-500/30 p-5 hover:border-gold/20 transition-colors w-full text-left flex items-center gap-4"
       >
         <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gold/10 text-gold shrink-0">
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>

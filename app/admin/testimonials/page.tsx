@@ -34,18 +34,21 @@ export default function TestimonialsAdmin() {
     setMessage("");
 
     const { id, created_at, updated_at, ...rest } = editing as Testimonial;
+    let hasError = false;
 
     if (id) {
       const { error } = await supabase.from("testimonials").update(rest).eq("id", id);
-      setMessage(error ? `Error: ${error.message}` : "Testimonial updated!");
+      if (error) { setMessage(`Error: ${error.message}`); hasError = true; }
+      else setMessage("Testimonial updated!");
     } else {
       const { error } = await supabase.from("testimonials").insert(rest);
-      setMessage(error ? `Error: ${error.message}` : "Testimonial created!");
+      if (error) { setMessage(`Error: ${error.message}`); hasError = true; }
+      else setMessage("Testimonial created!");
     }
 
     setSaving(false);
     await load();
-    if (!message.startsWith("Error")) setTimeout(() => setEditing(null), 500);
+    if (!hasError) setTimeout(() => setEditing(null), 500);
   }
 
   async function handleDelete(id: string) {

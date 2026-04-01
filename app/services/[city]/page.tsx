@@ -25,13 +25,19 @@ export async function generateMetadata({
   const title = `${loc.city}, ${loc.state} Drone Photography & Real Estate Media`;
   const description = `Professional real estate drone photography, videography & virtual staging in ${loc.city}, ${loc.county}, ${loc.state}. FAA Part 107 certified. Packages from $150. 24-48hr turnaround.`;
 
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+
   return {
     title,
     description,
+    alternates: { canonical: `${BASE_URL}/services/${loc.slug}` },
     openGraph: {
       title,
       description,
       type: "website",
+      url: `${BASE_URL}/services/${loc.slug}`,
+      siteName: "CS Media",
+      images: [{ url: "/images/aerialhome1.jpg", width: 1200, height: 630 }],
     },
   };
 }
@@ -116,6 +122,36 @@ export default async function CityPage({
     ],
   };
 
+  const professionalServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "CS MEDIA, LLC",
+    description: `Professional real estate drone photography, videography, and virtual staging services in ${loc.city}, ${loc.state}.`,
+    telephone: "+1-270-307-0173",
+    url: `${BASE_URL}/services/${loc.slug}`,
+    image: `${BASE_URL}/images/aerialhome1.jpg`,
+    priceRange: "$150-$300",
+    areaServed: {
+      "@type": "City",
+      name: loc.city,
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: `${loc.county}, ${loc.state}`,
+      },
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Real Estate Media Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Real Estate Photography" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Drone Photography & Video" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Real Estate Videography" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Virtual Staging" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Video Editing" } },
+      ],
+    },
+  };
+
   const isHomeBase = loc.slug === "leitchfield";
 
   return (
@@ -127,6 +163,7 @@ export default async function CityPage({
             localBusinessSchema,
             faqSchema,
             breadcrumbSchema,
+            professionalServiceSchema,
           ]),
         }}
       />
@@ -134,7 +171,7 @@ export default async function CityPage({
       {/* Hero */}
       <section className="relative bg-dark-900 py-12 sm:py-28 overflow-hidden">
         <Image
-          src="/images/aerialhome1.jpg"
+          src="/images/aerialhome1.webp"
           alt={`Aerial drone photography in ${loc.city}, Kentucky`}
           fill
           className="object-cover opacity-15"
@@ -289,7 +326,7 @@ export default async function CityPage({
             <FadeIn delay={0.15}>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-dark-500/30">
                 <Image
-                  src="/images/aerialhome1.jpg"
+                  src="/images/aerialhome1.webp"
                   alt={`Drone photography example for ${loc.city}, KY real estate`}
                   fill
                   className="object-cover"

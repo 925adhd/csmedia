@@ -4,10 +4,22 @@ import FadeIn from "@/components/FadeIn";
 import CTASection from "@/components/CTASection";
 import { getPortfolioProjects } from "@/lib/portfolio";
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
     "Browse our real estate drone photography, video, and editing portfolio. Residential, commercial, and promotional projects.",
+  alternates: { canonical: `${BASE_URL}/portfolio` },
+  openGraph: {
+    title: "Portfolio | CS Media",
+    description:
+      "Browse our real estate drone photography, video, and editing portfolio. Residential, commercial, and promotional projects.",
+    type: "website",
+    url: `${BASE_URL}/portfolio`,
+    siteName: "CS Media",
+    images: [{ url: "/images/aerialhome1.jpg", width: 1200, height: 630 }],
+  },
 };
 
 export default async function PortfolioPage() {

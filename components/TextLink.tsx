@@ -9,12 +9,25 @@ interface TextLinkProps {
   children: React.ReactNode;
 }
 
+function trackEvent(action: string, label: string) {
+  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+    window.gtag("event", action, {
+      event_category: "Contact",
+      event_label: label,
+    });
+  }
+}
+
 export default function TextLink({ className, children }: TextLinkProps) {
   const isMobile = typeof navigator !== "undefined" && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   if (isMobile) {
     return (
-      <a href={SMS_URL} className={className}>
+      <a
+        href={SMS_URL}
+        className={className}
+        onClick={() => trackEvent("click_to_text", "TextLink CTA")}
+      >
         {children}
       </a>
     );

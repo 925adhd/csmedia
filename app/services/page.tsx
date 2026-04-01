@@ -6,10 +6,22 @@ import CTASection from "@/components/CTASection";
 import { EditableText, EditableList } from "@/components/inline-edit";
 import { getPageContent } from "@/lib/supabase/queries";
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+
 export const metadata: Metadata = {
   title: "Services",
   description:
     "Real estate media packages starting at $150 in Leitchfield & Grayson County, KY. Photography, drone, videography, and video editing. Quick turnaround.",
+  alternates: { canonical: `${BASE_URL}/services` },
+  openGraph: {
+    title: "Services | CS Media",
+    description:
+      "Real estate media packages starting at $150 in Leitchfield & Grayson County, KY. Photography, drone, videography, and video editing. Quick turnaround.",
+    type: "website",
+    url: `${BASE_URL}/services`,
+    siteName: "CS Media",
+    images: [{ url: "/images/aerialhome1.jpg", width: 1200, height: 630 }],
+  },
 };
 
 interface PricingPackage {
@@ -209,7 +221,7 @@ export default async function ServicesPage() {
       {/* Header */}
       <section className="relative bg-dark-900 py-16 sm:py-28 overflow-hidden">
         <Image
-          src="/images/home3.jpg"
+          src="/images/home3.webp"
           alt="Aerial view of property"
           fill
           className="object-cover opacity-15"
@@ -504,8 +516,8 @@ export default async function ServicesPage() {
             <FadeIn delay={0.15}>
               <div>
                 <BeforeAfter
-                  beforeSrc="/images/examplestagingbefore.jpg"
-                  afterSrc="/images/examplestagingcomplete.jpg"
+                  beforeSrc="/images/examplestagingbefore.webp"
+                  afterSrc="/images/examplestagingcomplete.webp"
                   beforeAlt="Empty room before virtual staging"
                   afterAlt="Virtually staged room with furniture and decor"
                 />

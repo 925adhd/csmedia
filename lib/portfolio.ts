@@ -38,8 +38,8 @@ const staticProjects: PortfolioProject[] = [
     location: "Kentucky",
     description:
       "A stunning stone estate captured from above, showcasing the full scope of the property's driveway approach, landscaping, and architectural details that ground-level photos simply can't convey.",
-    heroImage: "/images/aerialhome1.jpg",
-    images: ["/images/aerialhome1.jpg", "/images/stone.jpg", "/images/stoneaireal.jpg", "/images/stoneinterior.jpg"],
+    heroImage: "/images/aerialhome1.webp",
+    images: ["/images/aerialhome1.webp", "/images/stone.webp", "/images/stoneaireal.webp", "/images/stoneinterior.webp"],
     featured: true,
   },
   {
@@ -49,8 +49,8 @@ const staticProjects: PortfolioProject[] = [
     location: "Kentucky",
     description:
       "A beautiful modern farmhouse on sprawling acreage, photographed from both ground and aerial perspectives. The combination of drone and traditional photography captured the property's connection to the surrounding landscape.",
-    heroImage: "/images/home2.jpg",
-    images: ["/images/home2.jpg", "/images/home3.jpg", "/images/interior2.jpg", "/images/interior1.jpg"],
+    heroImage: "/images/home2.webp",
+    images: ["/images/home2.webp", "/images/home3.webp", "/images/interior2.webp", "/images/interior1.webp"],
     featured: true,
   },
   {
@@ -60,8 +60,8 @@ const staticProjects: PortfolioProject[] = [
     location: "Kentucky",
     description:
       "A charming country home on open acreage featuring a covered pavilion, wraparound porch, and beautifully finished interiors. Aerial drone photography captures the full property layout while interior shots showcase the living spaces and loft.",
-    heroImage: "/images/home5.jpg",
-    images: ["/images/home5.jpg", "/images/porch.jpg", "/images/interior3.jpg", "/images/interior4.jpg"],
+    heroImage: "/images/home5.webp",
+    images: ["/images/home5.webp", "/images/porch.webp", "/images/interior3.webp", "/images/interior4.webp"],
     featured: false,
   },
   {
@@ -71,8 +71,8 @@ const staticProjects: PortfolioProject[] = [
     location: "Kentucky",
     description:
       "A dramatic twilight photography session capturing warm interior lighting against the dusk sky. Twilight shots create an emotional connection with buyers and make listings stand out on every platform.",
-    heroImage: "/images/nighthome.jpg",
-    images: ["/images/nighthome.jpg", "/images/twilight1.jpg"],
+    heroImage: "/images/nighthome.webp",
+    images: ["/images/nighthome.webp", "/images/twilight1.webp"],
     featured: false,
   },
   {
@@ -82,8 +82,8 @@ const staticProjects: PortfolioProject[] = [
     location: "Kentucky",
     description:
       "A cinematic aerial property tour showcasing a home and its surrounding landscape from above. Smooth drone footage captures the full scope of the property, giving potential buyers an immersive experience before ever stepping foot on site.",
-    heroImage: "/images/drone.jpg",
-    images: ["/images/drone.jpg"],
+    heroImage: "/images/drone.webp",
+    images: ["/images/drone.webp"],
     videoSrc: "/videos/desktop.mp4",
     mobileVideoSrc: "/videos/mobilevid.mp4",
     featured: false,
@@ -95,8 +95,8 @@ const staticProjects: PortfolioProject[] = [
     location: "Kentucky",
     description:
       "A high-energy promotional video for a local business, capturing the brand's personality and energy. Fast cuts, vibrant color grading, and a custom soundtrack bring the business to life in under 60 seconds.",
-    heroImage: "/images/truck.png",
-    images: ["/images/truck.png"],
+    heroImage: "/images/truck.webp",
+    images: ["/images/truck.webp"],
     videoSrc: "/videos/truckpromo.mp4",
     featured: false,
   },
@@ -107,8 +107,8 @@ const staticProjects: PortfolioProject[] = [
     location: "Kentucky",
     description:
       "Dynamic event coverage capturing the energy and atmosphere of local community events. Edited with cinematic transitions, music, and color grading to deliver a polished recap that event organizers can use for marketing and social media.",
-    heroImage: "/images/town.png",
-    images: ["/images/town.png"],
+    heroImage: "/images/town.webp",
+    images: ["/images/town.webp"],
     videoSrc: "/videos/towneventsexample.mp4",
     featured: false,
   },

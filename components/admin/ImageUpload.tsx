@@ -4,6 +4,8 @@ import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import Image from "next/image";
 
+const MAX_SIZE_MB = 5;
+
 interface ImageUploadProps {
   value: string;
   onChange: (url: string) => void;
@@ -12,10 +14,18 @@ interface ImageUploadProps {
 
 export default function ImageUpload({ value, onChange, folder = "portfolio" }: ImageUploadProps) {
   const [uploading, setUploading] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleUpload(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
+
+    setError("");
+
+    if (file.size > MAX_SIZE_MB * 1024 * 1024) {
+      setError(`Image must be under ${MAX_SIZE_MB}MB. This file is ${(file.size / 1024 / 1024).toFixed(1)}MB.`);
+      return;
+    }
 
     setUploading(true);
     const supabase = createClient();
@@ -23,11 +33,13 @@ export default function ImageUpload({ value, onChange, folder = "portfolio" }: I
     const ext = file.name.split(".").pop();
     const fileName = `${folder}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
 
-    const { error } = await supabase.storage
+    const { error: uploadError } = await supabase.storage
       .from("media")
       .upload(fileName, file);
 
-    if (!error) {
+    if (uploadError) {
+      setError(`Upload failed: ${uploadError.message}`);
+    } else {
       const { data: { publicUrl } } = supabase.storage
         .from("media")
         .getPublicUrl(fileName);
@@ -56,6 +68,8 @@ export default function ImageUpload({ value, onChange, folder = "portfolio" }: I
           className="hidden"
         />
       </label>
+      {error && <p className="text-xs text-red-400">{error}</p>}
+      <p className="text-[10px] text-dark-400">Max {MAX_SIZE_MB}MB</p>
     </div>
   );
 }

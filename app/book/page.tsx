@@ -2,10 +2,22 @@ import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 import CalendlyInline from "@/components/CalendlyInline";
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+
 export const metadata: Metadata = {
   title: "Book a Shoot",
   description:
-    "Schedule a professional drone photography, videography, or virtual staging session with CS Media.",
+    "Schedule a professional drone photography, videography, or virtual staging session with CS Media in Leitchfield, KY.",
+  alternates: { canonical: `${BASE_URL}/book` },
+  openGraph: {
+    title: "Book a Shoot | CS Media",
+    description:
+      "Schedule a professional drone photography, videography, or virtual staging session with CS Media in Leitchfield, KY.",
+    type: "website",
+    url: `${BASE_URL}/book`,
+    siteName: "CS Media",
+    images: [{ url: "/images/aerialhome1.jpg", width: 1200, height: 630 }],
+  },
 };
 
 export default function BookPage() {

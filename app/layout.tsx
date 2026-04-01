@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
-import CookieNotice from "@/components/CookieNotice";
-import { EditModeProvider, EditToggle } from "@/components/inline-edit";
+import { EditModeProvider } from "@/components/inline-edit";
+import LayoutShell from "@/components/LayoutShell";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | CS Media",
   },
   description:
-    "Real estate drone photography, videography, virtual staging & video editing in Leitchfield & Grayson County, KY. FAA Part 107 certified. Packages from $150. Book today.",
+    "Real estate drone photography, videography, virtual staging & video editing in Leitchfield & Grayson County, KY. FAA Part 107 certified. From $150.",
   openGraph: {
     title: "CS Media | Real Estate Drone Photography & Video Services",
     description:
@@ -48,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CS Media | Real Estate Drone Photography & Video Services",
     description:
-      "Real estate drone photography, videography, virtual staging & video editing in Leitchfield & Grayson County, KY. FAA Part 107 certified. Packages from $150.",
+      "Real estate drone photography, videography, virtual staging & video editing in Leitchfield & Grayson County, KY. FAA Part 107 certified. From $150.",
     images: ["/images/aerialhome1.jpg"],
   },
   verification: {
@@ -222,23 +221,7 @@ export default function RootLayout({
           }}
         />
         <EditModeProvider>
-          <GoogleAnalytics />
-          <Navbar />
-          <main id="main-content" className="flex-1 pt-16">{children}</main>
-          <Footer />
-          <CookieNotice />
-          {/* Floating text button */}
-          <a
-            href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
-            aria-label="Text CS Media"
-            suppressHydrationWarning
-            className="fixed bottom-6 right-6 z-40 flex md:hidden items-center justify-center rounded-full bg-dark-800 border border-gold/30 h-14 w-14 text-gold shadow-lg shadow-black/40 transition-transform hover:scale-110 hover:bg-dark-700 active:scale-95"
-          >
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
-            </svg>
-          </a>
-          <EditToggle />
+          <LayoutShell>{children}</LayoutShell>
         </EditModeProvider>
       </body>
     </html>

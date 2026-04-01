@@ -5,10 +5,22 @@ import CTASection from "@/components/CTASection";
 import { EditableText } from "@/components/inline-edit";
 import { getPageContent } from "@/lib/supabase/queries";
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet the operator behind CS MEDIA, LLC in Leitchfield, KY. FAA Part 107 certified drone pilot delivering professional photography, videography, and editing services.",
+    "Meet the operator behind CS MEDIA, LLC in Leitchfield, KY. FAA Part 107 certified drone pilot offering photography, videography, and editing.",
+  alternates: { canonical: `${BASE_URL}/about` },
+  openGraph: {
+    title: "About | CS Media",
+    description:
+      "Meet the operator behind CS MEDIA, LLC in Leitchfield, KY. FAA Part 107 certified drone pilot offering photography, videography, and editing.",
+    type: "website",
+    url: `${BASE_URL}/about`,
+    siteName: "CS Media",
+    images: [{ url: "/images/aerialhome1.jpg", width: 1200, height: 630 }],
+  },
 };
 
 export default async function AboutPage() {
@@ -92,7 +104,7 @@ export default async function AboutPage() {
                   <div className="rounded-[20px] overflow-hidden border border-dark-500/20 shadow-[0_8px_40px_rgba(0,0,0,0.4)] transition-all duration-500 hover:shadow-[0_12px_50px_rgba(201,169,110,0.12)] hover:scale-[1.02]">
                     <VideoPlayer
                       src="/videos/personalpromo.mp4"
-                      poster="/images/me.jpg"
+                      poster="/images/me.webp"
                       posterAlt="Cheris S. Chanthavong, owner of CS Media"
                     />
                   </div>

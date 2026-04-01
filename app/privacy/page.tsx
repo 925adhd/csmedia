@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "CS Media privacy policy — how we collect, use, and protect your information.",
+  description:
+    "CS Media privacy policy — how we collect, use, and protect your information. Covers Google Analytics, cookies, and your data rights.",
+  alternates: { canonical: `${BASE_URL}/privacy` },
+  openGraph: {
+    title: "Privacy Policy | CS Media",
+    description:
+      "CS Media privacy policy — how we collect, use, and protect your information. Covers Google Analytics, cookies, and your data rights.",
+    type: "website",
+    url: `${BASE_URL}/privacy`,
+    siteName: "CS Media",
+    images: [{ url: "/images/aerialhome1.jpg", width: 1200, height: 630 }],
+  },
 };
 
 export default function PrivacyPage() {

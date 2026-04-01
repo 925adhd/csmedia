@@ -69,6 +69,7 @@ export default function Navbar() {
             className="md:hidden p-2 text-dark-100"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               {mobileOpen ? (
@@ -113,6 +114,11 @@ export default function Navbar() {
             <a
               href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
               className="text-sm text-dark-200 hover:text-gold transition-colors"
+              onClick={() => {
+                if (typeof window !== "undefined" && typeof window.gtag === "function") {
+                  window.gtag("event", "click_to_text", { event_category: "Contact", event_label: "Navbar Mobile" });
+                }
+              }}
             >
               Or text <span className="text-gold/70">(270) 307-0173</span>
             </a>

@@ -49,25 +49,26 @@ export default function PortfolioAdmin() {
     setMessage("");
 
     const { id, created_at, updated_at, ...rest } = editing as PortfolioProject;
+    let hasError = false;
 
     if (id) {
       const { error } = await supabase
         .from("portfolio_projects")
         .update(rest)
         .eq("id", id);
-      if (error) setMessage(`Error: ${error.message}`);
+      if (error) { setMessage(`Error: ${error.message}`); hasError = true; }
       else setMessage("Project updated!");
     } else {
       const { error } = await supabase
         .from("portfolio_projects")
         .insert(rest);
-      if (error) setMessage(`Error: ${error.message}`);
+      if (error) { setMessage(`Error: ${error.message}`); hasError = true; }
       else setMessage("Project created!");
     }
 
     setSaving(false);
     await loadProjects();
-    if (!message.startsWith("Error")) setTimeout(() => setEditing(null), 500);
+    if (!hasError) setTimeout(() => setEditing(null), 500);
   }
 
   async function handleDelete(id: string) {

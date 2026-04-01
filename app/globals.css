@@ -30,6 +30,10 @@ body {
   color: var(--foreground);
 }
 
+button, [role="button"] {
+  cursor: pointer;
+}
+
 
 /* Subtle gold glow effect for hover states */
 .glow-gold {
