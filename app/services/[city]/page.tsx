@@ -37,7 +37,7 @@ export async function generateMetadata({
       type: "website",
       url: `${BASE_URL}/services/${loc.slug}`,
       siteName: "CS Media",
-      images: [{ url: "/images/aerialhome1.jpg", width: 1200, height: 630 }],
+      images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.jpg", width: 1200, height: 630 }],
     },
   };
 }
@@ -60,7 +60,7 @@ export default async function CityPage({
     name: "CS MEDIA, LLC",
     telephone: "+1-270-307-0173",
     url: BASE_URL,
-    image: `${BASE_URL}/images/aerialhome1.jpg`,
+    image: `${BASE_URL}/images/real-estate-aerial-drone-leitchfield-ky.jpg`,
     priceRange: "$150-$300",
     address: {
       "@type": "PostalAddress",
@@ -129,7 +129,7 @@ export default async function CityPage({
     description: `Professional real estate drone photography, videography, and virtual staging services in ${loc.city}, ${loc.state}.`,
     telephone: "+1-270-307-0173",
     url: `${BASE_URL}/services/${loc.slug}`,
-    image: `${BASE_URL}/images/aerialhome1.jpg`,
+    image: `${BASE_URL}/images/real-estate-aerial-drone-leitchfield-ky.jpg`,
     priceRange: "$150-$300",
     areaServed: {
       "@type": "City",
@@ -171,7 +171,7 @@ export default async function CityPage({
       {/* Hero */}
       <section className="relative bg-dark-900 py-12 sm:py-28 overflow-hidden">
         <Image
-          src="/images/aerialhome1.webp"
+          src="/images/real-estate-aerial-drone-leitchfield-ky.webp"
           alt={`Aerial drone photography in ${loc.city}, Kentucky`}
           fill
           className="object-cover opacity-15"
@@ -326,7 +326,7 @@ export default async function CityPage({
             <FadeIn delay={0.15}>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-dark-500/30">
                 <Image
-                  src="/images/aerialhome1.webp"
+                  src="/images/real-estate-aerial-drone-leitchfield-ky.webp"
                   alt={`Drone photography example for ${loc.city}, KY real estate`}
                   fill
                   className="object-cover"

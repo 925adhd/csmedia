@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="relative inline-block w-20 h-14">
               <Image
-                src="/images/logo.png"
+                src="/images/cs-media-logo.png"
                 alt="CS Media"
                 fill
                 className="object-contain"

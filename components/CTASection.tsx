@@ -17,7 +17,7 @@ export default function CTASection({
   desktopSubheading,
   buttonText = "Book a Shoot",
   useTextLink = false,
-  backgroundImage = "/images/nighthome.webp",
+  backgroundImage = "/images/twilight-ranch-home-evening-kentucky.webp",
 }: CTASectionProps) {
   const buttonClass = "mt-10 inline-block border-gradient rounded-full bg-gold/10 px-10 py-4 text-sm font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20 hover:glow-gold cursor-pointer";
 

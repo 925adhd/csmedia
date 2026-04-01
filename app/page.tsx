@@ -84,7 +84,7 @@ export default async function Home() {
       {/* Hero */}
       <section id="hero" className="relative flex items-start pt-24 md:items-center md:pt-0 justify-center min-h-screen bg-dark-900 overflow-hidden">
         <Image
-          src="/images/aerialhome1.webp"
+          src="/images/real-estate-aerial-drone-leitchfield-ky.webp"
           alt=""
           aria-hidden="true"
           fill
@@ -244,8 +244,8 @@ export default async function Home() {
             <FadeIn delay={0.15}>
               <div>
                 <BeforeAfter
-                  beforeSrc="/images/examplestagingbefore.webp"
-                  afterSrc="/images/examplestagingcomplete.webp"
+                  beforeSrc="/images/virtual-staging-before-empty-room.webp"
+                  afterSrc="/images/virtual-staging-after-furnished.webp"
                   beforeAlt="Empty room before virtual staging"
                   afterAlt="Room after virtual staging with furniture"
                 />

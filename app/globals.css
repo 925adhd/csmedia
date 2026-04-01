@@ -34,6 +34,16 @@ button, [role="button"] {
   cursor: pointer;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #c9a96e;
+  outline-offset: 2px;
+}
+
 
 /* Subtle gold glow effect for hover states */
 .glow-gold {

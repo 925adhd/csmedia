@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     url: `${BASE_URL}/about`,
     siteName: "CS Media",
-    images: [{ url: "/images/aerialhome1.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -97,7 +97,7 @@ export default async function AboutPage() {
                   <div className="rounded-[20px] overflow-hidden border border-dark-500/20 shadow-[0_8px_40px_rgba(0,0,0,0.4)] transition-all duration-500 hover:shadow-[0_12px_50px_rgba(201,169,110,0.12)] hover:scale-[1.02]">
                     <VideoPlayer
                       src="/videos/personalpromo.mp4"
-                      poster="/images/me.webp"
+                      poster="/images/cheris-chanthavong-cs-media-owner.webp"
                       posterAlt="Cheris S. Chanthavong, owner of CS Media"
                     />
                   </div>

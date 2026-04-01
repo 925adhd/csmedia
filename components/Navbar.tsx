@@ -33,7 +33,7 @@ export default function Navbar() {
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="relative w-16 h-12">
             <Image
-              src="/images/logo.png"
+              src="/images/cs-media-logo.png"
               alt="CS Media"
               fill
               className="object-contain"

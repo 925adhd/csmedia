@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     url: `${BASE_URL}/services`,
     siteName: "CS Media",
-    images: [{ url: "/images/aerialhome1.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.jpg", width: 1200, height: 630 }],
   },
 };
 
@@ -220,7 +220,7 @@ export default async function ServicesPage() {
       {/* Header */}
       <section className="relative bg-dark-900 py-16 sm:py-28 overflow-hidden">
         <Image
-          src="/images/home3.webp"
+          src="/images/white-farmhouse-aerial-drone-kentucky.webp"
           alt="Aerial view of property"
           fill
           className="object-cover opacity-15"
@@ -487,8 +487,8 @@ export default async function ServicesPage() {
             <FadeIn delay={0.15}>
               <div>
                 <BeforeAfter
-                  beforeSrc="/images/examplestagingbefore.webp"
-                  afterSrc="/images/examplestagingcomplete.webp"
+                  beforeSrc="/images/virtual-staging-before-empty-room.webp"
+                  afterSrc="/images/virtual-staging-after-furnished.webp"
                   beforeAlt="Empty room before virtual staging"
                   afterAlt="Virtually staged room with furniture and decor"
                 />

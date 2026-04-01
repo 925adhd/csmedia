@@ -38,8 +38,8 @@ const staticProjects: PortfolioProject[] = [
     location: "Kentucky",
     description:
       "A stunning stone estate captured from above, showcasing the full scope of the property's driveway approach, landscaping, and architectural details that ground-level photos simply can't convey.",
-    heroImage: "/images/aerialhome1.webp",
-    images: ["/images/aerialhome1.webp", "/images/stone.webp", "/images/stoneaireal.webp", "/images/stoneinterior.webp"],
+    heroImage: "/images/real-estate-aerial-drone-leitchfield-ky.webp",
+    images: ["/images/real-estate-aerial-drone-leitchfield-ky.webp", "/images/stone-estate-front-exterior-walkway.webp", "/images/stone-estate-aerial-overhead-drone.webp", "/images/stone-estate-living-room-fireplace.webp"],
     featured: true,
   },
   {
@@ -49,8 +49,8 @@ const staticProjects: PortfolioProject[] = [
     location: "Kentucky",
     description:
       "A beautiful modern farmhouse on sprawling acreage, photographed from both ground and aerial perspectives. The combination of drone and traditional photography captured the property's connection to the surrounding landscape.",
-    heroImage: "/images/home2.webp",
-    images: ["/images/home2.webp", "/images/home3.webp", "/images/interior2.webp", "/images/interior1.webp"],
+    heroImage: "/images/white-farmhouse-front-exterior-kentucky.webp",
+    images: ["/images/white-farmhouse-front-exterior-kentucky.webp", "/images/white-farmhouse-aerial-drone-kentucky.webp", "/images/rustic-kitchen-wood-beams-island.webp", "/images/rustic-bathroom-brick-double-vanity.webp"],
     featured: true,
   },
   {
@@ -60,8 +60,8 @@ const staticProjects: PortfolioProject[] = [
     location: "Kentucky",
     description:
       "A charming country home on open acreage featuring a covered pavilion, wraparound porch, and beautifully finished interiors. Aerial drone photography captures the full property layout while interior shots showcase the living spaces and loft.",
-    heroImage: "/images/home5.webp",
-    images: ["/images/home5.webp", "/images/porch.webp", "/images/interior3.webp", "/images/interior4.webp"],
+    heroImage: "/images/country-home-aerial-acreage-kentucky.webp",
+    images: ["/images/country-home-aerial-acreage-kentucky.webp", "/images/covered-front-porch-kentucky-hocheris-chanthavong-cs-media-owner.webp", "/images/living-room-sectional-dark-floors.webp", "/images/upper-level-loft-staircase-landing.webp"],
     featured: false,
   },
   {
@@ -71,8 +71,8 @@ const staticProjects: PortfolioProject[] = [
     location: "Kentucky",
     description:
       "A dramatic twilight photography session capturing warm interior lighting against the dusk sky. Twilight shots create an emotional connection with buyers and make listings stand out on every platform.",
-    heroImage: "/images/nighthome.webp",
-    images: ["/images/nighthome.webp", "/images/twilight1.webp"],
+    heroImage: "/images/twilight-ranch-home-evening-kentucky.webp",
+    images: ["/images/twilight-ranch-home-evening-kentucky.webp", "/images/twilight-ranch-aerial-drone-dusk.webp"],
     featured: true,
   },
   {
@@ -82,8 +82,8 @@ const staticProjects: PortfolioProject[] = [
     location: "Kentucky",
     description:
       "A cinematic aerial property tour showcasing a home and its surrounding landscape from above. Smooth drone footage captures the full scope of the property, giving potential buyers an immersive experience before ever stepping foot on site.",
-    heroImage: "/images/drone.webp",
-    images: ["/images/drone.webp"],
+    heroImage: "/images/cs-media-fpv-drone-pilot-real-estate.webp",
+    images: ["/images/cs-media-fpv-drone-pilot-real-estate.webp"],
     videoSrc: "/videos/desktop.mp4",
     mobileVideoSrc: "/videos/mobilevid.mp4",
     featured: true,
@@ -95,8 +95,8 @@ const staticProjects: PortfolioProject[] = [
     location: "Kentucky",
     description:
       "A high-energy promotional video for a local business, capturing the brand's personality and energy. Fast cuts, vibrant color grading, and a custom soundtrack bring the business to life in under 60 seconds.",
-    heroImage: "/images/truck.webp",
-    images: ["/images/truck.webp"],
+    heroImage: "/images/gmc-truck-promo-video-kentucky.webp",
+    images: ["/images/gmc-truck-promo-video-kentucky.webp"],
     videoSrc: "/videos/truckpromo.mp4",
     featured: false,
   },
@@ -107,8 +107,8 @@ const staticProjects: PortfolioProject[] = [
     location: "Kentucky",
     description:
       "Dynamic event coverage capturing the energy and atmosphere of local community events. Edited with cinematic transitions, music, and color grading to deliver a polished recap that event organizers can use for marketing and social media.",
-    heroImage: "/images/town.webp",
-    images: ["/images/town.webp"],
+    heroImage: "/images/leitchfield-downtown-holiday-event-aerial.webp",
+    images: ["/images/leitchfield-downtown-holiday-event-aerial.webp"],
     videoSrc: "/videos/towneventsexample.mp4",
     featured: false,
   },

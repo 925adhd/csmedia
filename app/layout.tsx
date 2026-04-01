@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   },
   description:
     "Real estate drone photography, videography, virtual staging & video editing in Leitchfield & Grayson County, KY. FAA Part 107 certified. From $150.",
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: "CS Media | Real Estate Drone Photography & Video Services",
     description:
@@ -35,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "CS Media",
     images: [
       {
-        url: "/images/aerialhome1.jpg",
+        url: "/images/real-estate-aerial-drone-leitchfield-ky.jpg",
         width: 1200,
         height: 630,
         alt: "CS Media - Real Estate Drone Photography & Video Services",
@@ -47,7 +50,7 @@ export const metadata: Metadata = {
     title: "CS Media | Real Estate Drone Photography & Video Services",
     description:
       "Real estate drone photography, videography, virtual staging & video editing in Leitchfield & Grayson County, KY. FAA Part 107 certified. From $150.",
-    images: ["/images/aerialhome1.jpg"],
+    images: ["/images/real-estate-aerial-drone-leitchfield-ky.jpg"],
   },
   verification: {
     google: "8DibFK426dNH-_QmyMCKPZR2OCImW5L8NUWCmbjzkzQ",
@@ -79,16 +82,15 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "LocalBusiness",
-                  "@id": `${BASE_URL}/#business`,
+                  "@id": "#business",
                   name: "CS MEDIA, LLC",
                   description:
                     "Professional real estate drone photography, videography, virtual staging, and video editing services. FAA Part 107 certified.",
-                  url: BASE_URL,
                   sameAs: [
                     "https://www.facebook.com/profile.php?id=100090509656389",
                   ],
+                  email: "cscreatesmediallc@gmail.com",
                   telephone: "+1-270-307-0173",
-                  image: `${BASE_URL}/images/aerialhome1.jpg`,
                   priceRange: "$150-$300",
                   address: {
                     "@type": "PostalAddress",
@@ -177,43 +179,26 @@ export default function RootLayout({
                       },
                     ],
                   },
-                  aggregateRating: {
-                    "@type": "AggregateRating",
-                    ratingValue: "5.0",
-                    reviewCount: "2",
-                    bestRating: "5",
+                },
+                {
+                  "@type": "Organization",
+                  "@id": "#organization",
+                  name: "CS MEDIA, LLC",
+                  email: "cscreatesmediallc@gmail.com",
+                  telephone: "+1-270-307-0173",
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Leitchfield",
+                    addressRegion: "KY",
+                    postalCode: "42754",
+                    addressCountry: "US",
                   },
-                  review: [
-                    {
-                      "@type": "Review",
-                      author: { "@type": "Person", name: "Snow Dogs Food Truck" },
-                      reviewRating: {
-                        "@type": "Rating",
-                        ratingValue: "5",
-                        bestRating: "5",
-                      },
-                      reviewBody:
-                        "We couldn't be happier with a promo video she shot for us! She made it so much fun, can't wait to do another!!!!",
-                    },
-                    {
-                      "@type": "Review",
-                      author: { "@type": "Person", name: "Jared Clouse" },
-                      reviewRating: {
-                        "@type": "Rating",
-                        ratingValue: "5",
-                        bestRating: "5",
-                      },
-                      reviewBody:
-                        "OH MY GOSH!!!! I can't even say how amazing she is. She designed my watermark and logo and did absolutely AMAZING!!!!! I 100% recommend her for any design needs you may have.",
-                    },
-                  ],
                 },
                 {
                   "@type": "WebSite",
-                  "@id": `${BASE_URL}/#website`,
-                  url: BASE_URL,
+                  "@id": "#website",
                   name: "CS Media",
-                  publisher: { "@id": `${BASE_URL}/#business` },
+                  publisher: { "@id": "#organization" },
                 },
               ],
             }),

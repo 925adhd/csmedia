@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Page Not Found",
+  description:
+    "The page you are looking for does not exist or has been moved. Browse CS Media drone photography and videography services.",
+};
 
 export default function NotFound() {
   return (
@@ -20,6 +27,12 @@ export default function NotFound() {
             className="rounded-full bg-gold/10 border border-gold/20 px-8 py-3 text-sm font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20"
           >
             Go Home
+          </Link>
+          <Link
+            href="/services"
+            className="rounded-full border border-dark-400 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-dark-100 transition-all hover:border-gold/50 hover:text-gold"
+          >
+            Our Services
           </Link>
           <Link
             href="/contact"
