@@ -10,7 +10,6 @@ const navItems = [
   { href: "/admin/portfolio", label: "Portfolio", icon: "image" },
   { href: "/admin/testimonials", label: "Testimonials", icon: "quote" },
   { href: "/admin/services", label: "Services", icon: "layers" },
-  { href: "/admin/content", label: "Page Content", icon: "file" },
   { href: "/admin/history", label: "History", icon: "clock" },
 ];
 

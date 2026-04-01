@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 import VideoPlayer from "@/components/VideoPlayer";
 import CTASection from "@/components/CTASection";
-import { EditableText } from "@/components/inline-edit";
 import { getPageContent } from "@/lib/supabase/queries";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
@@ -71,20 +70,14 @@ export default async function AboutPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,169,110,0.06),transparent_60%)]" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <EditableText page="about" section="header" field="tagline" value={headerTagline}>
-              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                {headerTagline}
-              </span>
-            </EditableText>
+            <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+              {headerTagline}
+            </span>
             <h1 className="mt-2 text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
-              <EditableText page="about" section="header" field="heading" value={headerHeading}>
-                {headerHeading}
-              </EditableText>
+              {headerHeading}
               <br />
               <span className="text-gold">
-                <EditableText page="about" section="header" field="heading_gold" value={headerHeadingGold}>
-                  {headerHeadingGold}
-                </EditableText>
+                {headerHeadingGold}
               </span>
             </h1>
           </FadeIn>
@@ -120,21 +113,15 @@ export default async function AboutPage() {
               <div className="max-w-[560px] mx-auto lg:mx-0">
                 <div className="inline-flex items-center gap-3 mb-6">
                   <span className="h-px w-8 bg-gold/60" />
-                  <EditableText page="about" section="bio" field="tagline" value={bioTagline}>
-                    <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                      {bioTagline}
-                    </span>
-                  </EditableText>
+                  <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                    {bioTagline}
+                  </span>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-8">
-                  <EditableText page="about" section="bio" field="heading" value={bioHeading}>
-                    {bioHeading}
-                  </EditableText>
+                  {bioHeading}
                   <br />
                   the owner of <span className="text-gold">
-                    <EditableText page="about" section="bio" field="heading_gold" value={bioHeadingGold}>
-                      {bioHeadingGold}
-                    </EditableText>
+                    {bioHeadingGold}
                   </span>.
                 </h2>
                 <div className="space-y-5 text-dark-200 leading-[1.8] text-[15px]">
@@ -164,15 +151,11 @@ export default async function AboutPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
-              <EditableText page="about" section="trust_points" field="tagline" value={trustTagline}>
-                <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                  {trustTagline}
-                </span>
-              </EditableText>
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                {trustTagline}
+              </span>
               <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white tracking-tight">
-                <EditableText page="about" section="trust_points" field="heading" value={trustHeading}>
-                  {trustHeading}
-                </EditableText>
+                {trustHeading}
               </h2>
             </div>
           </FadeIn>

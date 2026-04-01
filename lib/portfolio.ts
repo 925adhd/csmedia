@@ -73,7 +73,7 @@ const staticProjects: PortfolioProject[] = [
       "A dramatic twilight photography session capturing warm interior lighting against the dusk sky. Twilight shots create an emotional connection with buyers and make listings stand out on every platform.",
     heroImage: "/images/nighthome.webp",
     images: ["/images/nighthome.webp", "/images/twilight1.webp"],
-    featured: false,
+    featured: true,
   },
   {
     slug: "drone-property-tour",
@@ -86,7 +86,7 @@ const staticProjects: PortfolioProject[] = [
     images: ["/images/drone.webp"],
     videoSrc: "/videos/desktop.mp4",
     mobileVideoSrc: "/videos/mobilevid.mp4",
-    featured: false,
+    featured: true,
   },
   {
     slug: "local-business-promo",

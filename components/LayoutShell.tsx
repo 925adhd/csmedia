@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import CookieNotice from "@/components/CookieNotice";
 import FloatingTextButton from "@/components/FloatingTextButton";
-import { EditToggle } from "@/components/inline-edit";
 
 export default function LayoutShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -28,7 +27,6 @@ export default function LayoutShell({ children }: { children: React.ReactNode })
       <Footer />
       <CookieNotice />
       <FloatingTextButton />
-      <EditToggle />
     </>
   );
 }

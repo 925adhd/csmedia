@@ -63,6 +63,8 @@ export default function ServicesAdmin() {
   const [editing, setEditing] = useState<Partial<Service> | null>(null);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState("");
+  const [dragId, setDragId] = useState<string | null>(null);
+  const [dragOverId, setDragOverId] = useState<string | null>(null);
 
   const supabase = createClient();
 
@@ -102,19 +104,25 @@ export default function ServicesAdmin() {
     await load();
   }
 
-  async function moveItem(id: string, direction: "up" | "down") {
-    const idx = items.findIndex((i) => i.id === id);
-    if (idx < 0) return;
-    const swapIdx = direction === "up" ? idx - 1 : idx + 1;
-    if (swapIdx < 0 || swapIdx >= items.length) return;
+  async function handleDrop(targetId: string) {
+    if (!dragId || dragId === targetId) { setDragId(null); setDragOverId(null); return; }
 
-    const currentOrder = items[idx].sort_order;
-    const swapOrder = items[swapIdx].sort_order;
+    const fromIdx = items.findIndex((i) => i.id === dragId);
+    const toIdx = items.findIndex((i) => i.id === targetId);
+    if (fromIdx < 0 || toIdx < 0) return;
 
-    await Promise.all([
-      supabase.from("services").update({ sort_order: swapOrder }).eq("id", items[idx].id),
-      supabase.from("services").update({ sort_order: currentOrder }).eq("id", items[swapIdx].id),
-    ]);
+    const reordered = [...items];
+    const [moved] = reordered.splice(fromIdx, 1);
+    reordered.splice(toIdx, 0, moved);
+    setItems(reordered);
+    setDragId(null);
+    setDragOverId(null);
+
+    await Promise.all(
+      reordered.map((item, i) =>
+        supabase.from("services").update({ sort_order: i + 1 }).eq("id", item.id)
+      )
+    );
     await load();
   }
 
@@ -123,7 +131,7 @@ export default function ServicesAdmin() {
       <div className="flex items-center justify-between mb-2">
         <div>
           <h1 className="text-2xl font-bold text-white">Services</h1>
-          <p className="text-sm text-dark-300 mt-1">These show as cards on your homepage. Drag the arrows to reorder.</p>
+          <p className="text-sm text-dark-200 mt-1">These show as cards on your homepage. Drag to reorder.</p>
         </div>
         <button
           onClick={() => setEditing({ ...emptyService, sort_order: items.length + 1 })}
@@ -203,33 +211,28 @@ export default function ServicesAdmin() {
         </div>
       ) : (
         <div className="space-y-2 mt-4">
-          {items.map((item, idx) => (
+          {items.map((item) => (
             <div
               key={item.id}
-              className="flex items-center gap-4 rounded-xl bg-dark-800 border border-dark-500/30 p-4 hover:border-gold/20 transition-colors group"
+              draggable
+              onDragStart={() => setDragId(item.id)}
+              onDragOver={(e) => { e.preventDefault(); setDragOverId(item.id); }}
+              onDragLeave={() => setDragOverId(null)}
+              onDrop={() => handleDrop(item.id)}
+              onDragEnd={() => { setDragId(null); setDragOverId(null); }}
+              className={`flex items-center gap-4 rounded-xl bg-dark-800 border p-4 transition-colors group ${
+                dragOverId === item.id && dragId !== item.id
+                  ? "border-gold/50 bg-gold/5"
+                  : dragId === item.id
+                    ? "opacity-40 border-dark-500/30"
+                    : "border-dark-500/30 hover:border-gold/20"
+              }`}
             >
-              {/* Reorder arrows */}
-              <div className="flex flex-col gap-0.5 shrink-0">
-                <button
-                  onClick={() => moveItem(item.id, "up")}
-                  disabled={idx === 0}
-                  className="p-1 text-dark-400 hover:text-gold disabled:opacity-20 disabled:hover:text-dark-400 transition-colors"
-                  title="Move up"
-                >
-                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                  </svg>
-                </button>
-                <button
-                  onClick={() => moveItem(item.id, "down")}
-                  disabled={idx === items.length - 1}
-                  className="p-1 text-dark-400 hover:text-gold disabled:opacity-20 disabled:hover:text-dark-400 transition-colors"
-                  title="Move down"
-                >
-                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
-                </button>
+              {/* Drag handle */}
+              <div className="shrink-0 text-dark-500 hover:text-dark-300 cursor-grab active:cursor-grabbing">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+                </svg>
               </div>
 
               {/* Icon */}

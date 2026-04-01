@@ -7,7 +7,6 @@ import BeforeAfter from "@/components/BeforeAfter";
 import CTASection from "@/components/CTASection";
 import CalendlyButton from "@/components/CalendlyButton";
 import TextLink from "@/components/TextLink";
-import { EditableText, EditableList } from "@/components/inline-edit";
 import { getPortfolioProjects } from "@/lib/portfolio";
 import { getPageContent } from "@/lib/supabase/queries";
 import { getTestimonials, getServices } from "@/lib/supabase/queries";
@@ -115,37 +114,27 @@ export default async function Home() {
           <FadeIn>
             <div className="inline-flex items-center gap-3 mb-8">
               <span className="h-px w-12 bg-gold/60" />
-              <EditableText page="home" section="hero" field="tagline" value={(hero?.tagline as string) || "Licensed to Drone"}>
-                <span className="text-gold text-xs font-mono uppercase tracking-[0.4em]">
-                  {(hero?.tagline as string) || "Licensed to Drone"}
-                </span>
-              </EditableText>
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.4em]">
+                {(hero?.tagline as string) || "Licensed to Drone"}
+              </span>
               <span className="h-px w-12 bg-gold/60" />
             </div>
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-[0.9]">
-              <EditableText page="home" section="hero" field="heading_line1" value={(hero?.heading_line1 as string) || "Elevated"}>
-                {(hero?.heading_line1 as string) || "Elevated"}
-              </EditableText>
+              {(hero?.heading_line1 as string) || "Elevated"}
               <br />
               <span className="text-gold">
-                <EditableText page="home" section="hero" field="heading_line2" value={(hero?.heading_line2 as string) || "Real Estate"}>
-                  {(hero?.heading_line2 as string) || "Real Estate"}
-                </EditableText>
+                {(hero?.heading_line2 as string) || "Real Estate"}
               </span>
               <br />
-              <EditableText page="home" section="hero" field="heading_line3" value={(hero?.heading_line3 as string) || "Media"}>
-                {(hero?.heading_line3 as string) || "Media"}
-              </EditableText>
+              {(hero?.heading_line3 as string) || "Media"}
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <EditableText page="home" section="hero" field="subtext" value={(hero?.subtext as string) || "Professional drone photography, cinematic video & expert editing. Quality work. Quick turnaround."} multiline>
-              <p className="mt-8 text-lg md:text-xl text-dark-200 max-w-xl mx-auto leading-relaxed">
-                {(hero?.subtext as string) || "Professional drone photography, cinematic video & expert editing. Quality work. Quick turnaround."}
-              </p>
-            </EditableText>
+            <p className="mt-8 text-lg md:text-xl text-dark-200 max-w-xl mx-auto leading-relaxed">
+              {(hero?.subtext as string) || "Professional drone photography, cinematic video & expert editing. Quality work. Quick turnaround."}
+            </p>
           </FadeIn>
           <FadeIn delay={0.3}>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -161,15 +150,6 @@ export default async function Home() {
                 View Portfolio
               </Link>
             </div>
-            <p className="mt-5 text-sm text-dark-300">
-              Or text{" "}
-              <a
-                href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
-                className="text-gold/70 hover:text-gold transition-colors"
-              >
-                (270) 307-0173
-              </a>
-            </p>
           </FadeIn>
         </div>
 
@@ -184,19 +164,13 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
-              <EditableText page="home" section="services" field="tagline" value={(servicesContent?.tagline as string) || "What We Do"}>
-                <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                  {(servicesContent?.tagline as string) || "What We Do"}
-                </span>
-              </EditableText>
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                {(servicesContent?.tagline as string) || "What We Do"}
+              </span>
               <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
-                <EditableText page="home" section="services" field="heading" value={(servicesContent?.heading as string) || "Property Media That Delivers"}>
-                  {(servicesContent?.heading as string) || "Property Media That Delivers"}
-                </EditableText>
+                {(servicesContent?.heading as string) || "Property Media That Delivers"}
                 <span className="text-gold">
-                  {" "}<EditableText page="home" section="services" field="heading_gold" value={(servicesContent?.heading_gold as string) || "Results"}>
-                    {(servicesContent?.heading_gold as string) || "Results"}
-                  </EditableText>
+                  {" "}{(servicesContent?.heading_gold as string) || "Results"}
                 </span>
               </h2>
             </div>
@@ -237,45 +211,33 @@ export default async function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <FadeIn>
               <div>
-                <EditableText page="home" section="staging" field="tagline" value={(stagingContent?.tagline as string) || "Virtual Staging"}>
-                  <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                    {(stagingContent?.tagline as string) || "Virtual Staging"}
-                  </span>
-                </EditableText>
+                <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                  {(stagingContent?.tagline as string) || "Virtual Staging"}
+                </span>
                 <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
-                  <EditableText page="home" section="staging" field="heading" value={(stagingContent?.heading as string) || "Virtual Staging That"}>
-                    {(stagingContent?.heading as string) || "Virtual Staging That"}
-                  </EditableText>
+                  {(stagingContent?.heading as string) || "Virtual Staging That"}
                   <br />
                   <span className="text-gold">
-                    <EditableText page="home" section="staging" field="heading_gold" value={(stagingContent?.heading_gold as string) || "Sells Homes Faster"}>
-                      {(stagingContent?.heading_gold as string) || "Sells Homes Faster"}
-                    </EditableText>
+                    {(stagingContent?.heading_gold as string) || "Sells Homes Faster"}
                   </span>
                 </h2>
-                <EditableText page="home" section="staging" field="description" value={(stagingContent?.description as string) || "Our edited virtual staging transforms empty, hard-to-visualize spaces into fully furnished rooms that help buyers see the potential. Realistic furniture, decor, and styling — digitally placed to sell the lifestyle, not just the square footage."} multiline>
-                  <p className="mt-5 text-dark-200 leading-relaxed">
-                    {(stagingContent?.description as string) || "Our edited virtual staging transforms empty, hard-to-visualize spaces into fully furnished rooms that help buyers see the potential. Realistic furniture, decor, and styling — digitally placed to sell the lifestyle, not just the square footage."}
-                  </p>
-                </EditableText>
-                <EditableList page="home" section="staging" field="features" items={stagingFeatures}>
-                  <ul className="mt-6 space-y-3">
-                    {stagingFeatures.map((item) => (
-                      <li key={item} className="flex items-center gap-3 text-sm text-dark-100">
-                        <svg className="h-4 w-4 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </EditableList>
+                <p className="mt-5 text-dark-200 leading-relaxed">
+                  {(stagingContent?.description as string) || "Our edited virtual staging transforms empty, hard-to-visualize spaces into fully furnished rooms that help buyers see the potential. Realistic furniture, decor, and styling — digitally placed to sell the lifestyle, not just the square footage."}
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {stagingFeatures.map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-sm text-dark-100">
+                      <svg className="h-4 w-4 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
                 <TextLink
                   className="mt-8 inline-block border-gradient rounded-full bg-gold/10 px-8 py-3 text-sm font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20"
                 >
-                  <EditableText page="home" section="staging" field="cta_text" value={(stagingContent?.cta_text as string) || "Get a Quote"}>
-                    {(stagingContent?.cta_text as string) || "Get a Quote"}
-                  </EditableText>
+                  {(stagingContent?.cta_text as string) || "Get a Quote"}
                 </TextLink>
               </div>
             </FadeIn>
@@ -304,15 +266,11 @@ export default async function Home() {
           <FadeIn>
             <div className="flex items-end justify-between mb-14">
               <div>
-                <EditableText page="home" section="recent_work" field="tagline" value={(recentWork?.tagline as string) || "Recent Work"}>
-                  <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                    {(recentWork?.tagline as string) || "Recent Work"}
-                  </span>
-                </EditableText>
+                <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                  {(recentWork?.tagline as string) || "Recent Work"}
+                </span>
                 <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
-                  <EditableText page="home" section="recent_work" field="heading" value={(recentWork?.heading as string) || "Featured Projects"}>
-                    {(recentWork?.heading as string) || "Featured Projects"}
-                  </EditableText>
+                  {(recentWork?.heading as string) || "Featured Projects"}
                 </h2>
               </div>
               <Link
@@ -327,17 +285,11 @@ export default async function Home() {
             </div>
           </FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {portfolioProjects.filter((p) => !p.videoSrc).slice(0, 2).map((project, i) => (
+            {portfolioProjects.filter((p) => p.featured).slice(0, 4).map((project, i) => (
               <FadeIn key={project.slug} delay={i * 0.1}>
                 <PortfolioCard project={project} />
               </FadeIn>
             ))}
-            <FadeIn delay={0.2}>
-              <PortfolioCard project={portfolioProjects.find((p) => p.slug === "twilight-showcase")!} />
-            </FadeIn>
-            <FadeIn delay={0.3}>
-              <PortfolioCard project={portfolioProjects.find((p) => p.slug === "drone-property-tour")!} />
-            </FadeIn>
           </div>
           <div className="mt-10 text-center">
             <Link
@@ -363,15 +315,11 @@ export default async function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
           <FadeIn>
             <div className="text-center mb-14">
-              <EditableText page="home" section="testimonials" field="tagline" value={(testimonialsContent?.tagline as string) || "Reviews"}>
-                <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                  {(testimonialsContent?.tagline as string) || "Reviews"}
-                </span>
-              </EditableText>
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                {(testimonialsContent?.tagline as string) || "Reviews"}
+              </span>
               <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
-                <EditableText page="home" section="testimonials" field="heading" value={(testimonialsContent?.heading as string) || "Trusted by Agents & Property Owners"}>
-                  {(testimonialsContent?.heading as string) || "Trusted by Agents & Property Owners"}
-                </EditableText>
+                {(testimonialsContent?.heading as string) || "Trusted by Agents & Property Owners"}
               </h2>
               <div className="mt-4 flex items-center justify-center gap-1">
                 {[...Array(5)].map((_, i) => (

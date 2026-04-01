@@ -24,6 +24,7 @@ export default async function AdminDashboard() {
   return (
     <AdminShell>
       <h1 className="text-2xl font-bold text-white mb-6">Dashboard</h1>
+
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {stats.map((stat) => (
           <a

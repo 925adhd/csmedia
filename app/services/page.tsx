@@ -3,7 +3,6 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import BeforeAfter from "@/components/BeforeAfter";
 import CTASection from "@/components/CTASection";
-import { EditableText, EditableList } from "@/components/inline-edit";
 import { getPageContent } from "@/lib/supabase/queries";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
@@ -230,21 +229,15 @@ export default async function ServicesPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900/40 via-dark-900/70 to-dark-900" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <EditableText page="services" section="header" field="tagline" value={headerTagline}>
-              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                {headerTagline}
-              </span>
-            </EditableText>
+            <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+              {headerTagline}
+            </span>
             <h1 className="mt-3 text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
-              <EditableText page="services" section="header" field="heading" value={headerHeading}>
-                {headerHeading}
-              </EditableText>
+              {headerHeading}
             </h1>
-            <EditableText page="services" section="header" field="subtext" value={headerSubtext} multiline>
-              <p className="mt-4 text-base sm:text-lg text-dark-200 max-w-2xl mx-auto">
-                {headerSubtext}
-              </p>
-            </EditableText>
+            <p className="mt-4 text-base sm:text-lg text-dark-200 max-w-2xl mx-auto">
+              {headerSubtext}
+            </p>
           </FadeIn>
         </div>
       </section>
@@ -256,15 +249,11 @@ export default async function ServicesPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-14">
-              <EditableText page="services" section="pricing" field="tagline" value={pricingTagline}>
-                <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                  {pricingTagline}
-                </span>
-              </EditableText>
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                {pricingTagline}
+              </span>
               <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white tracking-tight">
-                <EditableText page="services" section="pricing" field="heading" value={pricingHeading}>
-                  {pricingHeading}
-                </EditableText>
+                {pricingHeading}
               </h2>
             </div>
           </FadeIn>
@@ -345,20 +334,14 @@ export default async function ServicesPage() {
                 </div>
                 <div className="lg:col-span-6">
                   <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-                    <EditableText page="services" section="videography" field="heading" value={videoHeading}>
-                      {videoHeading}
-                    </EditableText>
+                    {videoHeading}
                   </h2>
-                  <EditableText page="services" section="videography" field="description" value={videoDescription} multiline>
-                    <p className="mt-4 text-dark-200 leading-relaxed">
-                      {videoDescription}
-                    </p>
-                  </EditableText>
+                  <p className="mt-4 text-dark-200 leading-relaxed">
+                    {videoDescription}
+                  </p>
                   <p className="mt-4 inline-flex items-center gap-2 text-gold font-semibold">
                     <span className="h-px w-4 bg-gold/40" />
-                    <EditableText page="services" section="videography" field="price_text" value={videoPriceText}>
-                      {videoPriceText}
-                    </EditableText>
+                    {videoPriceText}
                   </p>
                 </div>
                 <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -403,20 +386,14 @@ export default async function ServicesPage() {
                 </div>
                 <div className="lg:col-span-6">
                   <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-                    <EditableText page="services" section="editing" field="heading" value={editHeading}>
-                      {editHeading}
-                    </EditableText>
+                    {editHeading}
                   </h2>
-                  <EditableText page="services" section="editing" field="description" value={editDescription} multiline>
-                    <p className="mt-4 text-dark-200 leading-relaxed">
-                      {editDescription}
-                    </p>
-                  </EditableText>
+                  <p className="mt-4 text-dark-200 leading-relaxed">
+                    {editDescription}
+                  </p>
                   <p className="mt-4 inline-flex items-center gap-2 text-gold font-semibold">
                     <span className="h-px w-4 bg-gold/40" />
-                    <EditableText page="services" section="editing" field="price_text" value={editPriceText}>
-                      {editPriceText}
-                    </EditableText>
+                    {editPriceText}
                   </p>
                 </div>
                 <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -465,20 +442,14 @@ export default async function ServicesPage() {
               <div>
                 <span className="text-5xl font-bold text-gold/20 font-mono">+</span>
                 <h2 className="mt-4 text-2xl md:text-3xl font-bold text-white tracking-tight">
-                  <EditableText page="services" section="staging" field="heading" value={stagingHeading}>
-                    {stagingHeading}
-                  </EditableText>
+                  {stagingHeading}
                 </h2>
-                <EditableText page="services" section="staging" field="description" value={stagingDescription} multiline>
-                  <p className="mt-4 text-dark-200 leading-relaxed">
-                    {stagingDescription}
-                  </p>
-                </EditableText>
+                <p className="mt-4 text-dark-200 leading-relaxed">
+                  {stagingDescription}
+                </p>
                 <p className="mt-4 inline-flex items-center gap-2 text-gold font-semibold">
                   <span className="h-px w-4 bg-gold/40" />
-                  <EditableText page="services" section="staging" field="price_text" value={stagingPriceText}>
-                    {stagingPriceText}
-                  </EditableText>
+                  {stagingPriceText}
                 </p>
 
                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-8">

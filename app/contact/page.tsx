@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 import ContactForm from "@/components/ContactForm";
 
-import { EditableText } from "@/components/inline-edit";
 import { getPageContent } from "@/lib/supabase/queries";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
@@ -70,15 +69,11 @@ export default async function ContactPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,169,110,0.06),transparent_60%)]" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <EditableText page="contact" section="header" field="tagline" value={tagline}>
-              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                {tagline}
-              </span>
-            </EditableText>
+            <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+              {tagline}
+            </span>
             <h1 className="mt-3 text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
-              <EditableText page="contact" section="header" field="heading" value={heading}>
-                {heading}
-              </EditableText>
+              {heading}
             </h1>
             <p className="mt-5 text-base sm:text-lg text-dark-200 max-w-2xl mx-auto">
               Fill out the form or text{" "}
@@ -118,9 +113,7 @@ export default async function ContactPage() {
                       href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
                       className="text-xl font-mono text-white hover:text-gold transition-colors tracking-wider"
                     >
-                      <EditableText page="contact" section="sidebar" field="phone" value={sidebarPhone}>
-                        {sidebarPhone}
-                      </EditableText>
+                      {sidebarPhone}
                     </a>
                   </div>
                   <div>
@@ -131,9 +124,7 @@ export default async function ContactPage() {
                       href={`mailto:${sidebarEmail}`}
                       className="text-dark-100 hover:text-gold transition-colors"
                     >
-                      <EditableText page="contact" section="sidebar" field="email" value={sidebarEmail}>
-                        {sidebarEmail}
-                      </EditableText>
+                      {sidebarEmail}
                     </a>
                   </div>
                   <div>
@@ -150,11 +141,9 @@ export default async function ContactPage() {
                     <h2 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
                       Response Time
                     </h2>
-                    <EditableText page="contact" section="sidebar" field="response_time" value={responseTime}>
-                      <p className="text-dark-100">
-                        {responseTime}
-                      </p>
-                    </EditableText>
+                    <p className="text-dark-100">
+                      {responseTime}
+                    </p>
                   </div>
 
                   {/* Decorative */}

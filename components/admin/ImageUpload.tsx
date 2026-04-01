@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { createClient } from "@/lib/supabase/client";
-import Image from "next/image";
 
 const MAX_SIZE_MB = 5;
 
@@ -52,13 +51,16 @@ export default function ImageUpload({ value, onChange, folder = "portfolio" }: I
   return (
     <div className="space-y-2">
       {value && (
-        <div className="relative w-full h-32 rounded-lg overflow-hidden bg-dark-700">
-          <Image src={value} alt="Upload preview" fill className="object-cover" sizes="300px" />
+        <div className="relative aspect-[16/10] w-full max-w-sm rounded-lg overflow-hidden bg-dark-700">
+          <img src={value} alt="Upload preview" className="w-full h-full object-cover" />
         </div>
       )}
-      <label className="block cursor-pointer">
-        <span className="inline-flex items-center gap-2 rounded-lg bg-dark-700 border border-dark-500 px-4 py-2 text-xs text-dark-200 hover:border-gold/30 transition-colors">
-          {uploading ? "Uploading..." : value ? "Change Image" : "Upload Image"}
+      <label className="inline-block">
+        <span className="inline-flex items-center gap-2 rounded-lg bg-dark-700 border border-dark-500 px-4 py-2 text-xs text-dark-200 hover:border-gold/30 transition-colors cursor-pointer">
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+          </svg>
+          {uploading ? "Uploading..." : value ? "Replace" : "Upload"}
         </span>
         <input
           type="file"
@@ -69,7 +71,6 @@ export default function ImageUpload({ value, onChange, folder = "portfolio" }: I
         />
       </label>
       {error && <p className="text-xs text-red-400">{error}</p>}
-      <p className="text-[10px] text-dark-400">Max {MAX_SIZE_MB}MB</p>
     </div>
   );
 }
