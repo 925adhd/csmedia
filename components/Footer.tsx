@@ -54,11 +54,11 @@ export default function Footer() {
               Navigation
             </h3>
             <ul className="flex flex-wrap gap-x-4 gap-y-1 md:flex-col md:gap-x-0 text-sm">
-              <li><Link href="/" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Home</Link></li>
-              <li><Link href="/portfolio" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Portfolio</Link></li>
-              <li><Link href="/services" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Services</Link></li>
-              <li><Link href="/about" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">About</Link></li>
-              <li><Link href="/contact" className="inline-block py-1 md:py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Contact</Link></li>
+              <li><Link href="/" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Home</Link></li>
+              <li><Link href="/portfolio" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Portfolio</Link></li>
+              <li><Link href="/services" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Services</Link></li>
+              <li><Link href="/about" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">About</Link></li>
+              <li><Link href="/contact" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -94,12 +94,12 @@ export default function Footer() {
           <h3 className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">
             Service Areas
           </h3>
-          <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-dark-300">
-            <Link href="/services/leitchfield" className="hover:text-gold transition-colors">Leitchfield</Link>
-            <Link href="/services/elizabethtown" className="hover:text-gold transition-colors">Elizabethtown</Link>
-            <Link href="/services/bowling-green" className="hover:text-gold transition-colors">Bowling Green</Link>
-            <Link href="/services/owensboro" className="hover:text-gold transition-colors">Owensboro</Link>
-            <Link href="/services/bardstown" className="hover:text-gold transition-colors">Bardstown</Link>
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-dark-300">
+            <Link href="/services/leitchfield" className="inline-block py-1.5 hover:text-gold transition-colors">Leitchfield</Link>
+            <Link href="/services/elizabethtown" className="inline-block py-1.5 hover:text-gold transition-colors">Elizabethtown</Link>
+            <Link href="/services/bowling-green" className="inline-block py-1.5 hover:text-gold transition-colors">Bowling Green</Link>
+            <Link href="/services/owensboro" className="inline-block py-1.5 hover:text-gold transition-colors">Owensboro</Link>
+            <Link href="/services/bardstown" className="inline-block py-1.5 hover:text-gold transition-colors">Bardstown</Link>
           </div>
         </div>
 
