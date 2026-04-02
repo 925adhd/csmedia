@@ -7,7 +7,6 @@ import BeforeAfter from "@/components/BeforeAfter";
 import CTASection from "@/components/CTASection";
 import CalendlyButton from "@/components/CalendlyButton";
 import TextLink from "@/components/TextLink";
-import CallLink from "@/components/CallLink";
 import { getPortfolioProjects } from "@/lib/portfolio";
 import { getPageContent } from "@/lib/supabase/queries";
 import { getTestimonials, getServices } from "@/lib/supabase/queries";
@@ -151,15 +150,6 @@ export default async function Home() {
                 View Portfolio
               </Link>
             </div>
-            <p className="mt-5 text-sm text-dark-300 md:hidden">
-              Or reach out directly:{" "}
-              <CallLink
-                label="Hero Mobile"
-                className="text-gold/70 hover:text-gold underline transition-colors"
-              >
-                (270) 307-0173
-              </CallLink>
-            </p>
           </FadeIn>
         </div>
 
