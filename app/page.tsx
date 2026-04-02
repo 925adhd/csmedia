@@ -74,7 +74,7 @@ export default async function Home() {
   return (
     <>
       {/* Hero */}
-      <section id="hero" className="relative flex items-center justify-center min-h-[60vh] md:min-h-[75vh] bg-dark-900 overflow-hidden">
+      <section id="hero" className="relative flex items-center justify-center min-h-[60vh] md:min-h-[75vh] pt-20 pb-16 md:pt-24 md:pb-20 bg-dark-900 overflow-hidden">
         <Image
           src="/images/real-estate-aerial-drone-leitchfield-ky.webp"
           alt=""
