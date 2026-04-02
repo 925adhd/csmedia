@@ -23,11 +23,6 @@ export default function Footer() {
               Professional drone photography, video, and editing services for
               agents and property owners in Leitchfield, Grayson County &amp; across Kentucky.
             </p>
-            <p className="mt-2 max-w-sm text-xs leading-relaxed text-dark-300">
-              Serving Leitchfield, Caneyville, Clarkson, Elizabethtown,
-              Bowling Green, Owensboro, Bardstown &amp; all of Kentucky.
-              Available for out-of-state projects upon request.
-            </p>
             <div className="mt-6 flex items-center gap-2 text-gold text-sm font-mono tracking-wider">
               <span className="inline-block w-8 h-px bg-gold/50" />
               LICENSED TO DRONE
@@ -114,6 +109,9 @@ export default function Footer() {
             <Link href="/services/owensboro" className="inline-block py-1.5 hover:text-gold hover:underline transition-colors">Owensboro</Link>
             <Link href="/services/bardstown" className="inline-block py-1.5 hover:text-gold hover:underline transition-colors">Bardstown</Link>
           </div>
+          <p className="mt-2 text-xs text-dark-300">
+            Serving all of Kentucky. Out-of-state projects available upon request.
+          </p>
         </div>
 
         <div className="mt-6 pt-6 border-t border-dark-500/30 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
