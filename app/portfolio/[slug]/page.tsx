@@ -19,13 +19,16 @@ export async function generateMetadata({
   const project = await getProjectBySlug(slug);
   if (!project) return { title: "Project Not Found" };
   const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
+  const desc = project.description.length > 155
+    ? project.description.slice(0, 155).replace(/\s+\S*$/, "") + "..."
+    : project.description;
   return {
     title: project.title,
-    description: project.description,
+    description: desc,
     alternates: { canonical: `${BASE_URL}/portfolio/${slug}` },
     openGraph: {
       title: `${project.title} | CS Media`,
-      description: project.description,
+      description: desc,
       type: "website",
       url: `${BASE_URL}/portfolio/${slug}`,
       siteName: "CS Media",

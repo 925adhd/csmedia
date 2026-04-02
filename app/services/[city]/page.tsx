@@ -23,7 +23,7 @@ export async function generateMetadata({
   if (!loc) return {};
 
   const title = `${loc.city}, ${loc.state} Drone Photography & Real Estate Media`;
-  const description = `Professional real estate drone photography, videography & virtual staging in ${loc.city}, ${loc.county}, ${loc.state}. FAA Part 107 certified. Packages from $150. 24-48hr turnaround.`;
+  const description = `Professional drone photography, videography & virtual staging in ${loc.city}, ${loc.state}. FAA Part 107 certified. From $150.`;
 
   const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
@@ -128,9 +128,22 @@ export default async function CityPage({
     name: "CS MEDIA, LLC",
     description: `Professional real estate drone photography, videography, and virtual staging services in ${loc.city}, ${loc.state}.`,
     telephone: "+1-270-307-0173",
+    email: "cscreatesmediallc@gmail.com",
     url: `${BASE_URL}/services/${loc.slug}`,
     image: `${BASE_URL}/images/real-estate-aerial-drone-leitchfield-ky.webp`,
     priceRange: "$150-$300",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Leitchfield",
+      addressRegion: "KY",
+      postalCode: "42754",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 37.4801,
+      longitude: -86.2938,
+    },
     areaServed: {
       "@type": "City",
       name: loc.city,
