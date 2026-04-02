@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="relative inline-block w-20 h-14">
               <Image
-                src="/images/cs-media-logo.png"
+                src="/images/cs-media-logo.webp"
                 alt="CS Media"
                 fill
                 className="object-contain"
@@ -69,21 +69,34 @@ export default function Footer() {
             </h3>
             <ul className="space-y-1 text-sm">
               <li>
-                <a href="mailto:cscreatesmediallc@gmail.com" className="inline-block py-1.5 text-dark-200 hover:text-gold transition-colors">
+                <a href="mailto:cscreatesmediallc@gmail.com" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">
                   cscreatesmediallc@gmail.com
                 </a>
               </li>
               <li>
                 <a
+                  href="tel:+12703070173"
+                  className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors font-mono"
+                  onClick={() => {
+                    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+                      window.gtag("event", "click_to_call", { event_category: "Contact", event_label: "Footer" });
+                    }
+                  }}
+                >
+                  270.307.0173
+                </a>
+              </li>
+              <li>
+                <a
                   href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
-                  className="inline-block py-1.5 text-dark-200 hover:text-gold transition-colors font-mono"
+                  className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors text-sm"
                   onClick={() => {
                     if (typeof window !== "undefined" && typeof window.gtag === "function") {
                       window.gtag("event", "click_to_text", { event_category: "Contact", event_label: "Footer" });
                     }
                   }}
                 >
-                  270.307.0173
+                  Text us instead
                 </a>
               </li>
             </ul>
@@ -95,11 +108,11 @@ export default function Footer() {
             Service Areas
           </h3>
           <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-dark-300">
-            <Link href="/services/leitchfield" className="inline-block py-1.5 hover:text-gold transition-colors">Leitchfield</Link>
-            <Link href="/services/elizabethtown" className="inline-block py-1.5 hover:text-gold transition-colors">Elizabethtown</Link>
-            <Link href="/services/bowling-green" className="inline-block py-1.5 hover:text-gold transition-colors">Bowling Green</Link>
-            <Link href="/services/owensboro" className="inline-block py-1.5 hover:text-gold transition-colors">Owensboro</Link>
-            <Link href="/services/bardstown" className="inline-block py-1.5 hover:text-gold transition-colors">Bardstown</Link>
+            <Link href="/services/leitchfield" className="inline-block py-1.5 hover:text-gold hover:underline transition-colors">Leitchfield</Link>
+            <Link href="/services/elizabethtown" className="inline-block py-1.5 hover:text-gold hover:underline transition-colors">Elizabethtown</Link>
+            <Link href="/services/bowling-green" className="inline-block py-1.5 hover:text-gold hover:underline transition-colors">Bowling Green</Link>
+            <Link href="/services/owensboro" className="inline-block py-1.5 hover:text-gold hover:underline transition-colors">Owensboro</Link>
+            <Link href="/services/bardstown" className="inline-block py-1.5 hover:text-gold hover:underline transition-colors">Bardstown</Link>
           </div>
         </div>
 
@@ -120,7 +133,7 @@ export default function Footer() {
             <Link href="/disclaimer" className="text-xs text-dark-200 hover:text-gold hover:underline transition-colors whitespace-nowrap">
               Disclaimer
             </Link>
-            <Link href="/admin/login" className="text-xs text-dark-200 hover:text-gold transition-colors whitespace-nowrap">
+            <Link href="/admin/login" className="text-xs text-dark-200 hover:text-gold hover:underline transition-colors whitespace-nowrap">
               Admin
             </Link>
           </div>
@@ -131,7 +144,7 @@ export default function Footer() {
             href="https://studio925.design"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-dark-200 hover:text-gold transition-colors"
+            className="text-xs text-dark-200 hover:text-gold hover:underline transition-colors"
           >
             Website by <span className="font-semibold">Studio 925</span>
           </a>

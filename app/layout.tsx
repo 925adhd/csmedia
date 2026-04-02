@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "CS Media",
     images: [
       {
-        url: "/images/real-estate-aerial-drone-leitchfield-ky.jpg",
+        url: "/images/real-estate-aerial-drone-leitchfield-ky.webp",
         width: 1200,
         height: 630,
         alt: "CS Media - Real Estate Drone Photography & Video Services",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "CS Media | Real Estate Drone Photography & Video Services",
     description:
       "Real estate drone photography, videography, virtual staging & video editing in Leitchfield & Grayson County, KY. FAA Part 107 certified. From $150.",
-    images: ["/images/real-estate-aerial-drone-leitchfield-ky.jpg"],
+    images: ["/images/real-estate-aerial-drone-leitchfield-ky.webp"],
   },
   verification: {
     google: "8DibFK426dNH-_QmyMCKPZR2OCImW5L8NUWCmbjzkzQ",

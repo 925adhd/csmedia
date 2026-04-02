@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import FadeIn from "@/components/FadeIn";
 
 const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "";
@@ -18,6 +19,7 @@ export default function ContactForm({
   successMessage,
   submitText,
 }: ContactFormProps) {
+  const router = useRouter();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState(false);
@@ -37,8 +39,6 @@ export default function ContactForm({
       });
 
       if (res.ok) {
-        setSubmitted(true);
-        window.scrollTo({ top: 0 });
         // Track form submission in Google Analytics
         if (typeof window !== "undefined" && typeof window.gtag === "function") {
           window.gtag("event", "form_submission", {
@@ -46,6 +46,7 @@ export default function ContactForm({
             event_label: data.get("service") as string || "General Inquiry",
           });
         }
+        router.push("/thank-you");
       } else {
         setError(true);
       }

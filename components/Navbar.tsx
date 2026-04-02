@@ -33,7 +33,7 @@ export default function Navbar() {
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="relative w-16 h-12">
             <Image
-              src="/images/cs-media-logo.png"
+              src="/images/cs-media-logo.webp"
               alt="CS Media"
               fill
               className="object-contain"
@@ -111,17 +111,30 @@ export default function Navbar() {
             >
               Book a Shoot
             </CalendlyButton>
-            <a
-              href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
-              className="text-sm text-dark-200 hover:text-gold transition-colors"
-              onClick={() => {
-                if (typeof window !== "undefined" && typeof window.gtag === "function") {
-                  window.gtag("event", "click_to_text", { event_category: "Contact", event_label: "Navbar Mobile" });
-                }
-              }}
-            >
-              Or text <span className="text-gold/70">(270) 307-0173</span>
-            </a>
+            <div className="flex flex-col items-center gap-2">
+              <a
+                href="tel:+12703070173"
+                className="text-sm text-dark-200 hover:text-gold transition-colors"
+                onClick={() => {
+                  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+                    window.gtag("event", "click_to_call", { event_category: "Contact", event_label: "Navbar Mobile" });
+                  }
+                }}
+              >
+                Call <span className="text-gold/70">(270) 307-0173</span>
+              </a>
+              <a
+                href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
+                className="text-sm text-dark-200 hover:text-gold transition-colors"
+                onClick={() => {
+                  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+                    window.gtag("event", "click_to_text", { event_category: "Contact", event_label: "Navbar Mobile" });
+                  }
+                }}
+              >
+                Or text <span className="text-gold/70">(270) 307-0173</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

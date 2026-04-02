@@ -25,7 +25,7 @@ export async function generateMetadata({
   const title = `${loc.city}, ${loc.state} Drone Photography & Real Estate Media`;
   const description = `Professional real estate drone photography, videography & virtual staging in ${loc.city}, ${loc.county}, ${loc.state}. FAA Part 107 certified. Packages from $150. 24-48hr turnaround.`;
 
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
   return {
     title,
@@ -37,7 +37,7 @@ export async function generateMetadata({
       type: "website",
       url: `${BASE_URL}/services/${loc.slug}`,
       siteName: "CS Media",
-      images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.jpg", width: 1200, height: 630 }],
+      images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.webp", width: 1200, height: 630 }],
     },
   };
 }
@@ -52,7 +52,7 @@ export default async function CityPage({
   if (!loc) notFound();
 
   const BASE_URL =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
@@ -60,7 +60,7 @@ export default async function CityPage({
     name: "CS MEDIA, LLC",
     telephone: "+1-270-307-0173",
     url: BASE_URL,
-    image: `${BASE_URL}/images/real-estate-aerial-drone-leitchfield-ky.jpg`,
+    image: `${BASE_URL}/images/real-estate-aerial-drone-leitchfield-ky.webp`,
     priceRange: "$150-$300",
     address: {
       "@type": "PostalAddress",
@@ -129,7 +129,7 @@ export default async function CityPage({
     description: `Professional real estate drone photography, videography, and virtual staging services in ${loc.city}, ${loc.state}.`,
     telephone: "+1-270-307-0173",
     url: `${BASE_URL}/services/${loc.slug}`,
-    image: `${BASE_URL}/images/real-estate-aerial-drone-leitchfield-ky.jpg`,
+    image: `${BASE_URL}/images/real-estate-aerial-drone-leitchfield-ky.webp`,
     priceRange: "$150-$300",
     areaServed: {
       "@type": "City",

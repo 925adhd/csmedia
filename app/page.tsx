@@ -7,6 +7,7 @@ import BeforeAfter from "@/components/BeforeAfter";
 import CTASection from "@/components/CTASection";
 import CalendlyButton from "@/components/CalendlyButton";
 import TextLink from "@/components/TextLink";
+import CallLink from "@/components/CallLink";
 import { getPortfolioProjects } from "@/lib/portfolio";
 import { getPageContent } from "@/lib/supabase/queries";
 import { getTestimonials, getServices } from "@/lib/supabase/queries";
@@ -82,7 +83,7 @@ export default async function Home() {
   return (
     <>
       {/* Hero */}
-      <section id="hero" className="relative flex items-start pt-24 md:items-center md:pt-0 justify-center min-h-screen bg-dark-900 overflow-hidden">
+      <section id="hero" className="relative flex items-start pt-24 md:items-center md:pt-0 justify-center min-h-[75vh] md:min-h-screen bg-dark-900 overflow-hidden">
         <Image
           src="/images/real-estate-aerial-drone-leitchfield-ky.webp"
           alt=""
@@ -150,6 +151,15 @@ export default async function Home() {
                 View Portfolio
               </Link>
             </div>
+            <p className="mt-5 text-sm text-dark-300 md:hidden">
+              Or reach out directly:{" "}
+              <CallLink
+                label="Hero Mobile"
+                className="text-gold/70 hover:text-gold underline transition-colors"
+              >
+                (270) 307-0173
+              </CallLink>
+            </p>
           </FadeIn>
         </div>
 
@@ -383,6 +393,88 @@ export default async function Home() {
                 </svg>
                 See our reviews on Facebook
               </a>
+            </div>
+          </FadeIn>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      </section>
+
+      {/* How It Works */}
+      <section id="process" className="scroll-mt-20 py-16 sm:py-28 bg-dark-800 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                How It Works
+              </span>
+              <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
+                From Booking to{" "}
+                <span className="text-gold">Delivery</span>
+              </h2>
+            </div>
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {[
+              { step: "01", title: "Book Your Shoot", desc: "Pick a date online or text us. We\u2019ll confirm details and arrive on time, ready to go." },
+              { step: "02", title: "We Capture It", desc: "Professional drone, photo, and video coverage of your property\u2014inside and out." },
+              { step: "03", title: "Get Your Media", desc: "Edited photos, video, and virtual staging delivered within 24\u201348 hours." },
+            ].map((item, i) => (
+              <FadeIn key={i} delay={i * 0.15}>
+                <div className="text-center">
+                  <span className="text-4xl font-bold text-gold/20 font-mono">{item.step}</span>
+                  <h3 className="mt-3 text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="mt-2 text-sm text-dark-200 leading-relaxed">{item.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="scroll-mt-20 py-16 sm:py-28 bg-dark-900 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+
+        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-14">
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                FAQ
+              </span>
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white tracking-tight">
+                Common Questions
+              </h2>
+            </div>
+          </FadeIn>
+          <div className="space-y-8">
+            {[
+              { q: "How much does real estate photography cost?", a: "Packages start at $150 for interior and exterior photography. Our most popular package is $200, and our full drone + video package is $300. See our services page for full details." },
+              { q: "How fast will I get my photos back?", a: "All deliverables\u2014photos, drone media, and virtual staging\u2014are delivered within 24\u201348 hours of the shoot." },
+              { q: "Do you need a license to fly drones?", a: "Yes. Commercial drone work requires an FAA Part 107 certificate. CS Media is fully Part 107 certified for all aerial photography and videography." },
+              { q: "What areas do you serve?", a: "We\u2019re based in Leitchfield, KY and serve all of Grayson County, Elizabethtown, Bowling Green, Owensboro, Bardstown, and the rest of Kentucky. Out-of-state projects available upon request." },
+              { q: "What is virtual staging?", a: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor\u2014helping buyers visualize a property at a fraction of the cost of physical staging. Starting at $25 per room." },
+            ].map((faq, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="border-b border-dark-500/30 pb-8">
+                  <h3 className="text-lg font-semibold text-white">{faq.q}</h3>
+                  <p className="mt-3 text-dark-200 leading-relaxed">{faq.a}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+          <FadeIn delay={0.5}>
+            <div className="mt-10 text-center">
+              <Link
+                href="/services"
+                className="text-sm text-dark-200 hover:text-gold transition-colors underline"
+              >
+                View all services and pricing
+              </Link>
             </div>
           </FadeIn>
         </div>

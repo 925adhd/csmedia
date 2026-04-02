@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy — CS Media",
   description:
     "CS Media privacy policy — how we collect, use, and protect your information. Covers Google Analytics, cookies, and your data rights.",
   alternates: { canonical: `${BASE_URL}/privacy` },
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: "website",
     url: `${BASE_URL}/privacy`,
     siteName: "CS Media",
-    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.webp", width: 1200, height: 630 }],
   },
 };
 

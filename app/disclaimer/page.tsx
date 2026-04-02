@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "Disclaimer",
+  title: "Disclaimer — CS Media",
   description:
-    "CS Media disclaimer — important information about our website content, services, and limitations of liability.",
+    "CS Media disclaimer — important information about our website content, drone photography services, and limitations of liability in Kentucky.",
   alternates: { canonical: `${BASE_URL}/disclaimer` },
   openGraph: {
     title: "Disclaimer | CS Media",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: "website",
     url: `${BASE_URL}/disclaimer`,
     siteName: "CS Media",
-    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.webp", width: 1200, height: 630 }],
   },
 };
 

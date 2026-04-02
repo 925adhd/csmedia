@@ -4,6 +4,7 @@ import type { PortfolioProject } from "@/lib/portfolio";
 
 export default function PortfolioCard({ project }: { project: PortfolioProject }) {
   return (
+    <article>
     <Link href={`/portfolio/${project.slug}`} className="group block">
       <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-dark-700">
         <Image
@@ -45,5 +46,6 @@ export default function PortfolioCard({ project }: { project: PortfolioProject }
         </div>
       </div>
     </Link>
+    </article>
   );
 }

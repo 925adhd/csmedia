@@ -4,10 +4,10 @@ import ContactForm from "@/components/ContactForm";
 
 import { getPageContent } from "@/lib/supabase/queries";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact CS Media — Book a Shoot Today",
   description:
     "Book a drone photography or videography shoot with CS Media in Leitchfield & Grayson County, KY. Serving all of Kentucky.",
   alternates: { canonical: `${BASE_URL}/contact` },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     url: `${BASE_URL}/contact`,
     siteName: "CS Media",
-    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.webp", width: 1200, height: 630 }],
   },
 };
 

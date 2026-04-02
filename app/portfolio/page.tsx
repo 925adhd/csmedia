@@ -4,12 +4,12 @@ import FadeIn from "@/components/FadeIn";
 import CTASection from "@/components/CTASection";
 import { getPortfolioProjects } from "@/lib/portfolio";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Real Estate Photography & Video Portfolio",
   description:
-    "Browse our real estate drone photography, video, and editing portfolio. Residential, commercial, and promotional projects.",
+    "Browse our real estate drone photography, video, and editing portfolio. Residential, commercial, and promotional projects across Kentucky.",
   alternates: { canonical: `${BASE_URL}/portfolio` },
   openGraph: {
     title: "Portfolio | CS Media",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     url: `${BASE_URL}/portfolio`,
     siteName: "CS Media",
-    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.webp", width: 1200, height: 630 }],
   },
 };
 

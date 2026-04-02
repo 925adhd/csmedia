@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy",
+  title: "Cookie Policy — CS Media",
   description:
-    "CS Media cookie policy — how we use cookies and Google Analytics on our website, and how to manage your preferences.",
+    "CS Media cookie policy — how we use cookies and Google Analytics on our website, and how to manage your cookie and tracking preferences.",
   alternates: { canonical: `${BASE_URL}/cookies` },
   openGraph: {
     title: "Cookie Policy | CS Media",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: "website",
     url: `${BASE_URL}/cookies`,
     siteName: "CS Media",
-    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.webp", width: 1200, height: 630 }],
   },
 };
 

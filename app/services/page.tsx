@@ -3,12 +3,13 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import BeforeAfter from "@/components/BeforeAfter";
 import CTASection from "@/components/CTASection";
+import CalendlyButton from "@/components/CalendlyButton";
 import { getPageContent } from "@/lib/supabase/queries";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Real Estate Media Services & Pricing in Kentucky",
   description:
     "Real estate media packages starting at $150 in Leitchfield & Grayson County, KY. Photography, drone, videography, and video editing. Quick turnaround.",
   alternates: { canonical: `${BASE_URL}/services` },
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
     url: `${BASE_URL}/services`,
     siteName: "CS Media",
-    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.webp", width: 1200, height: 630 }],
   },
 };
 
@@ -164,6 +165,41 @@ export default async function ServicesPage() {
     "Text or call and we'll recommend the perfect option for your project.";
   const ctaButtonText = (ctaContent?.button_text as string) || "Request a Quote";
 
+  const professionalServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "CS MEDIA, LLC",
+    description: "Professional real estate drone photography, videography, virtual staging, and video editing services in Kentucky.",
+    url: `${BASE_URL}/services`,
+    telephone: "+1-270-307-0173",
+    email: "cscreatesmediallc@gmail.com",
+    priceRange: "$150-$300",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Leitchfield",
+      addressRegion: "KY",
+      postalCode: "42754",
+      addressCountry: "US",
+    },
+    areaServed: [
+      { "@type": "City", name: "Leitchfield" },
+      { "@type": "City", name: "Elizabethtown" },
+      { "@type": "City", name: "Bowling Green" },
+      { "@type": "City", name: "Owensboro" },
+      { "@type": "City", name: "Bardstown" },
+      { "@type": "State", name: "Kentucky" },
+    ],
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+      { "@type": "ListItem", position: 2, name: "Services", item: `${BASE_URL}/services` },
+    ],
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -213,6 +249,14 @@ export default async function ServicesPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -302,6 +346,15 @@ export default async function ServicesPage() {
                         </div>
                       ))}
                     </div>
+                    <CalendlyButton
+                      className={`mt-6 w-full rounded-full py-3 text-xs font-semibold uppercase tracking-widest text-center transition-all cursor-pointer ${
+                        pkg.popular
+                          ? "bg-gold/15 border border-gold/30 text-gold hover:bg-gold/25"
+                          : "bg-dark-600 border border-dark-500/50 text-dark-100 hover:border-gold/30 hover:text-gold"
+                      }`}
+                    >
+                      Book Now
+                    </CalendlyButton>
                   </div>
                 </div>
               </FadeIn>

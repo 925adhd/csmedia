@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { portfolioProjects } from "@/lib/portfolio";
 import { locations } from "@/lib/locations";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [

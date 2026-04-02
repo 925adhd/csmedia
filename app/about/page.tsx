@@ -4,10 +4,10 @@ import VideoPlayer from "@/components/VideoPlayer";
 import CTASection from "@/components/CTASection";
 import { getPageContent } from "@/lib/supabase/queries";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://csmedia.vercel.app";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About CS Media — Drone Photography in Kentucky",
   description:
     "Meet the operator behind CS MEDIA, LLC in Leitchfield, KY. FAA Part 107 certified drone pilot offering photography, videography, and editing.",
   alternates: { canonical: `${BASE_URL}/about` },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     url: `${BASE_URL}/about`,
     siteName: "CS Media",
-    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.jpg", width: 1200, height: 630 }],
+    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.webp", width: 1200, height: 630 }],
   },
 };
 
