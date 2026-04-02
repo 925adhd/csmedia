@@ -69,9 +69,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                {/* Tappable on mobile, plain text on desktop */}
+                <span className="hidden md:inline-block py-1.5 text-dark-200 font-mono">
+                  270.307.0173
+                </span>
                 <a
                   href="tel:+12703070173"
-                  className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors font-mono"
+                  className="inline-block md:hidden py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors font-mono"
                   onClick={() => {
                     if (typeof window !== "undefined" && typeof window.gtag === "function") {
                       window.gtag("event", "click_to_call", { event_category: "Contact", event_label: "Footer" });
@@ -81,7 +85,7 @@ export default function Footer() {
                   270.307.0173
                 </a>
               </li>
-              <li>
+              <li className="md:hidden">
                 <a
                   href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
                   className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors text-sm"
