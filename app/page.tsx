@@ -74,7 +74,7 @@ export default async function Home() {
   return (
     <>
       {/* Hero */}
-      <section id="hero" className="relative flex items-start pt-24 md:items-center md:pt-0 justify-center min-h-[75vh] md:min-h-screen bg-dark-900 overflow-hidden">
+      <section id="hero" className="relative flex items-center justify-center min-h-[60vh] md:min-h-[75vh] bg-dark-900 overflow-hidden">
         <Image
           src="/images/real-estate-aerial-drone-leitchfield-ky.webp"
           alt=""
@@ -149,7 +149,7 @@ export default async function Home() {
       </section>
 
       {/* Stats bar */}
-      <section id="stats" className="scroll-mt-20 py-12 bg-dark-900 relative overflow-hidden">
+      <section id="stats" className="scroll-mt-20 pt-16 pb-12 sm:py-12 bg-dark-900 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <FadeIn>
