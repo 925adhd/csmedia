@@ -174,7 +174,7 @@ export default async function ProjectPage({
 
       <CTASection
         heading={isVideo ? "Need a Video Like This?" : "Want Similar Results?"}
-        subheading={isVideo ? "Professional video production with cinematic editing, music, and color grading." : "Let's capture your property with the same cinematic quality."}
+        subheading={isVideo ? "Get a walkthrough video that makes buyers book showings before they visit." : "Let's capture your property with the same cinematic quality."}
         buttonText={isVideo ? "Book a Video Shoot" : "Book Similar Shoot"}
       />
     </>

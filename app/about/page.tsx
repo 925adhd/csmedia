@@ -49,19 +49,19 @@ export default async function AboutPage() {
   const bioPhone = (bioContent?.phone as string) || "(270)\u00a0307-0173";
   const bioPhoneHref = bioPhone.replace(/[^\d+]/g, "");
 
-  // Trust points fallbacks
-  const trustTagline = (trustContent?.tagline as string) || "Why CS Media";
-  const trustHeading = (trustContent?.heading as string) || "What Sets Us Apart";
-  const trustPoints = (trustContent?.points as { title: string; description: string }[]) || [
-    { title: "FAA Part 107", description: "Fully licensed and insured. Every drone flight is legal, safe, and professional." },
-    { title: "Quick Turnaround", description: "Most projects delivered within 24-48 hours. Rush delivery available when you need it." },
-    { title: "Lowest Prices", description: "Professional quality at the best rates. No hidden fees, no surprises. Just great work." },
-    { title: "One Operator", description: "Same person every time. I learn your style and deliver consistent results, shoot after shoot." },
+  // Trust points
+  const trustTagline = "Why CS Media";
+  const trustHeading = "What Sets Us Apart";
+  const trustPoints = [
+    { title: "FAA Part 107 Certified", description: "Fully licensed and insured aerial work. Your listing stays protected, your media stays legal." },
+    { title: "24–48 Hour Delivery", description: "Photos, drone media, and virtual staging delivered fast — so your listing goes live sooner." },
+    { title: "Packages from $150", description: "Transparent pricing, no hidden fees. You know what you're paying before we show up." },
+    { title: "One Operator, Every Time", description: "No random contractors. I learn your style and deliver consistent results, shoot after shoot." },
   ];
 
-  // CTA fallbacks
-  const ctaHeading = (ctaContent?.heading as string) || "Let's Work Together";
-  const ctaSubheading = (ctaContent?.subheading as string) || "Text or call for your next project. Quality media, fast turnaround, best prices.";
+  // CTA
+  const ctaHeading = "Ready to See the Difference?";
+  const ctaSubheading = "Book your first shoot or text me about your next listing.";
 
   const videoSchema = {
     "@context": "https://schema.org",

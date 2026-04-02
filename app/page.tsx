@@ -43,14 +43,14 @@ const iconMap: Record<string, React.ReactNode> = {
 export default async function Home() {
   const [
     portfolioProjects,
-    hero,
+    _hero,
     servicesContent,
     stagingContent,
     recentWork,
     testimonialsContent,
-    statsContent,
+    _statsContent,
     testimonials,
-    services,
+    _services,
   ] = await Promise.all([
     getPortfolioProjects(),
     getPageContent("home", "hero"),
@@ -63,21 +63,13 @@ export default async function Home() {
     getServices(),
   ]);
 
-  const stats = Array.isArray(statsContent)
-    ? (statsContent as Array<{ value: string; label: string }>)
-    : [
-        { value: "Part 107", label: "FAA Certified" },
-        { value: "24hr", label: "Turnaround" },
-        { value: "1.1K+", label: "Followers" },
-        { value: "100%", label: "Recommended" },
-      ];
-
-  const stagingFeatures = (stagingContent?.features as string[]) || [
-    "Realistic digitally furnished rooms",
-    "Multiple style options available",
-    "Fraction of the cost of physical staging",
-    "24-48 hour turnaround",
+  const stats = [
+    { value: "Part 107", label: "FAA Certified" },
+    { value: "24–48hr", label: "Turnaround" },
+    { value: "1.1K+", label: "Followers" },
+    { value: "100%", label: "Recommended" },
   ];
+
 
   return (
     <>
@@ -115,25 +107,25 @@ export default async function Home() {
             <div className="inline-flex items-center gap-3 mb-8">
               <span className="h-px w-12 bg-gold/60" />
               <span className="text-gold text-xs font-mono uppercase tracking-[0.4em]">
-                {(hero?.tagline as string) || "Licensed to Drone"}
+                Real Estate Media
               </span>
               <span className="h-px w-12 bg-gold/60" />
             </div>
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-[0.9]">
-              {(hero?.heading_line1 as string) || "Elevated"}
+              Get Your
               <br />
               <span className="text-gold">
-                {(hero?.heading_line2 as string) || "Real Estate"}
+                Listing Sold
               </span>
               <br />
-              {(hero?.heading_line3 as string) || "Media"}
+              Faster
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="mt-8 text-lg md:text-xl text-dark-200 max-w-xl mx-auto leading-relaxed">
-              {(hero?.subtext as string) || "Professional drone photography, cinematic video & expert editing. Quality work. Quick turnaround."}
+              Professional drone photography, cinematic video &amp; virtual staging. Packages from $150. Delivered in 24–48 hours.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
@@ -156,55 +148,60 @@ export default async function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent" />
       </section>
 
-      <div className="flex flex-col">
-      {/* Services Preview */}
-      <section id="services" className="scroll-mt-20 py-16 sm:py-28 bg-dark-800 relative overflow-hidden order-3 md:order-1">
+      {/* Stats bar */}
+      <section id="stats" className="scroll-mt-20 py-12 bg-dark-900 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
-
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <FadeIn>
-            <div className="text-center mb-16">
-              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                {(servicesContent?.tagline as string) || "What We Do"}
-              </span>
-              <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
-                {(servicesContent?.heading as string) || "Property Media That Delivers"}
-                <span className="text-gold">
-                  {" "}{(servicesContent?.heading_gold as string) || "Results"}
-                </span>
-              </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              {stats.map((stat, i) => (
+                <div key={i}>
+                  <p className="text-2xl md:text-3xl font-bold text-gold">{stat.value}</p>
+                  <p className="mt-1 text-xs text-dark-300 font-mono uppercase tracking-widest">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {services.length > 0
-              ? services.map((service, i) => (
-                  <FadeIn key={service.id} delay={i * 0.1}>
-                    <ServiceCard
-                      icon={iconMap[service.icon_name] || iconMap.camera}
-                      title={service.title}
-                      description={service.description}
-                    />
-                  </FadeIn>
-                ))
-              : [
-                  { icon: "camera", title: "Photography", desc: "Interior and exterior real estate photography with professional lighting, composition, and HDR processing." },
-                  { icon: "video", title: "Videography", desc: "Cinematic property walkthroughs and promo videos that capture attention and drive engagement." },
-                  { icon: "drone", title: "Drone (Part 107)", desc: "FAA-certified aerial photography and video. Stunning perspectives from above." },
-                  { icon: "staging", title: "Virtual Staging", desc: "Digitally furnish empty rooms with realistic furniture and decor. Sell the lifestyle, not just the space." },
-                  { icon: "edit", title: "Video Editing", desc: "Polished, branded videos with music, transitions, color grading, and graphics." },
-                ].map((s, i) => (
-                  <FadeIn key={i} delay={i * 0.1}>
-                    <ServiceCard icon={iconMap[s.icon]} title={s.title} description={s.desc} />
-                  </FadeIn>
-                ))}
-          </div>
         </div>
-
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </section>
 
+      {/* Recent Work */}
+      <section id="portfolio" className="scroll-mt-20 py-16 sm:py-28 bg-dark-900">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <FadeIn>
+            <div className="mb-14">
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                {(recentWork?.tagline as string) || "Recent Work"}
+              </span>
+              <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
+                {(recentWork?.heading as string) || "Featured Projects"}
+              </h2>
+            </div>
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {portfolioProjects.filter((p) => p.featured).slice(0, 4).map((project, i) => (
+              <FadeIn key={project.slug} delay={i * 0.1}>
+                <PortfolioCard project={project} />
+              </FadeIn>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center gap-2 text-sm font-medium text-dark-200 hover:text-gold transition-colors group"
+            >
+              {(recentWork?.view_full_text as string) || "View Full Portfolio"}
+              <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Virtual Staging Before/After */}
-      <section id="staging" className="scroll-mt-20 py-16 sm:py-28 bg-dark-800 relative overflow-hidden order-2 md:order-2">
+      <section id="staging" className="scroll-mt-20 py-16 sm:py-28 bg-dark-800 relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -222,10 +219,15 @@ export default async function Home() {
                   </span>
                 </h2>
                 <p className="mt-5 text-dark-200 leading-relaxed">
-                  {(stagingContent?.description as string) || "Our edited virtual staging transforms empty, hard-to-visualize spaces into fully furnished rooms that help buyers see the potential. Realistic furniture, decor, and styling — digitally placed to sell the lifestyle, not just the square footage."}
+                  Empty listings sit longer. Virtual staging helps buyers picture themselves living there — so they book showings faster. Realistic furniture and decor, digitally placed starting at $25/room.
                 </p>
                 <ul className="mt-6 space-y-3">
-                  {stagingFeatures.map((item) => (
+                  {[
+                    "Buyers see a home, not an empty box",
+                    "Modern, farmhouse, luxury — match any listing style",
+                    "A fraction of the cost of physical staging",
+                    "Ready for your listing in 24–48 hours",
+                  ].map((item) => (
                     <li key={item} className="flex items-center gap-3 text-sm text-dark-100">
                       <svg className="h-4 w-4 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -260,52 +262,41 @@ export default async function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </section>
 
-      {/* Recent Work */}
-      <section id="portfolio" className="scroll-mt-20 py-16 sm:py-28 bg-dark-900 order-1 md:order-3">
+      {/* Services Preview */}
+      <section id="services" className="scroll-mt-20 py-16 sm:py-28 bg-dark-800 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
-            <div className="flex items-end justify-between mb-14">
-              <div>
-                <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                  {(recentWork?.tagline as string) || "Recent Work"}
+            <div className="text-center mb-16">
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                {(servicesContent?.tagline as string) || "What We Do"}
+              </span>
+              <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
+                {(servicesContent?.heading as string) || "Property Media That Delivers"}
+                <span className="text-gold">
+                  {" "}{(servicesContent?.heading_gold as string) || "Results"}
                 </span>
-                <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
-                  {(recentWork?.heading as string) || "Featured Projects"}
-                </h2>
-              </div>
-              <Link
-                href="/portfolio"
-                className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-dark-200 hover:text-gold transition-colors group"
-              >
-                {(recentWork?.view_all_text as string) || "View All"}
-                <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                </svg>
-              </Link>
+              </h2>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {portfolioProjects.filter((p) => p.featured).slice(0, 4).map((project, i) => (
-              <FadeIn key={project.slug} delay={i * 0.1}>
-                <PortfolioCard project={project} />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {[
+              { icon: "camera", title: "Photography", desc: "Bright, clean listing photos that make buyers stop scrolling and book a showing." },
+              { icon: "video", title: "Videography", desc: "Walkthrough videos that let buyers tour the home before they visit — more qualified showings, less wasted time." },
+              { icon: "drone", title: "Drone (Part 107)", desc: "Aerial views that show off the lot, neighborhood, and curb appeal — the shots your competitors don't have." },
+              { icon: "staging", title: "Virtual Staging", desc: "Empty rooms furnished digitally so buyers see a home, not a blank space. Starting at $25/room." },
+              { icon: "edit", title: "Video Editing", desc: "Raw footage turned into polished, branded content ready for MLS, social media, and ads." },
+            ].map((s, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <ServiceCard icon={iconMap[s.icon]} title={s.title} description={s.desc} />
               </FadeIn>
             ))}
           </div>
-          <div className="mt-10 text-center">
-            <Link
-              href="/portfolio"
-              className="inline-flex items-center gap-2 text-sm font-medium text-dark-200 hover:text-gold transition-colors group"
-            >
-              {(recentWork?.view_full_text as string) || "View Full Portfolio"}
-              <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-              </svg>
-            </Link>
-          </div>
         </div>
-      </section>
 
-      </div>
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      </section>
 
       {/* Testimonials */}
       <section id="testimonials" className="scroll-mt-20 py-16 sm:py-28 bg-dark-900 relative overflow-hidden">
@@ -470,22 +461,6 @@ export default async function Home() {
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
-      </section>
-
-      {/* Stats bar */}
-      <section id="stats" className="scroll-mt-20 py-16 bg-dark-900">
-        <div className="mx-auto max-w-5xl px-6 lg:px-8">
-          <FadeIn>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              {stats.map((stat, i) => (
-                <div key={i}>
-                  <p className="text-2xl md:text-3xl font-bold text-gold">{stat.value}</p>
-                  <p className="mt-1 text-xs text-dark-300 font-mono uppercase tracking-widest">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </FadeIn>
-        </div>
       </section>
 
       {/* Final CTA */}

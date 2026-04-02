@@ -32,7 +32,7 @@ interface PricingPackage {
 }
 
 export default async function ServicesPage() {
-  const [headerContent, pricingContent, videographyContent, editingContent, stagingContent, ctaContent] =
+  const [_headerContent, _pricingContent, _videographyContent, _editingContent, _stagingContent, _ctaContent] =
     await Promise.all([
       getPageContent("services", "header"),
       getPageContent("services", "pricing"),
@@ -42,27 +42,24 @@ export default async function ServicesPage() {
       getPageContent("services", "cta"),
     ]);
 
-  // Header fallbacks
-  const headerTagline = (headerContent?.tagline as string) || "What We Do";
-  const headerHeading = (headerContent?.heading as string) || "Our Services";
-  const headerSubtext =
-    (headerContent?.subtext as string) ||
-    "Professional real estate media packages. Quality work, quick turnaround, and the best prices you'll find.";
+  // Header
+  const headerTagline = "Services & Pricing";
+  const headerHeading = "Pick a Package. Book a Shoot.";
+  const headerSubtext = "Transparent pricing, 24–48 hour turnaround, and photos that make buyers book showings.";
 
-  // Pricing fallbacks
-  const pricingTagline = (pricingContent?.tagline as string) || "Pricing";
-  const pricingHeading = (pricingContent?.heading as string) || "Real Estate Media Packages";
-  const packages = (pricingContent?.packages as PricingPackage[]) || [
+  // Pricing
+  const pricingTagline = "Pricing";
+  const pricingHeading = "Real Estate Media Packages";
+  const packages: PricingPackage[] = [
     {
       name: "Interior Only",
       price: "$150",
       popular: false,
       features: [
+        "MLS-ready in 24–48 hours",
         "All interior living spaces",
         "Professional lighting & HDR",
         "Edited & color corrected",
-        "MLS-ready formatting",
-        "24-48 hour turnaround",
       ],
     },
     {
@@ -70,12 +67,11 @@ export default async function ServicesPage() {
       price: "$200",
       popular: true,
       features: [
+        "MLS-ready in 24–48 hours",
         "All interior living spaces",
-        "6 exterior shots",
+        "6 exterior / curb appeal shots",
         "Professional lighting & HDR",
         "Edited & color corrected",
-        "MLS-ready formatting",
-        "24-48 hour turnaround",
       ],
     },
     {
@@ -83,87 +79,81 @@ export default async function ServicesPage() {
       price: "$300",
       popular: false,
       features: [
-        "Full interior & exterior package",
-        "Drone photos",
+        "MLS-ready in 24–48 hours",
+        "Full interior & exterior photos",
+        "Drone aerial photos",
         "Hyperlapse video for social media",
         "Professional lighting & HDR",
         "Edited & color corrected",
-        "MLS-ready formatting",
-        "24-48 hour turnaround",
       ],
     },
   ];
-  const finePrint = (pricingContent?.fine_print as string[]) || [
+  const finePrint = [
     "Taxes and mileage fee will be applied to final price.",
     "Mileage is determined by Google Maps distance for round trip.",
   ];
 
-  // Videography fallbacks
-  const videoHeading = (videographyContent?.heading as string) || "Videography";
+  // Videography
+  const videoHeading = "Videography";
   const videoDescription =
-    (videographyContent?.description as string) ||
-    "Cinematic property walkthroughs, promo videos, and social content. From listing tours to branded business videos, we capture footage that drives engagement and gets results.";
-  const videoPriceText = (videographyContent?.price_text as string) || "Contact for pricing";
-  const videoIncluded = (videographyContent?.included as string[]) || [
-    "60-90 second edited video",
+    "Listing videos get 403% more inquiries than listings without. We shoot walkthrough tours and social content that make buyers feel like they're already in the home — so they book the showing.";
+  const videoPriceText = "Contact for pricing";
+  const videoIncluded = [
+    "60–90 second edited walkthrough",
     "4K resolution",
     "Licensed background music",
     "Color grading & transitions",
-    "Social media formats",
+    "Formatted for MLS & social media",
   ];
-  const videoIdealFor = (videographyContent?.ideal_for as string[]) || [
-    "Property tours",
-    "Business promo videos",
-    "Social media reels",
-    "Agent marketing",
+  const videoIdealFor = [
+    "Listings that need to stand out",
+    "Agent personal branding",
+    "Social media reels & ads",
+    "New construction showcases",
   ];
 
-  // Editing fallbacks
-  const editHeading = (editingContent?.heading as string) || "Video Editing";
+  // Editing
+  const editHeading = "Video Editing";
   const editDescription =
-    (editingContent?.description as string) ||
-    "Already have footage? We'll transform your raw clips into polished, branded content. From simple cuts to full productions with graphics, music, and effects.";
-  const editPriceText = (editingContent?.price_text as string) || "Contact for pricing";
-  const editIncluded = (editingContent?.included as string[]) || [
-    "Full edit from raw footage",
+    "Already have footage sitting on your phone? We turn raw clips into polished, scroll-stopping content with music, branding, and graphics — ready to post or share with clients.";
+  const editPriceText = "Contact for pricing";
+  const editIncluded = [
+    "Full edit from your raw footage",
     "Music & sound design",
-    "Text overlays & branding",
-    "Logo/watermark design",
-    "Multiple export formats",
+    "Text overlays & your branding",
+    "Logo/watermark placement",
+    "Exported for any platform",
   ];
-  const editIdealFor = (editingContent?.ideal_for as string[]) || [
-    "Agent walkthrough footage",
-    "Social media content",
-    "Compilation videos",
-    "Brand & marketing videos",
+  const editIdealFor = [
+    "Phone footage you never posted",
+    "Social media reels & stories",
+    "Agent highlight videos",
+    "Brand & marketing content",
   ];
 
-  // Staging fallbacks
-  const stagingHeading = (stagingContent?.heading as string) || "Virtual Staging";
+  // Staging
+  const stagingHeading = "Virtual Staging";
   const stagingDescription =
-    (stagingContent?.description as string) ||
-    "Empty rooms don't sell. Our edited virtual staging digitally furnishes vacant spaces with realistic furniture and decor, helping buyers visualize the potential of every room.";
-  const stagingPriceText = (stagingContent?.price_text as string) || "Starting at $25/room";
-  const stagingIncluded = (stagingContent?.included as string[]) || [
+    "Empty rooms sit on the market longer. Virtual staging helps buyers picture themselves living there — so they book showings faster. Realistic furniture and decor, digitally placed at a fraction of the cost of physical staging.";
+  const stagingPriceText = "Starting at $25/room";
+  const stagingIncluded = [
     "Realistic furniture placement",
-    "Multiple style options",
+    "Modern, farmhouse, luxury — any style",
     "High-res MLS-ready files",
-    "Fast 24-48hr turnaround",
+    "Ready in 24–48 hours",
     "Revision rounds included",
   ];
-  const stagingIdealFor = (stagingContent?.ideal_for as string[]) || [
-    "Vacant listings",
+  const stagingIdealFor = [
+    "Vacant listings that aren't getting showings",
     "New construction",
     "Flips & renovations",
     "Rental properties",
   ];
 
-  // CTA fallbacks
-  const ctaHeading = (ctaContent?.heading as string) || "Not Sure Which Package You Need?";
-  const ctaSubheading =
-    (ctaContent?.subheading as string) ||
-    "Text or call and we'll recommend the perfect option for your project.";
-  const ctaButtonText = (ctaContent?.button_text as string) || "Request a Quote";
+  // CTA
+  const ctaHeading = "Not Sure Which Package You Need?";
+  const ctaSubheading = "Text or call and we'll recommend the right option for your listing.";
+  const ctaButtonText = "Request a Quote";
 
   const professionalServiceSchema = {
     "@context": "https://schema.org",
