@@ -20,6 +20,8 @@ export interface LocationData {
   distanceFromBase: string;
   /** Whether mileage applies */
   mileageNote: string;
+  /** Gallery images to display on the location page */
+  galleryImages: { src: string; alt: string }[];
 }
 
 export const locations: LocationData[] = [
@@ -29,7 +31,7 @@ export const locations: LocationData[] = [
     county: "Grayson County",
     state: "KY",
     tagline: "Your Local Drone Photography Team",
-    headline: "Drone Photography & Real Estate Media in Leitchfield, KY",
+    headline: "Real Estate Photography & Drone Media in Leitchfield, Grayson County KY",
     intro:
       "CS Media is headquartered in Leitchfield, Kentucky — this is our home market. That means zero travel fees, the fastest turnaround in the county, and a photographer who actually knows Grayson County. We've shot everything from starter homes off Highway 62 to hundred-acre farms along the Western Kentucky Parkway. If it's in Grayson County, we've probably driven past it.",
     marketContext:
@@ -88,6 +90,14 @@ export const locations: LocationData[] = [
     nearbyAreas: ["Caneyville", "Clarkson", "Shrewsbury", "Big Clifty", "Falls of Rough"],
     distanceFromBase: "Home base",
     mileageNote: "No mileage fees",
+    galleryImages: [
+      { src: "/images/stone-estate-aerial-overhead-drone.webp", alt: "Aerial overhead drone shot of stone estate in Grayson County, Kentucky" },
+      { src: "/images/rustic-kitchen-wood-beams-island.webp", alt: "Rustic kitchen interior photography with wood beams and island" },
+      { src: "/images/twilight-ranch-home-evening-kentucky.webp", alt: "Twilight real estate photography of a ranch home in Kentucky" },
+      { src: "/images/stone-estate-living-room-fireplace.webp", alt: "Professional living room photography with stone fireplace" },
+      { src: "/images/white-farmhouse-aerial-drone-kentucky.webp", alt: "Aerial drone photography of a white farmhouse on Kentucky acreage" },
+      { src: "/images/covered-front-porch-kentucky-home.webp", alt: "Covered front porch exterior photo of a Kentucky home" },
+    ],
   },
   {
     slug: "elizabethtown",
@@ -95,7 +105,7 @@ export const locations: LocationData[] = [
     county: "Hardin County",
     state: "KY",
     tagline: "Real Estate Media for Hardin County",
-    headline: "Drone Photography & Real Estate Media in Elizabethtown, KY",
+    headline: "Real Estate Photography & Drone Media in Elizabethtown, Hardin County KY",
     intro:
       "CS Media provides real estate photography, drone video, and virtual staging for agents and property owners in Elizabethtown and Hardin County. E-town sits at the crossroads of I-65 and the Western Kentucky Parkway, making it one of central Kentucky's most active real estate markets — and one where professional listing media is the standard, not the exception.",
     marketContext:
@@ -150,6 +160,14 @@ export const locations: LocationData[] = [
     nearbyAreas: ["Radcliff", "Vine Grove", "Hodgenville", "Rineyville", "Cecilia"],
     distanceFromBase: "~40 min from base",
     mileageNote: "+ mileage",
+    galleryImages: [
+      { src: "/images/real-estate-aerial-drone-leitchfield-ky.webp", alt: "Aerial drone photography of a residential property in Kentucky" },
+      { src: "/images/rustic-kitchen-wood-beams-island.webp", alt: "Interior real estate photography of a kitchen with wood beams" },
+      { src: "/images/twilight-ranch-home-evening-kentucky.webp", alt: "Twilight real estate photography of a ranch home" },
+      { src: "/images/living-room-sectional-dark-floors.webp", alt: "Professional interior photography of a modern living room" },
+      { src: "/images/white-farmhouse-front-exterior-kentucky.webp", alt: "Exterior photography of a white farmhouse in Kentucky" },
+      { src: "/images/stone-estate-front-exterior-walkway.webp", alt: "Stone estate front exterior walkway photography" },
+    ],
   },
   {
     slug: "bowling-green",
@@ -157,7 +175,7 @@ export const locations: LocationData[] = [
     county: "Warren County",
     state: "KY",
     tagline: "Serving South Central Kentucky",
-    headline: "Drone Photography & Real Estate Media in Bowling Green, KY",
+    headline: "Real Estate Photography & Drone Media in Bowling Green, Warren County KY",
     intro:
       "CS Media serves real estate agents, Airbnb hosts, and property managers across Bowling Green and Warren County. As Kentucky's third-largest city — and home to Western Kentucky University — Bowling Green has a real estate market that moves fast and attracts buyers from Nashville, Louisville, and beyond. Professional listing media isn't a luxury here; it's how you compete.",
     marketContext:
@@ -212,6 +230,14 @@ export const locations: LocationData[] = [
     nearbyAreas: ["Alvaton", "Smiths Grove", "Oakland", "Plum Springs", "Rich Pond"],
     distanceFromBase: "~1 hour from base",
     mileageNote: "+ mileage",
+    galleryImages: [
+      { src: "/images/stone-estate-aerial-overhead-drone.webp", alt: "Overhead aerial drone photography of a residential estate" },
+      { src: "/images/rustic-bathroom-brick-double-vanity.webp", alt: "Interior photography of a rustic bathroom with double vanity" },
+      { src: "/images/country-home-aerial-acreage-kentucky.webp", alt: "Aerial drone photo of a country home on acreage in Kentucky" },
+      { src: "/images/stone-estate-living-room-fireplace.webp", alt: "Professional living room photography with stone fireplace" },
+      { src: "/images/upper-level-loft-staircase-landing.webp", alt: "Interior photography of an upper level loft and staircase" },
+      { src: "/images/twilight-ranch-aerial-drone-dusk.webp", alt: "Twilight aerial drone photography of a ranch property at dusk" },
+    ],
   },
   {
     slug: "owensboro",
@@ -219,7 +245,7 @@ export const locations: LocationData[] = [
     county: "Daviess County",
     state: "KY",
     tagline: "Real Estate Media for Western Kentucky",
-    headline: "Drone Photography & Real Estate Media in Owensboro, KY",
+    headline: "Real Estate Photography & Drone Media in Owensboro, Daviess County KY",
     intro:
       "CS Media provides drone photography, real estate videography, and virtual staging services to agents and property owners throughout Owensboro and Daviess County. Owensboro sits along the Ohio River with a downtown that's been revitalized over the past decade and residential neighborhoods that stretch from the riverfront to the farmland south of town. It's a market with real variety — and each property type needs a different photographic approach.",
     marketContext:
@@ -279,6 +305,14 @@ export const locations: LocationData[] = [
     nearbyAreas: ["Whitesville", "Maceo", "Philpot", "Utica", "Calhoun"],
     distanceFromBase: "~1 hour from base",
     mileageNote: "+ mileage",
+    galleryImages: [
+      { src: "/images/white-farmhouse-aerial-drone-kentucky.webp", alt: "Aerial drone photography of a farmhouse property in Kentucky" },
+      { src: "/images/rustic-kitchen-wood-beams-island.webp", alt: "Interior real estate photography of a kitchen with island" },
+      { src: "/images/twilight-ranch-home-evening-kentucky.webp", alt: "Twilight photography of a ranch-style home in Kentucky" },
+      { src: "/images/stone-estate-front-exterior-walkway.webp", alt: "Professional exterior photography of a stone estate" },
+      { src: "/images/living-room-sectional-dark-floors.webp", alt: "Interior photography of a living room with dark flooring" },
+      { src: "/images/covered-front-porch-kentucky-home.webp", alt: "Covered front porch exterior photography of a Kentucky home" },
+    ],
   },
   {
     slug: "bardstown",
@@ -286,7 +320,7 @@ export const locations: LocationData[] = [
     county: "Nelson County",
     state: "KY",
     tagline: "Real Estate Media for Nelson County",
-    headline: "Drone Photography & Real Estate Media in Bardstown, KY",
+    headline: "Real Estate Photography & Drone Media in Bardstown, Nelson County KY",
     intro:
       "CS Media provides real estate photography, drone video, and virtual staging in Bardstown and Nelson County. Bardstown has been named the Most Beautiful Small Town in America, and it lives up to that reputation — which means the real estate photography needs to live up to it too. Whether you're listing a home on East Stephen Foster Avenue, a farm on the outskirts of town, or a property in the bourbon tourism corridor, we know how to capture what makes it sell.",
     marketContext:
@@ -350,6 +384,14 @@ export const locations: LocationData[] = [
     nearbyAreas: ["Bloomfield", "New Haven", "Cox's Creek", "Boston", "Chaplin"],
     distanceFromBase: "~1 hour from base",
     mileageNote: "+ mileage",
+    galleryImages: [
+      { src: "/images/stone-estate-aerial-overhead-drone.webp", alt: "Overhead aerial drone photography of an estate property" },
+      { src: "/images/rustic-bathroom-brick-double-vanity.webp", alt: "Interior photography of a rustic bathroom with brick accents" },
+      { src: "/images/country-home-aerial-acreage-kentucky.webp", alt: "Aerial photography of a country home on Kentucky acreage" },
+      { src: "/images/rustic-kitchen-wood-beams-island.webp", alt: "Professional kitchen photography with wood beam details" },
+      { src: "/images/white-farmhouse-front-exterior-kentucky.webp", alt: "Exterior photography of a Kentucky farmhouse" },
+      { src: "/images/twilight-ranch-aerial-drone-dusk.webp", alt: "Twilight aerial photography of a property at dusk" },
+    ],
   },
 ];
 

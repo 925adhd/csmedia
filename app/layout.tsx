@@ -87,14 +87,29 @@ export default function RootLayout({
                   "@type": "LocalBusiness",
                   "@id": "#business",
                   name: "CS MEDIA, LLC",
+                  url: BASE_URL,
                   description:
                     "Professional real estate drone photography, videography, virtual staging, and video editing services. FAA Part 107 certified.",
+                  image: [`${BASE_URL}/images/real-estate-aerial-drone-leitchfield-ky.webp`],
                   sameAs: [
                     "https://www.facebook.com/profile.php?id=100090509656389",
                   ],
                   email: "cscreatesmediallc@gmail.com",
                   telephone: "+1-270-307-0173",
                   priceRange: "$150-$300",
+                  openingHoursSpecification: {
+                    "@type": "OpeningHoursSpecification",
+                    dayOfWeek: [
+                      "Monday",
+                      "Tuesday",
+                      "Wednesday",
+                      "Thursday",
+                      "Friday",
+                      "Saturday",
+                    ],
+                    opens: "08:00",
+                    closes: "18:00",
+                  },
                   address: {
                     "@type": "PostalAddress",
                     addressLocality: "Leitchfield",
@@ -187,6 +202,8 @@ export default function RootLayout({
                   "@type": "Organization",
                   "@id": "#organization",
                   name: "CS MEDIA, LLC",
+                  url: BASE_URL,
+                  logo: `${BASE_URL}/images/cs-media-logo.webp`,
                   email: "cscreatesmediallc@gmail.com",
                   telephone: "+1-270-307-0173",
                   address: {
@@ -201,6 +218,7 @@ export default function RootLayout({
                   "@type": "WebSite",
                   "@id": "#website",
                   name: "CS Media",
+                  url: BASE_URL,
                   publisher: { "@id": "#organization" },
                 },
               ],

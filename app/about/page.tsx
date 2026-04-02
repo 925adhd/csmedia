@@ -63,8 +63,24 @@ export default async function AboutPage() {
   const ctaHeading = (ctaContent?.heading as string) || "Let's Work Together";
   const ctaSubheading = (ctaContent?.subheading as string) || "Text or call for your next project. Quality media, fast turnaround, best prices.";
 
+  const videoSchema = {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name: "About CS Media — Meet the Operator",
+    description:
+      "Meet Cheris Chanthavong, FAA Part 107 certified drone pilot and owner of CS Media in Leitchfield, Kentucky.",
+    thumbnailUrl: `${BASE_URL}/images/cheris-chanthavong-cs-media-owner.webp`,
+    contentUrl: `${BASE_URL}/videos/personalpromo.mp4`,
+    uploadDate: "2025-06-01",
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+      />
+
       {/* Header */}
       <section className="relative bg-dark-900 pt-12 sm:pt-14 pb-10 sm:pb-12 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,169,110,0.06),transparent_60%)]" />

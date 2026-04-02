@@ -6,6 +6,7 @@ import FadeIn from "@/components/FadeIn";
 import CTASection from "@/components/CTASection";
 import FAQAccordion from "@/components/FAQAccordion";
 import { locations, getLocationBySlug } from "@/lib/locations";
+import { getTestimonials } from "@/lib/supabase/queries";
 
 export const dynamicParams = false;
 
@@ -22,8 +23,8 @@ export async function generateMetadata({
   const loc = getLocationBySlug(city);
   if (!loc) return {};
 
-  const title = `${loc.city}, ${loc.state} Drone Photography & Real Estate Media`;
-  const description = `Professional drone photography, videography & virtual staging in ${loc.city}, ${loc.state}. FAA Part 107 certified. From $150.`;
+  const title = `Real Estate Photography in ${loc.city}, ${loc.county} KY`;
+  const description = `Professional real estate photography, drone video & virtual staging in ${loc.city}, ${loc.county}, Kentucky. FAA Part 107 certified. From $150.`;
 
   const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
@@ -166,6 +167,27 @@ export default async function CityPage({
   };
 
   const isHomeBase = loc.slug === "leitchfield";
+
+  const testimonials = await getTestimonials();
+  const displayTestimonials =
+    testimonials.length > 0
+      ? testimonials.slice(0, 2)
+      : [
+          {
+            quote:
+              "We couldn't be happier with a promo video she shot for us! She made it so much fun, can't wait to do another!!!!",
+            name: "Snow Dogs Food Truck",
+            badge: "Recommends CS MEDIA, LLC",
+            service: "Video Production",
+          },
+          {
+            quote:
+              "OH MY GOSH!!!! I can't even say how amazing she is. She designed my watermark and logo and did absolutely AMAZING!!!!! I 100% recommend her for any design needs you may have.",
+            name: "Jared Clouse - Bary",
+            badge: "Recommends CS MEDIA, LLC",
+            service: "Logo & Design",
+          },
+        ];
 
   return (
     <>
@@ -549,6 +571,115 @@ export default async function CityPage({
           <FAQAccordion faqs={loc.faqs} />
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-12 sm:py-24 bg-dark-800 relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-10 sm:mb-14">
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                Reviews
+              </span>
+              <h2 className="mt-4 text-2xl md:text-3xl font-bold text-white tracking-tight">
+                What Our Clients Say
+              </h2>
+              <div className="mt-3 flex items-center justify-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+                <span className="ml-2 text-sm text-dark-200 font-mono">5.0</span>
+              </div>
+            </div>
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {displayTestimonials.map((testimonial, i) => (
+              <FadeIn key={i} delay={i * 0.15}>
+                <article className="relative rounded-2xl bg-dark-700 p-8 border border-dark-500/30 hover:border-gold/20 transition-all duration-500 h-full flex flex-col">
+                  <span className="text-gold/10 text-[100px] font-serif leading-none absolute -top-4 -left-2 select-none" aria-hidden="true">
+                    &ldquo;
+                  </span>
+                  <span className="inline-block self-start rounded-full bg-gold/10 border border-gold/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-gold mb-4 relative z-10">
+                    {testimonial.service}
+                  </span>
+                  <p className="text-dark-100 leading-relaxed relative z-10 flex-1">
+                    &ldquo;{testimonial.quote}&rdquo;
+                  </p>
+                  <div className="mt-6 pt-5 border-t border-dark-500/30 flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-gold/30 to-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
+                      <span className="text-gold font-bold text-xs">{testimonial.name.charAt(0)}</span>
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-white">{testimonial.name}</p>
+                      <p className="text-xs text-gold/60 font-mono tracking-wider">{testimonial.badge}</p>
+                    </div>
+                  </div>
+                </article>
+              </FadeIn>
+            ))}
+          </div>
+          <FadeIn delay={0.3}>
+            <div className="mt-8 text-center">
+              <a
+                href="https://www.facebook.com/profile.php?id=100090509656389"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-dark-300 hover:text-gold transition-colors"
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+                See our reviews on Facebook
+              </a>
+            </div>
+          </FadeIn>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      </section>
+
+      {/* Portfolio Gallery */}
+      <section className="py-12 sm:py-24 bg-dark-900 relative">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-10 sm:mb-14">
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                Our Work
+              </span>
+              <h2 className="mt-4 text-2xl md:text-3xl font-bold text-white tracking-tight">
+                Real Estate Photography Portfolio
+              </h2>
+            </div>
+          </FadeIn>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+            {loc.galleryImages.map((img, i) => (
+              <FadeIn key={i} delay={i * 0.08}>
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-dark-500/30">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    loading="lazy"
+                  />
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+          <FadeIn>
+            <div className="mt-8 text-center">
+              <Link
+                href="/portfolio"
+                className="text-sm text-gold hover:text-gold/80 transition-colors font-medium"
+              >
+                View full portfolio &rarr;
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
       </section>
 
       {/* Nearby Areas */}

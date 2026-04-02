@@ -47,9 +47,32 @@ export default async function ProjectPage({
   if (!project) notFound();
 
   const isVideo = !!project.videoSrc;
+  const BASE_URL =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
+
+  const videoSchema = isVideo
+    ? {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        name: project.title,
+        description: project.description,
+        thumbnailUrl: project.heroImage.startsWith("http")
+          ? project.heroImage
+          : `${BASE_URL}${project.heroImage}`,
+        contentUrl: `${BASE_URL}${project.videoSrc}`,
+        uploadDate: "2025-06-01",
+      }
+    : null;
 
   return (
     <>
+      {videoSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+        />
+      )}
+
       {/* Hero */}
       <section className="relative bg-dark-900 py-10 sm:py-20 overflow-hidden">
         <Image
