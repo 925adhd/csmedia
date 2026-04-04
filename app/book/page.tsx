@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 import CalendlyInline from "@/components/CalendlyInline";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
   title: "Schedule Your Drone Photography Session",

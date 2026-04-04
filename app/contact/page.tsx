@@ -4,7 +4,7 @@ import ContactForm from "@/components/ContactForm";
 
 import { getPageContent } from "@/lib/supabase/queries";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
   title: "Contact CS Media — Book a Shoot Today",

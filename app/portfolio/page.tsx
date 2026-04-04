@@ -4,7 +4,7 @@ import FadeIn from "@/components/FadeIn";
 import CTASection from "@/components/CTASection";
 import { getPortfolioProjects } from "@/lib/portfolio";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
   title: "Real Estate Photography & Video Portfolio",

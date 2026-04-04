@@ -6,7 +6,7 @@ import CTASection from "@/components/CTASection";
 import CalendlyButton from "@/components/CalendlyButton";
 import { getPageContent } from "@/lib/supabase/queries";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
   title: "Real Estate Media Services & Pricing in Kentucky",

@@ -26,7 +26,7 @@ export async function generateMetadata({
   const title = `Real Estate Photography in ${loc.city}, ${loc.county} KY`;
   const description = `Professional real estate photography, drone video & virtual staging in ${loc.city}, ${loc.county}, Kentucky. FAA Part 107 certified. From $150.`;
 
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
   return {
     title,
@@ -53,7 +53,7 @@ export default async function CityPage({
   if (!loc) notFound();
 
   const BASE_URL =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
