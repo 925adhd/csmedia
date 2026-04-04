@@ -36,6 +36,9 @@ yarn-error.log*
 # live database reference (contains project URLs)
 supabase/LIVE-DATABASE.md
 
+# SEO audit docs
+GOLDEN_GOOGLE_SEO_AUDIT*
+
 # vercel
 .vercel
 

@@ -71,13 +71,39 @@ export default async function Home() {
   ];
 
 
+  const faqItems = [
+    { q: "How much does real estate photography cost?", a: "Packages start at $150 for interior and exterior photography. Our most popular package is $200, and our full drone + video package is $300. See our services page for full details." },
+    { q: "How fast will I get my photos back?", a: "All deliverables\u2014photos, drone media, and virtual staging\u2014are delivered within 24\u201348 hours of the shoot." },
+    { q: "Do you need a license to fly drones?", a: "Yes. Commercial drone work requires an FAA Part 107 certificate. CS Media is fully Part 107 certified for all aerial photography and videography." },
+    { q: "What areas do you serve?", a: "We\u2019re based in Leitchfield, KY and serve all of Grayson County, Elizabethtown, Bowling Green, Owensboro, Bardstown, and the rest of Kentucky. Out-of-state projects available upon request." },
+    { q: "What is virtual staging?", a: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor\u2014helping buyers visualize a property at a fraction of the cost of physical staging. Starting at $25 per room." },
+  ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* Hero */}
       <section id="hero" className="relative flex items-center justify-center min-h-[60vh] md:min-h-[75vh] pt-20 pb-16 md:pt-24 md:pb-20 bg-dark-900 overflow-hidden">
         <Image
           src="/images/real-estate-aerial-drone-leitchfield-ky.webp"
-          alt=""
+          alt="Aerial drone photo of a real estate property in Leitchfield, Kentucky"
           aria-hidden="true"
           fill
           sizes="100vw"
@@ -433,13 +459,7 @@ export default async function Home() {
             </div>
           </FadeIn>
           <div className="space-y-8">
-            {[
-              { q: "How much does real estate photography cost?", a: "Packages start at $150 for interior and exterior photography. Our most popular package is $200, and our full drone + video package is $300. See our services page for full details." },
-              { q: "How fast will I get my photos back?", a: "All deliverables\u2014photos, drone media, and virtual staging\u2014are delivered within 24\u201348 hours of the shoot." },
-              { q: "Do you need a license to fly drones?", a: "Yes. Commercial drone work requires an FAA Part 107 certificate. CS Media is fully Part 107 certified for all aerial photography and videography." },
-              { q: "What areas do you serve?", a: "We\u2019re based in Leitchfield, KY and serve all of Grayson County, Elizabethtown, Bowling Green, Owensboro, Bardstown, and the rest of Kentucky. Out-of-state projects available upon request." },
-              { q: "What is virtual staging?", a: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor\u2014helping buyers visualize a property at a fraction of the cost of physical staging. Starting at $25 per room." },
-            ].map((faq, i) => (
+            {faqItems.map((faq, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="border-b border-dark-500/30 pb-8">
                   <h3 className="text-lg font-semibold text-white">{faq.q}</h3>

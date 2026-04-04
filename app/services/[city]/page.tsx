@@ -38,7 +38,7 @@ export async function generateMetadata({
       type: "website",
       url: `${BASE_URL}/services/${loc.slug}`,
       siteName: "CS Media",
-      images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.webp", width: 1200, height: 630 }],
+      images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.webp", width: 1200, height: 630, alt: `Real estate drone photography in ${loc.city}, Kentucky` }],
     },
   };
 }
