@@ -135,7 +135,7 @@ export default function Footer() {
             <Link href="/disclaimer" className="text-xs text-dark-200 hover:text-gold hover:underline transition-colors whitespace-nowrap">
               Disclaimer
             </Link>
-            <Link href="/admin/login" className="text-xs text-dark-200 hover:text-gold hover:underline transition-colors whitespace-nowrap">
+            <Link href="/admin/login" rel="nofollow" className="text-xs text-dark-200 hover:text-gold hover:underline transition-colors whitespace-nowrap">
               Admin
             </Link>
           </div>
