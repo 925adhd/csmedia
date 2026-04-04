@@ -7,14 +7,14 @@ import { getPageContent } from "@/lib/supabase/queries";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "Contact CS Media — Book a Shoot Today",
+  title: "Book a Real Estate Photo Shoot in Kentucky",
   description:
-    "Book a drone photography or videography shoot with CS Media in Leitchfield & Grayson County, KY. Serving all of Kentucky.",
+    "Schedule your listing photography, drone video, or virtual staging session. Serving Leitchfield, Elizabethtown, Bowling Green, Owensboro & all of Kentucky. From $150.",
   alternates: { canonical: `${BASE_URL}/contact` },
   openGraph: {
-    title: "Contact | CS Media",
+    title: "Book a Real Estate Photo Shoot | CS Media",
     description:
-      "Book a drone photography or videography shoot with CS Media in Leitchfield & Grayson County, KY. Serving all of Kentucky.",
+      "Schedule your listing photography, drone video, or virtual staging session. Serving Leitchfield, Elizabethtown, Bowling Green, Owensboro & all of Kentucky. From $150.",
     type: "website",
     url: `${BASE_URL}/contact`,
     siteName: "CS Media",

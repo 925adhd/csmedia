@@ -20,18 +20,18 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "CS Media | Real Estate Drone Photography & Video Services",
+    default: "Real Estate Photographer in Kentucky | CS Media — From $150",
     template: "%s | CS Media",
   },
   description:
-    "Real estate drone photography, videography, virtual staging & video editing in Leitchfield & Grayson County, KY. FAA Part 107 certified. From $150.",
+    "Hire a real estate photographer in Leitchfield, Elizabethtown, Bowling Green & across Kentucky. Drone photos, video, virtual staging. Part 107 certified. From $150.",
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "CS Media | Real Estate Drone Photography & Video Services",
+    title: "Real Estate Photographer in Kentucky | CS Media — From $150",
     description:
-      "Real estate drone photography, videography, virtual staging & video editing in Leitchfield & Grayson County, KY. FAA Part 107 certified. Packages from $150.",
+      "Hire a real estate photographer in Leitchfield, Elizabethtown, Bowling Green & across Kentucky. Drone photos, video, virtual staging. Part 107 certified. From $150.",
     type: "website",
     locale: "en_US",
     url: BASE_URL,
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CS Media | Real Estate Drone Photography & Video Services",
+    title: "Real Estate Photographer in Kentucky | CS Media — From $150",
     description:
-      "Real estate drone photography, videography, virtual staging & video editing in Leitchfield & Grayson County, KY. FAA Part 107 certified. From $150.",
+      "Hire a real estate photographer in Leitchfield, Elizabethtown, Bowling Green & across Kentucky. Drone photos, video, virtual staging. Part 107 certified. From $150.",
     images: ["/images/real-estate-aerial-drone-leitchfield-ky.webp"],
   },
   verification: {

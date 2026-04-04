@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { portfolioProjects } from "@/lib/portfolio";
 import { locations } from "@/lib/locations";
+import { blogPosts } from "@/lib/blog";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
@@ -35,6 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date("2026-03-15"),
       changeFrequency: "yearly",
       priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog`,
+      lastModified: new Date("2026-04-04"),
+      changeFrequency: "weekly",
+      priority: 0.8,
     },
     {
       url: `${BASE_URL}/privacy`,
@@ -78,5 +85,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...locationPages, ...portfolioPages];
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...locationPages, ...portfolioPages, ...blogPages];
 }

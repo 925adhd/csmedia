@@ -9,14 +9,14 @@ import { getPageContent } from "@/lib/supabase/queries";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "Real Estate Media Services & Pricing in Kentucky",
+  title: "Real Estate Photography Packages & Pricing in Kentucky",
   description:
-    "Real estate media packages starting at $150 in Leitchfield & Grayson County, KY. Photography, drone, videography, and video editing. Quick turnaround.",
+    "Hire a listing photographer in Kentucky. Packages from $150 — interior photos, drone aerials, video walkthroughs, virtual staging. 24-48hr delivery. Book today.",
   alternates: { canonical: `${BASE_URL}/services` },
   openGraph: {
-    title: "Services | CS Media",
+    title: "Real Estate Photography Packages & Pricing | CS Media",
     description:
-      "Real estate media packages starting at $150 in Leitchfield & Grayson County, KY. Photography, drone, videography, and video editing. Quick turnaround.",
+      "Hire a listing photographer in Kentucky. Packages from $150 — interior photos, drone aerials, video walkthroughs, virtual staging. 24-48hr delivery. Book today.",
     type: "website",
     url: `${BASE_URL}/services`,
     siteName: "CS Media",
