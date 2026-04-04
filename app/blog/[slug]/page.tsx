@@ -93,9 +93,9 @@ export default async function BlogPostPage({
       if (!trimmed) return "";
       if (trimmed === "---") return '<hr class="border-dark-500/30 my-8" />';
       if (trimmed.startsWith("## "))
-        return `<h2 class="text-2xl font-bold text-white mt-12 mb-4">${trimmed.slice(3)}</h2>`;
+        return `<h2 class="text-2xl font-bold text-dark-100 mt-12 mb-4">${trimmed.slice(3)}</h2>`;
       if (trimmed.startsWith("### "))
-        return `<h3 class="text-xl font-semibold text-white mt-8 mb-3">${trimmed.slice(4)}</h3>`;
+        return `<h3 class="text-xl font-semibold text-dark-100 mt-8 mb-3">${trimmed.slice(4)}</h3>`;
       if (trimmed.startsWith("- [ ] ") || trimmed.includes("\n- [ ] ")) {
         const items = trimmed
           .split("\n")
@@ -114,7 +114,7 @@ export default async function BlogPostPage({
       }
       // Inline formatting
       let html = trimmed
-        .replace(/\*\*(.+?)\*\*/g, '<strong class="text-white">$1</strong>')
+        .replace(/\*\*(.+?)\*\*/g, '<strong class="text-dark-100 font-semibold">$1</strong>')
         .replace(
           /\[(.+?)\]\((.+?)\)/g,
           '<a href="$2" class="text-gold hover:text-gold-light underline transition-colors">$1</a>'

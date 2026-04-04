@@ -10,6 +10,102 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "why-your-listing-isnt-getting-showings",
+    title: "Why Your Listing Isn't Getting Showings (And How to Fix It)",
+    description:
+      "Your listing is sitting with no showings. The problem isn't the price — it's the photos. Here's what Kentucky agents are doing differently to sell faster.",
+    date: "2026-04-04",
+    readTime: "4 min read",
+    heroImage: "/images/white-farmhouse-front-exterior-kentucky.webp",
+    content: `
+## Your Listing Is Live. Nobody's Calling.
+
+You priced it right. The location is solid. The seller is motivated. But the showing requests aren't coming in.
+
+Before you drop the price, look at your listing photos. Because in 2026, **87% of buyers say photos are the most important factor when deciding which homes to visit** (National Association of Realtors). If your photos don't stop the scroll, buyers never make it to the description — let alone the front door.
+
+---
+
+## The Real Reason Listings Sit
+
+It's not the market. It's not the price. It's the first impression.
+
+Buyers scroll through hundreds of listings on Zillow, Realtor.com, and MLS apps. They spend **less than 3 seconds** deciding whether to click or keep scrolling. That decision is made entirely on the first photo.
+
+Here's what loses them:
+
+- **Dark, underexposed rooms** — phone cameras can't handle mixed lighting
+- **Wide-angle distortion** — rooms that look warped or unnatural
+- **No exterior or aerial shots** — buyers can't see the lot, the neighborhood, or the curb appeal
+- **Empty rooms with no staging** — buyers can't visualize living there
+- **Vertical phone photos on MLS** — immediately signals "not serious"
+
+The agents who are selling fast in Kentucky right now? They're not better negotiators. They're just showing up with better media.
+
+---
+
+## What Professional Listing Photos Actually Do
+
+This isn't about making photos look "pretty." It's about generating showings.
+
+- Listings with professional photography sell **32% faster** (RealTrends)
+- Professionally photographed homes sell for **$3,000–$11,000 more** on average
+- Listings with drone photos get **68% more views** than those without
+
+For a $150–$300 investment, you're not paying for photos. You're paying for showings. And showings are what sell houses.
+
+---
+
+## What Top-Producing Agents in Kentucky Are Using
+
+The agents consistently moving listings in Leitchfield, Elizabethtown, Bowling Green, and across Kentucky are using a combination of:
+
+### Professional Interior & Exterior Photography
+
+Clean, bright, properly exposed photos of every room. HDR processing that balances natural light with interior lighting. This is the baseline — and it's the single biggest upgrade from phone photos.
+
+### Drone Aerials (FAA Part 107 Required)
+
+Aerial shots show what ground-level photos can't — the full lot, outbuildings, road access, and neighborhood context. This is especially critical for rural Kentucky properties where acreage is a selling point.
+
+If your photographer isn't Part 107 certified, their drone work is illegal and your brokerage could be liable.
+
+### Video Walkthroughs
+
+60–90 second cinematic walkthroughs let buyers tour the home before they visit. This pre-qualifies showings — the people who book have already seen the layout and are genuinely interested.
+
+### Virtual Staging
+
+Empty listings sit **73% longer** than staged ones. Virtual staging digitally furnishes rooms with realistic furniture for a fraction of physical staging costs. Buyers need to see a home, not a blank box.
+
+---
+
+## The Math That Makes This Obvious
+
+Let's say you're listing a $250,000 home in Elizabethtown.
+
+- **Phone photos**: Listing sits 45+ days. Price reduction. You lose the seller's confidence.
+- **Professional media ($200 package)**: Listing gets 3x more views in the first week. Multiple showings. Offer in 14 days.
+
+That $200 didn't cost you anything. It made you money — and kept your seller happy enough to refer you to their neighbor.
+
+---
+
+## Stop Losing Listings to Better Photos
+
+You don't need more leads. You need your current listings to perform. Professional real estate photography is the fastest, cheapest way to turn a sitting listing into a sold one.
+
+CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owensboro, Bardstown, and the rest of Kentucky.
+
+- **Packages from $150** — photos, drone, video, virtual staging
+- **24–48 hour delivery** — your listing goes live fast
+- **FAA Part 107 certified** — legal, insured aerial work
+- **Same-week availability** — text or call to book
+
+[See packages and pricing](/services) or [book your shoot now](/contact).
+`,
+  },
+  {
     slug: "real-estate-photography-cost-kentucky",
     title: "How Much Does a Real Estate Photographer Cost in Kentucky?",
     description:
@@ -114,132 +210,6 @@ Stop losing listings to agents with better photos. CS Media shoots properties ac
 - **Same-week availability** — text or call to book
 
 [See all packages and pricing](/services) or [book your shoot now](/contact).
-`,
-  },
-  {
-    slug: "prepare-home-for-real-estate-photos",
-    title: "Real Estate Photo Shoot Checklist for Kentucky Agents",
-    description:
-      "Prepare your listing for professional photos in 30 minutes. Checklist for Kentucky agents and sellers — get MLS-ready photos that sell homes faster.",
-    date: "2026-04-04",
-    readTime: "4 min read",
-    heroImage: "/images/white-farmhouse-front-exterior-kentucky.webp",
-    content: `
-## 30 Minutes of Prep = Better Photos, Faster Sale
-
-You booked the photographer. Now make sure the house is ready so you get MLS photos that actually move the listing.
-
-Professional real estate photography captures what's there. If the house isn't prepped, even the best photographer can't save it. But 30 minutes of work before the shoot can be the difference between a listing that sits and one that sells the first weekend.
-
-Here's the exact checklist we send our clients before every shoot.
-
----
-
-## The Day Before the Shoot
-
-### Declutter Every Room
-
-Less is more in real estate photography. Remove:
-
-- Personal photos and memorabilia
-- Excessive decorations and knick-knacks
-- Mail, paperwork, and magazines from counters
-- Toys, pet items, and laundry
-- Small kitchen appliances (toasters, coffee makers, knife blocks)
-
-The goal is to make each room feel spacious and neutral so buyers can picture their own belongings in the space.
-
-### Deep Clean
-
-- Vacuum all floors and carpets
-- Mop hard surfaces
-- Clean all windows inside and out (natural light is critical for photos)
-- Wipe down countertops, sinks, and mirrors
-- Clean toilets, tubs, and showers
-- Dust ceiling fans and light fixtures
-
-### Exterior and Curb Appeal
-
-First impressions start outside — especially with drone photography:
-
-- Mow the lawn and trim edges
-- Remove any yard debris, trash cans, or garden hoses
-- Clear the driveway and walkways
-- Clean the front porch and front door
-- Add a fresh doormat if the current one is worn
-- Consider potted plants by the entryway
-
----
-
-## The Morning of the Shoot
-
-### Lighting
-
-Natural light makes or breaks real estate photos. Before the photographer arrives:
-
-- Open all blinds and curtains
-- Turn on every light in the house (including closets and under-cabinet lights)
-- Replace any burned-out bulbs
-- Make sure all bulbs in a room are the same color temperature (avoid mixing warm and cool)
-
-### Staging Touches
-
-- Make all beds with clean, wrinkle-free bedding
-- Set out fresh towels in bathrooms (rolled or folded neatly)
-- Add a simple centerpiece to the dining table
-- Place a bowl of fruit on the kitchen counter
-- Remove refrigerator magnets and papers
-- Close all toilet lids
-- Hide trash cans
-
-### Remove Distractions
-
-- Move all vehicles out of the driveway (the photographer needs a clear exterior shot)
-- Put pets in a crate or take them off-site
-- Turn off all TVs and computer screens
-- Close all closet and cabinet doors
-- Remove floor mats from bathrooms
-
----
-
-## What About Virtual Staging?
-
-If the home is empty, don't worry — virtual staging can digitally furnish rooms with realistic furniture and decor. This is especially effective for:
-
-- Vacant properties
-- New construction
-- Rooms that are hard to visualize empty
-
-At CS Media, virtual staging starts at $25 per room and is delivered within 24–48 hours. It's a fraction of the cost of physical staging and produces listing photos that help buyers connect emotionally with the space.
-
----
-
-## Quick Checklist
-
-Use this checklist the morning of your shoot:
-
-- [ ] All clutter removed from surfaces
-- [ ] Every room cleaned and vacuumed
-- [ ] All lights on, blinds open
-- [ ] Beds made, towels fresh
-- [ ] Exterior tidy, driveway clear
-- [ ] Pets removed
-- [ ] TVs and screens off
-- [ ] Toilet lids down
-- [ ] Trash cans hidden
-- [ ] Personal items stored away
-
----
-
-## Book Your Listing Photographer in Kentucky
-
-You handle the prep. We handle the photos, drone aerials, and video. CS Media works with agents and sellers across Leitchfield, Elizabethtown, Bowling Green, Owensboro, Bardstown, and the rest of Kentucky.
-
-- **Same-week booking available** — most shoots scheduled within 2–3 days
-- **Photos delivered in 24–48 hours** — your listing goes live fast
-- **Packages from $150** — transparent pricing, no surprises
-
-[See packages and pricing](/services) or [book your shoot today](/contact).
 `,
   },
 ];
