@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { notFound, redirect } from "next/navigation";
 import FadeIn from "@/components/FadeIn";
 import CalendlyInline from "@/components/CalendlyInline";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "Schedule Your Drone Photography Session",
   description:
     "Schedule a professional drone photography, videography, or virtual staging session with CS Media in Leitchfield, KY. Quick and easy online booking.",
@@ -21,6 +23,8 @@ export const metadata: Metadata = {
 };
 
 export default function BookPage() {
+  if (process.env.NODE_ENV === "production") redirect("/");
+
   return (
     <>
       <section className="relative bg-dark-900 pt-12 pb-2 sm:pt-16 sm:pb-4 overflow-hidden">

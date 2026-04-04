@@ -172,6 +172,30 @@ export default async function ProjectPage({
       </section>
       )}
 
+      {/* More Projects */}
+      {(() => {
+        const others = portfolioProjects.filter((p) => p.slug !== slug).slice(0, 3);
+        if (others.length === 0) return null;
+        return (
+          <section className="py-16 bg-dark-900">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <h2 className="text-2xl font-bold text-white tracking-tight mb-8">More Projects</h2>
+              <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+                {others.map((p) => (
+                  <Link key={p.slug} href={`/portfolio/${p.slug}`} className="group relative aspect-[4/3] rounded-xl overflow-hidden border border-dark-500/30">
+                    <Image src={p.heroImage} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 33vw" loading="lazy" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 to-transparent" />
+                    <div className="absolute bottom-4 left-4">
+                      <span className="text-sm font-bold text-white">{p.title}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
+
       <CTASection
         heading={isVideo ? "Need a Video Like This?" : "Want Similar Results?"}
         subheading={isVideo ? "Get a walkthrough video that makes buyers book showings before they visit." : "Let's capture your property with the same cinematic quality."}
