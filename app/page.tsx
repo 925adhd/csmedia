@@ -133,7 +133,7 @@ export default async function Home() {
             <div className="inline-flex items-center gap-3 mb-8">
               <span className="h-px w-12 bg-gold/60" />
               <span className="text-gold text-xs font-mono uppercase tracking-[0.4em]">
-                Real Estate Media
+                Kentucky Real Estate Media
               </span>
               <span className="h-px w-12 bg-gold/60" />
             </div>
