@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CalendlyButton from "@/components/CalendlyButton";
+import BookingButton from "@/components/BookingButton";
 import TextLink from "@/components/TextLink";
 
 interface CTASectionProps {
@@ -70,9 +70,9 @@ export default function CTASection({
             {buttonText}
           </TextLink>
         ) : (
-          <CalendlyButton className={buttonClass}>
+          <BookingButton className={buttonClass}>
             {buttonText}
-          </CalendlyButton>
+          </BookingButton>
         )}
       </div>
     </section>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import BeforeAfter from "@/components/BeforeAfter";
 import CTASection from "@/components/CTASection";
-import CalendlyButton from "@/components/CalendlyButton";
+import BookingButton from "@/components/BookingButton";
 import { getPageContent } from "@/lib/supabase/queries";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
@@ -336,7 +336,7 @@ export default async function ServicesPage() {
                         </div>
                       ))}
                     </div>
-                    <CalendlyButton
+                    <BookingButton
                       className={`mt-6 w-full rounded-full py-3 text-xs font-semibold uppercase tracking-widest text-center transition-all cursor-pointer ${
                         pkg.popular
                           ? "bg-gold/15 border border-gold/30 text-gold hover:bg-gold/25"
@@ -344,7 +344,7 @@ export default async function ServicesPage() {
                       }`}
                     >
                       Book Now
-                    </CalendlyButton>
+                    </BookingButton>
                   </div>
                 </div>
               </FadeIn>

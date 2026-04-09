@@ -1,12 +1,12 @@
 import Link from "next/link";
 
-interface CalendlyButtonProps {
+interface BookingButtonProps {
   className?: string;
   children: React.ReactNode;
   onClick?: () => void;
 }
 
-export default function CalendlyButton({ className, children, onClick }: CalendlyButtonProps) {
+export default function BookingButton({ className, children, onClick }: BookingButtonProps) {
   return (
     <Link href="/contact" className={className} onClick={onClick}>
       {children}

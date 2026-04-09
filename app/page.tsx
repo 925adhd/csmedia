@@ -5,7 +5,7 @@ import ServiceCard from "@/components/ServiceCard";
 import PortfolioCard from "@/components/PortfolioCard";
 import BeforeAfter from "@/components/BeforeAfter";
 import CTASection from "@/components/CTASection";
-import CalendlyButton from "@/components/CalendlyButton";
+import BookingButton from "@/components/BookingButton";
 import TextLink from "@/components/TextLink";
 import { getPortfolioProjects } from "@/lib/portfolio";
 import { getPageContent } from "@/lib/supabase/queries";
@@ -151,16 +151,16 @@ export default async function Home() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="mt-8 text-lg md:text-xl text-dark-200 max-w-xl mx-auto leading-relaxed">
-              Professional drone photography, cinematic video &amp; virtual staging. Packages from $150. Delivered in 24–48 hours.
+              Professional drone photography, cinematic video &amp; virtual staging. Delivered in 24–48 hours.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <CalendlyButton
+              <BookingButton
                 className="border-gradient rounded-full bg-gold/10 px-10 py-4 text-base font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20 cursor-pointer"
               >
                 Book a Shoot
-              </CalendlyButton>
+              </BookingButton>
               <Link
                 href="/portfolio"
                 className="rounded-full border border-dark-400 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-dark-100 transition-all hover:border-gold/50 hover:text-gold"

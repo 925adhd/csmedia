@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import CalendlyButton from "@/components/CalendlyButton";
+import BookingButton from "@/components/BookingButton";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -58,11 +58,11 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <CalendlyButton
+            <BookingButton
               className="border-gradient rounded-full bg-gold/10 px-6 py-2.5 text-[13px] font-semibold uppercase tracking-wider text-gold transition-all hover:bg-gold/20 cursor-pointer"
             >
               Book Now
-            </CalendlyButton>
+            </BookingButton>
           </div>
 
           {/* Mobile toggle */}
@@ -106,12 +106,12 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="mt-8 flex flex-col items-center gap-3">
-            <CalendlyButton
+            <BookingButton
               className="w-full border-gradient rounded-full bg-gold/10 py-3.5 text-sm font-semibold uppercase tracking-widest text-gold text-center transition-all hover:bg-gold/20"
               onClick={() => setMobileOpen(false)}
             >
               Book a Shoot
-            </CalendlyButton>
+            </BookingButton>
             <a
               href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
               className="text-sm text-dark-200 hover:text-gold transition-colors"

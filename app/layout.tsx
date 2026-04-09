@@ -20,18 +20,18 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "Real Estate Photographer in Kentucky | CS Media — From $150",
+    default: "Kentucky Real Estate Photography & Drone Video | CS Media",
     template: "%s | CS Media",
   },
   description:
-    "Hire a real estate photographer in Leitchfield, Elizabethtown, Bowling Green & across Kentucky. Drone photos, video, virtual staging. Part 107 certified. From $150.",
+    "Kentucky real estate photography, drone video & virtual staging. Serving Leitchfield, Elizabethtown, Bowling Green, Bardstown & beyond. FAA Part 107 certified. 24–48hr delivery.",
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "Real Estate Photographer in Kentucky | CS Media — From $150",
+    title: "Kentucky Real Estate Photography & Drone Video | CS Media",
     description:
-      "Hire a real estate photographer in Leitchfield, Elizabethtown, Bowling Green & across Kentucky. Drone photos, video, virtual staging. Part 107 certified. From $150.",
+      "Kentucky real estate photography, drone video & virtual staging. Serving Leitchfield, Elizabethtown, Bowling Green, Bardstown & beyond. FAA Part 107 certified. 24–48hr delivery.",
     type: "website",
     locale: "en_US",
     url: BASE_URL,
@@ -47,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Real Estate Photographer in Kentucky | CS Media — From $150",
+    title: "Kentucky Real Estate Photography & Drone Video | CS Media",
     description:
-      "Hire a real estate photographer in Leitchfield, Elizabethtown, Bowling Green & across Kentucky. Drone photos, video, virtual staging. Part 107 certified. From $150.",
+      "Kentucky real estate photography, drone video & virtual staging. Serving Leitchfield, Elizabethtown, Bowling Green, Bardstown & beyond. FAA Part 107 certified. 24–48hr delivery.",
     images: ["/images/real-estate-aerial-drone-leitchfield-ky.webp"],
   },
   verification: {
