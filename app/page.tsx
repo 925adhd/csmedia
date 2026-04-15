@@ -101,17 +101,30 @@ export default async function Home() {
 
       {/* Hero */}
       <section id="hero" className="relative flex items-center justify-center min-h-[60vh] md:min-h-[75vh] pt-20 pb-16 md:pt-24 md:pb-20 bg-dark-900 overflow-hidden">
-        <Image
-          src="/images/real-estate-aerial-drone-leitchfield-ky.webp"
-          alt="Aerial drone photo of a real estate property in Leitchfield, Kentucky"
-          aria-hidden="true"
-          fill
-          sizes="100vw"
-          className="object-cover opacity-30"
-          priority
-          quality={60}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-900/60 via-dark-900/70 to-dark-900" />
+        <div className="absolute inset-0 ken-burns">
+          <Image
+            src="/images/brick-home-aerial-drone-kentucky.webp"
+            alt="Aerial drone shot of a brick home with landscaped yard in Kentucky"
+            aria-hidden="true"
+            fill
+            sizes="100vw"
+            className="object-cover opacity-[0.55]"
+            priority
+            quality={85}
+          />
+        </div>
+
+        {/* Vignette — makes it feel like viewfinder glass */}
+        <div className="absolute inset-0 pointer-events-none [background:radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.6)_100%)]" />
+
+        {/* Single drone tag — no ticking numbers */}
+        <div className="absolute top-5 left-4 md:top-6 md:left-6 z-[5] flex items-center gap-2 md:gap-2.5 font-mono text-[9px] md:text-[10px] tracking-[0.25em] uppercase text-gold/60">
+          <span className="h-1 w-1 md:h-1.5 md:w-1.5 rounded-full bg-red-500" />
+          <span>REC</span>
+          <span className="hidden md:inline text-gold/30">·</span>
+          <span className="hidden md:inline">Leitchfield, KY · Aerial</span>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-900/35 via-dark-900/55 to-dark-900" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,169,110,0.08),transparent_70%)]" />
 
         <div
@@ -142,8 +155,10 @@ export default async function Home() {
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-[0.9]">
               Get Your
               <br />
-              <span className="text-gold">
-                Listing Sold
+              Listing{" "}
+              <span className="relative inline-block">
+                Sold
+                <span aria-hidden className="absolute left-0 right-0 -bottom-1 md:-bottom-2 h-[2px] md:h-[3px] bg-gold" />
               </span>
               <br />
               Faster

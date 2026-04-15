@@ -32,13 +32,13 @@ export default function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <Link href="/" className="relative w-16 h-12">
+          <Link href="/" className="relative w-28 h-12">
             <Image
-              src="/images/cs-media-logo.webp"
+              src="/images/cs-media-logo-nav.png"
               alt="CS Media"
               fill
               className="object-contain"
-              sizes="64px"
+              sizes="112px"
               priority
             />
           </Link>
