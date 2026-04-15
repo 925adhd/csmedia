@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: "website",
     url: `${BASE_URL}/services`,
     siteName: "CS Media",
-    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.webp", width: 1200, height: 630, alt: "Aerial drone photo of a real estate property in Kentucky" }],
+    images: [{ url: "/images/brick-home-aerial-drone-kentucky.webp", width: 1200, height: 630, alt: "Aerial drone photo of a real estate property in Kentucky" }],
   },
 };
 
@@ -252,15 +252,17 @@ export default async function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       {/* Header */}
-      <section className="relative bg-dark-900 py-16 sm:py-28 overflow-hidden">
+      <section className="relative bg-dark-900 py-20 sm:py-36 min-h-[45vh] overflow-hidden">
         <Image
-          src="/images/white-farmhouse-aerial-drone-kentucky.webp"
-          alt="Aerial view of property"
+          src="/images/rustic-kitchen-wood-beams-island.webp"
+          alt="Professional real estate photography of a rustic kitchen with wood beams in Kentucky"
           fill
-          className="object-cover opacity-15"
+          sizes="100vw"
+          quality={75}
+          className="object-cover object-center opacity-55"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-900/40 via-dark-900/70 to-dark-900" />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-900/30 via-dark-900/55 to-dark-900" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <FadeIn>
             <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">

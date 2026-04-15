@@ -19,7 +19,7 @@ export default function CTASection({
   useTextLink = false,
   backgroundImage = "/images/twilight-ranch-home-evening-kentucky.webp",
 }: CTASectionProps) {
-  const buttonClass = "mt-10 inline-block border-gradient rounded-full bg-gold/10 px-10 py-4 text-sm font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20 hover:glow-gold cursor-pointer";
+  const buttonClass = "mt-10 inline-block rounded-full bg-gold px-10 py-4 text-sm font-semibold uppercase tracking-widest text-dark-900 transition-colors hover:bg-gold-light cursor-pointer";
 
   return (
     <section className="relative bg-dark-800 py-16 sm:py-28 overflow-hidden">
@@ -31,10 +31,11 @@ export default function CTASection({
             alt=""
             aria-hidden="true"
             fill
-            className="object-cover opacity-20"
+            className="object-cover object-[center_36%] opacity-45"
             sizes="100vw"
+            quality={75}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-dark-900/90 via-dark-900/80 to-dark-900/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-dark-900/50 via-dark-900/60 to-dark-900/75" />
         </>
       )}
 

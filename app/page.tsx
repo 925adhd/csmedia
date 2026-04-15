@@ -7,6 +7,7 @@ import BeforeAfter from "@/components/BeforeAfter";
 import CTASection from "@/components/CTASection";
 import BookingButton from "@/components/BookingButton";
 import TextLink from "@/components/TextLink";
+import { StampIcon, DroneIcon, PolaroidIcon } from "@/components/StepIcons";
 import { getPortfolioProjects } from "@/lib/portfolio";
 import { getPageContent } from "@/lib/supabase/queries";
 import { getTestimonials, getServices } from "@/lib/supabase/queries";
@@ -66,8 +67,7 @@ export default async function Home() {
   const stats = [
     { value: "Part 107", label: "FAA Certified" },
     { value: "24–48hr", label: "Turnaround" },
-    { value: "1.1K+", label: "Followers" },
-    { value: "100%", label: "Recommended" },
+    { value: "$150+", label: "Starting Rate" },
   ];
 
 
@@ -110,7 +110,9 @@ export default async function Home() {
             sizes="100vw"
             className="object-cover opacity-[0.55]"
             priority
-            quality={85}
+            quality={75}
+            placeholder="blur"
+            blurDataURL="data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAwAgCdASoQAAwAA4BaJbACsAYvXWU5YP6KAADymXLefN8XytR0++YiAodY0sXOYNnI99BHxRFH5sNGyqws4VDnedWH+gvMYDbleOrAV9DfALdGF3l73VN287y2aEsXVPoLMnLV4sT2IeuC8AA="
           />
         </div>
 
@@ -172,7 +174,7 @@ export default async function Home() {
           <FadeIn delay={0.3}>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <BookingButton
-                className="border-gradient rounded-full bg-gold/10 px-10 py-4 text-base font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20 cursor-pointer"
+                className="rounded-full border border-gold/50 bg-gold/10 px-10 py-4 text-base font-semibold uppercase tracking-widest text-gold transition-colors hover:bg-gold/20 hover:border-gold cursor-pointer"
               >
                 Book a Shoot
               </BookingButton>
@@ -194,11 +196,11 @@ export default async function Home() {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <FadeIn>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="grid grid-cols-3 gap-4 md:gap-8 text-center">
               {stats.map((stat, i) => (
                 <div key={i}>
-                  <p className="text-2xl md:text-3xl font-bold text-gold">{stat.value}</p>
-                  <p className="mt-1 text-xs text-dark-300 font-mono uppercase tracking-widest">{stat.label}</p>
+                  <p className="text-lg sm:text-2xl md:text-3xl font-bold text-gold">{stat.value}</p>
+                  <p className="mt-1 text-[10px] sm:text-xs text-dark-300 font-mono uppercase tracking-wider md:tracking-widest">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -209,7 +211,7 @@ export default async function Home() {
 
       {/* Recent Work */}
       <section id="portfolio" className="scroll-mt-20 py-16 sm:py-28 bg-dark-900">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-[1600px] px-6 lg:px-8">
           <FadeIn>
             <div className="mb-14">
               <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
@@ -314,23 +316,24 @@ export default async function Home() {
                 {(servicesContent?.tagline as string) || "What We Do"}
               </span>
               <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
-                {(servicesContent?.heading as string) || "Property Media That Delivers"}
-                <span className="text-gold">
-                  {" "}{(servicesContent?.heading_gold as string) || "Results"}
+                {(servicesContent?.heading as string) || "Property Media That Delivers"}{" "}
+                <span className="relative inline-block">
+                  {(servicesContent?.heading_gold as string) || "Results"}
+                  <span aria-hidden className="absolute left-0 right-0 -bottom-1 md:-bottom-1.5 h-[2px] md:h-[3px] bg-gold" />
                 </span>
               </h2>
             </div>
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
-              { icon: "camera", title: "Photography", desc: "Bright, clean listing photos that make buyers stop scrolling and book a showing." },
-              { icon: "video", title: "Videography", desc: "Walkthrough videos that let buyers tour the home before they visit — more qualified showings, less wasted time." },
-              { icon: "drone", title: "Drone (Part 107)", desc: "Aerial views that show off the lot, neighborhood, and curb appeal — the shots your competitors don't have." },
-              { icon: "staging", title: "Virtual Staging", desc: "Empty rooms furnished digitally so buyers see a home, not a blank space. Starting at $25/room." },
-              { icon: "edit", title: "Video Editing", desc: "Raw footage turned into polished, branded content ready for MLS, social media, and ads." },
+              { icon: "camera", image: "/images/stone-estate-living-room-fireplace.webp", title: "Photography", desc: "Bright, clean listing photos that make buyers stop scrolling and book a showing." },
+              { icon: "video", image: "/images/service-videography-studio.webp", title: "Videography", desc: "Walkthrough videos that let buyers tour the home before they visit — more qualified showings, less wasted time." },
+              { icon: "drone", image: "/images/service-drone-field.webp", title: "Drone (Part 107)", desc: "Aerial views that show off the lot, neighborhood, and curb appeal — the shots your competitors don't have." },
+              { icon: "staging", image: "/images/virtual-staging-after-furnished.webp", title: "Virtual Staging", desc: "Empty rooms furnished digitally so buyers see a home, not a blank space. Starting at $25/room." },
+              { icon: "edit", image: "/images/service-video-editing.webp", title: "Video Editing", desc: "Raw footage turned into polished, branded content ready for MLS, social media, and ads." },
             ].map((s, i) => (
               <FadeIn key={i} delay={i * 0.1}>
-                <ServiceCard icon={iconMap[s.icon]} title={s.title} description={s.desc} />
+                <ServiceCard icon={iconMap[s.icon]} image={s.image} title={s.title} description={s.desc} />
               </FadeIn>
             ))}
           </div>
@@ -363,45 +366,56 @@ export default async function Home() {
               </div>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {(testimonials.length > 0
-              ? testimonials
-              : [
-                  { quote: "We couldn't be happier with a promo video she shot for us! She made it so much fun, can't wait to do another!!!!", name: "Snow Dogs Food Truck", badge: "Recommends CS MEDIA, LLC", service: "Video Production" },
-                  { quote: "OH MY GOSH!!!! I can't even say how amazing she is. She designed my watermark and logo and did absolutely AMAZING!!!!! I 100% recommend her for any design needs you may have.", name: "Jared Clouse - Bary", badge: "Recommends CS MEDIA, LLC", service: "Logo & Design" },
-                ]
-            ).map((testimonial, i) => (
+          {(() => {
+            const hardcoded = [
+              { quote: "We couldn't be happier with a promo video she shot for us! She made it so much fun, can't wait to do another!!!!", name: "Snow Dogs Food Truck", badge: "Recommends CS MEDIA, LLC", service: "Video Production", avatar: "/images/testimonial-snow-dogs.webp" },
+              { quote: "I would recommend CS MEDIA to anyone! Simply the best person to work with and has PHENOMENAL turn around time. The photos taken of my wedding I'll cherish for a lifetime 🤍", name: "Bethany Brim", badge: "Recommends CS MEDIA, LLC", service: "Wedding Photography", avatar: "/images/testimonial-bethany-brim.webp" },
+              { quote: "OH MY GOSH!!!! I can't even say how amazing she is. She designed my watermark and logo and did absolutely AMAZING!!!!! I 100% recommend her for any design needs you may have.", name: "Jared Clouse - Bary", badge: "Recommends CS MEDIA, LLC", service: "Logo & Design", avatar: "/images/testimonial-jared-clouse.webp" },
+            ];
+            const hardcodedNames = new Set(hardcoded.map((t) => t.name.toLowerCase().trim()));
+            const extras = testimonials.filter((t) => !hardcodedNames.has(t.name.toLowerCase().trim()));
+            const list = [...hardcoded, ...extras];
+            const gridCols = list.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2";
+            return (
+          <div className={`grid grid-cols-1 ${gridCols} gap-8 max-w-5xl mx-auto`}>
+            {list.map((testimonial, i) => (
               <FadeIn key={i} delay={i * 0.15}>
-                <article className="group relative rounded-2xl bg-dark-800/80 backdrop-blur-sm p-8 sm:p-10 border border-dark-500/30 hover:border-gold/20 transition-all duration-500 h-full flex flex-col">
-                  <span className="text-gold/10 text-[120px] font-serif leading-none absolute -top-4 -left-2 select-none" aria-hidden="true">
-                    &ldquo;
-                  </span>
-
-                  <span className="inline-block self-start rounded-full bg-gold/10 border border-gold/20 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-gold mb-5 relative z-10">
-                    {testimonial.service}
-                  </span>
-
-                  <p className="text-dark-100 text-lg leading-relaxed relative z-10 flex-1">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </p>
-
-                  <div className="mt-8 pt-6 border-t border-dark-500/30 flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold/30 to-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
-                      <span className="text-gold font-bold text-sm">{testimonial.name.charAt(0)}</span>
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-white">
-                        {testimonial.name}
-                      </p>
-                      <p className="text-xs text-gold/60 mt-0.5 font-mono tracking-wider">
-                        {testimonial.badge}
+                <article className="group relative rounded-xl bg-dark-800/60 p-7 sm:p-8 border border-dark-500/30 hover:border-gold/30 transition-colors h-full flex flex-col">
+                  <div className="flex items-center gap-4 mb-6">
+                    {"avatar" in testimonial && testimonial.avatar ? (
+                      <Image
+                        src={testimonial.avatar as string}
+                        alt={testimonial.name}
+                        width={48}
+                        height={48}
+                        className="h-12 w-12 rounded-full object-cover border border-dark-500/40 shrink-0"
+                      />
+                    ) : (
+                      <div className="h-12 w-12 rounded-full bg-gradient-to-br from-gold/25 to-gold/5 border border-gold/20 flex items-center justify-center shrink-0">
+                        <span className="text-gold font-semibold text-sm">{testimonial.name.charAt(0)}</span>
+                      </div>
+                    )}
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold text-white truncate">{testimonial.name}</p>
+                      <p className="text-[10px] font-mono uppercase tracking-[0.25em] text-gold/70 mt-1">
+                        {testimonial.service}
                       </p>
                     </div>
                   </div>
+
+                  <p className="text-dark-100 text-[16px] leading-[1.7] flex-1">
+                    {testimonial.quote}
+                  </p>
+
+                  <p className="mt-6 pt-5 text-[11px] font-mono uppercase tracking-wider text-dark-400 border-t border-dark-500/20">
+                    {testimonial.badge}
+                  </p>
                 </article>
               </FadeIn>
             ))}
           </div>
+            );
+          })()}
           <FadeIn delay={0.3}>
             <div className="mt-10 text-center">
               <a
@@ -434,20 +448,32 @@ export default async function Home() {
               </span>
               <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
                 From Booking to{" "}
-                <span className="text-gold">Delivery</span>
+                <span className="relative inline-block">
+                  Delivery
+                  <span aria-hidden className="absolute left-0 right-0 -bottom-1 md:-bottom-1.5 h-[2px] md:h-[3px] bg-gold" />
+                </span>
               </h2>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 max-w-5xl mx-auto relative">
+            {/* Connector line between steps on desktop */}
+            <div aria-hidden className="hidden md:block absolute top-[11px] left-[16.67%] right-[16.67%] h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
+
             {[
-              { step: "01", title: "Book Your Shoot", desc: "Pick a date online or text us. We\u2019ll confirm details and arrive on time, ready to go." },
-              { step: "02", title: "We Capture It", desc: "Professional drone, photo, and video coverage of your property\u2014inside and out." },
-              { step: "03", title: "Get Your Media", desc: "Edited photos, video, and virtual staging delivered within 24\u201348 hours." },
+              { step: "01", title: "Book Your Shoot", desc: "Pick a date online or text us. We\u2019ll confirm details and arrive on time, ready to go.", Icon: StampIcon },
+              { step: "02", title: "We Capture It", desc: "Professional drone, photo, and video coverage of your property\u2014inside and out.", Icon: DroneIcon },
+              { step: "03", title: "Get Your Media", desc: "Edited photos, video, and virtual staging delivered within 24\u201348 hours.", Icon: PolaroidIcon },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 0.15}>
-                <div className="text-center">
-                  <span className="text-4xl font-bold text-gold/20 font-mono">{item.step}</span>
-                  <h3 className="mt-3 text-lg font-semibold text-white">{item.title}</h3>
+                <div className="relative text-left md:text-center px-2">
+                  <div className="inline-flex items-center gap-3 mb-4 bg-dark-800 md:bg-dark-800 relative z-10 md:px-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+                    <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-gold/70">Step {item.step}</span>
+                  </div>
+                  <div className="text-gold/80 mb-4 md:mx-auto md:w-fit">
+                    <item.Icon />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
                   <p className="mt-2 text-sm text-dark-200 leading-relaxed">{item.desc}</p>
                 </div>
               </FadeIn>

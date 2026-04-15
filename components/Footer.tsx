@@ -10,13 +10,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link href="/" className="relative inline-block w-20 h-14">
+            <Link href="/" className="relative inline-block w-36 h-16">
               <Image
-                src="/images/cs-media-logo.webp"
+                src="/images/cs-media-logo-footer.webp"
                 alt="CS Media"
                 fill
                 className="object-contain"
-                sizes="80px"
+                sizes="144px"
               />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-dark-200">

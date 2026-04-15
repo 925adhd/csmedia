@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import LayoutShell from "@/components/LayoutShell";
 import "./globals.css";
 
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "CS Media",
     images: [
       {
-        url: "/images/real-estate-aerial-drone-leitchfield-ky.webp",
+        url: "/images/brick-home-aerial-drone-kentucky.webp",
         width: 1200,
         height: 630,
         alt: "CS Media - Real Estate Drone Photography & Video Services",
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
     title: "Kentucky Real Estate Photography & Drone Video | CS Media",
     description:
       "Kentucky real estate photography, drone video & virtual staging. Serving Leitchfield, Elizabethtown, Bowling Green, Bardstown & beyond. FAA Part 107 certified. 24–48hr delivery.",
-    images: ["/images/real-estate-aerial-drone-leitchfield-ky.webp"],
+    images: ["/images/brick-home-aerial-drone-kentucky.webp"],
   },
   verification: {
     google: "8DibFK426dNH-_QmyMCKPZR2OCImW5L8NUWCmbjzkzQ",
@@ -67,10 +68,12 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <head>
-        <script src="https://analytics.ahrefs.com/analytics.js" data-key="uNPZgneIAGTBtN7TEjB6qA" async />
-      </head>
       <body className="min-h-screen flex flex-col bg-dark-900 text-white">
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="uNPZgneIAGTBtN7TEjB6qA"
+          strategy="lazyOnload"
+        />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-gold focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-dark-900 focus:outline-none"
@@ -90,7 +93,7 @@ export default function RootLayout({
                   url: BASE_URL,
                   description:
                     "Professional real estate drone photography, videography, virtual staging, and video editing services. FAA Part 107 certified.",
-                  image: [`${BASE_URL}/images/real-estate-aerial-drone-leitchfield-ky.webp`],
+                  image: [`${BASE_URL}/images/brick-home-aerial-drone-kentucky.webp`],
                   sameAs: [
                     "https://www.facebook.com/profile.php?id=100090509656389",
                   ],

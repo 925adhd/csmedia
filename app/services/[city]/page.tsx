@@ -209,10 +209,10 @@ export default async function CityPage({
           src="/images/real-estate-aerial-drone-leitchfield-ky.webp"
           alt={`Aerial drone photography in ${loc.city}, Kentucky`}
           fill
-          className="object-cover opacity-15"
+          className="object-cover opacity-50"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-900/40 via-dark-900/70 to-dark-900" />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-900/30 via-dark-900/55 to-dark-900" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <FadeIn>
             <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">

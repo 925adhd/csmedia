@@ -142,10 +142,10 @@ export default async function BlogPostPage({
           src={post.heroImage}
           alt={post.title}
           fill
-          className="object-cover opacity-20"
+          className="object-cover opacity-45"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-900/50 via-dark-900/70 to-dark-900" />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-900/30 via-dark-900/55 to-dark-900" />
         <div className="relative z-10 mx-auto max-w-3xl px-6 lg:px-8">
           <FadeIn>
             <Link

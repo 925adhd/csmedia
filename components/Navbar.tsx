@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import BookingButton from "@/components/BookingButton";
+import { CameraIcon } from "@/components/StepIcons";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -34,7 +35,7 @@ export default function Navbar() {
         <div className="flex h-20 items-center justify-between">
           <Link href="/" className="relative w-28 h-12">
             <Image
-              src="/images/cs-media-logo-nav.png"
+              src="/images/cs-media-logo-footer.webp"
               alt="CS Media"
               fill
               className="object-contain"
@@ -91,20 +92,27 @@ export default function Navbar() {
       <div className="md:hidden fixed inset-0 top-[80px] bg-dark-900/95 backdrop-blur-md z-[60] overflow-y-auto">
         <div className="border-t border-gold/10" />
         <div className="flex flex-col gap-6 px-8 py-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className={`text-lg font-medium uppercase tracking-widest transition-colors ${
-                pathname === link.href
-                  ? "text-gold"
-                  : "text-dark-100 hover:text-gold"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className={`flex items-center gap-3 text-lg font-medium uppercase tracking-widest transition-colors ${
+                  isActive ? "text-gold" : "text-dark-100 hover:text-gold"
+                }`}
+              >
+                <span>{link.label}</span>
+                <CameraIcon
+                  width={32}
+                  height={32}
+                  className={isActive ? "opacity-100" : "opacity-0"}
+                  aria-hidden
+                />
+              </Link>
+            );
+          })}
           <div className="mt-8 flex flex-col items-center gap-3">
             <BookingButton
               className="w-full border-gradient rounded-full bg-gold/10 py-3.5 text-sm font-semibold uppercase tracking-widest text-gold text-center transition-all hover:bg-gold/20"
