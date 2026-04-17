@@ -84,6 +84,18 @@ export default async function BlogPostPage({
     ],
   };
 
+  const faqSchema = post.faqs && post.faqs.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: post.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.q,
+          acceptedAnswer: { "@type": "Answer", text: faq.a },
+        })),
+      }
+    : null;
+
   // Simple markdown-to-HTML conversion for headings, bold, links, lists, hrs, and paragraphs
   const contentHtml = post.content
     .trim()
@@ -135,6 +147,12 @@ export default async function BlogPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       {/* Hero */}
       <section className="relative bg-dark-900 py-10 sm:py-20 overflow-hidden">
@@ -191,6 +209,34 @@ export default async function BlogPostPage({
           </FadeIn>
         </div>
       </section>
+
+      {/* FAQ */}
+      {post.faqs && post.faqs.length > 0 && (
+        <section className="py-16 bg-dark-900 border-t border-dark-500/30">
+          <div className="mx-auto max-w-3xl px-6 lg:px-8">
+            <FadeIn>
+              <div className="mb-10">
+                <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                  FAQ
+                </span>
+                <h2 className="mt-3 text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                  Common Questions
+                </h2>
+              </div>
+            </FadeIn>
+            <div className="space-y-6">
+              {post.faqs.map((faq, i) => (
+                <FadeIn key={i} delay={i * 0.05}>
+                  <div className="border-b border-dark-500/30 pb-6">
+                    <h3 className="text-lg font-semibold text-white">{faq.q}</h3>
+                    <p className="mt-2 text-dark-200 leading-relaxed">{faq.a}</p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* More Posts */}
       {otherPosts.length > 0 && (

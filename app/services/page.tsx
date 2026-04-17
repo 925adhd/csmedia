@@ -362,6 +362,14 @@ export default async function ServicesPage() {
                   {line}
                 </p>
               ))}
+              <p className="text-xs text-dark-300 pt-2">
+                <Link
+                  href="/blog/real-estate-photography-cost-kentucky"
+                  className="text-gold hover:underline"
+                >
+                  Full Kentucky pricing breakdown →
+                </Link>
+              </p>
             </div>
           </FadeIn>
         </div>

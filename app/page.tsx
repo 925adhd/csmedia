@@ -155,7 +155,7 @@ export default async function Home() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-[0.9]">
-              Get Your
+              Get Your Kentucky
               <br />
               Listing{" "}
               <span className="relative inline-block">
@@ -517,6 +517,33 @@ export default async function Home() {
               >
                 View all services and pricing
               </Link>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.55}>
+            <div className="mt-10 pt-8 border-t border-dark-500/30">
+              <p className="text-center text-[10px] font-mono uppercase tracking-[0.3em] text-gold/70 mb-4">
+                Related Reading
+              </p>
+              <ul className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-6 text-sm text-dark-100">
+                <li>
+                  <Link
+                    href="/blog/real-estate-photography-cost-kentucky"
+                    className="hover:text-gold transition-colors underline decoration-dark-500 hover:decoration-gold underline-offset-4"
+                  >
+                    How much does a real estate photographer cost in Kentucky?
+                  </Link>
+                </li>
+                <li className="hidden sm:block text-dark-500">·</li>
+                <li>
+                  <Link
+                    href="/blog/why-your-listing-isnt-getting-showings"
+                    className="hover:text-gold transition-colors underline decoration-dark-500 hover:decoration-gold underline-offset-4"
+                  >
+                    Why isn&apos;t my listing getting showings?
+                  </Link>
+                </li>
+              </ul>
             </div>
           </FadeIn>
         </div>
