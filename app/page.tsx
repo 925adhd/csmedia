@@ -109,7 +109,7 @@ export default async function Home() {
             fill
             sizes="100vw"
             className="object-cover opacity-[0.55]"
-            priority
+            preload
             quality={75}
             placeholder="blur"
             blurDataURL="data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAwAgCdASoQAAwAA4BaJbACsAYvXWU5YP6KAADymXLefN8XytR0++YiAodY0sXOYNnI99BHxRFH5sNGyqws4VDnedWH+gvMYDbleOrAV9DfALdGF3l73VN287y2aEsXVPoLMnLV4sT2IeuC8AA="
