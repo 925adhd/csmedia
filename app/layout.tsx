@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     template: "%s | CS Media",
   },
   description:
-    "Kentucky real estate photography, drone video & virtual staging. Serving Leitchfield, Elizabethtown, Bowling Green, Bardstown & beyond. FAA Part 107 certified. 24–48hr delivery.",
+    "Kentucky real estate photography, drone video & virtual staging. Leitchfield, Elizabethtown, Bowling Green & beyond. FAA Part 107. 24–48hr delivery.",
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "Kentucky Real Estate Photography & Drone Video | CS Media",
     description:
-      "Kentucky real estate photography, drone video & virtual staging. Serving Leitchfield, Elizabethtown, Bowling Green, Bardstown & beyond. FAA Part 107 certified. 24–48hr delivery.",
+      "Kentucky real estate photography, drone video & virtual staging. Leitchfield, Elizabethtown, Bowling Green & beyond. FAA Part 107. 24–48hr delivery.",
     type: "website",
     locale: "en_US",
     url: BASE_URL,
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kentucky Real Estate Photography & Drone Video | CS Media",
     description:
-      "Kentucky real estate photography, drone video & virtual staging. Serving Leitchfield, Elizabethtown, Bowling Green, Bardstown & beyond. FAA Part 107 certified. 24–48hr delivery.",
+      "Kentucky real estate photography, drone video & virtual staging. Leitchfield, Elizabethtown, Bowling Green & beyond. FAA Part 107. 24–48hr delivery.",
     images: ["/images/brick-home-aerial-drone-kentucky.webp"],
   },
   verification: {

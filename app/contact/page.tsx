@@ -9,12 +9,12 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia
 export const metadata: Metadata = {
   title: "Book a Real Estate Photo Shoot in Kentucky",
   description:
-    "Schedule your listing photography, drone video, or virtual staging session. Serving Leitchfield, Elizabethtown, Bowling Green, Owensboro & all of Kentucky. From $150.",
+    "Book your real estate photo, drone, or virtual staging shoot. Leitchfield, Elizabethtown, Bowling Green, Owensboro & all of Kentucky. From $150.",
   alternates: { canonical: `${BASE_URL}/contact` },
   openGraph: {
     title: "Book a Real Estate Photo Shoot | CS Media",
     description:
-      "Schedule your listing photography, drone video, or virtual staging session. Serving Leitchfield, Elizabethtown, Bowling Green, Owensboro & all of Kentucky. From $150.",
+      "Book your real estate photo, drone, or virtual staging shoot. Leitchfield, Elizabethtown, Bowling Green, Owensboro & all of Kentucky. From $150.",
     type: "website",
     url: `${BASE_URL}/contact`,
     siteName: "CS Media",

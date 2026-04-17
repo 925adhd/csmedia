@@ -174,7 +174,13 @@ export default async function ProjectPage({
 
       {/* More Projects */}
       {(() => {
-        const others = portfolioProjects.filter((p) => p.slug !== slug).slice(0, 3);
+        const currentIndex = portfolioProjects.findIndex((p) => p.slug === slug);
+        const others = currentIndex >= 0
+          ? Array.from({ length: Math.min(3, portfolioProjects.length - 1) }, (_, i) => {
+              const offset = ((currentIndex + i + 1) % portfolioProjects.length);
+              return portfolioProjects[offset];
+            })
+          : portfolioProjects.filter((p) => p.slug !== slug).slice(0, 3);
         if (others.length === 0) return null;
         return (
           <section className="py-16 bg-dark-900">

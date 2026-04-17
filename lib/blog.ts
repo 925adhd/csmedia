@@ -126,7 +126,7 @@ CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owe
     slug: "real-estate-photography-cost-kentucky",
     title: "How Much Does a Real Estate Photographer Cost in Kentucky?",
     description:
-      "Listing photo packages from $150. See exact pricing for real estate photography, drone aerials, video walkthroughs & virtual staging in Kentucky. Book same week.",
+      "Packages from $150. See Kentucky pricing for real estate photos, drone aerials, video walkthroughs & virtual staging. 24–48hr delivery.",
     date: "2026-04-04",
     readTime: "5 min read",
     heroImage: "/images/real-estate-aerial-drone-leitchfield-ky.webp",
