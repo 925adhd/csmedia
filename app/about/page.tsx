@@ -71,7 +71,7 @@ export default async function AboutPage() {
       "Meet Cheris Chanthavong, FAA Part 107 certified drone pilot and owner of CS Media in Leitchfield, Kentucky.",
     thumbnailUrl: `${BASE_URL}/images/cheris-chanthavong-cs-media-owner.webp`,
     contentUrl: `${BASE_URL}/videos/personalpromo.mp4`,
-    uploadDate: "2025-06-01T00:00:00-06:00",
+    uploadDate: "2025-06-01T00:00:00Z",
   };
 
   return (

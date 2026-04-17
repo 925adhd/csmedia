@@ -60,7 +60,7 @@ export default async function ProjectPage({
           ? project.heroImage
           : `${BASE_URL}${project.heroImage}`,
         contentUrl: `${BASE_URL}${project.videoSrc}`,
-        uploadDate: "2025-06-01T00:00:00-06:00",
+        uploadDate: "2025-06-01T00:00:00Z",
       }
     : null;
 
