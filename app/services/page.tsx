@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import BeforeAfter from "@/components/BeforeAfter";
 import CTASection from "@/components/CTASection";
@@ -544,6 +545,100 @@ export default async function ServicesPage() {
             </FadeIn>
           </div>
         </div>
+      </section>
+
+      {/* Service Areas */}
+      <section className="py-16 sm:py-28 bg-dark-800 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-14">
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                Service Areas
+              </span>
+              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white tracking-tight">
+                Real Estate Photography Across Kentucky
+              </h2>
+              <p className="mt-4 text-dark-200 max-w-2xl mx-auto">
+                Based in Leitchfield and serving listings across Grayson County and the rest of Kentucky. Pick your market below for local details, airspace notes, and what we shoot in your area.
+              </p>
+            </div>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                slug: "leitchfield",
+                city: "Leitchfield",
+                county: "Grayson County",
+                blurb:
+                  "Our home market. No mileage fees anywhere in Grayson County. Farms, acreage, residential, and Rough River rental listings.",
+              },
+              {
+                slug: "elizabethtown",
+                city: "Elizabethtown",
+                county: "Hardin County",
+                blurb:
+                  "Residential listings, new construction, and Fort Knox-area properties with drone aerials and HDR interior photos.",
+              },
+              {
+                slug: "bowling-green",
+                city: "Bowling Green",
+                county: "Warren County",
+                blurb:
+                  "One of the fastest-growing markets in the region — new builds, subdivisions, and mid-market homes shot for MLS and agent portfolios.",
+              },
+              {
+                slug: "owensboro",
+                city: "Owensboro",
+                county: "Daviess County",
+                blurb:
+                  "Urban and suburban listings along the Ohio River. Interior, exterior, and aerial coverage for downtown and neighborhood properties.",
+              },
+              {
+                slug: "bardstown",
+                city: "Bardstown",
+                county: "Nelson County",
+                blurb:
+                  "Historic homes, bourbon country estates, and rural acreage. Drone and cinematic video that captures the land and the architecture.",
+              },
+            ].map((area, i) => (
+              <FadeIn key={area.slug} delay={i * 0.08}>
+                <Link
+                  href={`/services/${area.slug}`}
+                  className="group block h-full rounded-xl border border-dark-500/30 bg-dark-900/40 p-6 transition-all hover:border-gold/40 hover:bg-dark-900/60"
+                >
+                  <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-gold/70">
+                    {area.county}
+                  </span>
+                  <h3 className="mt-2 text-lg font-semibold text-white group-hover:text-gold transition-colors">
+                    Real Estate Photography in {area.city}, KY
+                  </h3>
+                  <p className="mt-3 text-sm text-dark-200 leading-relaxed">
+                    {area.blurb}
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.25em] text-gold/70 group-hover:text-gold transition-colors">
+                    View {area.city} packages
+                    <svg className="h-3 w-3 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                    </svg>
+                  </span>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+
+          <p className="mt-10 text-center text-sm text-dark-300">
+            Serving all of Kentucky. Out-of-state projects available on request —{" "}
+            <Link href="/contact" className="text-gold hover:underline">
+              get a quote
+            </Link>
+            .
+          </p>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </section>
 
       {/* FAQ */}
