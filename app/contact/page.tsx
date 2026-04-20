@@ -9,12 +9,12 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia
 export const metadata: Metadata = {
   title: "Book a Real Estate Photo Shoot in Kentucky",
   description:
-    "Book your real estate photo, drone, or virtual staging shoot. Leitchfield, Elizabethtown, Bowling Green, Owensboro & all of Kentucky. From $150.",
+    "Book your real estate photo, drone, or virtual staging shoot. Leitchfield, Elizabethtown, Bowling Green, Owensboro & all of Kentucky. From $85.",
   alternates: { canonical: `${BASE_URL}/contact` },
   openGraph: {
     title: "Book a Real Estate Photo Shoot | CS Media",
     description:
-      "Book your real estate photo, drone, or virtual staging shoot. Leitchfield, Elizabethtown, Bowling Green, Owensboro & all of Kentucky. From $150.",
+      "Book your real estate photo, drone, or virtual staging shoot. Leitchfield, Elizabethtown, Bowling Green, Owensboro & all of Kentucky. From $85.",
     type: "website",
     url: `${BASE_URL}/contact`,
     siteName: "CS Media",
@@ -40,9 +40,9 @@ export default async function ContactPage() {
   const sidebarEmail = (sidebarContent?.email as string) || "cscreatesmediallc@gmail.com";
   const sidebarServices = (sidebarContent?.services as string[]) || [
     "Photography",
-    "Videography",
     "Drone Pilot (Part 107)",
-    "Video Editing Services",
+    "Listing Video",
+    "Virtual Staging",
     "Logo & Watermark Design",
   ];
   const responseTime = (sidebarContent?.response_time as string) || "Within 24 hours";
@@ -54,12 +54,14 @@ export default async function ContactPage() {
   const successMessage = (formContent?.success_message as string) || "Thanks for reaching out. I'll get back to you within 24 hours.";
   const submitText = (formContent?.submit_text as string) || "Send Message";
   const formServices = (formContent?.services as string[]) || [
-    "Photography",
-    "Videography",
-    "Drone (Part 107)",
-    "Video Editing",
+    "Photo Package ($200)",
+    "Full Package — Standard ($280)",
+    "Full Package — Pro ($380)",
+    "Interior + Exterior, No Drone ($140)",
+    "Aerial Only ($85)",
+    "Virtual Staging (add-on)",
     "Logo / Watermark Design",
-    "Full Package",
+    "Other / Not Sure",
   ];
 
   return (

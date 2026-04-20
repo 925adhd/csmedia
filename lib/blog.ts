@@ -53,7 +53,7 @@ This isn't about making photos look "pretty." It's about generating showings.
 - Professionally photographed homes sell for **$3,000–$11,000 more** on average
 - Listings with drone photos get **68% more views** than those without
 
-For a $150–$300 investment, you're not paying for photos. You're paying for showings. And showings are what sell houses.
+For an $85–$380 investment, you're not paying for photos. You're paying for showings. And showings are what sell houses.
 
 ---
 
@@ -93,7 +93,7 @@ Common reasons luxury property listings don't convert to showings:
 - **No video walkthrough** — luxury buyers shortlist on video before driving out
 - **Flat, under-processed images** — HDR and color grading are non-negotiable above $500K
 
-For luxury listings in Kentucky, the baseline is aerial + twilight + cinematic video. The $300 full package is table stakes, not an upgrade. Skipping any of it is what keeps premium listings sitting.
+For luxury listings in Kentucky, the baseline is aerial + twilight + cinematic video. The $380 Full Package — Pro is table stakes, not an upgrade. Skipping any of it is what keeps premium listings sitting.
 
 ---
 
@@ -102,7 +102,7 @@ For luxury listings in Kentucky, the baseline is aerial + twilight + cinematic v
 Let's say you're listing a $250,000 home in Elizabethtown.
 
 - **Phone photos**: Listing sits 45+ days. Price reduction. You lose the seller's confidence.
-- **Professional media ($200 package)**: Listing gets 3x more views in the first week. Multiple showings. Offer in 14 days.
+- **Professional media ($200 Photo Package)**: Listing gets 3x more views in the first week. Multiple showings. Offer in 14 days.
 
 That $200 didn't cost you anything. It made you money — and kept your seller happy enough to refer you to their neighbor.
 
@@ -114,7 +114,7 @@ You don't need more leads. You need your current listings to perform. Profession
 
 CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owensboro, Bardstown, and the rest of Kentucky.
 
-- **Packages from $150** — photos, drone, video, virtual staging
+- **Packages from $85** — drone, photos, video, virtual staging
 - **24–48 hour delivery** — your listing goes live fast
 - **FAA Part 107 certified** — legal, insured aerial work
 - **Same-week availability** — text or call to book
@@ -126,7 +126,7 @@ CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owe
     slug: "real-estate-photography-cost-kentucky",
     title: "How Much Does a Real Estate Photographer Cost in Kentucky?",
     description:
-      "Packages from $150. See Kentucky pricing for real estate photos, drone aerials, video walkthroughs & virtual staging. 24–48hr delivery.",
+      "Packages from $85. See Kentucky pricing for real estate photos, drone aerials, listing video & virtual staging. 24–48hr delivery.",
     date: "2026-04-04",
     readTime: "5 min read",
     heroImage: "/images/real-estate-aerial-drone-leitchfield-ky.webp",
@@ -135,52 +135,89 @@ CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owe
 
 If you're listing a property in Kentucky and need professional photos, here's exactly what you'll pay. No vague ranges — real pricing from a working listing photographer.
 
-**Real estate photography in Kentucky runs $150–$300 for most packages**, depending on whether you need photos only, drone aerials, video, or the full bundle. Virtual staging adds $25 per room.
+**Real estate photography in Kentucky runs $85–$380 for most packages**, depending on whether you need aerial-only, photos, photos + drone, or a full package with cinematic listing video. Virtual staging adds $25 per photo.
 
 Here's the full breakdown so you can book with confidence.
 
 ---
 
-## Basic Real Estate Photography: $100–$200
+## Aerial Only: $85
 
-A standard real estate photography package covers interior and exterior photos of the home. This usually includes:
+The lowest-cost way to add a professional drone perspective to an existing listing. CS Media's Aerial Only package includes:
 
-- 20–35 edited photos
-- HDR processing for balanced lighting
-- Delivered within 24–48 hours
-- Coverage of all main rooms, exterior, and yard
+- 5 high-quality drone photos
+- Property + surrounding area highlights
+- FAA Part 107 compliant
+- 1 free revision included
 
-For most listings in Leitchfield, Elizabethtown, Bowling Green, and surrounding areas, this is the most popular option. At CS Media, our basic photography package starts at **$150** and covers properties up to 3,000 sq ft.
-
----
-
-## Drone Photography: $150–$250
-
-Aerial drone photos give buyers a perspective that ground-level shots simply can't match. Drone photography is especially valuable for:
-
-- Properties on acreage or large lots
-- Homes with pools, outbuildings, or notable landscaping
-- Rural Kentucky properties where land is a major selling point
-- Showing the neighborhood, road access, and proximity to town
-
-FAA Part 107 certification is legally required for commercial drone work. Always verify your photographer is certified — CS Media is fully Part 107 licensed.
+Perfect for agents who already shot interior photos themselves but want true aerial coverage to show off the lot, road frontage, and neighborhood context.
 
 ---
 
-## Video Walkthroughs: $200–$400
+## Interior + Exterior (No Drone): $140
 
-Cinematic walkthrough videos are becoming standard for competitive listings. A professional real estate video typically includes:
+A standard real estate photography package covering interior and exterior photos of the home, without aerial coverage. Includes:
 
-- 60–90 second edited walkthrough
-- Drone footage blended with interior shots
-- Background music and smooth transitions
-- Delivered in formats ready for MLS, Facebook, and Instagram
+- 25–40 professionally edited photos
+- Interior + exterior coverage
+- MLS-ready delivery
+- 1 free revision included
 
-Our most popular package at CS Media is **$200**, which bundles photography and drone work. The full photo + drone + video package is **$300**.
+For city listings, condos, and properties where the lot isn't a selling point, this is the most cost-effective option.
 
 ---
 
-## Virtual Staging: $25–$75 Per Room
+## Photo Package (with Drone): $200
+
+The most popular package for typical Kentucky listings. Combines full interior and exterior coverage with FAA Part 107 drone photography:
+
+- 25–40 professionally edited photos
+- Interior + exterior coverage
+- Drone photos (FAA Part 107 compliant)
+- MLS-ready delivery
+- 1 free revision included
+
+Drone photography is especially valuable for properties on acreage, homes with pools or outbuildings, rural Kentucky listings where land is a major selling point, and showing neighborhood context.
+
+---
+
+## Full Package — Standard: $280
+
+Adds a listing video to the Photo Package — perfect for competitive listings that need to stand out on MLS and social.
+
+- Everything in the Photo Package
+- 30–45 second listing video
+- Basic transitions + music
+- Optimized for social + MLS
+- 1 free revision included
+
+---
+
+## Full Package — Pro: $380
+
+Cinematic-grade media for premium listings. The baseline for luxury, bourbon-trail, and high-end Kentucky properties.
+
+- Everything in the Photo Package
+- 60–90 second cinematic video
+- Advanced editing + smooth motion shots
+- Cinematic color grading
+- Agent branding + higher-end feel
+- 2 free revisions included
+
+---
+
+## Add-Ons
+
+Build out any package with:
+
+- **Twilight Edit:** +$25 per photo
+- **Rush Delivery (24hr):** +$40
+- **Virtual Staging:** +$25 per photo / +$50 per video scene
+- **Additional Photos:** +$5 per image
+
+---
+
+## Virtual Staging: +$25 Per Photo
 
 Virtual staging is one of the best ROI investments in real estate photography. Instead of paying $2,000+ for physical staging, virtual staging digitally furnishes empty rooms with realistic furniture and decor.
 
@@ -189,7 +226,17 @@ Virtual staging is one of the best ROI investments in real estate photography. I
 - Multiple design styles available: modern, farmhouse, luxury
 - Delivered within 24–48 hours
 
-At CS Media, virtual staging starts at **$25 per room**.
+At CS Media, virtual staging is available as an add-on at **$25 per photo** (or **$50 per video scene** for video staging).
+
+---
+
+## Revision Policy
+
+Every CS Media package includes 1 or 2 free revisions. Beyond that:
+
+- Additional revisions: $15 per request
+- Major edits (object removal, sky swaps, virtual staging changes, etc.) quoted separately
+- Revision requests must be submitted within 3 days of delivery
 
 ---
 
@@ -197,11 +244,11 @@ At CS Media, virtual staging starts at **$25 per room**.
 
 Several factors influence real estate photography pricing in Kentucky:
 
-- **Property size**: Larger homes take longer to shoot
-- **Location**: Travel time outside the photographer's base area
-- **Services bundled**: Photo-only vs. photo + drone + video
-- **Turnaround time**: Rush delivery may cost extra
-- **Time of year**: Twilight and seasonal shoots may vary
+- **Property size**: Larger homes take longer to shoot — additional photos beyond the package are $5/image
+- **Location**: 6% sales tax and 2-way mileage from Leitchfield apply outside Grayson County
+- **Services bundled**: Aerial-only vs. photo + drone vs. full package with cinematic video
+- **Turnaround time**: 24-hour rush delivery is +$40
+- **Time of year**: Twilight edits run +$25 per photo
 
 ---
 
@@ -213,7 +260,7 @@ The data says yes:
 - Homes with professional photography sell for **$3,000–$11,000 more** on average
 - 87% of buyers say photos are the most important feature of a listing (NAR)
 
-For a $150–$300 investment, professional listing media pays for itself many times over.
+For an $85–$380 investment, professional listing media pays for itself many times over.
 
 ---
 
@@ -223,23 +270,23 @@ Pricing is consistent across the markets CS Media serves — no city-by-city mar
 
 ### Real Estate Photography Cost in Leitchfield, KY
 
-Leitchfield is our home market. **No travel or mileage fees anywhere in Grayson County.** Standard packages start at $150; acreage-heavy listings with drone coverage typically land at $200–$300. [See Leitchfield details →](/services/leitchfield)
+Leitchfield is our home market. **No travel or mileage fees anywhere in Grayson County.** Aerial-only starts at $85; the standard Photo Package with drone is $200; acreage-heavy listings with cinematic video typically land at $280–$380. [See Leitchfield details →](/services/leitchfield)
 
 ### Real Estate Photography Cost in Elizabethtown, KY
 
-Hardin County shoots are priced the same as our home market — $150 basic, $200 most popular, $300 full package. A small travel fee may apply for same-day rush shoots. [See Elizabethtown details →](/services/elizabethtown)
+Hardin County shoots are priced the same as our home market — $85 aerial-only, $140 photos without drone, $200 Photo Package with drone, $280–$380 for full packages with listing video. 2-way mileage from Leitchfield (about 40 minutes) and 6% sales tax apply. [See Elizabethtown details →](/services/elizabethtown)
 
 ### Real Estate Photography Cost in Bowling Green, KY
 
-New construction and subdivision listings in Warren County start at $150 for interior-only. Larger mid-market homes and new builds typically use the $200 or $300 package. [See Bowling Green details →](/services/bowling-green)
+New construction and subdivision listings in Warren County start at $140 for photos without drone, or $200 for the Photo Package with drone. Larger mid-market homes and new builds typically use a Full Package at $280 or $380. [See Bowling Green details →](/services/bowling-green)
 
 ### Real Estate Photography Cost in Owensboro, KY
 
-Urban and suburban listings in Daviess County follow the same $150 / $200 / $300 tiers. Downtown shoots with limited lot space usually skip the drone package. [See Owensboro details →](/services/owensboro)
+Urban and suburban listings in Daviess County follow the same $140 / $200 / $280 / $380 tiers. Downtown shoots with limited lot space often use the $140 no-drone option. [See Owensboro details →](/services/owensboro)
 
 ### Real Estate Photography Cost in Bardstown, KY
 
-Historic homes, bourbon-country estates, and rural Nelson County acreage usually benefit from the full $300 drone + video package to show land and architecture together. [See Bardstown details →](/services/bardstown)
+Historic homes, bourbon-country estates, and rural Nelson County acreage usually benefit from the $380 Full Package — Pro to capture land and architecture together with cinematic color grading. [See Bardstown details →](/services/bardstown)
 
 ---
 
@@ -247,7 +294,7 @@ Historic homes, bourbon-country estates, and rural Nelson County acreage usually
 
 Stop losing listings to agents with better photos. CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owensboro, Bardstown, and the rest of Kentucky.
 
-- **Packages from $150** — no hidden fees
+- **Packages from $85** — no hidden fees
 - **24–48 hour delivery** — your listing goes live fast
 - **FAA Part 107 certified** — legal, insured drone work
 - **Same-week availability** — text or call to book
@@ -257,27 +304,27 @@ Stop losing listings to agents with better photos. CS Media shoots properties ac
     faqs: [
       {
         q: "How much does a real estate photographer cost in Kentucky?",
-        a: "Real estate photography in Kentucky typically runs $150–$300 per shoot. CS Media's basic interior package starts at $150, the most popular interior + exterior + drone package is $200, and the full photo + drone + video package is $300. Virtual staging adds $25 per room.",
+        a: "Real estate photography in Kentucky runs $85–$380 per shoot at CS Media. Aerial-only is $85, Interior + Exterior (no drone) is $140, the Photo Package with drone is $200, and Full Packages with cinematic listing video run $280–$380. Virtual staging adds $25 per photo.",
       },
       {
         q: "Do drone photos cost extra for real estate listings?",
-        a: "Most Kentucky packages include drone photography in the bundled price. CS Media includes drone coverage in the $200 and $300 packages at no extra charge, and all drone work is done under an active FAA Part 107 certificate.",
+        a: "Drone photography is included in CS Media's Photo Package ($200) and both Full Packages ($280 and $380) at no extra charge. Aerial-only is also available standalone for $85. All drone work is done under an active FAA Part 107 certificate.",
       },
       {
-        q: "How much is virtual staging per room?",
-        a: "Virtual staging for real estate listings starts at $25 per room in Kentucky. Multiple design styles are available — modern, farmhouse, and luxury — with 24–48 hour turnaround.",
+        q: "How much is virtual staging?",
+        a: "Virtual staging is available as an add-on at $25 per photo or $50 per video scene in Kentucky. Multiple design styles are available — modern, farmhouse, and luxury — with 24–48 hour turnaround.",
       },
       {
         q: "Are there travel fees for real estate photography in Kentucky?",
-        a: "CS Media charges no mileage fees anywhere in Grayson County (Leitchfield, Caneyville, Clarkson). Small travel fees may apply for shoots farther from Leitchfield. Get a quote with your address for an exact number.",
+        a: "CS Media charges no mileage fees anywhere in Grayson County (Leitchfield, Caneyville, Clarkson). For shoots outside Grayson County, 6% sales tax and 2-way mileage from Leitchfield (Google Maps round-trip distance) apply to the final price. Get a quote with your address for an exact number.",
       },
       {
         q: "How fast will I get my real estate photos back?",
-        a: "All CS Media deliverables — photos, drone media, video walkthroughs, and virtual staging — are delivered within 24–48 hours of the shoot.",
+        a: "All CS Media deliverables — photos, drone media, listing video, and virtual staging — are delivered within 24–48 hours of the shoot. 24-hour rush delivery is available as an add-on for $40.",
       },
       {
         q: "Is a real estate photographer worth the cost?",
-        a: "Yes. Listings with professional photography sell 32% faster (RealTrends) and for $3,000–$11,000 more on average. At $150–$300 per shoot, the ROI is a fraction of a single price reduction.",
+        a: "Yes. Listings with professional photography sell 32% faster (RealTrends) and for $3,000–$11,000 more on average. At $85–$380 per shoot, the ROI is a fraction of a single price reduction.",
       },
     ],
   },

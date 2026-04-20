@@ -99,7 +99,7 @@ export default function RootLayout({
                   ],
                   email: "cscreatesmediallc@gmail.com",
                   telephone: "+1-270-307-0173",
-                  priceRange: "$150-$300",
+                  priceRange: "$85-$380",
                   openingHoursSpecification: {
                     "@type": "OpeningHoursSpecification",
                     dayOfWeek: [
@@ -175,9 +175,9 @@ export default function RootLayout({
                         "@type": "Offer",
                         itemOffered: {
                           "@type": "Service",
-                          name: "Real Estate Videography",
+                          name: "Real Estate Listing Video",
                           description:
-                            "Cinematic property walkthroughs and promotional videos for listings and agents.",
+                            "30–90 second listing walkthrough videos bundled into Full Packages, with cinematic color grading on the Pro tier.",
                         },
                       },
                       {
@@ -187,15 +187,6 @@ export default function RootLayout({
                           name: "Virtual Staging",
                           description:
                             "Digitally furnish empty rooms with realistic furniture and decor for real estate listings.",
-                        },
-                      },
-                      {
-                        "@type": "Offer",
-                        itemOffered: {
-                          "@type": "Service",
-                          name: "Video Editing",
-                          description:
-                            "Professional video editing with music, transitions, color grading, and branded graphics.",
                         },
                       },
                     ],

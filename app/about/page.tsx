@@ -55,7 +55,7 @@ export default async function AboutPage() {
   const trustPoints = [
     { title: "FAA Part 107 Certified", description: "Fully licensed and insured aerial work. Your listing stays protected, your media stays legal." },
     { title: "24–48 Hour Delivery", description: "Photos, drone media, and virtual staging delivered fast — so your listing goes live sooner." },
-    { title: "Packages from $150", description: "Transparent pricing, no hidden fees. You know what you're paying before we show up." },
+    { title: "Packages from $85", description: "Transparent pricing, no hidden fees. You know what you're paying before we show up." },
     { title: "One Operator, Every Time", description: "No random contractors. I learn your style and deliver consistent results, shoot after shoot." },
   ];
 

@@ -67,16 +67,16 @@ export default async function Home() {
   const stats = [
     { value: "Part 107", label: "FAA Certified" },
     { value: "24–48hr", label: "Turnaround" },
-    { value: "$150+", label: "Starting Rate" },
+    { value: "$85+", label: "Starting Rate" },
   ];
 
 
   const faqItems = [
-    { q: "How much does real estate photography cost?", a: "Packages start at $150 for interior and exterior photography. Our most popular package is $200, and our full drone + video package is $300. See our services page for full details." },
-    { q: "How fast will I get my photos back?", a: "All deliverables\u2014photos, drone media, and virtual staging\u2014are delivered within 24\u201348 hours of the shoot." },
+    { q: "How much does real estate photography cost?", a: "Packages start at $85 for aerial-only and $140 for interior + exterior photos. Our Photo Package with drone is $200, and full packages with cinematic listing video run $280\u2013$380. See our services page for the full breakdown." },
+    { q: "How fast will I get my photos back?", a: "All deliverables\u2014photos, drone media, and virtual staging\u2014are delivered within 24\u201348 hours of the shoot. Rush delivery in 24 hours is available for an additional $40." },
     { q: "Do you need a license to fly drones?", a: "Yes. Commercial drone work requires an FAA Part 107 certificate. CS Media is fully Part 107 certified for all aerial photography and videography." },
     { q: "What areas do you serve?", a: "We\u2019re based in Leitchfield, KY and serve all of Grayson County, Elizabethtown, Bowling Green, Owensboro, Bardstown, and the rest of Kentucky. Out-of-state projects available upon request." },
-    { q: "What is virtual staging?", a: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor\u2014helping buyers visualize a property at a fraction of the cost of physical staging. Starting at $25 per room." },
+    { q: "What is virtual staging?", a: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor\u2014helping buyers visualize a property at a fraction of the cost of physical staging. Available as an add-on at $25 per photo or $50 per video scene." },
   ];
 
   const faqSchema = {
@@ -262,7 +262,7 @@ export default async function Home() {
                   </span>
                 </h2>
                 <p className="mt-5 text-dark-200 leading-relaxed">
-                  Empty listings sit longer. Virtual staging helps buyers picture themselves living there — so they book showings faster. Realistic furniture and decor, digitally placed starting at $25/room.
+                  Empty listings sit longer. Virtual staging helps buyers picture themselves living there — so they book showings faster. Realistic furniture and decor, digitally placed for +$25 per photo.
                 </p>
                 <ul className="mt-6 space-y-3">
                   {[
@@ -324,13 +324,12 @@ export default async function Home() {
               </h2>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: "camera", image: "/images/stone-estate-living-room-fireplace.webp", title: "Photography", desc: "Bright, clean listing photos that make buyers stop scrolling and book a showing." },
-              { icon: "video", image: "/images/service-videography-studio.webp", title: "Videography", desc: "Walkthrough videos that let buyers tour the home before they visit — more qualified showings, less wasted time." },
               { icon: "drone", image: "/images/service-drone-field.webp", title: "Drone (Part 107)", desc: "Aerial views that show off the lot, neighborhood, and curb appeal — the shots your competitors don't have." },
-              { icon: "staging", image: "/images/virtual-staging-after-furnished.webp", title: "Virtual Staging", desc: "Empty rooms furnished digitally so buyers see a home, not a blank space. Starting at $25/room." },
-              { icon: "edit", image: "/images/service-video-editing.webp", title: "Video Editing", desc: "Raw footage turned into polished, branded content ready for MLS, social media, and ads." },
+              { icon: "video", image: "/images/service-videography-studio.webp", title: "Listing Video", desc: "30–90 second walkthrough video bundled into Full Packages — buyers tour the home before they ever visit." },
+              { icon: "staging", image: "/images/virtual-staging-after-furnished.webp", title: "Virtual Staging", desc: "Empty rooms furnished digitally so buyers see a home, not a blank space. Add-on: +$25 per photo." },
             ].map((s, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <ServiceCard icon={iconMap[s.icon]} image={s.image} title={s.title} description={s.desc} />

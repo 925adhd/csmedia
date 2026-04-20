@@ -24,8 +24,6 @@ const sectionLabels: Record<string, string> = {
   "about:cta": "Call to Action",
   "services:header": "Page Header",
   "services:pricing": "Pricing Packages",
-  "services:videography": "Videography",
-  "services:editing": "Video Editing",
   "services:staging": "Virtual Staging",
   "services:cta": "Call to Action",
   "contact:header": "Page Header",
@@ -46,8 +44,6 @@ const sectionDescriptions: Record<string, string> = {
   "about:cta": "Bottom call-to-action banner",
   "services:header": "Top of the Services page",
   "services:pricing": "Photography package names, prices, and features",
-  "services:videography": "Videography service details and pricing",
-  "services:editing": "Video editing service details and pricing",
   "services:staging": "Virtual staging service details and pricing",
   "services:cta": "Bottom call-to-action banner",
   "contact:header": "Top of the Contact page",
@@ -85,7 +81,7 @@ const pageConfig: { key: string; label: string; icon: React.ReactNode; descripti
         <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6z" />
       </svg>
     ),
-    description: "Pricing, videography, editing, staging details",
+    description: "Pricing, virtual staging details",
   },
   {
     key: "contact",
@@ -111,8 +107,6 @@ const fieldLabels: Record<string, Record<string, string>> = {
   "about:cta": { heading: "Heading", subheading: "Subheading" },
   "services:header": { tagline: "Page Tagline", heading: "Heading", subtext: "Subtitle Text" },
   "services:pricing": { tagline: "Section Tagline", heading: "Section Heading", packages: "Pricing Packages", fine_print: "Fine Print Notes" },
-  "services:videography": { heading: "Heading", description: "Description", price_text: "Price Text", included: "What's Included", ideal_for: "Ideal For" },
-  "services:editing": { heading: "Heading", description: "Description", price_text: "Price Text", included: "What's Included", ideal_for: "Ideal For" },
   "services:staging": { heading: "Heading", description: "Description", price_text: "Price Text", included: "What's Included", ideal_for: "Ideal For" },
   "services:cta": { heading: "Heading", subheading: "Subheading", button_text: "Button Text" },
   "contact:header": { tagline: "Page Tagline", heading: "Heading", subtext: "Subtitle Text", phone: "Phone Number" },

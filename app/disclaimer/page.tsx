@@ -31,7 +31,7 @@ export default function DisclaimerPage() {
             Disclaimer
           </h1>
           <p className="mt-4 text-sm text-dark-300 font-mono">
-            Last updated: March 31, 2026
+            Last updated: April 19, 2026
           </p>
         </div>
       </section>
@@ -75,10 +75,12 @@ export default function DisclaimerPage() {
           <div>
             <h2 className="text-lg font-bold text-white mb-3">4. Pricing</h2>
             <p className="leading-relaxed">
-              Prices listed on this website are subject to change without notice. Final
-              pricing is determined at the time of booking and may vary based on project
-              scope, location, travel distance, and specific requirements. Sales tax and
-              mileage fees may apply.
+              Package prices listed on this website are subject to change without notice. A
+              6% Kentucky sales tax and a 2-way mileage fee (based on Google Maps
+              round-trip distance from Leitchfield, KY) are applied to the final price for
+              all shoots outside Grayson County. Final pricing is confirmed at the time of
+              booking and may vary based on project scope, location, and add-ons such as
+              twilight edits, rush delivery, virtual staging, or additional photos.
             </p>
           </div>
 

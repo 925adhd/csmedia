@@ -19,10 +19,9 @@ insert into testimonials (quote, name, badge, service, sort_order) values
 -- Services
 insert into services (title, description, icon_name, sort_order) values
 ('Photography', 'Interior and exterior real estate photography with professional lighting, composition, and HDR processing.', 'camera', 1),
-('Videography', 'Cinematic property walkthroughs and promo videos that capture attention and drive engagement.', 'video', 2),
-('Drone (Part 107)', 'FAA-certified aerial photography and video. Stunning perspectives from above.', 'drone', 3),
-('Virtual Staging', 'Digitally furnish empty rooms with realistic furniture and decor. Sell the lifestyle, not just the space.', 'staging', 4),
-('Video Editing', 'Polished, branded videos with music, transitions, color grading, and graphics.', 'edit', 5);
+('Drone (Part 107)', 'FAA-certified aerial photography and video. Stunning perspectives from above.', 'drone', 2),
+('Listing Video', '30–90 second walkthrough video bundled into Full Packages — buyers tour the home before they ever visit.', 'video', 3),
+('Virtual Staging', 'Digitally furnish empty rooms with realistic furniture and decor. Sell the lifestyle, not just the space.', 'staging', 4);
 
 -- Page Content
 insert into page_content (page, section, content) values

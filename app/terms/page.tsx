@@ -31,7 +31,7 @@ export default function TermsPage() {
             Terms of Service
           </h1>
           <p className="mt-4 text-sm text-dark-300 font-mono">
-            Last updated: March 22, 2026
+            Last updated: April 19, 2026
           </p>
         </div>
       </section>
@@ -97,14 +97,31 @@ export default function TermsPage() {
           <div>
             <h2 className="text-lg font-bold text-white mb-3">6. Payment</h2>
             <ul className="list-disc pl-5 space-y-1">
-              <li>Pricing is provided on a per-project basis via quote</li>
+              <li>Package prices are published on our <a href="/services" className="text-gold hover:underline">services page</a> and confirmed at the time of booking</li>
+              <li>A 6% Kentucky sales tax and a 2-way mileage fee (Google Maps round-trip distance from Leitchfield) are added to the final price for shoots outside Grayson County</li>
+              <li>Add-ons (twilight edits, rush delivery, virtual staging, additional photos) are billed at the rates published on the services page</li>
               <li>Payment terms will be communicated at the time of booking</li>
               <li>Final deliverables are provided upon receipt of full payment</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-white mb-3">7. Limitation of Liability</h2>
+            <h2 className="text-lg font-bold text-white mb-3">7. Revisions</h2>
+            <p className="leading-relaxed">
+              Each package includes a set number of free revisions, as published on our{" "}
+              <a href="/services" className="text-gold hover:underline">services page</a>{" "}
+              (currently 1 free revision on most packages, 2 on Full Package — Pro).
+              Revision terms:
+            </p>
+            <ul className="list-disc pl-5 mt-2 space-y-1">
+              <li>Additional revisions beyond those included are billed at $15 per request</li>
+              <li>Major edits — including but not limited to object removal, sky swaps, and virtual staging changes — are quoted separately and are not covered by included or additional revisions</li>
+              <li>All revision requests must be submitted within 3 days of delivery; requests received after this window may be declined or quoted as new work</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-lg font-bold text-white mb-3">8. Limitation of Liability</h2>
             <p className="leading-relaxed">
               CS Media, LLC shall not be liable for any indirect, incidental, special, or
               consequential damages arising from the use of our website or services. Our total
@@ -113,7 +130,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-white mb-3">8. Website Use</h2>
+            <h2 className="text-lg font-bold text-white mb-3">9. Website Use</h2>
             <p className="leading-relaxed">You agree not to:</p>
             <ul className="list-disc pl-5 mt-2 space-y-1">
               <li>Use the website for any unlawful purpose</li>
@@ -124,7 +141,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-white mb-3">9. Changes to Terms</h2>
+            <h2 className="text-lg font-bold text-white mb-3">10. Changes to Terms</h2>
             <p className="leading-relaxed">
               We reserve the right to update these Terms of Service at any time. Changes will be
               posted on this page with an updated revision date. Continued use of the website
@@ -133,7 +150,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-white mb-3">10. Contact Us</h2>
+            <h2 className="text-lg font-bold text-white mb-3">11. Contact Us</h2>
             <p className="leading-relaxed">
               If you have any questions about these Terms of Service, please contact us:
             </p>

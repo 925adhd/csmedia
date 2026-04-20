@@ -12,12 +12,12 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia
 export const metadata: Metadata = {
   title: "Real Estate Photography Packages & Pricing in Kentucky",
   description:
-    "Hire a listing photographer in Kentucky. Packages from $150 — interior photos, drone aerials, video walkthroughs, virtual staging. 24-48hr delivery. Book today.",
+    "Hire a listing photographer in Kentucky. Packages from $85 — drone aerials, interior + exterior photos, listing video, virtual staging. 24-48hr delivery. Book today.",
   alternates: { canonical: `${BASE_URL}/services` },
   openGraph: {
     title: "Real Estate Photography Packages & Pricing | CS Media",
     description:
-      "Hire a listing photographer in Kentucky. Packages from $150 — interior photos, drone aerials, video walkthroughs, virtual staging. 24-48hr delivery. Book today.",
+      "Hire a listing photographer in Kentucky. Packages from $85 — drone aerials, interior + exterior photos, listing video, virtual staging. 24-48hr delivery. Book today.",
     type: "website",
     url: `${BASE_URL}/services`,
     siteName: "CS Media",
@@ -33,12 +33,10 @@ interface PricingPackage {
 }
 
 export default async function ServicesPage() {
-  const [_headerContent, _pricingContent, _videographyContent, _editingContent, _stagingContent, _ctaContent] =
+  const [_headerContent, _pricingContent, _stagingContent, _ctaContent] =
     await Promise.all([
       getPageContent("services", "header"),
       getPageContent("services", "pricing"),
-      getPageContent("services", "videography"),
-      getPageContent("services", "editing"),
       getPageContent("services", "staging"),
       getPageContent("services", "cta"),
     ]);
@@ -46,97 +44,95 @@ export default async function ServicesPage() {
   // Header
   const headerTagline = "Services & Pricing";
   const headerHeading = "Pick a Package. Book a Shoot.";
-  const headerSubtext = "Transparent pricing, 24–48 hour turnaround, and photos that make buyers book showings.";
+  const headerSubtext = "High-quality media that helps your listings stand out — without breaking the bank.";
 
   // Pricing
   const pricingTagline = "Pricing";
   const pricingHeading = "Real Estate Media Packages";
   const packages: PricingPackage[] = [
     {
-      name: "Interior Only",
-      price: "$150",
+      name: "Photo Package",
+      price: "$200",
       popular: false,
       features: [
-        "MLS-ready in 24–48 hours",
-        "All interior living spaces",
-        "Professional lighting & HDR",
-        "Edited & color corrected",
+        "25–40 professionally edited photos",
+        "Interior + exterior coverage",
+        "Drone photos (FAA Part 107 compliant)",
+        "MLS-ready delivery",
+        "1 free revision included",
       ],
     },
     {
-      name: "Interior + Exterior",
-      price: "$200",
+      name: "Full Package — Standard",
+      price: "$280",
       popular: true,
       features: [
-        "MLS-ready in 24–48 hours",
-        "All interior living spaces",
-        "6 exterior / curb appeal shots",
-        "Professional lighting & HDR",
-        "Edited & color corrected",
+        "Everything in Photo Package",
+        "30–45 second listing video",
+        "Basic transitions + music",
+        "Optimized for social + MLS",
+        "1 free revision included",
       ],
     },
     {
-      name: "The Holy-Moley",
-      price: "$300",
+      name: "Full Package — Pro",
+      price: "$380",
       popular: false,
       features: [
-        "MLS-ready in 24–48 hours",
-        "Full interior & exterior photos",
-        "Drone aerial photos",
-        "Hyperlapse video for social media",
-        "Professional lighting & HDR",
-        "Edited & color corrected",
+        "Everything in Photo Package",
+        "60–90 second cinematic video",
+        "Advanced editing + smooth motion shots",
+        "Cinematic color grading",
+        "Agent branding + higher-end feel",
+        "2 free revisions included",
       ],
     },
   ];
+  const smallerPackages: PricingPackage[] = [
+    {
+      name: "Interior + Exterior (No Drone)",
+      price: "$140",
+      popular: false,
+      features: [
+        "25–40 professionally edited photos",
+        "Interior + exterior coverage",
+        "MLS-ready",
+        "1 free revision included",
+      ],
+    },
+    {
+      name: "Aerial Only",
+      price: "$85",
+      popular: false,
+      features: [
+        "5 high-quality drone photos",
+        "Property + surrounding area highlights",
+        "FAA Part 107 compliant",
+        "1 free revision included",
+      ],
+    },
+  ];
+  const addOns = [
+    { name: "Twilight Edit", price: "+$25 per photo" },
+    { name: "Rush Delivery (24hr)", price: "+$40" },
+    { name: "Virtual Staging", price: "+$25 per photo / +$50 per video scene" },
+    { name: "Additional Photos", price: "+$5 per image" },
+  ];
+  const revisionPolicy = [
+    "Additional revisions beyond included: $15 per request",
+    "Major edits (object removal, sky swaps, virtual staging changes, etc.) quoted separately",
+    "Revision requests must be submitted within 3 days of delivery",
+  ];
   const finePrint = [
-    "Taxes and mileage fee will be applied to final price.",
-    "Mileage is determined by Google Maps distance for round trip.",
-  ];
-
-  // Videography
-  const videoHeading = "Videography";
-  const videoDescription =
-    "Listing videos get 403% more inquiries than listings without. We shoot walkthrough tours and social content that make buyers feel like they're already in the home — so they book the showing.";
-  const videoPriceText = "Contact for pricing";
-  const videoIncluded = [
-    "60–90 second edited walkthrough",
-    "4K resolution",
-    "Licensed background music",
-    "Color grading & transitions",
-    "Formatted for MLS & social media",
-  ];
-  const videoIdealFor = [
-    "Listings that need to stand out",
-    "Agent personal branding",
-    "Social media reels & ads",
-    "New construction showcases",
-  ];
-
-  // Editing
-  const editHeading = "Video Editing";
-  const editDescription =
-    "Already have footage sitting on your phone? We turn raw clips into polished, scroll-stopping content with music, branding, and graphics — ready to post or share with clients.";
-  const editPriceText = "Contact for pricing";
-  const editIncluded = [
-    "Full edit from your raw footage",
-    "Music & sound design",
-    "Text overlays & your branding",
-    "Logo/watermark placement",
-    "Exported for any platform",
-  ];
-  const editIdealFor = [
-    "Phone footage you never posted",
-    "Social media reels & stories",
-    "Agent highlight videos",
-    "Brand & marketing content",
+    "6% sales tax and 2-way mileage applied to final pricing.",
+    "Mileage is determined by Google Maps distance for round trip from Leitchfield.",
   ];
 
   // Staging
   const stagingHeading = "Virtual Staging";
   const stagingDescription =
     "Empty rooms sit on the market longer. Virtual staging helps buyers picture themselves living there — so they book showings faster. Realistic furniture and decor, digitally placed at a fraction of the cost of physical staging.";
-  const stagingPriceText = "Starting at $25/room";
+  const stagingPriceText = "+$25 per photo · +$50 per video scene";
   const stagingIncluded = [
     "Realistic furniture placement",
     "Modern, farmhouse, luxury — any style",
@@ -160,11 +156,11 @@ export default async function ServicesPage() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "CS MEDIA, LLC",
-    description: "Professional real estate drone photography, videography, virtual staging, and video editing services in Kentucky.",
+    description: "Professional real estate drone photography, listing video, and virtual staging services in Kentucky.",
     url: `${BASE_URL}/services`,
     telephone: "+1-270-307-0173",
     email: "cscreatesmediallc@gmail.com",
-    priceRange: "$150-$300",
+    priceRange: "$85-$380",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -200,7 +196,7 @@ export default async function ServicesPage() {
         name: "How much does real estate drone photography cost?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "CS Media offers real estate photography packages starting at $150. Our most popular Interior + Exterior package is $200, and our full package including drone photos and video is $300. Taxes and mileage fees may apply.",
+          text: "CS Media offers real estate media packages from $85. Aerial-only is $85, Interior + Exterior (no drone) is $140, the Photo Package with drone is $200, and the Full Package with cinematic listing video runs $280–$380. 6% sales tax and 2-way mileage are applied to the final price.",
         },
       },
       {
@@ -216,7 +212,7 @@ export default async function ServicesPage() {
         name: "What is virtual staging and how does it work?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor. It helps buyers visualize a property's potential at a fraction of the cost of physical staging. CS Media offers virtual staging starting at $25 per room with 24-48 hour turnaround.",
+          text: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor. It helps buyers visualize a property's potential at a fraction of the cost of physical staging. CS Media offers virtual staging as an add-on at $25 per photo or $50 per video scene, with 24-48 hour turnaround.",
         },
       },
       {
@@ -354,6 +350,44 @@ export default async function ServicesPage() {
             ))}
           </div>
 
+          {/* Smaller packages */}
+          <FadeIn>
+            <div className="mt-12 mb-6 text-center">
+              <span className="text-gold/70 text-[10px] font-mono uppercase tracking-[0.3em]">
+                Smaller Packages
+              </span>
+            </div>
+          </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {smallerPackages.map((pkg, index) => (
+              <FadeIn key={pkg.name} delay={index * 0.1}>
+                <div className="relative rounded-2xl bg-dark-700/60 border border-dark-500/30 p-6 h-full flex flex-col hover:border-gold/20 transition-colors">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em]">
+                      {pkg.name}
+                    </h3>
+                    <span className="text-2xl font-bold text-white">{pkg.price}</span>
+                  </div>
+                  <div className="mt-4 space-y-2 flex-1">
+                    {pkg.features.map((item) => (
+                      <div key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
+                        <svg className="h-4 w-4 mt-0.5 text-gold/70 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                  <BookingButton
+                    className="mt-5 w-full rounded-full py-2.5 text-[11px] font-semibold uppercase tracking-widest text-center transition-all cursor-pointer bg-dark-600 border border-dark-500/50 text-dark-100 hover:border-gold/30 hover:text-gold"
+                  >
+                    Book Now
+                  </BookingButton>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
           {/* Fine print */}
           <FadeIn>
             <div className="mt-10 text-center space-y-1">
@@ -377,115 +411,56 @@ export default async function ServicesPage() {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </section>
 
-      {/* Additional Services */}
-      <section className="bg-dark-900 relative">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 divide-y divide-dark-500/30">
-          <div className="py-16 sm:py-20">
+      {/* Add-Ons & Revision Policy */}
+      <section className="py-16 sm:py-24 bg-dark-900 relative">
+        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
             <FadeIn>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                <div className="lg:col-span-1">
-                  <span className="text-5xl font-bold text-gold/20 font-mono">+</span>
-                </div>
-                <div className="lg:col-span-6">
-                  <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-                    {videoHeading}
-                  </h2>
-                  <p className="mt-4 text-dark-200 leading-relaxed">
-                    {videoDescription}
-                  </p>
-                  <p className="mt-4 inline-flex items-center gap-2 text-gold font-semibold">
-                    <span className="h-px w-4 bg-gold/40" />
-                    {videoPriceText}
-                  </p>
-                </div>
-                <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-4">
-                      What&apos;s Included
-                    </h3>
-                    <ul className="space-y-2.5">
-                      {videoIncluded.map((item) => (
-                        <li key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
-                          <svg className="h-4 w-4 mt-0.5 text-gold/70 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-4">
-                      Ideal For
-                    </h3>
-                    <ul className="space-y-2.5">
-                      {videoIdealFor.map((item) => (
-                        <li key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
-                          <span className="text-gold/50 mt-0.5 flex-shrink-0 text-xs">&#9670;</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+              <div>
+                <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                  Add-Ons
+                </span>
+                <h2 className="mt-3 text-2xl md:text-3xl font-bold text-white tracking-tight">
+                  Build Out Your Shoot
+                </h2>
+                <ul className="mt-6 divide-y divide-dark-500/30">
+                  {addOns.map((item) => (
+                    <li
+                      key={item.name}
+                      className="flex items-baseline justify-between gap-4 py-3"
+                    >
+                      <span className="text-sm text-dark-100">{item.name}</span>
+                      <span className="text-sm font-mono text-gold whitespace-nowrap text-right">
+                        {item.price}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </FadeIn>
-          </div>
-
-          <div className="py-16 sm:py-20">
-            <FadeIn>
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                <div className="lg:col-span-1">
-                  <span className="text-5xl font-bold text-gold/20 font-mono">+</span>
-                </div>
-                <div className="lg:col-span-6">
-                  <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-                    {editHeading}
-                  </h2>
-                  <p className="mt-4 text-dark-200 leading-relaxed">
-                    {editDescription}
-                  </p>
-                  <p className="mt-4 inline-flex items-center gap-2 text-gold font-semibold">
-                    <span className="h-px w-4 bg-gold/40" />
-                    {editPriceText}
-                  </p>
-                </div>
-                <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-4">
-                      What&apos;s Included
-                    </h3>
-                    <ul className="space-y-2.5">
-                      {editIncluded.map((item) => (
-                        <li key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
-                          <svg className="h-4 w-4 mt-0.5 text-gold/70 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-4">
-                      Ideal For
-                    </h3>
-                    <ul className="space-y-2.5">
-                      {editIdealFor.map((item) => (
-                        <li key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
-                          <span className="text-gold/50 mt-0.5 flex-shrink-0 text-xs">&#9670;</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+            <FadeIn delay={0.1}>
+              <div>
+                <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                  Revision Policy
+                </span>
+                <h2 className="mt-3 text-2xl md:text-3xl font-bold text-white tracking-tight">
+                  Edits & Reworks
+                </h2>
+                <ul className="mt-6 space-y-3">
+                  {revisionPolicy.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2.5 text-sm text-dark-100"
+                    >
+                      <span className="text-gold/50 mt-1.5 flex-shrink-0 text-[8px]">&#9670;</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </FadeIn>
           </div>
         </div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </section>
 
       {/* Virtual Staging Section */}
@@ -668,7 +643,7 @@ export default async function ServicesPage() {
             {[
               {
                 q: "How much does real estate drone photography cost?",
-                a: "CS Media offers real estate photography packages starting at $150. Our most popular Interior + Exterior package is $200, and our full package including drone photos and video is $300. Taxes and mileage fees may apply.",
+                a: "CS Media offers real estate media packages from $85. Aerial-only is $85, Interior + Exterior (no drone) is $140, the Photo Package with drone is $200, and the Full Package with cinematic listing video runs $280\u2013$380. 6% sales tax and 2-way mileage are applied to the final price.",
               },
               {
                 q: "Do you need a license to fly drones for real estate photos?",
@@ -676,7 +651,7 @@ export default async function ServicesPage() {
               },
               {
                 q: "What is virtual staging and how does it work?",
-                a: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor. It helps buyers visualize a property\u2019s potential at a fraction of the cost of physical staging. CS Media offers virtual staging starting at $25 per room with 24\u201348 hour turnaround.",
+                a: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor. It helps buyers visualize a property\u2019s potential at a fraction of the cost of physical staging. CS Media offers virtual staging as an add-on at $25 per photo or $50 per video scene, with 24\u201348 hour turnaround.",
               },
               {
                 q: "How fast will I get my real estate photos back?",

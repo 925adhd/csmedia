@@ -24,7 +24,7 @@ export async function generateMetadata({
   if (!loc) return {};
 
   const title = `Real Estate Photography in ${loc.city}, ${loc.county} KY`;
-  const description = `Professional real estate photography, drone video & virtual staging in ${loc.city}, ${loc.county}, Kentucky. FAA Part 107 certified. From $150.`;
+  const description = `Professional real estate photography, drone video & virtual staging in ${loc.city}, ${loc.county}, Kentucky. FAA Part 107 certified. From $85.`;
 
   const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
@@ -62,7 +62,7 @@ export default async function CityPage({
     telephone: "+1-270-307-0173",
     url: BASE_URL,
     image: `${BASE_URL}/images/real-estate-aerial-drone-leitchfield-ky.webp`,
-    priceRange: "$150-$300",
+    priceRange: "$85-$380",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -132,7 +132,7 @@ export default async function CityPage({
     email: "cscreatesmediallc@gmail.com",
     url: `${BASE_URL}/services/${loc.slug}`,
     image: `${BASE_URL}/images/real-estate-aerial-drone-leitchfield-ky.webp`,
-    priceRange: "$150-$300",
+    priceRange: "$85-$380",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -159,9 +159,8 @@ export default async function CityPage({
       itemListElement: [
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Real Estate Photography" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Drone Photography & Video" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Real Estate Videography" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Real Estate Listing Video" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Virtual Staging" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Video Editing" } },
       ],
     },
   };
@@ -283,8 +282,8 @@ export default async function CityPage({
                   ),
                 },
                 {
-                  label: "From $150",
-                  desc: isHomeBase ? "No mileage fees locally" : "Plus mileage from Leitchfield",
+                  label: "From $85",
+                  desc: isHomeBase ? "No mileage fees locally" : "Plus 2-way mileage from Leitchfield",
                   icon: (
                     <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -343,7 +342,7 @@ export default async function CityPage({
                       "Interior & exterior real estate photography",
                       "FAA-certified drone photos & video",
                       "Cinematic property walkthrough videos",
-                      "Virtual staging from $25/room",
+                      "Virtual staging (+$25 per photo)",
                       "Video editing & branded content",
                       "Social media highlight reels",
                     ].map((item) => (
@@ -448,40 +447,38 @@ export default async function CityPage({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {[
               {
-                name: "Interior Only",
-                price: "$150",
+                name: "Photo Package",
+                price: "$200",
                 features: [
-                  "All interior living spaces",
-                  "Professional lighting & HDR",
-                  "Edited & color corrected",
-                  "MLS-ready formatting",
-                  "24-48 hour turnaround",
+                  "25–40 edited photos",
+                  "Interior + exterior coverage",
+                  "Drone photos (FAA Part 107)",
+                  "MLS-ready delivery",
+                  "1 free revision included",
                 ],
               },
               {
-                name: "Interior + Exterior",
-                price: "$200",
+                name: "Full Package — Standard",
+                price: "$280",
                 popular: true,
                 features: [
-                  "All interior living spaces",
-                  "6 exterior shots",
-                  "Professional lighting & HDR",
-                  "Edited & color corrected",
-                  "MLS-ready formatting",
-                  "24-48 hour turnaround",
+                  "Everything in Photo Package",
+                  "30–45 second listing video",
+                  "Basic transitions + music",
+                  "Optimized for social + MLS",
+                  "1 free revision included",
                 ],
               },
               {
-                name: "The Holy-Moley",
-                price: "$300",
+                name: "Full Package — Pro",
+                price: "$380",
                 features: [
-                  "Full interior & exterior",
-                  "Drone photos",
-                  "Hyperlapse video",
-                  "Professional lighting & HDR",
-                  "Edited & color corrected",
-                  "MLS-ready formatting",
-                  "24-48 hour turnaround",
+                  "Everything in Photo Package",
+                  "60–90 second cinematic video",
+                  "Advanced editing + motion shots",
+                  "Cinematic color grading",
+                  "Agent branding + premium feel",
+                  "2 free revisions included",
                 ],
               },
             ].map((pkg, index) => (
@@ -531,11 +528,11 @@ export default async function CityPage({
           <FadeIn>
             <div className="mt-10 text-center space-y-1">
               <p className="text-xs text-dark-300">
-                Taxes{!isHomeBase ? " and mileage fee" : ""} will be applied to final price.
+                6% sales tax{!isHomeBase ? " and 2-way mileage" : ""} applied to final pricing.
               </p>
               {!isHomeBase && (
                 <p className="text-xs text-dark-300">
-                  Mileage is determined by Google Maps distance for round trip.
+                  Mileage is determined by Google Maps distance for round trip from Leitchfield.
                 </p>
               )}
             </div>
