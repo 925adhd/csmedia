@@ -103,16 +103,23 @@ export default async function BlogPostPage({
     .map((block) => {
       const trimmed = block.trim();
       if (!trimmed) return "";
+      const inline = (s: string) =>
+        s
+          .replace(/\*\*(.+?)\*\*/g, '<strong class="text-dark-100 font-semibold">$1</strong>')
+          .replace(
+            /\[(.+?)\]\((.+?)\)/g,
+            '<a href="$2" class="text-gold hover:text-gold-light underline transition-colors">$1</a>'
+          );
       if (trimmed === "---") return '<hr class="border-dark-500/30 my-8" />';
       if (trimmed.startsWith("## "))
-        return `<h2 class="text-2xl font-bold text-dark-100 mt-12 mb-4">${trimmed.slice(3)}</h2>`;
+        return `<h2 class="text-2xl font-bold text-dark-100 mt-12 mb-4">${inline(trimmed.slice(3))}</h2>`;
       if (trimmed.startsWith("### "))
-        return `<h3 class="text-xl font-semibold text-dark-100 mt-8 mb-3">${trimmed.slice(4)}</h3>`;
+        return `<h3 class="text-xl font-semibold text-dark-100 mt-8 mb-3">${inline(trimmed.slice(4))}</h3>`;
       if (trimmed.startsWith("- [ ] ") || trimmed.includes("\n- [ ] ")) {
         const items = trimmed
           .split("\n")
           .filter((l) => l.trim().startsWith("- [ ] "))
-          .map((l) => `<li class="flex items-center gap-2"><span class="w-4 h-4 rounded border border-dark-400 flex-shrink-0"></span>${l.trim().slice(6)}</li>`)
+          .map((l) => `<li class="flex items-center gap-2"><span class="w-4 h-4 rounded border border-dark-400 flex-shrink-0"></span>${inline(l.trim().slice(6))}</li>`)
           .join("");
         return `<ul class="space-y-2 text-dark-200">${items}</ul>`;
       }
@@ -120,17 +127,52 @@ export default async function BlogPostPage({
         const items = trimmed
           .split("\n")
           .filter((l) => l.trim().startsWith("- "))
-          .map((l) => `<li>${l.trim().slice(2)}</li>`)
+          .map((l) => `<li>${inline(l.trim().slice(2))}</li>`)
           .join("");
         return `<ul class="list-disc list-inside space-y-1 text-dark-200">${items}</ul>`;
       }
-      // Inline formatting
-      let html = trimmed
-        .replace(/\*\*(.+?)\*\*/g, '<strong class="text-dark-100 font-semibold">$1</strong>')
-        .replace(
-          /\[(.+?)\]\((.+?)\)/g,
-          '<a href="$2" class="text-gold hover:text-gold-light underline transition-colors">$1</a>'
-        );
+      if (trimmed.startsWith("|") && /\n\|\s*-/.test(trimmed)) {
+        const rows = trimmed
+          .split("\n")
+          .map((l) => l.trim())
+          .filter((l) => l.startsWith("|"));
+        const parseCells = (line: string) =>
+          line.replace(/^\|/, "").replace(/\|$/, "").split("|").map((c) => c.trim());
+        const isSeparator = (line: string) =>
+          parseCells(line).every((c) => /^:?-+:?$/.test(c));
+        const sepIdx = rows.findIndex(isSeparator);
+        if (sepIdx > 0) {
+          const headerCells = parseCells(rows[sepIdx - 1]);
+          const bodyRows = rows.slice(sepIdx + 1).map(parseCells);
+          const thead =
+            '<thead><tr>' +
+            headerCells
+              .map(
+                (c) =>
+                  `<th class="text-left px-4 py-3 text-dark-100 font-semibold border-b border-gold/30 whitespace-nowrap">${inline(c)}</th>`
+              )
+              .join("") +
+            '</tr></thead>';
+          const tbody =
+            '<tbody>' +
+            bodyRows
+              .map(
+                (cells) =>
+                  '<tr class="hover:bg-dark-900/30 transition-colors">' +
+                  cells
+                    .map(
+                      (c) =>
+                        `<td class="px-4 py-3 text-dark-200 border-b border-dark-500/20 align-top">${inline(c)}</td>`
+                    )
+                    .join("") +
+                  '</tr>'
+              )
+              .join("") +
+            '</tbody>';
+          return `<div class="my-6 overflow-x-auto rounded-lg border border-dark-500/30"><table class="w-full text-sm border-collapse">${thead}${tbody}</table></div>`;
+        }
+      }
+      const html = inline(trimmed);
       return `<p class="text-dark-200 leading-relaxed">${html}</p>`;
     })
     .join("\n");
