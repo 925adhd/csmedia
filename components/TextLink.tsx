@@ -39,7 +39,7 @@ export default function TextLink({ className, children }: TextLinkProps) {
   }
 
   return (
-    <Link href="/contact" className={className}>
+    <Link href="/book" className={className}>
       {children}
     </Link>
   );

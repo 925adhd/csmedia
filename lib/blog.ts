@@ -119,7 +119,7 @@ CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owe
 - **FAA Part 107 certified** — legal, insured aerial work
 - **Same-week availability** — text or call to book
 
-[See packages and pricing](/services) or [book your shoot now](/contact).
+[See packages and pricing](/services) or [book your shoot now](/book).
 `,
   },
   {
@@ -344,7 +344,7 @@ Whether you book CS Media or another Kentucky real estate photographer, here's w
 
 ## Booking in Kentucky
 
-CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owensboro, Bardstown, and the rest of the state — see [the services page](/services) for current packages, or [text us about your listing](/contact) to talk through what makes sense for the property.
+CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owensboro, Bardstown, and the rest of the state — see [the services page](/services) for current packages, or [text us about your listing](/book) to talk through what makes sense for the property.
 `,
     faqs: [
       {

@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
       ? [{ protocol: "https", hostname: supabaseHostname, pathname: "/storage/v1/object/public/**" }]
       : [],
   },
+  async redirects() {
+    return [
+      { source: "/contact", destination: "/book", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

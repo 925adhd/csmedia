@@ -45,10 +45,10 @@ export default function NotFound() {
             Our Services
           </Link>
           <Link
-            href="/contact"
+            href="/book"
             className="rounded-full border border-dark-400 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-dark-100 transition-all hover:border-gold/50 hover:text-gold"
           >
-            Contact Us
+            Book a Shoot
           </Link>
         </div>
       </div>

@@ -8,7 +8,7 @@ interface BookingButtonProps {
 
 export default function BookingButton({ className, children, onClick }: BookingButtonProps) {
   return (
-    <Link href="/contact" className={className} onClick={onClick}>
+    <Link href="/book" className={className} onClick={onClick}>
       {children}
     </Link>
   );

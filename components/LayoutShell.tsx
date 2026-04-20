@@ -9,6 +9,7 @@ import FloatingTextButton from "@/components/FloatingTextButton";
 export default function LayoutShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isAdmin = pathname.startsWith("/admin");
+  const hidesFloatingText = pathname === "/services";
 
   if (isAdmin) {
     return (
@@ -24,7 +25,7 @@ export default function LayoutShell({ children }: { children: React.ReactNode })
       <Navbar />
       <main id="main-content" className="flex-1 pt-16">{children}</main>
       <Footer />
-      <FloatingTextButton />
+      {!hidesFloatingText && <FloatingTextButton />}
     </>
   );
 }

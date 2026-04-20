@@ -5,6 +5,7 @@ import FadeIn from "@/components/FadeIn";
 import BeforeAfter from "@/components/BeforeAfter";
 import CTASection from "@/components/CTASection";
 import BookingButton from "@/components/BookingButton";
+import MobileStickyBookBar from "@/components/MobileStickyBookBar";
 import { getPageContent } from "@/lib/supabase/queries";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
@@ -29,6 +30,7 @@ interface PricingPackage {
   name: string;
   price: string;
   popular: boolean;
+  badge?: string;
   features: string[];
 }
 
@@ -42,19 +44,18 @@ export default async function ServicesPage() {
     ]);
 
   // Header
-  const headerTagline = "Services & Pricing";
+  const headerTagline = "Packages";
   const headerHeading = "Pick a Package. Book a Shoot.";
   const headerSubtext = "High-quality media that helps your listings stand out — without breaking the bank.";
 
   // Pricing
-  const pricingTagline = "Pricing";
-  const pricingHeading = "Real Estate Media Packages";
   const packages: PricingPackage[] = [
     {
       name: "Photo Package",
       price: "$200",
       popular: false,
       features: [
+        "Delivered in 24–48 hours",
         "25–40 professionally edited photos",
         "Interior + exterior coverage",
         "Drone photos (FAA Part 107 compliant)",
@@ -67,6 +68,7 @@ export default async function ServicesPage() {
       price: "$280",
       popular: true,
       features: [
+        "Delivered in 24–48 hours",
         "Everything in Photo Package",
         "30–45 second listing video",
         "Basic transitions + music",
@@ -78,7 +80,9 @@ export default async function ServicesPage() {
       name: "Full Package — Pro",
       price: "$380",
       popular: false,
+      badge: "Premium",
       features: [
+        "Delivered in 24–48 hours",
         "Everything in Photo Package",
         "60–90 second cinematic video",
         "Advanced editing + smooth motion shots",
@@ -94,6 +98,7 @@ export default async function ServicesPage() {
       price: "$140",
       popular: false,
       features: [
+        "Delivered in 24–48 hours",
         "25–40 professionally edited photos",
         "Interior + exterior coverage",
         "MLS-ready",
@@ -105,6 +110,7 @@ export default async function ServicesPage() {
       price: "$85",
       popular: false,
       features: [
+        "Delivered in 24–48 hours",
         "5 high-quality drone photos",
         "Property + surrounding area highlights",
         "FAA Part 107 compliant",
@@ -124,7 +130,6 @@ export default async function ServicesPage() {
     "Revision requests must be submitted within 3 days of delivery",
   ];
   const finePrint = [
-    "6% sales tax and 2-way mileage applied to final pricing.",
     "Mileage is determined by Google Maps distance for round trip from Leitchfield.",
   ];
 
@@ -280,25 +285,20 @@ export default async function ServicesPage() {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center mb-14">
-              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                {pricingTagline}
-              </span>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white tracking-tight">
-                {pricingHeading}
-              </h2>
-            </div>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
-            {packages.map((pkg, index) => (
+          <div data-pricing-grid className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+            {packages.map((pkg, index) => {
+              const hasBadge = pkg.popular || !!pkg.badge;
+              return (
               <FadeIn key={pkg.name} delay={index * 0.1}>
                 <div
                   className={`relative rounded-2xl bg-dark-700 border ${
-                    pkg.popular ? "border-gold/30" : "border-dark-500/30"
+                    pkg.popular
+                      ? "border-gold/30"
+                      : pkg.badge
+                        ? "border-gold/15"
+                        : "border-dark-500/30"
                   } p-8 h-full flex flex-col overflow-hidden group ${
-                    !pkg.popular ? "hover:border-gold/20 transition-colors" : ""
+                    !pkg.popular ? "hover:border-gold/30 transition-colors" : ""
                   }`}
                 >
                   {pkg.popular && (
@@ -308,20 +308,25 @@ export default async function ServicesPage() {
                     className={`absolute inset-0 ${
                       pkg.popular
                         ? "bg-[radial-gradient(circle_at_50%_0%,rgba(201,169,110,0.08),transparent_70%)]"
-                        : "opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(201,169,110,0.05),transparent_70%)]"
+                        : pkg.badge
+                          ? "bg-[radial-gradient(circle_at_50%_100%,rgba(201,169,110,0.05),transparent_70%)]"
+                          : "opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(201,169,110,0.05),transparent_70%)]"
                     }`}
                   />
+                  {pkg.popular && (
+                    <span className="absolute top-4 right-4 z-20 text-[10px] font-bold uppercase tracking-wider text-dark-900 bg-gold rounded-full px-2.5 py-0.5">
+                      Popular
+                    </span>
+                  )}
+                  {pkg.badge && !pkg.popular && (
+                    <span className="absolute top-4 right-4 z-20 text-[10px] font-bold uppercase tracking-wider text-gold bg-gold/10 border border-gold/30 rounded-full px-2.5 py-0.5">
+                      {pkg.badge}
+                    </span>
+                  )}
                   <div className="relative z-10 flex flex-col h-full">
-                    <div className={pkg.popular ? "flex items-center justify-between" : ""}>
-                      <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em]">
-                        {pkg.name}
-                      </h3>
-                      {pkg.popular && (
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-dark-900 bg-gold rounded-full px-2.5 py-0.5">
-                          Popular
-                        </span>
-                      )}
-                    </div>
+                    <h3 className={`text-xs font-semibold text-gold uppercase tracking-[0.2em] ${hasBadge ? "pr-24" : ""}`}>
+                      {pkg.name}
+                    </h3>
                     <div className="mt-4 flex items-baseline gap-1">
                       <span className="text-4xl font-bold text-white">{pkg.price}</span>
                     </div>
@@ -336,10 +341,12 @@ export default async function ServicesPage() {
                       ))}
                     </div>
                     <BookingButton
-                      className={`mt-6 w-full rounded-full py-3 text-xs font-semibold uppercase tracking-widest text-center transition-all cursor-pointer ${
+                      className={`mt-6 w-full rounded-full py-3 text-sm sm:text-xs font-semibold uppercase tracking-widest text-center transition-all cursor-pointer ${
                         pkg.popular
                           ? "bg-gold/15 border border-gold/30 text-gold hover:bg-gold/25"
-                          : "bg-dark-600 border border-dark-500/50 text-dark-100 hover:border-gold/30 hover:text-gold"
+                          : pkg.badge
+                            ? "bg-dark-600 border border-gold/20 text-dark-100 hover:border-gold/40 hover:text-gold"
+                            : "bg-dark-600 border border-dark-500/50 text-dark-100 hover:border-gold/30 hover:text-gold"
                       }`}
                     >
                       Book Now
@@ -347,7 +354,8 @@ export default async function ServicesPage() {
                   </div>
                 </div>
               </FadeIn>
-            ))}
+              );
+            })}
           </div>
 
           {/* Smaller packages */}
@@ -358,11 +366,11 @@ export default async function ServicesPage() {
               </span>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {smallerPackages.map((pkg, index) => (
               <FadeIn key={pkg.name} delay={index * 0.1}>
                 <div className="relative rounded-2xl bg-dark-700/60 border border-dark-500/30 p-6 h-full flex flex-col hover:border-gold/20 transition-colors">
-                  <div className="flex items-baseline justify-between gap-3">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
                     <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em]">
                       {pkg.name}
                     </h3>
@@ -379,7 +387,7 @@ export default async function ServicesPage() {
                     ))}
                   </div>
                   <BookingButton
-                    className="mt-5 w-full rounded-full py-2.5 text-[11px] font-semibold uppercase tracking-widest text-center transition-all cursor-pointer bg-dark-600 border border-dark-500/50 text-dark-100 hover:border-gold/30 hover:text-gold"
+                    className="mt-5 w-full rounded-full py-2.5 text-sm sm:text-xs font-semibold uppercase tracking-widest text-center transition-all cursor-pointer bg-dark-600 border border-dark-500/50 text-dark-100 hover:border-gold/30 hover:text-gold"
                   >
                     Book Now
                   </BookingButton>
@@ -388,9 +396,16 @@ export default async function ServicesPage() {
             ))}
           </div>
 
-          {/* Fine print */}
+          {/* Pricing footnote */}
           <FadeIn>
-            <div className="mt-10 text-center space-y-1">
+            <div className="mt-10 mx-auto max-w-xl rounded-xl border border-gold/15 bg-dark-900/40 px-5 py-3 text-center">
+              <p className="text-xs sm:text-sm text-dark-100">
+                <span className="text-gold/80 font-mono mr-1">+</span>
+                6% Kentucky sales tax &amp; round-trip mileage from Leitchfield
+                added at booking.
+              </p>
+            </div>
+            <div className="mt-6 text-center space-y-1">
               {finePrint.map((line) => (
                 <p key={line} className="text-xs text-dark-300">
                   {line}
@@ -427,10 +442,10 @@ export default async function ServicesPage() {
                   {addOns.map((item) => (
                     <li
                       key={item.name}
-                      className="flex items-baseline justify-between gap-4 py-3"
+                      className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 py-3"
                     >
                       <span className="text-sm text-dark-100">{item.name}</span>
-                      <span className="text-sm font-mono text-gold whitespace-nowrap text-right">
+                      <span className="text-sm font-mono text-gold sm:whitespace-nowrap sm:text-right">
                         {item.price}
                       </span>
                     </li>
@@ -614,7 +629,7 @@ export default async function ServicesPage() {
 
           <p className="mt-10 text-center text-sm text-dark-300">
             Serving all of Kentucky. Out-of-state projects available on request —{" "}
-            <Link href="/contact" className="text-gold hover:underline">
+            <Link href="/book" className="text-gold hover:underline">
               get a quote
             </Link>
             .
@@ -682,6 +697,13 @@ export default async function ServicesPage() {
         buttonText={ctaButtonText}
         useTextLink
       />
+
+      <div
+        aria-hidden="true"
+        className="md:hidden"
+        style={{ height: "var(--sticky-book-bar, 0px)" }}
+      />
+      <MobileStickyBookBar />
     </>
   );
 }

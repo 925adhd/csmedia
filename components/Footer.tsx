@@ -51,9 +51,9 @@ export default function Footer() {
             <ul className="flex flex-wrap gap-x-4 gap-y-1 md:flex-col md:gap-x-0 text-sm">
               <li><Link href="/" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Home</Link></li>
               <li><Link href="/portfolio" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Portfolio</Link></li>
-              <li><Link href="/services" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Services</Link></li>
+              <li><Link href="/services" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Pricing</Link></li>
               <li><Link href="/about" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">About</Link></li>
-              <li><Link href="/contact" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Contact</Link></li>
+              <li><Link href="/book" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Book</Link></li>
               <li><Link href="/blog" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Blog</Link></li>
             </ul>
           </div>
