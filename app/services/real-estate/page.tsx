@@ -245,9 +245,12 @@ export default function RealEstatePage() {
       </section>
 
       {/* Pricing Packages */}
-      <section className="py-16 sm:py-28 bg-dark-800 relative">
+      <section className="py-16 sm:py-28 bg-dark-800 relative" aria-labelledby="pricing-heading">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <h2 id="pricing-heading" className="sr-only">
+            Real Estate Photography Packages
+          </h2>
           <div data-pricing-grid className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {packages.map((pkg, index) => {
               const hasBadge = pkg.popular || !!pkg.badge;

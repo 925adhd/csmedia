@@ -42,6 +42,7 @@ export default function MobileStickyBookBar({
         visible ? "translate-y-0" : "translate-y-full"
       }`}
       aria-hidden={!visible}
+      inert={!visible}
     >
       <div className="flex items-center justify-between gap-4 px-4 py-3">
         <div className="leading-tight">

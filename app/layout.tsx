@@ -198,6 +198,7 @@ export default function RootLayout({
                   name: "CS MEDIA, LLC",
                   url: BASE_URL,
                   logo: `${BASE_URL}/images/cs-media-logo.webp`,
+                  image: `${BASE_URL}/images/cs-media-logo.webp`,
                   email: "cscreatesmediallc@gmail.com",
                   telephone: "+1-270-307-0173",
                   address: {
