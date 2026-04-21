@@ -23,7 +23,7 @@ export default function LayoutShell({ children }: { children: React.ReactNode })
     <>
       <GoogleAnalytics />
       <Navbar />
-      <main id="main-content" className="flex-1 pt-16">{children}</main>
+      <main id="main-content" className="flex-1 pt-20">{children}</main>
       <Footer />
       {!hidesFloatingText && <FloatingTextButton />}
     </>

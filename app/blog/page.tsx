@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     url: `${BASE_URL}/blog`,
     siteName: "CS Media",
-    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.webp", width: 1200, height: 630, alt: "Aerial drone photo of a real estate property in Kentucky" }],
+    images: [{ url: "/images/rustic-kitchen-wood-beams-island.webp", width: 1200, height: 630, alt: "Professional real estate photography of a rustic kitchen — CS Media blog" }],
   },
 };
 

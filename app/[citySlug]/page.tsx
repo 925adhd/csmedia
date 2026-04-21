@@ -5,40 +5,57 @@ import { notFound } from "next/navigation";
 import FadeIn from "@/components/FadeIn";
 import CTASection from "@/components/CTASection";
 import FAQAccordion from "@/components/FAQAccordion";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { locations, getLocationBySlug } from "@/lib/locations";
 import { getTestimonials } from "@/lib/supabase/queries";
+
+const URL_SUFFIX = "-real-estate-photography";
+
+function citySlugToLocSlug(citySlug: string): string | null {
+  if (!citySlug.endsWith(URL_SUFFIX)) return null;
+  return citySlug.slice(0, -URL_SUFFIX.length);
+}
 
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  return locations.map((loc) => ({ city: loc.slug }));
+  return locations.map((loc) => ({ citySlug: `${loc.slug}${URL_SUFFIX}` }));
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ city: string }>;
+  params: Promise<{ citySlug: string }>;
 }): Promise<Metadata> {
-  const { city } = await params;
-  const loc = getLocationBySlug(city);
+  const { citySlug } = await params;
+  const slug = citySlugToLocSlug(citySlug);
+  const loc = slug ? getLocationBySlug(slug) : undefined;
   if (!loc) return {};
 
-  const title = `Real Estate Photography in ${loc.city}, ${loc.county} KY`;
+  const title = `${loc.city} Real Estate Photography & Drone Video | ${loc.county} KY`;
   const description = `Professional real estate photography, drone video & virtual staging in ${loc.city}, ${loc.county}, Kentucky. FAA Part 107 certified. From $85.`;
 
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+  const BASE_URL =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
   return {
     title,
     description,
-    alternates: { canonical: `${BASE_URL}/services/${loc.slug}` },
+    alternates: { canonical: `${BASE_URL}/${citySlug}` },
     openGraph: {
       title,
       description,
       type: "website",
-      url: `${BASE_URL}/services/${loc.slug}`,
+      url: `${BASE_URL}/${citySlug}`,
       siteName: "CS Media",
-      images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.webp", width: 1200, height: 630, alt: `Real estate drone photography in ${loc.city}, Kentucky` }],
+      images: [
+        {
+          url: "/images/real-estate-aerial-drone-leitchfield-ky.webp",
+          width: 1200,
+          height: 630,
+          alt: `Real estate drone photography in ${loc.city}, Kentucky`,
+        },
+      ],
     },
   };
 }
@@ -46,10 +63,11 @@ export async function generateMetadata({
 export default async function CityPage({
   params,
 }: {
-  params: Promise<{ city: string }>;
+  params: Promise<{ citySlug: string }>;
 }) {
-  const { city } = await params;
-  const loc = getLocationBySlug(city);
+  const { citySlug } = await params;
+  const slug = citySlugToLocSlug(citySlug);
+  const loc = slug ? getLocationBySlug(slug) : undefined;
   if (!loc) notFound();
 
   const BASE_URL =
@@ -111,14 +129,14 @@ export default async function CityPage({
       {
         "@type": "ListItem",
         position: 2,
-        name: "Services",
-        item: `${BASE_URL}/services`,
+        name: "Real Estate Photography",
+        item: `${BASE_URL}/services/real-estate`,
       },
       {
         "@type": "ListItem",
         position: 3,
-        name: `${loc.city} Real Estate Media`,
-        item: `${BASE_URL}/services/${loc.slug}`,
+        name: `${loc.city} Real Estate Photography`,
+        item: `${BASE_URL}/${citySlug}`,
       },
     ],
   };
@@ -130,7 +148,7 @@ export default async function CityPage({
     description: `Professional real estate drone photography, videography, and virtual staging services in ${loc.city}, ${loc.state}.`,
     telephone: "+1-270-307-0173",
     email: "cscreatesmediallc@gmail.com",
-    url: `${BASE_URL}/services/${loc.slug}`,
+    url: `${BASE_URL}/${citySlug}`,
     image: `${BASE_URL}/images/real-estate-aerial-drone-leitchfield-ky.webp`,
     priceRange: "$85-$380",
     address: {
@@ -181,10 +199,10 @@ export default async function CityPage({
           },
           {
             quote:
-              "OH MY GOSH!!!! I can't even say how amazing she is. She designed my watermark and logo and did absolutely AMAZING!!!!! I 100% recommend her for any design needs you may have.",
-            name: "Jared Clouse - Bary",
+              "I would recommend CS MEDIA to anyone! Simply the best person to work with and has PHENOMENAL turn around time. The photos taken of my wedding I'll cherish for a lifetime.",
+            name: "Bethany Brim",
             badge: "Recommends CS MEDIA, LLC",
-            service: "Logo & Design",
+            service: "Event Photography",
           },
         ];
 
@@ -202,11 +220,19 @@ export default async function CityPage({
         }}
       />
 
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Real Estate Photography", href: "/services/real-estate" },
+          { label: `${loc.city} Real Estate Photography` },
+        ]}
+      />
+
       {/* Hero */}
       <section className="relative bg-dark-900 py-12 sm:py-28 overflow-hidden">
         <Image
           src="/images/real-estate-aerial-drone-leitchfield-ky.webp"
-          alt={`Aerial drone photography in ${loc.city}, Kentucky`}
+          alt={`${loc.city}, KY real estate drone photography`}
           fill
           className="object-cover opacity-50"
           priority
@@ -218,8 +244,11 @@ export default async function CityPage({
               {loc.tagline}
             </span>
             <h1 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
-              {loc.headline}
+              {loc.city} Real Estate Photography
             </h1>
+            <p className="mt-2 text-base sm:text-xl text-gold/80 font-medium">
+              Drone, photo &amp; listing video for {loc.city}, {loc.state} listings
+            </p>
             <p className="mt-4 text-sm sm:text-lg text-dark-200 max-w-2xl mx-auto leading-relaxed">
               {loc.intro}
             </p>
@@ -227,9 +256,40 @@ export default async function CityPage({
         </div>
       </section>
 
+      {/* Trust strip */}
+      <section className="bg-dark-800 py-6 border-y border-gold/15">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center">
+            <div className="flex items-center gap-1.5">
+              {[...Array(5)].map((_, i) => (
+                <svg
+                  key={i}
+                  aria-hidden="true"
+                  className="w-4 h-4 text-gold"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span className="text-sm font-semibold text-white">
+              5.0 Stars
+            </span>
+            <span aria-hidden="true" className="hidden sm:inline text-dark-400">·</span>
+            <span className="text-sm text-dark-100">
+              Trusted by Kentucky Realtors
+            </span>
+            <span aria-hidden="true" className="hidden sm:inline text-dark-400">·</span>
+            <span className="text-sm text-dark-100">
+              FAA Part 107 Certified
+            </span>
+          </div>
+        </div>
+      </section>
+
       {/* Market Context */}
       <section className="py-12 sm:py-24 bg-dark-800 relative">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             <FadeIn>
@@ -238,9 +298,9 @@ export default async function CityPage({
                   The {loc.city} Market
                 </span>
                 <h2 className="mt-4 text-2xl md:text-3xl font-bold text-white tracking-tight">
-                  Why Professional Media Matters in {loc.county}
+                  {loc.city} Real Estate Photography &amp; the {loc.county} Market
                 </h2>
-                <p className="mt-5 text-dark-200 leading-relaxed">
+                <p className="mt-5 text-dark-100 leading-relaxed">
                   {loc.marketContext}
                 </p>
               </div>
@@ -251,9 +311,9 @@ export default async function CityPage({
                   Why CS Media
                 </span>
                 <h2 className="mt-4 text-2xl md:text-3xl font-bold text-white tracking-tight">
-                  What We Bring to {loc.city}
+                  How We Shoot {loc.city} Listings
                 </h2>
-                <p className="mt-5 text-dark-200 leading-relaxed">
+                <p className="mt-5 text-dark-100 leading-relaxed">
                   {loc.whyUs}
                 </p>
               </div>
@@ -261,7 +321,7 @@ export default async function CityPage({
           </div>
 
           <FadeIn delay={0.15}>
-            <div className="mt-10 sm:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="mt-10 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
               {[
                 {
                   label: "FAA Part 107",
@@ -278,15 +338,6 @@ export default async function CityPage({
                   icon: (
                     <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  ),
-                },
-                {
-                  label: "From $85",
-                  desc: isHomeBase ? "No mileage fees locally" : "Plus 2-way mileage from Leitchfield",
-                  icon: (
-                    <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   ),
                 },
@@ -328,14 +379,14 @@ export default async function CityPage({
                   Aerial Photography
                 </span>
                 <h2 className="mt-4 text-2xl md:text-3xl font-bold text-white tracking-tight">
-                  Drone Photography in {loc.city}, Kentucky
+                  {loc.city} Drone Photography &amp; Aerial Real Estate Video
                 </h2>
-                <p className="mt-5 text-dark-200 leading-relaxed">
+                <p className="mt-5 text-dark-100 leading-relaxed">
                   {loc.droneDetails}
                 </p>
                 <div className="mt-8">
                   <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-4">
-                    Our Services Include
+                    Our {loc.city} Real Estate Services
                   </h3>
                   <ul className="space-y-2.5">
                     {[
@@ -343,7 +394,7 @@ export default async function CityPage({
                       "FAA-certified drone photos & video",
                       "Cinematic property walkthrough videos",
                       "Virtual staging (+$25 per photo)",
-                      "Video editing & branded content",
+                      "Twilight edits (+$25 per photo)",
                       "Social media highlight reels",
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
@@ -372,9 +423,71 @@ export default async function CityPage({
         </div>
       </section>
 
-      {/* Property Types We Photograph */}
+      {/* Service Blocks (BCP-style stacked) */}
       <section className="py-12 sm:py-24 bg-dark-800 relative">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+        <div className="mx-auto max-w-5xl px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-10 sm:mb-14">
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                What&apos;s Included
+              </span>
+              <h2 className="mt-4 text-2xl md:text-3xl font-bold text-white tracking-tight">
+                Real Estate Media Services in {loc.city}, {loc.state}
+              </h2>
+            </div>
+          </FadeIn>
+          <div className="space-y-8 sm:space-y-10">
+            {[
+              {
+                title: "Photography",
+                body: `Bright, clean MLS-ready interior and exterior real estate photos for ${loc.city} and ${loc.county} listings. Every shoot includes professional HDR editing and color correction. Delivered in 24-48 hours.`,
+              },
+              {
+                title: "Drone Photography",
+                body: `FAA Part 107 certified aerial real estate photography in ${loc.city}, KY. Drone shots are included on every applicable shoot — not billed as a separate add-on. Aerial coverage shows lot context, acreage, and surroundings.`,
+              },
+              {
+                title: "Listing Video",
+                body: `30-90 second cinematic walkthrough videos for ${loc.city} real estate listings. Optimized for MLS, agent websites, and social media. Buyers tour the property before they ever schedule a showing.`,
+              },
+              {
+                title: "Virtual Staging",
+                body: `Empty rooms digitally furnished with realistic furniture and decor. A fraction of the cost of physical staging, available as a $25/photo add-on for any ${loc.city} or ${loc.county} listing.`,
+              },
+              {
+                title: "Twilight Edits",
+                body: `Premium twilight-edit treatment of exterior and aerial shots — turning daytime photos into golden-hour dramatics that stop the scroll. Available as a $25/photo add-on for any package.`,
+              },
+            ].map((s) => (
+              <FadeIn key={s.title}>
+                <div className="border-b border-dark-500/30 pb-8 sm:pb-10 last:border-b-0">
+                  <h3 className="text-sm font-bold text-gold uppercase tracking-[0.2em]">
+                    {s.title}
+                  </h3>
+                  <p className="mt-3 text-dark-100 leading-relaxed">
+                    {s.body}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+          <FadeIn>
+            <div className="mt-10 text-center">
+              <Link
+                href="/services"
+                className="text-sm text-gold hover:text-gold/80 transition-colors font-medium"
+              >
+                View all packages, add-ons &amp; pricing &rarr;
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      </section>
+
+      {/* Property Types We Photograph */}
+      <section className="py-12 sm:py-24 bg-dark-900 relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-10 sm:mb-14">
@@ -382,11 +495,10 @@ export default async function CityPage({
                 What We Shoot
               </span>
               <h2 className="mt-4 text-2xl md:text-3xl font-bold text-white tracking-tight">
-                Property Types We Photograph in {loc.city}
+                {loc.city} Property Types We Photograph
               </h2>
             </div>
           </FadeIn>
-          {/* Horizontal scroll on mobile, grid on desktop */}
           <div className="flex md:grid md:grid-cols-2 gap-4 sm:gap-8 max-w-5xl mx-auto overflow-x-auto pb-4 md:pb-0 snap-x snap-mandatory md:snap-none scrollbar-hide">
             {loc.propertyTypes.map((pt, i) => (
               <FadeIn key={pt.name} delay={i * 0.1}>
@@ -394,22 +506,22 @@ export default async function CityPage({
                   <h3 className="text-sm font-semibold text-gold uppercase tracking-[0.15em]">
                     {pt.name}
                   </h3>
-                  <p className="mt-3 text-dark-200 leading-relaxed text-sm">
+                  <p className="mt-3 text-dark-100 leading-relaxed text-sm">
                     {pt.description}
                   </p>
                 </div>
               </FadeIn>
             ))}
           </div>
-          <p className="mt-3 text-center text-[10px] text-dark-400 font-mono uppercase tracking-widest md:hidden">
+          <p className="mt-3 text-center text-[10px] text-dark-300 font-mono uppercase tracking-widest md:hidden">
             Swipe for more &rarr;
           </p>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </section>
 
       {/* Local Insight */}
-      <section className="py-12 sm:py-24 bg-dark-900 relative">
+      <section className="py-12 sm:py-24 bg-dark-800 relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="max-w-3xl mx-auto">
@@ -422,7 +534,7 @@ export default async function CityPage({
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-tight">
                 What {loc.city} Sellers &amp; Agents Should Know
               </h2>
-              <p className="mt-4 sm:mt-5 text-dark-200 leading-relaxed text-sm sm:text-base">
+              <p className="mt-4 sm:mt-5 text-dark-100 leading-relaxed text-sm sm:text-base">
                 {loc.localInsight}
               </p>
             </div>
@@ -431,8 +543,7 @@ export default async function CityPage({
       </section>
 
       {/* Pricing */}
-      <section className="py-12 sm:py-24 bg-dark-800 relative">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      <section className="py-12 sm:py-24 bg-dark-900 relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-14">
@@ -440,7 +551,7 @@ export default async function CityPage({
                 Pricing
               </span>
               <h2 className="mt-4 text-2xl md:text-3xl font-bold text-white tracking-tight">
-                {loc.city} Real Estate Media Packages
+                {loc.city} Real Estate Photography Packages
               </h2>
             </div>
           </FadeIn>
@@ -543,16 +654,15 @@ export default async function CityPage({
                 href="/services"
                 className="text-sm text-gold hover:text-gold/80 transition-colors font-medium"
               >
-                View all services &amp; add-ons &rarr;
+                View all packages &amp; add-ons &rarr;
               </Link>
             </div>
           </FadeIn>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </section>
 
       {/* FAQ */}
-      <section className="py-12 sm:py-24 bg-dark-900 relative">
+      <section className="py-12 sm:py-24 bg-dark-800 relative">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
@@ -561,17 +671,16 @@ export default async function CityPage({
                 FAQ
               </span>
               <h2 className="mt-4 text-2xl md:text-3xl font-bold text-white tracking-tight">
-                Common Questions About {loc.city} Shoots
+                {loc.city} Real Estate Photography FAQs
               </h2>
             </div>
           </FadeIn>
           <FAQAccordion faqs={loc.faqs} />
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </section>
 
       {/* Testimonials */}
-      <section className="py-12 sm:py-24 bg-dark-800 relative">
+      <section className="py-12 sm:py-24 bg-dark-900 relative">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
@@ -584,11 +693,11 @@ export default async function CityPage({
               </h2>
               <div className="mt-3 flex items-center justify-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                  <svg key={i} aria-hidden="true" className="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
-                <span className="ml-2 text-sm text-dark-200 font-mono">5.0</span>
+                <span className="ml-2 text-sm text-dark-100 font-mono">5.0</span>
               </div>
             </div>
           </FadeIn>
@@ -634,11 +743,11 @@ export default async function CityPage({
             </div>
           </FadeIn>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </section>
 
       {/* Portfolio Gallery */}
-      <section className="py-12 sm:py-24 bg-dark-900 relative">
+      <section className="py-12 sm:py-24 bg-dark-800 relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-10 sm:mb-14">
@@ -646,7 +755,7 @@ export default async function CityPage({
                 Our Work
               </span>
               <h2 className="mt-4 text-2xl md:text-3xl font-bold text-white tracking-tight">
-                Real Estate Photography Portfolio
+                {loc.city} Real Estate Photography Portfolio
               </h2>
             </div>
           </FadeIn>
@@ -679,33 +788,80 @@ export default async function CityPage({
         </div>
       </section>
 
-      {/* Nearby Areas */}
-      <section className="py-12 sm:py-16 bg-dark-800 relative">
+      {/* Geographic Coverage — BCP-style */}
+      <section className="py-12 sm:py-16 bg-dark-900 relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center">
+              <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                Serving Real Estate Agents Across {loc.county}
+              </h2>
+              <p className="mt-5 text-dark-100 leading-relaxed">
+                Headquartered in Leitchfield and on the road most weeks, CS Media
+                works with real estate agents, Airbnb hosts, property managers,
+                and private sellers throughout {loc.city} and surrounding{" "}
+                {loc.county}. Our regular shoot routes cover Hardin, Grayson,
+                Warren, Daviess, Nelson, LaRue, Hart, Breckinridge, Meade, and
+                Bullitt counties — central and western Kentucky's main real
+                estate corridors.
+              </p>
+              <p className="mt-6 text-sm text-dark-200 leading-loose">
+                We serve {loc.county}, including:{" "}
+                {loc.nearbyTowns.map((town, i) => {
+                  const isLast = i === loc.nearbyTowns.length - 1;
+                  const matchingLoc = locations.find(
+                    (l) => l.city.toLowerCase() === town.toLowerCase(),
+                  );
+                  return (
+                    <span key={town}>
+                      {matchingLoc && matchingLoc.slug !== loc.slug ? (
+                        <Link
+                          href={`/${matchingLoc.slug}${URL_SUFFIX}`}
+                          className="text-gold hover:underline"
+                        >
+                          {town}
+                        </Link>
+                      ) : (
+                        <span className="text-white">{town}</span>
+                      )}
+                      {isLast ? "." : ", "}
+                    </span>
+                  );
+                })}
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Other Cities We Serve */}
+      <section className="py-10 sm:py-14 bg-dark-800 relative">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
             <div className="text-center">
-              <h2 className="text-xl font-bold text-white tracking-tight">
-                Also Serving Nearby Areas
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                Other Markets We Serve
+              </span>
+              <h2 className="mt-3 text-lg sm:text-xl font-bold text-white tracking-tight">
+                Real Estate Photography Across Kentucky
               </h2>
-              <p className="mt-3 text-dark-200 text-sm">
-                We also serve clients in{" "}
-                {loc.nearbyAreas.join(", ")} and other communities throughout{" "}
-                {loc.county}.
-              </p>
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <p className="mt-5 text-sm text-dark-100 leading-loose">
                 {locations
                   .filter((l) => l.slug !== loc.slug)
-                  .map((l) => (
-                    <Link
-                      key={l.slug}
-                      href={`/services/${l.slug}`}
-                      className="rounded-full border border-dark-500/30 px-4 py-2 text-xs font-medium text-dark-200 hover:border-gold/30 hover:text-gold transition-colors"
-                    >
-                      {l.city}, {l.state}
-                    </Link>
+                  .map((l, i, arr) => (
+                    <span key={l.slug}>
+                      <Link
+                        href={`/${l.slug}${URL_SUFFIX}`}
+                        className="text-gold hover:underline"
+                      >
+                        {l.city} Real Estate Photography
+                      </Link>
+                      {i < arr.length - 1 ? "  ·  " : ""}
+                    </span>
                   ))}
-              </div>
+              </p>
             </div>
           </FadeIn>
         </div>

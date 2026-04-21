@@ -60,7 +60,7 @@ export default async function ProjectPage({
           ? project.heroImage
           : `${BASE_URL}${project.heroImage}`,
         contentUrl: `${BASE_URL}${project.videoSrc}`,
-        uploadDate: "2025-06-01T00:00:00Z",
+        uploadDate: project.uploadDate ?? "2025-01-01",
       }
     : null;
 
@@ -79,7 +79,7 @@ export default async function ProjectPage({
           src={project.heroImage}
           alt={project.title}
           fill
-          className="object-cover opacity-20"
+          className="object-cover object-top opacity-20"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900/50 via-dark-900/70 to-dark-900" />

@@ -139,9 +139,31 @@ export default function BeforeAfter({
         {/* Handle — touch target for mobile dragging */}
         <div
           ref={handleRef}
+          role="slider"
+          tabIndex={0}
+          aria-label="Before/after comparison slider"
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={Math.round(position)}
+          aria-valuetext={`Showing ${Math.round(position)}% before image, ${100 - Math.round(position)}% after image`}
+          onKeyDown={(e) => {
+            if (e.key === "ArrowLeft") {
+              e.preventDefault();
+              setPosition((p) => Math.max(0, p - (e.shiftKey ? 10 : 2)));
+            } else if (e.key === "ArrowRight") {
+              e.preventDefault();
+              setPosition((p) => Math.min(100, p + (e.shiftKey ? 10 : 2)));
+            } else if (e.key === "Home") {
+              e.preventDefault();
+              setPosition(0);
+            } else if (e.key === "End") {
+              e.preventDefault();
+              setPosition(100);
+            }
+          }}
           className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-dark-900/80 border-2 border-gold flex items-center justify-center backdrop-blur-sm pointer-events-auto touch-none ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}
         >
-          <svg className="w-5 h-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg aria-hidden="true" className="w-5 h-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7M9 19l7-7-7-7" />
           </svg>
         </div>

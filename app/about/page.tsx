@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     url: `${BASE_URL}/about`,
     siteName: "CS Media",
-    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.webp", width: 1200, height: 630, alt: "Aerial drone photo of a real estate property in Kentucky" }],
+    images: [{ url: "/images/cheris-chanthavong-cs-media-owner.webp", width: 1200, height: 630, alt: "Cheris Chanthavong — owner of CS Media, LLC in Leitchfield, Kentucky" }],
   },
 };
 
@@ -115,6 +115,7 @@ export default async function AboutPage() {
                       src="/videos/personalpromo.mp4"
                       poster="/images/cheris-chanthavong-cs-media-owner.webp"
                       posterAlt="Cheris S. Chanthavong, owner of CS Media"
+                      captionsSrc="/videos/personalpromo.vtt"
                     />
                   </div>
                   {/* Decorative accents */}

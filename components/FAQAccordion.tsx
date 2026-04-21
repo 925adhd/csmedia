@@ -5,6 +5,7 @@ import { useState } from "react";
 interface FAQItem {
   q: string;
   a: string;
+  aNode?: React.ReactNode;
 }
 
 export default function FAQAccordion({ faqs }: { faqs: FAQItem[] }) {
@@ -49,8 +50,8 @@ export default function FAQAccordion({ faqs }: { faqs: FAQItem[] }) {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="px-6 pb-5 text-dark-200 leading-relaxed text-sm">
-                  {faq.a}
+                <p className="px-6 pb-5 text-dark-100 leading-relaxed text-sm">
+                  {faq.aNode ?? faq.a}
                 </p>
               </div>
             </div>

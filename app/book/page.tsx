@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import ContactForm from "@/components/ContactForm";
 
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     type: "website",
     url: `${BASE_URL}/book`,
     siteName: "CS Media",
-    images: [{ url: "/images/real-estate-aerial-drone-leitchfield-ky.webp", width: 1200, height: 630, alt: "Aerial drone photo of a real estate property in Kentucky" }],
+    images: [{ url: "/images/twilight-ranch-home-evening-kentucky.webp", width: 1200, height: 630, alt: "Twilight real estate photography of a Kentucky ranch home — book a shoot with CS Media" }],
   },
 };
 
@@ -31,7 +32,7 @@ export default async function BookPage() {
 
   // Header fields
   const tagline = (headerContent?.tagline as string) || "Get in Touch";
-  const heading = "Request a Booking";
+  const heading = "Book a Shoot";
   const subtext = "Fill out the form or text (270) 307-0173. I'll get back to you within 24 hours.";
   const headerPhone = (headerContent?.phone as string) || "(270)\u00a0307-0173";
 
@@ -67,8 +68,17 @@ export default async function BookPage() {
   return (
     <>
       {/* Header */}
-      <section className="relative bg-dark-900 py-16 sm:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,169,110,0.06),transparent_60%)]" />
+      <section className="relative bg-dark-900 py-20 sm:py-36 min-h-[45vh] overflow-hidden">
+        <Image
+          src="/images/twilight-ranch-home-evening-kentucky.webp"
+          alt="Twilight real estate photography of a Kentucky ranch home — book a shoot with CS Media"
+          fill
+          sizes="100vw"
+          quality={75}
+          className="object-cover object-[center_35%] opacity-55"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-900/30 via-dark-900/55 to-dark-900" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <FadeIn>
             <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
@@ -77,7 +87,7 @@ export default async function BookPage() {
             <h1 className="mt-3 text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
               {heading}
             </h1>
-            <p className="mt-5 text-base sm:text-lg text-dark-200 max-w-2xl mx-auto">
+            <p className="mt-5 text-base sm:text-lg text-dark-100 max-w-2xl mx-auto">
               Fill out the form or text{" "}
               <a href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F" className="text-gold hover:text-gold-light transition-colors whitespace-nowrap">
                 (270) 307-0173

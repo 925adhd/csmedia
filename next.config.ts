@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { locations } from "./lib/locations";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseHostname = supabaseUrl
@@ -13,8 +14,15 @@ const nextConfig: NextConfig = {
       : [],
   },
   async redirects() {
+    const cityRedirects = locations.map((loc) => ({
+      source: `/services/${loc.slug}`,
+      destination: `/${loc.slug}-real-estate-photography`,
+      permanent: true,
+    }));
+
     return [
       { source: "/contact", destination: "/book", permanent: true },
+      ...cityRedirects,
     ];
   },
 };

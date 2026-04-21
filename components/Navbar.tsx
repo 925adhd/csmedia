@@ -10,9 +10,8 @@ import { CameraIcon } from "@/components/StepIcons";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/services", label: "Pricing" },
+  { href: "/services/real-estate", label: "Pricing" },
   { href: "/about", label: "About" },
-  { href: "/blog", label: "Blog" },
 ];
 
 export default function Navbar() {
@@ -60,8 +59,35 @@ export default function Navbar() {
               </Link>
             ))}
             <BookingButton
-              className="border-gradient rounded-full bg-gold/10 px-6 py-2.5 text-[13px] font-semibold uppercase tracking-wider text-gold transition-all hover:bg-gold/20 cursor-pointer"
+              className="group relative border-gradient rounded-full bg-gold/10 px-6 py-2.5 text-[13px] font-semibold uppercase tracking-wider text-gold transition-all hover:bg-gold/20 cursor-pointer"
             >
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 100 100"
+                className="flash-burst-sm pointer-events-none absolute -top-2 -right-2 h-6 w-6 text-gold"
+              >
+                <defs>
+                  <radialGradient id="navFlashCore" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="currentColor" stopOpacity="0.95" />
+                    <stop offset="40%" stopColor="currentColor" stopOpacity="0.55" />
+                    <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
+                  </radialGradient>
+                </defs>
+                <g fill="currentColor">
+                  <path d="M50 6 L52.5 50 L50 50 L47.5 50 Z" />
+                  <path d="M94 50 L50 52.5 L50 50 L50 47.5 Z" />
+                  <path d="M50 94 L47.5 50 L50 50 L52.5 50 Z" />
+                  <path d="M6 50 L50 47.5 L50 50 L50 52.5 Z" />
+                </g>
+                <g fill="currentColor" opacity="0.7" transform="rotate(45 50 50)">
+                  <path d="M50 20 L52 50 L50 50 L48 50 Z" />
+                  <path d="M80 50 L50 52 L50 50 L50 48 Z" />
+                  <path d="M50 80 L48 50 L50 50 L52 50 Z" />
+                  <path d="M20 50 L50 48 L50 50 L50 52 Z" />
+                </g>
+                <circle cx="50" cy="50" r="18" fill="url(#navFlashCore)" />
+                <circle cx="50" cy="50" r="5" fill="currentColor" />
+              </svg>
               Book Now
             </BookingButton>
           </div>

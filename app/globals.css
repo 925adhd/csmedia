@@ -96,6 +96,24 @@ textarea:focus-visible,
   .ken-burns { animation: none; }
 }
 
+/* Camera-flash starburst — subtle variant for persistent nav Book Now button */
+@keyframes flash-burst-sm {
+  0%   { opacity: 0;    transform: scale(0.2) rotate(0deg);   filter: drop-shadow(0 0 0 rgba(255,255,255,0)); }
+  30%  { opacity: 0.7;  transform: scale(0.9) rotate(8deg);   filter: drop-shadow(0 0 8px rgba(255,255,255,0.55)); }
+  70%  { opacity: 0.4;  transform: scale(1.15) rotate(12deg); filter: drop-shadow(0 0 6px rgba(255,255,255,0.3)); }
+  100% { opacity: 0;    transform: scale(1.35) rotate(16deg); filter: drop-shadow(0 0 0 rgba(255,255,255,0)); }
+}
+.flash-burst-sm {
+  opacity: 0;
+  transform-origin: center;
+}
+.group:hover .flash-burst-sm {
+  animation: flash-burst-sm 0.45s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .group:hover .flash-burst-sm { animation: none; }
+}
+
 /* Subtle scan line overlay for tech feel */
 .scanlines::after {
   content: "";

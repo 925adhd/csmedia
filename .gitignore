@@ -24,6 +24,16 @@
 .DS_Store
 *.pem
 
+# Claude Code local files (settings, screenshots, agent scripts)
+.claude/
+
+# Supabase CLI working dir
+supabase/.temp/
+
+# OS metadata
+**/desktop.ini
+**/Thumbs.db
+
 # debug
 npm-debug.log*
 yarn-debug.log*

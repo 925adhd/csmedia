@@ -90,6 +90,7 @@ export default function ContactForm({
                 id="name"
                 name="name"
                 type="text"
+                autoComplete="name"
                 required
                 className="w-full rounded-lg bg-dark-700 border border-dark-500 px-4 py-3.5 text-sm text-white placeholder-dark-300 focus:border-gold/50 focus:ring-1 focus:ring-gold/30 outline-none transition-colors"
                 placeholder="Your name"
@@ -103,6 +104,7 @@ export default function ContactForm({
                 id="email"
                 name="email"
                 type="email"
+                autoComplete="email"
                 required
                 className="w-full rounded-lg bg-dark-700 border border-dark-500 px-4 py-3.5 text-sm text-white placeholder-dark-300 focus:border-gold/50 focus:ring-1 focus:ring-gold/30 outline-none transition-colors"
                 placeholder="you@example.com"
@@ -119,6 +121,7 @@ export default function ContactForm({
                 id="phone"
                 name="phone"
                 type="tel"
+                autoComplete="tel"
                 className="w-full rounded-lg bg-dark-700 border border-dark-500 px-4 py-3.5 text-sm text-white placeholder-dark-300 focus:border-gold/50 focus:ring-1 focus:ring-gold/30 outline-none transition-colors"
                 placeholder="(555) 123-4567"
               />
@@ -150,6 +153,7 @@ export default function ContactForm({
               id="address"
               name="address"
               type="text"
+              autoComplete="street-address"
               className="w-full rounded-lg bg-dark-700 border border-dark-500 px-4 py-3.5 text-sm text-white placeholder-dark-300 focus:border-gold/50 focus:ring-1 focus:ring-gold/30 outline-none transition-colors"
               placeholder="123 Main St, City, State"
             />
@@ -170,7 +174,7 @@ export default function ContactForm({
           </div>
 
           {error && (
-            <p className="text-red-400 text-sm">
+            <p role="alert" aria-live="assertive" className="text-red-400 text-sm">
               Something went wrong. Please try again or text us directly.
             </p>
           )}

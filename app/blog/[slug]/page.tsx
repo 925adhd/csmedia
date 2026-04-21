@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import FadeIn from "@/components/FadeIn";
 import CTASection from "@/components/CTASection";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { blogPosts, getBlogPostBySlug } from "@/lib/blog";
 
 export function generateStaticParams() {
@@ -195,6 +196,14 @@ export default async function BlogPostPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+
+      <Breadcrumbs
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Blog", href: "/blog" },
+          { label: post.title },
+        ]}
+      />
 
       {/* Hero */}
       <section className="relative bg-dark-900 py-10 sm:py-20 overflow-hidden">

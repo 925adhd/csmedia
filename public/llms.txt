@@ -19,11 +19,13 @@
 
 - [Home](https://www.cscreatesmedia.com/): Overview of services, recent work, testimonials, and booking
 - [About](https://www.cscreatesmedia.com/about): Owner background, credentials, and service philosophy
-- [Services & Pricing](https://www.cscreatesmedia.com/services): Full service menu with package details and pricing
+- [Services Hub](https://www.cscreatesmedia.com/services): 3-card overview of service lines (Real Estate / Events / Video Production)
+- [Real Estate Photography & Pricing](https://www.cscreatesmedia.com/services/real-estate): Cornerstone page — full packages, add-ons, virtual staging, service-area coverage, and real estate FAQ
+- [Event Photography](https://www.cscreatesmedia.com/services/events): Weddings, baby showers, birthdays, and special occasions
+- [Video Production](https://www.cscreatesmedia.com/services/video-production): Promo videos, social reels, and business content for Kentucky brands
 - [Portfolio](https://www.cscreatesmedia.com/portfolio): Project case studies across real estate, drone work, and events
 - [Blog](https://www.cscreatesmedia.com/blog): Articles for Kentucky real estate agents on listing media
-- [Contact](https://www.cscreatesmedia.com/contact): Contact form, phone, and email
-- [Book a Shoot](https://www.cscreatesmedia.com/book): Scheduling page
+- [Book a Shoot](https://www.cscreatesmedia.com/book): Scheduling and quote-request page
 
 ## Services offered
 
@@ -36,13 +38,18 @@
 
 CS Media serves all of Kentucky with dedicated city pages for the primary markets:
 
-- [Leitchfield, KY](https://www.cscreatesmedia.com/services/leitchfield): Home market (Grayson County). No mileage fees. Farms, acreage, residential, and Rough River area rentals.
-- [Elizabethtown, KY](https://www.cscreatesmedia.com/services/elizabethtown): Hardin County market — residential and Fort Knox-area properties
-- [Bowling Green, KY](https://www.cscreatesmedia.com/services/bowling-green): Warren County — residential and new construction
-- [Owensboro, KY](https://www.cscreatesmedia.com/services/owensboro): Daviess County — urban and suburban listings
-- [Bardstown, KY](https://www.cscreatesmedia.com/services/bardstown): Nelson County — historic homes and rural properties
-
-Additional coverage: Caneyville, Clarkson, and surrounding Grayson County (no travel fees).
+- [Leitchfield, KY](https://www.cscreatesmedia.com/leitchfield-real-estate-photography): Home market (Grayson County). No mileage fees. Farms, acreage, residential, and Rough River area rentals.
+- [Elizabethtown, KY](https://www.cscreatesmedia.com/elizabethtown-real-estate-photography): Hardin County market — residential and Fort Knox-area properties
+- [Bowling Green, KY](https://www.cscreatesmedia.com/bowling-green-real-estate-photography): Warren County — residential and new construction
+- [Owensboro, KY](https://www.cscreatesmedia.com/owensboro-real-estate-photography): Daviess County — urban and suburban listings
+- [Bardstown, KY](https://www.cscreatesmedia.com/bardstown-real-estate-photography): Nelson County — historic homes and rural properties
+- [Radcliff, KY](https://www.cscreatesmedia.com/radcliff-real-estate-photography): Hardin County — Fort Knox-area properties (LAANC airspace)
+- [Hodgenville, KY](https://www.cscreatesmedia.com/hodgenville-real-estate-photography): LaRue County — farms, country residential, Lincoln Heritage tourism rentals
+- [Hardinsburg, KY](https://www.cscreatesmedia.com/hardinsburg-real-estate-photography): Breckinridge County — farms, hunting properties, Ohio River frontage
+- [Brandenburg, KY](https://www.cscreatesmedia.com/brandenburg-real-estate-photography): Meade County — Doe Valley resort, Ohio River frontage
+- [Shepherdsville, KY](https://www.cscreatesmedia.com/shepherdsville-real-estate-photography): Bullitt County — Louisville suburbs, Bernheim Forest area
+- [Caneyville, KY](https://www.cscreatesmedia.com/caneyville-real-estate-photography): Eastern Grayson County — local, no mileage fees
+- [Munfordville, KY](https://www.cscreatesmedia.com/munfordville-real-estate-photography): Hart County — I-65 corridor, Mammoth Cave-area rentals
 
 ## Portfolio projects
 

@@ -9,6 +9,8 @@ interface VideoPlayerProps {
   posterAlt?: string;
   aspectRatio?: string;
   className?: string;
+  /** WebVTT captions path — required for WCAG 1.2.2 AA when the video has spoken audio. */
+  captionsSrc?: string;
 }
 
 export default function VideoPlayer({
@@ -17,6 +19,7 @@ export default function VideoPlayer({
   posterAlt = "Video thumbnail",
   aspectRatio = "aspect-[9/16]",
   className = "",
+  captionsSrc,
 }: VideoPlayerProps) {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -78,6 +81,15 @@ export default function VideoPlayer({
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src={src} type="video/mp4" />
+          {captionsSrc && (
+            <track
+              kind="captions"
+              src={captionsSrc}
+              srcLang="en"
+              label="English"
+              default
+            />
+          )}
         </video>
       )}
     </div>

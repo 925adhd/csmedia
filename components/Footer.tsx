@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { locations } from "@/lib/locations";
 
 export default function Footer() {
   return (
@@ -51,7 +52,8 @@ export default function Footer() {
             <ul className="flex flex-wrap gap-x-4 gap-y-1 md:flex-col md:gap-x-0 text-sm">
               <li><Link href="/" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Home</Link></li>
               <li><Link href="/portfolio" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Portfolio</Link></li>
-              <li><Link href="/services" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Pricing</Link></li>
+              <li><Link href="/services" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Services</Link></li>
+              <li><Link href="/services/real-estate" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Pricing</Link></li>
               <li><Link href="/about" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">About</Link></li>
               <li><Link href="/book" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Book</Link></li>
               <li><Link href="/blog" className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors">Blog</Link></li>
@@ -70,13 +72,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                {/* Tappable on mobile, plain text on desktop */}
-                <span className="hidden md:inline-block py-1.5 text-dark-200 font-mono">
-                  270.307.0173
-                </span>
                 <a
                   href="tel:+12703070173"
-                  className="inline-block md:hidden py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors font-mono"
+                  className="inline-block py-1.5 text-dark-200 hover:text-gold hover:underline transition-colors font-mono"
                   onClick={() => {
                     if (typeof window !== "undefined" && typeof window.gtag === "function") {
                       window.gtag("event", "click_to_call", { event_category: "Contact", event_label: "Footer" });
@@ -105,17 +103,21 @@ export default function Footer() {
 
         <div className="mt-10 pt-8 border-t border-dark-500/30">
           <h3 className="text-xs font-semibold text-gold uppercase tracking-widest mb-3">
-            Service Areas
+            Real Estate Photography Service Areas
           </h3>
-          <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-dark-300">
-            <Link href="/services/leitchfield" className="inline-block py-1.5 hover:text-gold hover:underline transition-colors">Leitchfield</Link>
-            <Link href="/services/elizabethtown" className="inline-block py-1.5 hover:text-gold hover:underline transition-colors">Elizabethtown</Link>
-            <Link href="/services/bowling-green" className="inline-block py-1.5 hover:text-gold hover:underline transition-colors">Bowling Green</Link>
-            <Link href="/services/owensboro" className="inline-block py-1.5 hover:text-gold hover:underline transition-colors">Owensboro</Link>
-            <Link href="/services/bardstown" className="inline-block py-1.5 hover:text-gold hover:underline transition-colors">Bardstown</Link>
+          <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-dark-300">
+            {locations.map((loc) => (
+              <Link
+                key={loc.slug}
+                href={`/${loc.slug}-real-estate-photography`}
+                className="inline-block py-1.5 hover:text-gold hover:underline transition-colors"
+              >
+                {loc.city}
+              </Link>
+            ))}
           </div>
-          <p className="mt-2 text-xs text-dark-300">
-            Serving all of Kentucky. Out-of-state projects available upon request.
+          <p className="mt-3 text-xs text-dark-300">
+            Serving central and western Kentucky. Out-of-state projects available upon request.
           </p>
         </div>
 

@@ -16,7 +16,13 @@ export interface LocationData {
   localInsight: string;
   closingPitch: string;
   faqs: { q: string; a: string }[];
+  /** Short list (5) used in the intro "Also Serving Nearby Areas" copy */
   nearbyAreas: string[];
+  /**
+   * Full hyper-local town/community list (10–15) for the SEO-focused
+   * comma-separated paragraph at the bottom of the city page.
+   */
+  nearbyTowns: string[];
   distanceFromBase: string;
   /** Whether mileage applies */
   mileageNote: string;
@@ -88,10 +94,25 @@ export const locations: LocationData[] = [
       },
     ],
     nearbyAreas: ["Caneyville", "Clarkson", "Shrewsbury", "Big Clifty", "Falls of Rough"],
+    nearbyTowns: [
+      "Leitchfield",
+      "Caneyville",
+      "Clarkson",
+      "Big Clifty",
+      "Falls of Rough",
+      "Shrewsbury",
+      "Millwood",
+      "Centertown",
+      "Spring Lick",
+      "McDaniels",
+      "Madrid",
+      "Cub Run",
+      "Olaton",
+    ],
     distanceFromBase: "Home base",
     mileageNote: "No mileage fees",
     galleryImages: [
-      { src: "/images/stone-estate-aerial-overhead-drone.webp", alt: "Aerial overhead drone shot of stone estate in Grayson County, Kentucky" },
+      { src: "/images/aerial-drone-brick-home-grayson-county-ky.webp", alt: "Aerial drone real estate photo of a brick home in Grayson County, Kentucky" },
       { src: "/images/rustic-kitchen-wood-beams-island.webp", alt: "Rustic kitchen interior photography with wood beams and island" },
       { src: "/images/twilight-ranch-home-evening-kentucky.webp", alt: "Twilight real estate photography of a ranch home in Kentucky" },
       { src: "/images/stone-estate-living-room-fireplace.webp", alt: "Professional living room photography with stone fireplace" },
@@ -158,6 +179,20 @@ export const locations: LocationData[] = [
       },
     ],
     nearbyAreas: ["Radcliff", "Vine Grove", "Hodgenville", "Rineyville", "Cecilia"],
+    nearbyTowns: [
+      "Elizabethtown",
+      "Radcliff",
+      "Vine Grove",
+      "Cecilia",
+      "Glendale",
+      "Sonora",
+      "Upton",
+      "White Mills",
+      "Rineyville",
+      "West Point",
+      "Stephensburg",
+      "Hodgenville",
+    ],
     distanceFromBase: "~40 min from base",
     mileageNote: "+ mileage",
     galleryImages: [
@@ -228,6 +263,20 @@ export const locations: LocationData[] = [
       },
     ],
     nearbyAreas: ["Alvaton", "Smiths Grove", "Oakland", "Plum Springs", "Rich Pond"],
+    nearbyTowns: [
+      "Bowling Green",
+      "Smiths Grove",
+      "Plum Springs",
+      "Oakland",
+      "Rich Pond",
+      "Alvaton",
+      "Rockfield",
+      "Woodburn",
+      "Hadley",
+      "Memphis",
+      "Reedyville",
+      "Browning",
+    ],
     distanceFromBase: "~1 hour from base",
     mileageNote: "+ mileage",
     galleryImages: [
@@ -303,6 +352,21 @@ export const locations: LocationData[] = [
       },
     ],
     nearbyAreas: ["Whitesville", "Maceo", "Philpot", "Utica", "Calhoun"],
+    nearbyTowns: [
+      "Owensboro",
+      "Whitesville",
+      "Maceo",
+      "Philpot",
+      "Utica",
+      "Habit",
+      "Sorgho",
+      "Stanley",
+      "Knottsville",
+      "Curdsville",
+      "Pleasant Ridge",
+      "Yelvington",
+      "Calhoun",
+    ],
     distanceFromBase: "~1 hour from base",
     mileageNote: "+ mileage",
     galleryImages: [
@@ -382,6 +446,19 @@ export const locations: LocationData[] = [
       },
     ],
     nearbyAreas: ["Bloomfield", "New Haven", "Cox's Creek", "Boston", "Chaplin"],
+    nearbyTowns: [
+      "Bardstown",
+      "Bloomfield",
+      "New Haven",
+      "Cox's Creek",
+      "Boston",
+      "Chaplin",
+      "Fairfield",
+      "Deatsville",
+      "Howardstown",
+      "Loretto",
+      "Nazareth",
+    ],
     distanceFromBase: "~1 hour from base",
     mileageNote: "+ mileage",
     galleryImages: [
@@ -391,6 +468,588 @@ export const locations: LocationData[] = [
       { src: "/images/rustic-kitchen-wood-beams-island.webp", alt: "Professional kitchen real estate photography in Bardstown, KY" },
       { src: "/images/white-farmhouse-front-exterior-kentucky.webp", alt: "Exterior real estate photography of a farmhouse in Bardstown, Nelson County KY" },
       { src: "/images/twilight-ranch-aerial-drone-dusk.webp", alt: "Twilight aerial real estate photography of a Bardstown, KY property" },
+    ],
+  },
+  {
+    slug: "radcliff",
+    city: "Radcliff",
+    county: "Hardin County",
+    state: "KY",
+    tagline: "Real Estate Media for the Fort Knox Area",
+    headline: "Real Estate Photography & Drone Media in Radcliff, Hardin County KY",
+    intro:
+      "CS Media serves real estate agents and property owners in Radcliff, just north of Elizabethtown and directly bordering Fort Knox. Radcliff's market is shaped almost entirely by the post — military families rotating in, transitioning out, or stationed long-term make up a huge share of buyers and renters. That means a steady stream of out-of-state house-hunters who are deciding from listing photos alone, before they ever set foot in Kentucky.",
+    marketContext:
+      "Radcliff's housing market moves with the rhythm of Fort Knox PCS cycles. Spring and summer bring waves of incoming families looking to buy or rent quickly; fall and winter are heavier on outgoing listings. Time on market matters more here than in most Kentucky towns because PCS deadlines don't wait. Listings that don't get attention in the first week often sit. Professional photos and drone shots that load fast on phones and tell the full story upfront are the difference between a quick offer and a price reduction.",
+    whyUs:
+      "We understand the Fort Knox airspace map better than most photographers — we have to. Significant portions of Radcliff fall under controlled airspace that requires LAANC authorization for any drone flight, and parts are restricted entirely. We check every address before booking and won't waste your time with flights that can't legally happen.",
+    droneDetails:
+      "When drone photography is permitted in Radcliff, it's especially valuable for showing proximity to post — a major decision factor for incoming military families. Aerial shots can show how close a property is to gate access, schools serving Fort Knox families, and the commercial corridor along North Dixie Boulevard. For properties where airspace is restricted, we lean heavier on exterior coverage from elevated angles using poles and ladder mounts.",
+    propertyTypes: [
+      {
+        name: "Military Family Rentals",
+        description:
+          "Properties marketed to PCS families need to communicate practical information visually: layout, condition, yard size, and proximity to gates. We photograph with that audience in mind — clean, well-lit, and informative rather than artsy.",
+      },
+      {
+        name: "New Construction Subdivisions",
+        description:
+          "Radcliff's residential growth has produced steady new construction. We photograph builds at completion and document development progress. Drone shots, where airspace allows, show the full subdivision context.",
+      },
+      {
+        name: "Investment & Income Properties",
+        description:
+          "Long-standing rental demand from Fort Knox makes Radcliff an active investment market. We photograph multi-family properties, duplexes, and SFR rentals with a focus on what investors and tenants need to see.",
+      },
+    ],
+    localInsight:
+      "If you're listing in Radcliff, factor PCS season into your marketing timing. Listings that go live in March and April catch the wave of summer movers and tend to move fastest. Listings that drop in October sit. Professional photography is especially worth it during peak season — when the most buyers are searching, you want your listing standing out, not blending in with iPhone shots.",
+    closingPitch:
+      "We serve Radcliff regularly and check airspace before every booking so you know up front what we can legally capture. Packages start at $85 plus 2-way mileage.",
+    faqs: [
+      {
+        q: "Can you photograph properties in Radcliff with Fort Knox airspace restrictions?",
+        a: "Yes — but it depends on the address. Some Radcliff properties fall under Fort Knox restricted airspace where drone flights aren't permitted; others fall in zones where we can fly with LAANC authorization. We check every address before booking. If aerials aren't possible at your property, we'll let you know and adjust the package accordingly.",
+      },
+      {
+        q: "How far is Radcliff from CS Media?",
+        a: "About 50 minutes via the Western Kentucky Parkway and Highway 31W. We shoot in the Hardin County area regularly and can often batch Radcliff shoots with Elizabethtown, Vine Grove, or Hodgenville to reduce mileage costs.",
+      },
+      {
+        q: "Do you understand the military relocation market?",
+        a: "Yes. A significant portion of Radcliff buyers and renters are PCS families house-hunting from out of state. We photograph with that audience in mind — clear layouts, accurate representation, and aerial context where airspace allows.",
+      },
+      {
+        q: "What's the best time of year to photograph a Radcliff listing?",
+        a: "Spring (March–May) catches the wave of summer PCS moves and is when listings tend to move fastest. We can shoot year-round, but if you have flexibility on listing timing, peak PCS season is when professional photography pays for itself fastest.",
+      },
+      {
+        q: "Do you photograph properties in nearby Vine Grove or Fort Knox?",
+        a: "Yes. We serve all of Hardin County and frequently shoot in Vine Grove, Fort Knox housing areas (where allowed), and surrounding communities. Vine Grove airspace has fewer restrictions than central Radcliff.",
+      },
+    ],
+    nearbyAreas: ["Vine Grove", "Fort Knox", "Muldraugh", "West Point", "Stephensburg"],
+    nearbyTowns: [
+      "Radcliff",
+      "Vine Grove",
+      "Fort Knox",
+      "Muldraugh",
+      "West Point",
+      "Stephensburg",
+      "Elizabethtown",
+      "Cecilia",
+      "Rineyville",
+      "Brandenburg",
+      "Doe Valley",
+    ],
+    distanceFromBase: "~50 min from base",
+    mileageNote: "+ mileage",
+    galleryImages: [
+      { src: "/images/real-estate-aerial-drone-leitchfield-ky.webp", alt: "Aerial drone real estate photography in Radcliff, Hardin County KY" },
+      { src: "/images/rustic-kitchen-wood-beams-island.webp", alt: "Interior real estate photography of a kitchen in Radcliff, Kentucky" },
+      { src: "/images/twilight-ranch-home-evening-kentucky.webp", alt: "Twilight real estate photography of a ranch home in Radcliff, KY" },
+      { src: "/images/living-room-sectional-dark-floors.webp", alt: "Interior real estate photography of a living room in Radcliff, KY" },
+      { src: "/images/white-farmhouse-front-exterior-kentucky.webp", alt: "Exterior real estate photography of a home in Hardin County, KY" },
+      { src: "/images/covered-front-porch-kentucky-home.webp", alt: "Covered front porch exterior photography of a Radcliff, Kentucky home" },
+    ],
+  },
+  {
+    slug: "hodgenville",
+    city: "Hodgenville",
+    county: "LaRue County",
+    state: "KY",
+    tagline: "Real Estate Media for LaRue County",
+    headline: "Real Estate Photography & Drone Media in Hodgenville, LaRue County KY",
+    intro:
+      "CS Media provides real estate photography and drone video for agents and property owners in Hodgenville and LaRue County. Best known as the birthplace of Abraham Lincoln, Hodgenville is a small Kentucky town where most listings are residential homes, farmland, and rural acreage. Properties here often need aerial photography to do them justice — the land is part of the story.",
+    marketContext:
+      "Hodgenville's market is steady rather than fast-moving. Most buyers are local or relocating from nearby Hardin and Nelson counties, looking for rural living within commuting distance of Elizabethtown or Bardstown. Farms, hobby acreage, and country homes are the heart of LaRue County listings, and these are exactly the property types where drone photography makes the biggest difference. A 5-acre property looks the same as a 50-acre property in ground-level photos. From the air, the difference is obvious.",
+    whyUs:
+      "Most photographers serving LaRue County are based in Louisville or Lexington and treat Hodgenville as a side trip. We're 45 minutes away and treat it as part of our home territory. That means competitive pricing, fast scheduling, and someone who actually understands what rural Kentucky listings need to communicate.",
+    droneDetails:
+      "Aerial photography is essential for the kind of properties that dominate the LaRue County market. Our drone shots show acreage, fence lines, woods, ponds, and the relationship between the house and the surrounding land. For Lincoln Heritage Trail tourism properties, drone footage captures the rolling Kentucky countryside that draws visitors here.",
+    propertyTypes: [
+      {
+        name: "Farms & Rural Acreage",
+        description:
+          "LaRue County is farm country. Drone photography captures the full scope of these properties — total acreage, pasture vs. timber, water features, outbuildings, and road frontage. We shoot at angles that make the land the focus.",
+      },
+      {
+        name: "Country Residential",
+        description:
+          "Many Hodgenville-area listings are 1-5 acre residential properties on rural roads. These need a balanced approach: interior photos that highlight the home and aerial shots that show the lot and setting.",
+      },
+      {
+        name: "Lincoln Heritage Tourism Properties",
+        description:
+          "Hodgenville's Lincoln Birthplace National Historical Park draws tourists year-round. Bed-and-breakfasts, Airbnb properties, and tourism-related real estate benefit from drone footage that captures the area's rural Kentucky character.",
+      },
+    ],
+    localInsight:
+      "Rural property listings in LaRue County often underperform because they're photographed like in-town houses — close-up exteriors, backyard shots from the patio, no sense of scale. The whole reason someone is buying acreage is the acreage itself. If your photos don't make it the star, you're underselling the property. Even a single drone shot of total land area can change how a listing feels online.",
+    closingPitch:
+      "Whether you're listing a Hodgenville residential property, a LaRue County farm, or a tourism-related rental, we can help. Packages start at $85 plus 2-way mileage from Leitchfield.",
+    faqs: [
+      {
+        q: "Do you photograph farms and acreage in LaRue County?",
+        a: "Yes. Farm and rural acreage listings are some of the most common shoots we do. Our drone equipment captures the full scope of large properties in a way ground-level photos simply can't match.",
+      },
+      {
+        q: "How far is CS Media from Hodgenville?",
+        a: "About 45 minutes via the Western Kentucky Parkway and US-31E. We shoot in LaRue County regularly and can batch with nearby Elizabethtown or Bardstown shoots to reduce mileage.",
+      },
+      {
+        q: "Can you fly drones in Hodgenville?",
+        a: "Yes. Hodgenville and most of LaRue County are in uncontrolled (Class G) airspace with no FAA restrictions. Drone flights for real estate are routine here.",
+      },
+      {
+        q: "Do you photograph Airbnb and short-term rental properties?",
+        a: "Yes. Tourism-focused properties along the Lincoln Heritage Trail benefit from professional photography that captures both the property and its rural Kentucky setting. We tailor the shoot to the audience the property is marketed to.",
+      },
+      {
+        q: "What if my Hodgenville property is mostly land?",
+        a: "Land-heavy listings are exactly where drone photography is most valuable. We can do an aerial-only package starting at $85 if there's no structure to photograph, or include extensive aerial coverage in any package if there's a home plus significant acreage.",
+      },
+    ],
+    nearbyAreas: ["Buffalo", "Magnolia", "Mount Sherman", "Athertonville", "Tonieville"],
+    nearbyTowns: [
+      "Hodgenville",
+      "Buffalo",
+      "Magnolia",
+      "Mount Sherman",
+      "Athertonville",
+      "Tonieville",
+      "Upton",
+      "Sonora",
+      "New Haven",
+      "Howardstown",
+      "Elizabethtown",
+    ],
+    distanceFromBase: "~45 min from base",
+    mileageNote: "+ mileage",
+    galleryImages: [
+      { src: "/images/country-home-aerial-acreage-kentucky.webp", alt: "Aerial drone photography of a country home on acreage in Hodgenville, LaRue County KY" },
+      { src: "/images/rustic-kitchen-wood-beams-island.webp", alt: "Interior real estate photography of a rustic kitchen in Hodgenville, KY" },
+      { src: "/images/white-farmhouse-aerial-drone-kentucky.webp", alt: "Aerial drone photo of a white farmhouse on Kentucky acreage in LaRue County" },
+      { src: "/images/twilight-ranch-home-evening-kentucky.webp", alt: "Twilight real estate photography of a ranch home in Hodgenville, KY" },
+      { src: "/images/covered-front-porch-kentucky-home.webp", alt: "Covered front porch exterior real estate photography in LaRue County, Kentucky" },
+      { src: "/images/stone-estate-living-room-fireplace.webp", alt: "Professional living room real estate photography in Hodgenville, KY" },
+    ],
+  },
+  {
+    slug: "hardinsburg",
+    city: "Hardinsburg",
+    county: "Breckinridge County",
+    state: "KY",
+    tagline: "Real Estate Media for Breckinridge County",
+    headline: "Real Estate Photography & Drone Media in Hardinsburg, Breckinridge County KY",
+    intro:
+      "CS Media serves real estate agents and property owners in Hardinsburg and across Breckinridge County. Hardinsburg sits at the geographic center of Breckinridge — a rural county defined by Ohio River frontage, rolling farmland, and small-town communities. Most listings here are land-heavy and need aerial photography to communicate what they actually offer.",
+    marketContext:
+      "Breckinridge County's market is rural through and through. Most listings are farms, hunting properties, country homes, and Ohio River-adjacent properties. Buyers are typically looking for land — to farm, to hunt, to retire on, or to escape the city. The traditional real estate listing format — interior shots and a curb-appeal exterior — completely misses what these properties are actually selling. Drone photography is the difference between a listing that resonates and one that gets scrolled past.",
+    whyUs:
+      "We're a 35-minute drive from Hardinsburg via Highway 259, which means we can shoot Breckinridge County properties at lower mileage costs than photographers based in Louisville or Owensboro. We understand rural Kentucky listings — and we'll spend more time in the air capturing land features than we will arranging throw pillows on a couch.",
+    droneDetails:
+      "Drone photography in Breckinridge County serves one main purpose: showing the land. Total acreage, timber stands, pasture, ponds, creeks, and topography are all features that ground-level photos can't communicate. For Ohio River-adjacent properties, aerial shots also capture water access and views — major selling points that buyers are specifically searching for.",
+    propertyTypes: [
+      {
+        name: "Farms & Hunting Land",
+        description:
+          "Breckinridge County is prime hunting country. Properties marketed to hunters and farmers need drone coverage that shows woods, food plots, water sources, fence lines, and access roads. We shoot at angles that emphasize the land's usable features.",
+      },
+      {
+        name: "Ohio River Properties",
+        description:
+          "Properties along the Ohio River — including those near Cloverport and Stephensport — benefit enormously from aerial photography. Drone shots capture river access, views, and the property's relationship to the water in a way no ground-level photo can match.",
+      },
+      {
+        name: "Rural Residential",
+        description:
+          "Country homes on 1-10 acre lots are common in Breckinridge County. These listings need balanced coverage: interior photography of the home plus aerial shots that show the lot, outbuildings, and surrounding rural setting.",
+      },
+    ],
+    localInsight:
+      "Hunting properties are a meaningful slice of the Breckinridge County market, and they're often listed badly. Photos of the cabin, photos of the gravel driveway, maybe one wide shot of the woods — that's not enough. Buyers paying real money for hunting land want to see the topography, the timber, the water sources, and the layout of the property as a whole. A few well-flown drone shots tell that story in seconds.",
+    closingPitch:
+      "Whether you're listing a Breckinridge County farm, a hunting property, an Ohio River cabin, or an in-town Hardinsburg home, we can help. Packages start at $85 plus 2-way mileage.",
+    faqs: [
+      {
+        q: "Do you photograph hunting and recreational properties in Breckinridge County?",
+        a: "Yes. Hunting and recreational land is a major part of the Breckinridge County market. We use drone photography to show topography, timber, water sources, and access — the features that actually matter to hunting and recreational buyers.",
+      },
+      {
+        q: "How far is Hardinsburg from CS Media?",
+        a: "About 35 minutes via Highway 259 from Leitchfield. Breckinridge County is one of our closest neighboring markets, so mileage costs are minimal.",
+      },
+      {
+        q: "Can you fly drones along the Ohio River in Breckinridge County?",
+        a: "Yes. Most of Breckinridge County is in uncontrolled (Class G) airspace. River-adjacent properties near Cloverport, Stephensport, and Lewisport are routine for drone work.",
+      },
+      {
+        q: "Do you photograph farms and large acreage?",
+        a: "Yes. Large rural properties are some of our most common shoots. We fly at multiple altitudes to capture both the overall property scope and specific features like outbuildings, water, and field layout.",
+      },
+      {
+        q: "What if my listing is mostly land with a small structure?",
+        a: "That's a typical rural listing for us. Our aerial-only package ($85) is great for land-only listings, and our larger packages can be weighted toward aerial coverage if the structure is secondary to the land. We tailor the shoot to the property.",
+      },
+    ],
+    nearbyAreas: ["Cloverport", "Irvington", "Stephensport", "Custer", "Big Spring"],
+    nearbyTowns: [
+      "Hardinsburg",
+      "Cloverport",
+      "Irvington",
+      "Stephensport",
+      "Custer",
+      "Sample",
+      "Garfield",
+      "Big Spring",
+      "Webster",
+      "McDaniels",
+      "Falls of Rough",
+    ],
+    distanceFromBase: "~35 min from base",
+    mileageNote: "+ mileage",
+    galleryImages: [
+      { src: "/images/country-home-aerial-acreage-kentucky.webp", alt: "Aerial drone photography of a country home on acreage in Hardinsburg, Breckinridge County KY" },
+      { src: "/images/white-farmhouse-aerial-drone-kentucky.webp", alt: "Aerial drone photo of a white farmhouse in Breckinridge County, Kentucky" },
+      { src: "/images/rustic-kitchen-wood-beams-island.webp", alt: "Interior real estate photography of a rustic kitchen in Hardinsburg, KY" },
+      { src: "/images/twilight-ranch-aerial-drone-dusk.webp", alt: "Twilight aerial drone photography of a property in Breckinridge County, KY" },
+      { src: "/images/covered-front-porch-kentucky-home.webp", alt: "Covered front porch exterior real estate photography in Hardinsburg, Kentucky" },
+      { src: "/images/stone-estate-aerial-overhead-drone.webp", alt: "Overhead aerial drone real estate photography in Breckinridge County, Kentucky" },
+    ],
+  },
+  {
+    slug: "brandenburg",
+    city: "Brandenburg",
+    county: "Meade County",
+    state: "KY",
+    tagline: "Real Estate Media for Meade County",
+    headline: "Real Estate Photography & Drone Media in Brandenburg, Meade County KY",
+    intro:
+      "CS Media provides real estate photography and drone video for agents and property owners in Brandenburg and Meade County. Brandenburg sits on the Ohio River with views across to Indiana and a market that's quietly grown into one of the region's better-kept secrets — driven by Doe Valley resort properties, river-frontage land, and steady residential demand from commuters working in Louisville and Fort Knox.",
+    marketContext:
+      "Brandenburg's real estate market is more diverse than its small-town size suggests. Doe Valley alone is a 4,000+ acre gated resort community with golf, lake, and lifestyle amenities — properties there often sell to out-of-state buyers who are deciding from listing photos. Add in Ohio River frontage, rural farmland, and a residential core in town, and you have a market where the right photographic approach varies dramatically by property type. One-size-fits-all photography doesn't work here.",
+    whyUs:
+      "We approach every Brandenburg shoot based on what the specific property needs. A Doe Valley golf-course home gets different framing than a 50-acre farm in rural Meade County, and both get different treatment than a townhome near downtown Brandenburg. Our drone capabilities are especially valuable for river-adjacent and resort properties where the setting is the selling point.",
+    droneDetails:
+      "Brandenburg's location on the Ohio River makes drone photography especially valuable. For river-frontage properties, aerials are the only way to capture the water relationship — the view, the access, and how the property sits relative to the river. For Doe Valley properties, drone shots show the resort community context, golf course proximity, and lake access. For rural Meade County listings, aerials communicate acreage and land use the same way they do for any rural Kentucky property.",
+    propertyTypes: [
+      {
+        name: "Doe Valley Resort Properties",
+        description:
+          "Doe Valley is a destination community with its own buyer pool. We photograph these properties with the lifestyle in mind — golf course views, lake proximity, gated community atmosphere, and the resort amenities that justify the price point.",
+      },
+      {
+        name: "Ohio River Frontage",
+        description:
+          "Properties on or near the Ohio River command a premium, but only if the photography communicates the river relationship. Drone shots capture the water views, river access, and property setting in ways no ground-level photo can match.",
+      },
+      {
+        name: "Meade County Farms & Acreage",
+        description:
+          "Outside of Brandenburg and Doe Valley, Meade County has significant rural acreage. Drone photography shows total land scope, fence lines, tree cover, and water features — the details that drive rural property sales.",
+      },
+    ],
+    localInsight:
+      "Doe Valley listings are a category of their own. Buyers there are often shopping from out of state and comparing properties against resort communities elsewhere. Generic real estate photos don't compete. The properties that move fastest are the ones with drone footage showing the resort layout, golf course context, and the lifestyle amenities — not just the house. If you're listing a Doe Valley property, professional photography isn't optional.",
+    closingPitch:
+      "Whether you're listing in Doe Valley, on the Ohio River, or anywhere in Meade County, we can help your property show its best. Packages start at $85 plus 2-way mileage from Leitchfield.",
+    faqs: [
+      {
+        q: "Do you photograph properties in Doe Valley?",
+        a: "Yes. Doe Valley is a strong fit for our services — the resort setting, golf course views, and lake amenities all benefit from professional drone photography that shows the full property context, not just the home.",
+      },
+      {
+        q: "How far is Brandenburg from CS Media?",
+        a: "About 1 hour 10 minutes via Highway 259 and US-60. Meade County is a regular service area for us.",
+      },
+      {
+        q: "Can you fly drones along the Ohio River in Brandenburg?",
+        a: "Yes. Most of Meade County is in uncontrolled airspace. The Ohio River corridor is routine for drone work, though we always check airspace authorization for specific addresses.",
+      },
+      {
+        q: "Do you photograph river-frontage properties differently?",
+        a: "We weight the shoot more heavily toward exterior and aerial coverage when the river is the main selling point. Drone shots that capture the water relationship, views, and access are critical for these listings.",
+      },
+      {
+        q: "What if I have multiple Doe Valley listings?",
+        a: "We can batch multiple properties into a single trip to reduce per-listing mileage. Doe Valley is a tight community, so it's especially efficient to schedule a few shoots together.",
+      },
+    ],
+    nearbyAreas: ["Doe Valley", "Muldraugh", "Ekron", "Payneville", "Battletown"],
+    nearbyTowns: [
+      "Brandenburg",
+      "Doe Valley",
+      "Muldraugh",
+      "Ekron",
+      "Payneville",
+      "Battletown",
+      "Wolf Creek",
+      "Andyville",
+      "Flaherty",
+      "Big Spring",
+      "Radcliff",
+      "Vine Grove",
+    ],
+    distanceFromBase: "~1 hr 10 min from base",
+    mileageNote: "+ mileage",
+    galleryImages: [
+      { src: "/images/stone-estate-aerial-overhead-drone.webp", alt: "Aerial drone real estate photography in Brandenburg, Meade County KY" },
+      { src: "/images/twilight-ranch-aerial-drone-dusk.webp", alt: "Twilight aerial drone photography of an Ohio River property in Meade County, KY" },
+      { src: "/images/stone-estate-living-room-fireplace.webp", alt: "Professional living room real estate photography in Brandenburg, KY" },
+      { src: "/images/country-home-aerial-acreage-kentucky.webp", alt: "Aerial drone photo of a country home on acreage in Meade County, KY" },
+      { src: "/images/rustic-kitchen-wood-beams-island.webp", alt: "Interior real estate photography of a kitchen in Brandenburg, Kentucky" },
+      { src: "/images/white-farmhouse-front-exterior-kentucky.webp", alt: "Exterior real estate photography of a farmhouse in Meade County, Kentucky" },
+    ],
+  },
+  {
+    slug: "shepherdsville",
+    city: "Shepherdsville",
+    county: "Bullitt County",
+    state: "KY",
+    tagline: "Real Estate Media for Bullitt County",
+    headline: "Real Estate Photography & Drone Media in Shepherdsville, Bullitt County KY",
+    intro:
+      "CS Media serves real estate agents and property owners in Shepherdsville and Bullitt County — Louisville's southern suburbs and the gateway to Bernheim Forest. Bullitt County's growth is driven by buyers who want Louisville access without Louisville prices, and the market is competitive enough that professional listing media has become the expectation, not the exception.",
+    marketContext:
+      "Bullitt County is one of Kentucky's fastest-growing counties, and Shepherdsville is at the heart of it. Subdivisions along the I-65 corridor, new construction in Mt. Washington and Hillview, and rural acreage around Bernheim Forest mean a constant flow of new listings. Buyers are typically Louisville commuters or families relocating from out of state, both of whom rely heavily on listing photos to filter their search before scheduling showings. In a market with this much inventory, weak photography is a guaranteed way to lose attention.",
+    whyUs:
+      "We deliver Louisville-quality real estate photography at small-town pricing. Most Bullitt County agents have used Louisville-based photographers and know the experience: high prices, week-long turnaround, and standardized shoots. We're 1 hour 15 minutes south, charge competitive rates, and deliver in 24-48 hours. For agents with multiple Bullitt County listings, the math works heavily in our favor.",
+    droneDetails:
+      "Drone photography in Bullitt County is valuable in two main ways: it shows neighborhood context for suburban subdivision homes (proximity to schools, parks, I-65 access, Bernheim Forest), and it captures land scope for the rural acreage listings outside the developed corridors. For Mt. Washington and Hillview new construction, drone shots also document development progress and lot placement within larger subdivisions.",
+    propertyTypes: [
+      {
+        name: "Subdivision Homes & New Construction",
+        description:
+          "Shepherdsville and Mt. Washington have ongoing residential development. We photograph completed builds and document construction progress. Drone shots are particularly valuable for showing lot placement and surrounding amenities.",
+      },
+      {
+        name: "Louisville Commuter Properties",
+        description:
+          "Many Bullitt County buyers are Louisville professionals looking for more space and lower prices. These listings need to communicate practical information clearly: layout, condition, yard, and commute proximity to I-65 and downtown Louisville.",
+      },
+      {
+        name: "Bernheim Area & Rural Acreage",
+        description:
+          "South of Shepherdsville, Bullitt County opens into rural acreage near Bernheim Forest. These listings need extensive drone coverage to communicate land scope, woodland features, and proximity to the forest — a major lifestyle draw.",
+      },
+    ],
+    localInsight:
+      "Shepherdsville's proximity to Louisville means buyers have lots of comparison options — a Bullitt County listing isn't just competing with other Bullitt County listings, it's competing with Jefferson County properties at similar prices. The listings that get attention are the ones with photography that matches Louisville-market quality. Cell phone photos don't survive that comparison.",
+    closingPitch:
+      "Whether you're listing in Shepherdsville, Mt. Washington, or anywhere in Bullitt County, we can deliver Louisville-quality photography at small-town pricing. Packages start at $85 plus 2-way mileage.",
+    faqs: [
+      {
+        q: "Do you serve the Louisville suburbs?",
+        a: "Yes. Bullitt County — Shepherdsville, Mt. Washington, Hillview, and surrounding communities — is a regular service area for us. We're 1 hour 15 minutes from Shepherdsville via I-65.",
+      },
+      {
+        q: "Can you fly drones in Bullitt County?",
+        a: "Most of Bullitt County is in uncontrolled (Class G) airspace and routine for drone work. The northern edge of the county brushes Louisville's controlled airspace, so we always verify authorization for specific addresses, especially properties near I-265.",
+      },
+      {
+        q: "How does your pricing compare to Louisville real estate photographers?",
+        a: "We're significantly less expensive than most Louisville-based photographers — typically 30-50% lower for comparable packages — while delivering the same quality and 24-48 hour turnaround. The trade-off is mileage from Leitchfield, but for Bullitt County properties that's still well below Louisville rates.",
+      },
+      {
+        q: "Do you photograph multiple Bullitt County listings in one trip?",
+        a: "Yes, and it's a smart way to keep mileage costs low. If you have 2-3 listings in Shepherdsville, Mt. Washington, or surrounding areas, we can batch them into a single trip and reduce per-property travel charges.",
+      },
+      {
+        q: "Can you photograph properties near Bernheim Forest?",
+        a: "Yes. The Bernheim area has some of Bullitt County's most distinctive rural acreage listings, and they benefit enormously from drone photography that captures the relationship between the property and the forest setting.",
+      },
+    ],
+    nearbyAreas: ["Mt. Washington", "Hillview", "Hebron Estates", "Pioneer Village", "Lebanon Junction"],
+    nearbyTowns: [
+      "Shepherdsville",
+      "Mt. Washington",
+      "Hillview",
+      "Hebron Estates",
+      "Pioneer Village",
+      "Lebanon Junction",
+      "Brooks",
+      "Belmont",
+      "Knob Creek",
+      "Clermont",
+      "Cox's Creek",
+    ],
+    distanceFromBase: "~1 hr 15 min from base",
+    mileageNote: "+ mileage",
+    galleryImages: [
+      { src: "/images/stone-estate-aerial-overhead-drone.webp", alt: "Aerial drone real estate photography in Shepherdsville, Bullitt County KY" },
+      { src: "/images/living-room-sectional-dark-floors.webp", alt: "Interior real estate photography of a modern living room in Shepherdsville, KY" },
+      { src: "/images/twilight-ranch-home-evening-kentucky.webp", alt: "Twilight real estate photography of a ranch home in Bullitt County, KY" },
+      { src: "/images/upper-level-loft-staircase-landing.webp", alt: "Interior real estate photography of a loft staircase in Shepherdsville, KY" },
+      { src: "/images/white-farmhouse-front-exterior-kentucky.webp", alt: "Exterior real estate photography of a farmhouse in Bullitt County, Kentucky" },
+      { src: "/images/country-home-aerial-acreage-kentucky.webp", alt: "Aerial drone photo of a country home in Bullitt County, near Bernheim Forest" },
+    ],
+  },
+  {
+    slug: "caneyville",
+    city: "Caneyville",
+    county: "Grayson County",
+    state: "KY",
+    tagline: "Local Service for Eastern Grayson County",
+    headline: "Real Estate Photography & Drone Media in Caneyville, Grayson County KY",
+    intro:
+      "CS Media is based right next door in Leitchfield and serves Caneyville and eastern Grayson County with no mileage fees. Caneyville is small-town Kentucky at its most authentic — most listings are residential homes, working farms, and rural acreage along the Highway 62 corridor. As your local real estate photographer, we can be on-site within days of booking.",
+    marketContext:
+      "Caneyville's market is steady and rural. Most listings are residential homes on small lots, working farms with significant acreage, and country properties on rural roads. Buyers are typically local — Grayson County families looking to upsize or downsize — or relocators from Louisville, Owensboro, or Bowling Green looking for affordable rural living. Either way, photos that communicate the property's character and the surrounding setting drive interest.",
+    whyUs:
+      "We're 15 minutes from Caneyville. That means same-week scheduling, no travel fees, and a photographer who knows Grayson County. Other photographers serving this area are either driving in from Louisville (and charging accordingly) or are hobbyists with phones. We're neither — we're professional, local, and affordable.",
+    droneDetails:
+      "Caneyville's rural setting is exactly the kind of terrain where drone photography earns its keep. Aerial shots show the relationship between a house and its surrounding land — pasture, woods, ponds, fence lines — that ground-level photos can't communicate. For working farms and acreage listings, drone coverage is the difference between a listing that sells fast and one that sits.",
+    propertyTypes: [
+      {
+        name: "Working Farms",
+        description:
+          "Eastern Grayson County has active agricultural land. Farm listings need drone photography that shows pasture, barn locations, water sources, and the working layout of the property — features that buyers in this market specifically search for.",
+      },
+      {
+        name: "Country Residential",
+        description:
+          "Most Caneyville-area homes sit on 1-10 acre lots along rural roads. We balance interior coverage of the home with aerial shots of the lot and surrounding setting.",
+      },
+      {
+        name: "Rough River Adjacent Properties",
+        description:
+          "Eastern Grayson County borders the Rough River area. Properties within driving distance of Rough River Lake have lifestyle appeal that drone photography helps communicate — even if the lake isn't directly visible from the property.",
+      },
+    ],
+    localInsight:
+      "The biggest mistake we see on Caneyville-area listings is treating them like in-town houses. A rural property on five acres needs photos that show the five acres — not just the house and a slice of the front yard. Even a single high-altitude drone shot transforms how buyers perceive the property's value. The cost of professional photography is recovered the moment a buyer doesn't scroll past your listing.",
+    closingPitch:
+      "Caneyville is part of our home territory. No mileage fees, fast scheduling, packages from $85.",
+    faqs: [
+      {
+        q: "Do you charge travel fees for Caneyville shoots?",
+        a: "No. CS Media is based in Leitchfield, just 15 minutes from Caneyville. There are zero travel or mileage fees anywhere in Grayson County.",
+      },
+      {
+        q: "Can you fly drones in Caneyville?",
+        a: "Yes. Caneyville and eastern Grayson County are in uncontrolled (Class G) airspace with no FAA restrictions. We're FAA Part 107 certified and routinely include drone shots on Caneyville-area shoots.",
+      },
+      {
+        q: "How quickly can you photograph a Caneyville listing?",
+        a: "Often within 1-3 days of booking. As your local photographer, we can frequently fit Caneyville shoots into our schedule on short notice.",
+      },
+      {
+        q: "Do you photograph farms and acreage in eastern Grayson County?",
+        a: "Yes. Working farms and rural acreage are some of our most common shoots in the Grayson County area. Drone photography is essential for these listings, and we include it at no extra charge in all applicable packages.",
+      },
+      {
+        q: "What's included in your Caneyville packages?",
+        a: "Same as anywhere else: edited, MLS-ready deliverables in 24-48 hours. Aerial-only is $85, Photo Package with drone is $200, and full packages with listing video run $280–$380. No mileage fees in Grayson County.",
+      },
+    ],
+    nearbyAreas: ["Leitchfield", "Clarkson", "Centertown", "Beaver Dam", "Falls of Rough"],
+    nearbyTowns: [
+      "Caneyville",
+      "Leitchfield",
+      "Clarkson",
+      "Big Clifty",
+      "Centertown",
+      "Beaver Dam",
+      "Falls of Rough",
+      "Spring Lick",
+      "Millwood",
+      "Madrid",
+      "Cub Run",
+    ],
+    distanceFromBase: "~15 min from base",
+    mileageNote: "No mileage fees",
+    galleryImages: [
+      { src: "/images/country-home-aerial-acreage-kentucky.webp", alt: "Aerial drone photography of a country home on acreage in Caneyville, Grayson County KY" },
+      { src: "/images/white-farmhouse-aerial-drone-kentucky.webp", alt: "Aerial drone photo of a white farmhouse in Caneyville, Kentucky" },
+      { src: "/images/rustic-kitchen-wood-beams-island.webp", alt: "Interior real estate photography of a rustic kitchen in Caneyville, KY" },
+      { src: "/images/twilight-ranch-home-evening-kentucky.webp", alt: "Twilight real estate photography of a ranch home in Grayson County, KY" },
+      { src: "/images/covered-front-porch-kentucky-home.webp", alt: "Covered front porch exterior photography of a Caneyville, Kentucky home" },
+      { src: "/images/stone-estate-aerial-overhead-drone.webp", alt: "Overhead aerial drone real estate photography in Grayson County, Kentucky" },
+    ],
+  },
+  {
+    slug: "munfordville",
+    city: "Munfordville",
+    county: "Hart County",
+    state: "KY",
+    tagline: "Real Estate Media for Hart County",
+    headline: "Real Estate Photography & Drone Media in Munfordville, Hart County KY",
+    intro:
+      "CS Media serves real estate agents and property owners in Munfordville and Hart County. Sitting along I-65 between Elizabethtown and Bowling Green — and just north of Mammoth Cave National Park — Munfordville's market combines steady residential demand from highway-corridor commuters with a strong tourism-driven rental market tied to the cave. Each property type benefits from a different photographic approach.",
+    marketContext:
+      "Hart County's real estate market has two distinct sides. The first is residential and agricultural: in-town homes in Munfordville and Horse Cave, plus farms and acreage throughout the county. The second is tourism-driven: cabins, vacation rentals, and short-term rental properties capitalizing on Mammoth Cave visitor traffic. These are very different listings with very different buyers, and the photography needs to match. A family home and an Airbnb don't get the same shoot.",
+    whyUs:
+      "We're 45 minutes from Munfordville via the Bluegrass Parkway and I-65 — close enough to serve Hart County efficiently. We understand both sides of the market: how to shoot residential listings for local buyers and how to shoot tourism rentals for the broader Airbnb/VRBO audience that's deciding from photos alone.",
+    droneDetails:
+      "Drone photography is valuable across Hart County's full range of property types. For rural and farm listings, aerials show acreage, land features, and water access. For Mammoth Cave tourism rentals, aerial shots capture the surrounding Kentucky landscape that's part of the lodging appeal — most visitors are coming for the cave but want to feel like they're staying in the country. For in-town Munfordville and Horse Cave listings, drone shots provide neighborhood context.",
+    propertyTypes: [
+      {
+        name: "Mammoth Cave Area Vacation Rentals",
+        description:
+          "Cabins, Airbnbs, and short-term rentals near Mammoth Cave National Park need photography that markets them to tourists, not local buyers. We shoot with the Airbnb/VRBO audience in mind — emphasizing setting, character, and the experience of staying there.",
+      },
+      {
+        name: "Hart County Farms & Acreage",
+        description:
+          "Hart County has significant agricultural land and rural acreage. These listings need drone photography to communicate property scope, fence lines, water sources, and the relationship between the house and the surrounding land.",
+      },
+      {
+        name: "Munfordville & Horse Cave Residential",
+        description:
+          "In-town residential listings in Munfordville and Horse Cave need standard real estate coverage — interior, exterior, and aerial context that shows the neighborhood and proximity to local amenities.",
+      },
+    ],
+    localInsight:
+      "Mammoth Cave-area rental listings make or break themselves on photography. Tourists choosing a cabin from across the country are scrolling through dozens of listings on Airbnb and VRBO — yours has about three seconds to stand out. The properties that get booked aren't necessarily the nicest; they're the ones with the best photos. Professional real estate-quality photography on a tourism rental pays for itself in higher booking rates within weeks.",
+    closingPitch:
+      "Whether you're listing a Munfordville home, a Hart County farm, or a Mammoth Cave-area rental, we can help. Packages start at $85 plus 2-way mileage from Leitchfield.",
+    faqs: [
+      {
+        q: "Do you photograph short-term rentals and Airbnbs near Mammoth Cave?",
+        a: "Yes. Vacation rental photography is one of our most-requested services in Hart County. Professional photos directly correlate with booking rates on Airbnb and VRBO — better photos mean more bookings.",
+      },
+      {
+        q: "How far is Munfordville from CS Media?",
+        a: "About 45 minutes via the Western Kentucky Parkway and I-65. Hart County is a regular service area for us, and we can batch with nearby Bowling Green or Elizabethtown shoots.",
+      },
+      {
+        q: "Can you fly drones near Mammoth Cave National Park?",
+        a: "Yes for properties outside the National Park boundary — most Mammoth Cave-area rentals are. Drone flights inside the National Park boundary are restricted by NPS regulations. We verify location before booking and won't fly anywhere we shouldn't.",
+      },
+      {
+        q: "Do you offer different shoots for tourism rentals vs. residential listings?",
+        a: "Yes. A vacation rental shoot focuses on lifestyle and setting — the experience of staying there. A residential listing focuses on layout, condition, and value. We adjust composition, lighting, and editing to match the audience the property is being marketed to.",
+      },
+      {
+        q: "What's the best package for an Airbnb near Mammoth Cave?",
+        a: "Most short-term rentals do best with a Photo Package ($200) covering 25–40 photos including drone aerials, sometimes upgraded to Full Package — Standard ($280) which adds a 30–45 second video. Video is increasingly important on Airbnb listings as the platform pushes video-enabled hosts.",
+      },
+    ],
+    nearbyAreas: ["Horse Cave", "Hardyville", "Bonnieville", "Cub Run", "Magnolia"],
+    nearbyTowns: [
+      "Munfordville",
+      "Horse Cave",
+      "Hardyville",
+      "Bonnieville",
+      "Cub Run",
+      "Magnolia",
+      "Linwood",
+      "Roanoke",
+      "Park City",
+      "Cave City",
+      "Mammoth Cave",
+    ],
+    distanceFromBase: "~45 min from base",
+    mileageNote: "+ mileage",
+    galleryImages: [
+      { src: "/images/country-home-aerial-acreage-kentucky.webp", alt: "Aerial drone photography of a country home on acreage in Munfordville, Hart County KY" },
+      { src: "/images/rustic-kitchen-wood-beams-island.webp", alt: "Interior real estate photography of a rustic kitchen in Munfordville, KY" },
+      { src: "/images/twilight-ranch-aerial-drone-dusk.webp", alt: "Twilight aerial drone photography of a property in Hart County, KY" },
+      { src: "/images/white-farmhouse-front-exterior-kentucky.webp", alt: "Exterior real estate photography of a farmhouse in Hart County, Kentucky" },
+      { src: "/images/covered-front-porch-kentucky-home.webp", alt: "Covered front porch exterior photography of a Munfordville, Kentucky home" },
+      { src: "/images/stone-estate-aerial-overhead-drone.webp", alt: "Overhead aerial drone real estate photography in Hart County, Kentucky" },
     ],
   },
 ];

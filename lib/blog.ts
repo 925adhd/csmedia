@@ -294,23 +294,23 @@ Local market dynamics matter. What a listing actually needs — and what working
 
 ### Real Estate Photography Cost in Leitchfield, KY
 
-Grayson County is a mix of in-town residential, rural acreage, and a growing short-term rental market near Rough River. Acreage and land listings here almost always need drone coverage, which puts most working shoots in the $200–$400 photo + drone range. Photographers based in Leitchfield typically don't bill mileage inside the county. [See Leitchfield real estate photography details →](/services/leitchfield)
+Grayson County is a mix of in-town residential, rural acreage, and a growing short-term rental market near Rough River. Acreage and land listings here almost always need drone coverage, which puts most working shoots in the $200–$400 photo + drone range. Photographers based in Leitchfield typically don't bill mileage inside the county. [See Leitchfield real estate photography details →](/leitchfield-real-estate-photography)
 
 ### Real Estate Photography Cost in Elizabethtown, KY
 
-Hardin County's market is driven by Fort Knox relocations and steady commuter growth. Out-of-state military buyers shop almost entirely from listing photos before visiting, which makes professional media higher-leverage than in many other Kentucky markets. Most E-town listings land in the $200–$400 range; restricted airspace north of town toward Radcliff requires LAANC authorization for drone work. [See Elizabethtown details →](/services/elizabethtown)
+Hardin County's market is driven by Fort Knox relocations and steady commuter growth. Out-of-state military buyers shop almost entirely from listing photos before visiting, which makes professional media higher-leverage than in many other Kentucky markets. Most E-town listings land in the $200–$400 range; restricted airspace north of town toward Radcliff requires LAANC authorization for drone work. [See Elizabethtown details →](/elizabethtown-real-estate-photography)
 
 ### Real Estate Photography Cost in Bowling Green, KY
 
-Warren County is one of Kentucky's fastest-growing markets, with active new construction along Scottsville Road and a strong WKU-driven rental market. Suburban listings typically use a $200–$300 photo + drone package; investment properties and downtown listings often skip drone in favor of a $150–$250 photo-only shoot. [See Bowling Green details →](/services/bowling-green)
+Warren County is one of Kentucky's fastest-growing markets, with active new construction along Scottsville Road and a strong WKU-driven rental market. Suburban listings typically use a $200–$300 photo + drone package; investment properties and downtown listings often skip drone in favor of a $150–$250 photo-only shoot. [See Bowling Green details →](/bowling-green-real-estate-photography)
 
 ### Real Estate Photography Cost in Owensboro, KY
 
-Daviess County's pricing tracks the same secondary-market ranges, with riverfront properties especially benefiting from drone aerials that show Ohio River proximity. Historic Griffith Avenue–area homes often warrant a $300–$500 listing-video upgrade to capture architectural character. [See Owensboro details →](/services/owensboro)
+Daviess County's pricing tracks the same secondary-market ranges, with riverfront properties especially benefiting from drone aerials that show Ohio River proximity. Historic Griffith Avenue–area homes often warrant a $300–$500 listing-video upgrade to capture architectural character. [See Owensboro details →](/owensboro-real-estate-photography)
 
 ### Real Estate Photography Cost in Bardstown, KY
 
-Nelson County's bourbon-trail tourism and historic downtown drive demand for higher-tier media. Premium estates, event venues, and bed-and-breakfast properties typically use cinematic listing video in the $400–$800 range to communicate character and grounds — well above what a standard residential listing requires. [See Bardstown details →](/services/bardstown)
+Nelson County's bourbon-trail tourism and historic downtown drive demand for higher-tier media. Premium estates, event venues, and bed-and-breakfast properties typically use cinematic listing video in the $400–$800 range to communicate character and grounds — well above what a standard residential listing requires. [See Bardstown details →](/bardstown-real-estate-photography)
 
 ---
 

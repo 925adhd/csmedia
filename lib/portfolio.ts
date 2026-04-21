@@ -11,6 +11,8 @@ export interface PortfolioProject {
   videoSrc?: string;
   mobileVideoSrc?: string;
   featured: boolean;
+  /** ISO 8601 date the project (primarily video) was captured/published. Required for VideoObject schema. */
+  uploadDate?: string;
 }
 
 // Convert Supabase row to frontend shape
@@ -26,6 +28,7 @@ function fromSupabase(row: SupabaseProject): PortfolioProject {
     videoSrc: row.video_src || undefined,
     mobileVideoSrc: row.mobile_video_src || undefined,
     featured: row.featured,
+    uploadDate: row.created_at || undefined,
   };
 }
 
@@ -87,6 +90,7 @@ const staticProjects: PortfolioProject[] = [
     videoSrc: "/videos/desktop.mp4",
     mobileVideoSrc: "/videos/mobilevid.mp4",
     featured: true,
+    uploadDate: "2025-08-12",
   },
   {
     slug: "local-business-promo",
@@ -99,6 +103,7 @@ const staticProjects: PortfolioProject[] = [
     images: ["/images/gmc-truck-promo-video-kentucky.webp"],
     videoSrc: "/videos/truckpromo.mp4",
     featured: false,
+    uploadDate: "2025-09-04",
   },
   {
     slug: "town-events-coverage",
@@ -111,6 +116,7 @@ const staticProjects: PortfolioProject[] = [
     images: ["/images/leitchfield-downtown-holiday-event-aerial.webp"],
     videoSrc: "/videos/towneventsexample.mp4",
     featured: false,
+    uploadDate: "2025-12-18",
   },
 ];
 
