@@ -129,7 +129,7 @@ CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owe
       "What a Kentucky real estate photographer actually charges in 2026: market ranges for photos, drone aerials, listing video & virtual staging. Packages from $85, FAA Part 107 certified, 24–48hr delivery.",
     date: "2026-04-04",
     readTime: "8 min read",
-    heroImage: "/images/real-estate-aerial-drone-leitchfield-ky.webp",
+    heroImage: "/images/kentucky-real-estate-drone-aerial.webp",
     content: `
 ## What a Kentucky Real Estate Photographer Costs
 

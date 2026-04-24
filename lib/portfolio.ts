@@ -41,8 +41,8 @@ const staticProjects: PortfolioProject[] = [
     location: "Kentucky",
     description:
       "A stunning stone estate captured from above, showcasing the full scope of the property's driveway approach, landscaping, and architectural details that ground-level photos simply can't convey.",
-    heroImage: "/images/real-estate-aerial-drone-leitchfield-ky.webp",
-    images: ["/images/real-estate-aerial-drone-leitchfield-ky.webp", "/images/stone-estate-front-exterior-walkway.webp", "/images/stone-estate-aerial-overhead-drone.webp", "/images/stone-estate-living-room-fireplace.webp"],
+    heroImage: "/images/kentucky-real-estate-drone-aerial.webp",
+    images: ["/images/kentucky-real-estate-drone-aerial.webp", "/images/stone-estate-front-exterior-walkway.webp", "/images/stone-estate-aerial-overhead-drone.webp", "/images/stone-estate-living-room-fireplace.webp"],
     featured: true,
   },
   {

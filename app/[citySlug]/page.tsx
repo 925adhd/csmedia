@@ -50,7 +50,7 @@ export async function generateMetadata({
       siteName: "CS Media",
       images: [
         {
-          url: "/images/real-estate-aerial-drone-leitchfield-ky.webp",
+          url: "/images/kentucky-real-estate-drone-aerial.webp",
           width: 1200,
           height: 630,
           alt: `Real estate drone photography in ${loc.city}, Kentucky`,
@@ -79,7 +79,7 @@ export default async function CityPage({
     name: "CS MEDIA, LLC",
     telephone: "+1-270-307-0173",
     url: BASE_URL,
-    image: `${BASE_URL}/images/real-estate-aerial-drone-leitchfield-ky.webp`,
+    image: `${BASE_URL}/images/kentucky-real-estate-drone-aerial.webp`,
     priceRange: "$85-$380",
     address: {
       "@type": "PostalAddress",
@@ -149,7 +149,7 @@ export default async function CityPage({
     telephone: "+1-270-307-0173",
     email: "cscreatesmediallc@gmail.com",
     url: `${BASE_URL}/${citySlug}`,
-    image: `${BASE_URL}/images/real-estate-aerial-drone-leitchfield-ky.webp`,
+    image: `${BASE_URL}/images/kentucky-real-estate-drone-aerial.webp`,
     priceRange: "$85-$380",
     address: {
       "@type": "PostalAddress",
@@ -231,7 +231,7 @@ export default async function CityPage({
       {/* Hero */}
       <section className="relative bg-dark-900 py-12 sm:py-28 overflow-hidden">
         <Image
-          src="/images/real-estate-aerial-drone-leitchfield-ky.webp"
+          src="/images/kentucky-real-estate-drone-aerial.webp"
           alt={`${loc.city}, KY real estate drone photography`}
           fill
           className="object-cover opacity-50"
@@ -411,7 +411,7 @@ export default async function CityPage({
             <FadeIn delay={0.15}>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-dark-500/30">
                 <Image
-                  src="/images/real-estate-aerial-drone-leitchfield-ky.webp"
+                  src="/images/kentucky-real-estate-drone-aerial.webp"
                   alt={`Drone photography example for ${loc.city}, KY real estate`}
                   fill
                   className="object-cover"

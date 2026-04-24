@@ -130,7 +130,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
     priority: 0.85,
     images: [
-      abs("/images/real-estate-aerial-drone-leitchfield-ky.webp"),
+      abs("/images/kentucky-real-estate-drone-aerial.webp"),
       ...loc.galleryImages.map((img) => abs(img.src)),
     ],
   }));

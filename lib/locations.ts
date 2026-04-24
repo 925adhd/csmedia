@@ -196,7 +196,7 @@ export const locations: LocationData[] = [
     distanceFromBase: "~40 min from base",
     mileageNote: "+ mileage",
     galleryImages: [
-      { src: "/images/real-estate-aerial-drone-leitchfield-ky.webp", alt: "Aerial drone real estate photography in Elizabethtown, Hardin County KY" },
+      { src: "/images/kentucky-real-estate-drone-aerial.webp", alt: "Aerial drone real estate photography in Elizabethtown, Hardin County KY" },
       { src: "/images/rustic-kitchen-wood-beams-island.webp", alt: "Interior real estate photography of a kitchen in Elizabethtown, Kentucky" },
       { src: "/images/twilight-ranch-home-evening-kentucky.webp", alt: "Twilight real estate photography of a ranch home in Elizabethtown, KY" },
       { src: "/images/living-room-sectional-dark-floors.webp", alt: "Professional interior photography of a modern living room in Elizabethtown, KY" },
@@ -545,7 +545,7 @@ export const locations: LocationData[] = [
     distanceFromBase: "~50 min from base",
     mileageNote: "+ mileage",
     galleryImages: [
-      { src: "/images/real-estate-aerial-drone-leitchfield-ky.webp", alt: "Aerial drone real estate photography in Radcliff, Hardin County KY" },
+      { src: "/images/kentucky-real-estate-drone-aerial.webp", alt: "Aerial drone real estate photography in Radcliff, Hardin County KY" },
       { src: "/images/rustic-kitchen-wood-beams-island.webp", alt: "Interior real estate photography of a kitchen in Radcliff, Kentucky" },
       { src: "/images/twilight-ranch-home-evening-kentucky.webp", alt: "Twilight real estate photography of a ranch home in Radcliff, KY" },
       { src: "/images/living-room-sectional-dark-floors.webp", alt: "Interior real estate photography of a living room in Radcliff, KY" },
