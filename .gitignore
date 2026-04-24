@@ -49,6 +49,9 @@ supabase/LIVE-DATABASE.md
 # SEO audit docs
 GOLDEN_GOOGLE_SEO_AUDIT*
 
+# local-only reference assets (source material, logo iterations, screenshots)
+/assets/
+
 # vercel
 .vercel
 

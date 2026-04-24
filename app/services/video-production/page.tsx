@@ -124,7 +124,7 @@ export default function VideoProductionPage() {
               {
                 title: "Snow Dogs — New Flavors",
                 blurb: "Food truck promo — Instagram Reel",
-                src: "/videos/AQMTGLJELhNI8g-x60_-LwJaWh4YUL-BqzR-lX97vm1KPwK0wkYjh-54nC3Fesq5fwmZcQl5n2dHxe3ZNf3rifaCTsadd-YeIkjtvSgkw5z7QQ.mp4",
+                src: "/videos/snow-dogs-food-truck-promo-kentucky.mp4",
                 poster: "/images/cs-media-video-production-poster-kentucky.webp",
                 posterAlt: "Snow Dogs new flavors promo thumbnail",
               },

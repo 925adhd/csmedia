@@ -475,7 +475,7 @@ export default async function CityPage({
           <FadeIn>
             <div className="mt-10 text-center">
               <Link
-                href="/services"
+                href="/services/real-estate"
                 className="text-sm text-gold hover:text-gold/80 transition-colors font-medium"
               >
                 View all packages, add-ons &amp; pricing &rarr;
@@ -651,7 +651,7 @@ export default async function CityPage({
           <FadeIn>
             <div className="mt-8 text-center">
               <Link
-                href="/services"
+                href="/services/real-estate"
                 className="text-sm text-gold hover:text-gold/80 transition-colors font-medium"
               >
                 View all packages &amp; add-ons &rarr;

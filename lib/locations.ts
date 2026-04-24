@@ -646,30 +646,30 @@ export const locations: LocationData[] = [
     intro:
       "CS Media serves real estate agents and property owners in Hardinsburg and across Breckinridge County. Hardinsburg sits at the geographic center of Breckinridge — a rural county defined by Ohio River frontage, rolling farmland, and small-town communities. Most listings here are land-heavy and need aerial photography to communicate what they actually offer.",
     marketContext:
-      "Breckinridge County's market is rural through and through. Most listings are farms, hunting properties, country homes, and Ohio River-adjacent properties. Buyers are typically looking for land — to farm, to hunt, to retire on, or to escape the city. The traditional real estate listing format — interior shots and a curb-appeal exterior — completely misses what these properties are actually selling. Drone photography is the difference between a listing that resonates and one that gets scrolled past.",
+      "Breckinridge County is one of Kentucky's more affordable rural markets, and that pulls in two buyer pools that rarely overlap. The first is hunters — deer-lease investors and weekend-camp owners shopping from Louisville, Cincinnati, and Indianapolis — who drive most of the land-heavy inventory from July through October, timing purchases to land before Kentucky's archery and firearm seasons. The second is retirees and remote workers priced out of Meade and Hardin next door, looking for acreage without the commute penalty. Neither buyer is browsing casually; both are shopping from photos alone, often from several hours away.",
     whyUs:
-      "We're a 35-minute drive from Hardinsburg via Highway 259, which means we can shoot Breckinridge County properties at lower mileage costs than photographers based in Louisville or Owensboro. We understand rural Kentucky listings — and we'll spend more time in the air capturing land features than we will arranging throw pillows on a couch.",
+      "We're 35 minutes up Highway 259 from Hardinsburg — closer than the Louisville and Owensboro photographers most agents default to, which matters when a hunting-property listing has a seasonal window. A tract that waits three weeks for a photographer in early October has missed its buyer. We can typically slot Breckinridge County shoots within a week, flat.",
     droneDetails:
-      "Drone photography in Breckinridge County serves one main purpose: showing the land. Total acreage, timber stands, pasture, ponds, creeks, and topography are all features that ground-level photos can't communicate. For Ohio River-adjacent properties, aerial shots also capture water access and views — major selling points that buyers are specifically searching for.",
+      "The two features that sell Breckinridge County listings — timber and water — are almost invisible from the ground. A 40-acre tract with a spring-fed pond, mature oak stands, and a draw running through it reads as 'woods and a field' in a curb-appeal photo. From 300 feet up, a buyer can see the draw line, the timber blocks, the pond placement, and how those features connect. For Ohio River listings near Cloverport and Stephensport, altitude is the only way to capture the river relationship — ground-level photos flatten a bluff view into a strip of water.",
     propertyTypes: [
       {
-        name: "Farms & Hunting Land",
+        name: "Deer Camps & Hunting Tracts",
         description:
-          "Breckinridge County is prime hunting country. Properties marketed to hunters and farmers need drone coverage that shows woods, food plots, water sources, fence lines, and access roads. We shoot at angles that emphasize the land's usable features.",
+          "Breckinridge moves serious hunting inventory every fall. These listings need drone coverage that reads topographically: timber stands, water access, bedding cover, and field edges ready for food plots. Generic 'wooded acreage' shots don't close a full-asking sale to a buyer comparing tracts across three states.",
       },
       {
-        name: "Ohio River Properties",
+        name: "Ohio River Frontage",
         description:
-          "Properties along the Ohio River — including those near Cloverport and Stephensport — benefit enormously from aerial photography. Drone shots capture river access, views, and the property's relationship to the water in a way no ground-level photo can match.",
+          "Listings around Cloverport and Stephensport trade on the river itself — the view, the water access, the bluff-top placement. We weight aerial coverage toward elevation and river-angle shots that capture the frontage, not just the house sitting above it.",
       },
       {
-        name: "Rural Residential",
+        name: "Rural Residential on 1–10 Acres",
         description:
-          "Country homes on 1-10 acre lots are common in Breckinridge County. These listings need balanced coverage: interior photography of the home plus aerial shots that show the lot, outbuildings, and surrounding rural setting.",
+          "Country homes on small acreage are the working-market majority in Breckinridge. These get balanced interior and exterior coverage plus an aerial that places the home in its lot — buyers want to see the driveway length, outbuildings, and how far the nearest neighbor's lights are.",
       },
     ],
     localInsight:
-      "Hunting properties are a meaningful slice of the Breckinridge County market, and they're often listed badly. Photos of the cabin, photos of the gravel driveway, maybe one wide shot of the woods — that's not enough. Buyers paying real money for hunting land want to see the topography, the timber, the water sources, and the layout of the property as a whole. A few well-flown drone shots tell that story in seconds.",
+      "The most consistently under-marketed category we see in Breckinridge is hunting tracts. Most come to market with four photos: the cabin, the gravel drive, a wide shot of trees, and an interior of the kitchen. A serious deer-lease buyer — the one who pays asking — wants to see topography, timber composition, and water layout before driving two hours to walk the property. Drone coverage on those features turns a tract that sits for six months into one that sells in the first week of archery season.",
     closingPitch:
       "Whether you're listing a Breckinridge County farm, a hunting property, an Ohio River cabin, or an in-town Hardinsburg home, we can help. Packages start at $85 plus 2-way mileage.",
     faqs: [
@@ -896,30 +896,30 @@ export const locations: LocationData[] = [
     intro:
       "CS Media is based right next door in Leitchfield and serves Caneyville and eastern Grayson County with no mileage fees. Caneyville is small-town Kentucky at its most authentic — most listings are residential homes, working farms, and rural acreage along the Highway 62 corridor. As your local real estate photographer, we can be on-site within days of booking.",
     marketContext:
-      "Caneyville's market is steady and rural. Most listings are residential homes on small lots, working farms with significant acreage, and country properties on rural roads. Buyers are typically local — Grayson County families looking to upsize or downsize — or relocators from Louisville, Owensboro, or Bowling Green looking for affordable rural living. Either way, photos that communicate the property's character and the surrounding setting drive interest.",
+      "Caneyville is a smaller, more agricultural market than Leitchfield, and the listing mix reflects it. Most inventory is working farms, country homes on small acreage along the Highway 62 corridor, and a quieter in-town residential core around the old downtown streets. The buyer pool is different too — fewer short-term rental investors than you see in the Rough River area, more local Grayson County families, and a slow but steady trickle of Louisville and Elizabethtown retirees looking for real rural living without giving up I-65 access.",
     whyUs:
-      "We're 15 minutes from Caneyville. That means same-week scheduling, no travel fees, and a photographer who knows Grayson County. Other photographers serving this area are either driving in from Louisville (and charging accordingly) or are hobbyists with phones. We're neither — we're professional, local, and affordable.",
+      "Caneyville is 15 minutes from our Leitchfield base — close enough that mileage is effectively a non-issue. But the real advantage is familiarity. We work Grayson County every week, so we already know which back roads are worth shooting from, where the airspace is clean, and how the local market prices this kind of inventory. That context shapes the shoot plan before a camera comes out of the case.",
     droneDetails:
-      "Caneyville's rural setting is exactly the kind of terrain where drone photography earns its keep. Aerial shots show the relationship between a house and its surrounding land — pasture, woods, ponds, fence lines — that ground-level photos can't communicate. For working farms and acreage listings, drone coverage is the difference between a listing that sells fast and one that sits.",
+      "Eastern Grayson County's terrain differs from the western side. Less of the Rough River Lake elevation, more flat-to-rolling working farmland stretching toward Edmonson and Hart counties. For farm listings, aerial coverage needs to emphasize usable-acreage readability — pasture versus wooded versus cropland — rather than dramatic topography. For parcels in the eastern pockets that edge toward Nolin Lake access, aerials capture proximity to lake roads without requiring direct waterfront.",
     propertyTypes: [
       {
-        name: "Working Farms",
+        name: "Working & Hobby Farms",
         description:
-          "Eastern Grayson County has active agricultural land. Farm listings need drone photography that shows pasture, barn locations, water sources, and the working layout of the property — features that buyers in this market specifically search for.",
+          "Eastern Grayson County has active row-crop and cattle operations alongside smaller hobby farms. We shoot these to emphasize productive acreage, barn condition, water sources, and road frontage — the specific details a buyer farming for income actually studies before scheduling a walk-through.",
       },
       {
-        name: "Country Residential",
+        name: "Small-Town Residential",
         description:
-          "Most Caneyville-area homes sit on 1-10 acre lots along rural roads. We balance interior coverage of the home with aerial shots of the lot and surrounding setting.",
+          "The residential core around Main Street photographs best with on-site lighting that handles older room dimensions and a composition that sells walkability and neighborhood character ahead of lot size.",
       },
       {
-        name: "Rough River Adjacent Properties",
+        name: "Nolin Lake-Area Acreage",
         description:
-          "Eastern Grayson County borders the Rough River area. Properties within driving distance of Rough River Lake have lifestyle appeal that drone photography helps communicate — even if the lake isn't directly visible from the property.",
+          "Parcels in eastern Grayson edging toward Nolin Lake have secondary-home appeal for Louisville buyers. Aerial shots showing lake proximity, road access, and the overall rural setting help position these for the weekend-property market rather than the in-county buyer pool.",
       },
     ],
     localInsight:
-      "The biggest mistake we see on Caneyville-area listings is treating them like in-town houses. A rural property on five acres needs photos that show the five acres — not just the house and a slice of the front yard. Even a single high-altitude drone shot transforms how buyers perceive the property's value. The cost of professional photography is recovered the moment a buyer doesn't scroll past your listing.",
+      "The Caneyville listings that move fastest are usually working farms priced correctly for the acreage — Grayson County farmland is still meaningfully cheaper than comparable land in Hardin or Nelson — but they only move fast if the photography lets out-of-county buyers evaluate the land without driving two hours to see it. A farm that reads as 'a house and some trees' in the MLS photos gets ignored. The same farm, shot with a couple of high-altitude aerials that read the property line and the fields, gets showings within days.",
     closingPitch:
       "Caneyville is part of our home territory. No mileage fees, fast scheduling, packages from $85.",
     faqs: [
@@ -979,30 +979,30 @@ export const locations: LocationData[] = [
     intro:
       "CS Media serves real estate agents and property owners in Munfordville and Hart County. Sitting along I-65 between Elizabethtown and Bowling Green — and just north of Mammoth Cave National Park — Munfordville's market combines steady residential demand from highway-corridor commuters with a strong tourism-driven rental market tied to the cave. Each property type benefits from a different photographic approach.",
     marketContext:
-      "Hart County's real estate market has two distinct sides. The first is residential and agricultural: in-town homes in Munfordville and Horse Cave, plus farms and acreage throughout the county. The second is tourism-driven: cabins, vacation rentals, and short-term rental properties capitalizing on Mammoth Cave visitor traffic. These are very different listings with very different buyers, and the photography needs to match. A family home and an Airbnb don't get the same shoot.",
+      "Hart County's real estate market runs on two engines that barely overlap. The first is I-65 corridor residential — Munfordville at Exit 65, Cave City at Exit 58, and the farms and small communities strung between them — serving local families and commuters splitting the distance between Elizabethtown and Bowling Green. The second is Mammoth Cave tourism: cabins, lodges, and short-term rentals within fifteen minutes of the National Park entrance, where the audience is a traveler in Ohio or Illinois scrolling Airbnb on a Tuesday night. The two markets read listing photos completely differently, and shooting them the same way is the fastest way to underperform either one.",
     whyUs:
-      "We're 45 minutes from Munfordville via the Bluegrass Parkway and I-65 — close enough to serve Hart County efficiently. We understand both sides of the market: how to shoot residential listings for local buyers and how to shoot tourism rentals for the broader Airbnb/VRBO audience that's deciding from photos alone.",
+      "45 minutes down the Western Kentucky Parkway to I-65 gets us to Munfordville, and we regularly batch Hart County shoots with nearby Bowling Green or Elizabethtown jobs to trim mileage. More importantly, we shoot vacation rentals and residential listings differently. A Mammoth Cave-area Airbnb needs photography that reads like a travel magazine; a Munfordville family home needs photography that reads like MLS. Same pricing, very different shoot.",
     droneDetails:
-      "Drone photography is valuable across Hart County's full range of property types. For rural and farm listings, aerials show acreage, land features, and water access. For Mammoth Cave tourism rentals, aerial shots capture the surrounding Kentucky landscape that's part of the lodging appeal — most visitors are coming for the cave but want to feel like they're staying in the country. For in-town Munfordville and Horse Cave listings, drone shots provide neighborhood context.",
+      "Drone work in Hart County has to account for Mammoth Cave National Park's airspace — we will not fly inside NPS boundaries, and we verify a property's exact coordinates before the booking is confirmed. Outside the park, the ridgelines above Green River and the rolling pasture toward Horse Cave photograph beautifully from 200-400 feet. For cabin rentals, aerial shots are one of the biggest booking-conversion levers on Airbnb — travelers want to see the setting, not just the deck.",
     propertyTypes: [
       {
-        name: "Mammoth Cave Area Vacation Rentals",
+        name: "Mammoth Cave Vacation Rentals",
         description:
-          "Cabins, Airbnbs, and short-term rentals near Mammoth Cave National Park need photography that markets them to tourists, not local buyers. We shoot with the Airbnb/VRBO audience in mind — emphasizing setting, character, and the experience of staying there.",
-      },
-      {
-        name: "Hart County Farms & Acreage",
-        description:
-          "Hart County has significant agricultural land and rural acreage. These listings need drone photography to communicate property scope, fence lines, water sources, and the relationship between the house and the surrounding land.",
+          "Cabins near the park entrance, Cave City short-term rentals, and Green River-adjacent lodges live and die on Airbnb's first three photos. We shoot these for the platform: a strong lifestyle hero, a warm interior that reads well on mobile, and an aerial that places the property in the Kentucky countryside travelers are flying in to see.",
       },
       {
         name: "Munfordville & Horse Cave Residential",
         description:
-          "In-town residential listings in Munfordville and Horse Cave need standard real estate coverage — interior, exterior, and aerial context that shows the neighborhood and proximity to local amenities.",
+          "In-town homes in Munfordville's historic district and Horse Cave's walkable core need photography that handles smaller rooms and older-home lighting conditions. HDR processing and on-site lighting make the difference — these are not open-plan new builds, and the shoot has to be set up accordingly.",
+      },
+      {
+        name: "I-65 Corridor Farms",
+        description:
+          "Hart County farm inventory runs from 20-acre hobby farms to working cattle operations. Drone coverage shows pasture layout, barn condition, and the property's relationship to the I-65 access that makes it commutable — a real selling point for buyers relocating from larger counties.",
       },
     ],
     localInsight:
-      "Mammoth Cave-area rental listings make or break themselves on photography. Tourists choosing a cabin from across the country are scrolling through dozens of listings on Airbnb and VRBO — yours has about three seconds to stand out. The properties that get booked aren't necessarily the nicest; they're the ones with the best photos. Professional real estate-quality photography on a tourism rental pays for itself in higher booking rates within weeks.",
+      "Mammoth Cave-area vacation rentals are where the photography gap is most obvious and most correctable. We have walked into listings booking 40 percent of the nights they could be and walked out after a four-hour shoot that — a few weeks later — tracked toward 70-plus percent occupancy in high season. Airbnb's search algorithm weights listings with strong photo engagement, so professional photography does not only convert the traveler who sees the listing; it surfaces the listing to more travelers in the first place. That compounds.",
     closingPitch:
       "Whether you're listing a Munfordville home, a Hart County farm, or a Mammoth Cave-area rental, we can help. Packages start at $85 plus 2-way mileage from Leitchfield.",
     faqs: [
