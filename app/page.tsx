@@ -355,7 +355,7 @@ export default async function Home() {
                                 <div
                                   className={
                                     isLogoBg
-                                      ? "absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-900/85 to-dark-900/30"
+                                      ? "absolute inset-0 bg-gradient-to-b from-dark-900/55 via-dark-900/70 to-dark-900"
                                       : "absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/75"
                                   }
                                 />
@@ -390,7 +390,7 @@ export default async function Home() {
                                 {testimonial.quote}
                               </p>
 
-                              <p className="mt-6 pt-5 text-[11px] font-mono uppercase tracking-wider text-dark-300 border-t border-white/15">
+                              <p className={`mt-6 pt-5 text-[11px] font-mono uppercase tracking-wider border-t border-white/15 text-dark-300 ${isLogoBg ? "[text-shadow:0_1px_2px_rgba(0,0,0,0.95),0_2px_8px_rgba(0,0,0,0.85)]" : "drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]"}`}>
                                 {testimonial.badge}
                               </p>
                             </div>
