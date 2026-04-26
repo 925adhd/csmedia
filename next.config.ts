@@ -8,7 +8,7 @@ const supabaseHostname = supabaseUrl
 
 const nextConfig: NextConfig = {
   images: {
-    qualities: [60, 75],
+    qualities: [60, 75, 90],
     remotePatterns: supabaseHostname
       ? [{ protocol: "https", hostname: supabaseHostname, pathname: "/storage/v1/object/public/**" }]
       : [],

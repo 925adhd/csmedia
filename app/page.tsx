@@ -279,7 +279,7 @@ export default async function Home() {
             const hardcoded = [
               { quote: "I would recommend CS MEDIA to anyone! Simply the best person to work with and has PHENOMENAL turn around time. The photos taken of my wedding I'll cherish for a lifetime 🤍", name: "Bethany Brim", badge: "Recommends CS MEDIA, LLC", service: "Wedding Photography", avatar: "/images/testimonial-bethany-brim.webp", bgImage: "/images/twilight-ranch-aerial-drone-dusk.webp" },
               { quote: "We couldn't be happier with a promo video she shot for us! She made it so much fun, can't wait to do another!!!!", name: "Snow Dogs Food Truck", badge: "Recommends CS MEDIA, LLC", service: "Video Production", avatar: "/images/testimonial-snow-dogs.webp", bgImage: "/images/snow-dogs-food-truck-promo-kentucky.webp" },
-              { quote: "OH MY GOSH!!!! I can't even say how amazing she is. She designed my watermark and logo and did absolutely AMAZING!!!!! I 100% recommend her for any design needs you may have.", name: "Jared Clouse - Bary", badge: "Recommends CS MEDIA, LLC", service: "Logo & Design", avatar: "/images/testimonial-jared-clouse.webp" },
+              { quote: "OH MY GOSH!!!! I can't even say how amazing she is. She designed my watermark and logo and did absolutely AMAZING!!!!! I 100% recommend her for any design needs you may have.", name: "Jared Clouse - Bary", badge: "Recommends CS MEDIA, LLC", service: "Logo & Design", avatar: "/images/testimonial-jared-clouse.webp", bgImage: "/images/jared-clouse-bary-logo.webp", bgType: "logo" as const },
             ];
             const hardcodedNames = new Set(hardcoded.map((t) => t.name.toLowerCase().trim()));
             const extras = testimonials.filter((t) => !hardcodedNames.has(t.name.toLowerCase().trim()));
@@ -336,6 +336,7 @@ export default async function Home() {
                   <div className={restWrapperClass}>
                     {rest.map((testimonial, i) => {
                       const hasBg = "bgImage" in testimonial && !!testimonial.bgImage;
+                      const isLogoBg = "bgType" in testimonial && testimonial.bgType === "logo";
                       return (
                         <FadeIn key={i} delay={i * 0.15}>
                           <article className="group relative rounded-xl overflow-hidden border border-dark-500/30 hover:border-gold/30 transition-colors h-full flex flex-col min-h-[380px]">
@@ -347,9 +348,17 @@ export default async function Home() {
                                   aria-hidden="true"
                                   fill
                                   sizes="(max-width: 768px) 100vw, 50vw"
-                                  className="object-cover"
+                                  className={isLogoBg ? "object-cover object-bottom" : "object-cover"}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/75" />
+                                {/* Logo bgs get a top-heavy gradient so text reads cleanly while the logo
+                                    shows through the lower half. Photo bgs stay uniformly darkened. */}
+                                <div
+                                  className={
+                                    isLogoBg
+                                      ? "absolute inset-0 bg-gradient-to-b from-dark-900 via-dark-900/85 to-dark-900/30"
+                                      : "absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/75"
+                                  }
+                                />
                               </>
                             )}
                             {!hasBg && <div className="absolute inset-0 bg-dark-900/60" />}

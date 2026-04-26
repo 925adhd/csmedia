@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PortfolioCard from "@/components/PortfolioCard";
+import PortfolioVideoIntro from "@/components/PortfolioVideoIntro";
 import FadeIn from "@/components/FadeIn";
 import CTASection from "@/components/CTASection";
 import { getPortfolioProjects } from "@/lib/portfolio";
@@ -29,6 +30,8 @@ export default async function PortfolioPage() {
 
   return (
     <>
+      <PortfolioVideoIntro />
+
       {/* Header */}
       <section className="relative bg-dark-900 py-16 sm:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,169,110,0.06),transparent_60%)]" />
