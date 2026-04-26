@@ -128,3 +128,97 @@ textarea:focus-visible,
   );
   pointer-events: none;
 }
+
+/* ============================================================
+   Wired-outline icon system (StepIcons on the homepage)
+   - Line-draw reveal on viewport entry (Stamp, Polaroid)
+   - Pop-in for solid drone silhouette
+   - Per-icon hover personality
+   ============================================================ */
+
+@keyframes wired-draw {
+  from { stroke-dashoffset: 1; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes wired-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-3px); }
+}
+
+@keyframes wired-flash {
+  0%, 100% { opacity: 0; }
+  35%      { opacity: 0.85; }
+}
+
+@keyframes wired-stamp-press {
+  0%   { transform: rotate(0) scale(1); }
+  35%  { transform: rotate(6deg) scale(1.08); }
+  100% { transform: rotate(0) scale(1); }
+}
+
+@keyframes wired-tilt {
+  0%   { transform: rotate(0); }
+  35%  { transform: rotate(-4deg); }
+  100% { transform: rotate(0); }
+}
+
+/* Stroked icons: hide stroke until in view, then draw */
+.wired-icon [data-draw] {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.wired-icon[data-in-view="true"] [data-draw] {
+  animation: wired-draw 0.9s ease-out var(--wd, 0s) forwards;
+}
+.wired-icon[data-in-view="true"] [data-draw="2"] { --wd: 0.20s; }
+.wired-icon[data-in-view="true"] [data-draw="3"] { --wd: 0.45s; }
+.wired-icon[data-in-view="true"] [data-draw="4"] { --wd: 0.70s; }
+
+/* Polaroid hover-flash overlay starts hidden */
+.wired-icon [data-flash-fill] { opacity: 0; }
+.wired-icon:hover [data-flash-fill] {
+  animation: wired-flash 0.55s ease-out;
+}
+
+/* Per-icon hover personality (wrapper rotates) */
+.wired-icon {
+  display: inline-block;
+  transform-origin: center;
+}
+.wired-icon[data-icon="stamp"]:hover {
+  animation: wired-stamp-press 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.wired-icon[data-icon="polaroid"]:hover {
+  animation: wired-tilt 0.5s ease-out;
+}
+
+/* Filled drone wrapper: fade+rise into view (transition-based so hover-bob can take over without snap-back) */
+.wired-icon-filled {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(6px) scale(0.92);
+  transition: opacity 0.6s ease 0.15s, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s;
+}
+.wired-icon-filled[data-in-view="true"] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: wired-bob 1.8s ease-in-out 0.75s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wired-icon [data-draw] {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+  .wired-icon [data-flash-fill],
+  .wired-icon:hover,
+  .wired-icon-filled[data-in-view="true"] {
+    animation: none;
+  }
+  .wired-icon-filled {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
