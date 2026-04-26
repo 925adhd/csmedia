@@ -19,7 +19,37 @@ export default function CTASection({
   useTextLink = false,
   backgroundImage = "/images/twilight-ranch-home-evening-kentucky.webp",
 }: CTASectionProps) {
-  const buttonClass = "mt-10 inline-block rounded-full bg-gold px-10 py-4 text-sm font-semibold uppercase tracking-widest text-dark-900 transition-colors hover:bg-gold-light cursor-pointer";
+  const buttonClass = "group relative mt-10 inline-block rounded-full bg-gold px-10 py-4 text-sm font-semibold uppercase tracking-widest text-dark-900 transition-colors hover:bg-gold-light cursor-pointer";
+
+  const flashBurst = (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 100 100"
+      className="flash-burst-sm pointer-events-none absolute -top-2.5 -right-2.5 h-7 w-7 text-gold"
+    >
+      <defs>
+        <radialGradient id="ctaFlashCore" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="currentColor" stopOpacity="0.95" />
+          <stop offset="40%" stopColor="currentColor" stopOpacity="0.55" />
+          <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
+        </radialGradient>
+      </defs>
+      <g fill="currentColor">
+        <path d="M50 6 L52.5 50 L50 50 L47.5 50 Z" />
+        <path d="M94 50 L50 52.5 L50 50 L50 47.5 Z" />
+        <path d="M50 94 L47.5 50 L50 50 L52.5 50 Z" />
+        <path d="M6 50 L50 47.5 L50 50 L50 52.5 Z" />
+      </g>
+      <g fill="currentColor" opacity="0.7" transform="rotate(45 50 50)">
+        <path d="M50 20 L52 50 L50 50 L48 50 Z" />
+        <path d="M80 50 L50 52 L50 50 L50 48 Z" />
+        <path d="M50 80 L48 50 L50 50 L52 50 Z" />
+        <path d="M20 50 L50 48 L50 50 L50 52 Z" />
+      </g>
+      <circle cx="50" cy="50" r="18" fill="url(#ctaFlashCore)" />
+      <circle cx="50" cy="50" r="5" fill="currentColor" />
+    </svg>
+  );
 
   return (
     <section className="relative bg-dark-800 py-16 sm:py-28 overflow-hidden">
@@ -68,10 +98,12 @@ export default function CTASection({
         )}
         {useTextLink ? (
           <TextLink className={buttonClass}>
+            {flashBurst}
             {buttonText}
           </TextLink>
         ) : (
           <BookingButton className={buttonClass}>
+            {flashBurst}
             {buttonText}
           </BookingButton>
         )}

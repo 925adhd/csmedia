@@ -640,35 +640,8 @@ export default async function Home() {
           <FadeIn delay={0.45}>
             <div className="mt-14 text-center">
               <BookingButton
-                className="group relative inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/5 px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-gold hover:border-gold hover:bg-gold/15 transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/5 px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-gold hover:border-gold hover:bg-gold/15 transition-all cursor-pointer"
               >
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 100 100"
-                  className="flash-burst-sm pointer-events-none absolute -top-2 -right-2 h-6 w-6 text-gold"
-                >
-                  <defs>
-                    <radialGradient id="hiwFlashCore" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="currentColor" stopOpacity="0.95" />
-                      <stop offset="40%" stopColor="currentColor" stopOpacity="0.55" />
-                      <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
-                    </radialGradient>
-                  </defs>
-                  <g fill="currentColor">
-                    <path d="M50 6 L52.5 50 L50 50 L47.5 50 Z" />
-                    <path d="M94 50 L50 52.5 L50 50 L50 47.5 Z" />
-                    <path d="M50 94 L47.5 50 L50 50 L52.5 50 Z" />
-                    <path d="M6 50 L50 47.5 L50 50 L50 52.5 Z" />
-                  </g>
-                  <g fill="currentColor" opacity="0.7" transform="rotate(45 50 50)">
-                    <path d="M50 20 L52 50 L50 50 L48 50 Z" />
-                    <path d="M80 50 L50 52 L50 50 L50 48 Z" />
-                    <path d="M50 80 L48 50 L50 50 L52 50 Z" />
-                    <path d="M20 50 L50 48 L50 50 L50 52 Z" />
-                  </g>
-                  <circle cx="50" cy="50" r="18" fill="url(#hiwFlashCore)" />
-                  <circle cx="50" cy="50" r="5" fill="currentColor" />
-                </svg>
                 Book a Shoot
                 <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
