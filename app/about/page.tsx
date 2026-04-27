@@ -1,161 +1,122 @@
 import type { Metadata } from "next";
+import { Fraunces } from "next/font/google";
 import FadeIn from "@/components/FadeIn";
 import VideoPlayer from "@/components/VideoPlayer";
 import CTASection from "@/components/CTASection";
 import { getPageContent } from "@/lib/supabase/queries";
 
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "About CS Media — Drone Photography in Kentucky",
+  title: "About CS Media: An Asian with a Camera in Kentucky",
   description:
-    "Meet the operator behind CS MEDIA, LLC in Leitchfield, KY. FAA Part 107 certified drone pilot offering photography, videography, and editing.",
+    "Meet Cheris Chanthavong, an asian with a camera based in Leitchfield, KY. FAA Part 107 certified drone pilot offering photography, videography, and editing across Kentucky.",
   alternates: { canonical: `${BASE_URL}/about` },
   openGraph: {
     title: "About | CS Media",
     description:
-      "Meet the operator behind CS MEDIA, LLC in Leitchfield, KY. FAA Part 107 certified drone pilot offering photography, videography, and editing.",
+      "Meet Cheris Chanthavong, an asian with a camera based in Leitchfield, KY. FAA Part 107 drone pilot offering photography, videography, and editing across Kentucky.",
     type: "website",
     url: `${BASE_URL}/about`,
     siteName: "CS Media",
-    images: [{ url: "/images/cheris-chanthavong-cs-media-owner.webp", width: 1200, height: 630, alt: "Cheris Chanthavong — owner of CS Media, LLC in Leitchfield, Kentucky" }],
+    images: [{ url: "/images/cheris-chanthavong-cs-media-owner.webp", width: 1200, height: 630, alt: "Cheris Chanthavong, owner of CS Media in Leitchfield, Kentucky" }],
   },
 };
 
 export default async function AboutPage() {
-  const [headerContent, bioContent, trustContent, ctaContent] = await Promise.all([
-    getPageContent("about", "header"),
-    getPageContent("about", "bio"),
-    getPageContent("about", "trust_points"),
-    getPageContent("about", "cta"),
-  ]);
-
-  // Header fallbacks
+  const headerContent = await getPageContent("about", "header");
   const headerTagline = (headerContent?.tagline as string) || "About";
-  const headerHeading = (headerContent?.heading as string) || "The Person Behind";
-  const headerHeadingGold = (headerContent?.heading_gold as string) || "the Lens";
 
-  // Bio fallbacks
-  const bioTagline = (bioContent?.tagline as string) || "My Story";
-  const bioHeading = (bioContent?.heading as string) || "Hi, I\u2019m Cheris \u2014";
-  const bioHeadingGold = (bioContent?.heading_gold as string) || "CS Media";
-  const bioParagraphs = (bioContent?.paragraphs as string[]) || [
-    "I started CS MEDIA, LLC with a passion for capturing properties and businesses in the best possible light. As a solo operator, I bring a level of personal attention and consistency that larger companies simply can\u2019t match.",
-    "I\u2019m FAA Part 107 certified and specialize in photography, videography, drone work, and video editing. From real estate listings to promo videos and logo design, I handle it all \u2014 start to finish.",
-    "When you work with me, you get the same person every time. Someone who learns your style, understands what you need, and delivers consistent quality project after project. No runaround, no random contractors.",
-    "While I\u2019m based in Leitchfield and serve all of Kentucky, I\u2019m also available to travel out of state for the right project. If you need professional media anywhere in the region, reach out \u2014 I\u2019ll make it happen.",
-    "Quality edits. Quick turnaround. And the best prices you\u2019ll find for professional media services. That\u2019s the CS Media promise.",
-  ];
-  const bioPhone = (bioContent?.phone as string) || "(270)\u00a0307-0173";
-  const bioPhoneHref = bioPhone.replace(/[^\d+]/g, "");
-
-  // Trust points
   const trustTagline = "Why CS Media";
-  const trustHeading = "What Sets Us Apart";
+  const trustHeading = "Here’s what you can count on.";
   const trustPoints = [
-    { title: "FAA Part 107 Certified", description: "Fully licensed and insured aerial work. Your listing stays protected, your media stays legal." },
-    { title: "24–48 Hour Delivery", description: "Photos, drone media, and virtual staging delivered fast — so your listing goes live sooner." },
-    { title: "Packages from $85", description: "Transparent pricing, no hidden fees. You know what you're paying before we show up." },
-    { title: "One Operator, Every Time", description: "No random contractors. I learn your style and deliver consistent results, shoot after shoot." },
+    { title: "Premium look, lowest area pricing", description: "High-end real estate, event, and brand media at the lowest rates in the region. The polish your listing or brand deserves without paying premium-vendor rates." },
+    { title: "Every angle covered", description: "Photo, drone, video, and editing in one booking. Your listing, event, or brand gets seen from every side without juggling three vendors." },
+    { title: "Licensed pilot, one operator", description: "FAA Part 107 certified and fully insured, with the same person on every shoot. Consistent results and a direct line for follow-up, every time." },
+    { title: "Built to make you stand out", description: "Whether it is a listing, an event, or a brand launch, the work is designed to help you sell faster, grow bigger, and outshine the competition, without an agency markup attached." },
   ];
 
-  // CTA
   const ctaHeading = "Ready to See the Difference?";
   const ctaSubheading = "Book your first shoot or text me about your next listing.";
 
   const videoSchema = {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    name: "About CS Media — Meet the Operator",
+    name: "Meet Cheris, the Operator Behind CS Media",
     description:
       "Meet Cheris Chanthavong, FAA Part 107 certified drone pilot and owner of CS Media in Leitchfield, Kentucky.",
-    thumbnailUrl: `${BASE_URL}/images/cheris-chanthavong-cs-media-owner.webp`,
+    thumbnailUrl: `${BASE_URL}/images/personalpromo-poster.webp`,
     contentUrl: `${BASE_URL}/videos/personalpromo.mp4`,
     uploadDate: "2025-06-01T00:00:00Z",
   };
 
+  const trustIcons = [
+    // Dollar — premium pricing
+    <svg key="0" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>,
+    // Camera — every angle
+    <svg key="1" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
+    </svg>,
+    // Shield with check — licensed / insured
+    <svg key="2" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+    </svg>,
+    // Trending up — growth
+    <svg key="3" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.518l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+    </svg>,
+  ];
+
   return (
-    <>
+    <div className={fraunces.variable}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
       />
 
-      {/* Header */}
-      <section className="relative bg-dark-900 pt-12 sm:pt-14 pb-10 sm:pb-12 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,169,110,0.06),transparent_60%)]" />
-        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <FadeIn>
-            <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-              {headerTagline}
-            </span>
-            <h1 className="mt-2 text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
-              {headerHeading}
-              <br />
-              <span className="text-gold">
-                {headerHeadingGold}
-              </span>
-            </h1>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Story */}
-      <section className="py-14 sm:py-20 lg:py-24 bg-dark-800 relative">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
-
-        <div className="mx-auto max-w-[1200px] px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,_460px)_1fr] gap-10 lg:gap-16 items-center">
-            {/* Video column */}
-            <FadeIn>
-              <div className="flex justify-center lg:justify-start">
-                <div className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[460px]">
-                  <div className="rounded-[20px] overflow-hidden border border-dark-500/20 shadow-[0_8px_40px_rgba(0,0,0,0.4)] transition-all duration-500 hover:shadow-[0_12px_50px_rgba(201,169,110,0.12)] hover:scale-[1.02]">
-                    <VideoPlayer
-                      src="/videos/personalpromo.mp4"
-                      poster="/images/cheris-chanthavong-cs-media-owner.webp"
-                      posterAlt="Cheris S. Chanthavong, owner of CS Media"
-                      captionsSrc="/videos/personalpromo.vtt"
-                    />
-                  </div>
-                  {/* Decorative accents */}
-                  <div className="absolute -bottom-3 -right-3 w-28 h-28 border border-gold/15 rounded-2xl -z-10" />
-                  <div className="absolute -top-3 -left-3 w-20 h-20 border border-gold/10 rounded-2xl -z-10" />
-                </div>
-              </div>
+      {/* Cover */}
+      <section className="relative bg-dark-900 overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(201,169,110,0.05),transparent_55%)] pointer-events-none" />
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="grid grid-cols-12 gap-x-6 gap-y-12 items-end">
+            <FadeIn className="col-span-12 lg:col-span-7">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold mb-5">
+                {headerTagline}
+              </p>
+              <h1 className="font-serif text-white tracking-tight font-normal">
+                <span className="block leading-[1.05] text-[clamp(34px,4.5vw,68px)]">
+                  Hi, I&rsquo;m <span className="italic">Cheris</span>.
+                </span>
+                <span className="block mt-3 text-gold italic leading-[1.15] text-[clamp(20px,2.6vw,38px)] max-w-xl">
+                  The asian with the camera you&rsquo;ve been looking for.
+                </span>
+              </h1>
+              <p
+                className="mt-8 text-xl md:text-2xl text-dark-100 leading-relaxed max-w-xl font-light"
+                spellCheck={false}
+              >
+                FAA Part 107 drone pilot. Solo operator behind <span className="text-white">CS Media</span>. Based in Leitchfield, Kentucky, shooting all over the state.
+              </p>
             </FadeIn>
 
-            {/* Text column */}
-            <FadeIn delay={0.15}>
-              <div className="max-w-[560px] mx-auto lg:mx-0">
-                <div className="inline-flex items-center gap-3 mb-6">
-                  <span className="h-px w-8 bg-gold/60" />
-                  <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                    {bioTagline}
-                  </span>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-8">
-                  {bioHeading}
-                  <br />
-                  the owner of <span className="text-gold">
-                    {bioHeadingGold}
-                  </span>.
-                </h2>
-                <div className="space-y-5 text-dark-200 leading-[1.8] text-[15px]">
-                  {bioParagraphs.map((text, i) => (
-                    <p key={i}>{text}</p>
-                  ))}
-                </div>
-                <div className="mt-10">
-                  <a
-                    href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
-                    className="inline-flex items-center gap-3 text-gold font-mono tracking-wider hover:text-gold-light transition-colors"
-                  >
-                    <svg className="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
-                    </svg>
-                    <span className="whitespace-nowrap">{bioPhone}</span>
-                  </a>
+            <FadeIn delay={0.2} className="col-span-12 lg:col-span-5">
+              <div className="relative w-full max-w-[340px] mx-auto lg:ml-auto">
+                <div className="overflow-hidden rounded-sm border border-dark-500/40 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]">
+                  <VideoPlayer
+                    src="/videos/personalpromo.mp4"
+                    poster="/images/personalpromo-poster.webp"
+                    posterAlt="Cheris Chanthavong, owner of CS Media"
+                    captionsSrc="/videos/personalpromo.vtt"
+                  />
                 </div>
               </div>
             </FadeIn>
@@ -163,54 +124,38 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      {/* Trust Points */}
-      <section className="py-16 sm:py-28 bg-dark-900">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      {/* Trust points */}
+      <section className="relative bg-dark-900 py-20 lg:py-28 border-t border-dark-500/40">
+        <div className="mx-auto max-w-6xl px-6 lg:px-12">
           <FadeIn>
-            <div className="text-center mb-16">
-              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+            <div className="mb-14 max-w-2xl">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold mb-4">
                 {trustTagline}
-              </span>
-              <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white tracking-tight">
+              </p>
+              <h2 className="font-serif text-4xl md:text-5xl text-white tracking-tight leading-tight font-normal">
                 {trustHeading}
               </h2>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {(() => {
-              const icons = [
-                <svg key="icon-0" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                </svg>,
-                <svg key="icon-1" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                </svg>,
-                <svg key="icon-2" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>,
-                <svg key="icon-3" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                </svg>,
-              ];
-              return trustPoints.map((point, i) => (
-                <FadeIn key={i} delay={i * 0.1}>
-                  <div className="relative rounded-2xl bg-dark-800 p-8 border-gradient h-full">
-                    <div className="absolute inset-0 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(201,169,110,0.05),transparent_70%)]" />
-                    <div className="relative z-10">
-                      <div className="mb-5 inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold/10 text-gold">
-                        {icons[i]}
-                      </div>
-                      <h3 className="text-lg font-semibold text-white mb-2">
-                        {point.title}
-                      </h3>
-                      <p className="text-sm text-dark-200 leading-relaxed">
-                        {point.description}
-                      </p>
-                    </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+            {trustPoints.map((point, i) => (
+              <FadeIn key={i} delay={i * 0.08}>
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0 text-gold pt-1">
+                    {trustIcons[i]}
                   </div>
-                </FadeIn>
-              ));
-            })()}
+                  <div>
+                    <h3 className="font-serif text-xl text-white mb-2 leading-tight">
+                      {point.title}
+                    </h3>
+                    <p className="text-dark-100 leading-relaxed text-[15px]">
+                      {point.description}
+                    </p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
@@ -221,6 +166,6 @@ export default async function AboutPage() {
         desktopSubheading="Reach out for your next project. Quality media, fast turnaround, best prices."
         useTextLink
       />
-    </>
+    </div>
   );
 }

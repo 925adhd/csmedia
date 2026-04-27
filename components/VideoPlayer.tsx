@@ -5,7 +5,7 @@ import { useState, useRef } from "react";
 
 interface VideoPlayerProps {
   src: string;
-  poster: string;
+  poster?: string;
   posterAlt?: string;
   aspectRatio?: string;
   className?: string;
@@ -36,18 +36,22 @@ export default function VideoPlayer({
     <div className={`relative ${aspectRatio} ${className}`}>
       {!playing ? (
         <>
-          {/* Thumbnail */}
-          <Image
-            src={poster}
-            alt={posterAlt}
-            fill
-            className="object-cover object-top"
-            sizes="(max-width: 768px) 320px, 460px"
-            priority
-          />
-
-          {/* Subtle gradient overlay for depth */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+          {/* Thumbnail (only when a poster is provided) */}
+          {poster ? (
+            <>
+              <Image
+                src={poster}
+                alt={posterAlt}
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 320px, 460px"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+            </>
+          ) : (
+            <div className="absolute inset-0 bg-dark-900" />
+          )}
 
           {/* Play button */}
           <button
@@ -66,12 +70,6 @@ export default function VideoPlayer({
             </div>
           </button>
 
-          {/* "Watch my story" label */}
-          <div className="absolute bottom-6 left-0 right-0 text-center">
-            <span className="text-[11px] font-mono uppercase tracking-[0.3em] text-white/70">
-              Watch My Story
-            </span>
-          </div>
         </>
       ) : (
         <video
