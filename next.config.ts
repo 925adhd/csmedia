@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
       ? [{ protocol: "https", hostname: supabaseHostname, pathname: "/storage/v1/object/public/**" }]
       : [],
   },
+  ...(process.env.RECORDING ? { devIndicators: false as const } : {}),
   async redirects() {
     const cityRedirects = locations.map((loc) => ({
       source: `/services/${loc.slug}`,

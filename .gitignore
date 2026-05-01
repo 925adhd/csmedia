@@ -52,6 +52,9 @@ GOLDEN_GOOGLE_SEO_AUDIT*
 # local-only reference assets (source material, logo iterations, screenshots)
 /assets/
 
+# generated recording output (script in scripts/record-portfolio-intro.mjs regenerates)
+/recordings/
+
 # vercel
 .vercel
 
