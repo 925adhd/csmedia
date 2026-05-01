@@ -38,25 +38,24 @@ interface PricingPackage {
 export default function RealEstatePage() {
   const packages: PricingPackage[] = [
     {
-      name: "Photo Package",
-      price: "$200",
+      name: "Interior + Exterior (No Drone)",
+      price: "$140",
       popular: false,
       features: [
-        "Delivered in 24–48 hours",
         "25–40 professionally edited photos",
         "Interior + exterior coverage",
-        "Drone photos (FAA Part 107 compliant)",
-        "MLS-ready delivery",
+        "MLS-ready",
         "1 free revision included",
       ],
     },
     {
-      name: "Full Package — Standard",
+      name: "Standard Package",
       price: "$280",
       popular: true,
       features: [
-        "Delivered in 24–48 hours",
-        "Everything in Photo Package",
+        "25–40 professionally edited photos",
+        "Drone photos (FAA Part 107 compliant)",
+        "Interior + exterior coverage",
         "30–45 second listing video",
         "Basic transitions + music",
         "Optimized for social + MLS",
@@ -64,13 +63,13 @@ export default function RealEstatePage() {
       ],
     },
     {
-      name: "Full Package — Pro",
+      name: "Pro Package",
       price: "$380",
       popular: false,
-      badge: "Premium",
       features: [
-        "Delivered in 24–48 hours",
-        "Everything in Photo Package",
+        "25–40 professionally edited photos",
+        "Drone photos (FAA Part 107 compliant)",
+        "Interior + exterior coverage",
         "60–90 second cinematic video",
         "Advanced editing + smooth motion shots",
         "Cinematic color grading",
@@ -81,23 +80,10 @@ export default function RealEstatePage() {
   ];
   const smallerPackages: PricingPackage[] = [
     {
-      name: "Interior + Exterior (No Drone)",
-      price: "$140",
-      popular: false,
-      features: [
-        "Delivered in 24–48 hours",
-        "25–40 professionally edited photos",
-        "Interior + exterior coverage",
-        "MLS-ready",
-        "1 free revision included",
-      ],
-    },
-    {
       name: "Aerial Only",
       price: "$85",
       popular: false,
       features: [
-        "Delivered in 24–48 hours",
         "5 high-quality drone photos",
         "Property + surrounding area highlights",
         "FAA Part 107 compliant",
@@ -161,7 +147,7 @@ export default function RealEstatePage() {
   const faqItems = [
     {
       q: "How much does real estate drone photography cost in Kentucky?",
-      a: "CS Media offers real estate media packages from $85. Aerial-only is $85, Interior + Exterior (no drone) is $140, the Photo Package with drone is $200, and the Full Package with cinematic listing video runs $280–$380. 6% sales tax and 2-way mileage are applied to the final price.",
+      a: "CS Media offers real estate media packages from $85. Aerial-only is $85, Interior + Exterior (no drone) is $140, and the Standard and Pro Packages with drone, photos, and cinematic listing video run $280–$380. 6% sales tax and 2-way mileage are applied to the final price.",
     },
     {
       q: "Do you need a license to fly drones for real estate photos?",
@@ -245,7 +231,7 @@ export default function RealEstatePage() {
       </section>
 
       {/* Pricing Packages */}
-      <section className="py-16 sm:py-28 bg-dark-800 relative" aria-labelledby="pricing-heading">
+      <section id="pricing" className="py-16 sm:py-28 bg-dark-800 relative" aria-labelledby="pricing-heading">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 id="pricing-heading" className="sr-only">
@@ -327,11 +313,11 @@ export default function RealEstatePage() {
           <FadeIn>
             <div className="mt-12 mb-6 text-center">
               <span className="text-gold/70 text-[10px] font-mono uppercase tracking-[0.3em]">
-                Smaller Packages
+                Just Need Drone?
               </span>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div className="max-w-md mx-auto">
             {smallerPackages.map((pkg, index) => (
               <FadeIn key={pkg.name} delay={index * 0.1}>
                 <div className="relative rounded-2xl bg-dark-700/60 border border-dark-500/30 p-6 h-full flex flex-col hover:border-gold/20 transition-colors">
@@ -362,7 +348,29 @@ export default function RealEstatePage() {
           </div>
 
           <FadeIn>
-            <div className="mt-10 mx-auto max-w-xl rounded-xl border border-gold/15 bg-dark-900/40 px-5 py-3 text-center">
+            <div className="mt-14 mb-6 text-center">
+              <span className="text-gold/70 text-[10px] font-mono uppercase tracking-[0.3em]">
+                Optional Add-Ons
+              </span>
+            </div>
+          </FadeIn>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto">
+            {addOns.map((item, index) => (
+              <FadeIn key={item.name} delay={index * 0.05}>
+                <div className="rounded-xl bg-dark-700/40 border border-dark-500/30 px-4 py-3.5 h-full flex flex-col justify-between gap-1.5">
+                  <span className="text-sm font-semibold text-white leading-snug">{item.name}</span>
+                  <span className="text-xs font-mono text-gold/90">{item.price}</span>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn>
+            <div className="mt-12 mx-auto max-w-xl rounded-xl border border-gold/15 bg-dark-900/40 px-5 py-3 text-center space-y-1.5">
+              <p className="text-xs sm:text-sm text-dark-100">
+                <span className="text-gold/80 font-mono mr-1">✓</span>
+                All packages delivered in 24–48 hours.
+              </p>
               <p className="text-xs sm:text-sm text-dark-100">
                 <span className="text-gold/80 font-mono mr-1">+</span>
                 6% Kentucky sales tax &amp; round-trip mileage from Leitchfield added at booking.
@@ -386,55 +394,30 @@ export default function RealEstatePage() {
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </section>
 
-      {/* Add-Ons & Revision Policy */}
+      {/* Revision Policy */}
       <section className="py-16 sm:py-24 bg-dark-900 relative">
-        <div className="mx-auto max-w-5xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-            <FadeIn>
-              <div>
-                <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                  Add-Ons
-                </span>
-                <h2 className="mt-3 text-2xl md:text-3xl font-bold text-white tracking-tight">
-                  Build Out Your Shoot
-                </h2>
-                <ul className="mt-6 divide-y divide-dark-500/30">
-                  {addOns.map((item) => (
-                    <li
-                      key={item.name}
-                      className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4 py-3"
-                    >
-                      <span className="text-sm text-dark-100">{item.name}</span>
-                      <span className="text-sm font-mono text-gold sm:whitespace-nowrap sm:text-right">
-                        {item.price}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.1}>
-              <div>
-                <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                  Revision Policy
-                </span>
-                <h2 className="mt-3 text-2xl md:text-3xl font-bold text-white tracking-tight">
-                  Edits &amp; Reworks
-                </h2>
-                <ul className="mt-6 space-y-3">
-                  {revisionPolicy.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-2.5 text-sm text-dark-100"
-                    >
-                      <span className="text-gold/50 mt-1.5 flex-shrink-0 text-[8px]">&#9670;</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-          </div>
+        <div className="mx-auto max-w-2xl px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center">
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                Revision Policy
+              </span>
+              <h2 className="mt-3 text-2xl md:text-3xl font-bold text-white tracking-tight">
+                Edits &amp; Reworks
+              </h2>
+              <ul className="mt-6 space-y-3 text-left">
+                {revisionPolicy.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2.5 text-sm text-dark-100"
+                  >
+                    <span className="text-gold/50 mt-1.5 flex-shrink-0 text-[8px]">&#9670;</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeIn>
         </div>
       </section>
 

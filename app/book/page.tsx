@@ -55,13 +55,16 @@ export default async function BookPage() {
   const successMessage = (formContent?.success_message as string) || "Thanks for reaching out. I'll get back to you within 24 hours.";
   const submitText = (formContent?.submit_text as string) || "Send Message";
   const formServices = (formContent?.services as string[]) || [
-    "Photo Package ($200)",
-    "Full Package — Standard ($280)",
-    "Full Package — Pro ($380)",
-    "Interior + Exterior, No Drone ($140)",
+    "--- Real Estate Packages ---",
     "Aerial Only ($85)",
-    "Virtual Staging (add-on)",
+    "Interior + Exterior, No Drone ($140)",
+    "Standard Package ($280)",
+    "Pro Package ($380)",
+    "--- Other Services ---",
+    "Video Production",
+    "Event Photography",
     "Logo / Watermark Design",
+    "Virtual Staging (standalone)",
     "Other / Not Sure",
   ];
 

@@ -70,7 +70,7 @@ export const locations: LocationData[] = [
     faqs: [
       {
         q: "How much does real estate photography cost in Leitchfield?",
-        a: "Aerial-only is $85 and Interior + Exterior (no drone) is $140. Our Photo Package with drone is $200, and full packages with cinematic listing video run $280–$380. No mileage fees apply anywhere in Grayson County.",
+        a: "Aerial-only is $85 and Interior + Exterior (no drone) is $140. The Standard and Pro Packages with photos, drone, and cinematic listing video run $280–$380. No mileage fees apply anywhere in Grayson County.",
       },
       {
         q: "Do you charge travel fees for Leitchfield shoots?",
@@ -159,7 +159,7 @@ export const locations: LocationData[] = [
     faqs: [
       {
         q: "How much does drone photography cost in Elizabethtown?",
-        a: "Aerial-only is $85, the Photo Package with drone is $200, and full packages with listing video run $280–$380, all plus 6% sales tax and 2-way mileage from Leitchfield (about 40 minutes). Contact us for an exact quote for your property.",
+        a: "Aerial-only is $85, Interior + Exterior (no drone) is $140, and the Standard and Pro Packages with photos, drone, and listing video run $280–$380, all plus 6% sales tax and 2-way mileage from Leitchfield (about 40 minutes). Contact us for an exact quote for your property.",
       },
       {
         q: "Are there drone restrictions near Fort Knox?",
@@ -216,7 +216,7 @@ export const locations: LocationData[] = [
     marketContext:
       "Bowling Green's market has a few dynamics that make professional photography especially important. The city's growth along the Scottsville Road and Louisville Road corridors has created a competitive environment where new listings appear daily. WKU drives a strong rental and investment property market. And the city's position on I-65 between Nashville and Louisville means buyers are often comparing BG listings against those two metro markets — where professional photos are already the standard.",
     whyUs:
-      "We bring the same quality that Louisville and Nashville photographers deliver, without the metro-area price tag. Every shoot includes professional HDR editing, color correction, and MLS-ready formatting. Drone photography is included on our full package — not billed as a separate add-on. We deliver within 24-48 hours so your listing doesn't sit waiting for photos.",
+      "We bring the same quality that Louisville and Nashville photographers deliver, without the metro-area price tag. Every shoot includes professional HDR editing, color correction, and MLS-ready formatting. Drone photography is included on our Standard and Pro Packages — not billed as a separate add-on. We deliver within 24-48 hours so your listing doesn't sit waiting for photos.",
     droneDetails:
       "Bowling Green's layout makes drone photography valuable for almost every listing type. Suburban neighborhoods benefit from aerial context that shows nearby parks, schools, and shopping. Rural Warren County properties need aerials to convey acreage and land features. Even downtown investment properties photograph better from above — drone shots can show parking, roof condition, and proximity to WKU's campus.",
     propertyTypes: [
@@ -237,7 +237,7 @@ export const locations: LocationData[] = [
       },
     ],
     localInsight:
-      "Something we've noticed shooting in Bowling Green: listings in the $150K-$250K range often skip professional photography because agents assume the budget doesn't justify it. But that price range is exactly where BG's market is most competitive — there are dozens of similar listings at any given time. The ones with professional photos and drone shots consistently get more clicks and faster showings. Our $200 Photo Package with drone pays for itself if it shaves even a few days off market time.",
+      "Something we've noticed shooting in Bowling Green: listings in the $150K-$250K range often skip professional photography because agents assume the budget doesn't justify it. But that price range is exactly where BG's market is most competitive — there are dozens of similar listings at any given time. The ones with professional photos and drone shots consistently get more clicks and faster showings. Our Standard Package pays for itself if it shaves even a few days off market time.",
     closingPitch:
       "We serve Bowling Green and Warren County regularly. Packages start at $85 plus 2-way mileage. Let's get your listing photographed the way it deserves.",
     faqs: [
@@ -247,7 +247,7 @@ export const locations: LocationData[] = [
       },
       {
         q: "What's included in your Bowling Green photography packages?",
-        a: "All packages include professionally edited, MLS-ready photos delivered within 24-48 hours. The Photo Package ($200 + mileage) covers 25–40 interior + exterior shots plus drone aerials. The Full Package — Standard ($280 + mileage) adds a 30–45 second listing video, and Full Package — Pro ($380 + mileage) upgrades to a 60–90 second cinematic video with advanced editing and color grading.",
+        a: "All packages include professionally edited, MLS-ready photos delivered within 24-48 hours. Interior + Exterior, No Drone ($140 + mileage) covers 25–40 photos. The Standard Package ($280 + mileage) adds drone aerials and a 30–45 second listing video, and Pro Package ($380 + mileage) upgrades to a 60–90 second cinematic video with advanced editing and color grading.",
       },
       {
         q: "Can you photograph rental and investment properties in Bowling Green?",
@@ -941,7 +941,7 @@ export const locations: LocationData[] = [
       },
       {
         q: "What's included in your Caneyville packages?",
-        a: "Same as anywhere else: edited, MLS-ready deliverables in 24-48 hours. Aerial-only is $85, Photo Package with drone is $200, and full packages with listing video run $280–$380. No mileage fees in Grayson County.",
+        a: "Same as anywhere else: edited, MLS-ready deliverables in 24-48 hours. Aerial-only is $85, Interior + Exterior (no drone) is $140, and the Standard and Pro Packages with photos, drone, and listing video run $280–$380. No mileage fees in Grayson County.",
       },
     ],
     nearbyAreas: ["Leitchfield", "Clarkson", "Centertown", "Beaver Dam", "Falls of Rough"],
@@ -1024,7 +1024,7 @@ export const locations: LocationData[] = [
       },
       {
         q: "What's the best package for an Airbnb near Mammoth Cave?",
-        a: "Most short-term rentals do best with a Photo Package ($200) covering 25–40 photos including drone aerials, sometimes upgraded to Full Package — Standard ($280) which adds a 30–45 second video. Video is increasingly important on Airbnb listings as the platform pushes video-enabled hosts.",
+        a: "Most short-term rentals do best with the Standard Package ($280) covering 25–40 photos plus drone aerials and a 30–45 second video. Video is increasingly important on Airbnb listings as the platform pushes video-enabled hosts.",
       },
     ],
     nearbyAreas: ["Horse Cave", "Hardyville", "Bonnieville", "Cub Run", "Magnolia"],

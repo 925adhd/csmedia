@@ -93,7 +93,7 @@ Common reasons luxury property listings don't convert to showings:
 - **No video walkthrough** — luxury buyers shortlist on video before driving out
 - **Flat, under-processed images** — HDR and color grading are non-negotiable above $500K
 
-For luxury listings in Kentucky, the baseline is aerial + twilight + cinematic video. The $380 Full Package — Pro is table stakes, not an upgrade. Skipping any of it is what keeps premium listings sitting.
+For luxury listings in Kentucky, the baseline is aerial + twilight + cinematic video. The $380 Pro Package is table stakes, not an upgrade. Skipping any of it is what keeps premium listings sitting.
 
 ---
 
@@ -102,9 +102,9 @@ For luxury listings in Kentucky, the baseline is aerial + twilight + cinematic v
 Let's say you're listing a $250,000 home in Elizabethtown.
 
 - **Phone photos**: Listing sits 45+ days. Price reduction. You lose the seller's confidence.
-- **Professional media ($200 Photo Package)**: Listing gets 3x more views in the first week. Multiple showings. Offer in 14 days.
+- **Professional media ($280 Standard Package)**: Listing gets 3x more views in the first week. Multiple showings. Offer in 14 days.
 
-That $200 didn't cost you anything. It made you money — and kept your seller happy enough to refer you to their neighbor.
+That $280 didn't cost you anything. It made you money — and kept your seller happy enough to refer you to their neighbor.
 
 ---
 
@@ -320,9 +320,8 @@ For full transparency: I run CS Media out of Leitchfield and shoot listings acro
 
 - **Aerial Only:** $85
 - **Interior + Exterior (no drone):** $140
-- **Photo Package (with drone):** $200
-- **Full Package — Standard** (photos + drone + 30–45s listing video): $280
-- **Full Package — Pro** (photos + drone + 60–90s cinematic video): $380
+- **Standard Package** (photos + drone + 30–45s listing video): $280
+- **Pro Package** (photos + drone + 60–90s cinematic video): $380
 
 Every package is FAA Part 107–compliant, MLS-ready, delivered in 24–48 hours, and includes 1 free revision (2 on Pro). [Full package details and add-on pricing are on the services page →](/services)
 

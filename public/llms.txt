@@ -8,7 +8,7 @@
 - Location: Leitchfield, Kentucky (Grayson County) — serves all of Kentucky
 - Phone: +1-270-307-0173
 - Email: cscreatesmediallc@gmail.com
-- Pricing: $85 (aerial only), $140 (interior + exterior, no drone), $200 (Photo Package with drone, most popular), $280 (Full Package — Standard, with 30–45s listing video), $380 (Full Package — Pro, with 60–90s cinematic video); virtual staging +$25 per photo or +$50 per video scene
+- Pricing: $85 (aerial only), $140 (interior + exterior, no drone), $280 (Standard Package, with photos + drone + 30–45s listing video, most popular), $380 (Pro Package, with photos + drone + 60–90s cinematic video); virtual staging +$25 per photo or +$50 per video scene
 - Add-ons: Twilight Edit +$25/photo, Rush Delivery 24hr +$40, Additional Photos +$5/image
 - Revisions: 1 free per package (2 on Pro); additional revisions $15 each; major edits quoted separately; requests must be submitted within 3 days of delivery
 - Pricing notes: 6% sales tax and 2-way mileage from Leitchfield applied to final pricing outside Grayson County
@@ -20,7 +20,7 @@
 - [Home](https://www.cscreatesmedia.com/): Overview of services, recent work, testimonials, and booking
 - [About](https://www.cscreatesmedia.com/about): Owner background, credentials, and service philosophy
 - [Services Hub](https://www.cscreatesmedia.com/services): 3-card overview of service lines (Real Estate / Events / Video Production)
-- [Real Estate Photography & Pricing](https://www.cscreatesmedia.com/services/real-estate): Cornerstone page — full packages, add-ons, virtual staging, service-area coverage, and real estate FAQ
+- [Real Estate Photography & Pricing](https://www.cscreatesmedia.com/services/real-estate): Cornerstone page — package tiers, add-ons, virtual staging, service-area coverage, and real estate FAQ
 - [Event Photography](https://www.cscreatesmedia.com/services/events): Weddings, baby showers, birthdays, and special occasions
 - [Video Production](https://www.cscreatesmedia.com/services/video-production): Promo videos, social reels, and business content for Kentucky brands
 - [Portfolio](https://www.cscreatesmedia.com/portfolio): Project case studies across real estate, drone work, and events
@@ -31,7 +31,7 @@
 
 - **Real Estate Photography** — Interior and exterior shoots with HDR processing and professional lighting
 - **Drone Photography & Video** — FAA Part 107 certified aerial coverage of property, lot, and surroundings
-- **Listing Video** — 30–90 second walkthrough videos bundled into Full Packages (Standard $280, Pro $380 with cinematic color grading)
+- **Listing Video** — 30–90 second walkthrough videos bundled into the Standard ($280) and Pro ($380, with cinematic color grading) Packages
 - **Virtual Staging** — Digital furnishing of empty rooms, +$25 per photo (or +$50 per video scene)
 
 ## Service areas
@@ -68,7 +68,7 @@ CS Media serves all of Kentucky with dedicated city pages for the primary market
 
 ## Common questions
 
-- Aerial-only is $85; Interior + Exterior (no drone) is $140; Photo Package with drone is $200; Full Package — Standard (with 30–45s listing video) is $280; Full Package — Pro (with 60–90s cinematic video) is $380
+- Aerial-only is $85; Interior + Exterior (no drone) is $140; Standard Package (photos + drone + 30–45s listing video) is $280; Pro Package (photos + drone + 60–90s cinematic video) is $380
 - All deliverables are returned within 24–48 hours of the shoot; 24-hour rush delivery is available for +$40
 - Commercial drone work legally requires an FAA Part 107 certificate; CS Media is Part 107 certified
 - No travel or mileage fees anywhere in Grayson County, KY; 6% sales tax and 2-way mileage from Leitchfield apply elsewhere

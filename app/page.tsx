@@ -69,10 +69,10 @@ export default async function Home() {
   const faqItems = [
     {
       q: "How much does real estate photography cost?",
-      a: "Packages start at $85 for aerial-only and $140 for interior + exterior photos. Our Photo Package with drone is $200, and full packages with cinematic listing video run $280\u2013$380. See our pricing page for the full breakdown.",
+      a: "Packages start at $85 for aerial-only and $140 for interior + exterior photos. Full packages with drone, photos, and cinematic listing video run $280\u2013$380. See our pricing page for the full breakdown.",
       aNode: (
         <>
-          Packages start at $85 for aerial-only and $140 for interior + exterior photos. Our Photo Package with drone is $200, and full packages with cinematic listing video run $280&ndash;$380. See our{" "}
+          Packages start at $85 for aerial-only and $140 for interior + exterior photos. Full packages with drone, photos, and cinematic listing video run $280&ndash;$380. See our{" "}
           <Link href="/services/real-estate" className="text-gold hover:underline">
             pricing page
           </Link>{" "}
@@ -518,7 +518,7 @@ export default async function Home() {
             {[
               { icon: "camera", image: "/images/stone-estate-front-exterior-walkway.webp", title: "Photography", desc: "Bright, clean listing photos that make buyers stop scrolling and book a showing.", href: "/services/real-estate" },
               { icon: "drone", image: "/images/service-drone-field.webp", title: "Drone (Part 107)", desc: "Aerial views that show off the lot, neighborhood, and curb appeal — the shots your competitors don't have.", href: "/services/real-estate" },
-              { icon: "video", image: "/images/stone-estate-living-room-fireplace.webp", title: "Listing Video", desc: "30–90 second walkthrough video bundled into Full Packages — buyers tour the home before they ever visit.", href: "/services/real-estate" },
+              { icon: "video", image: "/images/stone-estate-living-room-fireplace.webp", title: "Listing Video", desc: "30–90 second walkthrough video bundled into the Standard and Pro Packages — buyers tour the home before they ever visit.", href: "/services/real-estate" },
               { icon: "staging", image: "/images/virtual-staging-after-furnished.webp", title: "Virtual Staging", desc: "Empty rooms furnished digitally so buyers see a home, not a blank space. Add-on: +$25 per photo.", href: "/services/real-estate" },
             ].map((s, i) => (
               <FadeIn key={i} delay={i * 0.1}>

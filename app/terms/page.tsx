@@ -110,7 +110,7 @@ export default function TermsPage() {
             <p className="leading-relaxed">
               Each package includes a set number of free revisions, as published on our{" "}
               <a href="/services" className="text-gold hover:underline">services page</a>{" "}
-              (currently 1 free revision on most packages, 2 on Full Package — Pro).
+              (currently 1 free revision on most packages, 2 on the Pro Package).
               Revision terms:
             </p>
             <ul className="list-disc pl-5 mt-2 space-y-1">

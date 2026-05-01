@@ -177,7 +177,7 @@ export default function RootLayout({
                           "@type": "Service",
                           name: "Real Estate Listing Video",
                           description:
-                            "30–90 second listing walkthrough videos bundled into Full Packages, with cinematic color grading on the Pro tier.",
+                            "30–90 second listing walkthrough videos bundled into the Standard and Pro Packages, with cinematic color grading on the Pro tier.",
                         },
                       },
                       {

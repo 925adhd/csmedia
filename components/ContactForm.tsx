@@ -136,11 +136,33 @@ export default function ContactForm({
                 className="w-full rounded-lg bg-dark-700 border border-dark-500 px-4 py-3.5 text-sm text-white focus:border-gold/50 focus:ring-1 focus:ring-gold/30 outline-none transition-colors"
               >
                 <option value="">Select a service</option>
-                {services.map((s) => (
-                  <option key={s} value={s}>
-                    {s}
-                  </option>
-                ))}
+                {(() => {
+                  const groups: Array<{ label: string | null; options: string[] }> = [];
+                  let current: { label: string | null; options: string[] } = { label: null, options: [] };
+                  for (const s of services) {
+                    const match = s.match(/^---\s*(.+?)\s*---$/);
+                    if (match) {
+                      if (current.options.length || current.label) groups.push(current);
+                      current = { label: match[1], options: [] };
+                    } else {
+                      current.options.push(s);
+                    }
+                  }
+                  if (current.options.length || current.label) groups.push(current);
+                  return groups.map((g, gi) =>
+                    g.label ? (
+                      <optgroup key={`g-${gi}-${g.label}`} label={g.label}>
+                        {g.options.map((o) => (
+                          <option key={o} value={o}>{o}</option>
+                        ))}
+                      </optgroup>
+                    ) : (
+                      g.options.map((o) => (
+                        <option key={o} value={o}>{o}</option>
+                      ))
+                    )
+                  );
+                })()}
               </select>
             </div>
           </div>

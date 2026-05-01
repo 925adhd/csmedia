@@ -89,22 +89,16 @@ insert into page_content (page, section, content) values
   "heading": "Real Estate Media Packages",
   "packages": [
     {
-      "name": "Photo Package",
-      "price": "$200",
-      "popular": false,
-      "features": ["25–40 professionally edited photos", "Interior + exterior coverage", "Drone photos (FAA Part 107 compliant)", "MLS-ready delivery", "1 free revision included"]
-    },
-    {
-      "name": "Full Package — Standard",
+      "name": "Standard Package",
       "price": "$280",
       "popular": true,
-      "features": ["Everything in Photo Package", "30–45 second listing video", "Basic transitions + music", "Optimized for social + MLS", "1 free revision included"]
+      "features": ["25–40 professionally edited photos", "Drone photos (FAA Part 107 compliant)", "Interior + exterior coverage", "30–45 second listing video", "Basic transitions + music", "Optimized for social + MLS", "1 free revision included"]
     },
     {
-      "name": "Full Package — Pro",
+      "name": "Pro Package",
       "price": "$380",
       "popular": false,
-      "features": ["Everything in Photo Package", "60–90 second cinematic video", "Advanced editing + smooth motion shots", "Cinematic color grading", "Agent branding + higher-end feel", "2 free revisions included"]
+      "features": ["25–40 professionally edited photos", "Drone photos (FAA Part 107 compliant)", "Interior + exterior coverage", "60–90 second cinematic video", "Advanced editing + smooth motion shots", "Cinematic color grading", "Agent branding + higher-end feel", "2 free revisions included"]
     },
     {
       "name": "Interior + Exterior (No Drone)",
@@ -153,5 +147,5 @@ insert into page_content (page, section, content) values
   "success_heading": "Message Sent!",
   "success_message": "Thanks for reaching out. I''ll get back to you within 24 hours.",
   "submit_text": "Send Message",
-  "services": ["Photo Package ($200)", "Full Package — Standard ($280)", "Full Package — Pro ($380)", "Interior + Exterior, No Drone ($140)", "Aerial Only ($85)", "Virtual Staging (add-on)", "Logo / Watermark Design", "Other / Not Sure"]
+  "services": ["--- Real Estate Packages ---", "Aerial Only ($85)", "Interior + Exterior, No Drone ($140)", "Standard Package ($280)", "Pro Package ($380)", "--- Other Services ---", "Video Production", "Event Photography", "Logo / Watermark Design", "Virtual Staging (standalone)", "Other / Not Sure"]
 }');

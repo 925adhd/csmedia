@@ -558,22 +558,23 @@ export default async function CityPage({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {[
               {
-                name: "Photo Package",
-                price: "$200",
+                name: "Interior + Exterior (No Drone)",
+                price: "$140",
                 features: [
                   "25–40 edited photos",
                   "Interior + exterior coverage",
-                  "Drone photos (FAA Part 107)",
                   "MLS-ready delivery",
                   "1 free revision included",
                 ],
               },
               {
-                name: "Full Package — Standard",
+                name: "Standard Package",
                 price: "$280",
                 popular: true,
                 features: [
-                  "Everything in Photo Package",
+                  "25–40 edited photos",
+                  "Drone photos (FAA Part 107)",
+                  "Interior + exterior coverage",
                   "30–45 second listing video",
                   "Basic transitions + music",
                   "Optimized for social + MLS",
@@ -581,10 +582,12 @@ export default async function CityPage({
                 ],
               },
               {
-                name: "Full Package — Pro",
+                name: "Pro Package",
                 price: "$380",
                 features: [
-                  "Everything in Photo Package",
+                  "25–40 edited photos",
+                  "Drone photos (FAA Part 107)",
+                  "Interior + exterior coverage",
                   "60–90 second cinematic video",
                   "Advanced editing + motion shots",
                   "Cinematic color grading",
@@ -649,10 +652,19 @@ export default async function CityPage({
             </div>
           </FadeIn>
           <FadeIn>
-            <div className="mt-8 text-center">
+            <div className="mt-8 text-center space-y-4">
+              <p className="text-xs text-dark-300">
+                Just need drone?{" "}
+                <Link
+                  href="/services/real-estate#pricing"
+                  className="text-gold/80 hover:text-gold underline-offset-2 hover:underline transition-colors"
+                >
+                  Aerial Only — $85
+                </Link>
+              </p>
               <Link
                 href="/services/real-estate"
-                className="text-sm text-gold hover:text-gold/80 transition-colors font-medium"
+                className="inline-block text-sm text-gold hover:text-gold/80 transition-colors font-medium"
               >
                 View all packages &amp; add-ons &rarr;
               </Link>
