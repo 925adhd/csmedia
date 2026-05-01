@@ -8,9 +8,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "Kentucky Event Photography — Weddings, Showers & Parties | CS Media",
+  title: "Kentucky Event Photography: Weddings, Showers & Parties | CS Media",
   description:
-    "Event photography across Kentucky — weddings, baby showers, birthdays, and special occasions. Candid, warm, and timeless. Captured the way you actually remember the day.",
+    "Event photography across Kentucky: weddings, baby showers, birthdays, and special occasions. Candid, warm, and timeless. Captured the way you actually remember the day.",
   alternates: { canonical: `${BASE_URL}/services/events` },
   openGraph: {
     title: "Kentucky Event Photography | CS Media",
@@ -39,7 +39,7 @@ export default function EventsPage() {
     "@type": "ProfessionalService",
     name: "CS MEDIA, LLC — Event Photography",
     description:
-      "Event photography across Kentucky — weddings, baby showers, birthdays, engagements, and special occasions.",
+      "Event photography across Kentucky: weddings, baby showers, birthdays, engagements, and special occasions.",
     url: `${BASE_URL}/services/events`,
     telephone: "+1-270-307-0173",
     email: "cscreatesmediallc@gmail.com",
@@ -120,7 +120,7 @@ export default function EventsPage() {
               Every Event Is Different
             </h2>
             <p className="mt-5 text-dark-100 leading-relaxed">
-              We don&apos;t shoot every event the same way. A wedding day, a baby shower, a milestone birthday — each has its own rhythm and the moments that matter most are different. We adapt to your venue, your style, and your people, then deliver photos that feel like the day instead of staging it.
+              We don&apos;t shoot every event the same way. A wedding day, a baby shower, a milestone birthday: each has its own rhythm and the moments that matter most are different. We adapt to your venue, your style, and your people, then deliver photos that feel like the day instead of staging it.
             </p>
 
             <h3 className="mt-12 text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-5">

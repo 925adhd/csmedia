@@ -69,10 +69,10 @@ export default async function Home() {
   const faqItems = [
     {
       q: "How much does real estate photography cost?",
-      a: "Packages start at $85 for aerial-only and $140 for interior + exterior photos. Full packages with drone, photos, and cinematic listing video run $280\u2013$380. See our pricing page for the full breakdown.",
+      a: "Packages start at $85 for aerial-only and $140 for interior + exterior photos. Full packages with drone, photos, and listing video run $280\u2013$380. See our pricing page for the full breakdown.",
       aNode: (
         <>
-          Packages start at $85 for aerial-only and $140 for interior + exterior photos. Full packages with drone, photos, and cinematic listing video run $280&ndash;$380. See our{" "}
+          Packages start at $85 for aerial-only and $140 for interior + exterior photos. Full packages with drone, photos, and listing video run $280&ndash;$380. See our{" "}
           <Link href="/services/real-estate" className="text-gold hover:underline">
             pricing page
           </Link>{" "}
@@ -517,8 +517,8 @@ export default async function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: "camera", image: "/images/stone-estate-front-exterior-walkway.webp", title: "Photography", desc: "Bright, clean listing photos that make buyers stop scrolling and book a showing.", href: "/services/real-estate" },
-              { icon: "drone", image: "/images/service-drone-field.webp", title: "Drone (Part 107)", desc: "Aerial views that show off the lot, neighborhood, and curb appeal — the shots your competitors don't have.", href: "/services/real-estate" },
-              { icon: "video", image: "/images/stone-estate-living-room-fireplace.webp", title: "Listing Video", desc: "30–90 second walkthrough video bundled into the Standard and Pro Packages — buyers tour the home before they ever visit.", href: "/services/real-estate" },
+              { icon: "drone", image: "/images/service-drone-field.webp", title: "Drone (Part 107)", desc: "Aerial views that show off the lot, neighborhood, and curb appeal: the shots your competitors don't have.", href: "/services/real-estate" },
+              { icon: "video", image: "/images/stone-estate-living-room-fireplace.webp", title: "Listing Video", desc: "30–90 second walkthrough video bundled into the Standard and Pro Packages. Buyers tour the home before they ever visit.", href: "/services/real-estate" },
               { icon: "staging", image: "/images/virtual-staging-after-furnished.webp", title: "Virtual Staging", desc: "Empty rooms furnished digitally so buyers see a home, not a blank space. Add-on: +$25 per photo.", href: "/services/real-estate" },
             ].map((s, i) => (
               <FadeIn key={i} delay={i * 0.1}>
@@ -550,12 +550,12 @@ export default async function Home() {
                   </span>
                 </h2>
                 <p className="mt-5 text-dark-200 leading-relaxed">
-                  Empty listings sit longer. Virtual staging helps buyers picture themselves living there — so they book showings faster. Realistic furniture and decor, digitally placed for +$25 per photo.
+                  Empty listings sit longer. Virtual staging helps buyers picture themselves living there, so they book showings faster. Realistic furniture and decor, digitally placed for +$25 per photo.
                 </p>
                 <ul className="mt-6 space-y-3">
                   {[
                     "Buyers see a home, not an empty box",
-                    "Modern, farmhouse, luxury — match any listing style",
+                    "Match any style: modern, farmhouse, or luxury",
                     "A fraction of the cost of physical staging",
                     "Ready for your listing in 24–48 hours",
                   ].map((item) => (
@@ -617,7 +617,7 @@ export default async function Home() {
             <div aria-hidden className="hidden md:block absolute top-[11px] left-[16.67%] right-[16.67%] h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
 
             {[
-              { step: "01", title: "Book Your Shoot", desc: "Send a quick request — text, call, or use the form. We\u2019ll confirm the date and arrive on time, ready to go.", Icon: StampIcon },
+              { step: "01", title: "Book Your Shoot", desc: "Send a quick request by text, call, or the form. We\u2019ll confirm the date and arrive on time, ready to go.", Icon: StampIcon },
               { step: "02", title: "We Capture It", desc: "Professional drone, photo, and video coverage of your property\u2014inside and out.", Icon: DroneIcon },
               { step: "03", title: "Get Your Media", desc: "Edited photos, video, and virtual staging delivered within 24\u201348 hours.", Icon: PolaroidIcon },
             ].map((item, i) => (

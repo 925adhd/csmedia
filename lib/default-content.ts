@@ -20,7 +20,7 @@ export const defaultContent: Record<string, Record<string, unknown>> = {
       tagline: "Virtual Staging",
       heading: "Empty Rooms?",
       heading_gold: "We'll Fix That.",
-      description: "Our edited virtual staging transforms empty, hard-to-visualize spaces into fully furnished rooms that help buyers see the potential. Realistic furniture, decor, and styling — digitally placed to sell the lifestyle, not just the square footage.",
+      description: "Our edited virtual staging transforms empty, hard-to-visualize spaces into fully furnished rooms that help buyers see the potential. Realistic furniture, decor, and styling, digitally placed to sell the lifestyle, not just the square footage.",
       features: ["Realistic digitally furnished rooms", "Multiple style options available", "Fraction of the cost of physical staging", "24-48 hour turnaround"],
       cta_text: "Get a Quote",
     },
@@ -54,7 +54,7 @@ export const defaultContent: Record<string, Record<string, unknown>> = {
       heading_gold: "CS Media",
       paragraphs: [
         "I started CS MEDIA, LLC with a passion for capturing properties and businesses in the best possible light. As a solo operator, I bring a level of personal attention and consistency that larger companies simply can't match.",
-        "I'm FAA Part 107 certified and specialize in photography, videography, drone work, and video editing. From real estate listings to promo videos and logo design, I handle it all — start to finish.",
+        "I'm FAA Part 107 certified and specialize in photography, videography, drone work, and video editing. From real estate listings to promo videos and logo design, I handle it all, start to finish.",
         "When you work with me, you get the same person every time. Someone who learns your style, understands what you need, and delivers consistent quality project after project. No runaround, no random contractors.",
         "Quality edits. Quick turnaround. And the best prices you'll find for professional media services. That's the CS Media promise.",
       ],

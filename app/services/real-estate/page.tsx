@@ -147,7 +147,7 @@ export default function RealEstatePage() {
   const faqItems = [
     {
       q: "How much does real estate drone photography cost in Kentucky?",
-      a: "CS Media offers real estate media packages from $85. Aerial-only is $85, Interior + Exterior (no drone) is $140, and the Standard and Pro Packages with drone, photos, and cinematic listing video run $280–$380. 6% sales tax and 2-way mileage are applied to the final price.",
+      a: "CS Media offers real estate media packages from $85. Aerial-only is $85, Interior + Exterior (no drone) is $140, and the Standard and Pro Packages with drone, photos, and listing video run $280–$380. 6% sales tax and 2-way mileage are applied to the final price.",
     },
     {
       q: "Do you need a license to fly drones for real estate photos?",
@@ -163,7 +163,7 @@ export default function RealEstatePage() {
     },
     {
       q: "What areas of Kentucky do you serve?",
-      a: `CS Media is based in Leitchfield, KY and serves agents and property owners across central and western Kentucky — including ${locations
+      a: `CS Media is based in Leitchfield, KY and serves agents and property owners across central and western Kentucky, including ${locations
         .filter((l) => l.slug !== "leitchfield")
         .map((l) => l.city)
         .join(", ")}, and surrounding counties. Out-of-state projects are available on request.`,
@@ -224,7 +224,7 @@ export default function RealEstatePage() {
               Pick a Package. Book a Shoot.
             </h1>
             <p className="mt-5 text-base sm:text-lg text-dark-100 max-w-2xl mx-auto leading-relaxed">
-              High-quality media that helps your listings stand out — without breaking the bank.
+              High-quality media that helps your listings stand out without breaking the bank.
             </p>
           </FadeIn>
         </div>
@@ -433,7 +433,7 @@ export default function RealEstatePage() {
                   Virtual Staging
                 </h2>
                 <p className="mt-4 text-dark-100 leading-relaxed">
-                  Empty rooms sit on the market longer. Virtual staging helps buyers picture themselves living there — so they book showings faster. Realistic furniture and decor, digitally placed at a fraction of the cost of physical staging.
+                  Empty rooms sit on the market longer. Virtual staging helps buyers picture themselves living there, so they book showings faster. Realistic furniture and decor, digitally placed at a fraction of the cost of physical staging.
                 </p>
                 <p className="mt-4 inline-flex items-center gap-2 text-gold font-semibold">
                   <span className="h-px w-4 bg-gold/40" />
@@ -447,7 +447,7 @@ export default function RealEstatePage() {
                     <ul className="space-y-2.5">
                       {[
                         "Realistic furniture placement",
-                        "Modern, farmhouse, luxury — any style",
+                        "Modern, farmhouse, luxury, any style",
                         "High-res MLS-ready files",
                         "Ready in 24–48 hours",
                         "Revision rounds included",
@@ -623,7 +623,7 @@ export default function RealEstatePage() {
                 );
               })()}
               <p className="mt-6 text-xs text-dark-300">
-                Out-of-state projects available on request —{" "}
+                Out-of-state projects available on request.{" "}
                 <Link href="/book" className="text-gold hover:underline">get a quote</Link>.
               </p>
             </div>
@@ -682,7 +682,7 @@ export default function RealEstatePage() {
               {
                 slug: "events",
                 title: "Events",
-                blurb: "Weddings, baby showers, birthdays & special occasions — captured candidly.",
+                blurb: "Weddings, baby showers, birthdays & special occasions captured candidly.",
                 image: "/images/kentucky-event-catering-photography.webp",
                 imageAlt: "Catered event spread photographed by CS Media",
               },

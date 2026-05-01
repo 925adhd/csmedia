@@ -445,7 +445,7 @@ export default async function CityPage({
               },
               {
                 title: "Drone Photography",
-                body: `FAA Part 107 certified aerial real estate photography in ${loc.city}, KY. Drone shots are included on every applicable shoot — not billed as a separate add-on. Aerial coverage shows lot context, acreage, and surroundings.`,
+                body: `FAA Part 107 certified aerial real estate photography in ${loc.city}, KY. Drone shots are included on every applicable shoot, not billed as a separate add-on. Aerial coverage shows lot context, acreage, and surroundings.`,
               },
               {
                 title: "Listing Video",
@@ -457,7 +457,7 @@ export default async function CityPage({
               },
               {
                 title: "Twilight Edits",
-                body: `Premium twilight-edit treatment of exterior and aerial shots — turning daytime photos into golden-hour dramatics that stop the scroll. Available as a $25/photo add-on for any package.`,
+                body: `Premium twilight-edit treatment of exterior and aerial shots that turn daytime photos into golden-hour dramatics that stop the scroll. Available as a $25/photo add-on for any package.`,
               },
             ].map((s) => (
               <FadeIn key={s.title}>
@@ -659,7 +659,7 @@ export default async function CityPage({
                   href="/services/real-estate#pricing"
                   className="text-gold/80 hover:text-gold underline-offset-2 hover:underline transition-colors"
                 >
-                  Aerial Only — $85
+                  Aerial Only · $85
                 </Link>
               </p>
               <Link
@@ -815,7 +815,7 @@ export default async function CityPage({
                 and private sellers throughout {loc.city} and surrounding{" "}
                 {loc.county}. Our regular shoot routes cover Hardin, Grayson,
                 Warren, Daviess, Nelson, LaRue, Hart, Breckinridge, Meade, and
-                Bullitt counties — central and western Kentucky's main real
+                Bullitt counties: central and western Kentucky's main real
                 estate corridors.
               </p>
               <p className="mt-6 text-sm text-dark-200 leading-loose">

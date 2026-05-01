@@ -40,7 +40,7 @@ export default function VideoProductionPage() {
     "@type": "ProfessionalService",
     name: "CS MEDIA, LLC — Video Production",
     description:
-      "Video production across Kentucky — promo videos, social media reels, business content, and event highlight videos.",
+      "Video production across Kentucky: promo videos, social media reels, business content, and event highlight videos.",
     url: `${BASE_URL}/services/video-production`,
     telephone: "+1-270-307-0173",
     email: "cscreatesmediallc@gmail.com",
@@ -122,22 +122,22 @@ export default function VideoProductionPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {[
               {
-                title: "Snow Dogs — New Flavors",
-                blurb: "Food truck promo — Instagram Reel",
+                title: "Snow Dogs: New Flavors",
+                blurb: "Food truck promo, Instagram Reel",
                 src: "/videos/snow-dogs-food-truck-promo-kentucky.mp4",
                 poster: "/images/cs-media-video-production-poster-kentucky.webp",
                 posterAlt: "Snow Dogs new flavors promo thumbnail",
               },
               {
                 title: "Local Business Promo",
-                blurb: "High-energy business promo — cinematic cuts",
+                blurb: "High-energy business promo, cinematic cuts",
                 src: "/videos/truckpromo.mp4",
                 poster: "/images/gmc-truck-promo-video-kentucky.webp",
                 posterAlt: "GMC truck promo video thumbnail",
               },
               {
                 title: "Town Events Highlights",
-                blurb: "Community event coverage — drone + ground",
+                blurb: "Community event coverage, drone + ground",
                 src: "/videos/towneventsexample.mp4",
                 poster: "/images/leitchfield-downtown-holiday-event-aerial.webp",
                 posterAlt: "Leitchfield downtown holiday event aerial thumbnail",
@@ -220,8 +220,8 @@ export default function VideoProductionPage() {
 
       <CTASection
         heading="Have a Video Project in Mind?"
-        subheading="Tell us about the project — we'll respond with a quote and timeline."
-        desktopSubheading="Tell us about the project — we'll respond with a quote and timeline."
+        subheading="Tell us about the project. We'll respond with a quote and timeline."
+        desktopSubheading="Tell us about the project. We'll respond with a quote and timeline."
         buttonText="Request a Quote"
         useTextLink
       />

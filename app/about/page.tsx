@@ -38,8 +38,8 @@ export default async function AboutPage() {
   const trustPoints = [
     { title: "Premium look, lowest area pricing", description: "High-end real estate, event, and brand media at the lowest rates in the region. The polish your listing or brand deserves without paying premium-vendor rates." },
     { title: "Every angle covered", description: "Photo, drone, video, and editing in one booking. Your listing, event, or brand gets seen from every side without juggling three vendors." },
-    { title: "Licensed pilot, one operator", description: "FAA Part 107 certified and fully insured, with the same person on every shoot. Consistent results and a direct line for follow-up, every time." },
-    { title: "Built to make you stand out", description: "Whether it is a listing, an event, or a brand launch, the work is designed to help you sell faster, grow bigger, and outshine the competition, without an agency markup attached." },
+    { title: "Licensed pilot, one operator", description: "FAA Part 107 certified and fully insured with the same person on every shoot. Consistent results and a direct line for follow-up, every time." },
+    { title: "Built to make you stand out", description: "Whether it is a listing, an event, or a brand launch, the work is designed to help you sell faster, grow bigger, and outshine the competition without an agency markup attached." },
   ];
 
   const ctaHeading = "Ready to See the Difference?";

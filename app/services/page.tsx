@@ -8,7 +8,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "Services | CS Media — Real Estate, Events & Video Production",
+  title: "Services | CS Media: Real Estate, Events & Video Production",
   description:
     "CS Media offers professional real estate photography, event photography, and video production services across Kentucky. Pick a service line to learn more.",
   alternates: { canonical: `${BASE_URL}/services` },
@@ -48,7 +48,7 @@ const categories: ServiceCategory[] = [
     slug: "events",
     title: "Events",
     blurb:
-      "Weddings, baby showers, birthdays, and special occasions across Kentucky. Captured candidly so the day feels like the day — not staged, not over-edited.",
+      "Weddings, baby showers, birthdays, and special occasions across Kentucky. Captured candidly so the day feels like the day, not staged, not over-edited.",
     image: "/images/kentucky-event-catering-photography.webp",
     imageAlt: "Catered event spread photographed by CS Media",
     ctaText: "Learn More",
@@ -59,7 +59,7 @@ const categories: ServiceCategory[] = [
     blurb:
       "Promo videos, business content, and social media reels for Kentucky brands. From single-take phone reels to multi-camera promotional shoots.",
     image: "/images/leitchfield-downtown-holiday-event-aerial.webp",
-    imageAlt: "Aerial drone footage of a Kentucky downtown event — CS Media video production work",
+    imageAlt: "Aerial drone footage of a Kentucky downtown event by CS Media video production",
     ctaText: "Learn More",
   },
 ];
@@ -92,7 +92,7 @@ export default function ServicesHubPage() {
       <section className="relative bg-dark-900 py-20 sm:py-32 overflow-hidden">
         <Image
           src="/images/brick-home-aerial-drone-kentucky.webp"
-          alt="CS Media — Kentucky photography and video services"
+          alt="CS Media Kentucky photography and video services"
           fill
           sizes="100vw"
           quality={75}
@@ -109,7 +109,7 @@ export default function ServicesHubPage() {
               Photo &amp; Video Services in Kentucky
             </h1>
             <p className="mt-5 text-base sm:text-lg text-dark-100 max-w-2xl mx-auto leading-relaxed">
-              Real estate listings, weddings, and promo videos — pick the service line that fits your project.
+              Real estate listings, weddings, and promo videos. Pick the service line that fits your project.
             </p>
           </FadeIn>
         </div>
@@ -178,7 +178,7 @@ export default function ServicesHubPage() {
         <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
           <FadeIn>
             <p className="text-base sm:text-lg text-dark-100 leading-relaxed">
-              CS Media is a one-photographer studio based in Leitchfield, Kentucky. Bookings go straight to me — not a queue, not a salesperson — and your photos come back edited within 24–48 hours. That's the whole pitch.
+              CS Media is a one-photographer studio based in Leitchfield, Kentucky. Bookings go straight to me, not a queue, not a salesperson, and your photos come back edited within 24–48 hours. That's the whole pitch.
             </p>
           </FadeIn>
         </div>

@@ -62,7 +62,7 @@ const staticProjects: PortfolioProject[] = [
     propertyType: "residential",
     location: "Kentucky",
     description:
-      "A charming country home on open acreage featuring a covered pavilion, wraparound porch, and beautifully finished interiors. Aerial drone photography captures the full property layout, outbuildings, and road frontage — the details that drive buyer decisions on rural Kentucky listings where land is as much the product as the house. Interior shots showcase the living spaces, upper-level loft, and the finish quality that a ground-level MLS photo set can't communicate. The aerial-plus-interior combination is what pushes listings like this from sitting to sold.",
+      "A charming country home on open acreage featuring a covered pavilion, wraparound porch, and beautifully finished interiors. Aerial drone photography captures the full property layout, outbuildings, and road frontage: the details that drive buyer decisions on rural Kentucky listings where land is as much the product as the house. Interior shots showcase the living spaces, upper-level loft, and the finish quality that a ground-level MLS photo set can't communicate. The aerial-plus-interior combination is what pushes listings like this from sitting to sold.",
     heroImage: "/images/country-home-aerial-acreage-kentucky.webp",
     images: ["/images/country-home-aerial-acreage-kentucky.webp", "/images/covered-front-porch-kentucky-hocheris-chanthavong-cs-media-owner.webp", "/images/living-room-sectional-dark-floors.webp", "/images/upper-level-loft-staircase-landing.webp"],
     featured: false,
@@ -73,7 +73,7 @@ const staticProjects: PortfolioProject[] = [
     propertyType: "residential",
     location: "Kentucky",
     description:
-      "A dramatic twilight photography session capturing warm interior lighting against the dusk sky. Twilight shots — taken in the 20-minute window after sunset — create an emotional connection with buyers and make listings stand out on Zillow, Realtor.com, and MLS thumbnails where daytime photos blur together. Aerial twilight drone work extends the treatment to the lot, showing landscape lighting, driveway approach, and silhouette against the sky. For higher-end Kentucky listings above $400K, twilight coverage is the single biggest visual differentiator against competing properties at the same price point.",
+      "A dramatic twilight photography session capturing warm interior lighting against the dusk sky. Twilight shots (taken in the 20-minute window after sunset) create an emotional connection with buyers and make listings stand out on Zillow, Realtor.com, and MLS thumbnails where daytime photos blur together. Aerial twilight drone work extends the treatment to the lot, showing landscape lighting, driveway approach, and silhouette against the sky. For higher-end Kentucky listings above $400K, twilight coverage is the single biggest visual differentiator against competing properties at the same price point.",
     heroImage: "/images/twilight-ranch-home-evening-kentucky.webp",
     images: ["/images/twilight-ranch-home-evening-kentucky.webp", "/images/twilight-ranch-aerial-drone-dusk.webp"],
     featured: true,
@@ -98,7 +98,7 @@ const staticProjects: PortfolioProject[] = [
     propertyType: "promo",
     location: "Kentucky",
     description:
-      "A high-energy promotional video for a local Kentucky business, capturing the brand's personality and energy in under 60 seconds. Fast cuts, vibrant color grading, a custom soundtrack, and branded graphics turn raw product and location footage into content ready for Facebook, Instagram Reels, YouTube Shorts, and TikTok. Beyond real estate, CS Media produces promo content for trades, retail, food, and service businesses across Grayson County and Kentucky — the same cinematic treatment used on our luxury listing work, tuned for commercial storytelling instead of property showcasing.",
+      "A high-energy promotional video for a local Kentucky business, capturing the brand's personality and energy in under 60 seconds. Fast cuts, vibrant color grading, a custom soundtrack, and branded graphics turn raw product and location footage into content ready for Facebook, Instagram Reels, YouTube Shorts, and TikTok. Beyond real estate, CS Media produces promo content for trades, retail, food, and service businesses across Grayson County and Kentucky, with the same cinematic treatment used on our luxury listing work, tuned for commercial storytelling instead of property showcasing.",
     heroImage: "/images/gmc-truck-promo-video-kentucky.webp",
     images: ["/images/gmc-truck-promo-video-kentucky.webp"],
     videoSrc: "/videos/truckpromo.mp4",
@@ -111,7 +111,7 @@ const staticProjects: PortfolioProject[] = [
     propertyType: "event",
     location: "Kentucky",
     description:
-      "Dynamic event coverage from a local Kentucky community event, capturing the energy, attendance, and atmosphere in a highlight reel that organizers, sponsors, and local officials can reuse for years. Combines aerial drone footage of the venue, ground-level crowd and performer shots, and cinematic transitions with music and color grading tuned for social media. CS Media offers event coverage for small-town festivals, holiday events, grand openings, and nonprofit fundraisers across Grayson County and neighboring Kentucky markets — delivered within 48 hours so organizers can post recaps while the event is still top-of-mind.",
+      "Dynamic event coverage from a local Kentucky community event, capturing the energy, attendance, and atmosphere in a highlight reel that organizers, sponsors, and local officials can reuse for years. Combines aerial drone footage of the venue, ground-level crowd and performer shots, and cinematic transitions with music and color grading tuned for social media. CS Media offers event coverage for small-town festivals, holiday events, grand openings, and nonprofit fundraisers across Grayson County and neighboring Kentucky markets, delivered within 48 hours so organizers can post recaps while the event is still top-of-mind.",
     heroImage: "/images/leitchfield-downtown-holiday-event-aerial.webp",
     images: ["/images/leitchfield-downtown-holiday-event-aerial.webp"],
     videoSrc: "/videos/towneventsexample.mp4",

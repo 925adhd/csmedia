@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
     slug: "why-your-listing-isnt-getting-showings",
     title: "Why Your Listing Isn't Getting Showings (And How to Fix It)",
     description:
-      "Your listing is sitting with no showings. The problem isn't the price — it's the photos. Here's what Kentucky agents are doing differently to sell faster.",
+      "Your listing is sitting with no showings. The problem isn't the price. It's the photos. Here's what Kentucky agents are doing differently to sell faster.",
     date: "2026-04-04",
     readTime: "4 min read",
     heroImage: "/images/white-farmhouse-front-exterior-kentucky.webp",
@@ -23,7 +23,7 @@ export const blogPosts: BlogPost[] = [
 
 You priced it right. The location is solid. The seller is motivated. But the showing requests aren't coming in.
 
-Before you drop the price, look at your listing photos. Because in 2026, **87% of buyers say photos are the most important factor when deciding which homes to visit** (National Association of Realtors). If your photos don't stop the scroll, buyers never make it to the description — let alone the front door.
+Before you drop the price, look at your listing photos. Because in 2026, **87% of buyers say photos are the most important factor when deciding which homes to visit** (National Association of Realtors). If your photos don't stop the scroll, buyers never make it to the description, let alone the front door.
 
 ---
 
@@ -63,17 +63,17 @@ The agents consistently moving listings in Leitchfield, Elizabethtown, Bowling G
 
 ### Professional Interior & Exterior Photography
 
-Clean, bright, properly exposed photos of every room. HDR processing that balances natural light with interior lighting. This is the baseline — and it's the single biggest upgrade from phone photos.
+Clean, bright, properly exposed photos of every room. HDR processing that balances natural light with interior lighting. This is the baseline, and it's the single biggest upgrade from phone photos.
 
 ### Drone Aerials (FAA Part 107 Required)
 
-Aerial shots show what ground-level photos can't — the full lot, outbuildings, road access, and neighborhood context. This is especially critical for rural Kentucky properties where acreage is a selling point.
+Aerial shots show what ground-level photos can't: the full lot, outbuildings, road access, and neighborhood context. This is especially critical for rural Kentucky properties where acreage is a selling point.
 
 If your photographer isn't Part 107 certified, their drone work is illegal and your brokerage could be liable.
 
 ### Video Walkthroughs
 
-60–90 second cinematic walkthroughs let buyers tour the home before they visit. This pre-qualifies showings — the people who book have already seen the layout and are genuinely interested.
+60–90 second cinematic walkthroughs let buyers tour the home before they visit. This pre-qualifies showings. The people who book have already seen the layout and are genuinely interested.
 
 ### Virtual Staging
 
@@ -104,7 +104,7 @@ Let's say you're listing a $250,000 home in Elizabethtown.
 - **Phone photos**: Listing sits 45+ days. Price reduction. You lose the seller's confidence.
 - **Professional media ($280 Standard Package)**: Listing gets 3x more views in the first week. Multiple showings. Offer in 14 days.
 
-That $280 didn't cost you anything. It made you money — and kept your seller happy enough to refer you to their neighbor.
+That $280 didn't cost you anything. It made you money, and kept your seller happy enough to refer you to their neighbor.
 
 ---
 
@@ -135,7 +135,7 @@ CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owe
 
 If you're hiring a Kentucky real estate photographer for a listing, professional media will run you somewhere between **$100 and $1,500** depending on what you need, where the listing is, and who's behind the camera. Most agents land between $150 and $400.
 
-This guide breaks down what each tier of service actually costs across the Kentucky real estate photography market — not at one studio, but as ranges you'll see from working photographers across the state — what drives those prices up or down, and how to decide what your listing actually needs.
+This guide breaks down what each tier of service actually costs across the Kentucky real estate photography market (not at one studio, but as ranges you'll see from working photographers across the state), what drives those prices up or down, and how to decide what your listing actually needs.
 
 ---
 
@@ -154,7 +154,7 @@ Here's roughly what you'll be quoted by working real estate photographers across
 | Virtual staging | $20–$75 per photo / room | $25–$100 per photo / room |
 | Twilight edits | $25–$75 per photo | $35–$100 per photo |
 
-These ranges reflect what licensed, insured, FAA Part 107–certified photographers charge. Hobbyists with a phone and a $400 drone will quote less, but you're trading quality, legal flight authorization, and insurance for the savings — and that's a real trade-off worth understanding.
+These ranges reflect what licensed, insured, FAA Part 107–certified photographers charge. Hobbyists with a phone and a $400 drone will quote less, but you're trading quality, legal flight authorization, and insurance for the savings, and that's a real trade-off worth understanding.
 
 ---
 
@@ -162,12 +162,12 @@ These ranges reflect what licensed, insured, FAA Part 107–certified photograph
 
 If you've shopped for listing photographers in larger cities, Kentucky's secondary markets will feel noticeably cheaper:
 
-- **Louisville and Lexington** are the most expensive Kentucky markets — typically 30–60% higher than rural KY for the same package. Volume and overhead drive this.
+- **Louisville and Lexington** are the most expensive Kentucky markets, typically 30–60% higher than rural KY for the same package. Volume and overhead drive this.
 - **Nashville** runs roughly **50–100% higher** than secondary Kentucky markets across every tier.
 - **Cincinnati** (and Northern Kentucky listings priced into the Cincinnati market) is similar to Louisville pricing, sometimes higher.
-- **Rural and secondary Kentucky markets** — Leitchfield, Elizabethtown, Bowling Green, Owensboro, Bardstown, Hopkinsville, Paducah — sit at the lower end of the table above. Lower cost of doing business, less travel saturation, more competitive pricing.
+- **Rural and secondary Kentucky markets** (Leitchfield, Elizabethtown, Bowling Green, Owensboro, Bardstown, Hopkinsville, Paducah) sit at the lower end of the table above. Lower cost of doing business, less travel saturation, more competitive pricing.
 
-The practical upshot: if you're an agent in a secondary Kentucky market, you can usually get the same quality of media you'd see on a Louisville luxury listing at roughly 60–70% of the cost — *if* you book a photographer who actually serves your area instead of one driving in from a metro and billing travel.
+The practical upshot: if you're an agent in a secondary Kentucky market, you can usually get the same quality of media you'd see on a Louisville luxury listing at roughly 60–70% of the cost, *if* you book a photographer who actually serves your area instead of one driving in from a metro and billing travel.
 
 ---
 
@@ -194,7 +194,7 @@ The most common Kentucky real estate photography package. Adds exterior angles a
 
 ## Drone Photography: $75–$200 (Standalone) or $200–$400 (Bundled)
 
-Aerial drone photography can be booked standalone for $75–$200 or bundled with photo coverage for $200–$400. FAA Part 107 certification is legally required for commercial drone work — confirm your photographer holds a current certificate.
+Aerial drone photography can be booked standalone for $75–$200 or bundled with photo coverage for $200–$400. FAA Part 107 certification is legally required for commercial drone work; confirm your photographer holds a current certificate.
 
 - Bundled tier includes the photo package plus FAA Part 107 drone aerials
 - Standard for any listing where lot, neighborhood context, or roof condition matters
@@ -213,7 +213,7 @@ A short walkthrough video changes how a listing performs on social and on Zillow
 
 ## Virtual Staging: $20–$75 Per Photo
 
-Digital furniture placement in vacant rooms. Most Kentucky photographers price virtual staging per photo or per room, in the $20–$75 range. Major edits — removing existing furniture before staging, swapping wall colors, structural changes — are typically quoted separately.
+Digital furniture placement in vacant rooms. Most Kentucky photographers price virtual staging per photo or per room, in the $20–$75 range. Major edits (removing existing furniture before staging, swapping wall colors, structural changes) are typically quoted separately.
 
 Virtual staging is one of the highest-ROI investments in real estate marketing. Instead of paying $2,000+ for physical staging, virtual staging digitally furnishes empty rooms with realistic furniture and decor, and staged listings sell **73% faster than empty ones** (NAR data).
 
@@ -228,7 +228,7 @@ Beyond the service tier, the variables that move a quote up or down:
 - **Drone airspace.** Listings near restricted airspace (Fort Knox, regional airports, military installations) require LAANC authorization. Reputable Part 107 pilots check this before quoting; some hobbyists fly anyway, which is illegal and uninsured.
 - **Turnaround time.** Standard turnaround is 24–48 hours. Same-day or next-morning rush typically adds $25–$100.
 - **Editing complexity.** Twilight edits, sky replacements, object removal, and HDR blending all add time. Photographers either bake these into the per-photo price or bill them as add-ons.
-- **Insurance and credentials.** Working photographers carrying liability insurance, equipment insurance, and a current Part 107 certificate cost more than uninsured operators — for the same reason a licensed contractor costs more than a guy with a truck.
+- **Insurance and credentials.** Working photographers carrying liability insurance, equipment insurance, and a current Part 107 certificate cost more than uninsured operators, for the same reason a licensed contractor costs more than a guy with a truck.
 
 ---
 
@@ -238,7 +238,7 @@ Pay for the media that matches the listing. Over-spec a starter home and you're 
 
 ### Sub-$200K, under 2,000 sq ft, in town
 
-Basic photo package, no drone needed. The lot isn't the story — the kitchen, bathrooms, and condition are. Spending more here doesn't move the needle.
+Basic photo package, no drone needed. The lot isn't the story. The kitchen, bathrooms, and condition are. Spending more here doesn't move the needle.
 
 ### $200K–$500K residential, suburban or with a notable yard
 
@@ -246,7 +246,7 @@ Photo + drone bundle. Buyers in this band care about neighborhood context, lot, 
 
 ### Anything rural, on acreage, or with land as a selling point
 
-Photo + drone is the floor. The aerial isn't a luxury — it's the only way to communicate what the buyer is actually paying for. A 3-bedroom on 40 acres without drone shots is functionally invisible to acreage buyers.
+Photo + drone is the floor. The aerial isn't a luxury; it's the only way to communicate what the buyer is actually paying for. A 3-bedroom on 40 acres without drone shots is functionally invisible to acreage buyers.
 
 ### $500K+, premium new builds, vacation rentals near attractions
 
@@ -258,7 +258,7 @@ Cinematic listing video, twilight exteriors, and possibly a second visit for gol
 
 ### Vacant listings at any price band
 
-Add virtual staging to the main living spaces (typically living room, primary bedroom, and either dining or kitchen, depending on layout). Empty rooms test poorly with buyers who can't visualize space — the staged versions consistently get more saves and shares.
+Add virtual staging to the main living spaces (typically living room, primary bedroom, and either dining or kitchen, depending on layout). Empty rooms test poorly with buyers who can't visualize space; the staged versions consistently get more saves and shares.
 
 ---
 
@@ -284,13 +284,13 @@ The research is consistent across multiple sources:
 - **87% of buyers** rate photos as the most important factor when deciding which homes to visit (National Association of Realtors)
 - Listings with drone photography get **68% more views** than those without
 
-A $200–$400 photo + drone package, bought once, typically pays for itself in either days-on-market savings or a higher final sale price. The math doesn't really work *against* hiring someone — only against hiring the wrong person.
+A $200–$400 photo + drone package, bought once, typically pays for itself in either days-on-market savings or a higher final sale price. The math doesn't really work *against* hiring someone, only against hiring the wrong person.
 
 ---
 
 ## Real Estate Photography Pricing by Kentucky Market
 
-Local market dynamics matter. What a listing actually needs — and what working photographers in that market typically charge — varies by city. Quick context for the markets we shoot in most:
+Local market dynamics matter. What a listing actually needs (and what working photographers in that market typically charge) varies by city. Quick context for the markets we shoot in most:
 
 ### Real Estate Photography Cost in Leitchfield, KY
 
@@ -310,7 +310,7 @@ Daviess County's pricing tracks the same secondary-market ranges, with riverfron
 
 ### Real Estate Photography Cost in Bardstown, KY
 
-Nelson County's bourbon-trail tourism and historic downtown drive demand for higher-tier media. Premium estates, event venues, and bed-and-breakfast properties typically use cinematic listing video in the $400–$800 range to communicate character and grounds — well above what a standard residential listing requires. [See Bardstown details →](/bardstown-real-estate-photography)
+Nelson County's bourbon-trail tourism and historic downtown drive demand for higher-tier media. Premium estates, event venues, and bed-and-breakfast properties typically use cinematic listing video in the $400–$800 range to communicate character and grounds, well above what a standard residential listing requires. [See Bardstown details →](/bardstown-real-estate-photography)
 
 ---
 
@@ -343,7 +343,7 @@ Whether you book CS Media or another Kentucky real estate photographer, here's w
 
 ## Booking in Kentucky
 
-CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owensboro, Bardstown, and the rest of the state — see [the services page](/services) for current packages, or [text us about your listing](/book) to talk through what makes sense for the property.
+CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owensboro, Bardstown, and the rest of the state. See [the services page](/services) for current packages, or [text us about your listing](/book) to talk through what makes sense for the property.
 `,
     faqs: [
       {
@@ -352,11 +352,11 @@ CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owe
       },
       {
         q: "Do drone photos cost extra for real estate listings?",
-        a: "It depends on the photographer. Some bundle drone aerials into mid- and upper-tier packages at no extra charge; others bill drone work as a $75–$200 add-on. Either way, the photographer should hold a current FAA Part 107 Remote Pilot Certificate — it's legally required for commercial drone work.",
+        a: "It depends on the photographer. Some bundle drone aerials into mid- and upper-tier packages at no extra charge; others bill drone work as a $75–$200 add-on. Either way, the photographer should hold a current FAA Part 107 Remote Pilot Certificate; it's legally required for commercial drone work.",
       },
       {
         q: "How much is virtual staging in Kentucky?",
-        a: "Virtual staging in Kentucky typically runs $20–$75 per photo or per room, depending on complexity. Most photographers offer it as an add-on rather than a standalone service. Major edits — removing existing furniture, swapping wall colors, structural changes — are usually quoted separately.",
+        a: "Virtual staging in Kentucky typically runs $20–$75 per photo or per room, depending on complexity. Most photographers offer it as an add-on rather than a standalone service. Major edits (removing existing furniture, swapping wall colors, structural changes) are usually quoted separately.",
       },
       {
         q: "Are there travel fees for real estate photography in Kentucky?",
