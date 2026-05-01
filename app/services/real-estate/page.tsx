@@ -94,7 +94,7 @@ export default function RealEstatePage() {
   const addOns = [
     { name: "Twilight Edit", price: "+$25 per photo" },
     { name: "Rush Delivery (24hr)", price: "+$40" },
-    { name: "Virtual Staging", price: "+$25 per photo / +$50 per video scene" },
+    { name: "Virtual Staging", price: "+$25/photo · +$50/scene" },
     { name: "Additional Photos", price: "+$5 per image" },
   ];
   const revisionPolicy = [
@@ -239,7 +239,6 @@ export default function RealEstatePage() {
           </h2>
           <div data-pricing-grid className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {packages.map((pkg, index) => {
-              const hasBadge = pkg.popular || !!pkg.badge;
               return (
                 <FadeIn key={pkg.name} delay={index * 0.1}>
                   <div
@@ -265,20 +264,22 @@ export default function RealEstatePage() {
                             : "opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(201,169,110,0.05),transparent_70%)]"
                       }`}
                     />
-                    {pkg.popular && (
-                      <span className="absolute top-4 right-4 z-20 text-[10px] font-bold uppercase tracking-wider text-dark-900 bg-gold rounded-full px-2.5 py-0.5">
-                        Popular
-                      </span>
-                    )}
-                    {pkg.badge && !pkg.popular && (
-                      <span className="absolute top-4 right-4 z-20 text-[10px] font-bold uppercase tracking-wider text-gold bg-gold/10 border border-gold/30 rounded-full px-2.5 py-0.5">
-                        {pkg.badge}
-                      </span>
-                    )}
                     <div className="relative z-10 flex flex-col h-full">
-                      <h3 className={`text-xs font-semibold text-gold uppercase tracking-[0.2em] ${hasBadge ? "pr-24" : ""}`}>
-                        {pkg.name}
-                      </h3>
+                      <div className="flex items-center justify-between gap-3">
+                        <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] whitespace-nowrap">
+                          {pkg.name}
+                        </h3>
+                        {pkg.popular && (
+                          <span className="flex-shrink-0 text-[10px] font-bold uppercase tracking-wider text-dark-900 bg-gold rounded-full px-2.5 py-0.5">
+                            Popular
+                          </span>
+                        )}
+                        {pkg.badge && !pkg.popular && (
+                          <span className="flex-shrink-0 text-[10px] font-bold uppercase tracking-wider text-gold bg-gold/10 border border-gold/30 rounded-full px-2.5 py-0.5">
+                            {pkg.badge}
+                          </span>
+                        )}
+                      </div>
                       <div className="mt-4 flex items-baseline gap-1">
                         <span className="text-4xl font-bold text-white">{pkg.price}</span>
                       </div>
