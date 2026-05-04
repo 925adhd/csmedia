@@ -12,14 +12,43 @@ export default function GoogleAnalytics() {
 
   useEffect(() => {
     if (!GA_ID) return;
-    const trigger = () => setLoad(true);
-    INTERACTION_EVENTS.forEach((e) =>
-      window.addEventListener(e, trigger, { once: true, passive: true })
-    );
-    const timer = window.setTimeout(trigger, FALLBACK_DELAY_MS);
+
+    let disarm: (() => void) | undefined;
+
+    const arm = () => {
+      const trigger = () => setLoad(true);
+      INTERACTION_EVENTS.forEach((e) =>
+        window.addEventListener(e, trigger, { once: true, passive: true })
+      );
+      const timer = window.setTimeout(trigger, FALLBACK_DELAY_MS);
+      disarm = () => {
+        INTERACTION_EVENTS.forEach((e) => window.removeEventListener(e, trigger));
+        window.clearTimeout(timer);
+      };
+    };
+
+    const tryArm = () => {
+      if (localStorage.getItem("cookie-consent") === "accepted") {
+        arm();
+        return true;
+      }
+      return false;
+    };
+
+    if (tryArm()) {
+      return () => disarm?.();
+    }
+
+    const onConsentUpdate = () => {
+      if (tryArm()) {
+        window.removeEventListener("cookie-consent-update", onConsentUpdate);
+      }
+    };
+    window.addEventListener("cookie-consent-update", onConsentUpdate);
+
     return () => {
-      INTERACTION_EVENTS.forEach((e) => window.removeEventListener(e, trigger));
-      window.clearTimeout(timer);
+      window.removeEventListener("cookie-consent-update", onConsentUpdate);
+      disarm?.();
     };
   }, []);
 
