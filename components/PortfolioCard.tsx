@@ -32,7 +32,6 @@ export default function PortfolioCard({ project }: { project: PortfolioProject }
         {/* Bottom info */}
         <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
           <h3 className="text-lg font-semibold text-white">{project.title}</h3>
-          <p className="text-sm text-dark-100">{project.location}</p>
         </div>
 
         {/* Corner accent */}
