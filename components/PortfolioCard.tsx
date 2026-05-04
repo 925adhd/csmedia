@@ -31,7 +31,7 @@ export default function PortfolioCard({ project }: { project: PortfolioProject }
 
         {/* Bottom info */}
         <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-          <span className="inline-block rounded-full bg-gold/90 px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-dark-900 mb-2">
+          <span className="inline-block rounded-full bg-dark-900/60 backdrop-blur-sm border border-gold/30 px-3 py-0.5 text-[10px] font-bold uppercase tracking-wider text-gold mb-2">
             {project.propertyType}
           </span>
           <h3 className="text-lg font-semibold text-white">{project.title}</h3>
