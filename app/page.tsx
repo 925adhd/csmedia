@@ -166,7 +166,7 @@ export default async function Home() {
           <FadeIn delay={0.3}>
             <div className="mt-8 flex items-center justify-center">
               <BookingButton
-                className="rounded-full bg-gold px-10 py-4 text-sm md:text-base font-bold uppercase tracking-widest text-dark-900 transition-all hover:bg-gold/90 hover:shadow-xl hover:shadow-gold/25 shadow-lg shadow-gold/15 cursor-pointer"
+                className="rounded-full bg-gradient-to-b from-gold-light via-gold to-gold-dark px-10 py-4 text-sm md:text-base font-bold uppercase tracking-widest text-dark-900 shadow-[0_10px_30px_-6px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.45)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_-6px_rgba(0,0,0,0.6),0_0_24px_-4px_rgba(201,169,110,0.45),inset_0_1px_0_rgba(255,255,255,0.55)] cursor-pointer"
               >
                 Book a Shoot
               </BookingButton>
