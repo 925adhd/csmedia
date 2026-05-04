@@ -31,7 +31,7 @@ export default function CookiePolicyPage() {
             Cookie Policy
           </h1>
           <p className="mt-4 text-sm text-dark-300 font-mono">
-            Last updated: March 31, 2026
+            Last updated: May 4, 2026
           </p>
         </div>
       </section>
@@ -84,6 +84,15 @@ export default function CookiePolicyPage() {
               referral source. Data is aggregated and anonymous — we do not use it to
               identify individual visitors.
             </p>
+
+            <h3 className="mt-6 text-base font-semibold text-white mb-2">Cookieless Analytics (Ahrefs Web Analytics)</h3>
+            <p className="leading-relaxed">
+              We also use Ahrefs Web Analytics, which is privacy-focused and{" "}
+              <strong className="text-white">does not set cookies</strong> or store any data
+              in your browser. Because nothing is stored on your device, Ahrefs is not subject
+              to cookie consent and loads on every page. It collects aggregate pageview and
+              traffic data only.
+            </p>
           </div>
 
           <div>
@@ -92,7 +101,9 @@ export default function CookiePolicyPage() {
               When you first visit our site, a cookie banner asks you to accept or decline
               analytics cookies. If you decline, Google Analytics does not load and no
               analytics cookies are set. Your choice is stored in your browser&apos;s local
-              storage so the banner does not appear again.
+              storage so the banner does not appear again. The consent gate applies to
+              cookie-based tracking only — our cookieless analytics (Ahrefs) loads regardless,
+              since it stores nothing on your device.
             </p>
           </div>
 
@@ -120,8 +131,9 @@ export default function CookiePolicyPage() {
             <h2 className="text-lg font-bold text-white mb-3">5. Third-Party Cookies</h2>
             <p className="leading-relaxed">
               We do not use any third-party advertising or remarketing cookies. The only
-              third-party cookies on this site are from Google Analytics, loaded only with
-              your consent.
+              third-party cookies on this site are from Google Analytics, and they are loaded
+              only with your consent. Our other third-party analytics tool, Ahrefs Web
+              Analytics, is cookieless and sets no cookies at all.
             </p>
           </div>
 

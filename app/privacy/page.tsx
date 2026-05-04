@@ -31,7 +31,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="mt-4 text-sm text-dark-300 font-mono">
-            Last updated: March 22, 2026
+            Last updated: May 4, 2026
           </p>
         </div>
       </section>
@@ -48,7 +48,7 @@ export default function PrivacyPage() {
               <li>Name, email address, and phone number (via our contact form)</li>
               <li>Property or business address (when requesting a quote)</li>
               <li>Service preferences and project details</li>
-              <li>Usage data and analytics (via Google Analytics)</li>
+              <li>Usage data and analytics (via Google Analytics and Ahrefs Web Analytics)</li>
               <li>Cookies and browser information</li>
             </ul>
           </div>
@@ -66,15 +66,17 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-white mb-3">3. Google Analytics</h2>
+            <h2 className="text-lg font-bold text-white mb-3">3. Analytics Services</h2>
             <p className="leading-relaxed">
-              This website uses Google Analytics to help us understand how visitors interact with
-              our site. Google Analytics uses cookies to collect information such as how often users
-              visit the site, what pages they visit, and what other sites they used prior to coming
-              to this site. We use the information we get from Google Analytics to improve our website.
-              Google Analytics collects only the IP address assigned to you on the date you visit this
-              site. Google&apos;s ability to use and share information collected by Google Analytics is
-              governed by the{" "}
+              We use two analytics services to understand how visitors interact with our site:
+            </p>
+            <h3 className="mt-4 text-base font-semibold text-white mb-2">Google Analytics 4</h3>
+            <p className="leading-relaxed">
+              Google Analytics uses cookies to collect information such as pages visited, time on
+              site, and referral source. <strong className="text-white">Google Analytics only loads
+              if you accept analytics cookies in our consent banner</strong> — if you decline, it
+              never runs and no analytics cookies are set. Google&apos;s ability to use and share
+              information collected by Google Analytics is governed by the{" "}
               <a href="https://policies.google.com/terms" className="text-gold hover:underline" target="_blank" rel="noopener noreferrer">
                 Google Analytics Terms of Service
               </a>{" "}
@@ -82,6 +84,18 @@ export default function PrivacyPage() {
               <a href="https://policies.google.com/privacy" className="text-gold hover:underline" target="_blank" rel="noopener noreferrer">
                 Google Privacy Policy
               </a>.
+            </p>
+            <h3 className="mt-4 text-base font-semibold text-white mb-2">Ahrefs Web Analytics</h3>
+            <p className="leading-relaxed">
+              We also use Ahrefs Web Analytics, a privacy-focused, cookieless analytics service
+              that helps us measure overall site traffic and SEO performance. Ahrefs does not set
+              cookies, does not use browser local storage, and does not collect personal
+              information. Because it is cookieless, it loads on every page regardless of your
+              consent choice. See the{" "}
+              <a href="https://ahrefs.com/privacy" className="text-gold hover:underline" target="_blank" rel="noopener noreferrer">
+                Ahrefs Privacy Policy
+              </a>{" "}
+              for details.
             </p>
           </div>
 
@@ -107,9 +121,10 @@ export default function PrivacyPage() {
               We use the following third-party services that may collect information:
             </p>
             <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li><strong className="text-white">Web3Forms:</strong> To process contact form submissions</li>
-              <li><strong className="text-white">Google Analytics:</strong> For website analytics and tracking</li>
-              <li><strong className="text-white">Google Search Console:</strong> For search performance monitoring</li>
+              <li><strong className="text-white">Web3Forms:</strong> Forwards contact form submissions to our email; submissions pass through Web3Forms&apos; servers in transit.</li>
+              <li><strong className="text-white">Google Analytics 4:</strong> Cookie-based website analytics. Loads only with your consent.</li>
+              <li><strong className="text-white">Ahrefs Web Analytics:</strong> Cookieless website analytics. Loads on every page; sets no cookies and stores nothing on your device.</li>
+              <li><strong className="text-white">Google Search Console:</strong> For search performance monitoring (uses an unobtrusive verification meta tag, no visitor tracking).</li>
             </ul>
           </div>
 
