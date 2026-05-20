@@ -8,14 +8,14 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "Kentucky Event Photography: Weddings, Showers & Parties | CS Media",
+  title: { absolute: "Kentucky Event Photography: Weddings & Parties | CS Media" },
   description:
-    "Event photography across Kentucky: weddings, baby showers, birthdays, and special occasions. Candid, warm, and timeless. Captured the way you actually remember the day.",
+    "Event photography across Kentucky: weddings, baby showers, birthdays, and big moments. Candid and warm — captured the way you actually remember the day.",
   alternates: { canonical: `${BASE_URL}/services/events` },
   openGraph: {
-    title: "Kentucky Event Photography | CS Media",
+    title: "Kentucky Event Photography: Weddings & Parties | CS Media",
     description:
-      "Weddings, baby showers, parties, and special occasions across Kentucky.",
+      "Weddings, baby showers, parties, and big moments across Kentucky. Candid and warm — the way you'll actually remember the day.",
     type: "website",
     url: `${BASE_URL}/services/events`,
     siteName: "CS Media",
@@ -34,30 +34,40 @@ export default function EventsPage() {
     ],
   };
 
-  const professionalServiceSchema = {
+  const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "CS MEDIA, LLC — Event Photography",
+    "@type": "Service",
+    serviceType: "Event Photography",
+    name: "Event Photography by CS MEDIA, LLC",
     description:
       "Event photography across Kentucky: weddings, baby showers, birthdays, engagements, and special occasions.",
     url: `${BASE_URL}/services/events`,
-    telephone: "+1-270-307-0173",
-    email: "cscreatesmediallc@gmail.com",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Leitchfield",
-      addressRegion: "KY",
-      postalCode: "42754",
-      addressCountry: "US",
-    },
     areaServed: { "@type": "State", name: "Kentucky" },
-    serviceType: [
-      "Wedding Photography",
-      "Baby Shower Photography",
-      "Birthday Party Photography",
-      "Engagement Photography",
-      "Corporate Event Photography",
-    ],
+    provider: {
+      "@type": "LocalBusiness",
+      name: "CS MEDIA, LLC",
+      telephone: "+1-270-307-0173",
+      email: "cscreatesmediallc@gmail.com",
+      url: BASE_URL,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Leitchfield",
+        addressRegion: "KY",
+        postalCode: "42754",
+        addressCountry: "US",
+      },
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Event Photography Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Wedding Photography" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Baby Shower Photography" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Birthday Party Photography" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Engagement Photography" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Corporate Event Photography" } },
+      ],
+    },
   };
 
   const eventTypes = [
@@ -77,7 +87,7 @@ export default function EventsPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
       <Breadcrumbs

@@ -36,7 +36,7 @@ function fromSupabase(row: SupabaseProject): PortfolioProject {
 const staticProjects: PortfolioProject[] = [
   {
     slug: "stone-estate-aerial",
-    title: "Stone Estate Aerial",
+    title: "Stone Estate Aerial Drone Photography",
     propertyType: "residential",
     location: "Kentucky",
     description:
@@ -47,7 +47,7 @@ const staticProjects: PortfolioProject[] = [
   },
   {
     slug: "modern-farmhouse",
-    title: "Modern Farmhouse",
+    title: "Modern Farmhouse Drone & Real Estate Photography",
     propertyType: "residential",
     location: "Kentucky",
     description:
@@ -64,7 +64,7 @@ const staticProjects: PortfolioProject[] = [
     description:
       "A charming country home on open acreage featuring a covered pavilion, wraparound porch, and beautifully finished interiors. Aerial drone photography captures the full property layout, outbuildings, and road frontage: the details that drive buyer decisions on rural Kentucky listings where land is as much the product as the house. Interior shots showcase the living spaces, upper-level loft, and the finish quality that a ground-level MLS photo set can't communicate. The aerial-plus-interior combination is what pushes listings like this from sitting to sold.",
     heroImage: "/images/country-home-aerial-acreage-kentucky.webp",
-    images: ["/images/country-home-aerial-acreage-kentucky.webp", "/images/covered-front-porch-kentucky-hocheris-chanthavong-cs-media-owner.webp", "/images/living-room-sectional-dark-floors.webp", "/images/upper-level-loft-staircase-landing.webp"],
+    images: ["/images/country-home-aerial-acreage-kentucky.webp", "/images/covered-front-porch-kentucky-home.webp", "/images/living-room-sectional-dark-floors.webp", "/images/upper-level-loft-staircase-landing.webp"],
     featured: false,
   },
   {
@@ -80,7 +80,7 @@ const staticProjects: PortfolioProject[] = [
   },
   {
     slug: "drone-property-tour",
-    title: "Drone Property Tour",
+    title: "Cinematic Drone Property Tour (Kentucky)",
     propertyType: "aerial",
     location: "Kentucky",
     description:
@@ -140,10 +140,36 @@ async function fetchFromSupabase() {
   }
 }
 
-// These are the public API functions used by pages
+// These are the public API functions used by pages.
+//
+// Text fields (title, description, propertyType, location) are the source of
+// truth in this file — they're SEO-tuned and shouldn't be edited via admin.
+// Image fields (heroImage, images, videoSrc, mobileVideoSrc) and the featured
+// flag still come from Supabase so Cheris can swap photos / pick featured items
+// without a redeploy. Slugs only present in Supabase pass through unchanged.
 export async function getPortfolioProjects(): Promise<PortfolioProject[]> {
-  const data = await fetchFromSupabase();
-  return data || staticProjects;
+  const supabaseData = await fetchFromSupabase();
+  if (!supabaseData) return staticProjects;
+
+  const staticBySlug = new Map(staticProjects.map((p) => [p.slug, p]));
+  const supabaseSlugs = new Set(supabaseData.map((p) => p.slug));
+
+  const merged = supabaseData.map((sb) => {
+    const stat = staticBySlug.get(sb.slug);
+    if (!stat) return sb;
+    return {
+      ...stat,
+      heroImage: sb.heroImage,
+      images: sb.images,
+      videoSrc: sb.videoSrc,
+      mobileVideoSrc: sb.mobileVideoSrc,
+      featured: sb.featured,
+      uploadDate: sb.uploadDate ?? stat.uploadDate,
+    };
+  });
+
+  const staticOnly = staticProjects.filter((p) => !supabaseSlugs.has(p.slug));
+  return [...merged, ...staticOnly];
 }
 
 export async function getProjectBySlug(slug: string): Promise<PortfolioProject | undefined> {

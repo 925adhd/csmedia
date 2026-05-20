@@ -124,9 +124,9 @@ CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owe
   },
   {
     slug: "real-estate-photography-cost-kentucky",
-    title: "How Much Does a Real Estate Photographer Cost in Kentucky?",
+    title: "Real Estate Photography Cost in Kentucky: $85–$1,500 (2026)",
     description:
-      "What a Kentucky real estate photographer actually charges in 2026: market ranges for photos, drone aerials, listing video & virtual staging. Packages from $85, FAA Part 107 certified, 24–48hr delivery.",
+      "Honest 2026 pricing for Kentucky real estate photography: $100–$1,500 depending on photos, drone, video, and city. Plus what actually drives the cost.",
     date: "2026-04-04",
     readTime: "8 min read",
     heroImage: "/images/kentucky-real-estate-drone-aerial.webp",

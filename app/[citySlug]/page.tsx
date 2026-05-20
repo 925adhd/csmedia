@@ -32,14 +32,14 @@ export async function generateMetadata({
   const loc = slug ? getLocationBySlug(slug) : undefined;
   if (!loc) return {};
 
-  const title = `${loc.city} Real Estate Photography & Drone Video | ${loc.county} KY`;
-  const description = `Professional real estate photography, drone video & virtual staging in ${loc.city}, ${loc.county}, Kentucky. FAA Part 107 certified. From $85.`;
+  const title = `${loc.city} Real Estate Photography & Drone (From $85)`;
+  const description = `${loc.city}, KY real estate photography & drone aerials from $85. MLS-ready photos in 24–48 hours by a local FAA Part 107 pilot. Same-week availability.`;
 
   const BASE_URL =
     process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: { canonical: `${BASE_URL}/${citySlug}` },
     openGraph: {
@@ -660,6 +660,15 @@ export default async function CityPage({
                   className="text-gold/80 hover:text-gold underline-offset-2 hover:underline transition-colors"
                 >
                   Aerial Only · $85
+                </Link>
+              </p>
+              <p className="text-xs text-dark-300">
+                Want to see how this compares to the rest of the Kentucky market?{" "}
+                <Link
+                  href="/blog/real-estate-photography-cost-kentucky"
+                  className="text-gold/80 hover:text-gold underline-offset-2 hover:underline transition-colors"
+                >
+                  Read our full pricing guide
                 </Link>
               </p>
               <Link

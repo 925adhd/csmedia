@@ -8,14 +8,14 @@ import { getPageContent } from "@/lib/supabase/queries";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "Book a Real Estate Photo Shoot in Kentucky",
+  title: { absolute: "Book a Kentucky Real Estate Shoot (From $85) | CS Media" },
   description:
-    "Book your real estate photo, drone, or virtual staging shoot. Leitchfield, Elizabethtown, Bowling Green, Owensboro & all of Kentucky. From $85.",
+    "Book your Kentucky real estate photo, drone, or virtual staging shoot. From $85, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
   alternates: { canonical: `${BASE_URL}/book` },
   openGraph: {
-    title: "Book a Real Estate Photo Shoot | CS Media",
+    title: "Book a Kentucky Real Estate Shoot (From $85) | CS Media",
     description:
-      "Book your real estate photo, drone, or virtual staging shoot. Leitchfield, Elizabethtown, Bowling Green, Owensboro & all of Kentucky. From $85.",
+      "Book your Kentucky real estate photo, drone, or virtual staging shoot. From $85, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
     type: "website",
     url: `${BASE_URL}/book`,
     siteName: "CS Media",

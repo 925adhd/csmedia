@@ -12,14 +12,14 @@ import { locations } from "@/lib/locations";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "Kentucky Real Estate Photography & Drone Video | Packages from $85",
+  title: { absolute: "Kentucky Real Estate Photography from $85 | CS Media" },
   description:
-    "Professional real estate photography, drone video, and virtual staging across Kentucky. FAA Part 107 certified. Packages from $85, delivered in 24–48 hours. Serving Leitchfield, Elizabethtown, Bowling Green, Owensboro, Bardstown & more.",
+    "Real estate photography, drone aerials, and listing video across Kentucky. Packages from $85, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
   alternates: { canonical: `${BASE_URL}/services/real-estate` },
   openGraph: {
-    title: "Kentucky Real Estate Photography & Drone Video | CS Media",
+    title: "Kentucky Real Estate Photography from $85 | CS Media",
     description:
-      "Professional real estate photography, drone video, and virtual staging across Kentucky. FAA Part 107 certified. Packages from $85, delivered in 24–48 hours.",
+      "Real estate photography, drone aerials, and listing video across Kentucky. Packages from $85, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
     type: "website",
     url: `${BASE_URL}/services/real-estate`,
     siteName: "CS Media",

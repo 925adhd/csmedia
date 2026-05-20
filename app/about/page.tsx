@@ -16,12 +16,12 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia
 export const metadata: Metadata = {
   title: "About CS Media: An Asian with a Camera in Kentucky",
   description:
-    "Meet Cheris Chanthavong, an asian with a camera based in Leitchfield, KY. FAA Part 107 certified drone pilot offering photography, videography, and editing across Kentucky.",
+    "Cheris Chanthavong — an Asian with a camera based in Leitchfield, KY. FAA Part 107 drone pilot shooting real estate, events, and video across Kentucky.",
   alternates: { canonical: `${BASE_URL}/about` },
   openGraph: {
     title: "About | CS Media",
     description:
-      "Meet Cheris Chanthavong, an asian with a camera based in Leitchfield, KY. FAA Part 107 drone pilot offering photography, videography, and editing across Kentucky.",
+      "Cheris Chanthavong — an Asian with a camera based in Leitchfield, KY. FAA Part 107 drone pilot shooting real estate, events, and video across Kentucky.",
     type: "website",
     url: `${BASE_URL}/about`,
     siteName: "CS Media",

@@ -22,11 +22,11 @@ export async function generateMetadata({
   const BASE_URL =
     process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
   return {
-    title: post.title,
+    title: { absolute: post.title },
     description: post.description,
     alternates: { canonical: `${BASE_URL}/blog/${slug}` },
     openGraph: {
-      title: `${post.title} | CS Media`,
+      title: post.title,
       description: post.description,
       type: "article",
       url: `${BASE_URL}/blog/${slug}`,

@@ -9,14 +9,14 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "Video Production in Kentucky | CS Media",
+  title: { absolute: "Kentucky Video Production: Promos, Reels & B-roll | CS Media" },
   description:
     "Promo videos, business content, and social media reels for Kentucky brands. From single-take phone reels to multi-camera promotional shoots.",
   alternates: { canonical: `${BASE_URL}/services/video-production` },
   openGraph: {
-    title: "Video Production in Kentucky | CS Media",
+    title: "Kentucky Video Production: Promos, Reels & B-roll | CS Media",
     description:
-      "Promo videos and social media content for Kentucky brands.",
+      "Promo videos, reels, and business content for Kentucky brands. Single-take phone reels to multi-camera promo shoots.",
     type: "website",
     url: `${BASE_URL}/services/video-production`,
     siteName: "CS Media",
@@ -35,30 +35,40 @@ export default function VideoProductionPage() {
     ],
   };
 
-  const professionalServiceSchema = {
+  const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "CS MEDIA, LLC — Video Production",
+    "@type": "Service",
+    serviceType: "Video Production",
+    name: "Video Production by CS MEDIA, LLC",
     description:
       "Video production across Kentucky: promo videos, social media reels, business content, and event highlight videos.",
     url: `${BASE_URL}/services/video-production`,
-    telephone: "+1-270-307-0173",
-    email: "cscreatesmediallc@gmail.com",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Leitchfield",
-      addressRegion: "KY",
-      postalCode: "42754",
-      addressCountry: "US",
-    },
     areaServed: { "@type": "State", name: "Kentucky" },
-    serviceType: [
-      "Promotional Video Production",
-      "Social Media Reel Production",
-      "Business Video Content",
-      "Event Highlight Videos",
-      "Drone Aerial Videography",
-    ],
+    provider: {
+      "@type": "LocalBusiness",
+      name: "CS MEDIA, LLC",
+      telephone: "+1-270-307-0173",
+      email: "cscreatesmediallc@gmail.com",
+      url: BASE_URL,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Leitchfield",
+        addressRegion: "KY",
+        postalCode: "42754",
+        addressCountry: "US",
+      },
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Video Production Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Promotional Video Production" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Social Media Reel Production" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Business Video Content" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Event Highlight Videos" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Drone Aerial Videography" } },
+      ],
+    },
   };
 
   return (
@@ -69,7 +79,7 @@ export default function VideoProductionPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
       <Breadcrumbs
