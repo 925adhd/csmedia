@@ -3,8 +3,6 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import ContactForm from "@/components/ContactForm";
 
-import { getPageContent } from "@/lib/supabase/queries";
-
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
@@ -24,37 +22,24 @@ export const metadata: Metadata = {
 };
 
 export default async function BookPage() {
-  const [headerContent, sidebarContent, formContent] = await Promise.all([
-    getPageContent("contact", "header"),
-    getPageContent("contact", "sidebar"),
-    getPageContent("contact", "form"),
-  ]);
-
-  // Header fields
-  const tagline = (headerContent?.tagline as string) || "Get in Touch";
+  const tagline = "Get in Touch";
   const heading = "Book a Shoot";
-  const subtext = "Fill out the form or text (270) 307-0173. I'll get back to you within 24 hours.";
-  const headerPhone = (headerContent?.phone as string) || "(270)\u00a0307-0173";
-
-  // Sidebar fields
-  const sidebarPhone = (sidebarContent?.phone as string) || "(270) 307-0173";
-  const sidebarEmail = (sidebarContent?.email as string) || "cscreatesmediallc@gmail.com";
-  const sidebarServices = (sidebarContent?.services as string[]) || [
+  const sidebarPhone = "(270) 307-0173";
+  const sidebarEmail = "cscreatesmediallc@gmail.com";
+  const sidebarServices = [
     "Photography",
     "Drone Pilot (Part 107)",
     "Listing Video",
     "Virtual Staging",
     "Logo & Watermark Design",
   ];
-  const responseTime = (sidebarContent?.response_time as string) || "Within 24 hours";
-  const companyName = (sidebarContent?.company_name as string) || "CS MEDIA, LLC";
-  const companyType = (sidebarContent?.company_type as string) || "Advertising / Marketing";
-
-  // Form fields
-  const successHeading = (formContent?.success_heading as string) || "Message Sent!";
-  const successMessage = (formContent?.success_message as string) || "Thanks for reaching out. I'll get back to you within 24 hours.";
-  const submitText = (formContent?.submit_text as string) || "Send Message";
-  const formServices = (formContent?.services as string[]) || [
+  const responseTime = "Within 24 hours";
+  const companyName = "CS MEDIA, LLC";
+  const companyType = "Advertising / Marketing";
+  const successHeading = "Message Sent!";
+  const successMessage = "Thanks for reaching out. I'll get back to you within 24 hours.";
+  const submitText = "Send Message";
+  const formServices = [
     "--- Real Estate Packages ---",
     "Aerial Only ($85)",
     "Interior + Exterior, No Drone ($140)",

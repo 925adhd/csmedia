@@ -3,8 +3,6 @@ import { Fraunces } from "next/font/google";
 import FadeIn from "@/components/FadeIn";
 import VideoPlayer from "@/components/VideoPlayer";
 import CTASection from "@/components/CTASection";
-import { getPageContent } from "@/lib/supabase/queries";
-
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
@@ -30,8 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-  const headerContent = await getPageContent("about", "header");
-  const headerTagline = (headerContent?.tagline as string) || "About";
+  const headerTagline = "About";
 
   const trustTagline = "Why CS Media";
   const trustHeading = "Here’s what you can count on.";

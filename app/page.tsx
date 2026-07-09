@@ -11,9 +11,6 @@ import HeroViewportLock from "@/components/HeroViewportLock";
 import { StampIcon, DroneIcon, PolaroidIcon } from "@/components/StepIcons";
 import { getPortfolioProjects } from "@/lib/portfolio";
 import { locations } from "@/lib/locations";
-import { getPageContent } from "@/lib/supabase/queries";
-import { getTestimonials, getServices } from "@/lib/supabase/queries";
-
 const iconMap: Record<string, React.ReactNode> = {
   camera: (
     <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -44,27 +41,7 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export default async function Home() {
-  const [
-    portfolioProjects,
-    _hero,
-    servicesContent,
-    stagingContent,
-    recentWork,
-    testimonialsContent,
-    _statsContent,
-    testimonials,
-    _services,
-  ] = await Promise.all([
-    getPortfolioProjects(),
-    getPageContent("home", "hero"),
-    getPageContent("home", "services"),
-    getPageContent("home", "staging"),
-    getPageContent("home", "recent_work"),
-    getPageContent("home", "testimonials"),
-    getPageContent("home", "stats"),
-    getTestimonials(),
-    getServices(),
-  ]);
+  const portfolioProjects = await getPortfolioProjects();
 
   const faqItems = [
     {
@@ -207,10 +184,10 @@ export default async function Home() {
           <FadeIn>
             <div className="mb-14">
               <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                {(recentWork?.tagline as string) || "Recent Work"}
+                Recent Work
               </span>
               <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
-                {(recentWork?.heading as string) || "Recent Kentucky Real Estate Photography"}
+                Recent Kentucky Real Estate Photography
               </h2>
             </div>
           </FadeIn>
@@ -226,7 +203,7 @@ export default async function Home() {
               href="/portfolio"
               className="inline-flex items-center gap-2 text-sm font-medium text-dark-200 hover:text-gold transition-colors group"
             >
-              {(recentWork?.view_full_text as string) || "View Full Portfolio"}
+              View Full Portfolio
               <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
               </svg>
@@ -244,10 +221,10 @@ export default async function Home() {
           <FadeIn>
             <div className="text-center mb-14">
               <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                {(testimonialsContent?.tagline as string) || "Reviews"}
+                Reviews
               </span>
               <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
-                {(testimonialsContent?.heading as string) || "Reviews from Kentucky Real Estate Agents"}
+                Reviews from Kentucky Real Estate Agents
               </h2>
               <div className="mt-4 flex items-center justify-center gap-1">
                 {[...Array(5)].map((_, i) => (
@@ -255,19 +232,16 @@ export default async function Home() {
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
-                <span className="ml-2 text-sm text-dark-200 font-mono">{(testimonialsContent?.rating as string) || "5.0"}</span>
+                <span className="ml-2 text-sm text-dark-200 font-mono">5.0</span>
               </div>
             </div>
           </FadeIn>
           {(() => {
-            const hardcoded = [
+            const list = [
               { quote: "I would recommend CS MEDIA to anyone! Simply the best person to work with and has PHENOMENAL turn around time. The photos taken of my wedding I'll cherish for a lifetime 🤍", name: "Bethany Brim", badge: "Recommends CS MEDIA, LLC", service: "Wedding Photography", avatar: "/images/testimonial-bethany-brim.webp", bgImage: "/images/twilight-ranch-aerial-drone-dusk.webp" },
               { quote: "We couldn't be happier with a promo video she shot for us! She made it so much fun, can't wait to do another!!!!", name: "Snow Dogs Food Truck", badge: "Recommends CS MEDIA, LLC", service: "Video Production", avatar: "/images/testimonial-snow-dogs.webp", bgImage: "/images/snow-dogs-food-truck-promo-kentucky.webp" },
               { quote: "OH MY GOSH!!!! I can't even say how amazing she is. She designed my watermark and logo and did absolutely AMAZING!!!!! I 100% recommend her for any design needs you may have.", name: "Jared Clouse - Bary", badge: "Recommends CS MEDIA, LLC", service: "Logo & Design", avatar: "/images/testimonial-jared-clouse.webp", bgImage: "/images/jared-clouse-bary-logo.webp", bgType: "logo" as const },
             ];
-            const hardcodedNames = new Set(hardcoded.map((t) => t.name.toLowerCase().trim()));
-            const extras = testimonials.filter((t) => !hardcodedNames.has(t.name.toLowerCase().trim()));
-            const list = [...hardcoded, ...extras];
             const featured = list[0];
             const rest = list.slice(1);
             const restWrapperClass =
@@ -487,12 +461,12 @@ export default async function Home() {
           <FadeIn>
             <div className="text-center mb-16">
               <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                {(servicesContent?.tagline as string) || "What We Do"}
+                What We Do
               </span>
               <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
-                {(servicesContent?.heading as string) || "Real Estate Photography, Drone &"}{" "}
+                Real Estate Photography, Drone &{" "}
                 <span className="relative inline-block">
-                  {(servicesContent?.heading_gold as string) || "Video Services"}
+                  Video Services
                   <span aria-hidden className="absolute left-0 right-0 -bottom-1 md:-bottom-1.5 h-[2px] md:h-[3px] bg-gold" />
                 </span>
               </h2>
@@ -524,13 +498,13 @@ export default async function Home() {
             <FadeIn>
               <div>
                 <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                  {(stagingContent?.tagline as string) || "Virtual Staging"}
+                  Virtual Staging
                 </span>
                 <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight text-white">
-                  {(stagingContent?.heading as string) || "Virtual Staging That"}
+                  Virtual Staging That
                   <br />
                   <span className="text-gold">
-                    {(stagingContent?.heading_gold as string) || "Sells Homes Faster"}
+                    Sells Homes Faster
                   </span>
                 </h2>
                 <p className="mt-5 text-dark-200 leading-relaxed">
@@ -554,7 +528,7 @@ export default async function Home() {
                 <TextLink
                   className="mt-8 inline-block border-gradient rounded-full bg-gold/10 px-8 py-3 text-sm font-semibold uppercase tracking-widest text-gold transition-all hover:bg-gold/20"
                 >
-                  {(stagingContent?.cta_text as string) || "Get a Quote"}
+                  Get a Quote
                 </TextLink>
               </div>
             </FadeIn>

@@ -7,8 +7,6 @@ import CTASection from "@/components/CTASection";
 import FAQAccordion from "@/components/FAQAccordion";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { locations, getLocationBySlug } from "@/lib/locations";
-import { getTestimonials } from "@/lib/supabase/queries";
-
 const URL_SUFFIX = "-real-estate-photography";
 
 function citySlugToLocSlug(citySlug: string): string | null {
@@ -185,26 +183,22 @@ export default async function CityPage({
 
   const isHomeBase = loc.slug === "leitchfield";
 
-  const testimonials = await getTestimonials();
-  const displayTestimonials =
-    testimonials.length > 0
-      ? testimonials.slice(0, 2)
-      : [
-          {
-            quote:
-              "We couldn't be happier with a promo video she shot for us! She made it so much fun, can't wait to do another!!!!",
-            name: "Snow Dogs Food Truck",
-            badge: "Recommends CS MEDIA, LLC",
-            service: "Video Production",
-          },
-          {
-            quote:
-              "I would recommend CS MEDIA to anyone! Simply the best person to work with and has PHENOMENAL turn around time. The photos taken of my wedding I'll cherish for a lifetime.",
-            name: "Bethany Brim",
-            badge: "Recommends CS MEDIA, LLC",
-            service: "Event Photography",
-          },
-        ];
+  const displayTestimonials = [
+    {
+      quote:
+        "We couldn't be happier with a promo video she shot for us! She made it so much fun, can't wait to do another!!!!",
+      name: "Snow Dogs Food Truck",
+      badge: "Recommends CS MEDIA, LLC",
+      service: "Video Production",
+    },
+    {
+      quote:
+        "I would recommend CS MEDIA to anyone! Simply the best person to work with and has PHENOMENAL turn around time. The photos taken of my wedding I'll cherish for a lifetime.",
+      name: "Bethany Brim",
+      badge: "Recommends CS MEDIA, LLC",
+      service: "Event Photography",
+    },
+  ];
 
   return (
     <>

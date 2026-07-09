@@ -1,5 +1,3 @@
-import type { PortfolioProject as SupabaseProject } from "./supabase/types";
-
 export interface PortfolioProject {
   slug: string;
   title: string;
@@ -15,24 +13,6 @@ export interface PortfolioProject {
   uploadDate?: string;
 }
 
-// Convert Supabase row to frontend shape
-function fromSupabase(row: SupabaseProject): PortfolioProject {
-  return {
-    slug: row.slug,
-    title: row.title,
-    propertyType: row.property_type,
-    location: row.location,
-    description: row.description,
-    heroImage: row.hero_image,
-    images: row.images,
-    videoSrc: row.video_src || undefined,
-    mobileVideoSrc: row.mobile_video_src || undefined,
-    featured: row.featured,
-    uploadDate: row.created_at || undefined,
-  };
-}
-
-// Static fallback data (used when Supabase is not configured)
 const staticProjects: PortfolioProject[] = [
   {
     slug: "stone-estate-aerial",
@@ -120,56 +100,8 @@ const staticProjects: PortfolioProject[] = [
   },
 ];
 
-const isSupabaseConfigured =
-  typeof process !== "undefined" &&
-  !!process.env.NEXT_PUBLIC_SUPABASE_URL &&
-  !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-async function fetchFromSupabase() {
-  if (!isSupabaseConfigured) return null;
-  try {
-    const { createClient } = await import("./supabase/server");
-    const supabase = await createClient();
-    const { data } = await supabase
-      .from("portfolio_projects")
-      .select("*")
-      .order("sort_order", { ascending: true });
-    return data ? data.map(fromSupabase) : null;
-  } catch {
-    return null;
-  }
-}
-
-// These are the public API functions used by pages.
-//
-// Text fields (title, description, propertyType, location) are the source of
-// truth in this file — they're SEO-tuned and shouldn't be edited via admin.
-// Image fields (heroImage, images, videoSrc, mobileVideoSrc) and the featured
-// flag still come from Supabase so Cheris can swap photos / pick featured items
-// without a redeploy. Slugs only present in Supabase pass through unchanged.
 export async function getPortfolioProjects(): Promise<PortfolioProject[]> {
-  const supabaseData = await fetchFromSupabase();
-  if (!supabaseData) return staticProjects;
-
-  const staticBySlug = new Map(staticProjects.map((p) => [p.slug, p]));
-  const supabaseSlugs = new Set(supabaseData.map((p) => p.slug));
-
-  const merged = supabaseData.map((sb) => {
-    const stat = staticBySlug.get(sb.slug);
-    if (!stat) return sb;
-    return {
-      ...stat,
-      heroImage: sb.heroImage,
-      images: sb.images,
-      videoSrc: sb.videoSrc,
-      mobileVideoSrc: sb.mobileVideoSrc,
-      featured: sb.featured,
-      uploadDate: sb.uploadDate ?? stat.uploadDate,
-    };
-  });
-
-  const staticOnly = staticProjects.filter((p) => !supabaseSlugs.has(p.slug));
-  return [...merged, ...staticOnly];
+  return staticProjects;
 }
 
 export async function getProjectBySlug(slug: string): Promise<PortfolioProject | undefined> {
