@@ -9,16 +9,7 @@ import CookieNotice from "@/components/CookieNotice";
 
 export default function LayoutShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isAdmin = pathname.startsWith("/admin");
   const hidesFloatingText = pathname === "/services";
-
-  if (isAdmin) {
-    return (
-      <>
-        {children}
-      </>
-    );
-  }
 
   return (
     <>
