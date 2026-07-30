@@ -33,7 +33,10 @@ interface PricingPackage {
   popular: boolean;
   badge?: string;
   features: string[];
+  bookingUrl: string;
 }
+
+const SQUARE_BASE = "https://book.squareup.com/appointments/0d7pw9dylg06tp/location/L6X9AW779A057/services";
 
 export default function RealEstatePage() {
   const packages: PricingPackage[] = [
@@ -45,6 +48,7 @@ export default function RealEstatePage() {
         "Up to 1-minute branding video",
         "3-hour session",
       ],
+      bookingUrl: `${SQUARE_BASE}/QU7N4O2TGBP2GXDHDAINK6NO`,
     },
     {
       name: "Photography Only",
@@ -56,6 +60,7 @@ export default function RealEstatePage() {
         "Drone photos (FAA Part 107 compliant)",
         "3-hour session",
       ],
+      bookingUrl: `${SQUARE_BASE}/JLGMPVZO44DNWNZJCSTOGIBB`,
     },
     {
       name: "Full Media Package",
@@ -67,6 +72,7 @@ export default function RealEstatePage() {
         "Up to 1-minute listing video",
         "3-hour session",
       ],
+      bookingUrl: `${SQUARE_BASE}/SQ3ECMQFLXDN6KL7YDZ4MMT3`,
     },
   ];
   const smallerPackages: PricingPackage[] = [
@@ -80,6 +86,7 @@ export default function RealEstatePage() {
         "FAA Part 107 compliant",
         "3-hour session",
       ],
+      bookingUrl: `${SQUARE_BASE}/OQX5HVKXJ4CWOVPCQLM457LQ`,
     },
   ];
   const addOns = [
@@ -285,6 +292,7 @@ export default function RealEstatePage() {
                         ))}
                       </div>
                       <BookingButton
+                        href={pkg.bookingUrl}
                         className={`mt-6 w-full rounded-full py-3 text-sm sm:text-xs font-semibold uppercase tracking-widest text-center transition-all cursor-pointer ${
                           pkg.popular
                             ? "bg-gold/15 border border-gold/30 text-gold hover:bg-gold/25"
@@ -330,6 +338,7 @@ export default function RealEstatePage() {
                     ))}
                   </div>
                   <BookingButton
+                    href={pkg.bookingUrl}
                     className="mt-5 w-full rounded-full py-2.5 text-sm sm:text-xs font-semibold uppercase tracking-widest text-center transition-all cursor-pointer bg-dark-600 border border-dark-500/50 text-dark-100 hover:border-gold/30 hover:text-gold"
                   >
                     Book Now
