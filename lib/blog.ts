@@ -53,7 +53,7 @@ This isn't about making photos look "pretty." It's about generating showings.
 - Professionally photographed homes sell for **$3,000–$11,000 more** on average
 - Listings with drone photos get **68% more views** than those without
 
-For an $85–$380 investment, you're not paying for photos. You're paying for showings. And showings are what sell houses.
+For a $185–$420 investment, you're not paying for photos. You're paying for showings. And showings are what sell houses.
 
 ---
 
@@ -93,7 +93,7 @@ Common reasons luxury property listings don't convert to showings:
 - **No video walkthrough** — luxury buyers shortlist on video before driving out
 - **Flat, under-processed images** — HDR and color grading are non-negotiable above $500K
 
-For luxury listings in Kentucky, the baseline is aerial + twilight + cinematic video. The $380 Pro Package is table stakes, not an upgrade. Skipping any of it is what keeps premium listings sitting.
+For luxury listings in Kentucky, the baseline is aerial + twilight + cinematic video. The $420 Full Media Package is table stakes, not an upgrade. Skipping any of it is what keeps premium listings sitting.
 
 ---
 
@@ -102,9 +102,9 @@ For luxury listings in Kentucky, the baseline is aerial + twilight + cinematic v
 Let's say you're listing a $250,000 home in Elizabethtown.
 
 - **Phone photos**: Listing sits 45+ days. Price reduction. You lose the seller's confidence.
-- **Professional media ($280 Standard Package)**: Listing gets 3x more views in the first week. Multiple showings. Offer in 14 days.
+- **Professional media ($420 Full Media Package)**: Listing gets 3x more views in the first week. Multiple showings. Offer in 14 days.
 
-That $280 didn't cost you anything. It made you money, and kept your seller happy enough to refer you to their neighbor.
+That $420 didn't cost you anything. It made you money, and kept your seller happy enough to refer you to their neighbor.
 
 ---
 
@@ -114,7 +114,7 @@ You don't need more leads. You need your current listings to perform. Profession
 
 CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owensboro, Bardstown, and the rest of Kentucky.
 
-- **Packages from $85** — drone, photos, video, virtual staging
+- **Packages from $185** — drone, photos, video, virtual staging
 - **24–48 hour delivery** — your listing goes live fast
 - **FAA Part 107 certified** — legal, insured aerial work
 - **Same-week availability** — text or call to book
@@ -124,7 +124,7 @@ CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owe
   },
   {
     slug: "real-estate-photography-cost-kentucky",
-    title: "Real Estate Photography Cost in Kentucky: $85–$1,500 (2026)",
+    title: "Real Estate Photography Cost in Kentucky: $100–$1,500 (2026)",
     description:
       "Honest 2026 pricing for Kentucky real estate photography: $100–$1,500 depending on photos, drone, video, and city. Plus what actually drives the cost.",
     date: "2026-04-04",
@@ -318,12 +318,12 @@ Nelson County's bourbon-trail tourism and historic downtown drive demand for hig
 
 For full transparency: I run CS Media out of Leitchfield and shoot listings across central and western Kentucky. Our pricing sits at the lower end of the secondary-market ranges above:
 
-- **Aerial Only:** $85
-- **Interior + Exterior (no drone):** $140
-- **Standard Package** (photos + drone + 30–45s listing video): $280
-- **Pro Package** (photos + drone + 60–90s cinematic video): $380
+- **Aerial Media Only:** $185
+- **Branding Content** (video only, no photos): $200
+- **Photography Only** (25–40 MLS-ready photos, drone included): $285
+- **Full Media Package** (photos + up to a 1-minute listing video): $420
 
-Every package is FAA Part 107–compliant, MLS-ready, delivered in 24–48 hours, and includes 1 free revision (2 on Pro). [Full package details and add-on pricing are on the services page →](/services)
+Every package is FAA Part 107–compliant, MLS-ready, delivered in 24–48 hours, and includes 1 free revision (2 on the Full Media Package). [Full package details and add-on pricing are on the services page →](/services)
 
 ---
 

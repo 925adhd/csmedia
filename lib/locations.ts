@@ -66,11 +66,11 @@ export const locations: LocationData[] = [
     localInsight:
       "One thing agents in Grayson County deal with is showing properties where the land is the main selling point. A 3-bedroom house on 50 acres needs to communicate the acreage first. That's what the buyer is paying for. We prioritize drone shots and wide exterior coverage on these listings because that's what drives the sale. Interior photos matter too, but the aerial perspective is what stops buyers mid-scroll.",
     closingPitch:
-      "Ready to get your Leitchfield listing or project professionally captured? Packages start at $85 with 24-48 hour turnaround. No mileage fees anywhere in Grayson County.",
+      "Ready to get your Leitchfield listing or project professionally captured? Packages start at $185 with 24-48 hour turnaround. No mileage fees anywhere in Grayson County.",
     faqs: [
       {
         q: "How much does real estate photography cost in Leitchfield?",
-        a: "Aerial-only is $85 and Interior + Exterior (no drone) is $140. The Standard and Pro Packages with photos, drone, and listing video run $280–$380. No mileage fees apply anywhere in Grayson County.",
+        a: "Aerial Media Only is $185. Photography Only (25–40 MLS-ready photos, drone included) is $285, and the Full Media Package (photos plus a listing video) is $420. No mileage fees apply anywhere in Grayson County.",
       },
       {
         q: "Do you charge travel fees for Leitchfield shoots?",
@@ -155,11 +155,11 @@ export const locations: LocationData[] = [
     localInsight:
       "A reality of shooting in parts of Elizabethtown is Fort Knox airspace. The northern portions of E-town fall under restricted zones where drone flights require advance authorization through LAANC. We check every address before we book and will let you know upfront if there are any restrictions. Most of E-town is clear, but properties near Radcliff or directly north toward Fort Knox may have altitude limitations. This is something hobbyist photographers often don't check. We do, every time.",
     closingPitch:
-      "We shoot in Elizabethtown regularly and can often batch multiple properties per trip. Packages start at $85 plus 2-way mileage. Text or call to get your listing scheduled.",
+      "We shoot in Elizabethtown regularly and can often batch multiple properties per trip. Packages start at $185 plus 2-way mileage. Text or call to get your listing scheduled.",
     faqs: [
       {
         q: "How much does drone photography cost in Elizabethtown?",
-        a: "Aerial-only is $85, Interior + Exterior (no drone) is $140, and the Standard and Pro Packages with photos, drone, and listing video run $280–$380, all plus 6% sales tax and 2-way mileage from Leitchfield (about 40 minutes). Contact us for an exact quote for your property.",
+        a: "Aerial Media Only is $185, Photography Only (25–40 MLS-ready photos, drone included) is $285, and the Full Media Package (photos plus a listing video) is $420, all plus 6% sales tax and 2-way mileage from Leitchfield (about 40 minutes). Contact us for an exact quote for your property.",
       },
       {
         q: "Are there drone restrictions near Fort Knox?",
@@ -216,7 +216,7 @@ export const locations: LocationData[] = [
     marketContext:
       "Bowling Green's market has a few dynamics that make professional photography especially important. The city's growth along the Scottsville Road and Louisville Road corridors has created a competitive environment where new listings appear daily. WKU drives a strong rental and investment property market. And the city's position on I-65 between Nashville and Louisville means buyers are often comparing BG listings against those two metro markets, where professional photos are already the standard.",
     whyUs:
-      "We bring the same quality that Louisville and Nashville photographers deliver without the metro-area price tag. Every shoot includes professional HDR editing, color correction, and MLS-ready formatting. Drone photography is included on our Standard and Pro Packages, not billed as a separate add-on. We deliver within 24-48 hours so your listing doesn't sit waiting for photos.",
+      "We bring the same quality that Louisville and Nashville photographers deliver without the metro-area price tag. Every shoot includes professional HDR editing, color correction, and MLS-ready formatting. Drone photography is included on our Photography Only and Full Media packages, not billed as a separate add-on. We deliver within 24-48 hours so your listing doesn't sit waiting for photos.",
     droneDetails:
       "Bowling Green's layout makes drone photography valuable for almost every listing type. Suburban neighborhoods benefit from aerial context that shows nearby parks, schools, and shopping. Rural Warren County properties need aerials to convey acreage and land features. Even downtown investment properties photograph better from above. Drone shots can show parking, roof condition, and proximity to WKU's campus.",
     propertyTypes: [
@@ -237,9 +237,9 @@ export const locations: LocationData[] = [
       },
     ],
     localInsight:
-      "Something we've noticed shooting in Bowling Green: listings in the $150K-$250K range often skip professional photography because agents assume the budget doesn't justify it. But that price range is exactly where BG's market is most competitive. There are dozens of similar listings at any given time. The ones with professional photos and drone shots consistently get more clicks and faster showings. Our Standard Package pays for itself if it shaves even a few days off market time.",
+      "Something we've noticed shooting in Bowling Green: listings in the $150K-$250K range often skip professional photography because agents assume the budget doesn't justify it. But that price range is exactly where BG's market is most competitive. There are dozens of similar listings at any given time. The ones with professional photos and drone shots consistently get more clicks and faster showings. Our Photography Only package pays for itself if it shaves even a few days off market time.",
     closingPitch:
-      "We serve Bowling Green and Warren County regularly. Packages start at $85 plus 2-way mileage. Let's get your listing photographed the way it deserves.",
+      "We serve Bowling Green and Warren County regularly. Packages start at $185 plus 2-way mileage. Let's get your listing photographed the way it deserves.",
     faqs: [
       {
         q: "Do you serve Bowling Green, KY?",
@@ -247,7 +247,7 @@ export const locations: LocationData[] = [
       },
       {
         q: "What's included in your Bowling Green photography packages?",
-        a: "All packages include professionally edited, MLS-ready photos delivered within 24-48 hours. Interior + Exterior, No Drone ($140 + mileage) covers 25–40 photos. The Standard Package ($280 + mileage) adds drone aerials and a 30–45 second listing video, and Pro Package ($380 + mileage) upgrades to a 60–90 second cinematic video with advanced editing and color grading.",
+        a: "All packages include professionally edited, MLS-ready photos delivered within 24-48 hours. Photography Only ($285 + mileage) covers 25–40 photos with drone aerials included. The Full Media Package ($420 + mileage) adds up to a 1-minute listing video, and Branding Content ($200 + mileage) is a video-only option for agents who just need footage, no photos.",
       },
       {
         q: "Can you photograph rental and investment properties in Bowling Green?",
@@ -328,7 +328,7 @@ export const locations: LocationData[] = [
     localInsight:
       "Owensboro agents have told us that listings with drone photos showing Ohio River proximity get noticeably more engagement than those without, even when the listing description mentions it. Buyers are visual. Telling them the river is nearby doesn't have the same impact as showing them an aerial where they can see the water from above the property. If you're listing anything within a mile of the riverfront, drone photography should be non-negotiable.",
     closingPitch:
-      "We travel to Owensboro regularly and can batch multiple properties per trip to keep costs down. Packages start at $85 plus 2-way mileage.",
+      "We travel to Owensboro regularly and can batch multiple properties per trip to keep costs down. Packages start at $185 plus 2-way mileage.",
     faqs: [
       {
         q: "How far do you travel to Owensboro?",
@@ -418,7 +418,7 @@ export const locations: LocationData[] = [
     localInsight:
       "Something unique about the Bardstown market: many buyers are from out of state, drawn by the bourbon trail tourism or looking for Kentucky horse country lifestyle at a more accessible price point than Lexington. These buyers are comparing Bardstown listings against properties in other states, often markets where professional photography is standard. If your Bardstown listing has cell phone photos while a comparable property in Tennessee has professional drone shots and a video walkthrough, you've already lost that buyer's attention.",
     closingPitch:
-      "We serve Bardstown and Nelson County with the same quality and turnaround as our local Grayson County shoots. Packages start at $85 plus 2-way mileage.",
+      "We serve Bardstown and Nelson County with the same quality and turnaround as our local Grayson County shoots. Packages start at $185 plus 2-way mileage.",
     faqs: [
       {
         q: "Do you photograph properties in Bardstown?",
@@ -505,7 +505,7 @@ export const locations: LocationData[] = [
     localInsight:
       "If you're listing in Radcliff, factor PCS season into your marketing timing. Listings that go live in March and April catch the wave of summer movers and tend to move fastest. Listings that drop in October sit. Professional photography is especially worth it during peak season, when the most buyers are searching, you want your listing standing out, not blending in with iPhone shots.",
     closingPitch:
-      "We serve Radcliff regularly and check airspace before every booking so you know up front what we can legally capture. Packages start at $85 plus 2-way mileage.",
+      "We serve Radcliff regularly and check airspace before every booking so you know up front what we can legally capture. Packages start at $185 plus 2-way mileage.",
     faqs: [
       {
         q: "Can you photograph properties in Radcliff with Fort Knox airspace restrictions?",
@@ -588,7 +588,7 @@ export const locations: LocationData[] = [
     localInsight:
       "Rural property listings in LaRue County often underperform because they're photographed like in-town houses: close-up exteriors, backyard shots from the patio, no sense of scale. The whole reason someone is buying acreage is the acreage itself. If your photos don't make it the star, you're underselling the property. Even a single drone shot of total land area can change how a listing feels online.",
     closingPitch:
-      "Whether you're listing a Hodgenville residential property, a LaRue County farm, or a tourism-related rental, we can help. Packages start at $85 plus 2-way mileage from Leitchfield.",
+      "Whether you're listing a Hodgenville residential property, a LaRue County farm, or a tourism-related rental, we can help. Packages start at $185 plus 2-way mileage from Leitchfield.",
     faqs: [
       {
         q: "Do you photograph farms and acreage in LaRue County?",
@@ -608,7 +608,7 @@ export const locations: LocationData[] = [
       },
       {
         q: "What if my Hodgenville property is mostly land?",
-        a: "Land-heavy listings are exactly where drone photography is most valuable. We can do an aerial-only package starting at $85 if there's no structure to photograph, or include extensive aerial coverage in any package if there's a home plus significant acreage.",
+        a: "Land-heavy listings are exactly where drone photography is most valuable. We can do an aerial-only package starting at $185 if there's no structure to photograph, or include extensive aerial coverage in any package if there's a home plus significant acreage.",
       },
     ],
     nearbyAreas: ["Buffalo", "Magnolia", "Mount Sherman", "Athertonville", "Tonieville"],
@@ -671,7 +671,7 @@ export const locations: LocationData[] = [
     localInsight:
       "The most consistently under-marketed category we see in Breckinridge is hunting tracts. Most come to market with four photos: the cabin, the gravel drive, a wide shot of trees, and an interior of the kitchen. A serious deer-lease buyer, the one who pays asking, wants to see topography, timber composition, and water layout before driving two hours to walk the property. Drone coverage on those features turns a tract that sits for six months into one that sells in the first week of archery season.",
     closingPitch:
-      "Whether you're listing a Breckinridge County farm, a hunting property, an Ohio River cabin, or an in-town Hardinsburg home, we can help. Packages start at $85 plus 2-way mileage.",
+      "Whether you're listing a Breckinridge County farm, a hunting property, an Ohio River cabin, or an in-town Hardinsburg home, we can help. Packages start at $185 plus 2-way mileage.",
     faqs: [
       {
         q: "Do you photograph hunting and recreational properties in Breckinridge County?",
@@ -691,7 +691,7 @@ export const locations: LocationData[] = [
       },
       {
         q: "What if my listing is mostly land with a small structure?",
-        a: "That's a typical rural listing for us. Our aerial-only package ($85) is great for land-only listings, and our larger packages can be weighted toward aerial coverage if the structure is secondary to the land. We tailor the shoot to the property.",
+        a: "That's a typical rural listing for us. Our aerial-only package ($185) is great for land-only listings, and our larger packages can be weighted toward aerial coverage if the structure is secondary to the land. We tailor the shoot to the property.",
       },
     ],
     nearbyAreas: ["Cloverport", "Irvington", "Stephensport", "Custer", "Big Spring"],
@@ -754,7 +754,7 @@ export const locations: LocationData[] = [
     localInsight:
       "Doe Valley listings are a category of their own. Buyers there are often shopping from out of state and comparing properties against resort communities elsewhere. Generic real estate photos don't compete. The properties that move fastest are the ones with drone footage showing the resort layout, golf course context, and the lifestyle amenities, not just the house. If you're listing a Doe Valley property, professional photography isn't optional.",
     closingPitch:
-      "Whether you're listing in Doe Valley, on the Ohio River, or anywhere in Meade County, we can help your property show its best. Packages start at $85 plus 2-way mileage from Leitchfield.",
+      "Whether you're listing in Doe Valley, on the Ohio River, or anywhere in Meade County, we can help your property show its best. Packages start at $185 plus 2-way mileage from Leitchfield.",
     faqs: [
       {
         q: "Do you photograph properties in Doe Valley?",
@@ -838,7 +838,7 @@ export const locations: LocationData[] = [
     localInsight:
       "Shepherdsville's proximity to Louisville means buyers have lots of comparison options. A Bullitt County listing isn't just competing with other Bullitt County listings, it's competing with Jefferson County properties at similar prices. The listings that get attention are the ones with photography that matches Louisville-market quality. Cell phone photos don't survive that comparison.",
     closingPitch:
-      "Whether you're listing in Shepherdsville, Mt. Washington, or anywhere in Bullitt County, we can deliver Louisville-quality photography at small-town pricing. Packages start at $85 plus 2-way mileage.",
+      "Whether you're listing in Shepherdsville, Mt. Washington, or anywhere in Bullitt County, we can deliver Louisville-quality photography at small-town pricing. Packages start at $185 plus 2-way mileage.",
     faqs: [
       {
         q: "Do you serve the Louisville suburbs?",
@@ -921,7 +921,7 @@ export const locations: LocationData[] = [
     localInsight:
       "The Caneyville listings that move fastest are usually working farms priced correctly for the acreage (Grayson County farmland is still meaningfully cheaper than comparable land in Hardin or Nelson), but they only move fast if the photography lets out-of-county buyers evaluate the land without driving two hours to see it. A farm that reads as 'a house and some trees' in the MLS photos gets ignored. The same farm, shot with a couple of high-altitude aerials that read the property line and the fields, gets showings within days.",
     closingPitch:
-      "Caneyville is part of our home territory. No mileage fees, fast scheduling, packages from $85.",
+      "Caneyville is part of our home territory. No mileage fees, fast scheduling, packages from $185.",
     faqs: [
       {
         q: "Do you charge travel fees for Caneyville shoots?",
@@ -941,7 +941,7 @@ export const locations: LocationData[] = [
       },
       {
         q: "What's included in your Caneyville packages?",
-        a: "Same as anywhere else: edited, MLS-ready deliverables in 24-48 hours. Aerial-only is $85, Interior + Exterior (no drone) is $140, and the Standard and Pro Packages with photos, drone, and listing video run $280–$380. No mileage fees in Grayson County.",
+        a: "Same as anywhere else: edited, MLS-ready deliverables in 24-48 hours. Aerial Media Only is $185, Photography Only (25–40 MLS-ready photos, drone included) is $285, and the Full Media Package (photos plus a listing video) is $420. No mileage fees in Grayson County.",
       },
     ],
     nearbyAreas: ["Leitchfield", "Clarkson", "Centertown", "Beaver Dam", "Falls of Rough"],
@@ -1004,7 +1004,7 @@ export const locations: LocationData[] = [
     localInsight:
       "Mammoth Cave-area vacation rentals are where the photography gap is most obvious and most correctable. We have walked into listings booking 40 percent of the nights they could be and walked out after a four-hour shoot that, a few weeks later, tracked toward 70-plus percent occupancy in high season. Airbnb's search algorithm weights listings with strong photo engagement, so professional photography does not only convert the traveler who sees the listing; it surfaces the listing to more travelers in the first place. That compounds.",
     closingPitch:
-      "Whether you're listing a Munfordville home, a Hart County farm, or a Mammoth Cave-area rental, we can help. Packages start at $85 plus 2-way mileage from Leitchfield.",
+      "Whether you're listing a Munfordville home, a Hart County farm, or a Mammoth Cave-area rental, we can help. Packages start at $185 plus 2-way mileage from Leitchfield.",
     faqs: [
       {
         q: "Do you photograph short-term rentals and Airbnbs near Mammoth Cave?",
@@ -1024,7 +1024,7 @@ export const locations: LocationData[] = [
       },
       {
         q: "What's the best package for an Airbnb near Mammoth Cave?",
-        a: "Most short-term rentals do best with the Standard Package ($280) covering 25–40 photos plus drone aerials and a 30–45 second video. Video is increasingly important on Airbnb listings as the platform pushes video-enabled hosts.",
+        a: "Most short-term rentals do best with the Full Media Package ($420) covering 25–40 photos plus drone aerials and up to a 1-minute video. Video is increasingly important on Airbnb listings as the platform pushes video-enabled hosts.",
       },
     ],
     nearbyAreas: ["Horse Cave", "Hardyville", "Bonnieville", "Cub Run", "Magnolia"],

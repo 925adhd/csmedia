@@ -99,7 +99,7 @@ export default function RootLayout({
                   ],
                   email: "cscreatesmediallc@gmail.com",
                   telephone: "+1-270-307-0173",
-                  priceRange: "$85-$380",
+                  priceRange: "$185-$420",
                   openingHoursSpecification: {
                     "@type": "OpeningHoursSpecification",
                     dayOfWeek: [
@@ -177,7 +177,7 @@ export default function RootLayout({
                           "@type": "Service",
                           name: "Real Estate Listing Video",
                           description:
-                            "30–90 second listing walkthrough videos bundled into the Standard and Pro Packages, with cinematic color grading on the Pro tier.",
+                            "Up to a 1-minute listing walkthrough video, bundled into the Full Media Package.",
                         },
                       },
                       {

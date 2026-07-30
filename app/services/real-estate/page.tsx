@@ -12,14 +12,14 @@ import { locations } from "@/lib/locations";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: { absolute: "Kentucky Real Estate Photography from $85 | CS Media" },
+  title: { absolute: "Kentucky Real Estate Photography from $185 | CS Media" },
   description:
-    "Real estate photography, drone aerials, and listing video across Kentucky. Packages from $85, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
+    "Real estate photography, drone aerials, and listing video across Kentucky. Packages from $185, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
   alternates: { canonical: `${BASE_URL}/services/real-estate` },
   openGraph: {
-    title: "Kentucky Real Estate Photography from $85 | CS Media",
+    title: "Kentucky Real Estate Photography from $185 | CS Media",
     description:
-      "Real estate photography, drone aerials, and listing video across Kentucky. Packages from $85, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
+      "Real estate photography, drone aerials, and listing video across Kentucky. Packages from $185, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
     type: "website",
     url: `${BASE_URL}/services/real-estate`,
     siteName: "CS Media",
@@ -38,56 +38,47 @@ interface PricingPackage {
 export default function RealEstatePage() {
   const packages: PricingPackage[] = [
     {
-      name: "Interior + Exterior (No Drone)",
-      price: "$140",
+      name: "Branding Content",
+      price: "$200",
       popular: false,
       features: [
-        "25–40 professionally edited photos",
-        "Interior + exterior coverage",
-        "MLS-ready",
-        "1 free revision included",
+        "Up to 1-minute branding video",
+        "3-hour session",
       ],
     },
     {
-      name: "Standard Package",
-      price: "$280",
+      name: "Photography Only",
+      price: "$285",
+      popular: false,
+      features: [
+        "25–40 MLS-ready photos",
+        "Interior, exterior & aerial coverage",
+        "Drone photos (FAA Part 107 compliant)",
+        "3-hour session",
+      ],
+    },
+    {
+      name: "Full Media Package",
+      price: "$420",
       popular: true,
       features: [
-        "25–40 professionally edited photos",
+        "MLS-ready photos — interior, exterior & aerial",
         "Drone photos (FAA Part 107 compliant)",
-        "Interior + exterior coverage",
-        "30–45 second listing video",
-        "Basic transitions + music",
-        "Optimized for social + MLS",
-        "1 free revision included",
-      ],
-    },
-    {
-      name: "Pro Package",
-      price: "$380",
-      popular: false,
-      features: [
-        "25–40 professionally edited photos",
-        "Drone photos (FAA Part 107 compliant)",
-        "Interior + exterior coverage",
-        "60–90 second cinematic video",
-        "Advanced editing + smooth motion shots",
-        "Cinematic color grading",
-        "Agent branding + higher-end feel",
-        "2 free revisions included",
+        "Up to 1-minute listing video",
+        "3-hour session",
       ],
     },
   ];
   const smallerPackages: PricingPackage[] = [
     {
-      name: "Aerial Only",
-      price: "$85",
+      name: "Aerial Media Only",
+      price: "$185",
       popular: false,
       features: [
-        "5 high-quality drone photos",
-        "Property + surrounding area highlights",
+        "10 aerial images",
+        "Or 4 aerial images + up to 15-second clip",
         "FAA Part 107 compliant",
-        "1 free revision included",
+        "3-hour session",
       ],
     },
   ];
@@ -120,7 +111,7 @@ export default function RealEstatePage() {
     url: `${BASE_URL}/services/real-estate`,
     telephone: "+1-270-307-0173",
     email: "cscreatesmediallc@gmail.com",
-    priceRange: "$85-$380",
+    priceRange: "$185-$420",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -147,7 +138,7 @@ export default function RealEstatePage() {
   const faqItems = [
     {
       q: "How much does real estate drone photography cost in Kentucky?",
-      a: "CS Media offers real estate media packages from $85. Aerial-only is $85, Interior + Exterior (no drone) is $140, and the Standard and Pro Packages with drone, photos, and listing video run $280–$380. 6% sales tax and 2-way mileage are applied to the final price.",
+      a: "CS Media offers real estate media packages from $185. Aerial Media Only is $185, Photography Only (25–40 MLS-ready photos, drone included) is $285, Branding Content (video only) is $200, and the Full Media Package (photos plus a listing video) is $420. 6% sales tax and 2-way mileage are applied to the final price.",
     },
     {
       q: "Do you need a license to fly drones for real estate photos?",

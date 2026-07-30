@@ -1,4 +1,4 @@
-import Link from "next/link";
+const BOOKING_URL = "https://www.bookcsmedia.com/s/appointments";
 
 interface BookingButtonProps {
   className?: string;
@@ -8,8 +8,8 @@ interface BookingButtonProps {
 
 export default function BookingButton({ className, children, onClick }: BookingButtonProps) {
   return (
-    <Link href="/book" className={className} onClick={onClick}>
+    <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={className} onClick={onClick}>
       {children}
-    </Link>
+    </a>
   );
 }

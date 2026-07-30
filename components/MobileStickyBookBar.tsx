@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
+
+const BOOKING_URL = "https://www.bookcsmedia.com/s/appointments";
 
 interface Props {
   /** CSS selector for the element the bar should wait for before appearing. */
@@ -49,10 +50,12 @@ export default function MobileStickyBookBar({
           <div className="text-[10px] font-mono uppercase tracking-widest text-gold/70">
             Packages from
           </div>
-          <div className="text-lg font-bold text-white">$85</div>
+          <div className="text-lg font-bold text-white">$185</div>
         </div>
-        <Link
-          href="/book"
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-full bg-gold px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-dark-900 transition-colors hover:bg-gold-light"
           onClick={() => {
             if (typeof window !== "undefined" && typeof window.gtag === "function") {
@@ -64,7 +67,7 @@ export default function MobileStickyBookBar({
           }}
         >
           Book Now
-        </Link>
+        </a>
       </div>
     </div>
   );

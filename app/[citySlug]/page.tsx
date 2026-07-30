@@ -30,8 +30,8 @@ export async function generateMetadata({
   const loc = slug ? getLocationBySlug(slug) : undefined;
   if (!loc) return {};
 
-  const title = `${loc.city} Real Estate Photography & Drone (From $85)`;
-  const description = `${loc.city}, KY real estate photography & drone aerials from $85. MLS-ready photos in 24–48 hours by a local FAA Part 107 pilot. Same-week availability.`;
+  const title = `${loc.city} Real Estate Photography & Drone (From $185)`;
+  const description = `${loc.city}, KY real estate photography & drone aerials from $185. MLS-ready photos in 24–48 hours by a local FAA Part 107 pilot. Same-week availability.`;
 
   const BASE_URL =
     process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
@@ -78,7 +78,7 @@ export default async function CityPage({
     telephone: "+1-270-307-0173",
     url: BASE_URL,
     image: `${BASE_URL}/images/kentucky-real-estate-drone-aerial.webp`,
-    priceRange: "$85-$380",
+    priceRange: "$185-$420",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -148,7 +148,7 @@ export default async function CityPage({
     email: "cscreatesmediallc@gmail.com",
     url: `${BASE_URL}/${citySlug}`,
     image: `${BASE_URL}/images/kentucky-real-estate-drone-aerial.webp`,
-    priceRange: "$85-$380",
+    priceRange: "$185-$420",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -552,41 +552,32 @@ export default async function CityPage({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
             {[
               {
-                name: "Interior + Exterior (No Drone)",
-                price: "$140",
+                name: "Branding Content",
+                price: "$200",
                 features: [
-                  "25–40 edited photos",
-                  "Interior + exterior coverage",
-                  "MLS-ready delivery",
-                  "1 free revision included",
+                  "Up to 1-minute branding video",
+                  "3-hour session",
                 ],
               },
               {
-                name: "Standard Package",
-                price: "$280",
+                name: "Photography Only",
+                price: "$285",
+                features: [
+                  "25–40 MLS-ready photos",
+                  "Interior, exterior & aerial coverage",
+                  "Drone photos (FAA Part 107)",
+                  "3-hour session",
+                ],
+              },
+              {
+                name: "Full Media Package",
+                price: "$420",
                 popular: true,
                 features: [
-                  "25–40 edited photos",
+                  "MLS-ready photos — interior, exterior & aerial",
                   "Drone photos (FAA Part 107)",
-                  "Interior + exterior coverage",
-                  "30–45 second listing video",
-                  "Basic transitions + music",
-                  "Optimized for social + MLS",
-                  "1 free revision included",
-                ],
-              },
-              {
-                name: "Pro Package",
-                price: "$380",
-                features: [
-                  "25–40 edited photos",
-                  "Drone photos (FAA Part 107)",
-                  "Interior + exterior coverage",
-                  "60–90 second cinematic video",
-                  "Advanced editing + motion shots",
-                  "Cinematic color grading",
-                  "Agent branding + premium feel",
-                  "2 free revisions included",
+                  "Up to 1-minute listing video",
+                  "3-hour session",
                 ],
               },
             ].map((pkg, index) => (
@@ -653,7 +644,7 @@ export default async function CityPage({
                   href="/services/real-estate#pricing"
                   className="text-gold/80 hover:text-gold underline-offset-2 hover:underline transition-colors"
                 >
-                  Aerial Only · $85
+                  Aerial Media Only · $185
                 </Link>
               </p>
               <p className="text-xs text-dark-300">

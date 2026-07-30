@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
-import ContactForm from "@/components/ContactForm";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+const BOOKING_URL = "https://www.bookcsmedia.com/s/appointments";
 
 export const metadata: Metadata = {
-  title: { absolute: "Book a Kentucky Real Estate Shoot (From $85) | CS Media" },
+  title: { absolute: "Book a Kentucky Real Estate Shoot (From $185) | CS Media" },
   description:
-    "Book your Kentucky real estate photo, drone, or virtual staging shoot. From $85, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
+    "Book your Kentucky real estate photo, drone, or virtual staging shoot. From $185, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
   alternates: { canonical: `${BASE_URL}/book` },
   openGraph: {
-    title: "Book a Kentucky Real Estate Shoot (From $85) | CS Media",
+    title: "Book a Kentucky Real Estate Shoot (From $185) | CS Media",
     description:
-      "Book your Kentucky real estate photo, drone, or virtual staging shoot. From $85, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
+      "Book your Kentucky real estate photo, drone, or virtual staging shoot. From $185, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
     type: "website",
     url: `${BASE_URL}/book`,
     siteName: "CS Media",
@@ -36,22 +36,6 @@ export default async function BookPage() {
   const responseTime = "Within 24 hours";
   const companyName = "CS MEDIA, LLC";
   const companyType = "Advertising / Marketing";
-  const successHeading = "Message Sent!";
-  const successMessage = "Thanks for reaching out. I'll get back to you within 24 hours.";
-  const submitText = "Send Message";
-  const formServices = [
-    "--- Real Estate Packages ---",
-    "Aerial Only ($85)",
-    "Interior + Exterior, No Drone ($140)",
-    "Standard Package ($280)",
-    "Pro Package ($380)",
-    "--- Other Services ---",
-    "Video Production",
-    "Event Photography",
-    "Logo / Watermark Design",
-    "Virtual Staging (standalone)",
-    "Other / Not Sure",
-  ];
 
   return (
     <>
@@ -76,7 +60,7 @@ export default async function BookPage() {
               {heading}
             </h1>
             <p className="mt-5 text-base sm:text-lg text-dark-100 max-w-2xl mx-auto">
-              Fill out the form or text{" "}
+              Book online below, or text{" "}
               <a href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F" className="text-gold hover:text-gold-light transition-colors whitespace-nowrap">
                 (270) 307-0173
               </a>
@@ -91,14 +75,26 @@ export default async function BookPage() {
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
-            {/* Form */}
+            {/* Booking CTA */}
             <div className="lg:col-span-3">
-              <ContactForm
-                services={formServices}
-                successHeading={successHeading}
-                successMessage={successMessage}
-                submitText={submitText}
-              />
+              <FadeIn>
+                <div className="rounded-2xl bg-dark-700 border border-gold/20 p-10 sm:p-12 text-center">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                    Ready to Book?
+                  </h2>
+                  <p className="mt-3 text-dark-200 max-w-md mx-auto">
+                    Pick your package and reserve a time that works for you — instant confirmation, no waiting on an email back.
+                  </p>
+                  <a
+                    href={BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-8 inline-block rounded-full bg-gold px-10 py-4 text-sm font-semibold uppercase tracking-widest text-dark-900 transition-colors hover:bg-gold-light"
+                  >
+                    Book Now
+                  </a>
+                </div>
+              </FadeIn>
             </div>
 
             {/* Sidebar */}
