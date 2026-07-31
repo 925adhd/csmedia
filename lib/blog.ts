@@ -59,7 +59,7 @@ For a $185–$420 investment, you're not paying for photos. You're paying for sh
 
 ## What Top-Producing Agents in Kentucky Are Using
 
-The agents consistently moving listings in Leitchfield, Elizabethtown, Bowling Green, and across Kentucky are using a combination of:
+The agents consistently moving listings in Leitchfield, Elizabethtown, Radcliff, and across Kentucky are using a combination of:
 
 ### Professional Interior & Exterior Photography
 
@@ -112,7 +112,7 @@ That $420 didn't cost you anything. It made you money, and kept your seller happ
 
 You don't need more leads. You need your current listings to perform. Professional real estate photography is the fastest, cheapest way to turn a sitting listing into a sold one.
 
-CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owensboro, Bardstown, and the rest of Kentucky.
+CS Media shoots properties across Leitchfield, Elizabethtown, Radcliff, Hardinsburg, Brandenburg, and the rest of central Kentucky.
 
 - **Packages from $185** — drone, photos, video, virtual staging
 - **24–48 hour delivery** — your listing goes live fast
@@ -300,23 +300,23 @@ Grayson County is a mix of in-town residential, rural acreage, and a growing sho
 
 Hardin County's market is driven by Fort Knox relocations and steady commuter growth. Out-of-state military buyers shop almost entirely from listing photos before visiting, which makes professional media higher-leverage than in many other Kentucky markets. Most E-town listings land in the $200–$400 range; restricted airspace north of town toward Radcliff requires LAANC authorization for drone work. [See Elizabethtown details →](/elizabethtown-real-estate-photography)
 
-### Real Estate Photography Cost in Bowling Green, KY
+### Real Estate Photography Cost in Radcliff, KY
 
-Warren County is one of Kentucky's fastest-growing markets, with active new construction along Scottsville Road and a strong WKU-driven rental market. Suburban listings typically use a $200–$300 photo + drone package; investment properties and downtown listings often skip drone in favor of a $150–$250 photo-only shoot. [See Bowling Green details →](/bowling-green-real-estate-photography)
+Radcliff's market moves with Fort Knox PCS cycles, and out-of-state military families are often deciding on a home from listing photos alone. Most Radcliff listings land in the $200–$400 photo + drone range; some addresses fall under Fort Knox restricted airspace, so confirm LAANC authorization before booking drone coverage. [See Radcliff details →](/radcliff-real-estate-photography)
 
-### Real Estate Photography Cost in Owensboro, KY
+### Real Estate Photography Cost in Hardinsburg, KY
 
-Daviess County's pricing tracks the same secondary-market ranges, with riverfront properties especially benefiting from drone aerials that show Ohio River proximity. Historic Griffith Avenue–area homes often warrant a $300–$500 listing-video upgrade to capture architectural character. [See Owensboro details →](/owensboro-real-estate-photography)
+Breckinridge County listings skew land-heavy — hunting tracts, Ohio River frontage, and rural residential on a few acres — so pricing leans toward packages weighted for drone coverage over interior photos. Aerial-only shoots ($185) are common for land-only listings, with $200–$400 for homes with meaningful acreage attached. [See Hardinsburg details →](/hardinsburg-real-estate-photography)
 
-### Real Estate Photography Cost in Bardstown, KY
+### Real Estate Photography Cost in Brandenburg, KY
 
-Nelson County's bourbon-trail tourism and historic downtown drive demand for higher-tier media. Premium estates, event venues, and bed-and-breakfast properties typically use cinematic listing video in the $400–$800 range to communicate character and grounds, well above what a standard residential listing requires. [See Bardstown details →](/bardstown-real-estate-photography)
+Meade County's Doe Valley resort community and Ohio River frontage properties often justify the Full Media Package ($420) to show golf-course, lake, or river context that a photo-only shoot can't capture. In-town Brandenburg residential listings typically run the standard $200–$400 photo + drone range. [See Brandenburg details →](/brandenburg-real-estate-photography)
 
 ---
 
 ## Where CS Media Fits in the Kentucky Market
 
-For full transparency: I run CS Media out of Leitchfield and shoot listings across central and western Kentucky. Our pricing sits at the lower end of the secondary-market ranges above:
+For full transparency: I run CS Media out of Leitchfield and shoot listings across central Kentucky. Our pricing sits at the lower end of the secondary-market ranges above:
 
 - **Aerial Media Only:** $185
 - **Branding Content** (video only, no photos): $200
@@ -343,7 +343,7 @@ Whether you book CS Media or another Kentucky real estate photographer, here's w
 
 ## Booking in Kentucky
 
-CS Media shoots properties across Leitchfield, Elizabethtown, Bowling Green, Owensboro, Bardstown, and the rest of the state. See [the services page](/services) for current packages, or [text us about your listing](/book) to talk through what makes sense for the property.
+CS Media shoots properties across Leitchfield, Elizabethtown, Radcliff, Hardinsburg, Brandenburg, and the rest of central Kentucky. See [the services page](/services) for current packages, or [text us about your listing](/book) to talk through what makes sense for the property.
 `,
     faqs: [
       {

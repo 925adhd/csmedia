@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     template: "%s | CS Media",
   },
   description:
-    "Kentucky real estate photography, drone video & virtual staging. Leitchfield, Elizabethtown, Bowling Green & beyond. FAA Part 107. 24–48hr delivery.",
+    "Kentucky real estate photography, drone video & virtual staging. Leitchfield, Elizabethtown, Radcliff & beyond. FAA Part 107. 24–48hr delivery.",
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "Kentucky Real Estate Photography & Drone Video | CS Media",
     description:
-      "Kentucky real estate photography, drone video & virtual staging. Leitchfield, Elizabethtown, Bowling Green & beyond. FAA Part 107. 24–48hr delivery.",
+      "Kentucky real estate photography, drone video & virtual staging. Leitchfield, Elizabethtown, Radcliff & beyond. FAA Part 107. 24–48hr delivery.",
     type: "website",
     locale: "en_US",
     url: BASE_URL,
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kentucky Real Estate Photography & Drone Video | CS Media",
     description:
-      "Kentucky real estate photography, drone video & virtual staging. Leitchfield, Elizabethtown, Bowling Green & beyond. FAA Part 107. 24–48hr delivery.",
+      "Kentucky real estate photography, drone video & virtual staging. Leitchfield, Elizabethtown, Radcliff & beyond. FAA Part 107. 24–48hr delivery.",
     images: ["/images/brick-home-aerial-drone-kentucky.webp"],
   },
   verification: {
@@ -135,11 +135,10 @@ export default function RootLayout({
                       },
                     },
                     { "@type": "City", name: "Caneyville" },
-                    { "@type": "City", name: "Clarkson" },
                     { "@type": "City", name: "Elizabethtown" },
-                    { "@type": "City", name: "Bowling Green" },
-                    { "@type": "City", name: "Owensboro" },
-                    { "@type": "City", name: "Bardstown" },
+                    { "@type": "City", name: "Radcliff" },
+                    { "@type": "City", name: "Hardinsburg" },
+                    { "@type": "City", name: "Brandenburg" },
                     {
                       "@type": "State",
                       name: "Kentucky",

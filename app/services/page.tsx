@@ -4,6 +4,8 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import CTASection from "@/components/CTASection";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import BookingButton from "@/components/BookingButton";
+import { StampIcon, DroneIcon, PolaroidIcon } from "@/components/StepIcons";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
@@ -182,6 +184,67 @@ export default function ServicesHubPage() {
             </p>
           </FadeIn>
         </div>
+      </section>
+
+      {/* How It Works */}
+      <section id="process" className="scroll-mt-20 py-16 sm:py-28 bg-dark-800 relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                How It Works
+              </span>
+              <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
+                How Our Real Estate Photography{" "}
+                <span className="relative inline-block">
+                  Process Works
+                  <span aria-hidden className="absolute left-0 right-0 -bottom-1 md:-bottom-1.5 h-[2px] md:h-[3px] bg-gold" />
+                </span>
+              </h2>
+            </div>
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 max-w-5xl mx-auto relative">
+            {/* Connector line between steps on desktop */}
+            <div aria-hidden className="hidden md:block absolute top-[11px] left-[16.67%] right-[16.67%] h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
+
+            {[
+              { step: "01", title: "Book Your Shoot", desc: "Send a quick request by text, call, or the form. We’ll confirm the date and arrive on time, ready to go.", Icon: StampIcon },
+              { step: "02", title: "We Capture It", desc: "Professional drone, photo, and video coverage of your property—inside and out.", Icon: DroneIcon },
+              { step: "03", title: "Get Your Media", desc: "Edited photos, video, and virtual staging delivered within 24–48 hours.", Icon: PolaroidIcon },
+            ].map((item, i) => (
+              <FadeIn key={i} delay={i * 0.15}>
+                <div className="relative text-left md:text-center px-2">
+                  <div className="inline-flex items-center gap-3 mb-4 bg-dark-800 md:bg-dark-800 relative z-10 md:px-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+                    <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-gold/70">Step {item.step}</span>
+                  </div>
+                  <div className="text-gold/80 mb-4 md:mx-auto md:w-fit">
+                    <item.Icon />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="mt-2 text-sm text-dark-100 leading-relaxed">{item.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={0.45}>
+            <div className="mt-14 text-center">
+              <BookingButton
+                className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/5 px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-gold hover:border-gold hover:bg-gold/15 transition-all cursor-pointer"
+              >
+                Book a Shoot
+                <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                </svg>
+              </BookingButton>
+            </div>
+          </FadeIn>
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       </section>
 
       <CTASection

@@ -117,7 +117,7 @@ export default function Footer() {
             ))}
           </div>
           <p className="mt-3 text-xs text-dark-300">
-            Serving central and western Kentucky. Out-of-state projects available upon request.
+            Serving central Kentucky.
           </p>
         </div>
 

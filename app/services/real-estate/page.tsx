@@ -92,16 +92,12 @@ export default function RealEstatePage() {
   const addOns = [
     { name: "Twilight Edit", price: "+$25 per photo" },
     { name: "Rush Delivery (24hr)", price: "+$40" },
-    { name: "Virtual Staging", price: "+$25/photo · +$50/scene" },
     { name: "Additional Photos", price: "+$5 per image" },
   ];
   const revisionPolicy = [
     "Additional revisions beyond included: $15 per request",
     "Major edits (object removal, sky swaps, virtual staging changes, etc.) quoted separately",
     "Revision requests must be submitted within 3 days of delivery",
-  ];
-  const finePrint = [
-    "Mileage is determined by Google Maps distance for round trip from Leitchfield.",
   ];
 
   // Aggregated unique town list across all served counties for the master SEO list.
@@ -145,7 +141,7 @@ export default function RealEstatePage() {
   const faqItems = [
     {
       q: "How much does real estate drone photography cost in Kentucky?",
-      a: "CS Media offers real estate media packages from $185. Aerial Media Only is $185, Photography Only (25–40 MLS-ready photos, drone included) is $285, Branding Content (video only) is $200, and the Full Media Package (photos plus a listing video) is $420. 6% sales tax and 2-way mileage are applied to the final price.",
+      a: "CS Media offers real estate media packages from $185. Aerial Media Only is $185, Photography Only (25–40 MLS-ready photos, drone included) is $285, Branding Content (video only) is $200, and the Full Media Package (photos plus a listing video) is $420. 6% Kentucky sales tax is applied to the final price.",
     },
     {
       q: "Do you need a license to fly drones for real estate photos?",
@@ -153,7 +149,7 @@ export default function RealEstatePage() {
     },
     {
       q: "What is virtual staging and how does it work?",
-      a: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor. It helps buyers visualize a property's potential at a fraction of the cost of physical staging. CS Media offers virtual staging as an add-on at $25 per photo or $50 per video scene, with 24-48 hour turnaround.",
+      a: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor. It helps buyers visualize a property's potential at a fraction of the cost of physical staging. If needed, CS Media offers virtual staging as an add-on at $5 per photo or $15 per video scene, with 24-48 hour turnaround.",
     },
     {
       q: "How fast will I get my real estate photos back?",
@@ -161,10 +157,10 @@ export default function RealEstatePage() {
     },
     {
       q: "What areas of Kentucky do you serve?",
-      a: `CS Media is based in Leitchfield, KY and serves agents and property owners across central and western Kentucky, including ${locations
+      a: `CS Media is based in Leitchfield, KY and serves agents and property owners across central Kentucky, including ${locations
         .filter((l) => l.slug !== "leitchfield")
         .map((l) => l.city)
-        .join(", ")}, and surrounding counties. Out-of-state projects are available on request.`,
+        .join(", ")}, and surrounding counties.`,
     },
   ];
 
@@ -374,13 +370,13 @@ export default function RealEstatePage() {
               </p>
               <p className="text-xs sm:text-sm text-dark-100">
                 <span className="text-gold/80 font-mono mr-1">+</span>
-                6% Kentucky sales tax &amp; round-trip mileage from Leitchfield added at booking.
+                6% Kentucky sales tax added at booking.
               </p>
             </div>
             <div className="mt-6 text-center space-y-1">
-              {finePrint.map((line) => (
-                <p key={line} className="text-xs text-dark-300">{line}</p>
-              ))}
+              <p className="text-xs text-dark-300">
+                Virtual staging, if needed: $5 per photo or $15 per video scene.
+              </p>
               <p className="text-xs text-dark-300 pt-2">
                 <Link
                   href="/blog/real-estate-photography-cost-kentucky"
@@ -435,9 +431,8 @@ export default function RealEstatePage() {
                 <p className="mt-4 text-dark-100 leading-relaxed">
                   Empty rooms sit on the market longer. Virtual staging helps buyers picture themselves living there, so they book showings faster. Realistic furniture and decor, digitally placed at a fraction of the cost of physical staging.
                 </p>
-                <p className="mt-4 inline-flex items-center gap-2 text-gold font-semibold">
-                  <span className="h-px w-4 bg-gold/40" />
-                  +$25 per photo · +$50 per video scene
+                <p className="mt-4 text-xs text-dark-300">
+                  If virtual staging is needed: $5 per photo · $15 per video scene.
                 </p>
                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
                   <div>
@@ -568,7 +563,7 @@ export default function RealEstatePage() {
                 Serving Real Estate Agents &amp; Property Owners Across Kentucky
               </h2>
               <p className="mt-5 text-dark-100 leading-relaxed">
-                Headquartered in Leitchfield and on the road most weeks, CS Media works with real estate agents, Airbnb hosts, property managers, and private sellers across central and western Kentucky. Our regular shoot routes cover Hardin, Grayson, Warren, Daviess, Nelson, LaRue, Hart, Breckinridge, Meade, and Bullitt counties.
+                Headquartered in Leitchfield and on the road most weeks, CS Media works with real estate agents, Airbnb hosts, property managers, and private sellers across central Kentucky. Our regular shoot routes cover Grayson, Hardin, Breckinridge, and Meade counties.
               </p>
               {(() => {
                 const cityListNodes = masterTownList.map((town, i) => {
@@ -623,8 +618,7 @@ export default function RealEstatePage() {
                 );
               })()}
               <p className="mt-6 text-xs text-dark-300">
-                Out-of-state projects available on request.{" "}
-                <Link href="/book" className="text-gold hover:underline">get a quote</Link>.
+                <Link href="/book" className="text-gold hover:underline">Get a quote</Link>.
               </p>
             </div>
           </FadeIn>
@@ -632,7 +626,7 @@ export default function RealEstatePage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 sm:py-28 bg-dark-900 relative">
+      <section id="faq" className="scroll-mt-20 py-16 sm:py-28 bg-dark-900 relative">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>

@@ -14,9 +14,25 @@ const nextConfig: NextConfig = {
       permanent: true,
     }));
 
+    // Discontinued service-area pages — CS Media no longer serves these counties.
+    const discontinuedCitySlugs = [
+      "bowling-green",
+      "owensboro",
+      "bardstown",
+      "hodgenville",
+      "shepherdsville",
+      "munfordville",
+    ];
+    const discontinuedCityRedirects = discontinuedCitySlugs.map((slug) => ({
+      source: `/${slug}-real-estate-photography`,
+      destination: "/services/real-estate",
+      permanent: true,
+    }));
+
     return [
       { source: "/contact", destination: "/book", permanent: true },
       ...cityRedirects,
+      ...discontinuedCityRedirects,
     ];
   },
 };

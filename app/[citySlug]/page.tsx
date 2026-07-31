@@ -181,7 +181,6 @@ export default async function CityPage({
     },
   };
 
-  const isHomeBase = loc.slug === "leitchfield";
 
   const displayTestimonials = [
     {
@@ -387,7 +386,7 @@ export default async function CityPage({
                       "Interior & exterior real estate photography",
                       "FAA-certified drone photos & video",
                       "Cinematic property walkthrough videos",
-                      "Virtual staging (+$25 per photo)",
+                      "Virtual staging (+$5 per photo, if needed)",
                       "Twilight edits (+$25 per photo)",
                       "Social media highlight reels",
                     ].map((item) => (
@@ -447,7 +446,7 @@ export default async function CityPage({
               },
               {
                 title: "Virtual Staging",
-                body: `Empty rooms digitally furnished with realistic furniture and decor. A fraction of the cost of physical staging, available as a $25/photo add-on for any ${loc.city} or ${loc.county} listing.`,
+                body: `Empty rooms digitally furnished with realistic furniture and decor. A fraction of the cost of physical staging — if needed, available as a $5/photo (or $15/video scene) add-on for any ${loc.city} or ${loc.county} listing.`,
               },
               {
                 title: "Twilight Edits",
@@ -605,9 +604,6 @@ export default async function CityPage({
                     </div>
                     <div className="mt-4 flex items-baseline gap-1">
                       <span className="text-4xl font-bold text-white">{pkg.price}</span>
-                      {!isHomeBase && (
-                        <span className="text-xs text-dark-300">{loc.mileageNote}</span>
-                      )}
                     </div>
                     <div className="mt-6 space-y-3 flex-1">
                       {pkg.features.map((item) => (
@@ -627,13 +623,8 @@ export default async function CityPage({
           <FadeIn>
             <div className="mt-10 text-center space-y-1">
               <p className="text-xs text-dark-300">
-                6% sales tax{!isHomeBase ? " and 2-way mileage" : ""} applied to final pricing.
+                6% sales tax applied to final pricing.
               </p>
-              {!isHomeBase && (
-                <p className="text-xs text-dark-300">
-                  Mileage is determined by Google Maps distance for round trip from Leitchfield.
-                </p>
-              )}
             </div>
           </FadeIn>
           <FadeIn>
@@ -807,9 +798,8 @@ export default async function CityPage({
                 Headquartered in Leitchfield and on the road most weeks, CS Media
                 works with real estate agents, Airbnb hosts, property managers,
                 and private sellers throughout {loc.city} and surrounding{" "}
-                {loc.county}. Our regular shoot routes cover Hardin, Grayson,
-                Warren, Daviess, Nelson, LaRue, Hart, Breckinridge, Meade, and
-                Bullitt counties: central and western Kentucky's main real
+                {loc.county}. Our regular shoot routes cover Grayson, Hardin,
+                Breckinridge, and Meade counties: central Kentucky's main real
                 estate corridors.
               </p>
               <p className="mt-6 text-sm text-dark-200 leading-loose">

@@ -76,11 +76,10 @@ export default function DisclaimerPage() {
             <h2 className="text-lg font-bold text-white mb-3">4. Pricing</h2>
             <p className="leading-relaxed">
               Package prices listed on this website are subject to change without notice. A
-              6% Kentucky sales tax and a 2-way mileage fee (based on Google Maps
-              round-trip distance from Leitchfield, KY) are applied to the final price for
-              all shoots outside Grayson County. Final pricing is confirmed at the time of
-              booking and may vary based on project scope, location, and add-ons such as
-              twilight edits, rush delivery, virtual staging, or additional photos.
+              6% Kentucky sales tax is applied to the final price. Final pricing is
+              confirmed at the time of booking and may vary based on project scope,
+              location, and add-ons such as twilight edits, rush delivery, virtual
+              staging, or additional photos.
             </p>
           </div>
 

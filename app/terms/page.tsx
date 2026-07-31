@@ -98,7 +98,7 @@ export default function TermsPage() {
             <h2 className="text-lg font-bold text-white mb-3">6. Payment</h2>
             <ul className="list-disc pl-5 space-y-1">
               <li>Package prices are published on our <a href="/services" className="text-gold hover:underline">services page</a> and confirmed at the time of booking</li>
-              <li>A 6% Kentucky sales tax and a 2-way mileage fee (Google Maps round-trip distance from Leitchfield) are added to the final price for shoots outside Grayson County</li>
+              <li>A 6% Kentucky sales tax is added to the final price</li>
               <li>Add-ons (twilight edits, rush delivery, virtual staging, additional photos) are billed at the rates published on the services page</li>
               <li>Payment terms will be communicated at the time of booking</li>
               <li>Final deliverables are provided upon receipt of full payment</li>
