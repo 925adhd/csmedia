@@ -351,9 +351,9 @@ export default function RealEstatePage() {
               </span>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-3xl mx-auto">
             {addOns.map((item, index) => (
-              <FadeIn key={item.name} delay={index * 0.05}>
+              <FadeIn key={item.name} delay={index * 0.05} className="w-[150px] sm:w-[180px]">
                 <div className="rounded-xl bg-dark-700/40 border border-dark-500/30 px-4 py-3.5 h-full flex flex-col justify-between gap-1.5">
                   <span className="text-sm font-semibold text-white leading-snug">{item.name}</span>
                   <span className="text-xs font-mono text-gold/90">{item.price}</span>

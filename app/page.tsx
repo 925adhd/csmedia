@@ -3,6 +3,7 @@ import FadeIn from "@/components/FadeIn";
 import BookingButton from "@/components/BookingButton";
 import HeroViewportLock from "@/components/HeroViewportLock";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
+import ServiceCard from "@/components/ServiceCard";
 
 export default function Home() {
   const testimonials = [
@@ -104,6 +105,33 @@ export default function Home() {
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent" />
+      </section>
+
+      {/* What We Do — horizontal swipe */}
+      <section className="py-12 sm:py-16 bg-dark-900 relative border-t border-dark-500/20 overflow-hidden">
+        <div className="mx-auto max-w-6xl px-6 lg:px-12">
+          <FadeIn>
+            <p className="text-center text-[10px] font-mono uppercase tracking-[0.3em] text-gold/70 mb-6">
+              What We Do
+            </p>
+          </FadeIn>
+          <FadeIn>
+            <div className="relative">
+              <div className="-mx-6 lg:-mx-12 flex gap-4 lg:gap-8 overflow-x-auto pb-4 px-6 lg:px-12 snap-x snap-mandatory scrollbar-hide lg:justify-center">
+                {[
+                  { image: "/images/stone-estate-front-exterior-walkway.webp", title: "Photography", desc: "Bright, clean listing photos that make buyers stop scrolling and book a showing." },
+                  { image: "/images/service-drone-field.webp", title: "Drone (Part 107)", desc: "Aerial views that show off the lot, neighborhood, and curb appeal: the shots your competitors don't have." },
+                  { image: "/images/stone-estate-living-room-fireplace.webp", title: "Listing Video", desc: "Up to a 1-minute walkthrough video bundled into the Full Media Package. Buyers tour the home before they ever visit." },
+                ].map((s) => (
+                  <div key={s.title} className="w-[240px] sm:w-[280px] shrink-0 snap-start">
+                    <ServiceCard image={s.image} title={s.title} description={s.desc} href="/services/real-estate" />
+                  </div>
+                ))}
+              </div>
+              <div aria-hidden className="pointer-events-none absolute top-0 bottom-4 right-0 w-16 bg-gradient-to-l from-dark-900 to-transparent" />
+            </div>
+          </FadeIn>
+        </div>
       </section>
 
       {/* Testimonials */}
