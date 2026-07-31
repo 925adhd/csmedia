@@ -41,9 +41,11 @@ export default function TestimonialCarousel({
       onMouseLeave={() => setPaused(false)}
     >
       <FadeIn key={active}>
-        <p className="text-lg sm:text-xl text-white leading-relaxed italic min-h-[6rem] sm:min-h-[4.5rem]">
-          &ldquo;{current.quote}&rdquo;
-        </p>
+        <div className="h-[10rem] sm:h-[8rem] flex items-center justify-center overflow-hidden">
+          <p className="text-lg sm:text-xl text-white leading-relaxed italic">
+            &ldquo;{current.quote}&rdquo;
+          </p>
+        </div>
         <div className="mt-6 flex items-center justify-center gap-3">
           {current.avatar ? (
             <Image
