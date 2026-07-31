@@ -31,7 +31,6 @@ export default async function BookPage() {
     "Drone Pilot (Part 107)",
     "Listing Video",
     "Virtual Staging",
-    "Logo & Watermark Design",
   ];
   const responseTime = "Within 24 hours";
   const companyName = "CS MEDIA, LLC";

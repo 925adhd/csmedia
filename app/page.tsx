@@ -25,12 +25,6 @@ export default function Home() {
       service: "Branding",
       avatar: "/images/testimonial-reece-mccoy.webp",
     },
-    {
-      quote: "I am so fortunate to have CS Media in my corner! The professional quality videos and photography has worked wonders for my business! I highly recommend her work!",
-      name: "Doggone Pet Waste Removal Service",
-      service: "Business Promo",
-      avatar: "/images/testimonial-doggone-pet-waste.webp",
-    },
   ];
 
   return (
