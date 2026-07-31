@@ -3,7 +3,7 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
-const BOOKING_URL = "https://www.bookcsmedia.com/s/appointments";
+const BOOKING_URL = "https://csmediallc.square.site";
 
 export const metadata: Metadata = {
   title: { absolute: "Book a Kentucky Real Estate Shoot (From $185) | CS Media" },

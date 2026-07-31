@@ -1,4 +1,4 @@
-const BOOKING_URL = "https://www.bookcsmedia.com/s/appointments";
+const BOOKING_URL = "https://csmediallc.square.site";
 
 interface BookingButtonProps {
   className?: string;
