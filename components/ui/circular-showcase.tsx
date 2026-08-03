@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, useMemo, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, ArrowRight, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface ShowcaseItem {
@@ -314,9 +314,9 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
                 />
               );
             }
-            // Static poster state (inactive/peek, or before scrolling into view) — a
-            // restrained play icon marks it as video content without a caption baked
-            // into the thumbnail itself.
+            // Static poster state (inactive/peek, or the active item before it's scrolled
+            // into view) — plain poster, no play-button badge at all. Videos autoplay on
+            // their own the moment they're active, so there's never a tap for it to promise.
             return (
               <div
                 key={item.image}
@@ -331,13 +331,6 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
                   sizes="(min-width: 768px) 33vw, 90vw"
                   className="object-cover"
                 />
-                {item.video && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-black/35 ring-1 ring-white/40 backdrop-blur-sm">
-                      <Play className="h-4 w-4 translate-x-[1px] text-white" fill="currentColor" />
-                    </span>
-                  </div>
-                )}
               </div>
             );
           })}
