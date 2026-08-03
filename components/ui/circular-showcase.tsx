@@ -36,17 +36,24 @@ function ImageSlideshow({
   onCycleComplete?: () => void;
 }) {
   const [frame, setFrame] = useState(0);
+  const [prevImages, setPrevImages] = useState(images);
 
-  useEffect(() => {
+  // Reset to frame 0 when a new slideshow's images arrive — adjusted during render
+  // (not an effect) per React's guidance for resetting state on a prop change.
+  if (images !== prevImages) {
+    setPrevImages(images);
     setFrame(0);
-  }, [images]);
+  }
 
   useEffect(() => {
     const isLast = frame === images.length - 1;
+    // Linger noticeably longer on the last frame than the mid-cycle frames so the
+    // final image has a moment to register before the card auto-advances.
+    const duration = isLast ? 1900 : 900;
     const timeout = setTimeout(() => {
       if (isLast) onCycleComplete?.();
       else setFrame((f) => f + 1);
-    }, 900);
+    }, duration);
     return () => clearTimeout(timeout);
   }, [frame, images, onCycleComplete]);
 
@@ -246,18 +253,22 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
         <ChevronRight size={26} color="#f1f1f7" />
       </button>
 
-      <div className="grid gap-20 md:grid-cols-2 md:gap-x-[76px]">
-        <motion.div
+      {/* Swipe is on the whole row (image + text), not just the image — on mobile,
+          people naturally try to swipe on the text/caption too, not just the photo. */}
+      <motion.div
+        className="grid gap-20 touch-pan-y md:grid-cols-2 md:gap-x-[76px]"
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.6}
+        onDragEnd={(_, info) => {
+          if (info.offset.x < -60 || info.velocity.x < -400) handleNext();
+          else if (info.offset.x > 60 || info.velocity.x > 400) handlePrev();
+        }}
+      >
+        <div
           ref={imageContainerRef}
-          className="relative h-80 sm:h-96 md:h-[420px] touch-pan-y"
+          className="relative h-80 sm:h-96 md:h-[420px]"
           style={{ perspective: "1000px" }}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={0.6}
-          onDragEnd={(_, info) => {
-            if (info.offset.x < -60 || info.velocity.x < -400) handleNext();
-            else if (info.offset.x > 60 || info.velocity.x > 400) handlePrev();
-          }}
         >
           {items.map((item, index) => {
             const isActive = index === activeIndex;
@@ -268,6 +279,15 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
               return (
                 <video
                   key={item.image}
+                  ref={(el) => {
+                    // iOS Safari sometimes ignores the `muted` JSX attribute's timing and
+                    // blocks autoplay, leaving the poster + play icon showing until tapped.
+                    // Setting `.muted` as a real DOM property (not just the attribute) before
+                    // calling `.play()` makes autoplay actually fire without a manual tap.
+                    if (!el) return;
+                    el.muted = true;
+                    el.play().catch(() => {});
+                  }}
                   src={item.video}
                   poster={item.image}
                   autoPlay
@@ -321,7 +341,7 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
               </div>
             );
           })}
-        </motion.div>
+        </div>
 
         <div className="flex flex-col">
           <AnimatePresence mode="wait">
@@ -394,7 +414,7 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
