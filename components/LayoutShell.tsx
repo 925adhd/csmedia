@@ -9,13 +9,13 @@ import CookieNotice from "@/components/CookieNotice";
 
 export default function LayoutShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const hidesFloatingText = pathname === "/services";
+  const hidesFloatingText = pathname === "/services" || pathname === "/services/real-estate";
 
   return (
     <>
       <GoogleAnalytics />
       <Navbar />
-      <main id="main-content" className="flex-1 pt-20">{children}</main>
+      <main id="main-content" className="flex-1 pt-16 md:pt-20">{children}</main>
       <Footer />
       {!hidesFloatingText && <FloatingTextButton />}
       <CookieNotice />

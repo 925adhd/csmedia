@@ -14,12 +14,12 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia
 export const metadata: Metadata = {
   title: { absolute: "Kentucky Real Estate Photography from $185 | CS Media" },
   description:
-    "Real estate photography, drone aerials, and listing video across Kentucky. Packages from $185, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
+    "Real estate photography, drone aerials, and listing video across Central Kentucky. Packages from $185, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
   alternates: { canonical: `${BASE_URL}/services/real-estate` },
   openGraph: {
     title: "Kentucky Real Estate Photography from $185 | CS Media",
     description:
-      "Real estate photography, drone aerials, and listing video across Kentucky. Packages from $185, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
+      "Real estate photography, drone aerials, and listing video across Central Kentucky. Packages from $185, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
     type: "website",
     url: `${BASE_URL}/services/real-estate`,
     siteName: "CS Media",
@@ -110,7 +110,7 @@ export default function RealEstatePage() {
     "@type": "ProfessionalService",
     name: "CS MEDIA, LLC",
     description:
-      "Professional real estate drone photography, listing video, and virtual staging services across Kentucky.",
+      "Professional real estate drone photography, listing video, and virtual staging services across Central Kentucky.",
     url: `${BASE_URL}/services/real-estate`,
     telephone: "+1-270-307-0173",
     email: "cscreatesmediallc@gmail.com",
@@ -197,8 +197,9 @@ export default function RealEstatePage() {
         ]}
       />
 
-      {/* Hero */}
-      <section className="relative bg-dark-900 py-20 sm:py-36 min-h-[45vh] overflow-hidden">
+      {/* Hero — compact on purpose: this page's job is bottom-of-funnel (pricing), so it
+          shouldn't cost a near-full screen of scroll before the packages show up. */}
+      <section className="relative bg-dark-900 py-10 sm:py-14 overflow-hidden">
         <Image
           src="/images/rustic-kitchen-wood-beams-island.webp"
           alt="Professional real estate photography of a rustic kitchen with wood beams in Kentucky"
@@ -297,7 +298,7 @@ export default function RealEstatePage() {
                               : "bg-dark-600 border border-dark-500/50 text-dark-100 hover:border-gold/30 hover:text-gold"
                         }`}
                       >
-                        Book Now
+                        Select Package
                       </BookingButton>
                     </div>
                   </div>
@@ -337,7 +338,7 @@ export default function RealEstatePage() {
                     href={pkg.bookingUrl}
                     className="mt-5 w-full rounded-full py-2.5 text-sm sm:text-xs font-semibold uppercase tracking-widest text-center transition-all cursor-pointer bg-dark-600 border border-dark-500/50 text-dark-100 hover:border-gold/30 hover:text-gold"
                   >
-                    Book Now
+                    Select Package
                   </BookingButton>
                 </div>
               </FadeIn>
@@ -666,7 +667,7 @@ export default function RealEstatePage() {
                 More from CS Media
               </h2>
               <p className="mt-3 text-sm text-dark-200">
-                Beyond real estate, we also cover events and video production across Kentucky.
+                Beyond real estate, we also cover events and video production across Central Kentucky.
               </p>
             </div>
           </FadeIn>

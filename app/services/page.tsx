@@ -12,12 +12,12 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia
 export const metadata: Metadata = {
   title: "Services | CS Media: Real Estate, Events & Video Production",
   description:
-    "CS Media offers professional real estate photography, event photography, and video production services across Kentucky. Pick a service line to learn more.",
+    "CS Media offers professional real estate photography, event photography, and video production services across Central Kentucky. Pick a service line to learn more.",
   alternates: { canonical: `${BASE_URL}/services` },
   openGraph: {
     title: "Services | CS Media",
     description:
-      "Real estate photography, weddings, and video production across Kentucky.",
+      "Real estate photography, weddings, and video production across Central Kentucky.",
     type: "website",
     url: `${BASE_URL}/services`,
     siteName: "CS Media",
@@ -50,7 +50,7 @@ const categories: ServiceCategory[] = [
     slug: "events",
     title: "Events",
     blurb:
-      "Weddings, baby showers, birthdays, and special occasions across Kentucky. Captured candidly so the day feels like the day, not staged, not over-edited.",
+      "Weddings, baby showers, birthdays, and special occasions across Central Kentucky. Captured candidly so the day feels like the day, not staged, not over-edited.",
     image: "/images/kentucky-event-catering-photography.webp",
     imageAlt: "Catered event spread photographed by CS Media",
     ctaText: "Learn More",

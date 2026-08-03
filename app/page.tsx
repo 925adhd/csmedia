@@ -1,143 +1,206 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, ShieldCheck, Clock, UserCheck, MapPin } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import BookingButton from "@/components/BookingButton";
-import HeroViewportLock from "@/components/HeroViewportLock";
-import TestimonialCarousel from "@/components/TestimonialCarousel";
-import ServiceCard from "@/components/ServiceCard";
+import { CircularShowcase } from "@/components/ui/circular-showcase";
+import { SimpleTestimonials } from "@/components/ui/simple-testimonials";
+
+const AVAILABILITY_URL = "https://csmediallc.square.site/s/appointments";
 
 export default function Home() {
   const testimonials = [
     {
       quote: "From the first 30 seconds in the initial phone call I knew we had the right team for what we are trying to accomplish. Accommodating, extremely friendly, extremely professional. Their work and videography was absolutely top notch!",
       name: "Aaron Foulks",
-      service: "Video Production",
-      avatar: "/images/testimonial-aaron-foulks.webp",
+      designation: "Drone / Construction Footage",
+      src: "/images/testimonial-aaron-foulks.webp",
     },
     {
       quote: "She showed up with everything needed to shoot high-quality content and made me feel completely comfortable in front of the camera. Seriously cannot recommend her enough!",
       name: "Ashton Watkins",
-      service: "Video Production",
-      avatar: "/images/testimonial-ashton-watkins.webp",
+      designation: "Video Production",
+      src: "/images/testimonial-ashton-watkins.webp",
     },
     {
       quote: "10/10 recommend! Not only is Cheris the best hype man, she's phenomenal at what she does. 5 stars isn't enough!!",
       name: "Reece McCoy",
-      service: "Branding",
-      avatar: "/images/testimonial-reece-mccoy.webp",
+      designation: "Branding",
+      src: "/images/testimonial-reece-mccoy.webp",
     },
   ];
 
   return (
     <>
-      <HeroViewportLock />
+      {/* Hero — the brand wording ("Meet your local little Asian with a camera") is baked into
+          both source images and is left untouched; it is not readable as a real heading by
+          search engines, so a single real HTML <h1> below carries the SEO/accessibility role.
+          There is exactly one <h1> in the DOM, absolutely overlaid on each breakpoint's own
+          image in its blank wall/paper area — same treatment on mobile and desktop. */}
+      <section id="hero" className="relative bg-dark-900 overflow-hidden">
+        {/* Positioning context for the image + overlay below, sized purely by the image's own
+            aspect ratio. The section is only as tall as the image itself — on mobile the
+            compact booking CTA section right below picks up immediately after, instead of
+            leaving blank dark-900 space under the image. */}
+        <div className="relative w-full">
+          {/* Mobile image (<768px) — shows the full brand artwork (headline + her full figure)
+              uncropped; only the source file's own dead black band beneath her feet is cropped
+              off at the CSS level (object-cover against a shorter container). The file itself is
+              untouched — this is a display crop, not an edit to the image. No vh/svh sizing, so it
+              never resizes mid-scroll. */}
+          <div className="relative w-full md:hidden" style={{ aspectRatio: "1080 / 1180" }}>
+            <FadeIn className="absolute inset-0">
+              <Image
+                src="/images/hero_components/mobile.png"
+                alt="Cheris of CS Media, holding her camera rig, in front of a chalkboard-and-brick backdrop reading Meet your local little Asian with a camera"
+                fill
+                sizes="100vw"
+                className="object-cover object-top"
+                priority
+              />
+            </FadeIn>
+          </div>
 
-      {/* Hero */}
-      <section id="hero" className="relative flex items-center justify-center h-[var(--hero-h,90svh)] md:h-auto md:min-h-[90vh] pt-20 pb-16 md:pt-24 md:pb-20 bg-dark-900 overflow-hidden">
-        <div className="absolute inset-0 ken-burns">
-          <Image
-            src="/images/brick-home-aerial-drone-kentucky.webp"
-            alt="Aerial drone shot of a brick home with landscaped yard in Kentucky"
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-            quality={75}
-            placeholder="blur"
-            blurDataURL="data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAwAgCdASoQAAwAA4BaJbACsAYvXWU5YP6KAADymXLefN8XytR0++YiAodY0sXOYNnI99BHxRFH5sNGyqws4VDnedWH+gvMYDbleOrAV9DfALdGF3l73VN287y2aEsXVPoLMnLV4sT2IeuC8AA="
-          />
-        </div>
+          {/* Desktop image (>=768px) — full, uncropped; the real content block below is
+              absolutely positioned over its blank paper area. */}
+          <div
+            className="relative mx-auto hidden md:block"
+            style={{ aspectRatio: "1920 / 900", width: "min(100%, 1600px, calc((100vh - 80px) * 1920 / 900))" }}
+          >
+            <FadeIn className="absolute inset-0">
+              <Image
+                src="/images/hero_components/desktop.png"
+                alt="Cheris of CS Media, holding her camera rig, in front of a chalkboard-and-brick backdrop reading Meet your local little Asian with a camera"
+                fill
+                sizes="100vw"
+                className="object-cover object-center"
+                priority
+              />
+            </FadeIn>
+          </div>
 
-        {/* Corner drone tag */}
-        <div className="absolute top-5 left-4 md:top-6 md:left-6 z-[5] flex items-center gap-2 md:gap-2.5 font-mono text-[9px] md:text-[10px] tracking-[0.25em] uppercase text-gold drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
-          <span className="h-1 w-1 md:h-1.5 md:w-1.5 rounded-full bg-red-500 shadow-[0_0_6px_rgba(239,68,68,0.7)]" />
-          <span>REC</span>
-          <span aria-hidden="true" className="hidden md:inline text-gold/60">·</span>
-          <span className="hidden md:inline">Leitchfield, KY · Aerial</span>
-        </div>
-
-        {/* Uniform darkening for text legibility — preserves image tonal range */}
-        <div className="absolute inset-0 bg-black/45" />
-
-        {/* Viewfinder corner frames — desktop (top-left + bottom-right, tucked inward) */}
-        <div className="absolute top-32 left-16 w-px h-32 bg-gradient-to-b from-gold/60 to-transparent hidden lg:block" />
-        <div className="absolute top-32 left-16 w-32 h-px bg-gradient-to-r from-gold/60 to-transparent hidden lg:block" />
-        <div className="absolute bottom-32 right-16 w-px h-32 bg-gradient-to-t from-gold/60 to-transparent hidden lg:block" />
-        <div className="absolute bottom-32 right-16 w-32 h-px bg-gradient-to-l from-gold/60 to-transparent hidden lg:block" />
-
-        {/* Viewfinder corner frames — mobile (top-left + bottom-right, matching desktop + REC tag) */}
-        <div className="absolute top-24 left-6 w-px h-14 bg-gradient-to-b from-gold/60 to-transparent lg:hidden" />
-        <div className="absolute top-24 left-6 w-14 h-px bg-gradient-to-r from-gold/60 to-transparent lg:hidden" />
-        <div className="absolute bottom-24 right-6 w-px h-14 bg-gradient-to-t from-gold/60 to-transparent lg:hidden" />
-        <div className="absolute bottom-24 right-6 w-14 h-px bg-gradient-to-l from-gold/60 to-transparent lg:hidden" />
-
-        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-          <FadeIn delay={0.1}>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] md:leading-[1.05] drop-shadow-[0_2px_18px_rgba(0,0,0,0.65)]">
-              Kentucky Real Estate
+          {/* Real H1 + copy + CTAs — one shared block, not a duplicate per breakpoint. Absolutely
+              positioned over each breakpoint's own blank wall/paper area (mobile position is
+              recalculated against the 1080/1180 cropped mobile image above, not the source
+              file's full 1920px height). */}
+          <FadeIn
+            delay={0.2}
+            className="absolute left-[6%] top-[54%] w-[47%] md:left-[9%] md:top-[64%] md:w-[39%] md:max-w-[540px]"
+          >
+            <h1 className="text-[clamp(15px,4.4vw,20px)] leading-[1.15] font-bold md:text-[clamp(11px,1.6vw,32px)] md:leading-[1.15] md:font-extrabold uppercase text-dark-900">
+              Kentucky Photo,
               <br />
-              <span className="relative inline-block">
-                Photography
-                <span aria-hidden className="hidden md:block absolute left-0 right-0 -bottom-1 h-[3px] bg-gold" />
-              </span>
-              {" "}&amp;<span className="hidden md:inline">{" "}</span><br className="md:hidden" />Drone Video
+              Video &amp; Branding
             </h1>
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <p className="mt-6 text-base md:text-lg text-white max-w-xl mx-auto leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
-              Get your listing clicked, toured,{" "}and{" "}sold.
+            {/* Mobile: concrete service list replaces the generic subheading and the Portfolio
+                button. Book Now already has its own section right below the hero, so mobile
+                needs nothing here but a quick scan of what's for sale. */}
+            <ul className="md:hidden mt-3 space-y-2">
+              {["Real Estate Photo & Drone", "Construction & Job-Site Drone", "Local Business Reels & TikToks"].map((item) => (
+                <li key={item} className="flex items-start gap-1.5 text-[11.5px] font-semibold leading-tight text-dark-800">
+                  <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-gold" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="hidden md:block md:mt-[0.8%] md:text-[clamp(6px,1vw,16px)] md:leading-snug text-dark-700">
+              Photography, video, and branded content for real estate, contractors, and local businesses.
             </p>
-          </FadeIn>
-          <FadeIn delay={0.3}>
-            <div className="mt-8 flex items-center justify-center">
-              <BookingButton
-                className="rounded-full bg-gold px-10 py-4 text-sm md:text-base font-bold uppercase tracking-widest text-dark-900 shadow-[0_8px_24px_-6px_rgba(0,0,0,0.5)] transition-colors hover:bg-gold/90 cursor-pointer"
+            <div className="hidden md:mt-[2%] md:flex md:items-center md:gap-4">
+              <Link
+                href="/portfolio"
+                className="flex h-[clamp(16px,3.4vw,42px)] min-h-[44px] items-center justify-center rounded-md bg-gold px-4 text-[clamp(7px,0.95vw,14px)] font-bold uppercase tracking-widest text-dark-900 shadow-[0_8px_24px_-6px_rgba(0,0,0,0.5)] transition-colors hover:bg-gold-dark"
               >
-                Book a Shoot
+                View Portfolio
+              </Link>
+              <BookingButton
+                href={AVAILABILITY_URL}
+                className="inline-flex items-center gap-1.5 text-[clamp(7px,0.9vw,14px)] font-semibold uppercase tracking-widest text-dark-900/70 decoration-dark-900/30 underline-offset-4 transition-colors hover:text-dark-900 hover:underline hover:decoration-dark-900"
+              >
+                Book Now
+                <ArrowRight className="h-[0.9em] w-[0.9em]" />
               </BookingButton>
             </div>
           </FadeIn>
         </div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent" />
       </section>
 
-      {/* What We Do — horizontal swipe */}
+      {/* Mobile-only compact booking CTA — fills the space directly under the hero image
+          (previously blank dark-900 area from the section's old min-h-svh) with a real,
+          height-bounded CTA instead of dead space. Desktop keeps its own "Book Now" link
+          in the hero, so this is hidden at md and up. */}
+      <section className="md:hidden bg-dark-900 border-t border-dark-500/20 px-6 py-6 text-center">
+        <div className="mx-auto mb-3 h-0.5 w-10 rounded-full bg-gold" />
+        <h2 className="text-lg font-extrabold uppercase tracking-wide text-white">
+          Ready to Book?
+        </h2>
+        <p className="mt-1.5 text-sm leading-snug text-dark-300">
+          Pick your service, choose a date, and reserve your shoot online.
+        </p>
+        <BookingButton
+          href={AVAILABILITY_URL}
+          className="mt-4 inline-flex h-11 min-h-[44px] items-center justify-center gap-1.5 rounded-md bg-gold px-6 text-sm font-bold uppercase tracking-widest text-dark-900 shadow-[0_8px_24px_-6px_rgba(0,0,0,0.5)] transition-colors hover:bg-gold-dark"
+        >
+          Book Now
+          <ArrowRight className="h-4 w-4" />
+        </BookingButton>
+        <p className="mt-3 text-[9px] font-medium uppercase tracking-[0.1em] text-dark-300/80">
+          From $185 &bull; FAA Certified &bull; Easy Online Booking
+        </p>
+      </section>
+
+      {/* What We Do — circular stacked showcase (same style/animation the testimonials used to use) */}
       <section className="py-12 sm:py-16 bg-dark-900 relative border-t border-dark-500/20 overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6 lg:px-12">
+        <div className="mx-auto max-w-7xl px-5 md:px-6 lg:px-12">
+          {/* Trust strip — real, verified claims already used elsewhere on the site
+              (about page, city landing pages), not new marketing copy. Desktop/tablet
+              only — dropped on mobile to keep the section from running too long there. */}
           <FadeIn>
-            <p className="text-center text-[10px] font-mono uppercase tracking-[0.3em] text-gold/70 mb-6">
-              What We Do
-            </p>
-          </FadeIn>
-          <FadeIn>
-            <div className="relative">
-              <div className="-mx-6 lg:-mx-12 flex gap-4 overflow-x-auto pb-4 px-6 lg:px-12 snap-x snap-mandatory scrollbar-hide xl:justify-center">
-                {[
-                  { image: "/images/stone-estate-front-exterior-walkway.webp", title: "Photography", desc: "Bright, clean listing photos that make buyers stop scrolling and book a showing." },
-                  { image: "/images/service-drone-field.webp", title: "Drone (Part 107)", desc: "Aerial views that show off the lot, neighborhood, and curb appeal: the shots your competitors don't have." },
-                  { image: "/images/stone-estate-living-room-fireplace.webp", title: "Listing Video", desc: "Up to a 1-minute walkthrough video bundled into the Full Media Package. Buyers tour the home before they ever visit." },
-                  { image: "/images/cs-media-branding-content-example.webp", title: "Branding Content", desc: "Promo and branding videos that showcase your business and connect with your audience." },
-                ].map((s) => (
-                  <div key={s.title} className="w-[240px] sm:w-[280px] shrink-0 snap-start">
-                    <ServiceCard image={s.image} title={s.title} description={s.desc} href="/services/real-estate" />
+            <div className="mb-12 sm:mb-16 hidden border-b border-dark-500/20 pb-8 md:grid md:grid-cols-4 md:gap-6">
+              {[
+                { icon: ShieldCheck, label: "FAA Part 107", desc: "Certified & insured for every flight" },
+                { icon: Clock, label: "24–48hr Turnaround", desc: "Edited files delivered fast" },
+                { icon: UserCheck, label: "One Operator", desc: "Same person on every shoot" },
+                { icon: MapPin, label: "Central Kentucky", desc: "Leitchfield, Elizabethtown, Radcliff & beyond" },
+              ].map(({ icon: Icon, label, desc }) => (
+                <div key={label} className="flex items-start gap-3">
+                  <Icon className="mt-0.5 h-6 w-6 shrink-0 text-gold" strokeWidth={1.5} />
+                  <div>
+                    <p className="text-sm font-bold uppercase tracking-wide text-white">{label}</p>
+                    <p className="mt-1 text-xs text-dark-300 leading-snug">{desc}</p>
                   </div>
-                ))}
-              </div>
-              <div aria-hidden className="pointer-events-none absolute top-0 bottom-4 right-0 w-16 bg-gradient-to-l from-dark-900 to-transparent" />
+                </div>
+              ))}
             </div>
           </FadeIn>
+
+          <FadeIn delay={0.05}>
+            <h2 className="text-center text-[10px] font-mono uppercase tracking-[0.3em] text-gold/70 mb-6">
+              What We Offer
+            </h2>
+          </FadeIn>
+
+          <CircularShowcase
+            autoplay
+            items={[
+              { image: "/images/service-branding-poster-clean.jpg", video: "/videos/branding2.mp4", eyebrow: "Social Media Promos", title: "Branding Content", description: "Promo and branding videos that showcase your business and connect with your audience.", href: "/services/video-production", ctaLabel: "Explore Branding Services" },
+              { image: "/images/service-drone-poster.jpg", video: "/videos/drone2-trimmed.mp4", eyebrow: "Real Estate Drone Video", title: "Drone (Part 107)", description: "Aerial views that show off the lot, neighborhood, and curb appeal: the shots your competitors don't have.", href: "/services/real-estate", ctaLabel: "Explore Drone Services" },
+              { image: "/images/service-listing-video-poster.jpg", video: "/videos/walkthrough.mp4", eyebrow: "Real Estate Walkthroughs", title: "Listing Video", description: "Up to a 1-minute walkthrough video bundled into the Full Media Package. Buyers tour the home before they ever visit.", disclaimer: "*Some rooms shown with virtual staging — $15 per video scene, billed separately if needed.", href: "/services/real-estate", ctaLabel: "Explore Listing Video" },
+              { image: "/images/white-farmhouse-front-exterior-kentucky.webp", images: ["/images/white-farmhouse-front-exterior-kentucky.webp", "/images/rustic-kitchen-wood-beams-island.webp", "/images/stone-estate-living-room-fireplace.webp"], eyebrow: "Real Estate Photography", title: "Photography", description: "Bright, clean listing photos that make buyers stop scrolling and book a showing.", href: "/services/real-estate", ctaLabel: "Explore Photography Services" },
+            ]}
+          />
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials — small circular avatar picker */}
       <section className="py-12 sm:py-16 bg-dark-800 relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-6 lg:px-12">
           <FadeIn>
-            <p className="text-center text-[10px] font-mono uppercase tracking-[0.3em] text-gold/70 mb-6">
+            <h2 className="text-center text-[10px] font-mono uppercase tracking-[0.3em] text-gold/70 mb-6">
               Reviews
-            </p>
+            </h2>
           </FadeIn>
-          <TestimonialCarousel testimonials={testimonials} />
+          <SimpleTestimonials testimonials={testimonials} />
           <FadeIn delay={0.1}>
             <div className="mt-8 text-center">
               <a

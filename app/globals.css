@@ -223,3 +223,19 @@ textarea:focus-visible,
     transition: none;
   }
 }
+
+/* Idle bob for the drone in the About page's 3D depth portrait
+   (DepthPortrait.tsx) — keeps it hovering even without a pointer to drive
+   its tilt (touch devices, or before first hover). */
+@keyframes depth-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-14px) rotate(-3deg); }
+}
+.animate-depth-float {
+  animation: depth-float 6s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-depth-float {
+    animation: none;
+  }
+}

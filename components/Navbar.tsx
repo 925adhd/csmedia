@@ -4,8 +4,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { ArrowRight } from "lucide-react";
 import BookingButton from "@/components/BookingButton";
 import { CameraIcon } from "@/components/StepIcons";
+
+const AVAILABILITY_URL = "https://csmediallc.square.site/s/appointments";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -31,7 +34,7 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 bg-dark-900/95 backdrop-blur-md border-b border-dark-500/50"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-16 md:h-20 items-center justify-between">
           <Link href="/" className="relative w-28 h-12">
             <Image
               src="/images/cs-media-logo-footer.webp"
@@ -49,52 +52,29 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[13px] font-medium uppercase tracking-widest transition-colors ${
+                className={`text-[14px] font-medium uppercase tracking-widest transition-colors ${
                   pathname === link.href
                     ? "text-gold"
-                    : "text-dark-100 hover:text-gold"
+                    : "text-white/80 hover:text-gold"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
+            {/* Secondary CTA — same treatment as the "Book Now" link under the hero H1: text-only,
+                semibold uppercase, underline on hover, no button chrome. */}
             <BookingButton
-              className="group relative border-gradient rounded-full bg-gold/10 px-6 py-2.5 text-[13px] font-semibold uppercase tracking-wider text-gold transition-all hover:bg-gold/20 cursor-pointer"
+              href={AVAILABILITY_URL}
+              className="inline-flex items-center gap-1 text-[14px] font-semibold uppercase tracking-widest text-gold/80 decoration-gold/30 underline-offset-4 transition-colors hover:text-gold hover:underline hover:decoration-gold cursor-pointer"
             >
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 100 100"
-                className="flash-burst-sm pointer-events-none absolute -top-2 -right-2 h-6 w-6 text-gold"
-              >
-                <defs>
-                  <radialGradient id="navFlashCore" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="currentColor" stopOpacity="0.95" />
-                    <stop offset="40%" stopColor="currentColor" stopOpacity="0.55" />
-                    <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
-                  </radialGradient>
-                </defs>
-                <g fill="currentColor">
-                  <path d="M50 6 L52.5 50 L50 50 L47.5 50 Z" />
-                  <path d="M94 50 L50 52.5 L50 50 L50 47.5 Z" />
-                  <path d="M50 94 L47.5 50 L50 50 L52.5 50 Z" />
-                  <path d="M6 50 L50 47.5 L50 50 L50 52.5 Z" />
-                </g>
-                <g fill="currentColor" opacity="0.7" transform="rotate(45 50 50)">
-                  <path d="M50 20 L52 50 L50 50 L48 50 Z" />
-                  <path d="M80 50 L50 52 L50 50 L50 48 Z" />
-                  <path d="M50 80 L48 50 L50 50 L52 50 Z" />
-                  <path d="M20 50 L50 48 L50 50 L50 52 Z" />
-                </g>
-                <circle cx="50" cy="50" r="18" fill="url(#navFlashCore)" />
-                <circle cx="50" cy="50" r="5" fill="currentColor" />
-              </svg>
               Book Now
+              <ArrowRight className="h-3.5 w-3.5" />
             </BookingButton>
           </div>
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden p-2 text-dark-100"
+            className="md:hidden flex min-h-11 min-w-11 items-center justify-center text-dark-100"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
@@ -115,7 +95,7 @@ export default function Navbar() {
 
     {/* Mobile menu — full screen overlay, rendered outside nav */}
     {mobileOpen && (
-      <div className="md:hidden fixed inset-0 top-[80px] bg-dark-900/95 backdrop-blur-md z-[60] overflow-y-auto">
+      <div className="md:hidden fixed inset-0 top-16 bg-dark-900/95 backdrop-blur-md z-[60] overflow-y-auto">
         <div className="border-t border-gold/10" />
         <div className="flex flex-col gap-6 px-8 py-10">
           {navLinks.map((link) => {

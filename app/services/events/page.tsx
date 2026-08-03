@@ -10,12 +10,12 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia
 export const metadata: Metadata = {
   title: { absolute: "Kentucky Event Photography: Weddings & Parties | CS Media" },
   description:
-    "Event photography across Kentucky: weddings, baby showers, birthdays, and big moments. Candid and warm — captured the way you actually remember the day.",
+    "Event photography across Central Kentucky: weddings, baby showers, birthdays, and big moments. Candid and warm — captured the way you actually remember the day.",
   alternates: { canonical: `${BASE_URL}/services/events` },
   openGraph: {
     title: "Kentucky Event Photography: Weddings & Parties | CS Media",
     description:
-      "Weddings, baby showers, parties, and big moments across Kentucky. Candid and warm — the way you'll actually remember the day.",
+      "Weddings, baby showers, parties, and big moments across Central Kentucky. Candid and warm — the way you'll actually remember the day.",
     type: "website",
     url: `${BASE_URL}/services/events`,
     siteName: "CS Media",
@@ -40,7 +40,7 @@ export default function EventsPage() {
     serviceType: "Event Photography",
     name: "Event Photography by CS MEDIA, LLC",
     description:
-      "Event photography across Kentucky: weddings, baby showers, birthdays, engagements, and special occasions.",
+      "Event photography across Central Kentucky: weddings, baby showers, birthdays, engagements, and special occasions.",
     url: `${BASE_URL}/services/events`,
     areaServed: { "@type": "State", name: "Kentucky" },
     provider: {

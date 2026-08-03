@@ -59,7 +59,7 @@ For a $185–$420 investment, you're not paying for photos. You're paying for sh
 
 ## What Top-Producing Agents in Kentucky Are Using
 
-The agents consistently moving listings in Leitchfield, Elizabethtown, Radcliff, and across Kentucky are using a combination of:
+The agents consistently moving listings in Leitchfield, Elizabethtown, Radcliff, and across Central Kentucky are using a combination of:
 
 ### Professional Interior & Exterior Photography
 
@@ -141,7 +141,7 @@ This guide breaks down what each tier of service actually costs across the Kentu
 
 ## The Kentucky Market at a Glance
 
-Here's roughly what you'll be quoted by working real estate photographers across Kentucky in 2026:
+Here's roughly what you'll be quoted by working real estate photographers across Central Kentucky in 2026:
 
 | Service | Typical Range (Rural / Secondary KY) | Louisville / Lexington |
 | --- | --- | --- |

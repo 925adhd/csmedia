@@ -22,7 +22,7 @@ export default function Footer() {
             </Link>
             <p className="mt-3 md:mt-4 max-w-sm text-sm leading-relaxed text-dark-200">
               Professional drone photography, video, and editing services for
-              agents and property owners in Leitchfield, Grayson County &amp; across Kentucky.
+              agents and property owners in Leitchfield, Grayson County &amp; across Central Kentucky.
             </p>
             <div className="mt-4 md:mt-6 flex items-center gap-2 text-gold text-sm font-mono tracking-wider">
               <span className="inline-block w-8 h-px bg-gold/50" />

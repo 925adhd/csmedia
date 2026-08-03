@@ -39,15 +39,13 @@ export default function FloatingTextButton() {
       tabIndex={visible ? 0 : -1}
       onClick={handleClick}
       style={{ bottom: "calc(1.5rem + var(--sticky-book-bar, 0px))" }}
-      className={`fixed right-6 z-40 flex md:hidden items-center justify-center rounded-full bg-dark-800 border border-gold/30 h-14 w-14 text-gold shadow-lg shadow-black/40 transition-all duration-300 hover:scale-110 hover:bg-dark-700 active:scale-95 ${
+      className={`fixed right-6 z-40 flex md:hidden h-12 items-center justify-center rounded-full bg-dark-800 border border-gold/30 px-4 text-gold shadow-lg shadow-black/40 transition-all duration-300 hover:scale-105 hover:bg-dark-700 active:scale-95 ${
         visible
           ? "opacity-100 translate-y-0 pointer-events-auto"
           : "opacity-0 translate-y-4 pointer-events-none"
       }`}
     >
-      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
-      </svg>
+      <span className="text-xs font-semibold uppercase tracking-widest whitespace-nowrap">Text Us</span>
     </a>
   );
 }

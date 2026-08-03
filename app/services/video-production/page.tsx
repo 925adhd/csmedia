@@ -41,7 +41,7 @@ export default function VideoProductionPage() {
     serviceType: "Video Production",
     name: "Video Production by CS MEDIA, LLC",
     description:
-      "Video production across Kentucky: promo videos, social media reels, business content, and event highlight videos.",
+      "Video production across Central Kentucky: promo videos, social media reels, business content, and event highlight videos.",
     url: `${BASE_URL}/services/video-production`,
     areaServed: { "@type": "State", name: "Kentucky" },
     provider: {

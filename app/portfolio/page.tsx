@@ -10,7 +10,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia
 export const metadata: Metadata = {
   title: "Real Estate Photography & Video Portfolio",
   description:
-    "Browse our real estate drone photography, video, and editing portfolio. Residential, commercial, and promotional projects across Kentucky.",
+    "Browse our real estate drone photography, video, and editing portfolio. Residential, commercial, and promotional projects across Central Kentucky.",
   alternates: { canonical: `${BASE_URL}/portfolio` },
   openGraph: {
     title: "Portfolio | CS Media",

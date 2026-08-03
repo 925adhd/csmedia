@@ -68,7 +68,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-screen flex flex-col bg-dark-900 text-white">
+      <body className="min-h-screen flex flex-col bg-dark-900 text-white overflow-x-hidden">
         <Script
           src="https://analytics.ahrefs.com/analytics.js"
           data-key="uNPZgneIAGTBtN7TEjB6qA"

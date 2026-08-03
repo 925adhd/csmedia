@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Fraunces } from "next/font/google";
+import { ArrowRight } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
-import VideoPlayer from "@/components/VideoPlayer";
+import DepthPortrait from "@/components/DepthPortrait";
 import CTASection from "@/components/CTASection";
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -14,12 +15,12 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia
 export const metadata: Metadata = {
   title: "About CS Media: An Asian with a Camera in Kentucky",
   description:
-    "Cheris Chanthavong — an Asian with a camera based in Leitchfield, KY. FAA Part 107 drone pilot shooting real estate, events, and video across Kentucky.",
+    "Cheris Chanthavong — an Asian with a camera based in Leitchfield, KY. FAA Part 107 drone pilot shooting real estate, events, and video across Central Kentucky.",
   alternates: { canonical: `${BASE_URL}/about` },
   openGraph: {
     title: "About | CS Media",
     description:
-      "Cheris Chanthavong — an Asian with a camera based in Leitchfield, KY. FAA Part 107 drone pilot shooting real estate, events, and video across Kentucky.",
+      "Cheris Chanthavong — an Asian with a camera based in Leitchfield, KY. FAA Part 107 drone pilot shooting real estate, events, and video across Central Kentucky.",
     type: "website",
     url: `${BASE_URL}/about`,
     siteName: "CS Media",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
 export default async function AboutPage() {
   const headerTagline = "About";
 
-  const trustTagline = "Why CS Media";
+  const trustTagline = "The CS Media Promise";
   const trustHeading = "Here’s what you can count on.";
   const trustPoints = [
     { title: "Premium look, lowest area pricing", description: "High-end real estate, event, and brand media at the lowest rates in the region. The polish your listing or brand deserves without paying premium-vendor rates." },
@@ -41,17 +42,6 @@ export default async function AboutPage() {
 
   const ctaHeading = "Ready to See the Difference?";
   const ctaSubheading = "Book your first shoot or text me about your next listing.";
-
-  const videoSchema = {
-    "@context": "https://schema.org",
-    "@type": "VideoObject",
-    name: "Meet Cheris, the Operator Behind CS Media",
-    description:
-      "Meet Cheris Chanthavong, FAA Part 107 certified drone pilot and owner of CS Media in Leitchfield, Kentucky.",
-    thumbnailUrl: `${BASE_URL}/images/personalpromo-poster.webp`,
-    contentUrl: `${BASE_URL}/videos/personalpromo.mp4`,
-    uploadDate: "2025-06-01T00:00:00Z",
-  };
 
   const trustIcons = [
     // Dollar — premium pricing
@@ -75,87 +65,170 @@ export default async function AboutPage() {
 
   return (
     <div className={fraunces.variable}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
-      />
-
+      {/* Shared wrapper for the Cover + Trust sections — overflow left visible (and
+          Cover's own overflow-hidden dropped) so Cheris's cutout can bleed down past
+          the Cover section's box and stack above the Trust section beneath it. */}
+      <div className="relative">
       {/* Cover */}
-      <section className="relative bg-dark-900 overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28">
+      <section className="relative bg-dark-900 pt-10 pb-20 lg:pt-24 lg:pb-28">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(201,169,110,0.05),transparent_55%)] pointer-events-none" />
-        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12">
-          <div className="grid grid-cols-12 gap-x-6 gap-y-12 items-end">
-            <FadeIn className="col-span-12 lg:col-span-7">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold mb-5">
-                {headerTagline}
-              </p>
-              <h1 className="font-serif text-white tracking-tight font-normal">
-                <span className="block leading-[1.05] text-[clamp(34px,4.5vw,68px)]">
-                  Hi, I&rsquo;m <span className="italic">Cheris</span>.
-                </span>
-                <span className="block mt-3 text-gold italic leading-[1.15] text-[clamp(20px,2.6vw,38px)] max-w-xl">
-                  The asian with the camera you&rsquo;ve been looking for.
-                </span>
-              </h1>
-              <p
-                className="mt-8 text-xl md:text-2xl text-dark-100 leading-relaxed max-w-xl font-light"
-                spellCheck={false}
-              >
-                FAA Part 107 drone pilot. Solo operator behind <span className="text-white">CS Media</span>. Based in Leitchfield, Kentucky, shooting all over the state.
-              </p>
-            </FadeIn>
+        {/* No z-index here (was z-10) — an explicit z-index + position:relative would
+            trap descendants in their own stacking context, capping the portrait
+            column's elevated z-index at this level instead of letting it compete
+            against the Trust section sibling below. */}
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
+          <div className="grid grid-cols-12 gap-x-6 gap-y-6 lg:gap-y-12 items-start">
+            <div className="relative col-span-12 lg:col-span-7">
+              {/* Charcoal brush swash behind the copy — the full, uncropped
+                  brush-stroke.png cutout (public/graphics), recolored via CSS mask
+                  so it reads as charcoal against the dark section instead of its
+                  native light gray. Sized to the source's own aspect ratio so
+                  `contain` shows the whole stroke rather than a cropped slice. */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -left-6 -right-6 lg:-left-10 lg:-right-10 top-1/2 -z-10 -translate-y-1/2 bg-[#232019]"
+                style={{
+                  aspectRatio: "1541 / 1245",
+                  WebkitMaskImage: "url(/graphics/brush-stroke.png)",
+                  maskImage: "url(/graphics/brush-stroke.png)",
+                  WebkitMaskRepeat: "no-repeat",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskPosition: "center",
+                  maskPosition: "center",
+                  WebkitMaskSize: "contain",
+                  maskSize: "contain",
+                }}
+              />
 
-            <FadeIn delay={0.2} className="col-span-12 lg:col-span-5">
-              <div className="relative w-full max-w-[340px] mx-auto lg:ml-auto">
-                <div className="overflow-hidden rounded-sm border border-dark-500/40 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]">
-                  <VideoPlayer
-                    src="/videos/personalpromo.mp4"
-                    poster="/images/personalpromo-poster.webp"
-                    posterAlt="Cheris Chanthavong, owner of CS Media"
-                    captionsSrc="/videos/personalpromo.vtt"
-                  />
-                </div>
-              </div>
+              <FadeIn>
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold mb-4">
+                  {headerTagline}
+                </p>
+                <h1 className="font-serif text-white tracking-tight font-normal">
+                  <span className="block leading-[1.05] text-[clamp(34px,4.5vw,68px)]">
+                    Hi, I&rsquo;m <span className="italic">Cheris</span>.
+                  </span>
+                  <span className="block mt-2 text-gold italic leading-[1.15] text-[clamp(20px,2.6vw,38px)] max-w-xl">
+                    The asian with the camera you&rsquo;ve been looking for.
+                  </span>
+                </h1>
+                <p
+                  className="mt-5 text-lg md:text-xl text-dark-100 leading-snug max-w-xl font-light"
+                  spellCheck={false}
+                >
+                  FAA Part 107 drone pilot and solo operator behind <span className="text-white">CS Media</span> — based in Leitchfield, shooting across Central Kentucky.
+                </p>
+                <a
+                  href="#why-cs-media"
+                  className="mt-6 inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-[0.25em] text-gold/80 transition-colors hover:text-gold"
+                >
+                  Why CS Media
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </a>
+              </FadeIn>
+            </div>
+
+            {/* z-30 lets her escape the Cover section's stacking and render above
+                the Trust section below once it's pulled up to overlap her feet. */}
+            <FadeIn delay={0.2} className="relative z-30 col-span-12 lg:col-span-5">
+              <DepthPortrait />
             </FadeIn>
           </div>
         </div>
+
+        {/* Painted brush-stroke edge in place of a flat section rule — the
+            text-divider.png cutout (public/graphics) as a CSS mask, recolored to
+            the trust section's tone so it bleeds in instead of a hard straight
+            line. Cropped from the top so the torn edge (near the top of the
+            source) survives; the plain fill below it is what gets trimmed. Sits
+            above the Trust section's own background (z-30 figure aside) so it
+            stays visible rather than getting covered once Trust overlaps up. */}
+        <div
+          aria-hidden
+          className="absolute inset-x-0 bottom-[150px] sm:bottom-[90px] lg:bottom-[190px] z-20 h-16 sm:h-20 bg-[#f4f1ec]"
+          style={{
+            WebkitMaskImage: "url(/graphics/text-divider.png)",
+            maskImage: "url(/graphics/text-divider.png)",
+            WebkitMaskRepeat: "no-repeat",
+            maskRepeat: "no-repeat",
+            WebkitMaskPosition: "top",
+            maskPosition: "top",
+            WebkitMaskSize: "cover",
+            maskSize: "cover",
+          }}
+        />
       </section>
 
-      {/* Trust points */}
-      <section className="relative bg-dark-900 py-20 lg:py-28 border-t border-dark-500/40">
+      {/* Trust points — pulled up to overlap the Cover section's bottom (where her
+          feet and tripod are) so she reads as standing on/in the cream section
+          instead of floating above it, at every breakpoint. */}
+      <section id="why-cs-media" className="relative scroll-mt-24 bg-[#f4f1ec] pt-24 pb-20 lg:pt-14 lg:pb-28 -mt-[150px] sm:-mt-[90px] lg:-mt-[190px]">
         <div className="mx-auto max-w-6xl px-6 lg:px-12">
-          <FadeIn>
-            <div className="mb-14 max-w-2xl">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold mb-4">
+          {/* grid-cols-1 below lg — a 12-col grid's 11 fixed gap-x-10 gaps (440px)
+              would otherwise be reserved regardless of content, overflowing any
+              viewport narrower than that before a single column even renders. */}
+          <div className="grid grid-cols-1 gap-y-6 lg:grid-cols-12 lg:items-center lg:gap-x-10 lg:gap-y-12">
+            {/* Mobile/tablet-only eyebrow — orients the reader before the video
+                rather than after it; hidden at lg where it already sits above the
+                heading inside the text column below. */}
+            <FadeIn className="lg:hidden">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-gold">
                 {trustTagline}
               </p>
-              <h2 className="font-serif text-4xl md:text-5xl text-white tracking-tight leading-tight font-normal">
-                {trustHeading}
-              </h2>
-            </div>
-          </FadeIn>
+            </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-            {trustPoints.map((point, i) => (
-              <FadeIn key={i} delay={i * 0.08}>
-                <div className="flex gap-5">
-                  <div className="flex-shrink-0 text-gold pt-1">
-                    {trustIcons[i]}
-                  </div>
-                  <div>
-                    <h3 className="font-serif text-xl text-white mb-2 leading-tight">
-                      {point.title}
-                    </h3>
-                    <p className="text-dark-100 leading-relaxed text-[15px]">
-                      {point.description}
-                    </p>
-                  </div>
+            <FadeIn className="lg:col-span-5">
+              <div
+                className="relative mx-auto aspect-[720/984] w-full max-w-[380px] overflow-hidden rounded-sm border border-black/10 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.35)] lg:max-w-none"
+              >
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 h-full w-full object-cover"
+                >
+                  <source src="/videos/gimbal-walk.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </FadeIn>
+
+            <div className="lg:col-span-7">
+              <FadeIn>
+                <div className="mb-10 max-w-2xl">
+                  <p className="hidden lg:block font-mono text-[10px] uppercase tracking-[0.3em] text-gold mb-4">
+                    {trustTagline}
+                  </p>
+                  <h2 className="font-serif text-4xl md:text-5xl text-dark-900 tracking-tight leading-tight font-normal">
+                    {trustHeading}
+                  </h2>
                 </div>
               </FadeIn>
-            ))}
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-10">
+                {trustPoints.map((point, i) => (
+                  <FadeIn key={i} delay={i * 0.08}>
+                    <div className="flex gap-5">
+                      <div className="flex-shrink-0 text-gold pt-1">
+                        {trustIcons[i]}
+                      </div>
+                      <div>
+                        <h3 className="font-serif text-xl text-dark-900 mb-2 leading-tight">
+                          {point.title}
+                        </h3>
+                        <p className="text-dark-600 leading-relaxed text-[15px]">
+                          {point.description}
+                        </p>
+                      </div>
+                    </div>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
+      </div>
 
       <CTASection
         heading={ctaHeading}
