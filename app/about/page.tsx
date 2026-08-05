@@ -162,7 +162,13 @@ export default async function AboutPage() {
       {/* Trust points — pulled up to overlap the Cover section's bottom (where her
           feet and tripod are) so she reads as standing on/in the cream section
           instead of floating above it, at every breakpoint. */}
-      <section id="why-cs-media" className="relative scroll-mt-24 bg-[#f4f1ec] pt-24 pb-20 lg:pt-14 lg:pb-28 -mt-[150px] sm:-mt-[90px] lg:-mt-[190px]">
+      {/* -mt overlap is intentionally 2px deeper than the divider's own
+          bottom-[…] offset above — exact-matching values left a 1px seam
+          where the dark Cover background peeked through, since the masked
+          divider composites on its own layer and rounds its edge
+          independently of this section's box. The extra 2px guarantees a
+          genuine cream-on-cream overlap instead of an edge-to-edge touch. */}
+      <section id="why-cs-media" className="relative scroll-mt-24 bg-[#f4f1ec] pt-24 pb-20 lg:pt-14 lg:pb-28 -mt-[152px] sm:-mt-[92px] lg:-mt-[192px]">
         <div className="mx-auto max-w-6xl px-6 lg:px-12">
           {/* grid-cols-1 below lg — a 12-col grid's 11 fixed gap-x-10 gaps (440px)
               would otherwise be reserved regardless of content, overflowing any
