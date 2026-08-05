@@ -136,10 +136,10 @@ export default function DepthPortrait() {
         <div className="absolute inset-x-0 -bottom-[2%] mx-auto w-[78%]" style={{ transform: "translateZ(10px)" }}>
           <div className="-translate-y-5 translate-x-[6%] sm:translate-x-0 sm:translate-y-0">
             <Image
-              src="/images/cs-peace-sign.png"
+              src="/images/peace.png"
               alt="Cheris Chanthavong, owner of CS Media, with her camera and tripod"
-              width={329}
-              height={698}
+              width={501}
+              height={1065}
               className="h-auto w-full select-none"
               draggable={false}
               priority
