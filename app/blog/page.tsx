@@ -95,7 +95,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <CTASection />
+      <CTASection backgroundImage="/images/cs-media-video-production-studio-kentucky.webp" />
     </>
   );
 }

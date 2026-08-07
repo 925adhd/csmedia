@@ -99,7 +99,11 @@ export default async function PortfolioPage() {
         </div>
       </section>
 
-      <CTASection />
+      <CTASection
+        heading="Ready to Start Your Project?"
+        subheading="Real estate, construction, brand video, and more — let's talk about what you need captured."
+        backgroundImage="/images/precision-partners-construction-site-aerial.webp"
+      />
     </>
   );
 }

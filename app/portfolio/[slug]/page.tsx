@@ -213,6 +213,7 @@ export default async function ProjectPage({
         heading={project.ctaOverride?.heading ?? (isVideo ? "Need a Video Like This?" : "Want Similar Results?")}
         subheading={project.ctaOverride?.subheading ?? (isVideo ? "Get a walkthrough video that makes buyers book showings before they visit." : "Let's capture your property with the same cinematic quality.")}
         buttonText={project.ctaOverride?.buttonText ?? (isVideo ? "Book a Video Shoot" : "Book Similar Shoot")}
+        backgroundImage={project.heroImage}
       />
     </>
   );

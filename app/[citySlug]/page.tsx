@@ -870,6 +870,7 @@ export default async function CityPage({
         desktopSubheading={loc.closingPitch}
         buttonText="Request a Quote"
         useTextLink
+        backgroundImage="/images/kentucky-real-estate-aerial-pool-home.webp"
       />
     </>
   );

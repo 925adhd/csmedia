@@ -41,7 +41,7 @@ export default async function AboutPage() {
   ];
 
   const ctaHeading = "Ready to See the Difference?";
-  const ctaSubheading = "Book your first shoot or text me about your next listing.";
+  const ctaSubheading = "Book your first shoot or text me about your next project.";
 
   const trustIcons = [
     // Dollar — premium pricing
@@ -241,6 +241,7 @@ export default async function AboutPage() {
         subheading={ctaSubheading}
         desktopSubheading="Reach out for your next project. Quality media, fast turnaround, best prices."
         useTextLink
+        backgroundImage="/images/cs-media-photographer-on-location-kentucky.webp"
       />
     </div>
   );

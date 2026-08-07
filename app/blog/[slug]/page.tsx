@@ -326,7 +326,7 @@ export default async function BlogPostPage({
         </section>
       )}
 
-      <CTASection />
+      <CTASection backgroundImage="/images/cs-media-video-production-studio-kentucky.webp" />
     </>
   );
 }

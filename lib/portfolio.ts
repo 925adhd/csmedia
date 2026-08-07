@@ -97,6 +97,11 @@ const staticProjects: PortfolioProject[] = [
     videoSrc: "/videos/alice-theater-brand-video-full.mp4",
     featured: true,
     uploadDate: "2026-08-06",
+    ctaOverride: {
+      heading: "Want a Brand Story Like This?",
+      subheading: "Let's give your venue or business the same on-camera introduction.",
+      buttonText: "Book Branding Content",
+    },
   },
   {
     slug: "precision-partners-groundbreaking",
@@ -110,6 +115,11 @@ const staticProjects: PortfolioProject[] = [
     videoSrc: "/videos/precision-partners-groundbreaking-video.mp4",
     featured: true,
     uploadDate: "2026-08-06",
+    ctaOverride: {
+      heading: "Need Coverage for Your Job Site?",
+      subheading: "From groundbreaking to move-in ready, let's document your build the same way.",
+      buttonText: "Book a Shoot",
+    },
   },
   {
     slug: "precision-partners-home-interior-reveal",
@@ -123,6 +133,11 @@ const staticProjects: PortfolioProject[] = [
     videoSrc: "/videos/precision-partners-home-interior-reveal-video.mp4",
     featured: false,
     uploadDate: "2026-08-06",
+    ctaOverride: {
+      heading: "Want a Reveal Video Like This?",
+      subheading: "Show off your finished build with the same cinematic walkthrough treatment.",
+      buttonText: "Book a Shoot",
+    },
   },
   {
     slug: "personal-brand-video",
@@ -136,6 +151,11 @@ const staticProjects: PortfolioProject[] = [
     videoSrc: "/videos/personal-brand-video-kentucky.mp4",
     featured: false,
     uploadDate: "2026-08-06",
+    ctaOverride: {
+      heading: "Need a Personal Brand Video?",
+      subheading: "Introduce yourself on camera the same way, ready for Instagram and TikTok.",
+      buttonText: "Book Branding Content",
+    },
   },
   {
     slug: "kentucky-real-estate-walkthrough",
@@ -162,6 +182,11 @@ const staticProjects: PortfolioProject[] = [
     videoSrc: "/videos/kentucky-real-estate-aerial-pool-video.mp4",
     featured: false,
     uploadDate: "2026-08-06",
+    ctaOverride: {
+      heading: "Need a Video Like This?",
+      subheading: "Get aerial video that shows the full lot before buyers ever step outside.",
+      buttonText: "Book a Video Shoot",
+    },
   },
   {
     slug: "town-events-coverage",
@@ -175,6 +200,11 @@ const staticProjects: PortfolioProject[] = [
     videoSrc: "/videos/towneventsexample.mp4",
     featured: false,
     uploadDate: "2025-12-18",
+    ctaOverride: {
+      heading: "Need Coverage for Your Event?",
+      subheading: "Get a highlight reel your attendees and sponsors will want to share.",
+      buttonText: "Request a Quote",
+    },
   },
   {
     slug: "local-business-promo",
@@ -188,6 +218,11 @@ const staticProjects: PortfolioProject[] = [
     videoSrc: "/videos/truckpromo.mp4",
     featured: false,
     uploadDate: "2025-09-04",
+    ctaOverride: {
+      heading: "Want a Promo Video Like This?",
+      subheading: "Get fast-cut, social-ready video for your business, tuned for Reels and TikTok.",
+      buttonText: "Book Branding Content",
+    },
   },
   {
     slug: "drone-property-tour",
@@ -202,6 +237,11 @@ const staticProjects: PortfolioProject[] = [
     mobileVideoSrc: "/videos/mobilevid.mp4",
     featured: true,
     uploadDate: "2025-08-12",
+    ctaOverride: {
+      heading: "Need a Video Like This?",
+      subheading: "Get a cinematic drone tour that gives buyers the full property before they visit.",
+      buttonText: "Book a Video Shoot",
+    },
   },
 ];
 

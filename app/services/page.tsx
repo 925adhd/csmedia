@@ -243,6 +243,7 @@ export default function ServicesHubPage() {
         desktopSubheading="Tell us about your project and we'll recommend the right service for the job."
         buttonText="Request a Quote"
         useTextLink
+        backgroundImage="/images/kentucky-river-aerial-drone-photography.webp"
       />
     </>
   );

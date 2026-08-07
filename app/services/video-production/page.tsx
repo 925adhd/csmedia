@@ -136,7 +136,7 @@ export default function VideoProductionPage() {
                 title: "Alice Theater Brand Story",
                 blurb: "On-camera brand storytelling, local venue",
                 src: "/videos/alice-theater-brand-video-full.mp4",
-                poster: "/images/alice-theater-brand-poster.webp",
+                poster: "/images/alice-theater-brand-poster-portrait.webp",
                 posterAlt: "Alice Theater brand story video thumbnail",
               },
               {
