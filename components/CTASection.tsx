@@ -9,6 +9,8 @@ interface CTASectionProps {
   buttonText?: string;
   useTextLink?: boolean;
   backgroundImage?: string;
+  /** Deep link to a specific Square service package — overrides the general booking page. Ignored when useTextLink is set. */
+  bookingHref?: string;
 }
 
 export default function CTASection({
@@ -18,6 +20,7 @@ export default function CTASection({
   buttonText = "Book a Shoot",
   useTextLink = false,
   backgroundImage = "/images/twilight-ranch-home-evening-kentucky.webp",
+  bookingHref,
 }: CTASectionProps) {
   const buttonClass = "group relative mt-10 inline-block rounded-full bg-gold px-10 py-4 text-sm font-semibold uppercase tracking-widest text-dark-900 transition-colors hover:bg-gold-light cursor-pointer";
 
@@ -102,7 +105,7 @@ export default function CTASection({
             {buttonText}
           </TextLink>
         ) : (
-          <BookingButton className={buttonClass}>
+          <BookingButton className={buttonClass} href={bookingHref}>
             {flashBurst}
             {buttonText}
           </BookingButton>

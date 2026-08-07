@@ -41,16 +41,6 @@ const SQUARE_BASE = "https://book.squareup.com/appointments/0d7pw9dylg06tp/locat
 export default function RealEstatePage() {
   const packages: PricingPackage[] = [
     {
-      name: "Branding Content",
-      price: "$200",
-      popular: false,
-      features: [
-        "Up to 1-minute branding video",
-        "3-hour session",
-      ],
-      bookingUrl: `${SQUARE_BASE}/QU7N4O2TGBP2GXDHDAINK6NO`,
-    },
-    {
       name: "Photography Only",
       price: "$285",
       popular: false,
@@ -232,18 +222,19 @@ export default function RealEstatePage() {
           <h2 id="pricing-heading" className="sr-only">
             Real Estate Photography Packages
           </h2>
-          <div data-pricing-grid className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          <div data-pricing-grid className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-3xl mx-auto">
             {packages.map((pkg, index) => {
               return (
                 <FadeIn key={pkg.name} delay={index * 0.1}>
                   <div
+                    id={pkg.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}
                     className={`relative rounded-2xl bg-dark-700 border ${
                       pkg.popular
                         ? "border-gold/30"
                         : pkg.badge
                           ? "border-gold/15"
                           : "border-dark-500/30"
-                    } p-8 h-full flex flex-col overflow-hidden group ${
+                    } p-8 h-full flex flex-col overflow-hidden group scroll-mt-24 md:scroll-mt-28 ${
                       !pkg.popular ? "hover:border-gold/30 transition-colors" : ""
                     }`}
                   >
@@ -308,7 +299,9 @@ export default function RealEstatePage() {
           </div>
 
           <FadeIn>
-            <div className="mt-12 mb-6 text-center">
+            {/* scroll-mt clears the fixed nav (h-16 mobile / h-20 desktop) when linked
+                to directly, e.g. the homepage's "Explore Drone Services" CTA. */}
+            <div id="just-need-drone" className="mt-12 mb-6 text-center scroll-mt-24 md:scroll-mt-28">
               <span className="text-gold/70 text-[10px] font-mono uppercase tracking-[0.3em]">
                 Just Need Drone?
               </span>

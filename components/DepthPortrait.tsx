@@ -136,7 +136,7 @@ export default function DepthPortrait() {
         <div className="absolute inset-x-0 -bottom-[2%] mx-auto w-[78%]" style={{ transform: "translateZ(10px)" }}>
           <div className="-translate-y-5 translate-x-[6%] sm:translate-x-0 sm:translate-y-0">
             <Image
-              src="/images/peace.png"
+              src="/images/cheris-chanthavong-camera-tripod-portrait.webp"
               alt="Cheris Chanthavong, owner of CS Media, with her camera and tripod"
               width={501}
               height={1065}

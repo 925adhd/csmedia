@@ -100,8 +100,8 @@ export default function EventsPage() {
 
       <section className="relative bg-dark-900 py-20 sm:py-32 overflow-hidden">
         <Image
-          src="/images/kentucky-baby-shower-event-photography.webp"
-          alt="Welcome sign at a Kentucky baby shower photographed by CS Media"
+          src="/images/kentucky-event-catering-photography.webp"
+          alt="Catered event spread photographed by CS Media"
           fill
           sizes="100vw"
           className="object-cover object-center opacity-55"
@@ -126,16 +126,13 @@ export default function EventsPage() {
       <section className="py-16 sm:py-24 bg-dark-800">
         <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight">
-              Every Event Is Different
-            </h2>
-            <p className="mt-5 text-dark-100 leading-relaxed">
-              We don&apos;t shoot every event the same way. A wedding day, a baby shower, a milestone birthday: each has its own rhythm and the moments that matter most are different. We adapt to your venue, your style, and your people, then deliver photos that feel like the day instead of staging it.
-            </p>
-
-            <h3 className="mt-12 text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-5">
-              Events We Cover
-            </h3>
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <span className="h-px w-8 bg-gold/60" />
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                Events We Cover
+              </span>
+              <span className="h-px w-8 bg-gold/60" />
+            </div>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left max-w-xl mx-auto">
               {eventTypes.map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-sm text-dark-100">

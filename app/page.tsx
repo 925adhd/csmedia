@@ -51,7 +51,7 @@ export default function Home() {
           <div className="relative w-full md:hidden" style={{ aspectRatio: "1080 / 1180" }}>
             <FadeIn className="absolute inset-0">
               <Image
-                src="/images/hero_components/mobile.png"
+                src="/images/hero_components/csmedia-homepage-hero-mobile.webp"
                 alt="Cheris of CS Media, holding her camera rig, in front of a chalkboard-and-brick backdrop reading Meet your local little Asian with a camera"
                 fill
                 sizes="100vw"
@@ -69,7 +69,7 @@ export default function Home() {
           >
             <FadeIn className="absolute inset-0">
               <Image
-                src="/images/hero_components/desktop.png"
+                src="/images/hero_components/csmedia-homepage-hero-desktop.webp"
                 alt="Cheris of CS Media, holding her camera rig, in front of a chalkboard-and-brick backdrop reading Meet your local little Asian with a camera"
                 fill
                 sizes="100vw"
@@ -150,7 +150,11 @@ export default function Home() {
       </section>
 
       {/* What We Do — circular stacked showcase (same style/animation the testimonials used to use) */}
-      <section className="py-12 sm:py-16 bg-dark-900 relative border-t border-dark-500/20 overflow-hidden">
+      {/* pb-0 below md — the showcase's own trailing pb-24 (clearance for the
+          floating Text Us button) already provides the bottom breathing room
+          down there; adding this section's usual bottom padding on top of
+          that left a huge dead gap before the next section. */}
+      <section className="pt-12 sm:pt-16 pb-0 md:pb-16 bg-dark-900 relative border-t border-dark-500/20 overflow-hidden">
         <div className="mx-auto max-w-7xl px-5 md:px-6 lg:px-12">
           {/* Trust strip — real, verified claims already used elsewhere on the site
               (about page, city landing pages), not new marketing copy. Desktop/tablet
@@ -183,18 +187,21 @@ export default function Home() {
           <CircularShowcase
             autoplay
             items={[
-              { image: "/images/service-branding-poster-clean.jpg", video: "/videos/branding2.mp4", eyebrow: "Social Media Promos", title: "Branding Content", description: "Promo and branding videos that showcase your business and connect with your audience.", href: "/services/video-production", ctaLabel: "Explore Branding Services" },
-              { image: "/images/service-drone-poster.jpg", video: "/videos/drone2-trimmed.mp4", eyebrow: "Real Estate Drone Video", title: "Drone (Part 107)", description: "Aerial views that show off the lot, neighborhood, and curb appeal: the shots your competitors don't have.", href: "/services/real-estate", ctaLabel: "Explore Drone Services" },
-              { image: "/images/service-listing-video-poster.jpg", video: "/videos/walkthrough.mp4", eyebrow: "Real Estate Walkthroughs", title: "Listing Video", description: "Up to a 1-minute walkthrough video bundled into the Full Media Package. Buyers tour the home before they ever visit.", disclaimer: "*Some rooms shown with virtual staging — $15 per video scene, billed separately if needed.", href: "/services/real-estate", ctaLabel: "Explore Listing Video" },
-              { image: "/images/white-farmhouse-front-exterior-kentucky.webp", images: ["/images/white-farmhouse-front-exterior-kentucky.webp", "/images/rustic-kitchen-wood-beams-island.webp", "/images/stone-estate-living-room-fireplace.webp"], eyebrow: "Real Estate Photography", title: "Photography", description: "Bright, clean listing photos that make buyers stop scrolling and book a showing.", href: "/services/real-estate", ctaLabel: "Explore Photography Services" },
+              { image: "/images/alice-theater-brand-poster.webp", video: "/videos/alice-theater-brand-video.mp4", eyebrow: "Social Media Promos", title: "Branding Content", description: "Promo and branding videos that showcase your business and connect with your audience.", href: "/services/video-production", ctaLabel: "Explore Branding Services" },
+              { image: "/images/service-drone-poster.webp", video: "/videos/drone2-trimmed.mp4", eyebrow: "Real Estate Drone Video", title: "Drone (Part 107)", description: "Aerial views that show off the lot, neighborhood, and curb appeal: the shots your competitors don't have.", href: "/services/real-estate#just-need-drone", ctaLabel: "Explore Drone Services" },
+              { image: "/images/service-listing-video-poster.webp", video: "/videos/walkthrough.mp4", eyebrow: "Real Estate Walkthroughs", title: "Listing Video", description: "Up to a 1-minute walkthrough video bundled into the Full Media Package. Buyers tour the home before they ever visit.", disclaimer: "*Some rooms shown with virtual staging — $15 per video scene, billed separately if needed.", href: "/services/real-estate#full-media-package", ctaLabel: "Explore Listing Video" },
+              { image: "/images/white-farmhouse-front-exterior-kentucky.webp", images: ["/images/white-farmhouse-front-exterior-kentucky.webp", "/images/rustic-kitchen-wood-beams-island.webp", "/images/stone-estate-living-room-fireplace.webp"], eyebrow: "Real Estate Photography", title: "Photography", description: "Bright, clean listing photos that make buyers stop scrolling and book a showing.", href: "/services/real-estate#photography-only", ctaLabel: "Explore Photography Services" },
             ]}
           />
         </div>
       </section>
 
-      {/* Testimonials — small circular avatar picker */}
-      <section className="py-12 sm:py-16 bg-dark-800 relative overflow-hidden">
-        <div className="mx-auto max-w-6xl px-6 lg:px-12">
+      {/* Testimonials — small circular avatar picker. pb-24 below md (with the
+          section's own pb zeroed there to match) reserves clearance so a long
+          quote's last line never sits under the floating Text Us button —
+          verified against the actual worst-case scroll position, not just eyeballed. */}
+      <section className="pt-6 sm:pt-16 pb-0 md:pb-16 bg-dark-800 relative overflow-hidden">
+        <div className="mx-auto max-w-6xl px-6 lg:px-12 pb-24 md:pb-0">
           <FadeIn>
             <h2 className="text-center text-[10px] font-mono uppercase tracking-[0.3em] text-gold/70 mb-6">
               Reviews

@@ -81,6 +81,12 @@ function ImageSlideshow({
             draggable={false}
             sizes="(min-width: 768px) 33vw, 90vw"
             className="object-cover"
+            // This slideshow only ever mounts after the section's own IntersectionObserver
+            // (isInView, above) confirms it's already on screen, so native lazy-loading is
+            // redundant — and inside this absolutely-positioned, motion-animated container it
+            // was observed to occasionally never trigger at all, leaving a frame permanently
+            // black (its <img> stuck at complete: false with no network request ever firing).
+            priority
           />
         </motion.div>
       </AnimatePresence>
@@ -222,6 +228,28 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
     exit: { opacity: 0, y: -20 },
   };
 
+  // Shared between two render spots — under the image on mobile (where the stacked
+  // layout otherwise strands the dots below title/description/CTA, far from the
+  // thing they actually control) and in its original spot in the text column on
+  // desktop (where the image sits directly alongside, so the distance isn't an issue).
+  const dotButtons = items.map((item, index) => (
+    <button
+      key={item.image}
+      role="tab"
+      aria-selected={index === activeIndex}
+      aria-label={`Show ${item.title}`}
+      onClick={() => {
+        setHasInteracted(true);
+        setActiveIndex(index);
+      }}
+      className="h-2 rounded-full transition-all duration-300 cursor-pointer"
+      style={{
+        width: index === activeIndex ? 20 : 8,
+        backgroundColor: index === activeIndex ? "#c9a96e" : "#3a3a3a",
+      }}
+    />
+  ));
+
   return (
     <div ref={sectionRef} className="relative mx-auto w-full max-w-7xl p-8 md:translate-x-16">
       {/* Arrows — desktop/pointer only. Mirrored around the image stack (not the text
@@ -256,18 +284,22 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
       {/* Swipe is on the whole row (image + text), not just the image — on mobile,
           people naturally try to swipe on the text/caption too, not just the photo. */}
       <motion.div
-        className="grid gap-20 touch-pan-y md:grid-cols-2 md:gap-x-[76px]"
+        className="grid gap-6 touch-pan-y pb-24 md:gap-y-20 md:grid-cols-2 md:gap-x-[76px] md:pb-0"
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
-        dragElastic={0.6}
+        dragElastic={0}
         onDragEnd={(_, info) => {
           if (info.offset.x < -60 || info.velocity.x < -400) handleNext();
           else if (info.offset.x > 60 || info.velocity.x > 400) handlePrev();
         }}
       >
+        {/* Image + its mobile-only dots share a tight gap of their own, independent of
+            the outer grid's row gap above — md:contents drops this wrapper out of the
+            layout at desktop so the grid goes back to exactly two items (image, text). */}
+        <div className="flex flex-col gap-3 md:contents">
         <div
           ref={imageContainerRef}
-          className="relative h-80 sm:h-96 md:h-[420px]"
+          className="relative h-80 sm:h-96 md:aspect-square md:h-auto"
           style={{ perspective: "1000px" }}
         >
           {items.map((item, index) => {
@@ -336,6 +368,14 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
           })}
         </div>
 
+        {/* Mobile-only dots, directly under the image — on the stacked single-column
+            layout the text-column copy pushed the original dots row far enough below
+            the image that they no longer read as "swipe this photo." */}
+        <div className="flex justify-center gap-2 md:hidden" role="tablist" aria-label="Choose service">
+          {dotButtons}
+        </div>
+        </div>
+
         <div className="flex flex-col">
           <AnimatePresence mode="wait">
             <motion.div
@@ -345,7 +385,11 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
               animate="animate"
               exit="exit"
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:min-h-[248px]"
+              // Reserves room for the tallest slide's copy (the disclaimer-bearing
+              // "Listing Video" item) at each width tier, measured directly against
+              // rendered text height — otherwise shorter slides collapse the row and
+              // everything below (testimonials, footer) jumps as you swipe between them.
+              className="min-h-[390px] min-[360px]:min-h-[300px] sm:min-h-[220px] md:min-h-[290px]"
             >
               {/* Eyebrow label — a distinct SEO category phrase (not a repeat of the
                   title below it) + short gold divider, echoing the mockup's category
@@ -385,26 +429,11 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
             </motion.div>
           </AnimatePresence>
 
-          {/* Dots — small slide indicator beneath the CTA; implies swipeable content
-              on touch devices and is also directly clickable at every size. */}
-          <div className="flex items-center gap-2 pt-4" role="tablist" aria-label="Choose service">
-            {items.map((item, index) => (
-              <button
-                key={item.image}
-                role="tab"
-                aria-selected={index === activeIndex}
-                aria-label={`Show ${item.title}`}
-                onClick={() => {
-                  setHasInteracted(true);
-                  setActiveIndex(index);
-                }}
-                className="h-2 rounded-full transition-all duration-300 cursor-pointer"
-                style={{
-                  width: index === activeIndex ? 20 : 8,
-                  backgroundColor: index === activeIndex ? "#c9a96e" : "#3a3a3a",
-                }}
-              />
-            ))}
+          {/* Dots — small slide indicator beneath the CTA on desktop, where the image
+              sits directly alongside in the other grid column. Hidden on mobile in
+              favor of the copy right under the image (see above). */}
+          <div className="hidden md:flex items-center gap-2 mt-1" role="tablist" aria-label="Choose service">
+            {dotButtons}
           </div>
         </div>
       </motion.div>

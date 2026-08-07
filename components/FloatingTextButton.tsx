@@ -9,12 +9,18 @@ export default function FloatingTextButton() {
 
   useEffect(() => {
     const hero = document.getElementById("hero");
+    const footer = document.querySelector("footer");
     const onScroll = () => {
+      // Hide once the footer comes into view — it already has its own "Text
+      // us instead" link, and the footer's own content (e.g. the Contact
+      // column, which sits in the same right-anchored corner as this button)
+      // would otherwise get covered by it.
+      const footerVisible = footer ? footer.getBoundingClientRect().top < window.innerHeight : false;
       if (hero) {
         // Reveal once hero has fully passed under the fixed 80px nav
-        setVisible(hero.getBoundingClientRect().bottom < 80);
+        setVisible(hero.getBoundingClientRect().bottom < 80 && !footerVisible);
       } else {
-        setVisible(window.scrollY > 300);
+        setVisible(window.scrollY > 300 && !footerVisible);
       }
     };
     window.addEventListener("scroll", onScroll, { passive: true });

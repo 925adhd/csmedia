@@ -1,7 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useRef, useId, useEffect } from "react";
+
+/** Custom window event so any two VideoPlayer instances on the same page — even in
+    unrelated components — stop each other rather than playing over one another. */
+const VIDEO_PLAY_EVENT = "cs-video-play";
 
 interface VideoPlayerProps {
   src: string;
@@ -23,6 +27,7 @@ export default function VideoPlayer({
 }: VideoPlayerProps) {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const id = useId();
 
   function handlePlay() {
     setPlaying(true);
@@ -31,6 +36,19 @@ export default function VideoPlayer({
       videoRef.current?.play();
     }, 50);
   }
+
+  // Pause this instance whenever a different VideoPlayer starts — the native onPlay
+  // below broadcasts our own id, so only videos other than the one just started react.
+  useEffect(() => {
+    function handleOtherPlay(e: Event) {
+      const startedId = (e as CustomEvent<string>).detail;
+      if (startedId !== id) {
+        videoRef.current?.pause();
+      }
+    }
+    window.addEventListener(VIDEO_PLAY_EVENT, handleOtherPlay);
+    return () => window.removeEventListener(VIDEO_PLAY_EVENT, handleOtherPlay);
+  }, [id]);
 
   return (
     <div className={`relative ${aspectRatio} ${className}`}>
@@ -76,6 +94,7 @@ export default function VideoPlayer({
           ref={videoRef}
           controls
           playsInline
+          onPlay={() => window.dispatchEvent(new CustomEvent(VIDEO_PLAY_EVENT, { detail: id }))}
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src={src} type="video/mp4" />

@@ -11,8 +11,19 @@ export interface PortfolioProject {
   featured: boolean;
   /** ISO 8601 date the project (primarily video) was captured/published. Required for VideoObject schema. */
   uploadDate?: string;
+  /** Overrides the generic "your property" CTA copy on the project's detail page —
+      for one-off pieces (e.g. automotive) where the default real-estate framing doesn't fit. */
+  ctaOverride?: { heading: string; subheading: string; buttonText: string };
 }
 
+// Order here is deliberate, not chronological — it's the display order on /portfolio
+// (photos and videos are filtered into their own sections, but each section preserves
+// this relative order). Within photos: lead with the strongest single image, vary the
+// look (daylight vs. twilight) before the next residential piece, and close on
+// Automotive since it's the one clearly-not-real-estate piece — a "we shoot more than
+// listings" capper, not an opener. Within videos: open with Alice Theater and the two
+// Precision Partners pieces to establish range beyond real estate immediately, then
+// move into real estate video, then events/business, closing on the older drone tour.
 const staticProjects: PortfolioProject[] = [
   {
     slug: "stone-estate-aerial",
@@ -23,6 +34,17 @@ const staticProjects: PortfolioProject[] = [
       "A stunning stone estate captured from above, showcasing the full scope of the property's driveway approach, landscaping, and architectural details that ground-level photos simply can't convey.",
     heroImage: "/images/kentucky-real-estate-drone-aerial.webp",
     images: ["/images/kentucky-real-estate-drone-aerial.webp", "/images/stone-estate-front-exterior-walkway.webp", "/images/stone-estate-aerial-overhead-drone.webp", "/images/stone-estate-living-room-fireplace.webp"],
+    featured: true,
+  },
+  {
+    slug: "twilight-showcase",
+    title: "Twilight Showcase",
+    propertyType: "residential",
+    location: "Kentucky",
+    description:
+      "A dramatic twilight session capturing warm interior lighting against the dusk sky, extended to the lot and driveway approach with aerial drone work — the biggest visual differentiator for higher-end Kentucky listings.",
+    heroImage: "/images/twilight-ranch-home-evening-kentucky.webp",
+    images: ["/images/twilight-ranch-home-evening-kentucky.webp", "/images/twilight-ranch-aerial-drone-dusk.webp"],
     featured: true,
   },
   {
@@ -37,53 +59,109 @@ const staticProjects: PortfolioProject[] = [
     featured: true,
   },
   {
-    slug: "country-home-acreage",
-    title: "Country Home on Acreage",
+    slug: "kentucky-listing-recent-coverage",
+    title: "Recent Kentucky Listing Coverage",
     propertyType: "residential",
     location: "Kentucky",
     description:
-      "A charming country home on open acreage featuring a covered pavilion, wraparound porch, and beautifully finished interiors. Aerial drone photography captures the full property layout, outbuildings, and road frontage: the details that drive buyer decisions on rural Kentucky listings where land is as much the product as the house. Interior shots showcase the living spaces, upper-level loft, and the finish quality that a ground-level MLS photo set can't communicate. The aerial-plus-interior combination is what pushes listings like this from sitting to sold.",
-    heroImage: "/images/country-home-aerial-acreage-kentucky.webp",
-    images: ["/images/country-home-aerial-acreage-kentucky.webp", "/images/covered-front-porch-kentucky-home.webp", "/images/living-room-sectional-dark-floors.webp", "/images/upper-level-loft-staircase-landing.webp"],
+      "A recent round of Kentucky real estate coverage: aerial photography of the home, pool, and grounds alongside bright, MLS-ready interior shots. Full aerial-plus-interior coverage like this is what's included in the Full Media Package on every listing.",
+    heroImage: "/images/kentucky-real-estate-aerial-pool-home.webp",
+    images: ["/images/kentucky-real-estate-aerial-pool-home.webp", "/images/kentucky-real-estate-living-room-stone-fireplace.webp", "/images/kentucky-farmhouse-exterior-red-roof.webp"],
     featured: false,
   },
   {
-    slug: "twilight-showcase",
-    title: "Twilight Showcase",
-    propertyType: "residential",
-    location: "Kentucky",
-    description:
-      "A dramatic twilight photography session capturing warm interior lighting against the dusk sky. Twilight shots (taken in the 20-minute window after sunset) create an emotional connection with buyers and make listings stand out on Zillow, Realtor.com, and MLS thumbnails where daytime photos blur together. Aerial twilight drone work extends the treatment to the lot, showing landscape lighting, driveway approach, and silhouette against the sky. For higher-end Kentucky listings above $400K, twilight coverage is the single biggest visual differentiator against competing properties at the same price point.",
-    heroImage: "/images/twilight-ranch-home-evening-kentucky.webp",
-    images: ["/images/twilight-ranch-home-evening-kentucky.webp", "/images/twilight-ranch-aerial-drone-dusk.webp"],
-    featured: true,
-  },
-  {
-    slug: "drone-property-tour",
-    title: "Cinematic Drone Property Tour (Kentucky)",
-    propertyType: "aerial",
-    location: "Kentucky",
-    description:
-      "A cinematic aerial property tour showcasing a home and its surrounding landscape from above. Smooth drone footage captures the full scope of the property, giving potential buyers an immersive experience before ever stepping foot on site.",
-    heroImage: "/images/cs-media-fpv-drone-pilot-real-estate.webp",
-    images: ["/images/cs-media-fpv-drone-pilot-real-estate.webp"],
-    videoSrc: "/videos/desktop.mp4",
-    mobileVideoSrc: "/videos/mobilevid.mp4",
-    featured: true,
-    uploadDate: "2025-08-12",
-  },
-  {
-    slug: "local-business-promo",
-    title: "Local Business Promo",
+    slug: "automotive-photography-session",
+    title: "Automotive Photography Session",
     propertyType: "promo",
     location: "Kentucky",
     description:
-      "A high-energy promotional video for a local Kentucky business, capturing the brand's personality and energy in under 60 seconds. Fast cuts, vibrant color grading, a custom soundtrack, and branded graphics turn raw product and location footage into content ready for Facebook, Instagram Reels, YouTube Shorts, and TikTok. Beyond real estate, CS Media produces promo content for trades, retail, food, and service businesses across Grayson County and Kentucky, with the same cinematic treatment used on our luxury listing work, tuned for commercial storytelling instead of property showcasing.",
-    heroImage: "/images/gmc-truck-promo-video-kentucky.webp",
-    images: ["/images/gmc-truck-promo-video-kentucky.webp"],
-    videoSrc: "/videos/truckpromo.mp4",
+      "A dramatic golden-hour automotive photography session, shot low and wide to make the most of the light. Photography isn't limited to real estate and business promos: CS Media takes on personal and product photography sessions like this one too.",
+    heroImage: "/images/dodge-charger-automotive-photography-kentucky.webp",
+    images: ["/images/dodge-charger-automotive-photography-kentucky.webp"],
     featured: false,
-    uploadDate: "2025-09-04",
+    ctaOverride: {
+      heading: "Want Photos Like This?",
+      subheading: "Let's give your car, product, or personal shoot the same cinematic treatment.",
+      buttonText: "Book a Shoot",
+    },
+  },
+  {
+    slug: "alice-theater-brand-video",
+    title: "Alice Theater Brand Video",
+    propertyType: "promo",
+    location: "Kentucky",
+    description:
+      "A branded story video for the Alice Theater, walking through the historic building and its history on camera. CS Media produces this kind of on-camera brand storytelling for local venues and small businesses that want more than a straight promo reel: a piece that gives their space and their story a real introduction.",
+    heroImage: "/images/alice-theater-brand-poster.webp",
+    images: ["/images/alice-theater-brand-poster.webp"],
+    videoSrc: "/videos/alice-theater-brand-video-full.mp4",
+    featured: true,
+    uploadDate: "2026-08-06",
+  },
+  {
+    slug: "precision-partners-groundbreaking",
+    title: "Precision Partners: Groundbreaking Aerial Coverage",
+    propertyType: "construction",
+    location: "Kentucky",
+    description:
+      "Aerial drone coverage of a Precision Partners groundbreaking, from the crew staking out the foundation lines to the first cuts of dirt on day one. Beyond real estate listings, CS Media documents commercial and residential construction projects for contractors and builders: site surveys, groundbreakings, progress updates, and finished-project reveals, with the same cinematic drone treatment used on luxury home listings.",
+    heroImage: "/images/precision-partners-groundbreaking-drone.webp",
+    images: ["/images/precision-partners-groundbreaking-drone.webp", "/images/precision-partners-construction-site-aerial.webp"],
+    videoSrc: "/videos/precision-partners-groundbreaking-video.mp4",
+    featured: true,
+    uploadDate: "2026-08-06",
+  },
+  {
+    slug: "precision-partners-home-interior-reveal",
+    title: "Precision Partners: Home Interior Reveal",
+    propertyType: "construction",
+    location: "Kentucky",
+    description:
+      "A cinematic reveal video for the finished interior of a Precision Partners build, built around a slow doorway entrance and a full walkthrough of the completed space. Paired with our aerial groundbreaking coverage of the same builder, it shows the project start to finish: breaking ground to move-in ready, not just static before/after photos.",
+    heroImage: "/images/precision-partners-home-interior-reveal-poster.webp",
+    images: ["/images/precision-partners-home-interior-reveal-poster.webp"],
+    videoSrc: "/videos/precision-partners-home-interior-reveal-video.mp4",
+    featured: false,
+    uploadDate: "2026-08-06",
+  },
+  {
+    slug: "personal-brand-video",
+    title: "Personal Brand Video",
+    propertyType: "promo",
+    location: "Kentucky",
+    description:
+      "A personal branding video shot along the riverfront, the kind of on-camera content real estate agents and small business owners use to introduce themselves on social media. CS Media produces this style of face-forward personal brand video alongside business promo work for clients building a following on Instagram and TikTok.",
+    heroImage: "/images/personal-brand-video-poster.webp",
+    images: ["/images/personal-brand-video-poster.webp"],
+    videoSrc: "/videos/personal-brand-video-kentucky.mp4",
+    featured: false,
+    uploadDate: "2026-08-06",
+  },
+  {
+    slug: "kentucky-real-estate-walkthrough",
+    title: "Kentucky Real Estate Walkthrough Video",
+    propertyType: "residential",
+    location: "Kentucky",
+    description:
+      "A full interior walkthrough video for a Kentucky listing, moving room to room through the kitchen and living spaces so buyers can tour the home before ever stepping inside. Walkthrough video bundled into the Full Media Package gives listings a scroll-stopping edge on top of standard MLS photos.",
+    heroImage: "/images/kentucky-real-estate-walkthrough-poster.webp",
+    images: ["/images/kentucky-real-estate-walkthrough-poster.webp"],
+    videoSrc: "/videos/kentucky-real-estate-walkthrough-video.mp4",
+    featured: false,
+    uploadDate: "2026-08-06",
+  },
+  {
+    slug: "kentucky-real-estate-aerial-video",
+    title: "Aerial Real Estate Video",
+    propertyType: "aerial",
+    location: "Kentucky",
+    description:
+      "Aerial drone video of a Kentucky home and pool, showing the full lot, landscaping, and layout from above before the camera settles on the property itself. Aerial video like this rounds out a listing's coverage alongside stills and interior photos.",
+    heroImage: "/images/kentucky-real-estate-aerial-pool-poster.webp",
+    images: ["/images/kentucky-real-estate-aerial-pool-poster.webp"],
+    videoSrc: "/videos/kentucky-real-estate-aerial-pool-video.mp4",
+    featured: false,
+    uploadDate: "2026-08-06",
   },
   {
     slug: "town-events-coverage",
@@ -97,6 +175,33 @@ const staticProjects: PortfolioProject[] = [
     videoSrc: "/videos/towneventsexample.mp4",
     featured: false,
     uploadDate: "2025-12-18",
+  },
+  {
+    slug: "local-business-promo",
+    title: "Local Business Promo",
+    propertyType: "promo",
+    location: "Kentucky",
+    description:
+      "A high-energy promotional video for a local Kentucky business, capturing the brand's personality and energy in under 60 seconds. Fast cuts, vibrant color grading, a custom soundtrack, and branded graphics turn raw product and location footage into content ready for Facebook, Instagram Reels, YouTube Shorts, and TikTok. Beyond real estate, CS Media produces promo content for trades, retail, food, and service businesses across Grayson County and Kentucky, with the same cinematic treatment used on our luxury listing work, tuned for commercial storytelling instead of property showcasing.",
+    heroImage: "/images/gmc-truck-promo-video-kentucky.webp",
+    images: ["/images/gmc-truck-promo-video-kentucky.webp", "/images/layo-tacos-food-truck-aerial-kentucky.webp"],
+    videoSrc: "/videos/truckpromo.mp4",
+    featured: false,
+    uploadDate: "2025-09-04",
+  },
+  {
+    slug: "drone-property-tour",
+    title: "Cinematic Drone Property Tour (Kentucky)",
+    propertyType: "aerial",
+    location: "Kentucky",
+    description:
+      "A cinematic aerial property tour showcasing a home and its surrounding landscape from above. Smooth drone footage captures the full scope of the property, giving potential buyers an immersive experience before ever stepping foot on site.",
+    heroImage: "/images/cs-media-fpv-drone-pilot-real-estate.webp",
+    images: ["/images/cs-media-fpv-drone-pilot-real-estate.webp", "/images/kentucky-river-aerial-drone-photography.webp"],
+    videoSrc: "/videos/desktop.mp4",
+    mobileVideoSrc: "/videos/mobilevid.mp4",
+    featured: true,
+    uploadDate: "2025-08-12",
   },
 ];
 

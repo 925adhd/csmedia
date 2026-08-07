@@ -7,6 +7,8 @@ import VideoPlayer from "@/components/VideoPlayer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+const SQUARE_BASE = "https://book.squareup.com/appointments/0d7pw9dylg06tp/location/L6X9AW779A057/services";
+const BRANDING_BOOKING_URL = `${SQUARE_BASE}/QU7N4O2TGBP2GXDHDAINK6NO`;
 
 export const metadata: Metadata = {
   title: { absolute: "Kentucky Video Production: Promos, Reels & B-roll | CS Media" },
@@ -129,21 +131,28 @@ export default function VideoProductionPage() {
               </h2>
             </div>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {[
+              {
+                title: "Alice Theater Brand Story",
+                blurb: "On-camera brand storytelling, local venue",
+                src: "/videos/alice-theater-brand-video-full.mp4",
+                poster: "/images/alice-theater-brand-poster.webp",
+                posterAlt: "Alice Theater brand story video thumbnail",
+              },
+              {
+                title: "Precision Partners: Groundbreaking",
+                blurb: "Construction site aerial coverage, drone",
+                src: "/videos/precision-partners-groundbreaking-video.mp4",
+                poster: "/images/precision-partners-groundbreaking-drone.webp",
+                posterAlt: "Precision Partners groundbreaking aerial thumbnail",
+              },
               {
                 title: "Snow Dogs: New Flavors",
                 blurb: "Food truck promo, Instagram Reel",
                 src: "/videos/snow-dogs-food-truck-promo-kentucky.mp4",
                 poster: "/images/cs-media-video-production-poster-kentucky.webp",
                 posterAlt: "Snow Dogs new flavors promo thumbnail",
-              },
-              {
-                title: "Local Business Promo",
-                blurb: "High-energy business promo, cinematic cuts",
-                src: "/videos/truckpromo.mp4",
-                poster: "/images/gmc-truck-promo-video-kentucky.webp",
-                posterAlt: "GMC truck promo video thumbnail",
               },
               {
                 title: "Town Events Highlights",
@@ -218,11 +227,13 @@ export default function VideoProductionPage() {
               </footer>
             </blockquote>
             <p className="mt-12 text-sm text-dark-200">
-              Video projects are custom-quoted based on scope, length, and locations.{" "}
+              All video production — promos, reels, business content, and brand
+              storytelling — is booked as Branding Content: up to a 1-minute video
+              from a 3-hour session, $200.{" "}
               <Link href="/book" className="text-gold hover:underline">
-                Request a quote
+                Have something bigger in mind?
               </Link>{" "}
-              with what you have in mind.
+              Multi-day or multi-location shoots are quoted separately.
             </p>
           </FadeIn>
         </div>
@@ -230,10 +241,10 @@ export default function VideoProductionPage() {
 
       <CTASection
         heading="Have a Video Project in Mind?"
-        subheading="Tell us about the project. We'll respond with a quote and timeline."
-        desktopSubheading="Tell us about the project. We'll respond with a quote and timeline."
-        buttonText="Request a Quote"
-        useTextLink
+        subheading="Branding Content: up to a 1-minute video, 3-hour session, $200."
+        desktopSubheading="Branding Content: up to a 1-minute video, 3-hour session, $200."
+        buttonText="Book Branding Content"
+        bookingHref={BRANDING_BOOKING_URL}
       />
     </>
   );

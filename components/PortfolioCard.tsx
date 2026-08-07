@@ -1,11 +1,31 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type { PortfolioProject } from "@/lib/portfolio";
+import VideoLightbox from "@/components/VideoLightbox";
 
 export default function PortfolioCard({ project }: { project: PortfolioProject }) {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+
+  // Video cards promise instant playback with the play icon below — deliver on
+  // that literally (lightbox, no navigation) instead of sending people to the
+  // text-first detail page and making them find a second play button. The
+  // detail page still exists and is still a real, crawlable link (SEO doesn't
+  // need a human to click through it) — plain clicks just get intercepted here;
+  // ctrl/cmd/shift-click and middle-click fall through to normal link behavior
+  // so "open in new tab" still works.
+  function handleClick(e: React.MouseEvent) {
+    if (project.videoSrc && e.button === 0 && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
+      e.preventDefault();
+      setLightboxOpen(true);
+    }
+  }
+
   return (
     <article>
-    <Link href={`/portfolio/${project.slug}`} className="group block">
+    <Link href={`/portfolio/${project.slug}`} className="group block" onClick={handleClick}>
       <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-dark-700">
         <Image
           src={project.heroImage}
@@ -42,6 +62,14 @@ export default function PortfolioCard({ project }: { project: PortfolioProject }
         </div>
       </div>
     </Link>
+    {lightboxOpen && project.videoSrc && (
+      <VideoLightbox
+        title={project.title}
+        videoSrc={project.videoSrc}
+        poster={project.heroImage}
+        onClose={() => setLightboxOpen(false)}
+      />
+    )}
     </article>
   );
 }

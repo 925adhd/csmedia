@@ -47,21 +47,21 @@ const categories: ServiceCategory[] = [
     ctaText: "View Packages & Pricing",
   },
   {
+    slug: "video-production",
+    title: "Video Production",
+    blurb:
+      "Promo videos, business content, and social media reels for Kentucky brands. From single-take phone reels to multi-camera promotional shoots.",
+    image: "/images/cs-media-video-production-studio-kentucky.webp",
+    imageAlt: "CS Media video production studio with ring light, gimbal slider, and cinema cameras",
+    ctaText: "Learn More",
+  },
+  {
     slug: "events",
     title: "Events",
     blurb:
       "Weddings, baby showers, birthdays, and special occasions across Central Kentucky. Captured candidly so the day feels like the day, not staged, not over-edited.",
     image: "/images/kentucky-event-catering-photography.webp",
     imageAlt: "Catered event spread photographed by CS Media",
-    ctaText: "Learn More",
-  },
-  {
-    slug: "video-production",
-    title: "Video Production",
-    blurb:
-      "Promo videos, business content, and social media reels for Kentucky brands. From single-take phone reels to multi-camera promotional shoots.",
-    image: "/images/leitchfield-downtown-holiday-event-aerial.webp",
-    imageAlt: "Aerial drone footage of a Kentucky downtown event by CS Media video production",
     ctaText: "Learn More",
   },
 ];
@@ -93,7 +93,7 @@ export default function ServicesHubPage() {
       {/* Hero */}
       <section className="relative bg-dark-900 py-20 sm:py-32 overflow-hidden">
         <Image
-          src="/images/brick-home-aerial-drone-kentucky.webp"
+          src="/images/kentucky-real-estate-drone-aerial.webp"
           alt="CS Media Kentucky photography and video services"
           fill
           sizes="100vw"

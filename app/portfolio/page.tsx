@@ -8,14 +8,14 @@ import { getPortfolioProjects } from "@/lib/portfolio";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: "Real Estate Photography & Video Portfolio",
+  title: "Photography, Video & Drone Portfolio",
   description:
-    "Browse our real estate drone photography, video, and editing portfolio. Residential, commercial, and promotional projects across Central Kentucky.",
+    "Browse our photography, video, and drone portfolio: real estate, construction and contractor projects, local business promos, and brand video across Central Kentucky.",
   alternates: { canonical: `${BASE_URL}/portfolio` },
   openGraph: {
     title: "Portfolio | CS Media",
     description:
-      "Browse our real estate drone photography, video, and editing portfolio. Residential, commercial, and promotional projects.",
+      "Browse our photography, video, and drone portfolio: real estate, construction, local business, and brand video projects.",
     type: "website",
     url: `${BASE_URL}/portfolio`,
     siteName: "CS Media",
@@ -25,6 +25,9 @@ export const metadata: Metadata = {
 
 export default async function PortfolioPage() {
   const projects = await getPortfolioProjects();
+  // Deliberately ordered in lib/portfolio.ts (variety and narrative flow, not raw
+  // recency) — filtering here just splits into the two sections while preserving
+  // that order.
   const photoProjects = projects.filter((p) => !p.videoSrc);
   const videoProjects = projects.filter((p) => !!p.videoSrc);
 
@@ -32,8 +35,10 @@ export default async function PortfolioPage() {
     <>
       <PortfolioVideoIntro />
 
-      {/* Header */}
-      <section className="relative bg-dark-900 py-16 sm:py-28 overflow-hidden">
+      {/* Header — tight on mobile (py-8) so the actual work is one short scroll
+          away instead of behind a tall, mostly-empty hero; desktop keeps the
+          original breathing room since there's no "wall before the wall" there. */}
+      <section className="relative bg-dark-900 py-8 sm:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,169,110,0.06),transparent_60%)]" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <FadeIn>
@@ -44,19 +49,19 @@ export default async function PortfolioPage() {
               Portfolio
             </h1>
             <p className="mt-4 text-base sm:text-lg text-dark-200 max-w-2xl mx-auto">
-              Every property tells a story. I capture it from angles that make
-              buyers take notice.
+              Real estate, construction, and local business, every project
+              captured from angles that make people stop scrolling.
             </p>
           </FadeIn>
         </div>
       </section>
 
       {/* Photo Projects */}
-      <section className="py-16 sm:py-24 bg-dark-800">
+      <section className="py-8 sm:py-24 bg-dark-800">
         <div className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <FadeIn>
-            <div className="flex items-center gap-3 mb-10">
+            <div className="flex items-center gap-3 mb-5 sm:mb-10">
               <span className="h-px w-8 bg-gold/60" />
               <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
                 Photography &amp; Drone

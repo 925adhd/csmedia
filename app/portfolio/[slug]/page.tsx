@@ -115,13 +115,18 @@ export default async function ProjectPage({
         <section className="pt-8 pb-4 bg-dark-800">
           <div className="mx-auto max-w-4xl px-6 lg:px-8">
             <FadeIn>
-              {/* Mobile video */}
+              {/* Mobile video — autoplay+muted so anyone landing here directly (search
+                  result, shared link, ctrl-click from the grid) still gets the video
+                  moving immediately instead of a static poster waiting for a click.
+                  Native controls let them unmute. */}
               {project.mobileVideoSrc && (
                 <div className="md:hidden relative rounded-2xl overflow-hidden border border-dark-500/30 bg-dark-900 shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
                   <video
                     controls
+                    autoPlay
+                    muted
                     playsInline
-                    preload="metadata"
+                    preload="auto"
                     poster={project.heroImage}
                     className="w-full aspect-[9/16] max-h-[70vh] mx-auto bg-black"
                   >
@@ -134,8 +139,10 @@ export default async function ProjectPage({
                 <div className="relative rounded-2xl overflow-hidden border border-dark-500/30 bg-dark-900 shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
                   <video
                     controls
+                    autoPlay
+                    muted
                     playsInline
-                    preload="metadata"
+                    preload="auto"
                     poster={project.heroImage}
                     className="w-full aspect-[9/16] max-h-[70vh] mx-auto bg-black"
                   >
@@ -203,9 +210,9 @@ export default async function ProjectPage({
       })()}
 
       <CTASection
-        heading={isVideo ? "Need a Video Like This?" : "Want Similar Results?"}
-        subheading={isVideo ? "Get a walkthrough video that makes buyers book showings before they visit." : "Let's capture your property with the same cinematic quality."}
-        buttonText={isVideo ? "Book a Video Shoot" : "Book Similar Shoot"}
+        heading={project.ctaOverride?.heading ?? (isVideo ? "Need a Video Like This?" : "Want Similar Results?")}
+        subheading={project.ctaOverride?.subheading ?? (isVideo ? "Get a walkthrough video that makes buyers book showings before they visit." : "Let's capture your property with the same cinematic quality.")}
+        buttonText={project.ctaOverride?.buttonText ?? (isVideo ? "Book a Video Shoot" : "Book Similar Shoot")}
       />
     </>
   );

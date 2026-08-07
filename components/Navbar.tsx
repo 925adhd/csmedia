@@ -13,7 +13,7 @@ const AVAILABILITY_URL = "https://csmediallc.square.site/s/appointments";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/services/real-estate", label: "Pricing" },
+  { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
 ];
 
