@@ -671,8 +671,8 @@ export default function RealEstatePage() {
                 slug: "events",
                 title: "Events",
                 blurb: "Weddings, baby showers, birthdays & special occasions captured candidly.",
-                image: "/images/kentucky-event-catering-photography.webp",
-                imageAlt: "Catered event spread photographed by CS Media",
+                image: "/images/kentucky-wedding-photography.webp",
+                imageAlt: "Bride and groom holding hands over a Bible at their Kentucky wedding, photographed by CS Media",
               },
               {
                 slug: "video-production",

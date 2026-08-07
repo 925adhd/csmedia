@@ -9,6 +9,8 @@ interface CTASectionProps {
   buttonText?: string;
   useTextLink?: boolean;
   backgroundImage?: string;
+  /** Optional desktop-only override for backgroundImage, when one crop can't serve both breakpoints. */
+  desktopBackgroundImage?: string;
   /** Deep link to a specific Square service package — overrides the general booking page. Ignored when useTextLink is set. */
   bookingHref?: string;
 }
@@ -20,6 +22,7 @@ export default function CTASection({
   buttonText = "Book a Shoot",
   useTextLink = false,
   backgroundImage = "/images/twilight-ranch-home-evening-kentucky.webp",
+  desktopBackgroundImage,
   bookingHref,
 }: CTASectionProps) {
   const buttonClass = "group relative mt-10 inline-block rounded-full bg-gold px-10 py-4 text-sm font-semibold uppercase tracking-widest text-dark-900 transition-colors hover:bg-gold-light cursor-pointer";
@@ -64,10 +67,21 @@ export default function CTASection({
             alt=""
             aria-hidden="true"
             fill
-            className="object-cover object-[center_36%] opacity-45"
+            className={`object-cover object-[center_36%] opacity-45 ${desktopBackgroundImage ? "md:hidden" : ""}`}
             sizes="100vw"
             quality={75}
           />
+          {desktopBackgroundImage && (
+            <Image
+              src={desktopBackgroundImage}
+              alt=""
+              aria-hidden="true"
+              fill
+              className="hidden md:block object-cover object-[center_36%] opacity-45"
+              sizes="100vw"
+              quality={75}
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-b from-dark-900/50 via-dark-900/60 to-dark-900/75" />
         </>
       )}

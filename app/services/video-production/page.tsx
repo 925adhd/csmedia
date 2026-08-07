@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import CTASection from "@/components/CTASection";
 import VideoPlayer from "@/components/VideoPlayer";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import TextLink from "@/components/TextLink";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 const SQUARE_BASE = "https://book.squareup.com/appointments/0d7pw9dylg06tp/location/L6X9AW779A057/services";
@@ -94,11 +94,11 @@ export default function VideoProductionPage() {
 
       <section className="relative bg-dark-900 py-20 sm:py-32 overflow-hidden">
         <Image
-          src="/images/cs-media-video-production-studio-kentucky.webp"
-          alt="CS Media video production studio with ring light, gimbal slider, and cinema cameras"
+          src="/images/cs-media-photographer-on-location-kentucky.webp"
+          alt="CS Media videographer shooting on location in Kentucky"
           fill
           sizes="100vw"
-          className="object-cover object-[center_45%] opacity-55"
+          className="object-cover object-[center_28%] opacity-55"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900/40 via-dark-900/65 to-dark-900" />
@@ -229,9 +229,9 @@ export default function VideoProductionPage() {
               All video production — promos, reels, business content, and brand
               storytelling — is booked as Branding Content: up to a 1-minute video
               from a 3-hour session, $200.{" "}
-              <Link href="/book" className="text-gold hover:underline">
+              <TextLink className="text-gold hover:underline">
                 Have something bigger in mind?
-              </Link>{" "}
+              </TextLink>{" "}
               Multi-day or multi-location shoots are quoted separately.
             </p>
           </FadeIn>
@@ -239,11 +239,13 @@ export default function VideoProductionPage() {
       </section>
 
       <CTASection
-        heading="Have a Video Project in Mind?"
+        heading="Book Your Branding Session"
         subheading="Branding Content: up to a 1-minute video, 3-hour session, $200."
         desktopSubheading="Branding Content: up to a 1-minute video, 3-hour session, $200."
         buttonText="Book Branding Content"
         bookingHref={BRANDING_BOOKING_URL}
+        backgroundImage="/images/service-video-editing.webp"
+        desktopBackgroundImage="/images/service-branding-poster-clean.jpg"
       />
     </>
   );

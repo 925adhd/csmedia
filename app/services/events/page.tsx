@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import CTASection from "@/components/CTASection";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -100,8 +99,8 @@ export default function EventsPage() {
 
       <section className="relative bg-dark-900 py-20 sm:py-32 overflow-hidden">
         <Image
-          src="/images/kentucky-event-catering-photography.webp"
-          alt="Catered event spread photographed by CS Media"
+          src="/images/kentucky-wedding-photography.webp"
+          alt="Bride and groom holding hands over a Bible at their Kentucky wedding, photographed by CS Media"
           fill
           sizes="100vw"
           className="object-cover object-center opacity-55"
@@ -152,13 +151,6 @@ export default function EventsPage() {
                 — Bethany Brim
               </footer>
             </blockquote>
-            <p className="mt-12 text-sm text-dark-200">
-              Event pricing is custom-quoted based on coverage, location, and add-ons.{" "}
-              <Link href="/book" className="text-gold hover:underline">
-                Request a quote
-              </Link>{" "}
-              with your date and venue.
-            </p>
           </FadeIn>
         </div>
       </section>
@@ -169,6 +161,7 @@ export default function EventsPage() {
         desktopSubheading="Send us your date, venue, and what coverage you're imagining. We'll respond with a custom quote."
         buttonText="Request a Quote"
         useTextLink
+        backgroundImage="/images/leitchfield-downtown-holiday-event-aerial.webp"
       />
     </>
   );

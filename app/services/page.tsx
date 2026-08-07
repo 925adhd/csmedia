@@ -60,8 +60,8 @@ const categories: ServiceCategory[] = [
     title: "Events",
     blurb:
       "Weddings, baby showers, birthdays, and special occasions across Central Kentucky. Captured candidly so the day feels like the day, not staged, not over-edited.",
-    image: "/images/kentucky-event-catering-photography.webp",
-    imageAlt: "Catered event spread photographed by CS Media",
+    image: "/images/kentucky-wedding-photography.webp",
+    imageAlt: "Bride and groom holding hands over a Bible at their Kentucky wedding, photographed by CS Media",
     ctaText: "Learn More",
   },
 ];
@@ -104,7 +104,7 @@ export default function ServicesHubPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900/40 via-dark-900/65 to-dark-900" />
         <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 text-center">
-          <FadeIn>
+          <FadeIn disableOnMobile>
             <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
               Our Services
             </span>
@@ -187,7 +187,7 @@ export default function ServicesHubPage() {
                 How It Works
               </span>
               <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight text-white">
-                How Our Real Estate Photography{" "}
+                How Our Photo &amp; Video{" "}
                 <span className="relative inline-block">
                   Process Works
                   <span aria-hidden className="absolute left-0 right-0 -bottom-1 md:-bottom-1.5 h-[2px] md:h-[3px] bg-gold" />
@@ -201,8 +201,8 @@ export default function ServicesHubPage() {
 
             {[
               { step: "01", title: "Book Your Shoot", desc: "Send a quick request by text, call, or the form. We’ll confirm the date and arrive on time, ready to go.", Icon: StampIcon },
-              { step: "02", title: "We Capture It", desc: "Professional drone, photo, and video coverage of your property—inside and out.", Icon: DroneIcon },
-              { step: "03", title: "Get Your Media", desc: "Edited photos, video, and virtual staging delivered within 24–48 hours.", Icon: PolaroidIcon },
+              { step: "02", title: "We Capture It", desc: "Professional drone, photo, and video coverage, tailored to your project.", Icon: DroneIcon },
+              { step: "03", title: "Get Your Media", desc: "Edited photos and video delivered fast—plus virtual staging for real estate listings.", Icon: PolaroidIcon },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 0.15}>
                 <div className="relative text-left md:text-center px-2">

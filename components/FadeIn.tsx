@@ -7,9 +7,11 @@ interface FadeInProps {
   children: ReactNode;
   className?: string;
   delay?: number;
+  /** Skip the slide/fade animation on small screens (renders content in its final state immediately). */
+  disableOnMobile?: boolean;
 }
 
-export default function FadeIn({ children, className, delay = 0 }: FadeInProps) {
+export default function FadeIn({ children, className, delay = 0, disableOnMobile = false }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -32,7 +34,11 @@ export default function FadeIn({ children, className, delay = 0 }: FadeInProps) 
   return (
     <div
       ref={ref}
-      className={className}
+      className={
+        disableOnMobile
+          ? `${className ?? ""} max-sm:!opacity-100 max-sm:!transform-none max-sm:!transition-none`
+          : className
+      }
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "none" : "translateY(24px)",

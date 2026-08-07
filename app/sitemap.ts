@@ -35,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
       images: [
         abs("/images/brick-home-aerial-drone-kentucky.webp"),
-        abs("/images/kentucky-event-catering-photography.webp"),
+        abs("/images/kentucky-wedding-photography.webp"),
         abs("/images/leitchfield-downtown-holiday-event-aerial.webp"),
       ],
     },
