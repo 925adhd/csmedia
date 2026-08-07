@@ -92,14 +92,15 @@ export default function ServicesHubPage() {
 
       {/* Hero */}
       <section className="relative bg-dark-900 py-20 sm:py-32 overflow-hidden">
-        <Image
-          src="/images/kentucky-real-estate-drone-aerial.webp"
-          alt="CS Media Kentucky photography and video services"
-          fill
-          sizes="100vw"
-          quality={75}
-          className="object-cover object-center opacity-40"
-          priority
+        <video
+          src="/videos/cs-media-downtown-kentucky-photography-session.mp4"
+          poster="/images/cs-media-downtown-kentucky-photography-session-poster.webp"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900/40 via-dark-900/65 to-dark-900" />
         <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 text-center">
@@ -111,7 +112,7 @@ export default function ServicesHubPage() {
               Photo &amp; Video Services in Kentucky
             </h1>
             <p className="mt-5 text-base sm:text-lg text-dark-100 max-w-2xl mx-auto leading-relaxed">
-              Real estate listings, weddings, and promo videos. Pick the service line that fits your project.
+              Real estate listings, promo videos, and events. Pick the service line that fits your project.
             </p>
           </FadeIn>
         </div>
@@ -173,17 +174,6 @@ export default function ServicesHubPage() {
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
-      </section>
-
-      {/* About Strip */}
-      <section className="py-16 sm:py-24 bg-dark-900">
-        <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
-          <FadeIn>
-            <p className="text-base sm:text-lg text-dark-100 leading-relaxed">
-              CS Media is a one-photographer studio based in Leitchfield, Kentucky. Bookings go straight to me, not a queue, not a salesperson, and your photos come back edited within 24–48 hours. That's the whole pitch.
-            </p>
-          </FadeIn>
-        </div>
       </section>
 
       {/* How It Works */}

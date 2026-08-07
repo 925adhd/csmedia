@@ -154,7 +154,7 @@ export default function Home() {
           floating Text Us button) already provides the bottom breathing room
           down there; adding this section's usual bottom padding on top of
           that left a huge dead gap before the next section. */}
-      <section className="pt-12 sm:pt-16 pb-0 md:pb-16 bg-dark-900 relative border-t border-dark-500/20 overflow-hidden">
+      <section className="pt-20 sm:pt-16 pb-0 md:pb-16 bg-dark-900 relative border-t border-dark-500/20 overflow-hidden">
         <div className="mx-auto max-w-7xl px-5 md:px-6 lg:px-12">
           {/* Trust strip — real, verified claims already used elsewhere on the site
               (about page, city landing pages), not new marketing copy. Desktop/tablet

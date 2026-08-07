@@ -118,17 +118,16 @@ export default function VideoProductionPage() {
       </section>
 
       {/* Featured Work */}
-      <section className="py-16 sm:py-24 bg-dark-800 relative">
+      <section className="py-10 sm:py-16 bg-dark-800 relative">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <FadeIn>
-            <div className="text-center mb-12">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <span className="h-px w-8 bg-gold/60" />
               <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                Featured Work
+                Recent Work
               </span>
-              <h2 className="mt-4 text-2xl md:text-3xl font-bold text-white tracking-tight">
-                Recent Video Production
-              </h2>
+              <span className="h-px w-8 bg-gold/60" />
             </div>
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">

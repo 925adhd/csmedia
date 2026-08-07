@@ -125,6 +125,17 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
   const itemsLength = useMemo(() => items.length, [items]);
   const activeItem = useMemo(() => items[activeIndex], [activeIndex, items]);
 
+  // On mobile, video autoplay + the image slideshow both kicked in the instant a swipe
+  // landed, while the card was still mid-transform — video sound/motion plus the card
+  // still sliding read as chaotic. Holding the newly-active slide on its still poster
+  // for a beat lets the swipe settle before anything starts moving on its own.
+  const [contentReady, setContentReady] = useState(true);
+  useEffect(() => {
+    setContentReady(false);
+    const t = setTimeout(() => setContentReady(true), 300);
+    return () => clearTimeout(t);
+  }, [activeIndex]);
+
   useEffect(() => {
     function handleResize() {
       if (imageContainerRef.current) {
@@ -307,7 +318,7 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
             // Only the active item plays video, and only once the section has scrolled into
             // view — the side-peek and hidden items stay as a still poster frame, so at most
             // one clip is ever decoding at a time, and nothing plays off-screen.
-            if (item.video && isActive && isInView) {
+            if (item.video && isActive && isInView && contentReady) {
               return (
                 <video
                   key={item.image}
@@ -335,7 +346,7 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
                 />
               );
             }
-            if (item.images && item.images.length > 1 && isActive && isInView) {
+            if (item.images && item.images.length > 1 && isActive && isInView && contentReady) {
               return (
                 <ImageSlideshow
                   key={item.image}
@@ -402,7 +413,7 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
                   <span className="mt-2 block h-px w-10 bg-gold/50" />
                 </>
               )}
-              <h3 className="mt-4 mb-3 text-4xl font-bold text-white">{activeItem.title}</h3>
+              <h3 className="mt-4 mb-3 text-3xl sm:text-4xl font-bold text-white">{activeItem.title}</h3>
               <motion.p className="leading-relaxed text-white/80" style={{ fontSize: "1.05rem" }}>
                 {activeItem.description.split(" ").map((word, i) => (
                   <motion.span
