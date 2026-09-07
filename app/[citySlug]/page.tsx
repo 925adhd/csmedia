@@ -625,6 +625,9 @@ export default async function CityPage({
               <p className="text-xs text-dark-300">
                 6% sales tax applied to final pricing.
               </p>
+              <p className="text-xs text-dark-300">
+                Final photos and video are released once payment is made in full.
+              </p>
             </div>
           </FadeIn>
           <FadeIn>

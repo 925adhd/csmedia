@@ -234,6 +234,9 @@ export default function VideoProductionPage() {
               </TextLink>{" "}
               Multi-day or multi-location shoots are quoted separately.
             </p>
+            <p className="mt-3 text-xs text-dark-300">
+              Final video is released once payment is made in full.
+            </p>
           </FadeIn>
         </div>
       </section>

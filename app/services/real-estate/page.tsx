@@ -143,7 +143,7 @@ export default function RealEstatePage() {
     },
     {
       q: "How fast will I get my real estate photos back?",
-      a: "CS Media provides a 24-48 hour turnaround on all real estate photography, drone media, and virtual staging deliverables. Rush delivery in 24 hours is available for an additional $40.",
+      a: "CS Media provides a 24-48 hour turnaround on all real estate photography, drone media, and virtual staging deliverables. Rush delivery in 24 hours is available for an additional $40. Final files are released once payment is made in full.",
     },
     {
       q: "What areas of Kentucky do you serve?",
@@ -365,6 +365,10 @@ export default function RealEstatePage() {
               <p className="text-xs sm:text-sm text-dark-100">
                 <span className="text-gold/80 font-mono mr-1">+</span>
                 6% Kentucky sales tax added at booking.
+              </p>
+              <p className="text-xs sm:text-sm text-dark-100">
+                <span className="text-gold/80 font-mono mr-1">$</span>
+                Final photos and video are released once payment is made in full.
               </p>
             </div>
             <div className="mt-6 text-center space-y-1">

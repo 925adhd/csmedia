@@ -192,6 +192,9 @@ export default function EventsPage() {
               <p className="mt-4 text-xs text-dark-300 text-center">
                 Shorter or custom coverage? <Link href="/book" className="text-gold hover:underline">Request a quote</Link>.
               </p>
+              <p className="mt-2 text-xs text-dark-300 text-center">
+                Final photos and video are released once payment is made in full.
+              </p>
             </div>
           </FadeIn>
         </div>
