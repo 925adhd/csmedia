@@ -136,6 +136,15 @@ export default function Navbar() {
               Book a Shoot
             </BookingButton>
             <a
+              href={CLIENT_LOGIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="text-sm font-semibold uppercase tracking-widest text-dark-100 hover:text-gold transition-colors"
+            >
+              Client Login
+            </a>
+            <a
               href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
               className="text-sm text-dark-200 hover:text-gold transition-colors"
               onClick={() => {
@@ -145,15 +154,6 @@ export default function Navbar() {
               }}
             >
               Or text <span className="text-gold/70">(270) 307-0173</span>
-            </a>
-            <a
-              href={CLIENT_LOGIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileOpen(false)}
-              className="text-sm font-medium uppercase tracking-widest text-dark-200 hover:text-gold transition-colors"
-            >
-              Client Login
             </a>
           </div>
         </div>
