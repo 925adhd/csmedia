@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import CTASection from "@/components/CTASection";
+import BookingButton from "@/components/BookingButton";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+const EVENT_COVERAGE_BOOKING_URL =
+  "https://book.squareup.com/appointments/0d7pw9dylg06tp/location/L6X9AW779A057/services/S266WKBTXHVBZQ7ZEJIRRFT6";
 
 export const metadata: Metadata = {
   title: { absolute: "Kentucky Event Photography: Weddings & Parties | CS Media" },
@@ -65,6 +69,12 @@ export default function EventsPage() {
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Birthday Party Photography" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Engagement Photography" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Corporate Event Photography" } },
+        {
+          "@type": "Offer",
+          price: "2500",
+          priceCurrency: "USD",
+          itemOffered: { "@type": "Service", name: "Event Coverage All Inclusive" },
+        },
       ],
     },
   };
@@ -151,6 +161,38 @@ export default function EventsPage() {
                 — Bethany Brim
               </footer>
             </blockquote>
+          </FadeIn>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-24 bg-dark-900 relative">
+        <div className="mx-auto max-w-md px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-8">
+              <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
+                Pricing
+              </span>
+            </div>
+            <div className="relative rounded-2xl bg-dark-700/60 border border-dark-500/30 p-6 hover:border-gold/20 transition-colors">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em]">
+                  Event Coverage All Inclusive
+                </h3>
+                <span className="text-2xl font-bold text-white">$2,500</span>
+              </div>
+              <p className="mt-2 text-sm text-dark-100">
+                All-day coverage, up to 12 hours.
+              </p>
+              <BookingButton
+                href={EVENT_COVERAGE_BOOKING_URL}
+                className="mt-5 w-full rounded-full py-2.5 text-sm sm:text-xs font-semibold uppercase tracking-widest text-center transition-all cursor-pointer bg-dark-600 border border-dark-500/50 text-dark-100 hover:border-gold/30 hover:text-gold"
+              >
+                Book Now
+              </BookingButton>
+              <p className="mt-4 text-xs text-dark-300 text-center">
+                Shorter or custom coverage? <Link href="/book" className="text-gold hover:underline">Request a quote</Link>.
+              </p>
+            </div>
           </FadeIn>
         </div>
       </section>
