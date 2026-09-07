@@ -3,21 +3,20 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
-const BOOKING_URL = "https://csmediallc.square.site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Book a Kentucky Real Estate Shoot (From $200) | CS Media" },
+  title: { absolute: "Book a Shoot | CS Media" },
   description:
-    "Book your Kentucky real estate photo, drone, or virtual staging shoot. From $200, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
+    "Book real estate photography, event coverage, or video production with CS Media. Kentucky-based, FAA Part 107 certified, fast turnaround.",
   alternates: { canonical: `${BASE_URL}/book` },
   openGraph: {
-    title: "Book a Kentucky Real Estate Shoot (From $200) | CS Media",
+    title: "Book a Shoot | CS Media",
     description:
-      "Book your Kentucky real estate photo, drone, or virtual staging shoot. From $200, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
+      "Book real estate photography, event coverage, or video production with CS Media. Kentucky-based, FAA Part 107 certified, fast turnaround.",
     type: "website",
     url: `${BASE_URL}/book`,
     siteName: "CS Media",
-    images: [{ url: "/images/twilight-ranch-home-evening-kentucky.webp", width: 1200, height: 630, alt: "Twilight real estate photography of a Kentucky ranch home — book a shoot with CS Media" }],
+    images: [{ url: "/images/twilight-ranch-home-evening-kentucky.webp", width: 1200, height: 630, alt: "Book a shoot with CS Media" }],
   },
 };
 
@@ -27,9 +26,9 @@ export default async function BookPage() {
   const sidebarPhone = "(270) 307-0173";
   const sidebarEmail = "cscreatesmediallc@gmail.com";
   const sidebarServices = [
-    "Photography",
-    "Drone Pilot (Part 107)",
-    "Listing Video",
+    "Real Estate Photography & Drone",
+    "Event Photography",
+    "Video Production & Branding",
     "Virtual Staging",
   ];
   const responseTime = "Within 24 hours";
@@ -42,7 +41,7 @@ export default async function BookPage() {
       <section className="relative bg-dark-900 py-20 sm:py-36 min-h-[45vh] overflow-hidden">
         <Image
           src="/images/twilight-ranch-home-evening-kentucky.webp"
-          alt="Twilight real estate photography of a Kentucky ranch home — book a shoot with CS Media"
+          alt="Book a shoot with CS Media"
           fill
           sizes="100vw"
           quality={75}
@@ -59,11 +58,11 @@ export default async function BookPage() {
               {heading}
             </h1>
             <p className="mt-5 text-base sm:text-lg text-dark-100 max-w-2xl mx-auto">
-              Book online below, or text{" "}
+              Text{" "}
               <a href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F" className="text-gold hover:text-gold-light transition-colors whitespace-nowrap">
                 (270) 307-0173
               </a>
-              . I&apos;ll get back to you within 24 hours.
+              , call, or email below. I&apos;ll get back to you within 24 hours.
             </p>
           </FadeIn>
         </div>
@@ -72,88 +71,61 @@ export default async function BookPage() {
       <section className="py-14 sm:py-24 bg-dark-800 relative">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
-            {/* Booking CTA */}
-            <div className="lg:col-span-3">
-              <FadeIn>
-                <div className="rounded-2xl bg-dark-700 border border-gold/20 p-10 sm:p-12 text-center">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                    Ready to Book?
-                  </h2>
-                  <p className="mt-3 text-dark-200 max-w-md mx-auto">
-                    Pick your package and reserve a time that works for you — instant confirmation, no waiting on an email back.
-                  </p>
-                  <a
-                    href={BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-8 inline-block rounded-full bg-gold px-10 py-4 text-sm font-semibold uppercase tracking-widest text-dark-900 transition-colors hover:bg-gold-light"
-                  >
-                    Book Now
-                  </a>
-                </div>
-              </FadeIn>
-            </div>
+        <div className="mx-auto max-w-md px-6 lg:px-8">
+          <FadeIn>
+            <div className="space-y-10">
+              <div>
+                <h2 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
+                  Text
+                </h2>
+                <a
+                  href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
+                  className="text-xl font-mono text-white hover:text-gold transition-colors tracking-wider"
+                >
+                  {sidebarPhone}
+                </a>
+              </div>
+              <div>
+                <h2 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
+                  Email
+                </h2>
+                <a
+                  href={`mailto:${sidebarEmail}`}
+                  className="text-dark-100 hover:text-gold transition-colors"
+                >
+                  {sidebarEmail}
+                </a>
+              </div>
+              <div>
+                <h2 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
+                  Services
+                </h2>
+                <ul className="space-y-1.5 text-sm text-dark-200">
+                  {sidebarServices.map((service) => (
+                    <li key={service}>{service}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h2 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
+                  Response Time
+                </h2>
+                <p className="text-dark-100">
+                  {responseTime}
+                </p>
+              </div>
 
-            {/* Sidebar */}
-            <div className="lg:col-span-2">
-              <FadeIn delay={0.15}>
-                <div className="space-y-10">
-                  <div>
-                    <h2 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
-                      Text
-                    </h2>
-                    <a
-                      href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
-                      className="text-xl font-mono text-white hover:text-gold transition-colors tracking-wider"
-                    >
-                      {sidebarPhone}
-                    </a>
-                  </div>
-                  <div>
-                    <h2 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
-                      Email
-                    </h2>
-                    <a
-                      href={`mailto:${sidebarEmail}`}
-                      className="text-dark-100 hover:text-gold transition-colors"
-                    >
-                      {sidebarEmail}
-                    </a>
-                  </div>
-                  <div>
-                    <h2 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
-                      Services
-                    </h2>
-                    <ul className="space-y-1.5 text-sm text-dark-200">
-                      {sidebarServices.map((service) => (
-                        <li key={service}>{service}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h2 className="text-xs font-semibold text-gold uppercase tracking-[0.2em] mb-3">
-                      Response Time
-                    </h2>
-                    <p className="text-dark-100">
-                      {responseTime}
-                    </p>
-                  </div>
-
-                  {/* Decorative */}
-                  <div className="pt-6 border-t border-dark-500/30">
-                    <p className="text-xs text-dark-300 font-mono tracking-widest uppercase">
-                      {companyName}
-                    </p>
-                    <p className="text-xs text-dark-300 mt-1 font-mono tracking-wider">
-                      {companyType}
-                    </p>
-                  </div>
-                </div>
-              </FadeIn>
+              {/* Decorative */}
+              <div className="pt-6 border-t border-dark-500/30">
+                <p className="text-xs text-dark-300 font-mono tracking-widest uppercase">
+                  {companyName}
+                </p>
+                <p className="text-xs text-dark-300 mt-1 font-mono tracking-wider">
+                  {companyType}
+                </p>
+              </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
     </>
