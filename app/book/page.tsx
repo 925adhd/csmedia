@@ -22,8 +22,7 @@ export const metadata: Metadata = {
 };
 
 export default async function BookPage() {
-  const tagline = "Get in Touch";
-  const heading = "Book a Shoot";
+  const heading = "Get in Touch";
   const sidebarPhone = "(270) 307-0173";
   const sidebarEmail = "cscreatesmediallc@gmail.com";
   const sidebarServices = [
@@ -52,10 +51,7 @@ export default async function BookPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900/30 via-dark-900/55 to-dark-900" />
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <FadeIn>
-            <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-              {tagline}
-            </span>
-            <h1 className="mt-3 text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-tight">
               {heading}
             </h1>
             <p className="mt-5 text-base sm:text-lg text-dark-100 max-w-2xl mx-auto">
