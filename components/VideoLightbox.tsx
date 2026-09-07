@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import BookingButton from "@/components/BookingButton";
 
+const BOOKING_URL = "https://csmediallc.square.site/s/appointments";
+
 interface VideoLightboxProps {
   title: string;
   videoSrc: string;
@@ -66,7 +68,7 @@ export default function VideoLightbox({ title, videoSrc, poster, onClose }: Vide
         {/* Without this, closing the lightbox was a dead end — the detail page's
             "Book a Video Shoot" CTA never got seen by anyone who played the video
             from the grid instead of navigating to it. */}
-        <BookingButton className="inline-flex items-center gap-1.5 rounded-full bg-gold px-6 py-3 text-xs font-semibold uppercase tracking-widest text-dark-900 transition-colors hover:bg-gold-light cursor-pointer">
+        <BookingButton href={BOOKING_URL} className="inline-flex items-center gap-1.5 rounded-full bg-gold px-6 py-3 text-xs font-semibold uppercase tracking-widest text-dark-900 transition-colors hover:bg-gold-light cursor-pointer">
           Book a Shoot Like This
           <ArrowRight className="h-3.5 w-3.5" />
         </BookingButton>

@@ -6,6 +6,8 @@ import FadeIn from "@/components/FadeIn";
 import CTASection from "@/components/CTASection";
 import { portfolioProjects, getProjectBySlug } from "@/lib/portfolio";
 
+const BOOKING_URL = "https://csmediallc.square.site/s/appointments";
+
 export function generateStaticParams() {
   return portfolioProjects.map((p) => ({ slug: p.slug }));
 }
@@ -214,6 +216,7 @@ export default async function ProjectPage({
         subheading={project.ctaOverride?.subheading ?? (isVideo ? "Get a walkthrough video that makes buyers book showings before they visit." : "Let's capture your property with the same cinematic quality.")}
         buttonText={project.ctaOverride?.buttonText ?? (isVideo ? "Book a Video Shoot" : "Book Similar Shoot")}
         backgroundImage={project.heroImage}
+        bookingHref={BOOKING_URL}
       />
     </>
   );

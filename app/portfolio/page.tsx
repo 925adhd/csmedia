@@ -6,6 +6,7 @@ import CTASection from "@/components/CTASection";
 import { getPortfolioProjects } from "@/lib/portfolio";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+const BOOKING_URL = "https://csmediallc.square.site/s/appointments";
 
 export const metadata: Metadata = {
   title: "Photography, Video & Drone Portfolio",
@@ -103,6 +104,7 @@ export default async function PortfolioPage() {
         heading="Ready to Start Your Project?"
         subheading="Real estate, construction, brand video, and more — let's talk about what you need captured."
         backgroundImage="/images/precision-partners-construction-site-aerial.webp"
+        bookingHref={BOOKING_URL}
       />
     </>
   );

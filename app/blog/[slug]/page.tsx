@@ -7,6 +7,8 @@ import CTASection from "@/components/CTASection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { blogPosts, getBlogPostBySlug } from "@/lib/blog";
 
+const BOOKING_URL = "https://csmediallc.square.site/s/appointments";
+
 export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
 }
@@ -326,7 +328,7 @@ export default async function BlogPostPage({
         </section>
       )}
 
-      <CTASection backgroundImage="/images/cs-media-video-production-studio-kentucky.webp" />
+      <CTASection backgroundImage="/images/cs-media-video-production-studio-kentucky.webp" bookingHref={BOOKING_URL} />
     </>
   );
 }

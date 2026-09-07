@@ -8,6 +8,7 @@ import BookingButton from "@/components/BookingButton";
 import { StampIcon, DroneIcon, PolaroidIcon } from "@/components/StepIcons";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+const BOOKING_URL = "https://csmediallc.square.site/s/appointments";
 
 export const metadata: Metadata = {
   title: "Services | CS Media: Real Estate, Events & Video Production",
@@ -223,6 +224,7 @@ export default function ServicesHubPage() {
           <FadeIn delay={0.45}>
             <div className="mt-14 text-center">
               <BookingButton
+                href={BOOKING_URL}
                 className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/5 px-7 py-3 text-[11px] font-semibold uppercase tracking-[0.25em] text-gold hover:border-gold hover:bg-gold/15 transition-all cursor-pointer"
               >
                 Book a Shoot

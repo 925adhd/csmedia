@@ -6,6 +6,7 @@ import CTASection from "@/components/CTASection";
 import { blogPosts } from "@/lib/blog";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+const BOOKING_URL = "https://csmediallc.square.site/s/appointments";
 
 export const metadata: Metadata = {
   title: "Real Estate Photography Blog & Tips",
@@ -95,7 +96,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <CTASection backgroundImage="/images/cs-media-video-production-studio-kentucky.webp" />
+      <CTASection backgroundImage="/images/cs-media-video-production-studio-kentucky.webp" bookingHref={BOOKING_URL} />
     </>
   );
 }
