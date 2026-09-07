@@ -6,7 +6,7 @@ import BookingButton from "@/components/BookingButton";
 import { CircularShowcase } from "@/components/ui/circular-showcase";
 import { SimpleTestimonials } from "@/components/ui/simple-testimonials";
 
-const AVAILABILITY_URL = "https://cscreatesmediallc.fotello.co/book?entry_source=website";
+const AVAILABILITY_URL = "https://csmediallc.square.site/s/appointments";
 
 export default function Home() {
   const testimonials = [
@@ -135,7 +135,7 @@ export default function Home() {
           Ready to Book?
         </h2>
         <p className="mt-1.5 text-sm leading-snug text-dark-300">
-          Enter your property address to see packages and book your shoot online.
+          Pick your service, choose a date, and reserve your shoot online.
         </p>
         <BookingButton
           href={AVAILABILITY_URL}

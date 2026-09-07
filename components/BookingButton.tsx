@@ -1,10 +1,10 @@
-const BOOKING_URL = "https://cscreatesmediallc.fotello.co/book?entry_source=website";
+const BOOKING_URL = "https://csmediallc.square.site";
 
 interface BookingButtonProps {
   className?: string;
   children: React.ReactNode;
   onClick?: () => void;
-  /** Deep link to a specific booking service, overriding the general booking page. */
+  /** Deep link to a specific Square service, overriding the general booking page. */
   href?: string;
 }
 

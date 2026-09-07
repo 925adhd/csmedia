@@ -3,7 +3,7 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
-const BOOKING_URL = "https://cscreatesmediallc.fotello.co/book?entry_source=website";
+const BOOKING_URL = "https://csmediallc.square.site";
 
 export const metadata: Metadata = {
   title: { absolute: "Book a Kentucky Real Estate Shoot (From $200) | CS Media" },
@@ -82,7 +82,7 @@ export default async function BookPage() {
                     Ready to Book?
                   </h2>
                   <p className="mt-3 text-dark-200 max-w-md mx-auto">
-                    Enter your property address to see packages, pricing, and available times — instant confirmation, no waiting on an email back.
+                    Pick your package and reserve a time that works for you — instant confirmation, no waiting on an email back.
                   </p>
                   <a
                     href={BOOKING_URL}

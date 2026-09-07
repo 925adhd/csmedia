@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const BOOKING_URL = "https://cscreatesmediallc.fotello.co/book?entry_source=website";
+const BOOKING_URL = "https://csmediallc.square.site";
 
 interface Props {
   /** CSS selector for the element the bar should wait for before appearing. */

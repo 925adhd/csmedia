@@ -78,7 +78,7 @@ export default async function CityPage({
     telephone: "+1-270-307-0173",
     url: BASE_URL,
     image: `${BASE_URL}/images/kentucky-real-estate-drone-aerial.webp`,
-    priceRange: "$200-$650",
+    priceRange: "$200-$450",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -148,7 +148,7 @@ export default async function CityPage({
     email: "cscreatesmediallc@gmail.com",
     url: `${BASE_URL}/${citySlug}`,
     image: `${BASE_URL}/images/kentucky-real-estate-drone-aerial.webp`,
-    priceRange: "$200-$650",
+    priceRange: "$200-$450",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -552,7 +552,7 @@ export default async function CityPage({
             {[
               {
                 name: "Branding Content",
-                price: "$200",
+                price: "$275",
                 features: [
                   "Up to 1-minute branding video",
                   "3-hour session",
@@ -561,7 +561,6 @@ export default async function CityPage({
               {
                 name: "Photography Only",
                 price: "$285",
-                priceNote: "Up to 2,000 sq ft — $300 for 2,001+ sq ft",
                 features: [
                   "25–40 MLS-ready photos",
                   "Interior, exterior & aerial coverage",
@@ -572,7 +571,6 @@ export default async function CityPage({
               {
                 name: "Full Media Package",
                 price: "$450",
-                priceNote: "Up to 2,000 sq ft — $650 for 2,001+ sq ft",
                 popular: true,
                 features: [
                   "MLS-ready photos — interior, exterior & aerial",
@@ -607,9 +605,6 @@ export default async function CityPage({
                     <div className="mt-4 flex items-baseline gap-1">
                       <span className="text-4xl font-bold text-white">{pkg.price}</span>
                     </div>
-                    {pkg.priceNote && (
-                      <p className="mt-1 text-xs text-dark-300">{pkg.priceNote}</p>
-                    )}
                     <div className="mt-6 space-y-3 flex-1">
                       {pkg.features.map((item) => (
                         <div key={item} className="flex items-start gap-2.5 text-sm text-dark-100">

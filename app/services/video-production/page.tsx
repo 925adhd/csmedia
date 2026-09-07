@@ -7,7 +7,8 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import TextLink from "@/components/TextLink";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
-const BRANDING_BOOKING_URL = "https://cscreatesmediallc.fotello.co/book?entry_source=website";
+const SQUARE_BASE = "https://book.squareup.com/appointments/0d7pw9dylg06tp/location/L6X9AW779A057/services";
+const BRANDING_BOOKING_URL = `${SQUARE_BASE}/QU7N4O2TGBP2GXDHDAINK6NO`;
 
 export const metadata: Metadata = {
   title: { absolute: "Kentucky Video Production: Promos, Reels & B-roll | CS Media" },
@@ -227,7 +228,7 @@ export default function VideoProductionPage() {
             <p className="mt-12 text-sm text-dark-200">
               All video production — promos, reels, business content, and brand
               storytelling — is booked as Branding Content: up to a 1-minute video
-              from a 3-hour session, $200.{" "}
+              from a 3-hour session, $275.{" "}
               <TextLink className="text-gold hover:underline">
                 Have something bigger in mind?
               </TextLink>{" "}
@@ -239,8 +240,8 @@ export default function VideoProductionPage() {
 
       <CTASection
         heading="Book Your Branding Session"
-        subheading="Branding Content: up to a 1-minute video, 3-hour session, $200. When you click below, enter your business address — that's just where we'll shoot."
-        desktopSubheading="Branding Content: up to a 1-minute video, 3-hour session, $200. When you click below, enter your business address — that's just where we'll shoot."
+        subheading="Branding Content: up to a 1-minute video, 3-hour session, $275."
+        desktopSubheading="Branding Content: up to a 1-minute video, 3-hour session, $275."
         buttonText="Book Branding Content"
         bookingHref={BRANDING_BOOKING_URL}
         backgroundImage="/images/service-video-editing.webp"

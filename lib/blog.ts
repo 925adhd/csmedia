@@ -53,7 +53,7 @@ This isn't about making photos look "pretty." It's about generating showings.
 - Professionally photographed homes sell for **$3,000–$11,000 more** on average
 - Listings with drone photos get **68% more views** than those without
 
-For a $200–$650 investment, you're not paying for photos. You're paying for showings. And showings are what sell houses.
+For a $200–$450 investment, you're not paying for photos. You're paying for showings. And showings are what sell houses.
 
 ---
 
@@ -319,9 +319,9 @@ Meade County's Doe Valley resort community and Ohio River frontage properties of
 For full transparency: I run CS Media out of Leitchfield and shoot listings across central Kentucky. Our pricing sits at the lower end of the secondary-market ranges above:
 
 - **Aerial Media Only:** $200
-- **Branding Content** (video only, no photos): $200
-- **Photography Only** (25–40 MLS-ready photos, drone included): $285 up to 2,000 sq ft, $300 above
-- **Full Media Package** (photos + up to a 1-minute listing video): $450 up to 2,000 sq ft, $650 above
+- **Branding Content** (video only, no photos): $275
+- **Photography Only** (25–40 MLS-ready photos, drone included): $285
+- **Full Media Package** (photos + up to a 1-minute listing video): $450
 
 Every package is FAA Part 107–compliant, MLS-ready, delivered in 24–48 hours, and includes 1 free revision (2 on the Full Media Package). [Full package details and add-on pricing are on the services page →](/services)
 

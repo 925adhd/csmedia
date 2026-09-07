@@ -8,7 +8,10 @@ import { ArrowRight } from "lucide-react";
 import BookingButton from "@/components/BookingButton";
 import { CameraIcon } from "@/components/StepIcons";
 
-const AVAILABILITY_URL = "https://cscreatesmediallc.fotello.co/book?entry_source=website";
+const AVAILABILITY_URL = "https://csmediallc.square.site/s/appointments";
+// Fotello client portal — booking reverted to Square (client reported issues 2026-09-07).
+// Flip to true to re-enable if we switch back to Fotello.
+const SHOW_CLIENT_LOGIN = false;
 const CLIENT_LOGIN_URL = "https://cscreatesmediallc.fotello.co/login?redirect=%2Fbook";
 
 const navLinks = [
@@ -62,14 +65,16 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href={CLIENT_LOGIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[14px] font-medium uppercase tracking-widest text-white/80 hover:text-gold transition-colors"
-            >
-              Client Login
-            </a>
+            {SHOW_CLIENT_LOGIN && (
+              <a
+                href={CLIENT_LOGIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[14px] font-medium uppercase tracking-widest text-white/80 hover:text-gold transition-colors"
+              >
+                Client Login
+              </a>
+            )}
             {/* Secondary CTA — same treatment as the "Book Now" link under the hero H1: text-only,
                 semibold uppercase, underline on hover, no button chrome. */}
             <BookingButton
@@ -135,15 +140,17 @@ export default function Navbar() {
             >
               Book a Shoot
             </BookingButton>
-            <a
-              href={CLIENT_LOGIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMobileOpen(false)}
-              className="text-sm font-semibold uppercase tracking-widest text-dark-100 hover:text-gold transition-colors"
-            >
-              Client Login
-            </a>
+            {SHOW_CLIENT_LOGIN && (
+              <a
+                href={CLIENT_LOGIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileOpen(false)}
+                className="text-sm font-semibold uppercase tracking-widest text-dark-100 hover:text-gold transition-colors"
+              >
+                Client Login
+              </a>
+            )}
             <a
               href="sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F"
               className="text-sm text-dark-200 hover:text-gold transition-colors"

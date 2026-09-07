@@ -68,7 +68,7 @@ export const locations: LocationData[] = [
     faqs: [
       {
         q: "How much does real estate photography cost in Leitchfield?",
-        a: "Aerial Media Only is $200. Photography Only (25–40 MLS-ready photos, drone included) is $285 for properties up to 2,000 sq ft ($300 above that), and the Full Media Package (photos plus a listing video) is $450 for properties up to 2,000 sq ft ($650 above that).",
+        a: "Aerial Media Only is $200. Photography Only (25–40 MLS-ready photos, drone included) is $285, and the Full Media Package (photos plus a listing video) is $450.",
       },
       {
         q: "Do you charge travel fees for Leitchfield shoots?",
@@ -156,7 +156,7 @@ export const locations: LocationData[] = [
     faqs: [
       {
         q: "How much does drone photography cost in Elizabethtown?",
-        a: "Aerial Media Only is $200, Photography Only (25–40 MLS-ready photos, drone included) is $285 for properties up to 2,000 sq ft ($300 above that), and the Full Media Package (photos plus a listing video) is $450 for properties up to 2,000 sq ft ($650 above that), plus 6% Kentucky sales tax. Contact us for an exact quote for your property.",
+        a: "Aerial Media Only is $200, Photography Only (25–40 MLS-ready photos, drone included) is $285, and the Full Media Package (photos plus a listing video) is $450, plus 6% Kentucky sales tax. Contact us for an exact quote for your property.",
       },
       {
         q: "Are there drone restrictions near Fort Knox?",
@@ -501,7 +501,7 @@ export const locations: LocationData[] = [
       },
       {
         q: "What's included in your Caneyville packages?",
-        a: "Same as anywhere else: edited, MLS-ready deliverables in 24-48 hours. Aerial Media Only is $200, Photography Only (25–40 MLS-ready photos, drone included) is $285 for properties up to 2,000 sq ft ($300 above that), and the Full Media Package (photos plus a listing video) is $450 for properties up to 2,000 sq ft ($650 above that).",
+        a: "Same as anywhere else: edited, MLS-ready deliverables in 24-48 hours. Aerial Media Only is $200, Photography Only (25–40 MLS-ready photos, drone included) is $285, and the Full Media Package (photos plus a listing video) is $450.",
       },
     ],
     nearbyAreas: ["Leitchfield", "Clarkson", "Centertown", "Beaver Dam", "Falls of Rough"],
