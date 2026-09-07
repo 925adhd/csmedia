@@ -8,7 +8,8 @@ import { ArrowRight } from "lucide-react";
 import BookingButton from "@/components/BookingButton";
 import { CameraIcon } from "@/components/StepIcons";
 
-const AVAILABILITY_URL = "https://csmediallc.square.site/s/appointments";
+const AVAILABILITY_URL = "https://cscreatesmediallc.fotello.co/book?entry_source=website";
+const CLIENT_LOGIN_URL = "https://cscreatesmediallc.fotello.co/login?redirect=%2Fbook";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -61,6 +62,14 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={CLIENT_LOGIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[14px] font-medium uppercase tracking-widest text-white/80 hover:text-gold transition-colors"
+            >
+              Client Login
+            </a>
             {/* Secondary CTA — same treatment as the "Book Now" link under the hero H1: text-only,
                 semibold uppercase, underline on hover, no button chrome. */}
             <BookingButton
@@ -136,6 +145,15 @@ export default function Navbar() {
               }}
             >
               Or text <span className="text-gold/70">(270) 307-0173</span>
+            </a>
+            <a
+              href={CLIENT_LOGIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="text-sm font-medium uppercase tracking-widest text-dark-200 hover:text-gold transition-colors"
+            >
+              Client Login
             </a>
           </div>
         </div>

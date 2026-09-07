@@ -11,6 +11,8 @@ interface CTASectionProps {
   backgroundImage?: string;
   /** Optional desktop-only override for backgroundImage, when one crop can't serve both breakpoints. */
   desktopBackgroundImage?: string;
+  /** Optional override for the background image's CSS object-position (default: "center 36%"). */
+  backgroundPosition?: string;
   /** Deep link to a specific Square service package — overrides the general booking page. Ignored when useTextLink is set. */
   bookingHref?: string;
 }
@@ -23,6 +25,7 @@ export default function CTASection({
   useTextLink = false,
   backgroundImage = "/images/twilight-ranch-home-evening-kentucky.webp",
   desktopBackgroundImage,
+  backgroundPosition,
   bookingHref,
 }: CTASectionProps) {
   const buttonClass = "group relative mt-10 inline-block rounded-full bg-gold px-10 py-4 text-sm font-semibold uppercase tracking-widest text-dark-900 transition-colors hover:bg-gold-light cursor-pointer";
@@ -68,6 +71,7 @@ export default function CTASection({
             aria-hidden="true"
             fill
             className={`object-cover object-[center_36%] opacity-45 ${desktopBackgroundImage ? "md:hidden" : ""}`}
+            style={backgroundPosition ? { objectPosition: backgroundPosition } : undefined}
             sizes="100vw"
             quality={75}
           />
@@ -78,6 +82,7 @@ export default function CTASection({
               aria-hidden="true"
               fill
               className="hidden md:block object-cover object-[center_36%] opacity-45"
+              style={backgroundPosition ? { objectPosition: backgroundPosition } : undefined}
               sizes="100vw"
               quality={75}
             />

@@ -30,8 +30,8 @@ export async function generateMetadata({
   const loc = slug ? getLocationBySlug(slug) : undefined;
   if (!loc) return {};
 
-  const title = `${loc.city} Real Estate Photography & Drone (From $185)`;
-  const description = `${loc.city}, KY real estate photography & drone aerials from $185. MLS-ready photos in 24–48 hours by a local FAA Part 107 pilot. Same-week availability.`;
+  const title = `${loc.city} Real Estate Photography & Drone (From $200)`;
+  const description = `${loc.city}, KY real estate photography & drone aerials from $200. MLS-ready photos in 24–48 hours by a local FAA Part 107 pilot. Same-week availability.`;
 
   const BASE_URL =
     process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
@@ -78,7 +78,7 @@ export default async function CityPage({
     telephone: "+1-270-307-0173",
     url: BASE_URL,
     image: `${BASE_URL}/images/kentucky-real-estate-drone-aerial.webp`,
-    priceRange: "$185-$420",
+    priceRange: "$200-$650",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -148,7 +148,7 @@ export default async function CityPage({
     email: "cscreatesmediallc@gmail.com",
     url: `${BASE_URL}/${citySlug}`,
     image: `${BASE_URL}/images/kentucky-real-estate-drone-aerial.webp`,
-    priceRange: "$185-$420",
+    priceRange: "$200-$650",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -561,6 +561,7 @@ export default async function CityPage({
               {
                 name: "Photography Only",
                 price: "$285",
+                priceNote: "Up to 2,000 sq ft — $300 for 2,001+ sq ft",
                 features: [
                   "25–40 MLS-ready photos",
                   "Interior, exterior & aerial coverage",
@@ -570,7 +571,8 @@ export default async function CityPage({
               },
               {
                 name: "Full Media Package",
-                price: "$420",
+                price: "$450",
+                priceNote: "Up to 2,000 sq ft — $650 for 2,001+ sq ft",
                 popular: true,
                 features: [
                   "MLS-ready photos — interior, exterior & aerial",
@@ -605,6 +607,9 @@ export default async function CityPage({
                     <div className="mt-4 flex items-baseline gap-1">
                       <span className="text-4xl font-bold text-white">{pkg.price}</span>
                     </div>
+                    {pkg.priceNote && (
+                      <p className="mt-1 text-xs text-dark-300">{pkg.priceNote}</p>
+                    )}
                     <div className="mt-6 space-y-3 flex-1">
                       {pkg.features.map((item) => (
                         <div key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
@@ -635,7 +640,7 @@ export default async function CityPage({
                   href="/services/real-estate#pricing"
                   className="text-gold/80 hover:text-gold underline-offset-2 hover:underline transition-colors"
                 >
-                  Aerial Media Only · $185
+                  Aerial Media Only · $200
                 </Link>
               </p>
               <p className="text-xs text-dark-300">

@@ -3,17 +3,17 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
-const BOOKING_URL = "https://csmediallc.square.site";
+const BOOKING_URL = "https://cscreatesmediallc.fotello.co/book?entry_source=website";
 
 export const metadata: Metadata = {
-  title: { absolute: "Book a Kentucky Real Estate Shoot (From $185) | CS Media" },
+  title: { absolute: "Book a Kentucky Real Estate Shoot (From $200) | CS Media" },
   description:
-    "Book your Kentucky real estate photo, drone, or virtual staging shoot. From $185, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
+    "Book your Kentucky real estate photo, drone, or virtual staging shoot. From $200, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
   alternates: { canonical: `${BASE_URL}/book` },
   openGraph: {
-    title: "Book a Kentucky Real Estate Shoot (From $185) | CS Media",
+    title: "Book a Kentucky Real Estate Shoot (From $200) | CS Media",
     description:
-      "Book your Kentucky real estate photo, drone, or virtual staging shoot. From $185, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
+      "Book your Kentucky real estate photo, drone, or virtual staging shoot. From $200, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
     type: "website",
     url: `${BASE_URL}/book`,
     siteName: "CS Media",
@@ -82,7 +82,7 @@ export default async function BookPage() {
                     Ready to Book?
                   </h2>
                   <p className="mt-3 text-dark-200 max-w-md mx-auto">
-                    Pick your package and reserve a time that works for you — instant confirmation, no waiting on an email back.
+                    Enter your property address to see packages, pricing, and available times — instant confirmation, no waiting on an email back.
                   </p>
                   <a
                     href={BOOKING_URL}

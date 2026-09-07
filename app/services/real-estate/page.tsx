@@ -12,14 +12,14 @@ import { locations } from "@/lib/locations";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: { absolute: "Kentucky Real Estate Photography from $185 | CS Media" },
+  title: { absolute: "Kentucky Real Estate Photography from $200 | CS Media" },
   description:
-    "Real estate photography, drone aerials, and listing video across Central Kentucky. Packages from $185, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
+    "Real estate photography, drone aerials, and listing video across Central Kentucky. Packages from $200, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
   alternates: { canonical: `${BASE_URL}/services/real-estate` },
   openGraph: {
-    title: "Kentucky Real Estate Photography from $185 | CS Media",
+    title: "Kentucky Real Estate Photography from $200 | CS Media",
     description:
-      "Real estate photography, drone aerials, and listing video across Central Kentucky. Packages from $185, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
+      "Real estate photography, drone aerials, and listing video across Central Kentucky. Packages from $200, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
     type: "website",
     url: `${BASE_URL}/services/real-estate`,
     siteName: "CS Media",
@@ -30,19 +30,21 @@ export const metadata: Metadata = {
 interface PricingPackage {
   name: string;
   price: string;
+  priceNote?: string;
   popular: boolean;
   badge?: string;
   features: string[];
   bookingUrl: string;
 }
 
-const SQUARE_BASE = "https://book.squareup.com/appointments/0d7pw9dylg06tp/location/L6X9AW779A057/services";
+const FOTELLO_BOOKING_URL = "https://cscreatesmediallc.fotello.co/book?entry_source=website";
 
 export default function RealEstatePage() {
   const packages: PricingPackage[] = [
     {
       name: "Photography Only",
       price: "$285",
+      priceNote: "Up to 2,000 sq ft — $300 for 2,001+ sq ft",
       popular: false,
       features: [
         "25–40 MLS-ready photos",
@@ -50,11 +52,12 @@ export default function RealEstatePage() {
         "Drone photos (FAA Part 107 compliant)",
         "3-hour session",
       ],
-      bookingUrl: `${SQUARE_BASE}/JLGMPVZO44DNWNZJCSTOGIBB`,
+      bookingUrl: FOTELLO_BOOKING_URL,
     },
     {
       name: "Full Media Package",
-      price: "$420",
+      price: "$450",
+      priceNote: "Up to 2,000 sq ft — $650 for 2,001+ sq ft",
       popular: true,
       features: [
         "MLS-ready photos — interior, exterior & aerial",
@@ -62,13 +65,13 @@ export default function RealEstatePage() {
         "Up to 1-minute listing video",
         "3-hour session",
       ],
-      bookingUrl: `${SQUARE_BASE}/SQ3ECMQFLXDN6KL7YDZ4MMT3`,
+      bookingUrl: FOTELLO_BOOKING_URL,
     },
   ];
   const smallerPackages: PricingPackage[] = [
     {
       name: "Aerial Media Only",
-      price: "$185",
+      price: "$200",
       popular: false,
       features: [
         "10 aerial images",
@@ -76,7 +79,7 @@ export default function RealEstatePage() {
         "FAA Part 107 compliant",
         "3-hour session",
       ],
-      bookingUrl: `${SQUARE_BASE}/OQX5HVKXJ4CWOVPCQLM457LQ`,
+      bookingUrl: FOTELLO_BOOKING_URL,
     },
   ];
   const addOns = [
@@ -104,7 +107,7 @@ export default function RealEstatePage() {
     url: `${BASE_URL}/services/real-estate`,
     telephone: "+1-270-307-0173",
     email: "cscreatesmediallc@gmail.com",
-    priceRange: "$185-$420",
+    priceRange: "$200-$650",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -131,7 +134,7 @@ export default function RealEstatePage() {
   const faqItems = [
     {
       q: "How much does real estate drone photography cost in Kentucky?",
-      a: "CS Media offers real estate media packages from $185. Aerial Media Only is $185, Photography Only (25–40 MLS-ready photos, drone included) is $285, Branding Content (video only) is $200, and the Full Media Package (photos plus a listing video) is $420. 6% Kentucky sales tax is applied to the final price.",
+      a: "CS Media offers real estate media packages from $200. Aerial Media Only is $200, Photography Only (25–40 MLS-ready photos, drone included) is $285 for properties up to 2,000 sq ft ($300 above that), Branding Content (video only) is $200, and the Full Media Package (photos plus a listing video) is $450 for properties up to 2,000 sq ft ($650 above that). 6% Kentucky sales tax is applied to the final price.",
     },
     {
       q: "Do you need a license to fly drones for real estate photos?",
@@ -269,6 +272,9 @@ export default function RealEstatePage() {
                       <div className="mt-4 flex items-baseline gap-1">
                         <span className="text-4xl font-bold text-white">{pkg.price}</span>
                       </div>
+                      {pkg.priceNote && (
+                        <p className="mt-1 text-xs text-dark-300">{pkg.priceNote}</p>
+                      )}
                       <div className="mt-6 space-y-3 flex-1">
                         {pkg.features.map((item) => (
                           <div key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
@@ -289,7 +295,7 @@ export default function RealEstatePage() {
                               : "bg-dark-600 border border-dark-500/50 text-dark-100 hover:border-gold/30 hover:text-gold"
                         }`}
                       >
-                        Select Package
+                        Book Now
                       </BookingButton>
                     </div>
                   </div>
@@ -331,7 +337,7 @@ export default function RealEstatePage() {
                     href={pkg.bookingUrl}
                     className="mt-5 w-full rounded-full py-2.5 text-sm sm:text-xs font-semibold uppercase tracking-widest text-center transition-all cursor-pointer bg-dark-600 border border-dark-500/50 text-dark-100 hover:border-gold/30 hover:text-gold"
                   >
-                    Select Package
+                    Book Now
                   </BookingButton>
                 </div>
               </FadeIn>

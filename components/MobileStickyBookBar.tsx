@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const BOOKING_URL = "https://csmediallc.square.site";
+const BOOKING_URL = "https://cscreatesmediallc.fotello.co/book?entry_source=website";
 
 interface Props {
   /** CSS selector for the element the bar should wait for before appearing. */
@@ -50,7 +50,7 @@ export default function MobileStickyBookBar({
           <div className="text-[10px] font-mono uppercase tracking-widest text-gold/70">
             Packages from
           </div>
-          <div className="text-lg font-bold text-white">$185</div>
+          <div className="text-lg font-bold text-white">$200</div>
         </div>
         <a
           href={BOOKING_URL}

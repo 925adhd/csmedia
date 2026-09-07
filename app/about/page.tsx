@@ -242,6 +242,7 @@ export default async function AboutPage() {
         desktopSubheading="Reach out for your next project. Quality media, fast turnaround, best prices."
         useTextLink
         backgroundImage="/images/cs-media-photographer-on-location-kentucky.webp"
+        backgroundPosition="center 12%"
       />
     </div>
   );
