@@ -117,7 +117,7 @@ CS Media shoots properties across Leitchfield, Elizabethtown, Radcliff, Hardinsb
 - **Packages from $200** — drone, photos, video, virtual staging
 - **24–48 hour delivery** — your listing goes live fast
 - **FAA Part 107 certified** — legal, insured aerial work
-- **Same-week availability** — text or call to book
+- **Same-week availability** — text or email to book
 
 [See packages and pricing](/services) or [book your shoot now](/book).
 `,

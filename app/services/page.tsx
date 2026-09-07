@@ -200,7 +200,7 @@ export default function ServicesHubPage() {
             <div aria-hidden className="hidden md:block absolute top-[11px] left-[16.67%] right-[16.67%] h-px bg-gradient-to-r from-transparent via-gold/25 to-transparent" />
 
             {[
-              { step: "01", title: "Book Your Shoot", desc: "Send a quick request by text, call, or the form. We’ll confirm the date and arrive on time, ready to go.", Icon: StampIcon },
+              { step: "01", title: "Book Your Shoot", desc: "Send a quick request by text or the form. We’ll confirm the date and arrive on time, ready to go.", Icon: StampIcon },
               { step: "02", title: "We Capture It", desc: "Professional drone, photo, and video coverage, tailored to your project.", Icon: DroneIcon },
               { step: "03", title: "Get Your Media", desc: "Edited photos and video delivered fast—plus virtual staging for real estate listings.", Icon: PolaroidIcon },
             ].map((item, i) => (

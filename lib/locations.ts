@@ -152,7 +152,7 @@ export const locations: LocationData[] = [
     localInsight:
       "A reality of shooting in parts of Elizabethtown is Fort Knox airspace. The northern portions of E-town fall under restricted zones where drone flights require advance authorization through LAANC. We check every address before we book and will let you know upfront if there are any restrictions. Most of E-town is clear, but properties near Radcliff or directly north toward Fort Knox may have altitude limitations. This is something hobbyist photographers often don't check. We do, every time.",
     closingPitch:
-      "We shoot in Elizabethtown regularly and can often batch multiple properties per trip. Packages start at $200. Text or call to get your listing scheduled.",
+      "We shoot in Elizabethtown regularly and can often batch multiple properties per trip. Packages start at $200. Text or email to get your listing scheduled.",
     faqs: [
       {
         q: "How much does drone photography cost in Elizabethtown?",

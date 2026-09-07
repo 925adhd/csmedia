@@ -724,7 +724,7 @@ export default function RealEstatePage() {
 
       <CTASection
         heading="Not Sure Which Package You Need?"
-        subheading="Text or call and we'll recommend the right option for your listing."
+        subheading="Text or email and we'll recommend the right option for your listing."
         desktopSubheading="Reach out and we'll recommend the perfect option for your project."
         buttonText="Request a Quote"
         useTextLink
