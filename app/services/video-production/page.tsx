@@ -228,7 +228,7 @@ export default function VideoProductionPage() {
             <p className="mt-12 text-sm text-dark-200">
               All video production — promos, reels, business content, and brand
               storytelling — is booked as Branding Content: up to a 1-minute video
-              from a 3-hour session, $275.{" "}
+              from a 3-hour session, $150.{" "}
               <TextLink className="text-gold hover:underline">
                 Have something bigger in mind?
               </TextLink>{" "}
@@ -243,8 +243,8 @@ export default function VideoProductionPage() {
 
       <CTASection
         heading="Book Your Branding Session"
-        subheading="Branding Content: up to a 1-minute video, 3-hour session, $275."
-        desktopSubheading="Branding Content: up to a 1-minute video, 3-hour session, $275."
+        subheading="Branding Content: up to a 1-minute video, 3-hour session, $150."
+        desktopSubheading="Branding Content: up to a 1-minute video, 3-hour session, $150."
         buttonText="Book Branding Content"
         bookingHref={BRANDING_BOOKING_URL}
         backgroundImage="/images/service-video-editing.webp"

@@ -71,7 +71,7 @@ export default function EventsPage() {
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Corporate Event Photography" } },
         {
           "@type": "Offer",
-          price: "2500",
+          price: "800",
           priceCurrency: "USD",
           itemOffered: { "@type": "Service", name: "Event Coverage All Inclusive" },
         },
@@ -178,10 +178,10 @@ export default function EventsPage() {
                 <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em]">
                   Event Coverage All Inclusive
                 </h3>
-                <span className="text-2xl font-bold text-white">$2,500</span>
+                <span className="text-2xl font-bold text-white">$800</span>
               </div>
               <p className="mt-2 text-sm text-dark-100">
-                All-day coverage, up to 12 hours.
+                All-day coverage, up to 12 hours: unlimited photos (culled and edited, no raw files), video, and aerial media.
               </p>
               <BookingButton
                 href={EVENT_COVERAGE_BOOKING_URL}

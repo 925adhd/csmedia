@@ -30,8 +30,8 @@ export async function generateMetadata({
   const loc = slug ? getLocationBySlug(slug) : undefined;
   if (!loc) return {};
 
-  const title = `${loc.city} Real Estate Photography & Drone (From $200)`;
-  const description = `${loc.city}, KY real estate photography & drone aerials from $200. MLS-ready photos in 24–48 hours by a local FAA Part 107 pilot. Same-week availability.`;
+  const title = `${loc.city} Real Estate Photography & Drone (From $180)`;
+  const description = `${loc.city}, KY real estate photography & drone aerials from $180. MLS-ready photos in 24–48 hours by a local FAA Part 107 pilot. Same-week availability.`;
 
   const BASE_URL =
     process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
@@ -78,7 +78,7 @@ export default async function CityPage({
     telephone: "+1-270-307-0173",
     url: BASE_URL,
     image: `${BASE_URL}/images/kentucky-real-estate-drone-aerial.webp`,
-    priceRange: "$200-$450",
+    priceRange: "$180-$325",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -148,7 +148,7 @@ export default async function CityPage({
     email: "cscreatesmediallc@gmail.com",
     url: `${BASE_URL}/${citySlug}`,
     image: `${BASE_URL}/images/kentucky-real-estate-drone-aerial.webp`,
-    priceRange: "$200-$450",
+    priceRange: "$180-$325",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -552,7 +552,7 @@ export default async function CityPage({
             {[
               {
                 name: "Branding Content",
-                price: "$275",
+                price: "$150",
                 features: [
                   "Up to 1-minute branding video",
                   "3-hour session",
@@ -560,7 +560,7 @@ export default async function CityPage({
               },
               {
                 name: "Photography Only",
-                price: "$285",
+                price: "$180",
                 features: [
                   "25–40 MLS-ready photos",
                   "Interior, exterior & aerial coverage",
@@ -570,13 +570,14 @@ export default async function CityPage({
               },
               {
                 name: "Full Media Package",
-                price: "$450",
+                price: "$325",
                 popular: true,
                 features: [
                   "MLS-ready photos — interior, exterior & aerial",
                   "Drone photos (FAA Part 107)",
                   "Up to 1-minute listing video",
                   "3-hour session",
+                  "Homes over 1,500 sqft: additional charges apply",
                 ],
               },
             ].map((pkg, index) => (
@@ -638,7 +639,7 @@ export default async function CityPage({
                   href="/services/real-estate#pricing"
                   className="text-gold/80 hover:text-gold underline-offset-2 hover:underline transition-colors"
                 >
-                  Aerial Media Only · $200
+                  Aerial Media Only · $180
                 </Link>
               </p>
               <p className="text-xs text-dark-300">

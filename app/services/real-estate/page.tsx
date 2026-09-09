@@ -12,14 +12,14 @@ import { locations } from "@/lib/locations";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: { absolute: "Kentucky Real Estate Photography from $200 | CS Media" },
+  title: { absolute: "Kentucky Real Estate Photography from $180 | CS Media" },
   description:
-    "Real estate photography, drone aerials, and listing video across Central Kentucky. Packages from $200, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
+    "Real estate photography, drone aerials, and listing video across Central Kentucky. Packages from $180, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
   alternates: { canonical: `${BASE_URL}/services/real-estate` },
   openGraph: {
-    title: "Kentucky Real Estate Photography from $200 | CS Media",
+    title: "Kentucky Real Estate Photography from $180 | CS Media",
     description:
-      "Real estate photography, drone aerials, and listing video across Central Kentucky. Packages from $200, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
+      "Real estate photography, drone aerials, and listing video across Central Kentucky. Packages from $180, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
     type: "website",
     url: `${BASE_URL}/services/real-estate`,
     siteName: "CS Media",
@@ -42,7 +42,7 @@ export default function RealEstatePage() {
   const packages: PricingPackage[] = [
     {
       name: "Photography Only",
-      price: "$285",
+      price: "$180",
       popular: false,
       features: [
         "25–40 MLS-ready photos",
@@ -54,13 +54,14 @@ export default function RealEstatePage() {
     },
     {
       name: "Full Media Package",
-      price: "$450",
+      price: "$325",
       popular: true,
       features: [
         "MLS-ready photos — interior, exterior & aerial",
         "Drone photos (FAA Part 107 compliant)",
         "Up to 1-minute listing video",
         "3-hour session",
+        "Homes over 1,500 sqft: additional charges apply",
       ],
       bookingUrl: `${SQUARE_BASE}/SQ3ECMQFLXDN6KL7YDZ4MMT3`,
     },
@@ -68,7 +69,7 @@ export default function RealEstatePage() {
   const smallerPackages: PricingPackage[] = [
     {
       name: "Aerial Media Only",
-      price: "$200",
+      price: "$180",
       popular: false,
       features: [
         "10 aerial images",
@@ -104,7 +105,7 @@ export default function RealEstatePage() {
     url: `${BASE_URL}/services/real-estate`,
     telephone: "+1-270-307-0173",
     email: "cscreatesmediallc@gmail.com",
-    priceRange: "$200-$450",
+    priceRange: "$180-$325",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -131,7 +132,7 @@ export default function RealEstatePage() {
   const faqItems = [
     {
       q: "How much does real estate drone photography cost in Kentucky?",
-      a: "CS Media offers real estate media packages from $200. Aerial Media Only is $200, Photography Only (25–40 MLS-ready photos, drone included) is $285, Branding Content (video only) is $275, and the Full Media Package (photos plus a listing video) is $450. 6% Kentucky sales tax is applied to the final price.",
+      a: "CS Media offers real estate media packages from $180. Aerial Media Only is $180, Photography Only (25–40 MLS-ready photos, drone included) is $180, Branding Content (video only) is $150, and the Full Media Package (photos plus a listing video) is $325. 6% Kentucky sales tax is applied to the final price.",
     },
     {
       q: "Do you need a license to fly drones for real estate photos?",
@@ -372,6 +373,9 @@ export default function RealEstatePage() {
               </p>
             </div>
             <div className="mt-6 text-center space-y-1">
+              <p className="text-xs text-dark-300">
+                Full Media Package: homes over 1,500 sqft are subject to additional charges.
+              </p>
               <p className="text-xs text-dark-300">
                 Virtual staging, if needed: $5 per photo or $15 per video scene.
               </p>

@@ -99,7 +99,7 @@ export default function RootLayout({
                   ],
                   email: "cscreatesmediallc@gmail.com",
                   telephone: "+1-270-307-0173",
-                  priceRange: "$200-$450",
+                  priceRange: "$150-$800",
                   openingHoursSpecification: {
                     "@type": "OpeningHoursSpecification",
                     dayOfWeek: [

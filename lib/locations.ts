@@ -64,11 +64,11 @@ export const locations: LocationData[] = [
     localInsight:
       "One thing agents in Grayson County deal with is showing properties where the land is the main selling point. A 3-bedroom house on 50 acres needs to communicate the acreage first. That's what the buyer is paying for. We prioritize drone shots and wide exterior coverage on these listings because that's what drives the sale. Interior photos matter too, but the aerial perspective is what stops buyers mid-scroll.",
     closingPitch:
-      "Ready to get your Leitchfield listing or project professionally captured? Packages start at $200 with 24-48 hour turnaround.",
+      "Ready to get your Leitchfield listing or project professionally captured? Packages start at $180 with 24-48 hour turnaround.",
     faqs: [
       {
         q: "How much does real estate photography cost in Leitchfield?",
-        a: "Aerial Media Only is $200. Photography Only (25–40 MLS-ready photos, drone included) is $285, and the Full Media Package (photos plus a listing video) is $450.",
+        a: "Aerial Media Only is $180. Photography Only (25–40 MLS-ready photos, drone included) is $180, and the Full Media Package (photos plus a listing video) is $325.",
       },
       {
         q: "Do you charge travel fees for Leitchfield shoots?",
@@ -152,11 +152,11 @@ export const locations: LocationData[] = [
     localInsight:
       "A reality of shooting in parts of Elizabethtown is Fort Knox airspace. The northern portions of E-town fall under restricted zones where drone flights require advance authorization through LAANC. We check every address before we book and will let you know upfront if there are any restrictions. Most of E-town is clear, but properties near Radcliff or directly north toward Fort Knox may have altitude limitations. This is something hobbyist photographers often don't check. We do, every time.",
     closingPitch:
-      "We shoot in Elizabethtown regularly and can often batch multiple properties per trip. Packages start at $200. Text or email to get your listing scheduled.",
+      "We shoot in Elizabethtown regularly and can often batch multiple properties per trip. Packages start at $180. Text or email to get your listing scheduled.",
     faqs: [
       {
         q: "How much does drone photography cost in Elizabethtown?",
-        a: "Aerial Media Only is $200, Photography Only (25–40 MLS-ready photos, drone included) is $285, and the Full Media Package (photos plus a listing video) is $450, plus 6% Kentucky sales tax. Contact us for an exact quote for your property.",
+        a: "Aerial Media Only is $180, Photography Only (25–40 MLS-ready photos, drone included) is $180, and the Full Media Package (photos plus a listing video) is $325, plus 6% Kentucky sales tax. Contact us for an exact quote for your property.",
       },
       {
         q: "Are there drone restrictions near Fort Knox?",
@@ -234,7 +234,7 @@ export const locations: LocationData[] = [
     localInsight:
       "If you're listing in Radcliff, factor PCS season into your marketing timing. Listings that go live in March and April catch the wave of summer movers and tend to move fastest. Listings that drop in October sit. Professional photography is especially worth it during peak season, when the most buyers are searching, you want your listing standing out, not blending in with iPhone shots.",
     closingPitch:
-      "We serve Radcliff regularly and check airspace before every booking so you know up front what we can legally capture. Packages start at $200.",
+      "We serve Radcliff regularly and check airspace before every booking so you know up front what we can legally capture. Packages start at $180.",
     faqs: [
       {
         q: "Can you photograph properties in Radcliff with Fort Knox airspace restrictions?",
@@ -316,7 +316,7 @@ export const locations: LocationData[] = [
     localInsight:
       "The most consistently under-marketed category we see in Breckinridge is hunting tracts. Most come to market with four photos: the cabin, the gravel drive, a wide shot of trees, and an interior of the kitchen. A serious deer-lease buyer, the one who pays asking, wants to see topography, timber composition, and water layout before driving two hours to walk the property. Drone coverage on those features turns a tract that sits for six months into one that sells in the first week of archery season.",
     closingPitch:
-      "Whether you're listing a Breckinridge County farm, a hunting property, an Ohio River cabin, or an in-town Hardinsburg home, we can help. Packages start at $200.",
+      "Whether you're listing a Breckinridge County farm, a hunting property, an Ohio River cabin, or an in-town Hardinsburg home, we can help. Packages start at $180.",
     faqs: [
       {
         q: "Do you photograph hunting and recreational properties in Breckinridge County?",
@@ -336,7 +336,7 @@ export const locations: LocationData[] = [
       },
       {
         q: "What if my listing is mostly land with a small structure?",
-        a: "That's a typical rural listing for us. Our aerial-only package ($200) is great for land-only listings, and our larger packages can be weighted toward aerial coverage if the structure is secondary to the land. We tailor the shoot to the property.",
+        a: "That's a typical rural listing for us. Our aerial-only package ($180) is great for land-only listings, and our larger packages can be weighted toward aerial coverage if the structure is secondary to the land. We tailor the shoot to the property.",
       },
     ],
     nearbyAreas: ["Cloverport", "Irvington", "Stephensport", "Custer", "Big Spring"],
@@ -398,7 +398,7 @@ export const locations: LocationData[] = [
     localInsight:
       "Doe Valley listings are a category of their own. Buyers there are often shopping from out of state and comparing properties against resort communities elsewhere. Generic real estate photos don't compete. The properties that move fastest are the ones with drone footage showing the resort layout, golf course context, and the lifestyle amenities, not just the house. If you're listing a Doe Valley property, professional photography isn't optional.",
     closingPitch:
-      "Whether you're listing in Doe Valley, on the Ohio River, or anywhere in Meade County, we can help your property show its best. Packages start at $200.",
+      "Whether you're listing in Doe Valley, on the Ohio River, or anywhere in Meade County, we can help your property show its best. Packages start at $180.",
     faqs: [
       {
         q: "Do you photograph properties in Doe Valley?",
@@ -481,7 +481,7 @@ export const locations: LocationData[] = [
     localInsight:
       "The Caneyville listings that move fastest are usually working farms priced correctly for the acreage (Grayson County farmland is still meaningfully cheaper than comparable land in Hardin or Nelson), but they only move fast if the photography lets out-of-county buyers evaluate the land without driving two hours to see it. A farm that reads as 'a house and some trees' in the MLS photos gets ignored. The same farm, shot with a couple of high-altitude aerials that read the property line and the fields, gets showings within days.",
     closingPitch:
-      "Caneyville is part of our home territory. Fast scheduling, packages from $200.",
+      "Caneyville is part of our home territory. Fast scheduling, packages from $180.",
     faqs: [
       {
         q: "Do you charge travel fees for Caneyville shoots?",
@@ -501,7 +501,7 @@ export const locations: LocationData[] = [
       },
       {
         q: "What's included in your Caneyville packages?",
-        a: "Same as anywhere else: edited, MLS-ready deliverables in 24-48 hours. Aerial Media Only is $200, Photography Only (25–40 MLS-ready photos, drone included) is $285, and the Full Media Package (photos plus a listing video) is $450.",
+        a: "Same as anywhere else: edited, MLS-ready deliverables in 24-48 hours. Aerial Media Only is $180, Photography Only (25–40 MLS-ready photos, drone included) is $180, and the Full Media Package (photos plus a listing video) is $325.",
       },
     ],
     nearbyAreas: ["Leitchfield", "Clarkson", "Centertown", "Beaver Dam", "Falls of Rough"],

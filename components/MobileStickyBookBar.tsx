@@ -50,7 +50,7 @@ export default function MobileStickyBookBar({
           <div className="text-[10px] font-mono uppercase tracking-widest text-gold/70">
             Packages from
           </div>
-          <div className="text-lg font-bold text-white">$200</div>
+          <div className="text-lg font-bold text-white">$180</div>
         </div>
         <a
           href={BOOKING_URL}

@@ -53,7 +53,7 @@ This isn't about making photos look "pretty." It's about generating showings.
 - Professionally photographed homes sell for **$3,000–$11,000 more** on average
 - Listings with drone photos get **68% more views** than those without
 
-For a $200–$450 investment, you're not paying for photos. You're paying for showings. And showings are what sell houses.
+For a $180–$325 investment, you're not paying for photos. You're paying for showings. And showings are what sell houses.
 
 ---
 
@@ -93,7 +93,7 @@ Common reasons luxury property listings don't convert to showings:
 - **No video walkthrough** — luxury buyers shortlist on video before driving out
 - **Flat, under-processed images** — HDR and color grading are non-negotiable above $500K
 
-For luxury listings in Kentucky, the baseline is aerial + twilight + cinematic video. The $450 Full Media Package is table stakes, not an upgrade. Skipping any of it is what keeps premium listings sitting.
+For luxury listings in Kentucky, the baseline is aerial + twilight + cinematic video. The $325 Full Media Package is table stakes, not an upgrade. Skipping any of it is what keeps premium listings sitting.
 
 ---
 
@@ -102,9 +102,9 @@ For luxury listings in Kentucky, the baseline is aerial + twilight + cinematic v
 Let's say you're listing a $250,000 home in Elizabethtown.
 
 - **Phone photos**: Listing sits 45+ days. Price reduction. You lose the seller's confidence.
-- **Professional media ($450 Full Media Package)**: Listing gets 3x more views in the first week. Multiple showings. Offer in 14 days.
+- **Professional media ($325 Full Media Package)**: Listing gets 3x more views in the first week. Multiple showings. Offer in 14 days.
 
-That $450 didn't cost you anything. It made you money, and kept your seller happy enough to refer you to their neighbor.
+That $325 didn't cost you anything. It made you money, and kept your seller happy enough to refer you to their neighbor.
 
 ---
 
@@ -114,7 +114,7 @@ You don't need more leads. You need your current listings to perform. Profession
 
 CS Media shoots properties across Leitchfield, Elizabethtown, Radcliff, Hardinsburg, Brandenburg, and the rest of central Kentucky.
 
-- **Packages from $200** — drone, photos, video, virtual staging
+- **Packages from $180** — drone, photos, video, virtual staging
 - **24–48 hour delivery** — your listing goes live fast
 - **FAA Part 107 certified** — legal, insured aerial work
 - **Same-week availability** — text or email to book
@@ -306,11 +306,11 @@ Radcliff's market moves with Fort Knox PCS cycles, and out-of-state military fam
 
 ### Real Estate Photography Cost in Hardinsburg, KY
 
-Breckinridge County listings skew land-heavy — hunting tracts, Ohio River frontage, and rural residential on a few acres — so pricing leans toward packages weighted for drone coverage over interior photos. Aerial-only shoots ($200) are common for land-only listings, with $200–$400 for homes with meaningful acreage attached. [See Hardinsburg details →](/hardinsburg-real-estate-photography)
+Breckinridge County listings skew land-heavy — hunting tracts, Ohio River frontage, and rural residential on a few acres — so pricing leans toward packages weighted for drone coverage over interior photos. Aerial-only shoots ($180) are common for land-only listings, with $200–$400 for homes with meaningful acreage attached. [See Hardinsburg details →](/hardinsburg-real-estate-photography)
 
 ### Real Estate Photography Cost in Brandenburg, KY
 
-Meade County's Doe Valley resort community and Ohio River frontage properties often justify the Full Media Package ($450) to show golf-course, lake, or river context that a photo-only shoot can't capture. In-town Brandenburg residential listings typically run the standard $200–$400 photo + drone range. [See Brandenburg details →](/brandenburg-real-estate-photography)
+Meade County's Doe Valley resort community and Ohio River frontage properties often justify the Full Media Package ($325) to show golf-course, lake, or river context that a photo-only shoot can't capture. In-town Brandenburg residential listings typically run the standard $200–$400 photo + drone range. [See Brandenburg details →](/brandenburg-real-estate-photography)
 
 ---
 
@@ -318,10 +318,10 @@ Meade County's Doe Valley resort community and Ohio River frontage properties of
 
 For full transparency: I run CS Media out of Leitchfield and shoot listings across central Kentucky. Our pricing sits at the lower end of the secondary-market ranges above:
 
-- **Aerial Media Only:** $200
-- **Branding Content** (video only, no photos): $275
-- **Photography Only** (25–40 MLS-ready photos, drone included): $285
-- **Full Media Package** (photos + up to a 1-minute listing video): $450
+- **Aerial Media Only:** $180
+- **Branding Content** (video only, no photos): $150
+- **Photography Only** (25–40 MLS-ready photos, drone included): $180
+- **Full Media Package** (photos + up to a 1-minute listing video): $325
 
 Every package is FAA Part 107–compliant, MLS-ready, delivered in 24–48 hours, and includes 1 free revision (2 on the Full Media Package). [Full package details and add-on pricing are on the services page →](/services)
 

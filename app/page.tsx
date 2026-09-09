@@ -145,7 +145,7 @@ export default function Home() {
           <ArrowRight className="h-4 w-4" />
         </BookingButton>
         <p className="mt-3 text-[9px] font-medium uppercase tracking-[0.1em] text-dark-300/80">
-          From $200 &bull; FAA Certified &bull; Easy Online Booking
+          From $150 &bull; FAA Certified &bull; Easy Online Booking
         </p>
       </section>
 
