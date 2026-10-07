@@ -27,12 +27,10 @@ interface ShowcaseItem {
 function ImageSlideshow({
   images,
   alt,
-  style,
   onCycleComplete,
 }: {
   images: string[];
   alt: string;
-  style: React.CSSProperties;
   onCycleComplete?: () => void;
 }) {
   const [frame, setFrame] = useState(0);
@@ -58,14 +56,13 @@ function ImageSlideshow({
   }, [frame, images, onCycleComplete]);
 
   return (
-    <div
-      className="absolute inset-0 h-full w-full overflow-hidden rounded-3xl bg-dark-900 shadow-[0_10px_30px_rgba(0,0,0,0.4)] select-none"
-      style={style}
-    >
+    <div className="absolute inset-0 h-full w-full">
       {/* Overlapping crossfade (not fade-out-then-fade-in) — the incoming frame animates in on
           top while the outgoing one is still visible underneath, so there's never a moment where
           the card is see-through to whatever is stacked behind it (the neighboring cards). */}
-      <AnimatePresence>
+      {/* initial={false} — frame 0 is the same still the card was already showing as its poster,
+          so it appears instantly instead of fading in from black (which read as a flash). */}
+      <AnimatePresence initial={false}>
         <motion.div
           key={frame}
           initial={{ opacity: 0 }}
@@ -318,52 +315,16 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
             // Only the active item plays video, and only once the section has scrolled into
             // view — the side-peek and hidden items stay as a still poster frame, so at most
             // one clip is ever decoding at a time, and nothing plays off-screen.
-            if (item.video && isActive && isInView && contentReady) {
-              return (
-                <video
-                  key={item.image}
-                  ref={(el) => {
-                    // iOS Safari sometimes ignores the `muted` JSX attribute's timing and
-                    // blocks autoplay, leaving the poster + play icon showing until tapped.
-                    // Setting `.muted` as a real DOM property (not just the attribute) before
-                    // calling `.play()` makes autoplay actually fire without a manual tap.
-                    if (!el) return;
-                    el.muted = true;
-                    el.play().catch(() => {});
-                  }}
-                  src={item.video}
-                  poster={item.image}
-                  autoPlay
-                  muted
-                  playsInline
-                  draggable={false}
-                  // Once the user has taken manual control, a finished clip just freezes on its
-                  // last frame (the browser's default for a non-looping video) instead of
-                  // auto-advancing — no onEnded handler needed for that case.
-                  onEnded={autoplay && !hasInteracted ? advanceAuto : undefined}
-                  className="absolute inset-0 h-full w-full rounded-3xl object-cover shadow-[0_10px_30px_rgba(0,0,0,0.4)] select-none"
-                  style={getImageStyle(index)}
-                />
-              );
-            }
-            if (item.images && item.images.length > 1 && isActive && isInView && contentReady) {
-              return (
-                <ImageSlideshow
-                  key={item.image}
-                  images={item.images}
-                  alt={item.title}
-                  style={getImageStyle(index)}
-                  onCycleComplete={autoplay && !hasInteracted ? advanceAuto : undefined}
-                />
-              );
-            }
-            // Static poster state (inactive/peek, or the active item before it's scrolled
-            // into view) — plain poster, no play-button badge at all. Videos autoplay on
-            // their own the moment they're active, so there's never a tap for it to promise.
+            const showVideo = !!item.video && isActive && isInView && contentReady;
+            const showSlideshow = !!item.images && item.images.length > 1 && isActive && isInView && contentReady;
+            // One persistent card per item: the poster <Image> always stays mounted underneath,
+            // and the video/slideshow layers on top of it. Swapping the whole card element out
+            // (as this used to) remounted it blank for a moment — the video's poster had to load
+            // again from a different URL — which flashed every time a card became active.
             return (
               <div
                 key={item.image}
-                className="absolute inset-0 select-none overflow-hidden rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
+                className="absolute inset-0 select-none overflow-hidden rounded-3xl bg-dark-900 shadow-[0_10px_30px_rgba(0,0,0,0.4)]"
                 style={getImageStyle(index)}
               >
                 <Image
@@ -374,6 +335,41 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
                   sizes="(min-width: 768px) 33vw, 90vw"
                   className="object-cover"
                 />
+                {showVideo && (
+                  <video
+                    ref={(el) => {
+                      // iOS Safari sometimes ignores the `muted` JSX attribute's timing and
+                      // blocks autoplay, leaving the poster + play icon showing until tapped.
+                      // Setting `.muted` as a real DOM property (not just the attribute) before
+                      // calling `.play()` makes autoplay actually fire without a manual tap.
+                      if (!el) return;
+                      el.muted = true;
+                      el.play().catch(() => {});
+                    }}
+                    src={item.video}
+                    autoPlay
+                    muted
+                    playsInline
+                    draggable={false}
+                    // Hidden until frames are actually rendering, then faded in over the poster
+                    // still underneath, so there's no blank/black gap while the clip buffers.
+                    onPlaying={(e) => {
+                      e.currentTarget.style.opacity = "1";
+                    }}
+                    // Once the user has taken manual control, a finished clip just freezes on its
+                    // last frame (the browser's default for a non-looping video) instead of
+                    // auto-advancing — no onEnded handler needed for that case.
+                    onEnded={autoplay && !hasInteracted ? advanceAuto : undefined}
+                    className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700 ease-out select-none"
+                  />
+                )}
+                {showSlideshow && (
+                  <ImageSlideshow
+                    images={item.images!}
+                    alt={item.title}
+                    onCycleComplete={autoplay && !hasInteracted ? advanceAuto : undefined}
+                  />
+                )}
               </div>
             );
           })}
