@@ -185,7 +185,7 @@ export default function EventsPage() {
               </p>
               <BookingButton
                 href={EVENT_COVERAGE_BOOKING_URL}
-                className="mt-5 w-full rounded-full py-2.5 text-sm sm:text-xs font-semibold uppercase tracking-widest text-center transition-all cursor-pointer bg-dark-600 border border-dark-500/50 text-dark-100 hover:border-gold/30 hover:text-gold"
+                className="mt-5 block w-full rounded-full py-2.5 text-sm sm:text-xs font-semibold uppercase tracking-widest text-center transition-all cursor-pointer bg-dark-600 border border-dark-500/50 text-dark-100 hover:border-gold/30 hover:text-gold"
               >
                 Book Now
               </BookingButton>
