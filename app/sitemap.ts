@@ -3,7 +3,7 @@ import { portfolioProjects } from "@/lib/portfolio";
 import { locations } from "@/lib/locations";
 import { blogPosts } from "@/lib/blog";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
 const abs = (path: string) =>
   path.startsWith("http") ? path : `${BASE_URL}${path}`;

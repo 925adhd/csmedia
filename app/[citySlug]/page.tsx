@@ -34,7 +34,7 @@ export async function generateMetadata({
   const description = `${loc.city}, KY real estate photography & drone aerials from $180. MLS-ready photos in 24–48 hours by a local FAA Part 107 pilot. Same-week availability.`;
 
   const BASE_URL =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
   return {
     title: { absolute: title },
@@ -69,7 +69,7 @@ export default async function CityPage({
   if (!loc) notFound();
 
   const BASE_URL =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
   const localBusinessSchema = {
     "@context": "https://schema.org",

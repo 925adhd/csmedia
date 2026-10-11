@@ -22,7 +22,7 @@ export async function generateMetadata({
   const post = getBlogPostBySlug(slug);
   if (!post) return { title: "Post Not Found" };
   const BASE_URL =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
   return {
     title: { absolute: post.title },
     description: post.description,
@@ -49,7 +49,7 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   const BASE_URL =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
   const articleSchema = {
     "@context": "https://schema.org",

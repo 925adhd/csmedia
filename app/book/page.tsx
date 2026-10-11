@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 const BOOKING_URL = "https://csmediallc.square.site";
 
 export const metadata: Metadata = {

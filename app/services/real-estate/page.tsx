@@ -9,7 +9,7 @@ import MobileStickyBookBar from "@/components/MobileStickyBookBar";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { locations } from "@/lib/locations";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
 export const metadata: Metadata = {
   title: { absolute: "Kentucky Real Estate Photography from $180 | CS Media" },

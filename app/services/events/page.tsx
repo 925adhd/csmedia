@@ -6,7 +6,7 @@ import CTASection from "@/components/CTASection";
 import BookingButton from "@/components/BookingButton";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 const EVENT_COVERAGE_BOOKING_URL =
   "https://book.squareup.com/appointments/0d7pw9dylg06tp/location/L6X9AW779A057/services/S266WKBTXHVBZQ7ZEJIRRFT6";
 

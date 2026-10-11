@@ -20,7 +20,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = await getProjectBySlug(slug);
   if (!project) return { title: "Project Not Found" };
-  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+  const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
   const desc = project.description.length > 155
     ? project.description.slice(0, 155).replace(/\s+\S*$/, "") + "..."
     : project.description;
@@ -50,7 +50,7 @@ export default async function ProjectPage({
 
   const isVideo = !!project.videoSrc;
   const BASE_URL =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
   const videoSchema = isVideo
     ? {

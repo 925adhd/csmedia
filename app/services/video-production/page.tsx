@@ -6,7 +6,7 @@ import VideoPlayer from "@/components/VideoPlayer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TextLink from "@/components/TextLink";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 const SQUARE_BASE = "https://book.squareup.com/appointments/0d7pw9dylg06tp/location/L6X9AW779A057/services";
 const BRANDING_BOOKING_URL = `${SQUARE_BASE}/QU7N4O2TGBP2GXDHDAINK6NO`;
 

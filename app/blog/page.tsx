@@ -5,7 +5,7 @@ import FadeIn from "@/components/FadeIn";
 import CTASection from "@/components/CTASection";
 import { blogPosts } from "@/lib/blog";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 const BOOKING_URL = "https://csmediallc.square.site/s/appointments";
 
 export const metadata: Metadata = {

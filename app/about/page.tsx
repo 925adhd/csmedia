@@ -10,7 +10,7 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.cscreatesmedia.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
 export const metadata: Metadata = {
   title: "About CS Media: An Asian with a Camera in Kentucky",
