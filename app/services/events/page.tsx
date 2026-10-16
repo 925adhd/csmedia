@@ -69,12 +69,7 @@ export default function EventsPage() {
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Birthday Party Photography" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Engagement Photography" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Corporate Event Photography" } },
-        {
-          "@type": "Offer",
-          price: "800",
-          priceCurrency: "USD",
-          itemOffered: { "@type": "Service", name: "Event Coverage All Inclusive" },
-        },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Event Coverage All Inclusive" } },
       ],
     },
   };
@@ -170,7 +165,7 @@ export default function EventsPage() {
           <FadeIn>
             <div className="text-center mb-8">
               <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                Pricing
+                Coverage
               </span>
             </div>
             <div className="relative rounded-2xl bg-dark-700/60 border border-dark-500/30 p-6 hover:border-gold/20 transition-colors">
@@ -178,7 +173,6 @@ export default function EventsPage() {
                 <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em]">
                   Event Coverage All Inclusive
                 </h3>
-                <span className="text-2xl font-bold text-white">$800</span>
               </div>
               <p className="mt-2 text-sm text-dark-100">
                 All-day coverage, up to 12 hours: unlimited photos (culled and edited, no raw files), video, and aerial media.

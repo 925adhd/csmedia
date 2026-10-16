@@ -30,8 +30,8 @@ export async function generateMetadata({
   const loc = slug ? getLocationBySlug(slug) : undefined;
   if (!loc) return {};
 
-  const title = `${loc.city} Real Estate Photography & Drone (From $180)`;
-  const description = `${loc.city}, KY real estate photography & drone aerials from $180. MLS-ready photos in 24–48 hours by a local FAA Part 107 pilot. Same-week availability.`;
+  const title = `${loc.city} Real Estate Photography & Drone | CS Media`;
+  const description = `${loc.city}, KY real estate photography & drone aerials. MLS-ready photos in 24–48 hours by a local FAA Part 107 pilot. Same-week availability.`;
 
   const BASE_URL =
     process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
@@ -78,7 +78,6 @@ export default async function CityPage({
     telephone: "+1-270-307-0173",
     url: BASE_URL,
     image: `${BASE_URL}/images/kentucky-real-estate-drone-aerial.webp`,
-    priceRange: "$180-$325",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -148,7 +147,6 @@ export default async function CityPage({
     email: "cscreatesmediallc@gmail.com",
     url: `${BASE_URL}/${citySlug}`,
     image: `${BASE_URL}/images/kentucky-real-estate-drone-aerial.webp`,
-    priceRange: "$180-$325",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -386,8 +384,8 @@ export default async function CityPage({
                       "Interior & exterior real estate photography",
                       "FAA-certified drone photos & video",
                       "Cinematic property walkthrough videos",
-                      "Virtual staging (+$5 per photo, if needed)",
-                      "Twilight edits (+$25 per photo)",
+                      "Virtual staging (if needed)",
+                      "Twilight edits",
                       "Social media highlight reels",
                     ].map((item) => (
                       <li key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
@@ -446,11 +444,11 @@ export default async function CityPage({
               },
               {
                 title: "Virtual Staging",
-                body: `Empty rooms digitally furnished with realistic furniture and decor. A fraction of the cost of physical staging — if needed, available as a $5/photo (or $15/video scene) add-on for any ${loc.city} or ${loc.county} listing.`,
+                body: `Empty rooms digitally furnished with realistic furniture and decor. A fraction of the cost of physical staging — if needed, available as an add-on for any ${loc.city} or ${loc.county} listing.`,
               },
               {
                 title: "Twilight Edits",
-                body: `Premium twilight-edit treatment of exterior and aerial shots that turn daytime photos into golden-hour dramatics that stop the scroll. Available as a $25/photo add-on for any package.`,
+                body: `Premium twilight-edit treatment of exterior and aerial shots that turn daytime photos into golden-hour dramatics that stop the scroll. Available as an add-on for any package.`,
               },
             ].map((s) => (
               <FadeIn key={s.title}>
@@ -541,7 +539,7 @@ export default async function CityPage({
           <FadeIn>
             <div className="text-center mb-14">
               <span className="text-gold text-xs font-mono uppercase tracking-[0.3em]">
-                Pricing
+                Packages
               </span>
               <h2 className="mt-4 text-2xl md:text-3xl font-bold text-white tracking-tight">
                 {loc.city} Real Estate Photography Packages
@@ -552,7 +550,6 @@ export default async function CityPage({
             {[
               {
                 name: "Branding Content",
-                price: "$150",
                 features: [
                   "Up to 1-minute branding video",
                   "3-hour session",
@@ -560,7 +557,6 @@ export default async function CityPage({
               },
               {
                 name: "Photography Only",
-                price: "$180",
                 features: [
                   "25–40 MLS-ready photos",
                   "Interior, exterior & aerial coverage",
@@ -570,7 +566,6 @@ export default async function CityPage({
               },
               {
                 name: "Full Media Package",
-                price: "$325",
                 popular: true,
                 features: [
                   "MLS-ready photos — interior, exterior & aerial",
@@ -602,9 +597,6 @@ export default async function CityPage({
                           Popular
                         </span>
                       )}
-                    </div>
-                    <div className="mt-4 flex items-baseline gap-1">
-                      <span className="text-4xl font-bold text-white">{pkg.price}</span>
                     </div>
                     <div className="mt-6 space-y-3 flex-1">
                       {pkg.features.map((item) => (
@@ -639,7 +631,7 @@ export default async function CityPage({
                   href="/services/real-estate#pricing"
                   className="text-gold/80 hover:text-gold underline-offset-2 hover:underline transition-colors"
                 >
-                  Aerial Media Only · $180
+                  Aerial Media Only
                 </Link>
               </p>
               <p className="text-xs text-dark-300">

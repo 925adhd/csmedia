@@ -145,7 +145,7 @@ export default function Home() {
           <ArrowRight className="h-4 w-4" />
         </BookingButton>
         <p className="mt-3 text-[9px] font-medium uppercase tracking-[0.1em] text-dark-300/80">
-          From $150 &bull; FAA Certified &bull; Easy Online Booking
+          24–48 Hr Delivery &bull; FAA Certified &bull; Easy Online Booking
         </p>
       </section>
 
@@ -189,7 +189,7 @@ export default function Home() {
             items={[
               { image: "/images/alice-theater-brand-poster.webp", video: "/videos/alice-theater-brand-video.mp4", eyebrow: "Social Media Promos", title: "Branding Content", description: "Promo and branding videos that showcase your business and connect with your audience.", href: "/services/video-production", ctaLabel: "Explore Branding Services" },
               { image: "/images/service-drone-poster.webp", video: "/videos/drone2-trimmed.mp4", eyebrow: "Real Estate Drone Video", title: "Drone (Part 107)", description: "Aerial views that show off the lot, neighborhood, and curb appeal: the shots your competitors don't have.", href: "/services/real-estate#just-need-drone", ctaLabel: "Explore Drone Services" },
-              { image: "/images/service-listing-video-poster.webp", video: "/videos/walkthrough.mp4", eyebrow: "Real Estate Walkthroughs", title: "Listing Video", description: "Up to a 1-minute walkthrough video bundled into the Full Media Package. Buyers tour the home before they ever visit.", disclaimer: "*Some rooms shown with virtual staging — $15 per video scene, billed separately if needed.", href: "/services/real-estate#full-media-package", ctaLabel: "Explore Listing Video" },
+              { image: "/images/service-listing-video-poster.webp", video: "/videos/walkthrough.mp4", eyebrow: "Real Estate Walkthroughs", title: "Listing Video", description: "Up to a 1-minute walkthrough video bundled into the Full Media Package. Buyers tour the home before they ever visit.", disclaimer: "*Some rooms shown with virtual staging, billed separately if needed.", href: "/services/real-estate#full-media-package", ctaLabel: "Explore Listing Video" },
               { image: "/images/kentucky-wedding-video-poster.webp", video: "/videos/kentucky-wedding-video.mp4", eyebrow: "Weddings & Special Occasions", title: "Events", description: "Weddings, baby showers, birthdays, and special occasions captured candidly across Central Kentucky.", href: "/services/events", ctaLabel: "Explore Event Photography" },
               { image: "/images/white-farmhouse-front-exterior-kentucky.webp", images: ["/images/white-farmhouse-front-exterior-kentucky.webp", "/images/rustic-kitchen-wood-beams-island.webp", "/images/stone-estate-living-room-fireplace.webp"], eyebrow: "Real Estate Photography", title: "Photography", description: "Bright, clean listing photos that make buyers stop scrolling and book a showing.", href: "/services/real-estate#photography-only", ctaLabel: "Explore Real Estate Photography" },
             ]}

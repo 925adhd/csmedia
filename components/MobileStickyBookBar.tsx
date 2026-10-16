@@ -48,9 +48,9 @@ export default function MobileStickyBookBar({
       <div className="flex items-center justify-between gap-4 px-4 py-3">
         <div className="leading-tight">
           <div className="text-[10px] font-mono uppercase tracking-widest text-gold/70">
-            Packages from
+            Ready to shoot?
           </div>
-          <div className="text-lg font-bold text-white">$180</div>
+          <div className="text-lg font-bold text-white">Book your listing</div>
         </div>
         <a
           href={BOOKING_URL}

@@ -12,14 +12,14 @@ import { locations } from "@/lib/locations";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
 export const metadata: Metadata = {
-  title: { absolute: "Kentucky Real Estate Photography from $180 | CS Media" },
+  title: { absolute: "Kentucky Real Estate Photography & Drone | CS Media" },
   description:
-    "Real estate photography, drone aerials, and listing video across Central Kentucky. Packages from $180, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
+    "Real estate photography, drone aerials, and listing video across Central Kentucky. MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
   alternates: { canonical: `${BASE_URL}/services/real-estate` },
   openGraph: {
-    title: "Kentucky Real Estate Photography from $180 | CS Media",
+    title: "Kentucky Real Estate Photography & Drone | CS Media",
     description:
-      "Real estate photography, drone aerials, and listing video across Central Kentucky. Packages from $180, MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
+      "Real estate photography, drone aerials, and listing video across Central Kentucky. MLS-ready in 24–48 hours by a local FAA Part 107 pilot.",
     type: "website",
     url: `${BASE_URL}/services/real-estate`,
     siteName: "CS Media",
@@ -29,7 +29,6 @@ export const metadata: Metadata = {
 
 interface PricingPackage {
   name: string;
-  price: string;
   popular: boolean;
   badge?: string;
   features: string[];
@@ -42,7 +41,6 @@ export default function RealEstatePage() {
   const packages: PricingPackage[] = [
     {
       name: "Photography Only",
-      price: "$180",
       popular: false,
       features: [
         "25–40 MLS-ready photos",
@@ -54,7 +52,6 @@ export default function RealEstatePage() {
     },
     {
       name: "Full Media Package",
-      price: "$325",
       popular: true,
       features: [
         "MLS-ready photos — interior, exterior & aerial",
@@ -69,7 +66,6 @@ export default function RealEstatePage() {
   const smallerPackages: PricingPackage[] = [
     {
       name: "Aerial Media Only",
-      price: "$180",
       popular: false,
       features: [
         "10 aerial images",
@@ -81,12 +77,12 @@ export default function RealEstatePage() {
     },
   ];
   const addOns = [
-    { name: "Twilight Edit", price: "+$25 per photo" },
-    { name: "Rush Delivery (24hr)", price: "+$40" },
-    { name: "Additional Photos", price: "+$5 per image" },
+    { name: "Twilight Edit" },
+    { name: "Rush Delivery (24hr)" },
+    { name: "Additional Photos" },
   ];
   const revisionPolicy = [
-    "Additional revisions beyond included: $15 per request",
+    "Additional revisions beyond included are billed per request",
     "Major edits (object removal, sky swaps, virtual staging changes, etc.) quoted separately",
     "Revision requests must be submitted within 3 days of delivery",
   ];
@@ -105,7 +101,6 @@ export default function RealEstatePage() {
     url: `${BASE_URL}/services/real-estate`,
     telephone: "+1-270-307-0173",
     email: "cscreatesmediallc@gmail.com",
-    priceRange: "$180-$325",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Leitchfield",
@@ -131,8 +126,8 @@ export default function RealEstatePage() {
 
   const faqItems = [
     {
-      q: "How much does real estate drone photography cost in Kentucky?",
-      a: "CS Media offers real estate media packages from $180. Aerial Media Only is $180, Photography Only (25–40 MLS-ready photos, drone included) is $180, Branding Content (video only) is $150, and the Full Media Package (photos plus a listing video) is $325. 6% Kentucky sales tax is applied to the final price.",
+      q: "What real estate media packages do you offer in Kentucky?",
+      a: "CS Media offers four real estate media packages: Aerial Media Only, Photography Only (25–40 MLS-ready photos, drone included), Branding Content (video only), and the Full Media Package (photos plus a listing video). Text or email for a quote for your property. 6% Kentucky sales tax is applied to the final price.",
     },
     {
       q: "Do you need a license to fly drones for real estate photos?",
@@ -140,11 +135,11 @@ export default function RealEstatePage() {
     },
     {
       q: "What is virtual staging and how does it work?",
-      a: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor. It helps buyers visualize a property's potential at a fraction of the cost of physical staging. If needed, CS Media offers virtual staging as an add-on at $5 per photo or $15 per video scene, with 24-48 hour turnaround.",
+      a: "Virtual staging digitally furnishes empty rooms with realistic furniture and decor. It helps buyers visualize a property's potential at a fraction of the cost of physical staging. If needed, CS Media offers virtual staging as an add-on, with 24-48 hour turnaround.",
     },
     {
       q: "How fast will I get my real estate photos back?",
-      a: "CS Media provides a 24-48 hour turnaround on all real estate photography, drone media, and virtual staging deliverables. Rush delivery in 24 hours is available for an additional $40. Final files are released once payment is made in full.",
+      a: "CS Media provides a 24-48 hour turnaround on all real estate photography, drone media, and virtual staging deliverables. Rush delivery in 24 hours is available for an additional fee. Final files are released once payment is made in full.",
     },
     {
       q: "What areas of Kentucky do you serve?",
@@ -267,9 +262,6 @@ export default function RealEstatePage() {
                           </span>
                         )}
                       </div>
-                      <div className="mt-4 flex items-baseline gap-1">
-                        <span className="text-4xl font-bold text-white">{pkg.price}</span>
-                      </div>
                       <div className="mt-6 space-y-3 flex-1">
                         {pkg.features.map((item) => (
                           <div key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
@@ -312,12 +304,9 @@ export default function RealEstatePage() {
             {smallerPackages.map((pkg, index) => (
               <FadeIn key={pkg.name} delay={index * 0.1}>
                 <div className="relative rounded-2xl bg-dark-700/60 border border-dark-500/30 p-6 h-full flex flex-col hover:border-gold/20 transition-colors">
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                    <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em]">
-                      {pkg.name}
-                    </h3>
-                    <span className="text-2xl font-bold text-white">{pkg.price}</span>
-                  </div>
+                  <h3 className="text-xs font-semibold text-gold uppercase tracking-[0.2em]">
+                    {pkg.name}
+                  </h3>
                   <div className="mt-4 space-y-2 flex-1">
                     {pkg.features.map((item) => (
                       <div key={item} className="flex items-start gap-2.5 text-sm text-dark-100">
@@ -349,9 +338,8 @@ export default function RealEstatePage() {
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-3xl mx-auto">
             {addOns.map((item, index) => (
               <FadeIn key={item.name} delay={index * 0.05} className="w-[150px] sm:w-[180px]">
-                <div className="rounded-xl bg-dark-700/40 border border-dark-500/30 px-4 py-3.5 h-full flex flex-col justify-between gap-1.5">
+                <div className="rounded-xl bg-dark-700/40 border border-dark-500/30 px-4 py-3.5 h-full flex items-center justify-center text-center">
                   <span className="text-sm font-semibold text-white leading-snug">{item.name}</span>
-                  <span className="text-xs font-mono text-gold/90">{item.price}</span>
                 </div>
               </FadeIn>
             ))}
@@ -377,7 +365,7 @@ export default function RealEstatePage() {
                 Full Media Package: homes over 1,500 sqft are subject to additional charges.
               </p>
               <p className="text-xs text-dark-300">
-                Virtual staging, if needed: $5 per photo or $15 per video scene.
+                Virtual staging available as an add-on, if needed.
               </p>
               <p className="text-xs text-dark-300 pt-2">
                 <Link
@@ -432,9 +420,6 @@ export default function RealEstatePage() {
                 </h2>
                 <p className="mt-4 text-dark-100 leading-relaxed">
                   Empty rooms sit on the market longer. Virtual staging helps buyers picture themselves living there, so they book showings faster. Realistic furniture and decor, digitally placed at a fraction of the cost of physical staging.
-                </p>
-                <p className="mt-4 text-xs text-dark-300">
-                  If virtual staging is needed: $5 per photo · $15 per video scene.
                 </p>
                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
                   <div>

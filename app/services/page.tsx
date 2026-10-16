@@ -41,11 +41,11 @@ const categories: ServiceCategory[] = [
     slug: "real-estate",
     title: "Real Estate",
     blurb:
-      "Real estate photography, drone video, and virtual staging that get listings clicked, toured, and sold. Packages from $180 with 24–48 hour turnaround.",
+      "Real estate photography, drone video, and virtual staging that get listings clicked, toured, and sold. Every package delivered in 24–48 hours.",
     image: "/images/brick-home-aerial-drone-kentucky.webp",
     imageAlt: "Aerial drone real estate photography of a Kentucky home",
     primary: true,
-    ctaText: "View Packages & Pricing",
+    ctaText: "View Packages",
   },
   {
     slug: "video-production",

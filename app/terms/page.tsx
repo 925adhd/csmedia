@@ -114,7 +114,7 @@ export default function TermsPage() {
               Revision terms:
             </p>
             <ul className="list-disc pl-5 mt-2 space-y-1">
-              <li>Additional revisions beyond those included are billed at $15 per request</li>
+              <li>Additional revisions beyond those included are billed per request at our current rate</li>
               <li>Major edits — including but not limited to object removal, sky swaps, and virtual staging changes — are quoted separately and are not covered by included or additional revisions</li>
               <li>All revision requests must be submitted within 3 days of delivery; requests received after this window may be declined or quoted as new work</li>
             </ul>
