@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://cscreatesmedia.com";
 
@@ -31,7 +32,7 @@ export default function TermsPage() {
             Terms of Service
           </h1>
           <p className="mt-4 text-sm text-dark-300 font-mono">
-            Last updated: April 19, 2026
+            Last updated: October 25, 2026
           </p>
         </div>
       </section>
@@ -97,9 +98,9 @@ export default function TermsPage() {
           <div>
             <h2 className="text-lg font-bold text-white mb-3">6. Payment</h2>
             <ul className="list-disc pl-5 space-y-1">
-              <li>Package prices are published on our <a href="/services" className="text-gold hover:underline">services page</a> and confirmed at the time of booking</li>
+              <li>Pricing is quoted for each project and confirmed at the time of booking</li>
               <li>A 6% Kentucky sales tax is added to the final price</li>
-              <li>Add-ons (twilight edits, rush delivery, virtual staging, additional photos) are billed at the rates published on the services page</li>
+              <li>Add-ons (twilight edits, rush delivery, virtual staging, additional photos) are quoted along with your project</li>
               <li>Payment terms will be communicated at the time of booking</li>
               <li>Final deliverables are provided upon receipt of full payment</li>
             </ul>
@@ -109,7 +110,7 @@ export default function TermsPage() {
             <h2 className="text-lg font-bold text-white mb-3">7. Revisions</h2>
             <p className="leading-relaxed">
               Each package includes a set number of free revisions, as published on our{" "}
-              <a href="/services" className="text-gold hover:underline">services page</a>{" "}
+              <Link href="/services" className="text-gold hover:underline">services page</Link>{" "}
               (currently 1 free revision on most packages, 2 on the Full Media Package).
               Revision terms:
             </p>
