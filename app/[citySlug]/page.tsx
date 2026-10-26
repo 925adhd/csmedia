@@ -795,7 +795,7 @@ export default async function CityPage({
                 works with real estate agents, Airbnb hosts, property managers,
                 and private sellers throughout {loc.city} and surrounding{" "}
                 {loc.county}. Our regular shoot routes cover Grayson, Hardin,
-                Breckinridge, and Meade counties: central Kentucky's main real
+                Breckinridge, and Meade counties: central Kentucky&apos;s main real
                 estate corridors.
               </p>
               <p className="mt-6 text-sm text-dark-200 leading-loose">

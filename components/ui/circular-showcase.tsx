@@ -126,10 +126,11 @@ export function CircularShowcase({ items, autoplay = true, linkLabel = "Learn mo
   // landed, while the card was still mid-transform — video sound/motion plus the card
   // still sliding read as chaotic. Holding the newly-active slide on its still poster
   // for a beat lets the swipe settle before anything starts moving on its own.
-  const [contentReady, setContentReady] = useState(true);
+  // Tracks which slide has finished its settle delay; content is ready once it matches.
+  const [readyIndex, setReadyIndex] = useState(-1);
+  const contentReady = readyIndex === activeIndex;
   useEffect(() => {
-    setContentReady(false);
-    const t = setTimeout(() => setContentReady(true), 300);
+    const t = setTimeout(() => setReadyIndex(activeIndex), 300);
     return () => clearTimeout(t);
   }, [activeIndex]);
 

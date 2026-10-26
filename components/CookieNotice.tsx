@@ -1,24 +1,32 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
+import Link from "next/link";
+
+function subscribe(onChange: () => void) {
+  window.addEventListener("cookie-consent-update", onChange);
+  window.addEventListener("storage", onChange);
+  return () => {
+    window.removeEventListener("cookie-consent-update", onChange);
+    window.removeEventListener("storage", onChange);
+  };
+}
+
+// Hidden on the server and until hydration, then shown only if no choice is stored.
+function needsConsent() {
+  return !localStorage.getItem("cookie-consent");
+}
 
 export default function CookieNotice() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const consent = localStorage.getItem("cookie-consent");
-    if (!consent) setVisible(true);
-  }, []);
+  const visible = useSyncExternalStore(subscribe, needsConsent, () => false);
 
   function accept() {
     localStorage.setItem("cookie-consent", "accepted");
-    setVisible(false);
     window.dispatchEvent(new Event("cookie-consent-update"));
   }
 
   function decline() {
     localStorage.setItem("cookie-consent", "declined");
-    setVisible(false);
     window.dispatchEvent(new Event("cookie-consent-update"));
   }
 
@@ -30,13 +38,13 @@ export default function CookieNotice() {
         <p className="text-sm text-dark-200 text-center sm:text-left">
           This site uses cookies and analytics to improve your experience. See
           our{" "}
-          <a href="/privacy" className="text-gold underline hover:text-gold/80">
+          <Link href="/privacy" className="text-gold underline hover:text-gold/80">
             Privacy Policy
-          </a>{" "}
+          </Link>{" "}
           and{" "}
-          <a href="/cookies" className="text-gold underline hover:text-gold/80">
+          <Link href="/cookies" className="text-gold underline hover:text-gold/80">
             Cookie Policy
-          </a>
+          </Link>
           .
         </p>
         <div className="flex items-center gap-3">

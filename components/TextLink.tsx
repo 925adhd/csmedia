@@ -1,7 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
 import Link from "next/link";
+
+const subscribeNoop = () => () => {};
 
 const SMS_URL = "sms:+12703070173?body=Hey%20CS%20Media%2C%20I%27m%20interested%20in%20your%20services.%20Can%20we%20chat%3F";
 
@@ -20,11 +22,12 @@ function trackEvent(action: string, label: string) {
 }
 
 export default function TextLink({ className, children }: TextLinkProps) {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
-  }, []);
+  // Server render and hydration use the /book link; the client then swaps to SMS on phones.
+  const isMobile = useSyncExternalStore(
+    subscribeNoop,
+    () => /iPhone|iPad|iPod|Android/i.test(navigator.userAgent),
+    () => false
+  );
 
   if (isMobile) {
     return (
